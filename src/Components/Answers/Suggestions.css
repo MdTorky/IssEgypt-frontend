@@ -1,0 +1,83 @@
+.Suggestions {
+    margin-bottom: 30%;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.suggestionTable {
+    background: var(--bg2);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.suggestionCard {
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+}
+
+.topSuggestion {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+.topSuggestion .info {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 5px;
+
+}
+
+.topSuggestion .info .infoP {
+    display: flex;
+    gap: 7px;
+}
+
+.topSuggestion .info h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.topSuggestion .info p {
+    margin: 0;
+    font-size: 0.7em;
+}
+
+.topSuggestion .icons {
+    display: flex;
+    gap: 10px;
+}
+
+.bottomSuggestion {
+    background: var(--bg2);
+    border-radius: 20px;
+
+    padding: 5px;
+
+}
+
+
+
+@media screen and (max-width:700px) {
+    .Suggestions {
+        margin-bottom: 50%;
+        padding: 10px
+    }
+
+    .Suggestions h1 {
+        text-align: center;
+        font-size: 1.3em
+    }
+
+    .suggestionTable {
+        margin: auto;
+    }
+}

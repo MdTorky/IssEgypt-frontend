@@ -16,6 +16,8 @@ import Groups from './Components/Groups/Groups';
 import Clubs from './Components/Clubs/Clubs';
 import NotFound from './Components/NotFound/NotFound';
 import Courses from './Components/Courses/Courses';
+import SuggestionForm from './Components/Form/SuggestionForm';
+import Suggestions from './Components/Answers/Suggestions';
 
 function App() {
   // Initialize the language state with the default language (e.g., "en")
@@ -86,6 +88,8 @@ function App() {
               <Route path="/openAccount" element={<BankAccount language={language} languageData={languageData} />} />
               <Route path="/clubs" element={<Clubs language={language} languageData={languageData} />} />
               <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
+              <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} />} />
+              <Route path="/suggestions" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} />} />
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}
 

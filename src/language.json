@@ -65,6 +65,7 @@
     "info": "Know More",
     "close": "Close",
     "link": "Link",
+    "delete": "Delete",
     "courseLink": "Course Link",
     "noAnnouncement": "Sorry.. No Announcements Yet",
 
@@ -314,6 +315,7 @@
     "info": "تعرف على المزيد",
     "close": "إغلاق",
     "link": "رابط الموقع",
+    "delete": "مسح",
     "courseLink": "رابط الدورة",
     "noAnnouncement": "عذرا.. لا توجد إعلانات حتى الآن",
 

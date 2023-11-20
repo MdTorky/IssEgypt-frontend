@@ -1,0 +1,160 @@
+.Form {
+    margin-bottom: 20%;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 130px;
+}
+
+
+.formBox {
+    background: var(--bg2);
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.formBox h2 {
+    text-align: center;
+    color: var(--theme);
+}
+
+.formBox form {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+/* .formBox input,
+.formBox select,
+.formBox textarea {
+    border-radius: 20px;
+    border: 1px solid var(--theme);
+    padding: 5px;
+}
+
+.formBox input:placeholder-shown,
+.formBox textarea:placeholder-shown {
+    padding: 10px;
+}
+
+.formBox textarea:placeholder-shown {
+    font-size: 0.8em;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.formBox input:focus,
+.formBox textarea:focus {
+    padding: 10px;
+} */
+
+.formBox button {
+    background: var(--theme);
+    color: var(--bg);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+.formBox button:hover {
+    transform: translateY(2px);
+    box-shadow: none;
+    letter-spacing: 1px;
+
+}
+
+
+
+
+
+
+
+
+.InputField {
+    display: flex;
+    /* flex-direction: column */
+}
+
+.formBox form .InputField .InputError.password {
+    text-align: left;
+}
+
+.formBox form .InputField .PasswordStrength:has(.Plus) {
+    color: mediumaquamarine;
+}
+
+.formBox form .InputField .PasswordStrength:has(.Minus) {
+    color: var(--theme);
+}
+
+
+.formBox form .input, select, textarea {
+
+    width: 100%;
+    /* max-width: 420px; */
+    padding: 12px;
+    border-radius: 15px;
+    border: 3px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+    position: relative;
+    font-weight: 700;
+
+}
+
+/* Matric Number */
+.formBox form .input.matric {
+    text-transform: uppercase;
+}
+
+.formBox form .input::placeholder {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+.formBox form .input.valid {
+
+    border: 3px solid mediumaquamarine;
+    box-shadow: 0px 0px 20px -17px;
+    color: mediumseagreen;
+
+}
+
+.formBox form .input.invalid {
+    border: 3px solid var(--theme);
+    box-shadow: 0px 0px 20px -17px;
+    color: var(--theme);
+}
+
+.formBox form .input:active {
+    transform: scale(0.95);
+}
+
+.formBox form .input:placeholder-shown {
+    border: 3px solid lightgrey;
+    text-transform: none;
+
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .Form {
+        margin-bottom: 40%;
+        margin-right: 0;
+    }
+}

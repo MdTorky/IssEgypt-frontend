@@ -5,18 +5,21 @@ import './darkMode.css';
 import App from './App';
 import { LanguageProvider } from './language';
 import { DarkModeProvider } from './DarkModeContext';
+import { FormsContextProvider } from './context/formContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>
-  <DarkModeProvider> {/* Wrap your app with DarkModeProvider */}
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
-  </DarkModeProvider>,
-  document.getElementById('root')
+  <FormsContextProvider>
+    <DarkModeProvider> {/* Wrap your app with DarkModeProvider */}
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </DarkModeProvider>
+  </FormsContextProvider>
+  // document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
