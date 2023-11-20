@@ -1,0 +1,756 @@
+body.dark-mode {
+    background: var(--hover);
+    color: var(--bg);
+}
+
+/* NavBar */
+
+.dark-mode .logo {
+    background: var(--hover);
+}
+
+.dark-mode .navbar ul li icon {
+    color: var(--hover);
+}
+
+.dark-mode .navbar ul li:hover icon {
+    color: var(--hover);
+}
+
+.dark-mode .navbar ul li:hover {
+    background: var(--bg);
+    /* border-left: 2px dashed var(--bg);
+    border-bottom: 2px solid var(--bg);
+    border-top: 2px solid var(--bg); */
+}
+
+.dark-mode .navbar ul li:hover icon::after {
+    background: var(--bg);
+    /* border-right: 2px solid var(--hover);
+    border-bottom: 1px solid var(--hover);
+    border-top: 1px solid var(--hover); */
+}
+
+.dark-mode .navbar ul li.active {
+    background: var(--hover);
+    border-radius: 25px;
+
+}
+
+
+.dark-mode .navbar ul li.active icon {
+    color: var(--bg);
+
+}
+
+.dark-mode .navbar ul li.active icon::after {
+    color: var(--bg);
+    /* display: none; */
+}
+
+.dark-mode .navbar ul li:hover.active icon::after {
+    color: var(--bg);
+    background: var(--hover);
+}
+
+.dark-mode .navbar ul li:hover.active icon {
+    color: var(--bg);
+
+}
+
+
+
+/* Side Menu */
+
+.dark-mode .sideMenu {
+    background: var(--hover2);
+}
+
+
+.dark-mode .sideMenu .liveBox {
+    background: var(--hover);
+}
+
+.dark-mode .sideMenu .liveBox .title h3 {
+    color: var(--bg);
+}
+
+.dark-mode .sideMenu .popup {
+    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+    background: var(--hover);
+}
+
+.dark-mode .sideMenu .popup .middlePart img {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dark-mode .sideMenu .bottomPart {
+    background: var(--hover2);
+}
+
+
+.dark-mode .sideMenu .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+
+
+
+/* Home */
+
+.dark-mode .homeWrapper p {
+    color: var(--bg);
+}
+
+.dark-mode .homeWrapper span {
+    color: var(--theme);
+}
+
+.dark-mode .nameTitle {
+    /* border-bottom: 1px solid var(--bg); */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+
+    /* opacity: 0.9; */
+}
+
+.dark-mode .row .rowCircle {
+    /* box-shadow: rgba(255, 255, 255, 0.34) 0px 3px 8px; */
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+}
+
+.dark-mode .homeBoxes .homeTitle {
+    /* border-bottom: 1px solid var(--bg); */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+
+}
+
+.dark-mode .blog .blogContainer {
+    /* border-bottom: 1px solid var(--bg); */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+
+}
+
+.dark-mode .blogContainer2 {
+    /* border-bottom: 1px solid var(--bg); */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+
+}
+
+.dark-mode .blogContainer2 .blogItem .line button {
+    color: var(--bg);
+    border: 1px solid var(--bg);
+}
+
+.dark-mode .blogContainer2 .blogItem .line button:hover {
+    background: var(--bg);
+    color: var(--hover);
+    border: 1px solid var(--bg);
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+
+.dark-mode .eventBox h1 {
+    color: var(--bg);
+}
+
+.dark-mode .connectTitle {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+}
+
+.dark-mode .connect .socialCircle {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+    color: var(--bg);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+}
+
+.dark-mode .arabic .connect .socialCircle {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+
+.dark-mode .connect .socialCircle:hover {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+
+    color: var(--hover);
+    /* box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.2); */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.dark-mode .connect .button {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+    /* border: 2px solid var(--bg) */
+}
+
+.dark-mode .connect .button .button__text {
+    color: var(--bg);
+}
+
+.dark-mode .connect .button .button__icon {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+
+    color: var(--hover);
+}
+
+.dark-mode .connect .button:hover .button__icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .connect .button:active .button__icon {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+    color: var(--bg)
+}
+
+
+.dark-mode .home-container .popup {
+    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+    background: var(--hover);
+}
+
+.dark-mode .home-container .popup .middlePart img {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dark-mode .home-container .bottomPart {
+    background: var(--hover2);
+}
+
+
+.dark-mode .home-container .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+
+
+
+
+/* Services */
+
+
+.dark-mode .services .annContainer {
+    background: var(--hover2);
+}
+
+.dark-mode .services .annContainer .annContainer2 {
+    background: var(--hover);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+/* .dark-mode .services .annContainer .annStories .story {
+    background: var(--hover);
+}
+
+.dark-mode .services .annContainer .annStories .story::before {
+    border: 2px solid var(--bg);
+}
+
+.dark-mode .services .annContainer .annStories .story img {
+    background: var(--bg);
+} */
+
+.dark-mode .services .annContainer .annStories .box {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+}
+
+.dark-mode .services .annContainer .annStories .box::before {
+    background: var(--theme);
+}
+
+.dark-mode .services .annContainer .annStories .box::after {
+    background: var(--hover);
+}
+
+.dark-mode .services .rightContainer {
+    background: var(--hover2);
+}
+
+.dark-mode .services .rightContainer .collegesBoxTitle {
+    background: var(--hover);
+}
+
+.dark-mode .rightContainer .college .img {
+    color: var(--bg);
+    /* background: var(--hover2); */
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+}
+
+.dark-mode .arabic .rightContainer .college .img {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+
+}
+
+
+.dark-mode .rightContainer .college:hover>.img {
+    background: var(--bg);
+    color: var(--hover);
+}
+
+
+.dark-mode .services .leftContainer {
+    background: var(--hover2);
+}
+
+.dark-mode .services .leftContainer .collegesBoxTitle {
+    background: var(--hover);
+}
+
+.dark-mode .leftContainer .college .img {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .arabic .leftContainer .college .img {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+.dark-mode .leftContainer .college:hover>.img {
+    background: var(--bg);
+    color: var(--hover);
+}
+
+.dark-mode .leftContainer .college .span {
+    background: var(--bg);
+    color: var(--hover);
+}
+
+.dark-mode .popupFaculty {
+    background: var(--hover2);
+}
+
+.dark-mode .popupFaculty .container {
+    background: var(--hover);
+}
+
+.dark-mode .topSection .img {
+    color: var(--bg);
+    /* background: linear-gradient(var(--theme), var(--hover)); */
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.dark-mode .arabic .topSection .img {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+
+.dark-mode .popupFaculty .bottomSection .bottomLinks button {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.594);
+
+}
+
+.dark-mode .arabic .popupFaculty .bottomSection .bottomLinks button {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+
+.dark-mode .popupFaculty .bottomSection .bottomLinks .sign {
+    color: var(--bg)
+}
+
+.dark-mode .popupFaculty .bottomSection .bottomLinks .text {
+    color: var(--bg)
+}
+
+.dark-mode .newStudents .newStudentsRow .newStudentCard,
+.dark-mode .newStudents .newStudentsRow2 .newStudentCard {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    text-decoration: none;
+    color: var(--bg2)
+}
+
+.dark-mode .newStudents .newStudentsRow .newStudentCard:nth-child(4),
+.dark-mode .newStudents .newStudentsRow2 .newStudentCard:nth-child(4) {
+    background: #5A0009;
+    color: var(--bg);
+}
+
+.dark-mode .arabic .newStudents .newStudentsRow .newStudentCard:nth-child(4),
+.dark-mode .arabic .newStudents .newStudentsRow2 .newStudentCard:nth-child(4) {
+    background: #5A0009;
+    color: var(--bg);
+}
+
+
+
+.dark-mode .newStudentsRow2 :nth-child(2) .moon {
+    color: var(--bg2);
+}
+
+
+.dark-mode .arabic .newStudents .newStudentsRow .newStudentCard,
+.dark-mode .arabic .newStudents .newStudentsRow2 .newStudentCard {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pages */
+
+.dark-mode .section .sectionBox {
+    /* background: var(--hover2); */
+
+}
+
+.dark-mode .section .outerBox {
+    background: var(--hover2);
+}
+
+.dark-mode .section .outerBox .innerBox {
+    background: var(--hover);
+}
+
+.dark-mode .attraction .outerBox {
+    background: var(--hover2);
+}
+
+.dark-mode .attraction .outerBox .innerBox {
+    background: var(--hover);
+}
+
+
+.dark-mode .cards .card {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.dark-mode .icons .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+
+.dark-mode .icon:hover {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    color: var(--hover);
+}
+
+.dark-mode .icon:hover .tooltip,
+.dark-mode .icon:hover .tooltip::before {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+    color: var(--bg);
+}
+
+.dark-mode .arabic .cards .card {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+
+}
+
+.dark-mode .attraction .popup {
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: var(--hover);
+
+}
+
+.dark-mode .attraction .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.dark-mode .attraction .icon:hover {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    color: var(--hover);
+}
+
+
+
+.dark-mode .attraction .popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.dark-mode .attraction .popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode .attraction .top {
+    background: var(--hover2);
+}
+
+.dark-mode .attraction .bottom {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+
+
+
+
+
+.dark-mode .transportation .outerBox {
+    background: var(--hover2);
+}
+
+.dark-mode .transportation .outerBox .innerBox {
+    background: var(--hover);
+}
+
+.dark-mode .transportation .cards .card {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .arabic .transportation .cards .card {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+.dark-mode .transportation .popup {
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: var(--hover)
+}
+
+.dark-mode .transportation .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.dark-mode .transportation .icon:hover {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    color: var(--hover);
+}
+
+
+
+.dark-mode .transportation .popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.dark-mode .transportation .popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode .transportation .top {
+    background: var(--hover2);
+}
+
+.dark-mode .transportation .bottom {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.dark-mode .account .outerBox .innerBox .button .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .pop {
+    background: var(--hover);
+}
+
+.dark-mode .pop .popup-content {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+}
+
+.dark-mode .account .outerBox {
+    background: var(--hover2);
+}
+
+.dark-mode .account .outerBox .innerBox {
+    background: var(--hover);
+}
+
+
+
+
+
+.dark-mode .clubs .outerBox {
+    background: var(--hover2);
+}
+
+.dark-mode .clubs .outerBox .innerBox {
+    background: var(--hover);
+}
+
+.dark-mode .clubs .cards .card {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .arabic .clubs .cards .card {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+.dark-mode .clubs .popup {
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: var(--hover)
+}
+
+.dark-mode .clubs .popup .bottom {
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: var(--hover2)
+}
+
+.dark-mode .clubs .popup .bottom .header {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+}
+
+.dark-mode .arabic .clubs .popup .bottom .header {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+
+}
+
+
+.dark-mode .clubs .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.dark-mode .clubs .icon:hover {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    color: var(--hover);
+}
+
+
+
+.dark-mode .clubs .popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.dark-mode .clubs .popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode .clubs .top {
+    background: var(--hover2);
+}
+
+.dark-mode .clubs .bottom {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+
+
+
+.dark-mode .courses .outerBox {
+    background: var(--hover2);
+}
+
+.dark-mode .courses .outerBox .innerBox {
+    background: var(--hover);
+}
+
+.dark-mode .courses .cards .card {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .arabic .courses .cards .card {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+.dark-mode .courses .popup {
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: var(--hover)
+}
+
+.dark-mode .courses .popup .bottom {
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: var(--hover2)
+}
+
+.dark-mode .courses .popup .bottom .header {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+}
+
+.dark-mode .arabic .courses .popup .bottom .header {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+
+}
+
+.dark-mode .courses .icon {
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.dark-mode .courses .icon:hover {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    color: var(--hover);
+}
+
+
+
+/* NotFound */
+
+.dark-mode .BottomFound .link {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+
+.dark-mode .arabic .BottomFound .link {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+@media screen and (max-width: 700px) {
+    .dark-mode .navbar ul li.active icon::after {
+        color: var(--bg);
+    }
+
+    .dark-mode .navbar ul li {
+        background: none;
+    }
+
+    .dark-mode .navbar ul li:hover icon {
+        background: none;
+    }
+
+    .dark-mode .navbar ul li:hover {
+        box-shadow: none;
+        background: none;
+    }
+
+
+    .dark-mode .navbar ul li.active {
+        background: none;
+    }
+
+    .dark-mode .navbar ul li:hover icon::after {
+
+        background: none;
+    }
+
+    .dark-mode .navbar ul li:hover.active icon::after {
+        background: none;
+    }
+}

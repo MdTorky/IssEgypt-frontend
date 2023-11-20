@@ -1,0 +1,63 @@
+{
+  "on": [
+    {
+      "name": "KDOJ",
+      "link": "https://www.kdoj.com.my/",
+      "email": "mailto:KDOJ@UTM.MY",
+      "phone": "tel:+6075537708",
+      "location": "https://maps.app.goo.gl/SZAMXBqj4JkDXKLm8",
+      "img": "https://drive.google.com/uc?export=view&id=1xD4tdhJVjhxc9BFZJpxFcXOI-XSu1OfW"
+    },
+    {
+      "name": "KLG",
+      "link": "https://www.klgresidence.com/",
+      "email": "https://www.klgresidence.com/contact-us/general-enquiry",
+      "phone": "https://wa.me/60127913988",
+      "location": "https://maps.app.goo.gl/qXSYWGyBsnTnURg38",
+      "img": "https://drive.google.com/uc?export=view&id=1qw2HaprgkS512ykoABnC8AzsqYwknKv5"
+    },
+    {
+      "name": "KDSE",
+      "link": "https://www.facebook.com/KolejDatinSeriEndonUTM/",
+      "email": "mailto:kolejdatinseriendon@gmail.com",
+      "phone": "tel:075537702",
+      "location": "https://maps.app.goo.gl/9dzQjYLv2yvwd6Uf9",
+      "img": "https://drive.google.com/uc?export=view&id=1EIiBNiAnf7L_tVZDaHaH99jeQpPzBUPy"
+    }
+  ],
+
+  "off": [
+    {
+      "name": "Melana",
+      "link": "https://www.facebook.com/p/Melana-Apartment-100057229818549/",
+      "email": "",
+      "phone": "tel:075211181",
+      "location": "https://maps.app.goo.gl/XBvnWCdm85CNfAeg6",
+      "img": "https://drive.google.com/uc?export=view&id=1T9IIVV7iaBg_REWv6CkH3ZZZk-R6DEGR"
+    },
+    {
+      "name": "Melawis",
+      "link": "",
+      "email": "",
+      "phone": "tel:075203453",
+      "location": "https://maps.app.goo.gl/xTfVwkcp7andG3Ju5",
+      "img": "https://drive.google.com/uc?export=view&id=1L22V5pi1HqV_zDM-xolyKh5t7-0ne9ZG"
+    },
+    {
+      "name": "The Garden",
+      "link": "",
+      "email": "",
+      "phone": "tel:+60127100616",
+      "location": "https://maps.app.goo.gl/UHVuF7t8pEJb8xbd6",
+      "img": "https://drive.google.com/uc?export=view&id=1Boj27ghVngxb0LGyVk9bMvEARKYvGVIL"
+    },
+    {
+      "name": "D’Summit",
+      "link": "",
+      "email": "",
+      "phone": "tel:075590101",
+      "location": "https://maps.app.goo.gl/Lxax9ikNtrBjstdX9",
+      "img": "https://drive.google.com/uc?export=view&id=19khP1PD1zMDRI5iDnJsV4j8Hzqzfl1vS"
+    }
+  ]
+}

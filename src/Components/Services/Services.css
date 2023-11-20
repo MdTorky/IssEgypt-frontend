@@ -1,0 +1,1796 @@
+::-webkit-scrollbar {
+    height: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* background: var(--hover2); */
+    box-sizing: border-box;
+
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 10px;
+    background: transparent;
+    border-radius: 10px;
+}
+
+
+h2 {
+    transition: all 0.3s ease-in-out;
+}
+
+
+.services {
+    margin-bottom: 10%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    /* gap: 200px; */
+    gap: 30px;
+}
+
+.arabic .services {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+
+/* Right Container */
+
+.services .annContainer {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg2);
+    padding: 20px;
+    border-radius: 20px;
+    width: 65%;
+}
+
+.services .annContainer .annContainer2 {
+    background: var(--bg);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+.services .annContainer h2 {
+    font-size: 1.2em;
+}
+
+
+.services .annContainer .annStories {
+    display: flex;
+    flex-direction: column;
+    /* gap: 50px; */
+
+}
+
+.services .annContainer .annStories2 {
+    display: flex;
+    gap: 30px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+}
+
+/* .services .annContainer .annStories2 .box {
+    width: 70px;
+    height: 70px;
+    background: repeating-conic-gradient(from var(--a), var(--theme) 0%, var(--theme) 5%,
+            transparent 5%, transparent 40%, var(--theme) 50%);
+    position: relative;
+    animation: story 4s linear infinite;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes story {
+    0% {
+        --a: 0deg;
+    }
+
+    100% {
+        --a: 360deg;
+    }
+}
+
+.services .annContainer .annStories2 .box::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    animation: story 4s linear infinite;
+    animation-delay: -6s;
+    border-radius: 25px;
+}
+
+.announcement {
+    width: 65px;
+    height: 65px;
+    border-radius: 25px;
+    background-size: cover;
+    cursor: pointer;
+} */
+
+
+.services .annContainer .annStories .box {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    cursor: pointer;
+}
+
+.services .annContainer .annStories .box::before {
+    content: '';
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    background: var(--theme);
+    transition: 0.1s;
+    animation: story 1s linear infinite;
+}
+
+.arabic .services .annContainer .annStories .box::before {
+
+    animation: storyArabic 1s linear infinite;
+
+}
+
+.services .annContainer .annStories .box.active::before {
+    width: 60%;
+    height: 110%;
+
+}
+
+
+.services .annContainer .annStories .box:hover::before {
+    width: 60%;
+    height: 110%;
+}
+
+.services .annContainer .annStories .box::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background: var(--bg);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.services .annContainer .annStories .box .announcement {
+    position: absolute;
+    inset: 8px;
+    z-index: 3;
+    border-radius: 50%;
+}
+
+.services .annContainer .annStories .box .announcement img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+
+
+
+
+@keyframes story {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+
+@keyframes storyArabic {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+
+    }
+}
+
+
+.noAnn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme);
+    margin: auto;
+    gap: 10px;
+    font-size: 1em;
+}
+
+
+
+
+.newStudents .newStudentsRow,
+.newStudents .newStudentsRow2 {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 10px; */
+    padding: 10px;
+}
+
+
+
+
+.newStudents .newStudentsRow .newStudentCard,
+.newStudents .newStudentsRow2 .newStudentCard {
+    width: 250px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 0px solid var(--hover);
+    animation: fadeInUp 1s ease 0s 1 normal forwards;
+    opacity: 0;
+    text-decoration: none;
+    color: var(--hover)
+}
+
+.newStudents .newStudentsRow .newStudentCard:nth-child(4),
+.newStudents .newStudentsRow2 .newStudentCard:nth-child(4) {
+    background: #5A0009;
+    color: var(--bg);
+}
+
+
+.newStudents .newStudentsRow .newStudentCard:hover,
+.newStudents .newStudentsRow2 .newStudentCard:hover {
+    box-shadow: rgb(0, 0, 0) 5px 10px 50px, rgb(0, 0, 0) -5px 0px 10px;
+    border: 1px solid var(--hover);
+
+}
+
+.newStudents .newStudentsRow:hover .newStudentCard,
+.newStudents .newStudentsRow2:hover .newStudentCard {
+    filter: blur(3px);
+}
+
+.newStudents .newStudentsRow:hover .newStudentCard:hover,
+.newStudents .newStudentsRow2:hover .newStudentCard:hover {
+    filter: blur(0px);
+    border: 1px solid var(--hover2);
+
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.time-text {
+    font-size: 1.3em;
+    margin: 0 0 0 15px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.time-sub-text {
+    font-size: 15px;
+    margin: 0 0 0 5px;
+}
+
+.day-text {
+    font-size: 0.8em;
+    margin: 0 0 0 15px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.newStudentsRow .moon,
+.newStudentsRow2 .moon {
+    font-size: 1.3em;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.newStudentsRow :nth-child(1) .moon {
+    color: #a0ced9;
+}
+
+.newStudentsRow :nth-child(2) .moon {
+    color: #FF7976;
+}
+
+.newStudentsRow :nth-child(3) .moon {
+    color: #fefe7e;
+}
+
+.newStudentsRow2 :nth-child(1) .moon {
+    color: #9694FF;
+}
+
+.newStudentsRow2 :nth-child(2) .moon {
+    color: var(--hover2);
+
+
+}
+
+.newStudentsRow2 :nth-child(3) .moon {
+    color: #5DDAB4;
+
+}
+
+.newStudentsRow2 :nth-child(4) .moon {
+    color: #57CAEB;
+}
+
+
+
+
+
+.newStudents .newStudentsRow .newStudentCard:hover>.moon,
+.newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
+    font-size: 4em;
+}
+
+.newStudents .newStudentsRow .newStudentCard:hover>.time-text,
+.newStudents .newStudentsRow2 .newStudentCard:hover>.time-text {
+    font-size: 0.7em;
+}
+
+.newStudents .newStudentsRow .newStudentCard:hover>.day-text,
+.newStudents .newStudentsRow2 .newStudentCard:hover>.day-text {
+    font-size: 0.7em;
+}
+
+.newStudents .newStudentsRow .newStudentCard:nth-child(3):hover>.day-text {
+    font-size: 0.63em;
+}
+
+.newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+    font-size: 0.575em;
+
+}
+
+
+.arabic .time-text {
+    font-size: 1.3em;
+    margin: 0 15px 0 0;
+    font-weight: 700;
+}
+
+.arabic .day-text {
+    font-size: 0.9em;
+    margin: 0 15px 0 0;
+    font-weight: 500;
+}
+
+
+
+.arabic .newStudentsRow .moon,
+.arabic .newStudentsRow2 .moon {
+    left: 15px;
+    right: auto;
+}
+
+
+.arabic .newStudents .newStudentsRow .newStudentCard:nth-child(4),
+.arabic .newStudents .newStudentsRows .newStudentCard:nth-child(4) {
+    background: #5A0009;
+    color: var(--bg);
+}
+
+.arabic .newStudents .newStudentsRow .newStudentCard:hover>.moon,
+.arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
+    font-size: 4em;
+}
+
+.arabic .newStudents .newStudentsRow .newStudentCard:hover>.time-text,
+.arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.time-text {
+    font-size: 0.9em;
+}
+
+.newStudents .newStudentsRow .newStudentCard:hover>.day-text,
+.newStudents .newStudentsRow2 .newStudentCard:hover>.day-text {
+    font-size: 0.7em;
+}
+
+.arabic .newStudents .newStudentsRow .newStudentCard:nth-child(3):hover>.day-text {
+    font-size: 0.7em;
+}
+
+.arabic .newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+    font-size: 0.7em;
+
+}
+
+
+
+
+
+.services .rightContainer {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg2);
+    border-radius: 20px;
+    padding: 20px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* transition: all 0.3s ease-in-out; */
+
+}
+
+.services .rightContainer .collegesBoxTitle {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    border-radius: 15px;
+    padding: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.services .rightContainer .collegesBoxTitle>h2 {
+    font-size: 1.2em;
+    /* white-space: nowrap; */
+    text-align: center;
+    transition: all 0.3s ease;
+
+}
+
+.services .rightContainer .collegesBoxTitle .collegesBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rightContainer .college {
+    width: 100%;
+    /* max-width: 390px; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+    /* animation: fadeInLeft 2s ease 0s 1 normal forwards; */
+
+
+    /* background: red; */
+}
+
+.collegesBoxTitle:hover .college {
+    filter: blur(2px);
+
+}
+
+.collegesBoxTitle:hover .college:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: blur(0px);
+}
+
+.rightContainer .college .img {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hover);
+    /* background: linear-gradient(var(--theme), var(--hover)); */
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+
+
+.rightContainer .college:hover>.img {
+    transition: 0.5s ease-in-out;
+    color: var(--bg);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+
+}
+
+
+
+
+
+
+
+/* Left Container */
+.services .leftContainer {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg2);
+    border-radius: 20px;
+    padding: 20px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* transition: all 0.3s ease-in-out; */
+
+}
+
+.services .leftContainer .collegesBoxTitle {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    border-radius: 20px;
+    padding: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+}
+
+.arabic .services .leftContainer {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+.services .leftContainer .collegesBoxTitle>h2 {
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+
+}
+
+.services .leftContainer .collegesBoxTitle .collegesBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.college {
+    width: 100%;
+    max-width: 390px;
+    height: 70px;
+    /* background: #353535; */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+    animation: fadeInLeft 0.5s ease 0s 1 normal forwards;
+    opacity: 0;
+}
+
+.arabic .college {
+    animation: fadeInRight 0.5s ease 0s 1 normal forwards;
+
+}
+
+.leftContainer .college .img {
+    width: 70px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hover);
+    /* background: linear-gradient(var(--theme), var(--hover)); */
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    /* transition: all 0.5s ease-in-out; */
+
+}
+
+.leftContainer .college:hover>.img {
+    transition: 0.5s ease-in-out;
+    /* background: var(--hover); */
+    background: linear-gradient(to bottom, var(--hover), var(--hover2));
+
+    color: var(--bg);
+
+}
+
+.leftContainer .college .textBox {
+    width: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-family: 'Poppins'sans-serif;
+    justify-content: space-between;
+    width: 100%
+}
+
+.arabic .leftContainer .college .textBox {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.leftContainer .college .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftContainer .college .span {
+    margin: 0;
+    font-size: 0.8em;
+    background: var(--hover);
+    color: var(--bg);
+    border-radius: 5px;
+    padding: 1px 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+.leftContainer .college .h1 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.leftContainer .college .p {
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    width: 15%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 20px;
+    z-index: 9999;
+    display: none;
+    border-radius: 30px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.services .popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.services .popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes popup-open {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes popup-close {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        display: none;
+    }
+}
+
+.services.popup.show {
+    display: block;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.topContent {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    height: 80%;
+    justify-content: space-between;
+    /* background: red; */
+}
+
+
+.topContent img {
+    width: 50px;
+    height: 50px;
+    background: var(--bg);
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 20px;
+}
+
+.topContent .topText {
+    /* background: red; */
+    /* align-self: start;
+    justify-self: start; */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    color: var(--bg);
+}
+
+.topContent .topText h3 {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.topContent .topText p {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 0.7em;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.popup .closeButton {
+    background: var(--theme);
+    border: none;
+    color: var(--bg);
+    font-size: 1.4em;
+    align-self: start;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.popup .closeButton:hover {
+    transform: scale(1.1);
+    color: var(--theme);
+    background: var(--bg);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bottomContent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+.bottomContent button {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.594);
+    background-color: var(--theme);
+}
+
+.bottomContent button.calender {
+    background-color: mediumseagreen;
+}
+
+.bottomContent button.form {
+    background-color: mediumpurple;
+}
+
+
+/* plus sign */
+.bottomContent .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--bg);
+
+
+}
+
+.bottomContent .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: var(--bg);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+    white-space: nowrap;
+}
+
+.bottomContent button:hover {
+    width: 200px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.bottomContent button:hover .sign {
+    width: 10%;
+    display: flex;
+    justify-self: flex-start;
+    /* background: blue; */
+    transition-duration: .3s;
+    padding-left: 20px;
+    text-align: center;
+
+}
+
+/* hover effect button's text */
+.bottomContent button:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+/* button click effect*/
+.bottomContent button:active {
+    transform: translate(2px, 10px);
+}
+
+.arabic .topContent .topText {
+    padding-right: 10px;
+}
+
+
+.arabic .bottomContent button {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+.arabic .bottomContent button:hover {
+    /* width: 200px; */
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.arabic .bottomContent button:hover .sign {
+    display: inline;
+    transition-duration: .3s;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popupFaculty {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 20px;
+    z-index: 9999;
+    display: none;
+    border-radius: 30px;
+    height: 300px;
+    background: var(--bg2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+}
+
+.popupFaculty.popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.popupFaculty.popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popupFaculty .container {
+    background: var(--bg);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popupFaculty .topSection {
+    display: flex;
+    border-radius: 10px;
+}
+
+
+
+.topSection .img {
+    width: 70px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hover);
+    /* background: linear-gradient(var(--theme), var(--hover)); */
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.topSection .textBox {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-family: 'Poppins'sans-serif;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.topSection .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topSection .span {
+    margin: 0;
+    font-size: 0.8em;
+    background: var(--hover);
+    color: var(--bg);
+    border-radius: 5px;
+    padding: 1px 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+}
+
+.arabic .topSection .textBox {
+    line-height: 20px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+
+
+.topSection h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.9em;
+    opacity: 0.6;
+}
+
+
+.topSection h2 {
+    font-size: 1em;
+    font-weight: 900;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.arabic .topSection h2 {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+
+
+.topSection button {
+    background: var(--theme);
+    color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    transition: 0.5s ease;
+
+}
+
+.topSection button:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+
+.popupFaculty .bottomSection {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 20px; */
+    /* background: red; */
+    height: 100%;
+    gap: 20px;
+
+}
+
+.popupFaculty .bottomSection img {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    height: 170px;
+}
+
+
+.popupFaculty .bottomSection .bottomLinks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+
+
+
+.popupFaculty .bottomSection .bottomLinks button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.594);
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: auto;
+
+}
+
+
+/* plus sign */
+.popupFaculty .bottomSection .bottomLinks .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: var(--hover);
+    /* font-weight: ; */
+}
+
+
+.popupFaculty .bottomSection .bottomLinks .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: var(--hover);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+    white-space: nowrap;
+}
+
+.popupFaculty .bottomSection .bottomLinks button:hover {
+    width: 130px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.popupFaculty .bottomSection .bottomLinks button:hover .sign {
+    width: 5%;
+    display: flex;
+    justify-self: flex-start;
+    transition-duration: .3s;
+    padding-left: 20px;
+    text-align: center;
+
+}
+
+/* hover effect button's text */
+.popupFaculty .bottomSection .bottomLinks button:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+    font-size: 1em;
+
+}
+
+/* .popupFaculty .bottomSection:nth-child(2) button:nth-child(1)>.text {
+    font-size: 1em;
+} */
+
+
+/* button click effect*/
+.popupFaculty .bottomSection .bottomLinks button:active {
+    transform: translate(2px, 10px);
+}
+
+.arabic .popupFaculty .bottomSection .bottomLinks button:hover {
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.arabic .popupFaculty .bottomSection .bottomLinks button:hover .sign {
+    display: inline;
+    transition-duration: .3s;
+    text-align: center;
+}
+
+.arabic .popupFaculty .bottomSection .bottomLinks button:hover .text {
+    font-size: 1em;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1800px) {
+    .services .annContainer {
+        width: 55%;
+    }
+
+    .services .annContainer h2 {
+        font-size: 1.1em;
+    }
+
+
+    /* .services .annContainer .annStories .story img {
+        width: 55px;
+    } */
+
+    .newStudents .newStudentsRow,
+    .newStudents .newStudentsRow2 {
+        gap: 10px;
+    }
+
+
+    .time-text {
+        font-size: 1em;
+    }
+
+    .day-text {
+        font-size: 0.6em;
+    }
+
+
+    .newStudents .newStudentsRow .newStudentCard:hover>.time-text,
+    .newStudents .newStudentsRow2 .newStudentCard:hover>.time-text {
+        font-size: 0.6em;
+    }
+
+    .newStudents .newStudentsRow .newStudentCard:hover>.day-text,
+    .newStudents .newStudentsRow2 .newStudentCard:hover>.day-text {
+        font-size: 0.1em;
+    }
+
+    .newStudents .newStudentsRow .newStudentCard:nth-child(3):hover>.day-text {
+        font-size: 0.3em;
+    }
+
+    .newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+        font-size: 0.3em;
+
+    }
+
+    .arabic .time-text {
+        font-size: 1.1em;
+    }
+
+    .arabic .day-text {
+        font-size: 0.7em;
+    }
+
+    .arabic .newStudents .newStudentsRow .newStudentCard:hover>.time-text,
+    .arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.time-text {
+        font-size: 0.8em;
+    }
+
+    .newStudents .newStudentsRow .newStudentCard:hover>.day-text,
+    .newStudents .newStudentsRow2 .newStudentCard:hover>.day-text {
+        font-size: 0.5em;
+    }
+
+    .arabic .newStudents .newStudentsRow .newStudentCard:nth-child(3):hover>.day-text {
+        font-size: 0.5em;
+    }
+
+    .arabic .newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+        font-size: 0.5em;
+
+    }
+
+
+    .services.popup {
+        width: 16%;
+    }
+
+    .topContent .topText h3 {
+        font-size: 0.85em;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+
+
+
+
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: -7% 0 50% 0;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .arabic .services {
+        margin-top: 10%;
+    }
+
+    .services .annContainer {
+        flex: 1;
+        order: 1;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .services .annContainer h2 {
+        font-size: 1em;
+    }
+
+    .services .annContainer .annStories .annStories2 {
+        gap: 20px;
+    }
+
+    /* .services .annContainer .annStories .story {
+        border-radius: 15px;
+    } */
+
+    /* .services .annContainer .annStories .story::before {
+        border-radius: 15px;
+    } */
+
+    /* .services .annContainer .annStories .story img {
+        width: 40px;
+        border-radius: 10px;
+    } */
+
+    .services .annContainer .annStories .box {
+
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+
+    }
+
+
+    .services .annContainer .annStories .box.active::before {
+        width: 80%;
+        height: 100%;
+
+        overflow: hidden;
+        border-radius: 50%;
+
+
+    }
+
+
+    .services .annContainer .annStories .box:hover::before {
+        width: 80%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .noAnn {
+        font-size: 0.8em;
+
+    }
+
+
+
+    .newStudents .newStudentsRow,
+    .newStudents .newStudentsRow2 {
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 0;
+
+    }
+
+
+
+
+    .newStudents .newStudentsRow .newStudentCard,
+    .newStudents .newStudentsRow2 .newStudentCard {
+        width: 45%;
+        height: 100px;
+
+    }
+
+
+    .newStudents .newStudentsRow:hover .newStudentCard,
+    .newStudents .newStudentsRow2:hover .newStudentCard {
+        filter: blur(0px);
+    }
+
+
+    .time-text {
+        font-size: 0.8em;
+    }
+
+    .day-text {
+        font-size: 0.5em;
+    }
+
+
+    .newStudentsRow .moon,
+    .newStudentsRow2 .moon {
+        font-size: 0.9em;
+    }
+
+
+
+
+    .newStudents .newStudentsRow .newStudentCard:hover>.moon,
+    .newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
+        font-size: 1em;
+    }
+
+    .newStudents .newStudentsRow .newStudentCard:nth-child(3):hover>.day-text {
+        font-size: 0.5em;
+
+    }
+
+    .newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+        font-size: 0.5em;
+    }
+
+    .arabic .time-text {
+        font-size: 0.8em;
+    }
+
+    .arabic .day-text {
+        font-size: 0.6em;
+        margin: 0 15px 0 0;
+        font-weight: 500;
+    }
+
+
+
+    .arabic .newStudents .newStudentsRow .newStudentCard:hover>.moon,
+    .arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
+        font-size: 1.2em;
+    }
+
+    .arabic .newStudents .newStudentsRow .newStudentCard:hover>.time-text,
+    .arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.time-text {
+        font-size: 0.7em;
+    }
+
+
+    .newStudents .newStudentsRow .newStudentCard:hover>.day-text,
+    .newStudents .newStudentsRow2 .newStudentCard:hover>.day-text {
+        font-size: 0.5em;
+    }
+
+    .arabic .newStudents .newStudentsRow .newStudentCard:nth-child(3):hover>.day-text {
+        font-size: 0.5em;
+
+    }
+
+    .arabic .newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+        font-size: 0.5em;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .services .rightContainer {
+        flex: 1;
+        order: 2;
+        height: fit-content;
+        padding: 15px;
+        line-height: 1px;
+    }
+
+    .services .rightContainer .collegesBoxTitle {
+        /* overflow: auto; */
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 10px;
+
+    }
+
+    .services .rightContainer .collegesBoxTitle .collegesBox {
+        flex-direction: row;
+
+    }
+
+    .services .rightContainer .collegesBoxTitle>h2 {
+        font-size: 1em;
+        text-align: start;
+    }
+
+    .collegesBoxTitle:hover .college {
+        filter: blur(0px);
+
+    }
+
+    .rightContainer .college .img {
+        font-size: 1.4em;
+        height: 40px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .services .leftContainer {
+        order: 1;
+        height: 130px;
+        padding: 15px;
+        line-height: 1px;
+
+    }
+
+    .services .leftContainer .collegesBoxTitle {
+        /* overflow: auto; */
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+    }
+
+    .services .leftContainer .collegesBoxTitle .collegesBox {
+        flex-direction: row;
+        line-height: 15px;
+
+    }
+
+
+    .services .leftContainer .collegesBoxTitle>h2 {
+        font-size: 1em;
+        /* text-align: center; */
+
+    }
+
+    .leftContainer .college {
+        max-width: 600px;
+        height: 90px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+
+    .leftContainer .college .img {
+        width: 50px;
+        height: 40px;
+        margin-left: 10px;
+        border-radius: 10px;
+        font-size: 1.4em;
+        margin-bottom: 1px;
+    }
+
+
+    .leftContainer .college .textBox {
+        display: flex;
+        margin-left: 5px;
+        justify-content: space-between;
+        width: 100%;
+        text-decoration: none;
+
+    }
+
+    .leftContainer .college .textContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .leftContainer .college .span {
+        display: none;
+    }
+
+
+    .leftContainer .college .h1 {
+        font-size: 0.8em;
+        font-weight: bold;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .leftContainer .college .p {
+        font-size: 0.65em;
+        font-weight: lighter;
+        margin: 0;
+        text-decoration: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .services.popup {
+        width: 70%;
+    }
+
+
+    .topContent img {
+        width: 40px;
+        height: 40px;
+        background: var(--bg);
+        border-radius: 13px;
+    }
+
+    .topContent .topText h3 {
+        font-size: 0.8em;
+    }
+
+    .topContent .topText p {
+
+        font-size: 0.6em;
+    }
+
+    .services.popup .closeButton {
+        font-size: 1.2em;
+    }
+
+    .bottomContent {
+        gap: 10px;
+    }
+
+    .bottomContent button {
+        width: 100%;
+        display: flex;
+
+
+    }
+
+    /* plus sign */
+    .bottomContent .sign {
+        width: 15%;
+        font-size: 15px;
+
+    }
+
+    .bottomContent .text {
+        position: absolute;
+        width: 80%;
+        opacity: 1;
+        font-size: 0.8em;
+        /* display: flex;
+        align-items: center; */
+    }
+
+    .bottomContent button:hover .sign {
+        width: 15%;
+        display: flex;
+        justify-self: flex-start;
+        /* background: blue; */
+        transition-duration: .3s;
+        padding-left: 0;
+        text-align: center;
+
+    }
+
+    /* hover effect button's text */
+    .bottomContent button:hover .text {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 10px;
+    }
+
+    /* button click effect*/
+    .bottomContent button:active {
+        transform: translate(2px, 10px);
+    }
+
+    .arabic .bottomContent .text {
+        width: 90%;
+    }
+
+    .arabic .bottomContent button:hover .text {
+        padding-right: 12px;
+
+
+
+    }
+}

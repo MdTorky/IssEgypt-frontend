@@ -1,0 +1,56 @@
+{
+  "selfImprovement": [
+    {
+      "id": 1,
+      "name": "AIESEC",
+      "link": "https://aiesec.my/",
+      "img": "https://drive.google.com/uc?export=view&id=1UIGjWNEWOIwSgOi8PheHtngVotBkDRsk"
+    },
+    {
+      "id": 2,
+      "name": "TED x UTM",
+      "link": "https://linktr.ee/tedxutm",
+      "img": "https://drive.google.com/uc?export=view&id=1p5iVDqOgX6fHWUdM2atR3RgNZTLqNop4"
+    },
+    {
+      "id": 3,
+      "name": "Toastmasters",
+      "link": " https://www.facebook.com/utmtmcpage",
+      "img": "https://drive.google.com/uc?export=view&id=1xv-JNX1pOSwhLL-gouwfEk-85JGouhi1"
+    }
+  ],
+  "academic": [
+    {
+      "id": 4,
+      "name": "Robocon",
+      "link": "https://linktr.ee/UTM_RBC",
+      "img": "https://drive.google.com/uc?export=view&id=1IedRb9V0SfTjO7A4TLPeMddcTiDBmwbs"
+    },
+    {
+      "id": 5,
+      "name": "Airost",
+      "link": "https://www.facebook.com/utmairost/?locale=ms_MY",
+      "img": "https://drive.google.com/uc?export=view&id=1qRcb3mbsmAJP6bc4vIX_pHko7fqf_rmR"
+    },
+    {
+      "id": 6,
+      "name": "Google Developer",
+      "link": "https://gdsc.community.dev/universiti-teknologi-malaysia/",
+      "img": "https://drive.google.com/uc?export=view&id=1lV82xEHD2cXuJE5q9y_8HU7XNOgShmIR"
+    }
+  ],
+  "hobby": [
+    {
+      "id": 7,
+      "name": "Photography Club",
+      "link": "https://beacons.ai/kfkutm",
+      "img": "https://drive.google.com/uc?export=view&id=1MmF1674Rj00SCfOqIRdWUJfvoLw8NPDL"
+    },
+    {
+      "id": 8,
+      "name": "Esports Club",
+      "link": "https://linktr.ee/ESPORTSOFUTM_2122",
+      "img": "https://drive.google.com/uc?export=view&id=1hLqNqVa672VI7lLsTvXvFBwJnX9NnNG6"
+    }
+  ]
+}

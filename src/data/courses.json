@@ -1,0 +1,25 @@
+{
+  "Programming": [
+    {
+      "id": 1,
+      "name": "Harvard CS50",
+      "nameArabic": "هارفارد CS50",
+      "creator": "Harvard",
+      "creatorArabic": "هارفارد",
+      "link": "https://pll.harvard.edu/course/cs50-introduction-computer-science",
+      "img": "https://pll.harvard.edu/sites/default/files/styles/16_9_medium/public/course/CS50x_pll.png?itok=PJhUTe4g"
+    }
+  ],
+
+  "AI": [
+    {
+      "id": 2,
+      "name": "Intro to Generative AI",
+      "nameArabic": "مقدمة إلى الذكاء الاصطناعي",
+      "creator": "Google",
+      "creatorArabic": "جوجل",
+      "link": "http://cloudskillsboost.google/course_templates/536",
+      "img": "https://qph.cf2.quoracdn.net/main-qimg-925b872f7bbcf62829f3bf44687dee78-pjlq"
+    }
+  ]
+}

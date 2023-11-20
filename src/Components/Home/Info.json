@@ -1,0 +1,56 @@
+[
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "text": "President",
+    "name": "PresidentName"
+  },
+  {
+    "imgSrc": "https://media.licdn.com/dms/image/D5635AQF0MIeuBcl5Mg/profile-framedphoto-shrink_200_200/0/1685270083622?e=1695877200&v=beta&t=GeibXGb0ja1Pu01sujqekGljcF_crKJa-EQFmag6rg0",
+    "logoSrc": "https://drive.google.com/uc?export=view&id=1APJFNAD_ORg28mWkfPMCMeDZR98HPCIi",
+    "text": "Academic",
+    "name": "AcademicName"
+  },
+  {
+    "imgSrc": "https://media.licdn.com/dms/image/D5635AQF0MIeuBcl5Mg/profile-framedphoto-shrink_200_200/0/1685270083622?e=1695877200&v=beta&t=GeibXGb0ja1Pu01sujqekGljcF_crKJa-EQFmag6rg0",
+    "logoSrc": "https://drive.google.com/uc?export=view&id=1XwQuhZL3rmRo3O9dCYhlVKmchuo9pgsT",
+    "text": "Social",
+    "name": "SocialName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "text": "Culture",
+    "name": "CultureName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "logoSrc": "https://drive.google.com/uc?export=view&id=1fwGuCx8Q0skK7GZBnIN0w0LSAEncrE5d",
+    "text": "Media",
+    "name": "MediaName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "logoSrc": "https://drive.google.com/uc?export=view&id=1xBxM8yXMiwNLnIfrxUrWRRJdfGniA4ed",
+    "text": "Sport",
+    "name": "SportName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "text": "HR",
+    "name": "HRName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "text": "Logistics",
+    "name": "LogisticsName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "text": "Women",
+    "name": "WomenName"
+  },
+  {
+    "imgSrc": "https://drive.google.com/uc?export=view&id=1Vfiu3DK-3RM1f809nN3diCp3JF4PL5Ou",
+    "text": "PublicReleation",
+    "name": "PublicReleationName"
+  }
+]

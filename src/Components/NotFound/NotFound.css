@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+/* .notFound {
+    background: url('../../images/bg2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.notFound {
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-right: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.arabic .notFound {
+    margin-right: 0;
+    margin-left: 100px;
+
+}
+
+.TopFound {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 20px;
+
+}
+
+.TopFound h2 {
+    margin: 0;
+    font-size: 15em;
+    font-weight: 800;
+
+}
+
+.TopFound img {
+    width: 45%;
+}
+
+
+.BottomFound {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.BottomFound h2 {
+    margin: 0;
+    font-size: 4em;
+}
+
+.BottomFound>p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.arabic .BottomFound h2 {
+    margin: 0;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.arabic .BottomFound>p {
+    margin: 0;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.BottomFound .freePal {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.BottomFound .freePal p {
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+}
+
+.arabic .BottomFound .freePal p {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+
+.BottomFound .freePal .flag {
+    width: 70px;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.BottomFound .link {
+    padding: 10px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    align-self: center;
+    margin: auto;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s all;
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.arabic .BottomFound .link {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    background: linear-gradient(to left, var(--bg), var(--bg2));
+
+}
+
+.BottomFound .link:hover {
+    transform: scale(1.2);
+    letter-spacing: 1.2px;
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .notFound {
+        margin: 0;
+        margin-bottom: 35%;
+    }
+
+    .arabic .notFound {
+        margin: 0;
+        margin-bottom: 35%;
+        margin-top: 15%;
+
+    }
+
+    .TopFound h2 {
+        font-size: 8em;
+    }
+
+    .TopFound img {
+        width: 35%;
+    }
+
+    .BottomFound h2 {
+        margin: 0;
+        font-size: 2.1em;
+    }
+
+    .BottomFound>p {
+        font-size: 0.8em;
+    }
+
+    .arabic .BottomFound>p {
+        font-size: 0.6em;
+    }
+
+    .BottomFound .freePal p {
+        font-size: 1.2em;
+    }
+
+    .BottomFound .freePal .flag {
+        width: 50px;
+    }
+
+}

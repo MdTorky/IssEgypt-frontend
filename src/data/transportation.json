@@ -1,0 +1,41 @@
+{
+  "UTM": [
+    {
+      "id": 1,
+      "linkAndroid": "",
+      "linkIOS": "",
+      "link": "https://drive.google.com/file/d/1My5w8eJSRniKvVVH6ob4MdKbIYhBd6U6/view?usp=drive_link",
+      "img": "https://drive.google.com/uc?export=view&id=1HO0X0jHyYWgbucxtVPYiVRFu2YVFHbIV"
+    }
+  ],
+  "Apps": [
+    {
+      "id": 1,
+      "linkAndroid": "https://play.google.com/store/apps/details?id=sinet.startup.inDriver&hl=en&gl=US",
+      "linkIOS": "https://apps.apple.com/us/app/indrive-save-on-city-rides/id780125801",
+      "link": "",
+      "img": "https://drive.google.com/uc?export=view&id=1IuP8inUUXB8XgB5BawfuSaDlZEekKXSu"
+    },
+    {
+      "id": 2,
+      "linkAndroid": "https://play.google.com/store/apps/details?id=com.manja.hugoapp&pcampaignid=web_share",
+      "linkIOS": "https://apps.apple.com/my/app/lugo-food-news-transit/id1148798974",
+      "link": "",
+      "img": "https://drive.google.com/uc?export=view&id=1IoFxUK5CoaihsrgS-KxZ73wiaZRpLTqD"
+    },
+    {
+      "id": 3,
+      "linkAndroid": "https://play.google.com/store/apps/details?id=com.manja.kumpool&hl=en&gl=US",
+      "linkIOS": "https://apps.apple.com/my/app/kumpool-ride-pooling-app/id1573878261",
+      "link": "",
+      "img": "https://drive.google.com/uc?export=view&id=1h8vWcIM624dZN0qdGfGDEQkOgiebt34k"
+    },
+    {
+      "id": 4,
+      "linkAndroid": "https://play.google.com/store/apps/details?id=in.redbus.android&hl=en&gl=US",
+      "linkIOS": "https://apps.apple.com/my/app/redbus-bus-booking-app/id733712604",
+      "link": "",
+      "img": "https://drive.google.com/uc?export=view&id=17MLsZvg3CTp56aLVOJPkrym_ZmWkUO8f"
+    }
+  ]
+}

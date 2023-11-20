@@ -1,0 +1,455 @@
+/* .sideMenu .title {
+    font-size: 12px;
+    color: var(--bg);
+    background: var(--hover);
+    width: 100%;
+    padding: 10px 0 0 10px;
+    border-top-left-radius: 10px;
+    align-items: flex-start;
+    line-height: 10px;
+
+}
+
+
+.sideMenu.arabic .title {
+    padding: 10px 10px 0 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0;
+    font-family: 'Cairo', sans-serif;
+
+
+}
+
+
+.sideMenu .title h3 {
+    color: rgba(255, 255, 255, 0.543);
+    font-size: 0.9em;
+
+}
+
+
+.sideMenu .people {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.254);
+    background: inherit;
+}
+
+
+
+.sideMenu .people:last-child {
+    border-bottom: none;
+    border-radius: 10px;
+}
+
+
+
+.peopleCard {
+    display: flex;
+}
+
+.peopleImg {
+    border-top: 3px solid red;
+    border-left: 5px solid white;
+    border-bottom: 3px solid black;
+    border-radius: 50px;
+    height: 70px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.arabic .peopleImg {
+    border-top: 3px solid red;
+    border-left: none;
+    border-right: 5px solid white;
+    border-bottom: 3px solid black;
+}
+
+.peopleImg img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+
+
+
+.peopleText {
+    line-height: 3px;
+    width: 100%;
+    font-family: 'Rubik', sans-serif;
+    padding: 0 20px;
+}
+
+.peopleText .name {
+    font-size: 22px;
+    font-weight: 500;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.arabic .peopleText .name {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-weight: 400;
+}
+
+.peopleText .role {
+    font-size: 15px;
+    font-weight: 100;
+    color: gray;
+} */
+
+
+
+.sideMenu {
+    background: var(--bg2);
+    margin-top: 130px;
+    margin-bottom: 10%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.sideMenu.hidden {
+    display: none;
+}
+
+.sideMenu.arabic {
+    margin-left: 10px;
+    width: 400px;
+}
+
+.sideMenu .liveBox {
+    padding: 10px;
+    background: var(--bg);
+    border-radius: 20px;
+}
+
+.sideMenu .liveBox .title {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    width: 100%;
+    padding: 10px 0 0 10px;
+    border-top-left-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.arabic .sideMenu .liveBox .title {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+.sideMenu .liveBox .title h3 {
+    color: var(--hover);
+    opacity: 0.7;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.sideMenu .liveBox .title h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+
+.sideMenu .people {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sideMenu:hover .people {
+    filter: blur(2px)
+}
+
+.sideMenu .people:hover {
+    filter: blur(0px)
+}
+
+
+.peopleCard {
+    display: flex;
+    cursor: pointer;
+    /* animation: fadeInRight 2s ease 0s 1 alternate forwards; */
+    transition: transform 0.5s ease, opacity 0.5s ease !important;
+    /* opacity: 0; */
+}
+
+.peopleCard:hover {
+    transform: scale(1.1);
+    /* opacity: 1; */
+
+}
+
+.peopleImg {
+    border-top: 3px solid red;
+    border-left: 5px solid white;
+    border-bottom: 3px solid black;
+    border-radius: 50px;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+/* .arabic .peopleCard {
+    animation: fadeInLeft 2s ease 0s 1 normal forwards;
+    animation-delay: 0.2s;
+} */
+
+.arabic .peopleImg {
+    border-top: 3px solid red;
+    border-left: none;
+    border-right: 5px solid white;
+    border-bottom: 3px solid black;
+}
+
+.peopleImg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.peopleText {
+    line-height: 3px;
+    width: 80%;
+    padding: 0 20px;
+}
+
+.peopleText .name {
+    font-size: 1.1em;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+}
+
+.arabic .peopleText .name {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-weight: 700;
+}
+
+.peopleText .role {
+    font-size: 15px;
+    font-weight: 100;
+    color: gray;
+}
+
+
+
+
+
+.sideMenu .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+    background: var(--bg);
+    width: 12%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 15px;
+    z-index: 9999;
+    display: none;
+    border-radius: 30px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: fit-content;
+}
+
+
+/* .arabic .sideMenu .popup {
+    direction: ltr
+} */
+
+.sideMenu .popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.sideMenu .popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+@keyframes popup-open {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes popup-close {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        display: none;
+    }
+}
+
+.sideMenu .popup.show {
+    display: block;
+}
+
+.sideMenu .popup-content {
+    display: flex;
+    height: 100%;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.arabic .sideMenu .popup-content {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+.sideMenu .popup .topPart {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: end;
+
+}
+
+.arabic .sideMenu .popup .topPart {
+    direction: ltr;
+}
+
+
+
+.sideMenu .popup .middlePart {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.sideMenu .popup .middlePart img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-top: 7px solid red;
+    border-left: 7px solid white;
+    border-bottom: 7px solid black;
+    transition: all 0.5s;
+}
+
+/* .sideMenu .popup .middlePart img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: none;
+} */
+
+.arabic .sideMenu .popup .middlePart img {
+    border-right: 7px solid white;
+    border-left: none;
+}
+
+.sideMenu .bottomPart {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    padding: 10px;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.sideMenu .bottomPart h3 {
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.sideMenu .bottomPart p {
+    margin: 0;
+    font-size: 0.8em;
+    opacity: 0.6;
+    text-align: center;
+}
+
+.arabic .sideMenu .bottomPart p {
+    line-height: 15px;
+}
+
+.sideMenu .links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+
+
+
+@media screen and (max-width: 1800px) {
+    .sideMenu {
+        width: 250px;
+    }
+
+    .sideMenu.arabic {
+        width: 250px;
+    }
+
+    .sideMenu .liveBox .title h3 {
+        font-size: 0.7em;
+    }
+
+    .sideMenu .liveBox .title h1 {
+        font-size: 1.5em;
+    }
+
+    .peopleText {
+        white-space: nowrap;
+    }
+
+    .peopleText .name {
+        font-size: 0.9em;
+    }
+
+    .peopleText .role {
+        font-size: 0.8em;
+    }
+
+
+    .sideMenu .popup {
+        width: 20%;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .sideMenu {
+        display: none;
+    }
+}

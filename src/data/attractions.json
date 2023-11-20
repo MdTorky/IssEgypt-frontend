@@ -1,0 +1,163 @@
+{
+  "groceries": [
+    {
+      "id": 1,
+      "name": "Econsave",
+      "location": "https://maps.app.goo.gl/1YZjgiZYB9PWGRq6A",
+      "bus": "T31(Pulai Indah)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1fDKM9WIabYSaUs-Gm5aKfH0U028CudaD",
+      "img": "https://drive.google.com/uc?export=view&id=19aiZhxdbY_nU3dj8ag0U4uZCB6mTa_89"
+    },
+    {
+      "id": 2,
+      "name": "Aeon",
+      "location": "https://maps.app.goo.gl/dijKAmuSRTtiWJCJ6",
+      "bus": "P211(Taman Universiti)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1v55If_oK_CgKucrVlC41kT3nmJqLeVcW"
+    },
+    {
+      "id": 3,
+      "name": "Eco",
+      "location": "https://maps.app.goo.gl/QrACecUMUkGmYuMf7",
+      "bus": "P211(Taman Universiti)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1qU55ljMb7utzXubF57x899YLGaNRV6Cp"
+    },
+    {
+      "id": 4,
+      "name": "U Mall",
+      "location": "https://maps.app.goo.gl/S5eawTWM5QJE4CPHA",
+      "bus": "T31(Pulai Indah/Taman U)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1fDKM9WIabYSaUs-Gm5aKfH0U028CudaD",
+      "img": "https://drive.google.com/uc?export=view&id=1c_88SMhDELzU_Mk3wUOa_WveKCe_6Hid"
+    },
+    {
+      "id": 5,
+      "name": "Premium Outlet",
+      "location": "https://maps.app.goo.gl/qqRy3Yw7Jo1YV2iJ9",
+      "bus": "T31[Opp MBIP] -> JPO1",
+      "busImg": "https://drive.google.com/uc?export=view&id=1fDKM9WIabYSaUs-Gm5aKfH0U028CudaD",
+      "img": "https://drive.google.com/uc?export=view&id=1At8aTq1YEVM64VUqkXOTgcS7f7_MFNpo"
+    }
+  ],
+  "attractions": [
+    {
+      "id": 1,
+      "name": "Paradigm",
+      "location": "https://maps.app.goo.gl/NCzk7AGAkvjqgssc6",
+      "bus": "P211(Larkin Sentral)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1t7tfc9IsWG-ihGMZHxxTwaovq0IbZDzL"
+    },
+    {
+      "id": 2,
+      "name": "Mid Valley",
+      "location": "https://maps.app.goo.gl/DqFdkuYbMVA9Cw3i6",
+      "bus": "P211[Larkin Sentral] -> P103(PPR Stulang)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1hCArN1SFGwP0fMyRvh98kH-sOowD4xEy"
+    },
+    {
+      "id": 3,
+      "name": "Legoland",
+      "location": "https://maps.app.goo.gl/rvX47jZwZHU6VJbU7",
+      "bus": "T211[Larkin Sentral] -> T41",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1i0HmxCyoNaOjdHExM4lTcpLP1F2-DGw7"
+    },
+    {
+      "id": 4,
+      "name": "Johor Zoo",
+      "location": "https://maps.app.goo.gl/nfPqPwcSZoWBJycS8",
+      "bus": "T211[Larkin Sentral] -> T30/T31/T32/T33",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1wmJo1PmAUjnmUOmNm8nEtwRXLWrYPK89"
+    },
+    {
+      "id": 5,
+      "name": "Desaru Beach",
+      "location": "https://maps.app.goo.gl/EkXgP5qoEqc75mcM9",
+      "bus": "",
+      "img": "https://drive.google.com/uc?export=view&id=1mPKw3TnjK1Rolc2XU0JrTRNSFEOSrcHO"
+    },
+    {
+      "id": 6,
+      "name": "Danga Bay",
+      "location": "https://maps.app.goo.gl/A6fbHxAPefMBRren9",
+      "bus": "T211[Taman U] -> T31(JB Sentral)",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=16wj69dr8_0oPh2QFeQ98KzFq8j555cnd"
+    },
+    {
+      "id": 7,
+      "name": "JB City Square",
+      "location": "https://maps.app.goo.gl/Rn9PoqnGMRJFdP5G9",
+      "bus": "T31[JB Sentral]",
+      "busImg": "https://drive.google.com/uc?export=view&id=1fDKM9WIabYSaUs-Gm5aKfH0U028CudaD",
+      "img": "https://drive.google.com/uc?export=view&id=1JrVHd4qpGU-2U6JRaZOV80K09aApqv29"
+    },
+    {
+      "id": 8,
+      "name": "Puteri Harbour",
+      "location": "https://maps.app.goo.gl/mnHTyChYveTtoRYt5",
+      "bus": "T211[Larkin Sentral] -> T41",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1xiKMVYVpeNfZExbBBt82kwRpcioY8tmh"
+    }
+  ],
+  "mosques": [
+    {
+      "id": 1,
+      "name": "Sultan Abu Bakar",
+      "location": "https://maps.app.goo.gl/MqE7fzU4DbhsYm9y8",
+      "bus": "T211[Opp Kampung Pasir] -> T30/T31/T32/T33",
+      "busImg": "https://drive.google.com/uc?export=view&id=1x_ITIhSVrvRYw0h3OX-ndudalDEvTfXc",
+      "img": "https://drive.google.com/uc?export=view&id=1nns3BZIO4d0mVZhRcNZotus5KFrzZnzt"
+    },
+    {
+      "id": 2,
+      "name": "Sultan Iskandar",
+      "location": "https://maps.app.goo.gl/KWxuwRNRpnQH1CZy6",
+      "bus": "T31[JB Sentral] -> T11[Sekolah Agama Taman Daya]",
+      "busImg": "https://drive.google.com/uc?export=view&id=1fDKM9WIabYSaUs-Gm5aKfH0U028CudaD",
+      "img": "https://drive.google.com/uc?export=view&id=1Dq1D1icCyO6Z8zmgOZop-yjE1yXTns-K"
+    },
+    {
+      "id": 3,
+      "name": "Tan Sri Ainuddin Wahid",
+      "location": "https://maps.app.goo.gl/KWxuwRNRpnQH1CZy6",
+      "img": "https://drive.google.com/uc?export=view&id=1y_5unQLCfDf4Kpm1WkqjgL_LQbLaxxvo"
+    },
+    {
+      "id": 4,
+      "name": "Masjid Taman Sri Pulai",
+      "location": "https://maps.app.goo.gl/kYdk16LCEfWDsVAj7",
+      "img": "https://drive.google.com/uc?export=view&id=1Aogm9x1GXDhLUfQKC2bbx5DbCpeB6gIO"
+    }
+  ],
+  "utm": [
+    {
+      "id": 1,
+      "name": "UTM International",
+      "location": "https://maps.app.goo.gl/6RjyRNvt5ZK5ABor6",
+      "bus": "UTM BUS A, B, E",
+      "busImg": "https://drive.google.com/uc?export=view&id=1gON3ailZLeYE8D2LPL_T67FoQi0DyG4r",
+      "img": "https://drive.google.com/uc?export=view&id=175_e6WBf738l6ZkY58uEinSZ1K22it6M"
+    },
+    {
+      "id": 2,
+      "name": "F54 (SRAD)",
+      "location": "https://maps.app.goo.gl/bx3sTLgJtDM4abgM6",
+      "busImg": "https://drive.google.com/uc?export=view&id=1gON3ailZLeYE8D2LPL_T67FoQi0DyG4r",
+      "img": "https://drive.google.com/uc?export=view&id=1DVzSIt3dCGZ5J0DG5OJDosITtEWTafSQ"
+    },
+    {
+      "id": 3,
+      "name": "CIMB Bank",
+      "location": "https://maps.app.goo.gl/veVsE1kQTsyTA9dB7",
+      "busImg": "https://drive.google.com/uc?export=view&id=1gON3ailZLeYE8D2LPL_T67FoQi0DyG4r",
+      "img": "https://drive.google.com/uc?export=view&id=1iiQvZgzRqcpmJ4RbUou-0XA1djg3itDx"
+    }
+  ]
+}

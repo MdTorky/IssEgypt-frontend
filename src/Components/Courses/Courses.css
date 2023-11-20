@@ -1,0 +1,345 @@
+.courses {
+    margin-bottom: 10%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-right: 130px;
+}
+
+.arabic .courses {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    margin: -15px 0 10% 190px;
+
+}
+
+.courses .sectionBox {
+    width: fit-content;
+    display: flex;
+    /* background: var(--bg2); */
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto;
+    gap: 50px;
+    border-radius: 20px;
+}
+
+.courses .title {
+    text-align: center;
+    font-size: 2em;
+}
+
+
+/* .section .overlay {
+    position: absolute;
+    font-size: 30em;
+    top: 10%;
+    left: 70%;
+    z-index: -1;
+    opacity: 0.4;
+    transform: rotate(15deg);
+    color: #a0ced9
+} */
+
+.courses>map {
+    width: fit-content;
+    box-sizing: border-box;
+    text-align: center;
+    margin: auto;
+    /* background: red; */
+}
+
+
+.courses .outerBox {
+    background: var(--bg2);
+    padding: 20px;
+    border-radius: 20px;
+    height: max-content;
+}
+
+.courses .outerBox .innerBox {
+    background: var(--bg);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+/* .arabic .courses .outerBox .innerBox {
+    direction: ltr;
+} */
+
+
+.cards {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cards .card {
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.7s ease;
+    /* animation: fadeInUp 1s ease 0s 1 normal forwards;
+    opacity: 0; */
+
+}
+
+
+.cards .card:hover {
+    box-shadow: var(--hover2) 0px 1px 4px, var(--hover) 0px 0px 0px 3px;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* .cards .card:hover img {
+    transform: scale(2);
+    z-index: 8;
+} */
+
+
+.cards .card .cardsBottomContent {
+    padding: 15px 15px 15px 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card .cardsBottomContent p {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.cards .card .cardsBottomContent .coursesTitle {
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+}
+
+.cards .card .cardsBottomContent .coursesTitle .creator {
+    font-size: 1em;
+    font-weight: 500;
+    opacity: 0.4;
+}
+
+.cards .card .cardsBottomContent p span {
+    color: var(--theme);
+    font-size: 0.7em;
+    margin-top: 5px;
+}
+
+.arabic .cards .card .cardsBottomContent p span {
+    order: 1;
+}
+
+
+.cards .card .cardsBottomContent p span::after {
+    content: "Females";
+    display: none;
+    transition: 0.5s all ease;
+}
+
+
+
+.cards .card .cardsBottomContent p span:hover::after {
+    display: inline;
+}
+
+.cards .card .img img {
+    width: 300px;
+    height: 150px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    transition: 0.7s ease;
+
+}
+
+
+
+.cards .card .cardsBottomContent .icons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-size: 1.1em;
+    align-items: center;
+
+}
+
+
+.icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    font-size: 0.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    cursor: pointer;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: none;
+    border-radius: 30px;
+    color: var(--hover);
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+
+}
+
+.tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
+}
+
+.arabic .icon .tooltip {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+.tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transform: translateY(3px);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    color: var(--bg);
+
+}
+
+.icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.icon:hover span,
+.icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+.icon:hover .tooltip,
+.icon:hover .tooltip::before {
+    background: var(--bg2);
+    color: var(--hover);
+}
+
+
+/* button click effect*/
+.icons button:active {
+    transform: translate(2px, 10px);
+}
+
+
+
+.arabic .icons button:hover {
+    /* width: 200px; */
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.arabic .icons button:hover .sign {
+    display: inline;
+    transition-duration: .3s;
+    text-align: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:700px) {
+
+    .courses {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 90%;
+        /* justify-content: center; */
+        align-items: center;
+        margin: 0 auto 50% auto;
+        /* Center vertically */
+        /* Center horizontally */
+    }
+
+    .arabic .courses {
+        font-family: 'Noto Kufi Arabic', sans-serif;
+        margin: 0;
+        margin: 40px auto 50% auto;
+
+
+
+    }
+
+    .courses .sectionBox {
+        width: fit-content;
+        flex-direction: column;
+        padding: 15px;
+        gap: 50px;
+        /* width: 100%; */
+    }
+
+    /* .arabic .section .title {
+        font-size: 0.1em
+    } */
+
+
+    .courses .outerBox {
+        padding: 15px;
+    }
+
+    .courses .outerBox .innerBox {
+        /* background: var(--bg2); */
+        padding: 5px;
+    }
+
+
+
+    .cards .card .cardsBottomContent {
+        justify-content: space-evenly;
+    }
+
+    .cards .card .img img {
+        width: 100%;
+        height: 120px;
+    }
+
+    .courses .popup {
+        width: 70%;
+    }
+}

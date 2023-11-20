@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+/* font-family: 'Poppins', sans-serif; */
+
+
+/* Arabic Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+
+/* font-family: 'Noto Kufi Arabic', sans-serif; */
+
+
+:root {
+  /* --theme: #F05454; */
+  --theme: #DA0037;
+  /* --hover: #30475E; */
+  --hover: #252525;
+  --bg: #E8F9FD;
+  --test: #122D4B;
+  --bg2: rgb(255, 255, 255);
+  --hover2: #353535;
+
+}
+
+
+
+*::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 20px
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 20px
+}
+
+*::-webkit-scrollbar-thumb {
+  /* background: linear-gradient(180deg, red, red, white, white, yellow, white, white, black, black); */
+  background: var(--theme);
+  border-radius: 10px
+}
+
+
+
+.App {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  /* background-size: 50%; */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Rubik', sans-serif;
+}
+
+
+.appContainer {
+  display: flex;
+}
+
+.appContainer .routes {
+  /* margin: auto 650px; */
+  width: 100%;
+  margin: 130px 0 0 150px;
+  /* background: red; */
+}
+
+.appContainer .routes.arabic {
+  /* margin: auto 650px; */
+  width: 100%;
+  margin: 130px 150px 0 0;
+  /* background: red; */
+}
+
+
+
+
+
+
+
+.logo {
+  align-items: center;
+  display: flex;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 999;
+  background: var(--bg);
+  /* background-size: auto;
+  background-repeat: no-repeat;
+  background-size: 50%; */
+}
+
+.logo img {
+  margin: auto;
+  width: 100px;
+}
+
+.arabic {
+  direction: rtl !important;
+}
+
+.english {
+  direction: ltr !important;
+}
+
+
+body.arabic {
+  direction: rtl;
+}
+
+body.english {
+  direction: ltr;
+}
+
+
+
+
+
+.reveal {
+  position: relative;
+  opacity: 0;
+  transition: 1s all ease;
+  transform: translateY(-150px);
+}
+
+.reveal2 {
+  transform: translateX(250px);
+}
+
+.arabic .reveal2 {
+  transform: translateX(-250%);
+}
+
+.reveal3 {
+  transform: translateY(-250px);
+}
+
+.reveal.active {
+  /* transform: translateY(0); */
+  transform: translateX(0);
+  transform: translateY(0);
+
+  opacity: 1;
+}
+
+
+@keyframes horizontalScaleAnim {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media screen and (max-width:700px) {
+
+
+  .appContainer .routes {
+    margin: 190px auto 0 auto;
+  }
+
+  .appContainer .routes.arabic {
+    /* margin: auto 650px; */
+    width: 100%;
+    margin: 130px 0 0 0;
+    /* background: red; */
+  }
+}
