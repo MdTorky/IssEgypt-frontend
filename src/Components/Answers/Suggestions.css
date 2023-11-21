@@ -1,18 +1,21 @@
 .Suggestions {
     margin-bottom: 30%;
+    margin-right: 50px;
+
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 .arabic .Suggestions {
     font-family: 'Noto Kufi Arabic', sans-serif;
-
+    margin-right: 0px;
+    margin-left: 50px;
 }
 
 
 .suggestionTable {
     background: var(--bg2);
-    width: fit-content;
+    /* width: fit-content; */
     padding: 10px;
     border-radius: 20px;
     display: flex;
@@ -77,7 +80,13 @@
 @media screen and (max-width:700px) {
     .Suggestions {
         margin-bottom: 50%;
-        padding: 10px
+        padding: 10px;
+        margin-right: 0;
+    }
+
+    .arabic .Suggestions {
+        font-family: 'Noto Kufi Arabic', sans-serif;
+        margin-left: 0;
     }
 
     .Suggestions h1 {
@@ -87,5 +96,7 @@
 
     .suggestionTable {
         margin: auto;
+        width: fit-content;
+
     }
 }
