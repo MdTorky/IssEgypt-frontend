@@ -58,7 +58,7 @@ const Suggestions = ({ language, languageData }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://iss-egypt-backend.vercel.app/api/forms'); // Update with your API domain
+                const response = await fetch('https://iss-egypt-backend.vercel.app/api/forms');
                 if (!response.ok) {
                     console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
                     setError('Failed to fetch data');
