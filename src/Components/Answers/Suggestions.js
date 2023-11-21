@@ -60,6 +60,7 @@ const Suggestions = ({ language, languageData }) => {
             try {
                 const response = await fetch('/api/forms');
                 const data = await response.json();
+                console.log(data); // Log the data to the console
                 if (response.ok) {
                     dispatch({ type: 'SET_FORM', payload: data });
                 } else {
