@@ -17,26 +17,26 @@ const Suggestions = ({ language, languageData }) => {
     const [error, setError] = useState('')
 
 
-    useEffect(() => {
-        const fetchSuggestions = async () => {
-            try {
-                const response = await fetch('/api/forms');
+    // useEffect(() => {
+    //     const fetchSuggestions = async () => {
+    //         try {
+    //             const response = await fetch('/api/forms');
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
+    //             if (!response.ok) {
+    //                 throw new Error(`HTTP error! Status: ${response.status}`);
+    //             }
 
-                const json = await response.json();
-                dispatch({ type: 'SET_FORM', payload: json });
-                setError(''); // Clear the error when the request is successful
-            } catch (error) {
-                console.error('Error fetching suggestions:', error);
-                setError('An error occurred while fetching suggestions.');
-            }
-        };
+    //             const json = await response.json();
+    //             dispatch({ type: 'SET_FORM', payload: json });
+    //             setError(''); // Clear the error when the request is successful
+    //         } catch (error) {
+    //             console.error('Error fetching suggestions:', error);
+    //             setError('An error occurred while fetching suggestions.');
+    //         }
+    //     };
 
-        fetchSuggestions();
-    }, [dispatch]);
+    //     fetchSuggestions();
+    // }, [dispatch]);
 
 
     const handleDelete = async ({ suggestion }) => {
@@ -54,6 +54,24 @@ const Suggestions = ({ language, languageData }) => {
     const isEmpty = (obj) => {
         return Object.keys(obj).length === 0;
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/forms');
+                const data = await response.json();
+                if (response.ok) {
+                    dispatch({ type: 'SET_FORM', payload: data });
+                } else {
+                    setError('Failed to fetch data');
+                }
+            } catch (error) {
+                setError('An error occurred while fetching data');
+            }
+        };
+
+        fetchData();
+    }, []);
     return (
         <div className="Suggestions">
             <h1>ISS Egypt Website Suggestions</h1>
