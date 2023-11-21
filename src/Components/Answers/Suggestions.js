@@ -40,15 +40,22 @@ const Suggestions = ({ language, languageData, api }) => {
 
 
     const handleDelete = async ({ suggestion }) => {
-        const response = await fetch('/api/forms/' + suggestion._id, {
-            method: 'DELETE',
-        })
-        const json = await response.json();
-        if (response.ok) {
-            dispatch({ type: 'DELETE_FORM', payload: json })
-        }
-    }
+        try {
+            const response = await fetch(`${api}/api/forms/${suggestion._id}`, {
+                method: 'DELETE',
+            });
 
+            if (!response.ok) {
+                console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+
+            const json = await response.json();
+            dispatch({ type: 'DELETE_FORM', payload: json });
+        } catch (error) {
+            console.error('An error occurred while deleting data:', error);
+        }
+    };
 
     const isEmpty = (obj) => {
         return Object.keys(obj).length === 0;
