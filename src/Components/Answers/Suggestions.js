@@ -58,19 +58,21 @@ const Suggestions = ({ language, languageData }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/forms');
-                const data = await response.json();
-                console.log(data); // Log the data to the console
-                if (response.ok) {
-                    dispatch({ type: 'SET_FORM', payload: data });
-                } else {
+                const response = await fetch('http://iss-egypt-backend.vercel.app/api/forms'); // Update with your API domain
+                if (!response.ok) {
+                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
                     setError('Failed to fetch data');
+                    return;
                 }
+
+                const data = await response.json();
+                console.log(data);
+                dispatch({ type: 'SET_FORM', payload: data });
             } catch (error) {
+                console.error('An error occurred while fetching data:', error);
                 setError('An error occurred while fetching data');
             }
         };
-
         fetchData();
     }, []);
     return (
