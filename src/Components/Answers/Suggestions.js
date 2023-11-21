@@ -41,8 +41,7 @@ const Suggestions = ({ language, languageData }) => {
 
     const handleDelete = async ({ suggestion }) => {
         const response = await fetch('/api/forms/' + suggestion._id, {
-            method: 'DELETE'
-
+            method: 'DELETE',
         })
         const json = await response.json();
         if (response.ok) {
@@ -58,12 +57,7 @@ const Suggestions = ({ language, languageData }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/forms', {
-                    "headers": {
-                        "Authorization": "Bearer prj_pBIlzz13DrnODr6V5fvBWed356kE"
-                    },
-                    "method": "get"
-                });
+                const response = await fetch('/api/forms');
                 if (!response.ok) {
                     console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
                     setError('Failed to fetch data');
