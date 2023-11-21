@@ -9,16 +9,18 @@ import { FormsContextProvider } from './context/formContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
   //   <App />
-  // </React.StrictMode>
-  <FormsContextProvider>
-    <DarkModeProvider> {/* Wrap your app with DarkModeProvider */}
-      <LanguageProvider>
-        <App />
-      </LanguageProvider>
-    </DarkModeProvider>
-  </FormsContextProvider>
+  <React.StrictMode>
+
+    <FormsContextProvider>
+      <DarkModeProvider> {/* Wrap your app with DarkModeProvider */}
+        <LanguageProvider>
+          <App />
+        </LanguageProvider>
+      </DarkModeProvider>
+    </FormsContextProvider>
+  </React.StrictMode>
+
   // document.getElementById('root')
 );
 
