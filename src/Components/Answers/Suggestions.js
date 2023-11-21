@@ -19,25 +19,24 @@ const Suggestions = ({ language, languageData }) => {
 
     useEffect(() => {
         const fetchSuggestions = async () => {
-            const response = await fetch('/api/forms')
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const json = await response.json()
+            try {
+                const response = await fetch('/api/forms');
 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
 
-            if (response.ok) {
-                dispatch({ type: 'SET_FORM', payload: json })
-                setError('');
-            }
-            else {
+                const json = await response.json();
+                dispatch({ type: 'SET_FORM', payload: json });
+                setError(''); // Clear the error when the request is successful
+            } catch (error) {
                 console.error('Error fetching suggestions:', error);
                 setError('An error occurred while fetching suggestions.');
             }
-        }
+        };
 
-        fetchSuggestions()
-    }, [dispatch])
+        fetchSuggestions();
+    }, [dispatch]);
 
 
     const handleDelete = async ({ suggestion }) => {
