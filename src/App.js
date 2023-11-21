@@ -91,7 +91,7 @@ function App() {
               <Route path="/openAccount" element={<BankAccount language={language} languageData={languageData} />} />
               <Route path="/clubs" element={<Clubs language={language} languageData={languageData} />} />
               <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
-              <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} />} />
+              <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}

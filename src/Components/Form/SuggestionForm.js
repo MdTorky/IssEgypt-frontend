@@ -9,7 +9,7 @@ import {
     faBuilding, faMapLocationDot, faCarSide, faFilePdf, faCreditCard, faGraduationCap, faFutbol
 } from '@fortawesome/free-solid-svg-icons';
 
-const SuggestionForm = ({ language, languageData }) => {
+const SuggestionForm = ({ language, languageData, api }) => {
     const { dispatch } = useFormsContext()
 
     const [name, setName] = useState('');
@@ -24,7 +24,7 @@ const SuggestionForm = ({ language, languageData }) => {
 
         const form = { name, email, matric, faculty, suggestion }
 
-        const response = await fetch('/api/forms', {
+        const response = await fetch(`${api}/api/forms`, {
             method: 'POST',
             body: JSON.stringify(form),
             headers: {
