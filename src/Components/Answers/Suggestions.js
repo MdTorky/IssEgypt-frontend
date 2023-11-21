@@ -20,6 +20,9 @@ const Suggestions = ({ language, languageData }) => {
     useEffect(() => {
         const fetchSuggestions = async () => {
             const response = await fetch('/api/forms')
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
             const json = await response.json()
 
 
@@ -28,7 +31,8 @@ const Suggestions = ({ language, languageData }) => {
                 setError('');
             }
             else {
-                setError("No")
+                console.error('Error fetching suggestions:', error);
+                setError('An error occurred while fetching suggestions.');
             }
         }
 
