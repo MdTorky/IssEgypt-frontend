@@ -8,7 +8,7 @@ import {
 import { useFormsContext } from '../../hooks/useFormContext'
 
 
-const Suggestions = ({ language, languageData }) => {
+const Suggestions = ({ language, languageData, api }) => {
 
     const { forms, dispatch } = useFormsContext()
 
@@ -60,6 +60,8 @@ const Suggestions = ({ language, languageData }) => {
                 const response = await fetch('/api/forms');
                 if (!response.ok) {
                     console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
+                    const errorText = await response.text();
+                    console.error('Response content:', errorText);
                     setError('Failed to fetch data');
                     return;
                 }

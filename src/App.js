@@ -20,6 +20,7 @@ import SuggestionForm from './Components/Form/SuggestionForm';
 import Suggestions from './Components/Answers/Suggestions';
 
 function App() {
+  const api = "https://iss-egypt-backend.vercel.app";
   // Initialize the language state with the default language (e.g., "en")
   const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
   const { darkMode, setDarkMode } = useDarkMode(); // Initialize to false
@@ -89,7 +90,7 @@ function App() {
               <Route path="/clubs" element={<Clubs language={language} languageData={languageData} />} />
               <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
               <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} />} />
-              <Route path="/suggestions" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} />} />
+              <Route path="/suggestions" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}
 
