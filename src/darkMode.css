@@ -393,7 +393,14 @@ body.dark-mode {
     background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
+.dark-mode .noAnn2 {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    color: var(--bg);
+}
 
+.dark-mode .arabic .noAnn2 {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
 
 
 
@@ -452,6 +459,27 @@ body.dark-mode {
     background: linear-gradient(to right, var(--hover), var(--hover2));
 
     color: var(--bg);
+}
+
+.dark-mode .icon.delete:hover {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+    color: var(--bg)
+}
+
+.dark-mode .icon.delete,
+.dark-mode .tooltip.delete {
+    background: var(--theme);
+    color: var(--bg)
+}
+
+
+.dark-mode .icon.delete:hover .tooltip.delete,
+.dark-mode .icon.delete:hover .tooltip.delete::before {
+    background: var(--theme);
+    color: var(--bg);
+    white-space: nowrap;
+
 }
 
 .dark-mode .arabic .cards .card {
@@ -721,6 +749,41 @@ body.dark-mode {
 .dark-mode .arabic .BottomFound .link {
     background: linear-gradient(to left, var(--hover), var(--hover2));
 }
+
+
+
+
+
+
+
+/* Suggestions */
+.dark-mode .suggestionTable {
+    background: var(--hover2);
+}
+
+.dark-mode .suggestionCard {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .bottomSuggestion {
+    background: var(--hover2);
+}
+
+
+
+
+
+
+
+/* Loader */
+
+.dark-mode .circle1 {
+    background: var(--bg);
+
+}
+
+
+
 
 @media screen and (max-width: 700px) {
     .dark-mode .navbar ul li.active icon::after {

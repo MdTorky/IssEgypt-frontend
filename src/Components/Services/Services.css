@@ -230,6 +230,20 @@ h2 {
     margin: auto;
     gap: 10px;
     font-size: 1em;
+
+}
+
+
+.noAnn2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 20px;
+
 }
 
 

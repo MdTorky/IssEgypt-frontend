@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.arabic .Suggestions {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
 
 .suggestionTable {
     background: var(--bg2);
@@ -63,6 +68,9 @@
     padding: 5px;
 
 }
+
+
+
 
 
 

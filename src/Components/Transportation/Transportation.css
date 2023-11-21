@@ -206,8 +206,6 @@
     transform: translateY(3px);
     background: linear-gradient(to right, var(--hover), var(--hover2));
     color: var(--bg);
-
-
 }
 
 .icon:hover .tooltip {
@@ -230,6 +228,28 @@
 .icon:hover .tooltip::before {
     background: var(--bg2);
     color: var(--hover);
+    white-space: nowrap;
+
+}
+
+/* Delete */
+
+.icon.delete:hover {
+    background: var(--bg);
+    color: var(--theme)
+}
+
+.icon.delete,
+.tooltip.delete {
+    background: var(--theme);
+    color: var(--bg)
+}
+
+
+.icon.delete:hover .tooltip.delete,
+.icon.delete:hover .tooltip.delete::before {
+    background: var(--theme);
+    color: var(--bg);
     white-space: nowrap;
 
 }

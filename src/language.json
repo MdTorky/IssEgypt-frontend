@@ -240,14 +240,9 @@
     "upcomingEventSubtitle2": "ISS EGYPT Website",
     "upcomingEventDescription2": "We are delighted to introduce you to the brand new ISS Egypt Website.",
 
-    "announcementTitle1": "ISS Egypt Elections",
-    "announcementTitle2": "",
-    "announcementTitle3": "",
-    "announcementTitle4": "",
-    "announcementTitle5": "",
-    "announcementTitle6": "",
-    "announcementTitle7": "",
-    "announcementTitle8": ""
+    "suggestions": "ISS Egypt Website Suggestions",
+    "noSuggestions": "No Suggestions",
+    "suggestionDelete": "Suggestion Deleted Successfully"
   },
   "ar": {
     "language": "عربي",
@@ -491,13 +486,8 @@
     "upcomingEventSubtitle2": "موقع الاتحاد المصري",
     "upcomingEventDescription2": "يسعدنا أن نقدم لكم الموقع الإلكتروني الجديد للاتحاد المصري.",
 
-    "announcementTitle1": "انتخابات الاتحاد المصري",
-    "announcementTitle2": "",
-    "announcementTitle3": "",
-    "announcementTitle4": "",
-    "announcementTitle5": "",
-    "announcementTitle6": "",
-    "announcementTitle7": "",
-    "announcementTitle8": ""
+    "suggestions": "اقتراحات موقع الاتحاد",
+    "noSuggestions": "لا توجد اقتراحات",
+    "suggestionDelete": "تم حذف الاقتراح بنجاح"
   }
 }

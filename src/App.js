@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Menu from './Components/Menu/Menu';
@@ -90,7 +92,7 @@ function App() {
               <Route path="/clubs" element={<Clubs language={language} languageData={languageData} />} />
               <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
               <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} />} />
-              <Route path="/suggestions" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}
 
@@ -100,6 +102,7 @@ function App() {
         </div>
         <Footer language={language} languageData={languageData} />
       </div>
+      <ToastContainer />
     </Router>
   );
 }
