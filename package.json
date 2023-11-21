@@ -1,5 +1,5 @@
 {
-  "proxy": "https://iss-egypt-backend.vercel.app",
+  "proxy": "iss-egypt-backend.vercel.app",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
