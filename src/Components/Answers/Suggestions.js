@@ -57,11 +57,9 @@ const Suggestions = ({ language, languageData, api }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/forms');
+                const response = await fetch(`${api}/api/forms`);
                 if (!response.ok) {
                     console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
-                    const errorText = await response.text();
-                    console.error('Response content:', errorText);
                     setError('Failed to fetch data');
                     return;
                 }
