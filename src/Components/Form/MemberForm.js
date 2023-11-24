@@ -99,9 +99,6 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
             const response = await fetch(`${api}/api/member`, {
                 method: 'POST',
                 body: formData,
-                // headers: {
-                //     'Content-Type': 'application/json'
-                // }
             });
 
             if (!response.ok) {
