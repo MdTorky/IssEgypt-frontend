@@ -96,7 +96,7 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
         }
 
         try {
-            const response = await fetch(`${api}/api/member`, {
+            const response = await fetch('https://iss-egypt-backend.vercel.app/api/member', {
                 method: 'POST',
                 body: formData,
             });
