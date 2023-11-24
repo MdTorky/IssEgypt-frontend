@@ -5,6 +5,7 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Menu from './Components/Menu/Menu';
 import Services from './Components/Services/Services';
+import Members from './Components/Members/Members';
 import NavBar from './Components/NavBar/NavBar';
 import Residences from './Components/Residences/Residences';
 import Footer from './Components/Footer/Footer';
@@ -20,9 +21,13 @@ import NotFound from './Components/NotFound/NotFound';
 import Courses from './Components/Courses/Courses';
 import SuggestionForm from './Components/Form/SuggestionForm';
 import Suggestions from './Components/Answers/Suggestions';
+import MemberForm from './Components/Form/MemberForm';
+import MemberDetails from './Components/Members/MemberDetails'
+import AllMembers from './Components/Admin/AllMembers'
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
+  // const api = "http://localhost:4000";
   // Initialize the language state with the default language (e.g., "en")
   const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
   const { darkMode, setDarkMode } = useDarkMode(); // Initialize to false
@@ -85,6 +90,10 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home language={language} languageData={languageData} />} />
               <Route path="/services" element={<Services language={language} languageData={languageData} />} />
+              <Route path="/members" element={<Members darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/memberForm/admin" element={<MemberForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/members/:memberId" element={<MemberDetails darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/residences" element={<Residences language={language} languageData={languageData} />} />
               <Route path="/attractions" element={<Attractions language={language} languageData={languageData} />} />
               <Route path="/transportation" element={<Transportation language={language} languageData={languageData} />} />
@@ -93,6 +102,7 @@ function App() {
               <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
               <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}
 

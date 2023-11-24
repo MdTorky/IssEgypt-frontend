@@ -66,6 +66,7 @@ const Footer = ({ language, languageData }) => {
             <div className="menu">
                 <li className="menu__item"><Link className="menu__link" to="/">{languageText.home}</Link></li>
                 <li className="menu__item"><Link className="menu__link" to="/services">{languageText.services}</Link></li>
+                <li className="menu__item"><Link className="menu__link" to="/members">{languageText.members}</Link></li>
             </div>
             <p>{languageText.rights}</p>
         </footer>

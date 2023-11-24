@@ -58,7 +58,11 @@ const Suggestions = ({ language, languageData, api, darkMode }) => {
             }
             if (response.ok) {
                 const json = await response.json();
-                dispatch({ type: 'DELETE_FORM', payload: json });
+                dispatch({
+                    type: 'DELETE_ITEM',
+                    collection: "forms",
+                    payload: json
+                });
                 {
                     toast.success(`${languageText.suggestionDelete}`, {
                         position: "bottom-center",
@@ -102,7 +106,11 @@ const Suggestions = ({ language, languageData, api, darkMode }) => {
 
                 const data = await response.json();
                 console.log(data);
-                dispatch({ type: 'SET_FORM', payload: data });
+                dispatch({
+                    type: 'SET_ITEM',
+                    collection: "forms",
+                    payload: data
+                });
                 setMessages(false)
             } catch (error) {
                 console.error('An error occurred while fetching data:', error);

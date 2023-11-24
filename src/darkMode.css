@@ -255,7 +255,7 @@ body.dark-mode {
 } */
 
 .dark-mode .services .annContainer .annStories .box {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
+    background: rgb(95, 95, 95);
 }
 
 .dark-mode .services .annContainer .annStories .box::before {
@@ -783,6 +783,110 @@ body.dark-mode {
 }
 
 
+/* Form */
+
+.dark-mode .formBox {
+    background: var(--hover2);
+}
+
+.dark-mode .formBox form {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .formBox form .input, .dark-mode select {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    border: 3px solid var(--bg);
+    color: var(--bg)
+}
+
+.dark-mode .arabic .formBox form .input, .dark-mode .arabic select {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+    border: 3px solid var(--bg);
+    color: var(--bg)
+}
+
+.dark-mode .formBox form .input:placeholder-shown {
+    border: 3px solid var(--bg);
+    color: var(--bg)
+}
+
+
+.dark-mode ::placeholder {
+    color: var(--bg) !important;
+}
+
+
+.dark-mode option {
+    background-color: var(--hover);
+    color: var(--bg)
+}
+
+
+
+
+
+
+
+
+
+
+/* Members */
+
+.dark-mode .Search {
+    background: var(--bg);
+}
+
+.dark-mode .Search::placeholder {
+    color: var(--hover) !important;
+}
+
+.dark-mode .Search:hover,
+.dark-mode .Search:focus {
+    box-shadow: 0px 0px 0px 7px rgba(243, 243, 243, 0.444);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+
+    color: var(--bg)
+}
+
+.dark-mode .Search:focus::placeholder {
+    color: var(--bg) !important
+}
+
+.dark-mode .memberBox {
+    background: var(--hover2);
+}
+
+.dark-mode .memberBack {
+    background: var(--hover);
+}
+
+.dark-mode .mBorder .mLink {
+    background: var(--hover);
+    color: white !important
+}
+
+
+
+
+
+/* Member Details */
+.dark-mode .MainMember {
+    background: var(--hover2);
+}
+
+.dark-mode .OtherMembers {
+    background: var(--hover2);
+}
+
+.dark-mode .presidentInfo .role {
+    /* color: var(--hover2); */
+    background: var(--theme);
+}
+
+
+.dark-mode hr {
+    background: var(--bg);
+}
 
 
 @media screen and (max-width: 700px) {

@@ -86,17 +86,17 @@ const Services = ({ language, languageData }) => {
     // 8. Add the Calender Link
 
     const announcements = [
-        // {
-        //     id: 1,
-        //     img: ElectronImg,
-        //     backgroundImg: "https://drive.google.com/uc?export=view&id=1wl2ZoAPCUKsqaJb4HpBqjLkA1H9M462O",
-        //     title: "ISS Egypt Elections",
-        //     titleArabic: "انتخابات الاتحاد المصري",
-        //     organizer: Election,
-        //     form: 'https://forms.gle/Fz1mwk8Q4PbnJXoX7',
-        //     link: "",
-        //     calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmNhNXZtZTN2dGEwcDRkZGNtOW10MGNiM3EgNjgxMTk1NGE5ZGQwMzRkMjE0MTdjYjQ1MmQ5YzM0NGRkNDNlYzM0ZGU3MDBjNWI4MDY1ZTU2MzAzODA1NDZjNUBn&tmsrc=6811954a9dd034d21417cb452d9c344dd43ec34de700c5b8065e5630380546c5%40group.calendar.google.com"
-        // },
+        {
+            id: 1,
+            img: ElectronImg,
+            backgroundImg: "https://drive.google.com/uc?export=view&id=1wl2ZoAPCUKsqaJb4HpBqjLkA1H9M462O",
+            title: "ISS Egypt Elections",
+            titleArabic: "انتخابات الاتحاد المصري",
+            organizer: Election,
+            form: 'https://forms.gle/Fz1mwk8Q4PbnJXoX7',
+            link: "",
+            calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmNhNXZtZTN2dGEwcDRkZGNtOW10MGNiM3EgNjgxMTk1NGE5ZGQwMzRkMjE0MTdjYjQ1MmQ5YzM0NGRkNDNlYzM0ZGU3MDBjNWI4MDY1ZTU2MzAzODA1NDZjNUBn&tmsrc=6811954a9dd034d21417cb452d9c344dd43ec34de700c5b8065e5630380546c5%40group.calendar.google.com"
+        },
 
     ];
 

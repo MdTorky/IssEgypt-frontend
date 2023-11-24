@@ -3,11 +3,7 @@ import { useState } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
-import {
-    faCalendarDays, faXmark, faCircleInfo, faCarBattery, faFileLines, faBellSlash,
-    faLaptopCode, faHelmetSafety, faGears, faFlaskVial, faBookBookmark, faEnvelope, faLocationDot, faInfoCircle,
-    faBuilding, faMapLocationDot, faCarSide, faFilePdf, faCreditCard, faGraduationCap, faFutbol
-} from '@fortawesome/free-solid-svg-icons';
+import { } from '@fortawesome/free-solid-svg-icons';
 
 const SuggestionForm = ({ language, languageData, api }) => {
     const { dispatch } = useFormsContext()
@@ -40,13 +36,18 @@ const SuggestionForm = ({ language, languageData, api }) => {
 
         if (response.ok) {
             setError(null)
+
+            dispatch({
+                type: 'CREATE_FORM',
+                collection: "forms",
+                payload: json
+            })
+            alert("thankYou")
             setName('')
             setEmail('')
             setMatric('')
             setFaculty('')
             setSuggestion('')
-            dispatch({ type: 'CREATE_FORM', payload: json })
-            alert("thankYou")
         }
 
     }
@@ -97,10 +98,13 @@ const SuggestionForm = ({ language, languageData, api }) => {
                     </div>
                     <div className="InputField">
                         <select
+                            className={`input ${(faculty) ? 'valid' : 'invalid'}`}
+
                             onChange={(e) => setFaculty(e.target.value)}
                             required
 
                         >
+                            <option value="" disabled selected hidden>Choose a Faculty</option>
                             <option value="FKE" >Electrical Engineering</option>
                             <option value="FC" >Computer Science</option>
                             <option value="FKA" >Civil Engineering</option>
@@ -114,6 +118,7 @@ const SuggestionForm = ({ language, languageData, api }) => {
                     <div className="InputField">
                         <textarea
                             rows="3"
+                            className={`input ${(suggestion) ? 'valid' : 'invalid'}`}
                             columns="5"
                             placeholder="Suggestion"
                             onChange={(e) => setSuggestion(e.target.value)}

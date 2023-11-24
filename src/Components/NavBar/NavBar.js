@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faBook, faPerson } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -34,14 +34,20 @@ const NavBar = ({ language, toggleLanguage, languageData }) => {
                         <icon data-content={languageText.services}><FontAwesomeIcon icon={faBook} /></icon>
                     </Link>
                 </li>
+                <li className={location.pathname === '/members' ? 'active' : ''}>
+                    <Link to="/members">
+                        <icon data-content={languageText.members}><FontAwesomeIcon icon={faPerson} /></icon>
+                    </Link>
+                </li>
                 {/* <li className={location.pathname === '/gallery' ? 'active' : ''}><a href="/gallery"><icon data-content={languageText.gallery}><FontAwesomeIcon icon={faImage} /></icon></a></li> */}
-                <li onClick={toggleLanguage}>
+                <li onClick={toggleLanguage} className='language'>
 
                     <icon data-content={languageText.language}>
                         {language === "en" ? "EN" : "ع"}
                     </icon>
 
                 </li>
+
                 <li onClick={toggleDarkMode}>
                     <span className="theme__toggle-wrap">
 

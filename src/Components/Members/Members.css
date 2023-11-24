@@ -1,0 +1,304 @@
+.Members {
+    margin-bottom: 40%;
+    margin-left: 550px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 130px;
+    /* margin: 0 40%; */
+    width: fit-content;
+    margin: 0 auto 40% auto;
+
+}
+
+.arabic .Members {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    /* margin-right: 550px;
+    margin-left: 0; */
+
+}
+
+
+
+
+.searchContainer {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.Search {
+    border: 2px solid transparent;
+    height: 2.5em;
+    width: 100%;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background: var(--hover);
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.Search::placeholder {
+    color: var(--bg) !important;
+}
+
+.Search:hover,
+.Search:focus {
+    border: 2px solid var(--theme);
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+    color: var(--hover)
+}
+
+.Search:focus::placeholder {
+    color: var(--hover) !important
+}
+
+.Members h1, .Members h2 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.Members h2 {
+    background: var(--theme);
+    width: 80%;
+    color: var(--bg);
+    border-radius: 15px;
+    padding: 5px;
+    /* white-space: nowrap; */
+}
+
+.allMembers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* width: 100%; */
+}
+
+.memberBox {
+    display: flex;
+    justify-content: center;
+    background: var(--bg2);
+    border-radius: 15px;
+    padding: 10px;
+    /* width: fit-content; */
+    /* margin: auto; */
+
+}
+
+.memberBack {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.memberBack .people {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+
+}
+
+
+
+
+.mBorder {
+    border: 5px solid var(--theme);
+    border-radius: 50%;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: url('../../images/back1.png');
+    background-size: cover;
+}
+
+.mBorder .back2 {
+    border-bottom: 5px solid var(--theme);
+    border-radius: 50%;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url('../../images/back2.png');
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+
+}
+
+.mBorder .mImg {
+    position: relative;
+    border-radius: 50%;
+    left: -25px;
+    top: -100px;
+    z-index: 0;
+}
+
+.arabic .mBorder .mImg {
+    left: 0px;
+    right: -25px;
+}
+
+.mBorder .mImg img {
+    border-radius: 50%;
+    width: 250px;
+    height: 300px;
+    /* background: var(--theme); */
+    /* z-index: -101; */
+    z-index: 0;
+}
+
+.mBorder .mLink {
+    position: absolute;
+    padding: 7px;
+    background: var(--bg);
+    color: var(--hover);
+    border-radius: 50%;
+    border: 5px solid var(--theme);
+    transition: 0.5s;
+    font-weight: 800;
+    /* font-size: 1.2em; */
+    z-index: 999;
+}
+
+.moreInfo {
+    z-index: 999;
+
+}
+
+.mBorder .mLink.whatsApp {
+    top: 30px;
+    left: 170px;
+    color: #0B846D;
+
+}
+
+.mBorder .mLink.email {
+    top: 80px;
+    left: 185px;
+
+
+}
+
+.mBorder .mLink.linkedIn {
+    top: 130px;
+    left: 172px;
+    color: #0A66C2
+}
+
+.mBorder .mLink:hover {
+    transform: scale(1.2);
+}
+
+
+.mCard .mName {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 -10px 0;
+
+}
+
+.mCard p {
+    text-align: center;
+    font-weight: 700;
+}
+
+.mInfo .role {
+    text-align: center;
+    font-size: 0.8em;
+    background: var(--theme);
+    padding: 10px;
+    margin: auto;
+    font-weight: 600;
+    color: var(--bg2);
+}
+
+.mInfo.even .role {
+    border-radius: 20px 0 20px 0;
+    /* border-radius: 91% 9% 94% 6% / 11% 85% 15% 89%; */
+}
+
+.mInfo.odd .role {
+    border-radius: 0 20px 0 20px;
+    /* border-radius: 11% 85% 15% 89% / 91% 9% 94% 6%; */
+}
+
+.memberBox .noMember {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--theme)
+}
+
+
+
+/* .moreInfo .mLink:hover {
+    width: 80%;
+    padding: 5px;
+} */
+
+.moreInfo:visited, .moreInfo:link {
+    color: inherit;
+    text-align: center;
+    margin: auto;
+
+}
+
+
+.adminCard {
+    position: relative;
+}
+
+button.deleteButton {
+    background: var(--theme);
+    color: var(--bg2);
+    position: absolute;
+    border: none;
+    top: -10px;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:700px) {
+    .Members {
+        margin: 0 auto 40% auto
+    }
+
+    .arabic .Members {
+        margin: 60px auto 40% auto
+    }
+
+    .memberBack .people {
+        flex-direction: column;
+
+    }
+
+    .Members h2 {
+        border-radius: 10px;
+        font-size: 1.2em;
+
+    }
+
+
+    /* .mBorder .mImg {
+        z-index: 0;
+    }
+
+    .mBorder .mImg img {}
+
+    .mBorder .mLink {
+        z-index: 999;
+        position: absolute;
+
+    } */
+}

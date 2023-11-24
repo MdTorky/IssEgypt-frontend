@@ -14,7 +14,7 @@
     "VicePresident": "Vice President",
     "VicePresidentName": "Abdullah Tarek",
 
-    "Secretary": "Secretary",
+    "Secretary": "General Secretary",
     "SecretaryName": "Anas Fahmy",
 
     "Treasurer": "Treasurer",
@@ -47,6 +47,35 @@
     "PublicRelation": "Public Relations",
     "PublicRelationName": "Yousef Shahin",
 
+    "MemberDetails": "Member Details",
+
+    "AcademicPresident": "Academic Committee President",
+    "BankPresident": "Knowledge Bank President",
+    "SocialPresident": "Social Committee President",
+    "CulturePresident": "Culture Committee President",
+    "MediaPresident": "Media Committee President",
+    "SportPresident": "Sports Committee President",
+    "LogisticsPresident": "Logistics Committee President",
+    "WomenPresident": "Women Affairs President",
+
+    "AcademicMember": "Academic Committee Member",
+    "BankMember": "Knowledge Bank Member",
+    "SocialMember": "Social Committee Member",
+    "CultureMember": "Culture Committee Member",
+    "MediaMember": "Media Committee Member",
+    "SportMember": "Sports Committee Member",
+    "LogisticsMember": "Logistics Committee Member",
+    "WomenMember": "Women Affairs Member",
+
+    "AcademicMembers": "Academic Committee Members",
+    "BankMembers": "Knowledge Bank Members",
+    "SocialMembers": "Social Committee Members",
+    "CultureMembers": "Culture Committee Members",
+    "MediaMembers": "Media Committee Members",
+    "SportMembers": "Sports Committee Members",
+    "LogisticsMembers": "Logistics Committee Members",
+    "WomenMembers": "Women Affairs Members",
+
     "facebook": "Facebook",
     "instagram": "Instagram",
     "youtube": "Youtube",
@@ -54,6 +83,7 @@
     "linktree": "LinkTree",
     "home": "Home",
     "services": "Services",
+    "members": "Members",
     "gallery": "Gallery",
     "rights": "\u00A9 2023 ISS-Egypt | All Rights Reserved",
     "together": "Together we ",
@@ -68,6 +98,17 @@
     "delete": "Delete",
     "courseLink": "Course Link",
     "noAnnouncement": "Sorry.. No Announcements Yet",
+
+    "addMember": "Add a Member",
+    "formName": "Name in English",
+    "formNameArabic": "Name in Arabic",
+    "formEmail": "Email",
+    "formPhone": "Phone Number",
+    "formFaculty": "Choose the Faculty",
+    "formCommittee": "Choose the Committee",
+    "formRole": "Choose the Role",
+    "formImg": "Personal Photo",
+    "formId": "Member Id",
 
     "achievements": "The Committees' Achievements",
     "blogSubtitle": "ISS Egypt Welcome Party",
@@ -240,9 +281,18 @@
     "upcomingEventSubtitle2": "ISS EGYPT Website",
     "upcomingEventDescription2": "We are delighted to introduce you to the brand new ISS Egypt Website.",
 
+    "search": "Search for a member",
+    "meettheteam": "Meet the Team",
+    "board": "The Board",
+    "committeeP": "Committee Presidents",
+
+    "noMember": "No Members",
+
     "suggestions": "ISS Egypt Website Suggestions",
     "noSuggestions": "No Suggestions",
-    "suggestionDelete": "Suggestion Deleted Successfully"
+    "suggestionDelete": "Suggestion Deleted Successfully",
+    "memberAdded": "Member Added Successfully",
+    "noLinkedIn": "Sorry... This person does not have a LinkedIn account."
   },
   "ar": {
     "language": "عربي",
@@ -259,7 +309,7 @@
     "VicePresident": "نائب الرئيس",
     "VicePresidentName": "عبدالله طارق",
 
-    "Secretary": "السكرتير",
+    "Secretary": "الاداري العام",
     "SecretaryName": "أنس فهمي",
 
     "Treasurer": "أمين صندوق",
@@ -292,6 +342,35 @@
     "PublicRelation": "رئيس العلاقات العامة",
     "PublicRelationName": "يوسف شاهين",
 
+    "MemberDetails": "تفاصيل العضو",
+
+    "AcademicPresident": "رئيس اللجنة الأكاديمية",
+    "BankPresident": "رئيس بنك المعرفة",
+    "SocialPresident": "رئيس اللجنة الاجتماعية",
+    "CulturePresident": "رئيس اللجنة الثقافية",
+    "MediaPresident": "رئيس اللجنة الإعلامية",
+    "SportPresident": "رئيس اللجنة الرياضية",
+    "LogisticsPresident": "رئيس الخدمات اللوجستية",
+    "WomenPresident": "رئيسة شؤون الطالبات",
+
+    "AcademicMember": "عضو للجنة الأكاديمية",
+    "BankMember": "عضو لبنك المعرفة",
+    "SocialMember": "عضو للجنة الاجتماعية",
+    "CultureMember": "عضو للجنة الثقافية",
+    "MediaMember": "عضو للجنة الإعلامية",
+    "SportMember": "عضو للجنة الرياضية",
+    "LogisticsMember": "عضو للجنة اللوجستية",
+    "WomenMember": "عضو شؤون الطالبات",
+
+    "AcademicMembers": "أعضاء الجنة الأكاديمية",
+    "BankMembers": "أعضاء بنك المعرفة",
+    "SocialMembers": "أعضاء الجنة الاجتماعية",
+    "CultureMembers": "أعضاء الجنة الثقافية",
+    "MediaMembers": "أعضاء الجنة الإعلامية",
+    "SportMembers": "أعضاء الجنة الرياضية",
+    "LogisticsMembers": "أعضاء الجنة اللوجستية",
+    "WomenMembers": "أعضاء شؤون الطالبات",
+
     "facebook": "فيسبوك",
     "instagram": "إنستجرام",
     "youtube": "يوتيوب",
@@ -299,6 +378,7 @@
     "linktree": "لينك تري",
     "home": "الصفحة الرئيسية",
     "services": "خدماتنا",
+    "members": "الأعضاء",
     "gallery": "المعرض",
     "rights": "\u00A9  ISS-Egypt 2023 | جميع الحقوق محفوظة",
     "together": "معا  ",
@@ -313,6 +393,17 @@
     "delete": "مسح",
     "courseLink": "رابط الدورة",
     "noAnnouncement": "عذرا.. لا توجد إعلانات حتى الآن",
+
+    "addMember": "إضافة عضو",
+    "formName": "الاسم باللغة الانجليزية",
+    "formNameArabic": "الاسم باللغة العربية",
+    "formEmail": "البريد إلكتروني",
+    "formPhone": "رقم الهاتف",
+    "formFaculty": "اختر الكلية",
+    "formCommittee": "اختر اللجنة",
+    "formRole": "اختر الدور",
+    "formImg": "صورة شخصية",
+    "formId": "رقم العضو",
 
     "achievements": "إنجازات الاتحاد",
 
@@ -486,8 +577,18 @@
     "upcomingEventSubtitle2": "موقع الاتحاد المصري",
     "upcomingEventDescription2": "يسعدنا أن نقدم لكم الموقع الإلكتروني الجديد للاتحاد المصري.",
 
+    "search": "ابحث عن عضو",
+    "meettheteam": "تعرف على الفريق",
+
+    "board": "مجلس الإدارة",
+    "committeeP": "رؤساء اللجان",
+
+    "noMember": "لا يوجد أعضاء",
+
     "suggestions": "اقتراحات موقع الاتحاد",
     "noSuggestions": "لا توجد اقتراحات",
-    "suggestionDelete": "تم حذف الاقتراح بنجاح"
+    "suggestionDelete": "تم حذف الاقتراح بنجاح",
+    "memberAdded": "تمت إضافة العضو بنجاح",
+    "noLinkedIn": "عذراً... هذا الشخص ليس لديه حساب على لينكدان"
   }
 }

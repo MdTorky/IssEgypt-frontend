@@ -135,7 +135,8 @@ h2 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     cursor: pointer;
 }
 
@@ -243,7 +244,7 @@ h2 {
     background: linear-gradient(to right, var(--bg), var(--bg2));
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 20px;
-
+    width: 100%;
 }
 
 
@@ -805,14 +806,12 @@ a:visited {
 
 .topContent .topText h3 {
     margin: 0;
-    white-space: nowrap;
     font-size: 1em;
     font-weight: 600;
 }
 
 .topContent .topText p {
     margin: 0;
-    white-space: nowrap;
     font-size: 0.7em;
     font-weight: 600;
     opacity: 0.7;

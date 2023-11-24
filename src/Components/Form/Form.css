@@ -1,13 +1,21 @@
 .Form {
-    margin-bottom: 20%;
+    margin-bottom: 10%;
     font-family: 'Poppins', sans-serif;
     margin-right: 130px;
 }
 
+.arabic .Form {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    margin-left: 130px;
+    margin-right: 0px;
+
+}
+
+
 
 .formBox {
     background: var(--bg2);
-    width: 300px;
+    width: fit-content;
     padding: 10px;
     border-radius: 20px;
     margin: auto;
@@ -75,14 +83,23 @@
 }
 
 
+.arabic .formBox button {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
 
 
 
-
-
+.InputRow {
+    display: flex;
+    gap: 10px;
+    /* justify-content: space-between; */
+    width: 100%;
+}
 
 .InputField {
     display: flex;
+    width: 100%;
     /* flex-direction: column */
 }
 
@@ -99,10 +116,9 @@
 }
 
 
-.formBox form .input, select, textarea {
+.formBox form .input, .formBox select {
 
     width: 100%;
-    /* max-width: 420px; */
     padding: 12px;
     border-radius: 15px;
     border: 3px solid lightgrey;
@@ -112,9 +128,22 @@
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, var(--bg2), var(--bg));
     position: relative;
-    font-weight: 700;
 
 }
+
+
+
+.formBox form select option:checked {
+    background-color: var(--theme);
+    color: var(--bg);
+    font-weight: 700;
+}
+
+select:focus {
+    border: 3px solid mediumaquamarine;
+    color: var(--hover)
+}
+
 
 /* Matric Number */
 .formBox form .input.matric {
@@ -143,10 +172,19 @@
     transform: scale(0.95);
 }
 
+
 .formBox form .input:placeholder-shown {
     border: 3px solid lightgrey;
     text-transform: none;
+}
 
+input::placeholder {
+    font-weight: 700;
+
+}
+
+.arabic input::placeholder {
+    font-family: 'Noto Kufi Arabic', sans-serif;
 
 }
 
@@ -156,5 +194,9 @@
     .Form {
         margin-bottom: 40%;
         margin-right: 0;
+    }
+
+    .arabic .Form {
+        margin: 10% 0 40% 0
     }
 }

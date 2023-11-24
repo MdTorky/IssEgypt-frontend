@@ -84,12 +84,12 @@ a {
 
 }
 
-.navbar ul li:nth-child(4) {
+.navbar ul li.language {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
-.navbar ul li:hover:nth-child(4) {
+.navbar ul li.language:hover {
     font-size: 25px;
 }
 
@@ -347,7 +347,7 @@ a {
         background: none;
     }
 
-    .navbar ul li:hover:nth-child(3) icon {
+    .navbar ul li.language:hover icon {
         /* font-size: 20px; */
         font-weight: none;
         background: none;
@@ -363,7 +363,15 @@ a {
         font-weight: 500;
     }
 
-    .navbar.arabic ul li:nth-child(3) icon::after {
+    .navbar ul li.language icon::after {
+        /* font-size: 8px; */
+        /* font-weight: 500; */
+        white-space: nowrap;
+        margin-bottom: 15px;
+        background: none;
+    }
+
+    .navbar.arabic ul li.language icon::after {
         font-family: 'Noto Kufi Arabic', sans-serif;
         font-size: 8px;
         font-weight: 500;
