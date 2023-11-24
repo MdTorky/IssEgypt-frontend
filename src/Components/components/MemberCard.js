@@ -41,7 +41,8 @@ const MemberCard = ({ api, member, languageText, language }) => {
                 <div className="mBorder">
                     <div className='back2' />
                     <div className="mImg">
-                        <img src={`${api}/${member.img}`} alt="" />
+                        <img src={`${api}/images/${member.img}`} alt="" />
+
                     </div>
                     {/* Use onClick to stop propagation of the click event */}
                     <Link to={`http://wa.me/${member.phone}`} onClick={stopPropagation}>
