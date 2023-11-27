@@ -136,7 +136,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                                     {/* Content inside .backId */}
                                 </div>
                                 <div className="idImg">
-                                    <img src={`${api}/images/${member.img}`} alt="" />
+                                    <img src={`${api}/uploads/${member.img}`} alt="" />
                                 </div>
 
                                 {language === "ar" ? <p className='idName'>{member.arabicName}</p> : <p className='idName'>{member.name}</p>}
