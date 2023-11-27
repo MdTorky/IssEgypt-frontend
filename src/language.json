@@ -283,6 +283,8 @@
 
     "search": "Search for a member",
     "meettheteam": "Meet the Team",
+    "memberDeleted": "Member Deleted Successfully",
+
     "board": "The Board",
     "committeeP": "Committee Presidents",
 
@@ -579,6 +581,7 @@
 
     "search": "ابحث عن عضو",
     "meettheteam": "تعرف على الفريق",
+    "memberDeleted": "تم حذف العضو بنجاح",
 
     "board": "مجلس الإدارة",
     "committeeP": "رؤساء اللجان",

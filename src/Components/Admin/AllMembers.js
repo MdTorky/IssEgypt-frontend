@@ -134,9 +134,9 @@ const AllMembers = ({ language, languageData, api, darkMode }) => {
                     payload: json
                 });
                 {
-                    toast.success(`${languageText.suggestionDelete}`, {
+                    toast.success(`${languageText.memberDeleted}`, {
                         position: "bottom-center",
-                        autoClose: 5000,
+                        autoClose: 3000,
                         hideProgressBar: true,
                         closeOnClick: true,
                         pauseOnHover: true,
