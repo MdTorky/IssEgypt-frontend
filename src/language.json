@@ -294,7 +294,7 @@
     "noSuggestions": "No Suggestions",
     "suggestionDelete": "Suggestion Deleted Successfully",
     "memberAdded": "Member Added Successfully",
-    "noLinkedIn": "Sorry... This person does not have a LinkedIn account."
+    "noLinkedIn": "Sorry... This member does not have a LinkedIn account."
   },
   "ar": {
     "language": "عربي",
@@ -592,6 +592,6 @@
     "noSuggestions": "لا توجد اقتراحات",
     "suggestionDelete": "تم حذف الاقتراح بنجاح",
     "memberAdded": "تمت إضافة العضو بنجاح",
-    "noLinkedIn": "عذراً... هذا الشخص ليس لديه حساب على لينكدان"
+    "noLinkedIn": "عذراً... هذا العضو لا يملك حساب على لينكدان"
   }
 }
