@@ -309,7 +309,7 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
 
                     {img && (
                         <div className="InputField">
-                            <img src={`/images/${img.filename}`} alt="Uploaded Image" />
+                            <img src={`${api}/images/${img.filename}`} alt="Uploaded Image" />
                         </div>
                     )}
                     <button>{languageText.addMember}</button>
