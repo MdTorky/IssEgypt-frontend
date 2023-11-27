@@ -45,10 +45,12 @@ const MemberCard = ({ api, member, languageText, language }) => {
 
                     </div>
                     {/* Use onClick to stop propagation of the click event */}
-                    <Link to={`http://wa.me/${member.phone}`} onClick={stopPropagation}>
+                    {/* <Link to={`http://wa.me/${member.phone}`} onClick={stopPropagation}> */}
+                    <Link onClick={() => window.open(`http://wa.me/${member.phone}`, '_blank')}>
+
                         <FontAwesomeIcon icon={faWhatsapp} className="mLink whatsApp" />
                     </Link>
-                    <Link to={`mailto:${member.email}`} onClick={stopPropagation}>
+                    <Link onClick={() => window.open(`mailto:${member.email}`, '_blank')}>
                         <FontAwesomeIcon icon={faEnvelope} className="mLink email" />
                     </Link>
                     <Link onClick={handleLinkedInClick}>
