@@ -33,7 +33,6 @@ function App() {
   const { darkMode, setDarkMode } = useDarkMode(); // Initialize to false
 
   const toggleDarkMode = () => {
-    // Toggle the dark mode state and it will automatically be saved to local storage
     setDarkMode(!darkMode);
   };
 
