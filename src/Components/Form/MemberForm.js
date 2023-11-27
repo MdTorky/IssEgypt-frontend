@@ -17,7 +17,7 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
     const [faculty, setFaculty] = useState('');
     const [type, setType] = useState('');
     const [committee, setCommittee] = useState('');
-    const [img, setImg] = useState('');
+    const [img, setImg] = useState(null);
     const [phone, setPhone] = useState('');
     const [linkedIn, setLinkedIn] = useState('');
     const [memberId, setMemberId] = useState('');
@@ -67,12 +67,9 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
 
     // }
 
-    const handleImageUpload = (e) => {
+    const handleImageChange = (e) => {
         const file = e.target.files[0];
-        if (file) {
-            // Set the image file to the state
-            setImg(file);
-        }
+        setImg(file);
     };
 
     const handleSubmit = async (e) => {
@@ -85,11 +82,13 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
         formData.append('faculty', faculty);
         formData.append('type', type);
         formData.append('committee', committee);
-        formData.append('file', img);
         formData.append('phone', phone);
         formData.append('linkedIn', linkedIn);
         formData.append('memberId', memberId);
 
+        if (img) {
+            formData.append('image', img);
+        }
 
         for (const pair of formData.entries()) {
             console.log(pair[0], pair[1]);
@@ -291,9 +290,10 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                         <input
                             placeholder={`\uf03e  ${languageText.formImg}`}
                             type="file"
+                            accept="image/*"
                             className={`input ${(img) ? 'valid' : 'invalid'}`}
                             // onChange={(e) => { setImg(e.target.value) }}
-                            onChange={(e) => handleImageUpload(e)}
+                            onChange={handleImageChange}
                         />
                     </div>
                     <div className="InputField">
@@ -306,6 +306,12 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                             onChange={(e) => { setMemberId(e.target.value) }}
                         />
                     </div>
+
+                    {img && (
+                        <div className="InputField">
+                            <img src={`/uploads/${form.image}`} alt="Uploaded Image" />
+                        </div>
+                    )}
                     <button>{languageText.addMember}</button>
                     {error && <div className="formError">{error}</div>}
                 </form>
