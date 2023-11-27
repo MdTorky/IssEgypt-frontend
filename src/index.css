@@ -90,7 +90,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 999;
+  z-index: 100000;
   background: var(--bg);
   /* background-size: auto;
   background-repeat: no-repeat;
