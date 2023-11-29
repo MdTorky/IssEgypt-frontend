@@ -99,7 +99,8 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
             const response = await fetch(`${api}/api/member`, {
                 method: 'POST',
                 body: formData,
-                credentials: 'include',
+                access: 'public',
+                mode: 'no-cors'
             });
 
             if (!response.ok) {
