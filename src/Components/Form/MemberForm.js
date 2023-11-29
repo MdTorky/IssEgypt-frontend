@@ -100,7 +100,6 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                 method: 'POST',
                 body: formData,
                 access: 'public',
-                mode: 'no-cors'
             });
 
             if (!response.ok) {
