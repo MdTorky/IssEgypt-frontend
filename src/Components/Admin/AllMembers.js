@@ -215,10 +215,29 @@ const AllMembers = ({ language, languageData, api, darkMode }) => {
                                             ><FontAwesomeIcon icon={faTrash} /></button>
                                         </div>
                                     ))}
-                                    {loading2(2)}
+
                                 </>
                             )}
                         </div>
+                        <div className="people">
+                            {loading ? (
+                                <div><Loader /></div>
+                            ) : (
+                                <>
+                                    {allMembers(3).map((boardMember) => (
+                                        <div className="adminCard">
+
+                                            <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
+                                            <button
+                                                className='deleteButton'
+                                                onClick={() => { handleDelete({ member: boardMember }) }}
+                                            ><FontAwesomeIcon icon={faTrash} /></button>
+                                        </div>
+                                    ))}
+                                </>
+                            )}
+                        </div>
+                        {loading2(2)}
                     </div>
 
 

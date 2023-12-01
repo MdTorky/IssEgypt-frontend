@@ -237,6 +237,18 @@ const Members = ({ language, languageData, api, darkMode }) => {
                                 </>
                             )}
                         </div>
+                        <div className="people">
+                            {loading ? (
+                                <div><Loader /></div>
+                            ) : (
+                                <>
+                                    {allMembers(3).map((boardMember) => (
+                                        <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
+                                    ))}
+                                    {loading2(3)}
+                                </>
+                            )}
+                        </div>
                     </div>
 
 
