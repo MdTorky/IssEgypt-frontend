@@ -205,6 +205,17 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
 
     const card = (text, number) => {
+        const membersToShow = allMembers(number).filter((boardMember) =>
+            boardMember.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            boardMember.arabicName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            boardMember.faculty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            boardMember.type.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        if (!membersToShow.length) {
+            return null;
+        }
+
         return (
             <div className="memberBox">
                 <div className="memberBack">
@@ -214,25 +225,22 @@ const Members = ({ language, languageData, api, darkMode }) => {
                             <div><Loader /></div>
                         ) : (
                             <>
-                                {allMembers(number).map((boardMember) => (
-                                    <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
+                                {membersToShow.map((boardMember) => (
+                                    <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
                                 ))}
                                 {loading2(number)}
                             </>
                         )}
                     </div>
                 </div>
-
-
             </div>
-        )
-    }
-
+        );
+    };
     return (
         <div className="Members">
             <div className="searchContainer">
                 <input
-                    className="Search"
+                    className={`Search ${searchTerm && filteredMembers.length === 0 ? 'noMembers' : 'hasMembers'}`}
                     placeholder={`${languageText.search}`}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}

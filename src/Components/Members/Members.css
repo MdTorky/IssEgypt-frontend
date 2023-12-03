@@ -25,7 +25,10 @@
     margin-bottom: 20px;
     position: fixed;
     z-index: 9000;
-    /* width: 80%; */
+    left: 20%;
+
+
+    width: 20%;
 }
 
 .Search {
@@ -38,6 +41,7 @@
     background: var(--hover);
     border-radius: 10px;
     transition: all 0.5s;
+    color: var(--bg);
 }
 
 .Search::placeholder {
@@ -55,6 +59,23 @@
 .Search:focus::placeholder {
     color: var(--hover) !important
 }
+
+
+
+.Search.noMembers {
+    border: 2px solid var(--theme);
+    box-shadow: 0px 0px 0px 7px rgba(246, 45, 27, 0.2);
+
+    /* Change the color to red when there are no matching members */
+}
+
+.Search.hasMembers {
+    border: 2px solid mediumaquamarine;
+    box-shadow: 0px 0px 0px 7px rgba(102, 205, 171, 0.2);
+
+    /* Change the color to green when there are matching members */
+}
+
 
 .Members h1, .Members h2 {
     margin: 0;
