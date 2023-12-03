@@ -23,6 +23,9 @@
 .searchContainer {
     display: flex;
     margin-bottom: 20px;
+    position: fixed;
+    z-index: 9000;
+    /* width: 80%; */
 }
 
 .Search {
@@ -68,6 +71,10 @@
     /* white-space: nowrap; */
 }
 
+.Members h1 {
+    font-size: 2.5em
+}
+
 .allMembers {
     display: flex;
     flex-direction: column;
@@ -97,6 +104,7 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
     justify-content: center;
     align-items: center;
+    width: 1300px;
 
 }
 
@@ -107,6 +115,7 @@
     flex-direction: row;
     gap: 30px;
     padding: 20px;
+    flex-wrap: wrap;
 
 }
 
@@ -290,6 +299,19 @@ button.deleteButton {
         border-radius: 10px;
         font-size: 1.2em;
 
+    }
+
+    .memberBack {
+        width: 100%;
+
+    }
+
+    .searchContainer {
+        display: flex;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 9000;
+        /* width: 80%; */
     }
 
 

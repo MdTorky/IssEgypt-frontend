@@ -42,12 +42,18 @@
   "hobby": [
     {
       "id": 7,
+      "name": "Reading Club",
+      "link": "https://www.instagram.com/rcutm/",
+      "img": "https://drive.google.com/uc?export=view&id=17NQkUVTg76h9nIT0qvNnMORc6vbDByR_"
+    },
+    {
+      "id": 8,
       "name": "Photography Club",
       "link": "https://beacons.ai/kfkutm",
       "img": "https://drive.google.com/uc?export=view&id=1MmF1674Rj00SCfOqIRdWUJfvoLw8NPDL"
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "Esports Club",
       "link": "https://linktr.ee/ESPORTSOFUTM_2122",
       "img": "https://drive.google.com/uc?export=view&id=1hLqNqVa672VI7lLsTvXvFBwJnX9NnNG6"

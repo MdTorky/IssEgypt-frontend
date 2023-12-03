@@ -122,11 +122,24 @@ const Members = ({ language, languageData, api, darkMode }) => {
         switch (number) {
             case 1: members = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4);
                 break;
-            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 8);
+            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 13 && member.type == "President");
                 break;
-            case 3: members = filteredMembers.filter((member) => member.memberId >= 9 && member.memberId <= 13);
+            case "Academic": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Academic")
                 break;
-
+            case "Bank": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Bank")
+                break;
+            case "Social": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Social")
+                break;
+            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Cultural")
+                break;
+            case "Sports": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Sports")
+                break;
+            case "Logistics": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Logistics")
+                break;
+            case "Media": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Media")
+                break;
+            case "Women": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Women Affairs")
+                break;
             default: break;
         }
 
@@ -190,6 +203,31 @@ const Members = ({ language, languageData, api, darkMode }) => {
         )
     }
 
+
+    const card = (text, number) => {
+        return (
+            <div className="memberBox">
+                <div className="memberBack">
+                    <h2>{text}</h2>
+                    <div className="people">
+                        {loading ? (
+                            <div><Loader /></div>
+                        ) : (
+                            <>
+                                {allMembers(number).map((boardMember) => (
+                                    <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
+                                ))}
+                                {loading2(number)}
+                            </>
+                        )}
+                    </div>
+                </div>
+
+
+            </div>
+        )
+    }
+
     return (
         <div className="Members">
             <div className="searchContainer">
@@ -204,55 +242,16 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
             <h1>{languageText.meettheteam}</h1>
             <div className="allMembers">
-                <div className="memberBox">
-                    <div className="memberBack">
-                        <h2>{languageText.board}</h2>
-                        <div className="people">
-                            {loading ? (
-                                <div><Loader /></div>
-                            ) : (
-                                <>
-                                    {allMembers(1).map((boardMember) => (
-                                        <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
-                                    ))}
-                                    {loading2(1)}
-                                </>
-                            )}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="memberBox">
-                    <div className="memberBack">
-                        <h2>{languageText.committeeP}</h2>
-                        <div className="people">
-                            {loading ? (
-                                <div><Loader /></div>
-                            ) : (
-                                <>
-                                    {allMembers(2).map((boardMember) => (
-                                        <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
-                                    ))}
-                                    {loading2(2)}
-                                </>
-                            )}
-                        </div>
-                        <div className="people">
-                            {loading ? (
-                                <div><Loader /></div>
-                            ) : (
-                                <>
-                                    {allMembers(3).map((boardMember) => (
-                                        <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
-                                    ))}
-                                    {loading2(3)}
-                                </>
-                            )}
-                        </div>
-                    </div>
-
-
-                </div>
+                {card(languageText.board, 1)}
+                {card(languageText.committeeP, 2)}
+                {card(languageText.AcademicMembers, "Academic")}
+                {card(languageText.BankMembers, "Bank")}
+                {card(languageText.SocialMembers, "Social")}
+                {card(languageText.CultureMembers, "Cultural")}
+                {card(languageText.SportMembers, "Sports")}
+                {card(languageText.MediaMembers, "Media")}
+                {card(languageText.LogisticsMembers, "Logistics")}
+                {card(languageText.WomenMembers, "Women")}
             </div>
         </div >
     );

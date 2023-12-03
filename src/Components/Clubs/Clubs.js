@@ -48,28 +48,33 @@ const Clubs = ({ language, languageData }) => {
         hobby: [
             {
                 id: 4,
-                description: languageText.photoDesc
+                description: "",
 
             },
             {
                 id: 5,
+                description: languageText.photoDesc
+
+            },
+            {
+                id: 6,
                 description: languageText.esportsDesc
 
             },
         ],
         academic: [
             {
-                id: 6,
+                id: 7,
                 description: languageText.roboconDesc
 
             },
             {
-                id: 7,
+                id: 8,
                 description: languageText.airostDesc
 
             },
             {
-                id: 8,
+                id: 9,
                 description: languageText.googleDesc
 
             },
