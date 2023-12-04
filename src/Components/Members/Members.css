@@ -26,8 +26,6 @@
     position: fixed;
     z-index: 9000;
     left: 20%;
-
-
     width: 20%;
 }
 
@@ -333,6 +331,8 @@ button.deleteButton {
         position: relative;
         z-index: 9000;
         width: 100%;
+        left: 0%;
+
     }
 
 

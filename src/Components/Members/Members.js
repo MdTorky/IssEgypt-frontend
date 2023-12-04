@@ -193,15 +193,12 @@ const Members = ({ language, languageData, api, darkMode }) => {
     const loading2 = (number) => {
         return (
             <>
-                {!loading && isEmpty(allMembers(number)) && !error && (
-                    <div className="noMember">
-                        <FontAwesomeIcon icon={faUserSlash} beatFade />
-                        <h4 className="noAnnouncements">{languageText.noMember}</h4>
-                    </div>
+                {loading && (
+                    <div><Loader /></div>
                 )}
             </>
-        )
-    }
+        );
+    };
 
 
     const card = (text, number) => {
@@ -260,6 +257,9 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.MediaMembers, "Media")}
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
+                {loading && (
+                    <div><Loader /></div>
+                )}
             </div>
         </div >
     );
