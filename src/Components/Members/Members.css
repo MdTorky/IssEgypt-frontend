@@ -29,6 +29,18 @@
     width: 20%;
 }
 
+
+.arabic .searchContainer {
+    display: flex;
+    margin-bottom: 20px;
+    position: fixed;
+    z-index: 9000;
+    right: 20%;
+    top: 15%;
+    width: 20%;
+}
+
+
 .Search {
     border: 2px solid transparent;
     height: 2.5em;
@@ -201,6 +213,9 @@
 
 .moreInfo {
     z-index: 999;
+    animation: fadeInDown 0.5s ease 0s 1 normal forwards;
+    opacity: 0;
+
 
 }
 
@@ -228,6 +243,13 @@
     transform: scale(1.2);
 }
 
+.mCard {
+    transition: 0.5s ease;
+}
+
+.mCard:hover {
+    transform: scale(1.08);
+}
 
 .mCard .mName {
     text-align: center;
@@ -332,7 +354,16 @@ button.deleteButton {
         z-index: 9000;
         width: 100%;
         left: 0%;
+    }
 
+    .arabic .searchContainer {
+        display: flex;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 9000;
+        width: 100%;
+        left: 0%;
+        right: 0%;
     }
 
 

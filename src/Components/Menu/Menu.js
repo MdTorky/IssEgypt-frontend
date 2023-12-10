@@ -1,118 +1,162 @@
 import "./Menu.css"
 import { useLanguage } from '../../language';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import people from "../../data/people.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Loader from '../Loader/Loader'
+import { useFormsContext } from '../../hooks/useFormContext'
+import roleChecker from '../Members/MemberLoader'
 
 
 
 
-const Menu = ({ language, languageData }) => {
-    const { toggleLanguage } = useLanguage();
+const Menu = ({ language, languageData, api }) => {
     const location = useLocation();
 
-    useEffect(() => {
-        // Ensure that the languageData and language are updated when the language changes
-        // You can use this hook to make sure the component updates when the language changes
-    }, [language, languageData]);
-
+    const { members, dispatch } = useFormsContext()
     const languageText = languageData[language];
+
+
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
+    const [messages, setMessages] = useState(true)
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const isEmpty = (obj) => {
+        return Object.keys(obj).length == 0;
+    };
     const isRtl = language === 'ar';
 
 
-    const names = [
-        {
-            id: 1,
-            text: languageText.President,
-            name: languageText.PresidentName
-        },
-        {
-            id: 2,
-            text: languageText.VicePresident,
-            name: languageText.VicePresidentName
-        },
-        {
-            id: 3,
-            text: languageText.Secretary,
-            name: languageText.SecretaryName
-        },
-        {
-            id: 4,
-            text: languageText.Treasurer,
-            name: languageText.TreasurerName
-        },
-        {
-            id: 5,
-            text: languageText.Academic,
-            name: languageText.AcademicName
+    // const names = [
+    //     {
+    //         id: 1,
+    //         text: languageText.President,
+    //         name: languageText.PresidentName
+    //     },
+    //     {
+    //         id: 2,
+    //         text: languageText.VicePresident,
+    //         name: languageText.VicePresidentName
+    //     },
+    //     {
+    //         id: 3,
+    //         text: languageText.Secretary,
+    //         name: languageText.SecretaryName
+    //     },
+    //     {
+    //         id: 4,
+    //         text: languageText.Treasurer,
+    //         name: languageText.TreasurerName
+    //     },
+    //     {
+    //         id: 5,
+    //         text: languageText.Academic,
+    //         name: languageText.AcademicName
 
-        },
-        {
-            id: 6,
-            text: languageText.Social,
-            name: languageText.SocialName
-        },
-        {
-            id: 7,
-            text: languageText.Culture,
-            name: languageText.CultureName
-        },
-        {
-            id: 8,
-            text: languageText.Media,
-            name: languageText.MediaName
-        },
-        {
-            id: 9,
-            text: languageText.Sport,
-            name: languageText.SportName
-        },
-        {
-            id: 10,
-            text: languageText.HR,
-            name: languageText.HRName
-        },
-        {
-            id: 11,
-            text: languageText.Logistics,
-            name: languageText.LogisticsName
-        },
-        {
-            id: 12,
-            text: languageText.Women,
-            name: languageText.WomenName
-        },
-        {
-            id: 13,
-            text: languageText.PublicRelation,
-            name: languageText.PublicRelationName
-        },
+    //     },
+    //     {
+    //         id: 6,
+    //         text: languageText.Social,
+    //         name: languageText.SocialName
+    //     },
+    //     {
+    //         id: 7,
+    //         text: languageText.Culture,
+    //         name: languageText.CultureName
+    //     },
+    //     {
+    //         id: 8,
+    //         text: languageText.Media,
+    //         name: languageText.MediaName
+    //     },
+    //     {
+    //         id: 9,
+    //         text: languageText.Sport,
+    //         name: languageText.SportName
+    //     },
+    //     {
+    //         id: 10,
+    //         text: languageText.HR,
+    //         name: languageText.HRName
+    //     },
+    //     {
+    //         id: 11,
+    //         text: languageText.Logistics,
+    //         name: languageText.LogisticsName
+    //     },
+    //     {
+    //         id: 12,
+    //         text: languageText.Women,
+    //         name: languageText.WomenName
+    //     },
+    //     {
+    //         id: 13,
+    //         text: languageText.PublicRelation,
+    //         name: languageText.PublicRelationName
+    //     },
 
-
-        // Add more objects as needed
-    ];
+    // ];
 
 
-    const combinedPeople = people.map((person, index) => ({
-        ...person,
-        text: names[index].text,
-        name: names[index].name,
-    }));
+    // const combinedPeople = people.map((person, index) => ({
+    //     ...person,
+    //     text: names[index].text,
+    //     name: names[index].name,
+    // }));
+
+
+    // useEffect(() => {
+    //     const peopleCards = document.querySelectorAll('.peopleCard');
+
+    //     peopleCards.forEach((card, index) => {
+    //         card.style.animationDelay = `${0.1 * index}s`; // Adjust the delay as needed
+    //     });
+    // }, []);
+
 
 
     useEffect(() => {
-        // Calculate and set animation delay for each card
-        const peopleCards = document.querySelectorAll('.peopleCard');
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${api}/api/member`);
+                if (!response.ok) {
+                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
+                    setError('Failed to fetch data');
+                    setMessages(true);
 
-        peopleCards.forEach((card, index) => {
-            card.style.animationDelay = `${0.1 * index}s`; // Adjust the delay as needed
-        });
-    }, []);
+                    return;
+                }
+
+                const data = await response.json();
+                console.log(data);
+                dispatch({
+                    type: 'SET_ITEM',
+                    collection: 'members',
+                    payload: data
+                });
+                setMessages(false)
+            } catch (error) {
+                console.error('An error occurred while fetching data:', error);
+                setError('An error occurred while fetching data');
+                setMessages(true);
+            } finally {
+                // Set loading to false once the data is fetched (success or error)
+                setLoading(false);
+
+
+            }
+        };
+        fetchData();
+    }, [api, dispatch]);
 
     // const hiddenPages = ["/services", "/gallery", "/residences", "/attractions", "/transportation", "/openAccount", "/groups", "/clubs"];
+
+    let combinedPeople = members.filter((member) => member.type == "President");
+    combinedPeople.sort((a, b) => a.memberId - b.memberId);
 
     const isMenuVisible = location.pathname === "/" && location.pathname !== "*";
 
@@ -167,23 +211,28 @@ const Menu = ({ language, languageData }) => {
                     <h1>{languageText.Egypt}</h1>
                     <h3>{languageText.IssPres2}</h3>
                 </div>
-                {combinedPeople.map((person, index) => (
-                    <div className="people" key={index}>
-                        <div className={`peopleCard ${popupVisible && selectedItem && selectedItem.id === person.id
-                            ? 'active' : ''
-                            } `}
-                            onClick={() => { togglePopup(person) }}>
-                            <div className="peopleImg">
-                                <img src={person.imgSrc} alt="" />
-                            </div>
-                            <div className="peopleText">
-                                <p className="name">{person.name}</p>
-                                <p className="role">{person.text}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-                {popupVisible && selectedItem && (
+                {loading ? (
+                    <div><Loader /></div>
+                ) : (
+                    <>
+                        {combinedPeople.map((person, index) => (
+                            <Link to={`/members/${person._id}`}>
+                                <div className="people" key={index}>
+                                    <div className="peopleCard">
+                                        <div className="peopleImg">
+                                            <img src={`${api}/uploads/${person.img}`} alt="" />
+                                        </div>
+                                        <div className="peopleText">
+                                            {language === 'ar' ? <p className="name">{person.arabicName}</p> : <p className="name">{person.name}</p>}
+                                            <p className="role">{roleChecker({ languageText: languageText, committee: person.committee, role: person.type })}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </>
+                )}
+                {/* {popupVisible && selectedItem && (
                     <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'} `}>
                         <div className="popup-content">
 
@@ -207,7 +256,7 @@ const Menu = ({ language, languageData }) => {
                                     <h3>{selectedItem.name}</h3>
                                     <p>{selectedItem.text}</p>
                                 </div>
-                                {/* <hr /> */}
+               
                                 <div className="links">
                                     {selectedItem.no &&
                                         <button className="icon" onClick={() => window.open(selectedItem.no, "_blank")}>
@@ -227,7 +276,7 @@ const Menu = ({ language, languageData }) => {
                         </div>
 
                     </div>
-                )}
+                )} */}
             </div>
         </div>
     );

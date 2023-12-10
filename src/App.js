@@ -87,7 +87,7 @@ function App() {
           />
           <div className={`routes ${language === 'ar' ? 'arabic' : ''}`}>
             <Routes>
-              <Route exact path="/" element={<Home language={language} languageData={languageData} />} />
+              <Route exact path="/" element={<Home language={language} languageData={languageData} api={api} />} />
               <Route path="/services" element={<Services language={language} languageData={languageData} />} />
               <Route path="/members" element={<Members darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
@@ -107,7 +107,7 @@ function App() {
 
             </Routes>
           </div>
-          <Menu language={language} languageData={languageData} />
+          <Menu language={language} languageData={languageData} api={api} />
         </div>
         <Footer language={language} languageData={languageData} />
       </div>

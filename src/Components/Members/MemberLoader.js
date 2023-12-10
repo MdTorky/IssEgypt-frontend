@@ -40,6 +40,12 @@ const MemberLoader = ({ languageText, committee, role }) => {
     else if (committee === "PR" && role === "President") {
         return languageText.PublicRelation
     }
+    else if (committee === "Reading" && role === "President") {
+        return languageText.ReadingPresident
+    }
+    else if (committee === "Reading" && role === "VicePresident") {
+        return languageText.ReadingVicePresident
+    }
     else if (committee === "Academic" && role === "Member") {
         return languageText.AcademicMember
     }
@@ -66,6 +72,9 @@ const MemberLoader = ({ languageText, committee, role }) => {
     }
     else if (committee === "PR" && role === "Member") {
         return languageText.PublicRelation
+    }
+    else if (committee === "Reading" && role === "Member") {
+        return languageText.ReadingMember
     }
 }
 export default MemberLoader;

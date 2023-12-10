@@ -229,12 +229,14 @@
 
 .row .rowCircle>img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: auto;
     border-top: 4px solid red;
     border-left: 5px solid white;
     border-bottom: 4px solid black;
+    background: linear-gradient(180deg, rgba(218, 0, 55, 1) 15%, rgba(232, 249, 253, 1) 44%, rgba(217, 232, 236, 1) 56%, rgba(37, 37, 37, 1) 79%);
+
 }
 
 .arabic .row .rowCircle>img {

@@ -266,9 +266,22 @@ body.dark-mode {
     background: var(--hover);
 }
 
+
+.dark-mode .services .annContainer .annStories .box .announcement img {
+    /* background: var(--hover2); */
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+.dark-mode .arabic .services .annContainer .annStories .box .announcement img {
+    /* background: var(--hover2); */
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+
 .dark-mode .services .rightContainer {
     background: var(--hover2);
 }
+
 
 .dark-mode .services .rightContainer .collegesBoxTitle {
     background: var(--hover);

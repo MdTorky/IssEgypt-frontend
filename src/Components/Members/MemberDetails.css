@@ -1,5 +1,5 @@
 .MemberDetails {
-    margin: 0 140px 100% 0;
+    margin: 0 140px 30% 0;
     font-family: 'Poppins', sans-serif;
     /* width: fit-content; */
 }
@@ -203,7 +203,7 @@ All Members */
 .OtherMembers .allRightMembers {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .OtherMembers .allRightMembers .PresidentMember {
@@ -288,6 +288,9 @@ All Members */
 }
 
 
+.normMemberCard .presidentImg {
+    margin: auto;
+}
 
 .normMemberCard {
     flex-direction: column;
@@ -356,7 +359,12 @@ hr {
     .OtherMembers {
         /* width: 500px; */
         margin: auto;
-        width: 400px;
+        width: 300px;
+        white-space: nowrap;
 
+    }
+
+    .memberB {
+        flex-direction: column
     }
 }

@@ -17,6 +17,8 @@ const CommitteeLoader = ({ languageText, committee }) => {
         return languageText.LogisticsMembers
     } else if (committee === "Women Affairs") {
         return languageText.WomenMembers
+    } else if (committee === "Reading") {
+        return languageText.ReadingMembers
     }
 
 }

@@ -44,7 +44,7 @@
     "Women": "Women Affairs",
     "WomenName": "Sondos Moustafa",
 
-    "PublicRelation": "Public Relations",
+    "PublicRelation": "Public Relations President",
     "PublicRelationName": "Yousef Shahin",
 
     "MemberDetails": "Member Details",
@@ -57,6 +57,7 @@
     "SportPresident": "Sports Committee President",
     "LogisticsPresident": "Logistics Committee President",
     "WomenPresident": "Women Affairs President",
+    "ReadingPresident": "Reading Club President",
 
     "AcademicMember": "Academic Committee Member",
     "BankMember": "Knowledge Bank Member",
@@ -66,6 +67,7 @@
     "SportMember": "Sports Committee Member",
     "LogisticsMember": "Logistics Committee Member",
     "WomenMember": "Women Affairs Member",
+    "ReadingMember": "Reading Club Member",
 
     "AcademicMembers": "Academic Committee Members",
     "BankMembers": "Knowledge Bank Members",
@@ -75,6 +77,9 @@
     "SportMembers": "Sports Committee Members",
     "LogisticsMembers": "Logistics Committee Members",
     "WomenMembers": "Women Affairs Members",
+    "ReadingMembers": "Reading Club Members",
+
+    "ReadingVicePresident": "Reading Club Vice President",
 
     "facebook": "Facebook",
     "instagram": "Instagram",
@@ -354,6 +359,7 @@
     "SportPresident": "رئيس اللجنة الرياضية",
     "LogisticsPresident": "رئيس الخدمات اللوجستية",
     "WomenPresident": "رئيسة شؤون الطالبات",
+    "ReadingPresident": "رئيس نادي القراءة",
 
     "AcademicMember": "عضو للجنة الأكاديمية",
     "BankMember": "عضو لبنك المعرفة",
@@ -363,6 +369,7 @@
     "SportMember": "عضو للجنة الرياضية",
     "LogisticsMember": "عضو للجنة اللوجستية",
     "WomenMember": "عضو شؤون الطالبات",
+    "ReadingMember": "عضو نادي القراءة",
 
     "AcademicMembers": "أعضاء الجنة الأكاديمية",
     "BankMembers": "أعضاء بنك المعرفة",
@@ -372,6 +379,9 @@
     "SportMembers": "أعضاء الجنة الرياضية",
     "LogisticsMembers": "أعضاء الجنة اللوجستية",
     "WomenMembers": "أعضاء شؤون الطالبات",
+    "ReadingMembers": "أعضاء نادي القراءة",
+
+    "ReadingVicePresident": "نائبة رئيس نادي القراءة",
 
     "facebook": "فيسبوك",
     "instagram": "إنستجرام",

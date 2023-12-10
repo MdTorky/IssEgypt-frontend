@@ -88,14 +88,15 @@ const Services = ({ language, languageData }) => {
     const announcements = [
         {
             id: 1,
-            img: ElectronImg,
-            backgroundImg: "https://drive.google.com/uc?export=view&id=1wl2ZoAPCUKsqaJb4HpBqjLkA1H9M462O",
-            title: "ISS Egypt Elections",
-            titleArabic: "انتخابات الاتحاد المصري",
-            organizer: Election,
-            form: 'https://forms.gle/Fz1mwk8Q4PbnJXoX7',
+            img: AcademicImg,
+            backgroundImg: "https://drive.google.com/uc?export=view&id=1R0tcmB5r21wsVwEKlpcc-Jb9Mht3XrcA",
+            title: "Math 1 Revision",
+            titleArabic: "مراجعة Math 1",
+            organizer: Academic,
+            organizerArabic: Academic,
+            form: 'https://math1revision.fillout.com/t/qiBP8y3KCnus',
             link: "",
-            calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmNhNXZtZTN2dGEwcDRkZGNtOW10MGNiM3EgNjgxMTk1NGE5ZGQwMzRkMjE0MTdjYjQ1MmQ5YzM0NGRkNDNlYzM0ZGU3MDBjNWI4MDY1ZTU2MzAzODA1NDZjNUBn&tmsrc=6811954a9dd034d21417cb452d9c344dd43ec34de700c5b8065e5630380546c5%40group.calendar.google.com"
+            calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
         },
 
     ];
@@ -290,7 +291,7 @@ const Services = ({ language, languageData }) => {
                                     <div className="topText">
                                         {language == 'ar' ? <h3>{selectedAnnouncement.titleArabic}</h3> : <h3>{selectedAnnouncement.title}</h3>}
                                         {/* {language == 'ar' ? <p>{selectedAnnouncement.organizerArabic}</p> : <p>{selectedAnnouncement.organizer}</p>} */}
-                                        <p>{selectedAnnouncement.organizer}</p>
+                                        {language == 'ar' ? <p>{selectedAnnouncement.organizerArabic}</p> : <p>{selectedAnnouncement.organizer}</p>}
                                     </div>
                                     <button onClick={closePopup} className="closeButton">
                                         <FontAwesomeIcon icon={faXmark} />

@@ -87,11 +87,11 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
             >
                 <div className="normMemberCard">
                     <div className="presidentImg">
-                        <img src={`${api}/${member.img}`} alt="" />
+                        <img src={`${api}/uploads/${member.img}`} alt="" />
                     </div>
                     <div className="presidentInfo MemberInfo">
                         {language === "ar" ? <p className='presidentName'>{member.arabicName}</p> : <p className='presidentName'>{member.name}</p>}
-                        {social(member)}
+                        {/* {social(member)} */}
                     </div>
                 </div>
             </Link>
@@ -151,7 +151,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                     ))}
 
                 </div>
-                {normMember.length > 0 && (
+                {(normMember.length > 0 || president) && (
                     <div className="OtherMembers">
                         <h3>{CommitteeLoader({ languageText: languageText, committee: coi })}</h3>
                         <div className="allRightMembers">
@@ -164,7 +164,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                                         >
                                             <div className="presidentCard">
                                                 <div className="presidentImg">
-                                                    <img src={`${api}/images/${president.img}`} alt="" />
+                                                    <img src={`${api}/uploads/${president.img}`} alt="" />
                                                 </div>
                                                 <div className="presidentInfo">
                                                     {language === "ar" ? <p className='presidentName'>{president.arabicName}</p> : <p className='presidentName'>{president.name}</p>}
@@ -175,7 +175,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                                         </Link>
                                     </div>
                                 )}
-                                <hr />
+                                {president && <hr />}
                             </div>
 
                             <div className="memberB">

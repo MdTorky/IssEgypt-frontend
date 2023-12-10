@@ -6,10 +6,8 @@ import { faEnvelope, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useLocation, Link } from 'react-router-dom';
 
 import Loader from '../Loader/Loader'
-import roleChecker from './MemberLoader'
 import MemberCard from '../components/MemberCard';
 
 const Members = ({ language, languageData, api, darkMode }) => {
@@ -122,7 +120,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
         switch (number) {
             case 1: members = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4);
                 break;
-            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 13 && member.type == "President");
+            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 16 && (member.type == "President" || member.type == "VicePresident"));
                 break;
             case "Academic": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Academic")
                 break;
@@ -139,6 +137,8 @@ const Members = ({ language, languageData, api, darkMode }) => {
             case "Media": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Media")
                 break;
             case "Women": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Women Affairs")
+                break;
+            case "Reading": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Reading")
                 break;
             default: break;
         }
@@ -257,6 +257,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.MediaMembers, "Media")}
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
+                {card(languageText.ReadingMembers, "Reading")}
                 {loading && (
                     <div><Loader /></div>
                 )}

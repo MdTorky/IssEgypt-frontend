@@ -247,6 +247,7 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                 <option value="Logistics">Logistics Committee</option>
                                 <option value="Women Affairs">Women Affairs</option>
                                 <option value="PR">Public Relations</option>
+                                <option value="Reading">Reading Club</option>
                             </select>
 
                         </div>

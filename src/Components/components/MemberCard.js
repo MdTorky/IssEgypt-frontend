@@ -5,6 +5,7 @@ import {
     faEnvelope, faUserSlash
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { useEffect } from 'react';
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -34,6 +35,15 @@ const MemberCard = ({ api, member, languageText, language }) => {
             });
         }
     };
+
+    useEffect(() => {
+        const peopleCards = document.querySelectorAll('.moreInfo');
+
+
+        peopleCards.forEach((card, index) => {
+            card.style.animationDelay = `${0.2 * index}s`; // Adjust the delay as needed
+        });
+    }, []);
 
     return (
         <Link to={`/members/${member._id}`} className='moreInfo'>

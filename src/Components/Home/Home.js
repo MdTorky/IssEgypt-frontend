@@ -8,11 +8,13 @@ import { faArrowUp, faArrowDown, faXmark, faTree, faEnvelope, faCalendarDays } f
 import { faFacebook, faInstagram, faLinkedin, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import images from '../../data/images.json';
 import link from '../../data/upcomingEvents.json'
-import people from "../../data/people.json";
 import { PS } from 'country-flag-icons/react/3x2'
+import Loader from '../Loader/Loader'
+import { useFormsContext } from '../../hooks/useFormContext'
+import roleChecker from '../Members/MemberLoader'
+import { useLocation, Link } from 'react-router-dom';
 
-
-function Home({ language, languageData }) {
+function Home({ language, languageData, api }) {
     const { toggleLanguage } = useLanguage();
 
     useEffect(() => {
@@ -24,117 +26,64 @@ function Home({ language, languageData }) {
     const themeColor = getComputedStyle(root).getPropertyValue('--theme');
 
 
+    const { members, dispatch } = useFormsContext()
     const languageText = languageData[language];
+
+
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
+    const [messages, setMessages] = useState(true)
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const isEmpty = (obj) => {
+        return Object.keys(obj).length == 0;
+    };
     const isRtl = language === 'ar';
     const [isExpanded, setIsExpanded] = useState(false);
     // Define an array of objects with logo and text data
-    const names = [
-        {
-            id: 1,
-            text: languageText.President,
-            name: languageText.PresidentName
-        },
-        {
-            id: 2,
-            text: languageText.VicePresident,
-            name: languageText.VicePresidentName
-        },
-        {
-            id: 3,
-            text: languageText.Secretary,
-            name: languageText.SecretaryName
-        },
-        {
-            id: 4,
-            text: languageText.Treasurer,
-            name: languageText.TreasurerName
-        },
-        {
-            id: 5,
-            text: languageText.Academic,
-            name: languageText.AcademicName
-
-        },
-        {
-            id: 6,
-            text: languageText.Social,
-            name: languageText.SocialName
-        },
-        {
-            id: 7,
-            text: languageText.Culture,
-            name: languageText.CultureName
-        },
-        {
-            id: 8,
-            text: languageText.Media,
-            name: languageText.MediaName
-        },
-        {
-            id: 9,
-            text: languageText.Sport,
-            name: languageText.SportName
-        },
-        {
-            id: 10,
-            text: languageText.HR,
-            name: languageText.HRName
-        },
-        {
-            id: 11,
-            text: languageText.Logistics,
-            name: languageText.LogisticsName
-        },
-        {
-            id: 12,
-            text: languageText.Women,
-            name: languageText.WomenName
-        },
-        {
-            id: 13,
-            text: languageText.PublicRelation,
-            name: languageText.PublicRelationName
-        },
 
 
-        // Add more objects as needed
-    ];
 
 
-    const combinedPeople = people.map((person, index) => ({
-        ...person,
-        text: names[index].text,
-        name: names[index].name,
-    }));
-
-
-    const [popupVisible, setPopupVisible] = useState(false);
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const togglePopup = (person) => {
-        if (selectedItem && selectedItem.id === person.id) {
-            // If the same story is clicked again, close the popup
-            setPopupVisible(false);
-            setSelectedItem(null);
-        } else {
-            // Close the college popup if open
-            setSelectedItem(person);
-            setPopupVisible(true);
-        }
-    };
-
-    const closePopup = () => {
-        setPopupVisible(false);
-    };
 
     useEffect(() => {
-        if (selectedItem && selectedItem.id) {
-            const updatedItem = combinedPeople.find(combinedPeople => combinedPeople.id === selectedItem.id);
-            if (updatedItem) {
-                setSelectedItem(updatedItem);
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${api}/api/member`);
+                if (!response.ok) {
+                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
+                    setError('Failed to fetch data');
+                    setMessages(true);
+
+                    return;
+                }
+
+                const data = await response.json();
+                console.log(data);
+                dispatch({
+                    type: 'SET_ITEM',
+                    collection: 'members',
+                    payload: data
+                });
+                setMessages(false)
+            } catch (error) {
+                console.error('An error occurred while fetching data:', error);
+                setError('An error occurred while fetching data');
+                setMessages(true);
+            } finally {
+                // Set loading to false once the data is fetched (success or error)
+                setLoading(false);
+
+
             }
-        }
-    }, [language]);
+        };
+        fetchData();
+    }, [api, dispatch]);
+
+    // const hiddenPages = ["/services", "/gallery", "/residences", "/attractions", "/transportation", "/openAccount", "/groups", "/clubs"];
+
+    let combinedPeople = members.filter((member) => member.type == "President");
+    combinedPeople.sort((a, b) => a.memberId - b.memberId);
 
 
 
@@ -269,27 +218,27 @@ function Home({ language, languageData }) {
                 <div className=""></div>
             </div>
 
-            <h1 className="nameTitle ">{languageText.IssPres}
+            {/* <h1 className="nameTitle ">{languageText.IssPres}
                 <div className="showMore" onClick={() => setIsExpanded(!isExpanded)}>
                     {isExpanded ? <FontAwesomeIcon icon={faArrowUp} className='color' /> : <FontAwesomeIcon icon={faArrowDown} className='color2' />}
                 </div>
             </h1>
             <div className={`homeItems ${isExpanded ? 'expanded' : ''}`}>
-                {/* <div className="homeItems"> */}
                 <div className="row">
                     {combinedPeople.map((person, index) => (
-                        <div className={`rowCircle ${popupVisible && selectedItem && selectedItem.id === person.id
-                            ? 'active' : ''}`}
-                            onClick={() => { togglePopup(person) }}>
-                            <img src={person.imgSrc} alt="" />
-                            <Logo logoSrc={person.logoSrc} />
-                            <p>{person.name}</p>
-                            <span>{person.text}</span>
-                        </div>
+                        <Link to={`/members/${person._id}`} className='moreInfo'>
+                            <div className='rowCircle'>
+                                <img src={`${api}/uploads/${person.img}`} alt="" />
+                                <Logo logoSrc={person.logoSrc} />
+                                {language === 'ar' ? <p>{person.arabicName}</p> : <p>{person.name}</p>}
+
+                                <span>{roleChecker({ languageText: languageText, committee: person.committee, role: person.type })}</span>
+                            </div>
+                        </Link>
                     ))}
                 </div>
 
-            </div>
+            </div> */}
 
             <div className="homeBoxes">
                 <h1 className="homeTitle">{languageText.achievements}</h1>
@@ -457,7 +406,7 @@ function Home({ language, languageData }) {
                         </a>
                     </div>
                 </div>
-                {popupVisible && selectedItem && (
+                {/* {popupVisible && selectedItem && (
                     <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
                         <div className="popup-content">
 
@@ -481,7 +430,6 @@ function Home({ language, languageData }) {
                                     <h3>{selectedItem.name}</h3>
                                     <p>{selectedItem.text}</p>
                                 </div>
-                                {/* <hr /> */}
                                 <div className="links">
                                     <button className="icon" onClick={() => window.open(selectedItem.no, "_blank")}>
                                         <span className="tooltip" >{languageText.Group}</span>
@@ -498,7 +446,7 @@ function Home({ language, languageData }) {
                         </div>
 
                     </div>
-                )}
+                )} */}
             </div>
         </div >
     );

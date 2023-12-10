@@ -79,11 +79,26 @@ const AllMembers = ({ language, languageData, api, darkMode }) => {
         switch (number) {
             case 1: members = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4);
                 break;
-            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 8);
+            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 16 && (member.type == "President" || member.type == "VicePresident"));
                 break;
-            case 3: members = filteredMembers.filter((member) => member.memberId >= 9 && member.memberId <= 13);
+            case "Academic": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Academic")
                 break;
-
+            case "Bank": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Bank")
+                break;
+            case "Social": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Social")
+                break;
+            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Cultural")
+                break;
+            case "Sports": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Sports")
+                break;
+            case "Logistics": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Logistics")
+                break;
+            case "Media": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Media")
+                break;
+            case "Women": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Women Affairs")
+                break;
+            case "Reading": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Reading")
+                break;
             default: break;
         }
 
@@ -100,19 +115,57 @@ const AllMembers = ({ language, languageData, api, darkMode }) => {
     }
 
 
-
     const loading2 = (number) => {
         return (
             <>
-                {!loading && isEmpty(allMembers(number)) && !error && (
-                    <div className="noMember">
-                        <FontAwesomeIcon icon={faUserSlash} beatFade />
-                        <h4 className="noAnnouncements">{languageText.noMember}</h4>
-                    </div>
+                {loading && (
+                    <div><Loader /></div>
                 )}
             </>
-        )
-    }
+        );
+    };
+
+
+    const card = (text, number) => {
+        const membersToShow = allMembers(number).filter((boardMember) =>
+            boardMember.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            boardMember.arabicName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            boardMember.faculty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            boardMember.type.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        if (!membersToShow.length) {
+            return null;
+        }
+
+
+        return (
+            <div className="memberBox">
+                <div className="memberBack">
+                    <h2>{text}</h2>
+                    <div className="people">
+                        {loading ? (
+                            <div><Loader /></div>
+                        ) : (
+                            <>
+                                {membersToShow.map((boardMember) => (
+                                    <div className="adminCard">
+                                        <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
+
+                                        <button
+                                            className='deleteButton'
+                                            onClick={() => { handleDelete({ member: boardMember }) }}
+                                        ><FontAwesomeIcon icon={faTrash} /></button>
+                                    </div>
+                                ))}
+                                {loading2(number)}
+                            </>
+                        )}
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
 
 
@@ -162,7 +215,7 @@ const AllMembers = ({ language, languageData, api, darkMode }) => {
         <div className="Members">
             <div className="searchContainer">
                 <input
-                    className="Search"
+                    className={`Search ${searchTerm && filteredMembers.length === 0 ? 'noMembers' : 'hasMembers'}`}
                     placeholder={`${languageText.search}`}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -172,76 +225,20 @@ const AllMembers = ({ language, languageData, api, darkMode }) => {
 
             <h1>{languageText.meettheteam}</h1>
             <div className="allMembers">
-                <div className="memberBox">
-                    <div className="memberBack">
-                        <h2>{languageText.board}</h2>
-                        <div className="people">
-                            {loading ? (
-                                <div><Loader /></div>
-                            ) : (
-                                <>
-                                    {allMembers(1).map((boardMember) => (
-                                        <div className="adminCard">
-                                            <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
-
-                                            <button
-                                                className='deleteButton'
-                                                onClick={() => { handleDelete({ member: boardMember }) }}
-                                            ><FontAwesomeIcon icon={faTrash} /></button>
-                                        </div>
-                                    ))}
-                                    {loading2(1)}
-                                </>
-                            )}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="memberBox">
-                    <div className="memberBack">
-                        <h2>{languageText.committeeP}</h2>
-                        <div className="people">
-                            {loading ? (
-                                <div><Loader /></div>
-                            ) : (
-                                <>
-                                    {allMembers(2).map((boardMember) => (
-                                        <div className="adminCard">
-
-                                            <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
-                                            <button
-                                                className='deleteButton'
-                                                onClick={() => { handleDelete({ member: boardMember }) }}
-                                            ><FontAwesomeIcon icon={faTrash} /></button>
-                                        </div>
-                                    ))}
-
-                                </>
-                            )}
-                        </div>
-                        <div className="people">
-                            {loading ? (
-                                <div><Loader /></div>
-                            ) : (
-                                <>
-                                    {allMembers(3).map((boardMember) => (
-                                        <div className="adminCard">
-
-                                            <MemberCard api={api} member={boardMember} languageText={languageText} language={language} />
-                                            <button
-                                                className='deleteButton'
-                                                onClick={() => { handleDelete({ member: boardMember }) }}
-                                            ><FontAwesomeIcon icon={faTrash} /></button>
-                                        </div>
-                                    ))}
-                                </>
-                            )}
-                        </div>
-                        {loading2(2)}
-                    </div>
-
-
-                </div>
+                {card(languageText.board, 1)}
+                {card(languageText.committeeP, 2)}
+                {card(languageText.AcademicMembers, "Academic")}
+                {card(languageText.BankMembers, "Bank")}
+                {card(languageText.SocialMembers, "Social")}
+                {card(languageText.CultureMembers, "Cultural")}
+                {card(languageText.SportMembers, "Sports")}
+                {card(languageText.MediaMembers, "Media")}
+                {card(languageText.LogisticsMembers, "Logistics")}
+                {card(languageText.WomenMembers, "Women")}
+                {card(languageText.ReadingMembers, "Reading")}
+                {loading && (
+                    <div><Loader /></div>
+                )}
             </div>
         </div >
     );
