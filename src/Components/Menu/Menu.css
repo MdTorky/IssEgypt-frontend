@@ -207,6 +207,7 @@
     animation-delay: 0.2s;
 } */
 
+
 .arabic .peopleImg {
     border-top: 3px solid var(--theme);
     border-left: none;
@@ -274,6 +275,11 @@
     background-position: center;
     background-repeat: no-repeat;
     height: fit-content;
+}
+
+
+.mLink {
+    text-decoration: none;
 }
 
 

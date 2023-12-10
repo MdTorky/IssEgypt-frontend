@@ -216,7 +216,7 @@ const Menu = ({ language, languageData, api }) => {
                 ) : (
                     <>
                         {combinedPeople.map((person, index) => (
-                            <Link to={`/members/${person._id}`}>
+                            <Link to={`/members/${person._id}`} className="mLink">
                                 <div className="people" key={index}>
                                     <div className="peopleCard">
                                         <div className="peopleImg">
