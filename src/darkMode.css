@@ -94,6 +94,11 @@ body.dark-mode {
     background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
+.dark-mode .mLink {
+    text-decoration: none;
+    color: var(--bg);
+}
+
 
 
 

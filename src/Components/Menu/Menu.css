@@ -280,6 +280,7 @@
 
 .mLink {
     text-decoration: none;
+    color: var(--hover);
 }
 
 
