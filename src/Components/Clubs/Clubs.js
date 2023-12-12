@@ -48,7 +48,7 @@ const Clubs = ({ language, languageData }) => {
         hobby: [
             {
                 id: 4,
-                description: "",
+                description: languageText.readingDesc,
 
             },
             {
