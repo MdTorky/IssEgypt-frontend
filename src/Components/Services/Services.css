@@ -1591,7 +1591,7 @@ a:visited {
 
     .services .rightContainer .collegesBoxTitle .collegesBox {
         flex-direction: row;
-
+        gap: 10px;
     }
 
     .services .rightContainer .collegesBoxTitle>h2 {
