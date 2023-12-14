@@ -444,8 +444,8 @@ a:visited {
 }
 
 
-.arabic .newStudents .newStudentsRow .newStudentCard:nth-child(4),
-.arabic .newStudents .newStudentsRows .newStudentCard:nth-child(4) {
+.arabic .newStudents .newStudentsRow .newStudentCard.notyet,
+.arabic .newStudents .newStudentsRows .newStudentCard.notyet {
     background: #5A0009;
     color: var(--bg);
 }

@@ -393,8 +393,8 @@ body.dark-mode {
     color: var(--bg);
 }
 
-.dark-mode .arabic .newStudents .newStudentsRow .newStudentCard:nth-child(4),
-.dark-mode .arabic .newStudents .newStudentsRow2 .newStudentCard:nth-child(4) {
+.dark-mode .arabic .newStudents .newStudentsRow .newStudentCard.notyet,
+.dark-mode .arabic .newStudents .newStudentsRow2 .newStudentCard.notyet {
     background: #5A0009;
     color: var(--bg);
 }
