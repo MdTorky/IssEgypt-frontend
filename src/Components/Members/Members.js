@@ -218,16 +218,18 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 <div className="memberBack">
                     <h2>{text}</h2>
                     <div className="people">
-                        {loading ? (
+                        {/* {loading ? (
                             <div><Loader /></div>
                         ) : (
-                            <>
-                                {membersToShow.map((boardMember) => (
-                                    <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
-                                ))}
-                                {/* {loading2(number)} */}
-                            </>
-                        )}
+                           
+                        )} */}
+
+                        <>
+                            {membersToShow.map((boardMember) => (
+                                <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
+                            ))}
+                            {/* {loading2(number)} */}
+                        </>
                     </div>
                 </div>
             </div>
