@@ -387,8 +387,8 @@ body.dark-mode {
     color: var(--bg2)
 }
 
-.dark-mode .newStudents .newStudentsRow .newStudentCard:nth-child(4),
-.dark-mode .newStudents .newStudentsRow2 .newStudentCard:nth-child(4) {
+.dark-mode .newStudents .newStudentsRow .newStudentCard.notyet,
+.dark-mode .newStudents .newStudentsRow2 .newStudentCard.notyet {
     background: #5A0009;
     color: var(--bg);
 }
