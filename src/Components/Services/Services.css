@@ -262,7 +262,8 @@ h2 {
 .newStudents .newStudentsRow2 {
     display: flex;
     justify-content: space-between;
-    /* gap: 10px; */
+    gap: 10px;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
@@ -289,12 +290,17 @@ h2 {
     color: var(--hover)
 }
 
-.newStudents .newStudentsRow .newStudentCard:nth-child(4),
+/* .newStudents .newStudentsRow .newStudentCard:nth-child(4),
 .newStudents .newStudentsRow2 .newStudentCard:nth-child(4) {
     background: #5A0009;
     color: var(--bg);
-}
+} */
 
+.newStudents .newStudentsRow .newStudentCard.notyet,
+.newStudents .newStudentsRow2 .newStudentCard.notyet {
+    background: #5A0009;
+    color: var(--bg);
+}
 
 .newStudents .newStudentsRow .newStudentCard:hover,
 .newStudents .newStudentsRow2 .newStudentCard:hover {
@@ -411,7 +417,7 @@ a:visited {
     font-size: 0.63em;
 }
 
-.newStudents .newStudentsRow2 .newStudentCard:first-child:hover>.day-text {
+.newStudents .newStudentsRow2 .newStudentCard.smaller:hover>.day-text {
     font-size: 0.575em;
 
 }
@@ -443,6 +449,8 @@ a:visited {
     background: #5A0009;
     color: var(--bg);
 }
+
+
 
 .arabic .newStudents .newStudentsRow .newStudentCard:hover>.moon,
 .arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
@@ -491,6 +499,7 @@ a:visited {
     padding: 10px;
     /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    height: 100%;
 }
 
 .services .rightContainer .collegesBoxTitle>h2 {
@@ -504,7 +513,10 @@ a:visited {
 .services .rightContainer .collegesBoxTitle .collegesBox {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
+    justify-content: space-evenly;
+    align-content: space-between;
+    height: 100%;
 }
 
 .rightContainer .college {
@@ -515,10 +527,6 @@ a:visited {
     justify-content: left;
     backdrop-filter: blur(10px);
     transition: 0.3s ease-in-out;
-    /* animation: fadeInLeft 2s ease 0s 1 normal forwards; */
-
-
-    /* background: red; */
 }
 
 .collegesBoxTitle:hover .college {
@@ -586,7 +594,7 @@ a:visited {
     padding: 10px;
     /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-
+    height: 100%;
 }
 
 .arabic .services .leftContainer {
@@ -603,7 +611,10 @@ a:visited {
 .services .leftContainer .collegesBoxTitle .collegesBox {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
+    justify-content: space-evenly;
+    align-content: space-between;
+    height: 100%;
 }
 
 

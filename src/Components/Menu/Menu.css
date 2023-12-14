@@ -216,18 +216,14 @@
 }
 
 .peopleImg img {
-    width: 70px;
+    /* width: 70px; */
     height: 150%;
     position: absolute;
-    right: -3px;
+    right: 5px;
     bottom: 0px;
     border-radius: 50px;
 }
 
-.arabic .peopleImg img {
-    /* left: 30px; */
-    right: -5px;
-}
 
 .peopleText {
     line-height: 3px;

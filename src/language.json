@@ -90,7 +90,7 @@
     "services": "Services",
     "members": "Members",
     "gallery": "Gallery",
-    "rights": "\u00A9 2023 ISS-Egypt | All Rights Reserved",
+    "rights": "\u00A9 2023/24 ISS-Egypt | All Rights Reserved",
     "together": "Together we ",
     "rise": "rise",
     "succeed": "succeed",
@@ -199,6 +199,7 @@
     "handbook": "Handbook",
     "bankAccount": "Bank Account",
     "groups": "Groups",
+    "internships": "Internships",
     "clubs": "Clubs",
     "extraCourses": "Extra Courses",
 
@@ -208,6 +209,7 @@
     "handbook2": "COMING SOON",
     "bankAccount2": "Bank Account Setup Made Easy",
     "groups2": "Access Various Groups",
+    "internships2": "Explore some Companies for Internship",
     "clubs2": "Join Vibrant Communities",
     "extraCourses2": "Supplemental Courses",
 
@@ -393,7 +395,7 @@
     "services": "خدماتنا",
     "members": "الأعضاء",
     "gallery": "المعرض",
-    "rights": "\u00A9  ISS-Egypt 2023 | جميع الحقوق محفوظة",
+    "rights": "\u00A9  ISS-Egypt 2023/24 | جميع الحقوق محفوظة",
     "together": "معا  ",
     "rise": "نرتقي",
     "succeed": "ننجح",
@@ -503,6 +505,8 @@
     "handbook": "الدليل",
     "bankAccount": "حساب البنك",
     "groups": "مجموعات",
+    "internships": "التدريب",
+
     "clubs": "الأندية",
     "extraCourses": "دورات اضافية",
 

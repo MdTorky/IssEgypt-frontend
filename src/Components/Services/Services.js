@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCalendarDays, faXmark, faCircleInfo, faCarBattery, faFileLines, faBellSlash,
     faLaptopCode, faHelmetSafety, faGears, faFlaskVial, faBookBookmark, faEnvelope, faLocationDot, faInfoCircle,
-    faBuilding, faMapLocationDot, faCarSide, faFilePdf, faCreditCard, faGraduationCap, faFutbol
+    faBuilding, faMapLocationDot, faCarSide, faFilePdf, faCreditCard, faGraduationCap, faFutbol, faHouseChimney
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons';
 
@@ -97,6 +97,18 @@ const Services = ({ language, languageData }) => {
             form: 'https://math1revision.fillout.com/t/qiBP8y3KCnus',
             link: "",
             calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
+        },
+        {
+            id: 2,
+            img: CultureImg,
+            backgroundImg: "https://drive.google.com/uc?export=view&id=1ZMJTmxW76yfpVMXidFUDUocolf9vjMLM",
+            title: "Stories of the Prophets",
+            titleArabic: "قصص الأنبياء",
+            organizer: Culture,
+            organizerArabic: Culture,
+            form: '',
+            link: "https://chat.whatsapp.com/EUU9mUlO1fpLWjLofX50a8",
+            calendarLink: ""
         },
 
     ];
@@ -333,7 +345,7 @@ const Services = ({ language, languageData }) => {
                                 {/* <div > */}
                                 <p className="time-text"><span>{languageText.residence}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.residence2}</p>
-                                <FontAwesomeIcon icon={faBuilding} className='moon' />
+                                <FontAwesomeIcon icon={faHouseChimney} className='moon' />
                                 {/* </div> */}
                             </Link>
                             <Link to="/attractions" className="newStudentCard">
@@ -346,7 +358,7 @@ const Services = ({ language, languageData }) => {
                                 <p className="day-text">{languageText.transportation2}</p>
                                 <FontAwesomeIcon icon={faCarSide} className='moon' />
                             </Link>
-                            <div className="newStudentCard">
+                            <div className="newStudentCard notyet">
                                 <p className="time-text"><span>{languageText.handbook}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.handbook2}</p>
                                 <FontAwesomeIcon icon={faFilePdf} className='moon' />
@@ -356,7 +368,14 @@ const Services = ({ language, languageData }) => {
                     <div className="newStudents">
                         <h2>{languageText.extraServices}</h2>
                         <div className="newStudentsRow2">
-                            <Link to="/openAccount" className="newStudentCard">
+                            <Link to="" className="newStudentCard notyet">
+                                <p className="time-text"><span>{languageText.internships}</span><span className="time-sub-text"></span></p>
+                                {/* <p className="day-text">{languageText.groups2}</p> */}
+                                <p className="day-text">{languageText.handbook2}</p>
+                                {/* <FontAwesomeIcon icon={faTelegram} className='moon' /> */}
+                                <FontAwesomeIcon icon={faBuilding} className='moon' />
+                            </Link>
+                            <Link to="/openAccount" className="newStudentCard smaller">
                                 <p className="time-text"><span>{languageText.bankAccount}</span><span className="time-sub-text"></span></p>
                                 {/* <p className="day-text">Unlock Financial Freedom</p> */}
                                 <p className="day-text">{languageText.bankAccount2}</p>
@@ -372,14 +391,14 @@ const Services = ({ language, languageData }) => {
                                 <p className="day-text">{languageText.extraCourses2}</p>
                                 <FontAwesomeIcon icon={faGraduationCap} className='moon' />
                             </Link>
-                            <div className="newStudentCard">
-                                <p className="time-text"><span>{languageText.groups}</span><span className="time-sub-text"></span></p>
-                                {/* <p className="day-text">{languageText.groups2}</p> */}
-                                <p className="day-text">{languageText.handbook2}</p>
-                                <FontAwesomeIcon icon={faTelegram} className='moon' />
-                            </div>
+                            {/* <Link to="/courses" className="newStudentCard">
+                                <p className="time-text"><span>{languageText.extraCourses}</span><span className="time-sub-text"></span></p>
+                                <p className="day-text">{languageText.extraCourses2}</p>
+                                <FontAwesomeIcon icon={faGraduationCap} className='moon' />
+                            </Link> */}
                         </div>
                     </div>
+
                 </div>
             </div>
             <div className="leftContainer">
