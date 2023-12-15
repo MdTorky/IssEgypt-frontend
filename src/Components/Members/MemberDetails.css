@@ -230,10 +230,10 @@ All Members */
 }
 
 .presidentImg img {
-    width: 150px;
+    /* width: 150px; */
     height: 150px;
     top: -50px;
-    left: -30px;
+    left: 0;
     position: absolute;
 }
 

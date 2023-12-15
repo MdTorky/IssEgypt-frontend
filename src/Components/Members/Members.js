@@ -237,7 +237,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
     };
     return (
         <div className="Members">
-            <div className="searchContainer">
+            {/* <div className="searchContainer">
                 <input
                     className={`Search ${searchTerm && filteredMembers.length === 0 ? 'noMembers' : 'hasMembers'}`}
                     placeholder={`${languageText.search}`}
@@ -263,7 +263,8 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {loading && (
                     <div><Loader /></div>
                 )}
-            </div>
+            </div> */}
+            <h1>{languageText.underCon}</h1>
         </div >
     );
 }
