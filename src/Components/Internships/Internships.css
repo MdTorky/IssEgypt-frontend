@@ -1,0 +1,461 @@
+.internships {
+    margin-bottom: 20%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-right: 130px;
+}
+
+.arabic .internships {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    margin-left: 275px;
+    margin-top: -15px;
+    /* margin-right: 130px; */
+
+}
+
+.internships .sectionBox {
+    width: fit-content;
+    display: flex;
+    /* background: var(--bg2); */
+    padding: 20px;
+    box-sizing: border-box;
+    margin: auto;
+    gap: 50px;
+    border-radius: 20px;
+}
+
+.internships .title {
+    text-align: center;
+    font-size: 2em;
+}
+
+
+
+.internships .outerBox {
+    background: var(--bg2);
+    padding: 20px;
+    border-radius: 20px;
+    height: max-content;
+}
+
+.internships .outerBox .innerBox {
+    background: var(--bg);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+/* .arabic .internships .outerBox .innerBox {
+    direction: ltr;
+} */
+
+
+.internships .cards {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.internships .cards .card {
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.7s ease;
+    align-items: center;
+    /* padding: 5px; */
+}
+
+
+.internships .cards .card:hover {
+    box-shadow: var(--hover2) 0px 1px 4px, var(--hover) 0px 0px 0px 3px;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* .cards .card:hover img {
+    transform: scale(2);
+    z-index: 8;
+} */
+
+
+.internships .cards .card .cardsBottomContent {
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+
+    /* justify-content: space-evenly; */
+}
+
+.internships .cards .card .cardsBottomContent p {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: auto;
+}
+
+.internships .cards .card .cardsBottomContent p span {
+    color: var(--theme);
+    font-size: 0.7em;
+    margin-top: 5px;
+}
+
+
+
+.internships .cards .card .img {
+    width: 100%;
+    /* height: 100%; */
+    /* border-radius: 50px; */
+    transition: 0.7s ease;
+    padding: 5px;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.internships .cards .card .img img {
+    width: 150px;
+    height: 90px;
+    /* border-radius: 50px; */
+    transition: 0.7s ease;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+
+}
+
+.internships .cards .card .cardsBottomContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.internships .cards .card .cardsBottomContent .icons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-size: 1.1em;
+    /* align-items: center; */
+
+}
+
+
+
+
+
+
+
+
+.internships .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+    background: var(--bg);
+    width: 15%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 20px;
+    z-index: 9999;
+    display: none;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: max-content; */
+
+}
+
+
+/* .arabic .internships .popup {
+    direction: ltr
+} */
+
+.internships .popup-opening {
+    display: block;
+    animation: popup-open 0.5s ease-in-out forwards;
+}
+
+.internships .popup-closing {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+@keyframes popup-open {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes popup-close {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        display: none;
+    }
+}
+
+.popup.show {
+    display: block;
+}
+
+.popup-content {
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    height: 100%;
+    gap: 10px;
+
+}
+
+
+.popup .top {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.popup .top img {
+    width: 100%;
+    height: 170px;
+    border-radius: 20px;
+
+}
+
+
+
+.internships .popup .bottom {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    padding: 15px;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.popup .bottom .header {
+    display: flex;
+    background: var(--bg2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    padding: 10px;
+    border-radius: 20px;
+    justify-content: space-between;
+
+}
+
+.popup .bottom .header .headerImg {
+    display: flex;
+    gap: 10px;
+}
+
+.popup .bottom .header .headerImg img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    transition: 0.7s ease;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.popup .bottom .header .headerTitle {
+    justify-self: center;
+    align-self: center;
+}
+
+.popup .bottom .bus {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-sizing: border-box;
+    width: 90%;
+    /* text-align: justify; */
+
+}
+
+.internships .popup .bottom .bus.new {
+    width: 100%;
+    text-align: justify;
+}
+
+
+.iconAnimation {
+    /* width: 100%; */
+    overflow: hidden;
+    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+    background: url(../../images/street.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    padding: 5px;
+    height: 30px;
+
+}
+
+.busIcon {
+    display: inline-block;
+    animation: moveBus 5s linear infinite;
+    font-size: 1.2em;
+    color: var(--bg);
+}
+
+@keyframes moveBus {
+    0% {
+        transform: translateX(-20px) rotate(0deg);
+
+    }
+
+    12.5% {
+        transform: translateX(32.5px) rotate(30deg);
+
+    }
+
+    25% {
+        transform: translateX(65px) rotate(0deg);
+    }
+
+    37.5% {
+        transform: translateX(97.5px) rotate(-30deg);
+    }
+
+    50% {
+        transform: translateX(130px) rotate(0deg);
+    }
+
+    62.5% {
+        transform: translateX(162.5px) rotate(30deg);
+    }
+
+    75% {
+        transform: translateX(195px) rotate(0deg);
+    }
+
+    87.5% {
+        transform: translateX(227.5px) rotate(-30deg);
+    }
+
+    100% {
+        transform: translateX(280px) rotate(0deg);
+
+    }
+}
+
+@keyframes rotateBus {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:700px) {
+
+    .internships {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 90%;
+        /* justify-content: center; */
+        align-items: center;
+        margin: 0 auto 50% auto;
+        /* Center vertically */
+        /* Center horizontally */
+    }
+
+
+    .arabic .internships {
+        font-family: 'Noto Kufi Arabic', sans-serif;
+        margin: 0;
+        margin: 40px auto 50% auto;
+
+
+
+    }
+
+    .internships .sectionBox {
+        width: fit-content;
+        flex-direction: column;
+        padding: 15px;
+        gap: 50px;
+        /* width: 100%; */
+    }
+
+    /* .arabic .section .title {
+        font-size: 0.1em
+    } */
+
+
+    .internships .outerBox {
+        padding: 15px;
+    }
+
+    .internships .outerBox .innerBox {
+        /* background: var(--bg2); */
+        padding: 5px;
+    }
+
+
+
+    .cards .card .cardsBottomContent {
+        justify-content: space-evenly;
+    }
+
+    .cards .card .img img {
+        width: 100%;
+        height: 120px;
+    }
+
+    .internships .popup {
+        width: 70%;
+    }
+}

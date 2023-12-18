@@ -174,6 +174,7 @@
     "FKA": "Civil Engineering",
     "FKM": "Mechanical Engineering",
     "FKT": "Chemical Engineering",
+    "General": "General Companies",
     "Found": "Bridging & Foundation",
     "Group": "WhatsApp",
     "Location": "Location",
@@ -183,6 +184,8 @@
     "Image": "Image",
     "Form": "Form",
     "Bus": "Bus",
+    "Apply": "Apply",
+    "ApplyEmail": "Apply Email",
     "Apple": "IOS Link",
     "Android": "Android Link",
     "WhatsApp": "WhatsApp Link",
@@ -210,7 +213,7 @@
     "handbook2": "COMING SOON",
     "bankAccount2": "Bank Account Setup Made Easy",
     "groups2": "Access Various Groups",
-    "internships2": "Explore some Companies for Internship",
+    "internships2": "Find Internship Companies",
     "clubs2": "Join Vibrant Communities",
     "extraCourses2": "Supplemental Courses",
 
@@ -291,6 +294,7 @@
     "upcomingEventDescription2": "We are delighted to introduce you to the brand new ISS Egypt Website.",
 
     "search": "Search for a member",
+    "searchIntern": "Search for a company",
     "meettheteam": "Meet the Team",
     "memberDeleted": "Member Deleted Successfully",
 
@@ -481,6 +485,7 @@
     "FKA": "هندسة مدنية",
     "FKM": "هندسة ميكانيكية",
     "FKT": "هندسة كيميائية",
+    "General": "شركات عامة",
     "Found": "الدراسات التأسيسية",
     "Group": "واتساب",
     "Location": "العنوان",
@@ -490,6 +495,8 @@
     "Image": "صورة",
     "Form": "استمارة",
     "Bus": "باص",
+    "Apply": "قدم",
+    "ApplyEmail": "البريد للتقديم",
     "Apple": "رابط IOS",
     "Android": "رابط Android",
     "WhatsApp": "رابط WhatsApp",
@@ -518,6 +525,7 @@
     "handbook2": "قادم قريباً",
     "bankAccount2": "افتح حسابًا بنكيًا بسهولة",
     "groups2": "انضم إلى مجموعات مختلفة",
+    "internships2": "ابحث عن شركات التدريب",
     "clubs2": "انضم إلى الأندية المتعددة",
     "extraCourses2": "دورات تكميلية إضافية",
 
@@ -598,6 +606,7 @@
     "upcomingEventDescription2": "يسعدنا أن نقدم لكم الموقع الإلكتروني الجديد للاتحاد المصري.",
 
     "search": "ابحث عن عضو",
+    "searchIntern": "ابحث عن شركة",
     "meettheteam": "تعرف على الفريق",
     "memberDeleted": "تم حذف العضو بنجاح",
 

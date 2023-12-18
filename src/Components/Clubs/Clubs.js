@@ -178,100 +178,101 @@ const Clubs = ({ language, languageData }) => {
 
 
 
-    return (<div className="clubs">
-        <h1 className="title">{languageText.clubs}</h1>
+    return (
+        <div className="clubs">
+            <h1 className="title">{languageText.clubs}</h1>
 
 
-        <div className="sectionBox">
-            <div className="outerBox">
-                <div className="innerBox">
-                    <h2>{languageText.SelfImprovement}</h2>
-                    <div className="cards">
-                        {combinedDescriptionSelf.map((self, index) => (
-                            <div className="card" key={index}>
-                                <div className="img"><img src={self.img} alt="" /></div>
-                                <div className="cardsBottomContent">
-                                    <p>{self.name} </p>
-                                    <Button item={self} languageText={languageText} />
+            <div className="sectionBox">
+                <div className="outerBox">
+                    <div className="innerBox">
+                        <h2>{languageText.SelfImprovement}</h2>
+                        <div className="cards">
+                            {combinedDescriptionSelf.map((self, index) => (
+                                <div className="card" key={index}>
+                                    <div className="img"><img src={self.img} alt="" /></div>
+                                    <div className="cardsBottomContent">
+                                        <p>{self.name} </p>
+                                        <Button item={self} languageText={languageText} />
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="outerBox">
-                <div className="innerBox">
-                    <h2>{languageText.Hobby}</h2>
-                    <div className="cards">
-                        {combinedDescriptionHobby.map((hobby, index) => (
-                            <div className="card" key={index}>
-                                <div className="img"><img src={hobby.img} alt="" /></div>
-                                <div className="cardsBottomContent">
-                                    <p>{hobby.name} </p>
-                                    <Button item={hobby} languageText={languageText} />
+                <div className="outerBox">
+                    <div className="innerBox">
+                        <h2>{languageText.Hobby}</h2>
+                        <div className="cards">
+                            {combinedDescriptionHobby.map((hobby, index) => (
+                                <div className="card" key={index}>
+                                    <div className="img"><img src={hobby.img} alt="" /></div>
+                                    <div className="cardsBottomContent">
+                                        <p>{hobby.name} </p>
+                                        <Button item={hobby} languageText={languageText} />
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="outerBox">
-                <div className="innerBox">
-                    <h2>{languageText.AcademicTitle}</h2>
-                    <div className="cards">
-                        {combinedDescriptionAcademic.map((academic, index) => (
-                            <div className="card" key={index}>
-                                <div className="img"><img src={academic.img} alt="" /></div>
-                                <div className="cardsBottomContent">
-                                    <p>{academic.name} </p>
-                                    <Button item={academic} languageText={languageText} />
+                <div className="outerBox">
+                    <div className="innerBox">
+                        <h2>{languageText.AcademicTitle}</h2>
+                        <div className="cards">
+                            {combinedDescriptionAcademic.map((academic, index) => (
+                                <div className="card" key={index}>
+                                    <div className="img"><img src={academic.img} alt="" /></div>
+                                    <div className="cardsBottomContent">
+                                        <p>{academic.name} </p>
+                                        <Button item={academic} languageText={languageText} />
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
-            {popupVisible && selectedItem && (
-                <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
-                    <div className="popup-content">
-                        {/* <h3>{selectedItem.name}</h3> */}
-                        {/* <div className="top">
+                {popupVisible && selectedItem && (
+                    <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
+                        <div className="popup-content">
+                            {/* <h3>{selectedItem.name}</h3> */}
+                            {/* <div className="top">
                         <img src={selectedItem.busImg} alt="" />
                     </div> */}
 
-                        <div className="bottom">
-                            <>
-                                <div className="header">
-                                    <div className="headerImg">
-                                        <img src={selectedItem.img} alt="" />
-                                        <div className="headerTitle">{selectedItem.name}</div>
+                            <div className="bottom">
+                                <>
+                                    <div className="header">
+                                        <div className="headerImg">
+                                            <img src={selectedItem.img} alt="" />
+                                            <div className="headerTitle">{selectedItem.name}</div>
+                                        </div>
+
+                                        <button className="icon" onClick={closePopup}>
+                                            <span className="tooltip" >{languageText.close}</span>
+                                            <span><FontAwesomeIcon icon={faXmark} /></span>
+                                        </button>
+
                                     </div>
+                                    <div className="bus new">{selectedItem.description}</div>
 
-                                    <button className="icon" onClick={closePopup}>
-                                        <span className="tooltip" >{languageText.close}</span>
-                                        <span><FontAwesomeIcon icon={faXmark} /></span>
-                                    </button>
+                                </>
 
-                                </div>
-                                <div className="bus new">{selectedItem.description}</div>
-
-                            </>
-
-                        </div>
-                        {/* <div className="iconAnimation">
+                            </div>
+                            {/* <div className="iconAnimation">
                         <div className="busIcon">
                             <FontAwesomeIcon icon={faVanShuttle} />
                         </div>
                     </div> */}
 
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
-    </div>
     );
 }
 

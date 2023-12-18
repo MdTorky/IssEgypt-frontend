@@ -289,24 +289,26 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                             onChange={(e) => { setImg(e.target.value) }}
                         />
                     </div> */}
-                    <div className="InputField">
-                        <input
-                            placeholder={`\uf03e  ${languageText.formImg}`}
-                            type="file"
-                            className={`input ${(img) ? 'valid' : 'invalid'}`}
-                            // onChange={(e) => { setImg(e.target.value) }}
-                            onChange={(e) => handleImageUpload(e)}
-                        />
-                    </div>
-                    <div className="InputField">
-                        <input
+                    <div className="InputRow">
+                        <div className="InputField">
+                            <input
+                                placeholder={`\uf03e  ${languageText.formImg}`}
+                                type="file"
+                                className={`input ${(img) ? 'valid' : 'invalid'}`}
+                                // onChange={(e) => { setImg(e.target.value) }}
+                                onChange={(e) => handleImageUpload(e)}
+                            />
+                        </div>
+                        <div className="InputField">
+                            <input
 
-                            placeholder={`\uf2c1  ${languageText.formId}`}
+                                placeholder={`\uf2c1  ${languageText.formId}`}
 
-                            type="number"
-                            className={`input ${(memberId) ? 'valid' : 'invalid'}`}
-                            onChange={(e) => { setMemberId(e.target.value) }}
-                        />
+                                type="number"
+                                className={`input ${(memberId) ? 'valid' : 'invalid'}`}
+                                onChange={(e) => { setMemberId(e.target.value) }}
+                            />
+                        </div>
                     </div>
                     <button>{languageText.addMember}</button>
                     {error && <div className="formError">{error}</div>}

@@ -368,9 +368,11 @@ const Services = ({ language, languageData }) => {
                     <div className="newStudents">
                         <h2>{languageText.extraServices}</h2>
                         <div className="newStudentsRow2">
+                            {/* <Link to="/internships" className="newStudentCard"> */}
                             <Link to="" className="newStudentCard notyet">
                                 <p className="time-text"><span>{languageText.internships}</span><span className="time-sub-text"></span></p>
                                 {/* <p className="day-text">{languageText.groups2}</p> */}
+                                {/* <p className="day-text">{languageText.internships2}</p> */}
                                 <p className="day-text">{languageText.handbook2}</p>
                                 {/* <FontAwesomeIcon icon={faTelegram} className='moon' /> */}
                                 <FontAwesomeIcon icon={faBuilding} className='moon' />

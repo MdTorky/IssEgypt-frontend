@@ -380,13 +380,13 @@ a:visited {
 }
 
 .newStudentsRow2 :nth-child(2) .moon {
-    color: var(--hover2);
+    color: #5DDAB4;
 
 
 }
 
 .newStudentsRow2 :nth-child(3) .moon {
-    color: #5DDAB4;
+    color: var(--hover2);
 
 }
 

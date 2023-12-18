@@ -401,7 +401,7 @@ body.dark-mode {
 
 
 
-.dark-mode .newStudentsRow2 :nth-child(2) .moon {
+.dark-mode .newStudentsRow2 :nth-child(3) .moon {
     color: var(--bg2);
 }
 

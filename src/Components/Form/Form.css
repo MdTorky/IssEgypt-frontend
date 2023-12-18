@@ -99,7 +99,7 @@
 
 .InputField {
     display: flex;
-    width: 100%;
+    width: 300px;
     /* flex-direction: column */
 }
 

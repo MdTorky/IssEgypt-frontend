@@ -15,7 +15,7 @@ import { useDarkMode } from './DarkModeContext';
 import Attractions from './Components/Attractions/Attractions';
 import Transportation from './Components/Transportation/Transportation';
 import BankAccount from './Components/BankAccount/BankAccount';
-import Groups from './Components/Groups/Groups';
+import Internships from './Components/Internships/Internships';
 import Clubs from './Components/Clubs/Clubs';
 import NotFound from './Components/NotFound/NotFound';
 import Courses from './Components/Courses/Courses';
@@ -24,6 +24,7 @@ import Suggestions from './Components/Answers/Suggestions';
 import MemberForm from './Components/Form/MemberForm';
 import MemberDetails from './Components/Members/MemberDetails'
 import AllMembers from './Components/Admin/AllMembers'
+import InternshipForm from './Components/Form/InternshipForm';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -101,6 +102,8 @@ function App() {
               <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
               <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}
