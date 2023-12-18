@@ -86,18 +86,18 @@ const Services = ({ language, languageData }) => {
     // 8. Add the Calender Link
 
     const announcements = [
-        {
-            id: 1,
-            img: AcademicImg,
-            backgroundImg: "https://drive.google.com/uc?export=view&id=1R0tcmB5r21wsVwEKlpcc-Jb9Mht3XrcA",
-            title: "Math 1 Revision",
-            titleArabic: "مراجعة Math 1",
-            organizer: Academic,
-            organizerArabic: Academic,
-            form: 'https://math1revision.fillout.com/t/qiBP8y3KCnus',
-            link: "",
-            calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
-        },
+        // {
+        //     id: 1,
+        //     img: AcademicImg,
+        //     backgroundImg: "https://drive.google.com/uc?export=view&id=1R0tcmB5r21wsVwEKlpcc-Jb9Mht3XrcA",
+        //     title: "Math 1 Revision",
+        //     titleArabic: "مراجعة Math 1",
+        //     organizer: Academic,
+        //     organizerArabic: Academic,
+        //     form: 'https://math1revision.fillout.com/t/qiBP8y3KCnus',
+        //     link: "",
+        //     calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
+        // },
         {
             id: 2,
             img: CultureImg,
