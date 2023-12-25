@@ -118,37 +118,44 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
 
         switch (number) {
-            case 1: members = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4);
+            case 1: members = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4).sort(
+                (a, b) => a.memberId - b.memberId
+            );
                 break;
-            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 16 && (member.type == "President" || member.type == "VicePresident"));
+            case 2: members = filteredMembers.filter((member) => member.memberId >= 5 && member.memberId <= 16 && (member.type == "President" || member.type == "VicePresident")).sort(
+                (a, b) => a.memberId - b.memberId
+            );
                 break;
-            case "Academic": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Academic")
+            case "Academic": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Academic").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Bank": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Bank")
+            case "Bank": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Bank").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Social": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Social")
+            case "Social": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Social").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Cultural")
+            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Cultural").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Sports": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Sports")
+            case "Sports": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Sports").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Logistics": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Logistics")
+            case "Logistics": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Logistics").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Media": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Media")
+            case "Media": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Media").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Women": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Women Affairs")
+            case "Women": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Women Affairs").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Reading": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Reading")
+            case "Reading": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Reading").sort((a, b) => a.name.localeCompare(b.name));
                 break;
             default: break;
         }
 
-        const sortedMembers = members.sort(
-            (a, b) => a.memberId - b.memberId
-        );
+        // const sortedMembers = members.sort(
+        //     (a, b) => a.memberId - b.memberId
+        // );
 
-        const defaultMember = sortedMembers.map((sortedMember, index) => ({
-            ...sortedMember,
+        // const sortedMembers = members.sort((a, b) => a.name.localeCompare(b.name));
+        const sortedMembers = members
+
+        const defaultMember = members.map((member, index) => ({
+            ...member,
             index,
         }));
 

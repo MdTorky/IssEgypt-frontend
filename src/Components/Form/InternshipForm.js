@@ -1,5 +1,5 @@
 import "./Form.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
@@ -17,13 +17,14 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
     const [website, setWebsite] = useState('');
     const [applyEmail, setApplyEmail] = useState('');
     const [apply, setApply] = useState('');
+    const [selectedCategories, setSelectedCategories] = useState([]);
     const [error, setError] = useState(null);
 
     const languageText = languageData[language];
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const form = { name, email, img, faculty, website, applyEmail, apply }
+        const form = { name, email, img, faculty, website, applyEmail, apply, categories: selectedCategories, }
 
         const response = await fetch(`${api}/api/internship`, {
             method: 'POST',
@@ -81,6 +82,49 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
     const matricRegex = /^[A-Za-z][2][0-4][A-Za-z]{2}\d{4}$/;
 
 
+
+    var expanded = false;
+    const showCheckboxes = () => {
+        var checkboxes = document.getElementById("checkboxes");
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+        } else {
+            checkboxes.style.display = "none";
+            expanded = false;
+        }
+    }
+
+    const handleCheckboxChange = (value) => {
+        const updatedCategories = [...selectedCategories];
+        if (updatedCategories.includes(value)) {
+            updatedCategories.splice(updatedCategories.indexOf(value), 1);
+        } else {
+            updatedCategories.push(value);
+        }
+        setSelectedCategories(updatedCategories);
+    };
+
+
+    const checkbox = ({ number, type }) => {
+        return (
+            <label htmlFor={number}>
+                <input
+                    type="checkbox"
+                    id={number}
+                    value={type}
+                    checked={selectedCategories.includes(type)}
+                    onChange={() => handleCheckboxChange(type)}
+                />
+                {type}
+            </label>
+        )
+    }
+
+    const generateCheckboxes = categories => {
+        return categories.map(category => checkbox(category));
+    };
+
     return (
         <div className="Form">
             <div className="formBox">
@@ -110,9 +154,44 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                             onChange={(e) => { setEmail(e.target.value) }}
                         />
                     </div>
-
-
-
+                    <div className="InputField">
+                        <div class="multiselect">
+                            <div class="selectBox" onClick={() => showCheckboxes()}>
+                                <select>
+                                    <option>Select Category</option>
+                                </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div id="checkboxes">
+                                {generateCheckboxes([
+                                    { number: 1, type: "Technology" },
+                                    { number: 2, type: "Finance" },
+                                    { number: 3, type: "Retail" },
+                                    { number: 4, type: "Manufacturing" },
+                                    { number: 5, type: "Telecom" },
+                                    { number: 6, type: "Energy" },
+                                    { number: 7, type: "Transport" },
+                                    { number: 8, type: "Entertainment" },
+                                    { number: 9, type: "Automotive" },
+                                    { number: 10, type: "Education" },
+                                    { number: 11, type: "Hospitality & Healthcare" },
+                                    { number: 12, type: "Real Estate" },
+                                    { number: 13, type: "Media & Communication" },
+                                    { number: 14, type: "Consulting" },
+                                    { number: 15, type: "Consumer Goods" },
+                                    { number: 16, type: "Pharmaceuticals & Biotech" },
+                                    { number: 17, type: "Aerospace" },
+                                    { number: 19, type: "Nonprofit" },
+                                    { number: 20, type: "Fashion" },
+                                    { number: 21, type: "Food" },
+                                    { number: 22, type: "Insurance" },
+                                    { number: 23, type: "Logistics" },
+                                    { number: 24, type: "Internet Services" },
+                                    { number: 25, type: "Renewable Energy" },
+                                ])}
+                            </div>
+                        </div>
+                    </div>
                     <div className="InputField">
                         <select
                             className={`input ${(faculty) ? 'valid' : 'invalid'}`}
