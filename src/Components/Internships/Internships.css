@@ -5,25 +5,31 @@
     flex-direction: column;
     box-sizing: border-box;
     margin-right: 130px;
+    position: relative;
+
 }
 
 .arabic .internships {
     font-family: 'Noto Kufi Arabic', sans-serif;
     margin-left: 275px;
     margin-top: -15px;
-    /* margin-right: 130px; */
+    margin-right: 0;
 
 }
 
 .internships .sectionBox {
-    width: fit-content;
+    width: 100%;
     display: flex;
-    /* background: var(--bg2); */
     padding: 20px;
     box-sizing: border-box;
     margin: auto;
     gap: 50px;
     border-radius: 20px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+
 }
 
 .internships .title {

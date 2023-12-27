@@ -188,7 +188,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                                     { number: 22, type: "Insurance" },
                                     { number: 23, type: "Logistics" },
                                     { number: 24, type: "Internet Services" },
-                                    { number: 25, type: "Renewable Energy" },
+                                    { number: 25, type: "E-Commerce" },
                                 ])}
                             </div>
                         </div>

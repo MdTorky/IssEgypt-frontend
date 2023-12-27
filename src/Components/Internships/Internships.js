@@ -276,8 +276,8 @@ const Internships = ({ language, languageData, api }) => {
             label: languageText.internetServices
         },
         {
-            value: 'Renewable Energy',
-            label: languageText.renewableEnergy
+            value: 'E-Commerce',
+            label: languageText.eCommerce
         }
     ];
 
