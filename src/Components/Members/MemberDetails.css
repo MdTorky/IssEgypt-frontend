@@ -364,7 +364,8 @@ hr {
 
     }
 
-    .memberB {
-        flex-direction: column
+    .normMemberCard .presidentName {
+        font-size: 0.7em;
     }
+
 }

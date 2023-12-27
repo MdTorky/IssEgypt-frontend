@@ -71,6 +71,7 @@
     flex-direction: column;
     transition: 0.7s ease;
     align-items: center;
+    width: 300px;
     /* padding: 5px; */
     /* position: relative; */
     /* width: 100%; */
@@ -125,12 +126,15 @@
     align-items: center;
     justify-content: center;
     border-radius: 0;
+    /* background: red; */
 
 }
 
 .internships .cards .card .img img {
-    width: 150px;
+    width: 70%;
     height: 90px;
+    box-sizing: border-box;
+    /* background: red; */
     /* border-radius: 50px; */
     transition: 0.7s ease;
     box-shadow: 0;

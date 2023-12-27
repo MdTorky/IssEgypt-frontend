@@ -165,6 +165,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                             <div id="checkboxes">
                                 {generateCheckboxes([
                                     { number: 1, type: "Technology" },
+                                    { number: 26, type: "AI" },
                                     { number: 2, type: "Finance" },
                                     { number: 3, type: "Retail" },
                                     { number: 4, type: "Manufacturing" },

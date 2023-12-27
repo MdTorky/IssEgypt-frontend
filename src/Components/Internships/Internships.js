@@ -178,6 +178,10 @@ const Internships = ({ language, languageData, api }) => {
             label: languageText.technology
         },
         {
+            value: 'AI',
+            label: languageText.ai
+        },
+        {
             value: 'Finance',
             label: languageText.finance
         },
@@ -319,7 +323,7 @@ const Internships = ({ language, languageData, api }) => {
                                 <div className="cardsBottomContent">
                                     <p>{intern.name} </p>
                                     <Button item={intern} languageText={languageText} />
-                                    {intern && intern.categories && (
+                                    {/* {intern && intern.categories && (
                                         <div className="categories">
                                             {intern.categories.map((category) => (
                                                 <span key={category} className="category">
@@ -327,9 +331,9 @@ const Internships = ({ language, languageData, api }) => {
                                                 </span>
                                             ))}
                                         </div>
-                                    )}
+                                    )} */}
 
-                                    {/* {intern && intern.categories && (
+                                    {intern && intern.categories && (
                                         <div className="categoryDropdown">
                                             <select className="categorySelect" value={selectedCategory}
                                                 onChange={handleCategoryChange}>
@@ -341,7 +345,7 @@ const Internships = ({ language, languageData, api }) => {
                                                 ))}
                                             </select>
                                         </div>
-                                    )} */}
+                                    )}
                                 </div>
                             </div>
                         ))}

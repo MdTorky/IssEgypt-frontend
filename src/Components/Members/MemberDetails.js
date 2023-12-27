@@ -101,7 +101,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
     const coi = filter[0]?.committee || '';
     const filteredCommittee = members.filter((member) => member.committee === filter[0]?.committee && member._id != filter[0]?._id);
     const president = filteredCommittee.find((member) => member.type === 'President' || member.type === 'VicePresident');
-    const normMember = filteredCommittee.filter((member) => member.type === 'Member');
+    const normMember = filteredCommittee.filter((member) => member.type === 'Member').sort((a, b) => a.name.localeCompare(b.name));
 
 
 
