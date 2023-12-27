@@ -182,7 +182,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                                     { number: 15, type: "Consumer Goods" },
                                     { number: 16, type: "Pharmaceuticals & Biotech" },
                                     { number: 17, type: "Aerospace" },
-                                    { number: 19, type: "Nonprofit" },
+                                    { number: 19, type: "Chemical" },
                                     { number: 20, type: "Fashion" },
                                     { number: 21, type: "Food" },
                                     { number: 22, type: "Insurance" },

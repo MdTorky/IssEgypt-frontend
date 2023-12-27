@@ -117,7 +117,13 @@ const Internships = ({ language, languageData, api }) => {
                 break;
             case 2: interns = filteredInternships.filter((interns) => interns.faculty === 'Computing');
                 break;
-            case 5: interns = filteredInternships.filter((interns) => interns.faculty === 'Other');
+            case 3: interns = filteredInternships.filter((interns) => interns.faculty === 'Mechanical');
+                break;
+            case 4: interns = filteredInternships.filter((interns) => interns.faculty === 'Civil');
+                break;
+            case 5: interns = filteredInternships.filter((interns) => interns.faculty === 'Chemical');
+                break;
+            case 6: interns = filteredInternships.filter((interns) => interns.faculty === 'Other');
                 break;
             default: break;
         }
@@ -246,8 +252,8 @@ const Internships = ({ language, languageData, api }) => {
             label: languageText.aerospaceEngineering
         },
         {
-            value: 'Nonprofit',
-            label: languageText.nonprofit
+            value: 'Chemical',
+            label: languageText.chemical
         },
         {
             value: 'Fashion',
@@ -297,7 +303,8 @@ const Internships = ({ language, languageData, api }) => {
         const internsToShow = allInterns(number).filter((intern) => {
             const matchesSearch = (
                 intern.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                intern.faculty.toLowerCase().includes(searchTerm.toLowerCase())
+                intern.faculty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                intern.categories.toLowerCase().includes(searchTerm.toLowerCase())
             );
 
             const matchesCategories = (
@@ -430,7 +437,10 @@ const Internships = ({ language, languageData, api }) => {
             <div className="sectionBox">
                 {card(languageText.FKE, 1)}
                 {card(languageText.FC, 2)}
-                {card(languageText.General, 5)}
+                {card(languageText.FKM, 3)}
+                {card(languageText.FKA, 4)}
+                {card(languageText.FKT, 5)}
+                {card(languageText.General, 6)}
                 {loading && (
                     <div><Loader /></div>
                 )}
