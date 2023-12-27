@@ -877,13 +877,15 @@ body.dark-mode {
     background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
-.dark-mode .formBox form .input, .dark-mode select {
+.dark-mode .formBox form .input, .dark-mode .formBox select {
     background: linear-gradient(to right, var(--hover), var(--hover2));
     border: 3px solid var(--bg);
     color: var(--bg)
 }
 
-.dark-mode .arabic .formBox form .input, .dark-mode .arabic select {
+
+
+.dark-mode .arabic .formBox form .input, .dark-mode .arabic .formBox select {
     background: linear-gradient(to left, var(--hover), var(--hover2));
     border: 3px solid var(--bg);
     color: var(--bg)
