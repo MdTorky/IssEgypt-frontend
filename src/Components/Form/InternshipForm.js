@@ -18,13 +18,16 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
     const [applyEmail, setApplyEmail] = useState('');
     const [apply, setApply] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
+    const [selectedLocations, setSelectedLocations] = useState([]);
+    const [expandedCategories, setExpandedCategories] = useState(false);
+    const [expandedLocations, setExpandedLocations] = useState(false);
     const [error, setError] = useState(null);
 
     const languageText = languageData[language];
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const form = { name, email, img, faculty, website, applyEmail, apply, categories: selectedCategories, }
+        const form = { name, email, img, faculty, website, applyEmail, apply, categories: selectedCategories, location: selectedLocations }
 
         const response = await fetch(`${api}/api/internship`, {
             method: 'POST',
@@ -84,16 +87,15 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
 
 
     var expanded = false;
-    const showCheckboxes = () => {
-        var checkboxes = document.getElementById("checkboxes");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
+    const showCheckboxes = (type) => {
+        if (type === 'categories') {
+            setExpandedCategories(!expandedCategories);
+            setExpandedLocations(false);
+        } else if (type === 'locations') {
+            setExpandedLocations(!expandedLocations);
+            setExpandedCategories(false);
         }
-    }
+    };
 
     const handleCheckboxChange = (value) => {
         const updatedCategories = [...selectedCategories];
@@ -105,6 +107,16 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
         setSelectedCategories(updatedCategories);
     };
 
+
+    const handleLocationChange = (value) => {
+        const updatedLocations = [...selectedLocations];
+        if (updatedLocations.includes(value)) {
+            updatedLocations.splice(updatedLocations.indexOf(value), 1);
+        } else {
+            updatedLocations.push(value);
+        }
+        setSelectedLocations(updatedLocations);
+    };
 
     const checkbox = ({ number, type }) => {
         return (
@@ -121,8 +133,26 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
         )
     }
 
+    const locationCheckbox = ({ city }) => {
+        return (
+            <label htmlFor={city}>
+                <input
+                    type="checkbox"
+                    id={city}
+                    value={city}
+                    checked={selectedLocations.includes(city)}
+                    onChange={() => handleLocationChange(city)}
+                />
+                {city}
+            </label>
+        );
+    };
+
     const generateCheckboxes = categories => {
         return categories.map(category => checkbox(category));
+    };
+    const generateLocationCheckboxes = cities => {
+        return cities.map(city => locationCheckbox(city));
     };
 
     return (
@@ -146,23 +176,42 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
 
 
 
-                    <div className="InputField">
+                    {/* <div className="InputField">
                         <input
                             placeholder=" &#xf0e0; &nbsp; Email"
                             type="email"
                             className={`input ${emailRegex.test(email) ? 'valid' : 'invalid'}`}
                             onChange={(e) => { setEmail(e.target.value) }}
                         />
+                    </div> */}
+
+                    <div className="InputField">
+                        <div className="multiselect">
+                            <div className="selectBox" onClick={() => showCheckboxes('locations')}>
+                                <select>
+                                    <option>Select Location</option>
+                                </select>
+                                <div className="overSelect"></div>
+                            </div>
+                            <div id="locationsCheckboxes" style={{ display: expandedLocations ? 'flex' : 'none', flexDirection: 'column' }}>
+                                {generateLocationCheckboxes([
+                                    { city: "Selangor" },
+                                    { city: "Penang" },
+                                    { city: "Johor Bahru" },
+                                    // Add more Malaysian cities as needed
+                                ])}
+                            </div>
+                        </div>
                     </div>
                     <div className="InputField">
                         <div class="multiselect">
-                            <div class="selectBox" onClick={() => showCheckboxes()}>
+                            <div class="selectBox" onClick={() => showCheckboxes('categories')}>
                                 <select>
                                     <option>Select Category</option>
                                 </select>
                                 <div class="overSelect"></div>
                             </div>
-                            <div id="checkboxes">
+                            <div id="categoriesCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none', flexDirection: 'column' }}>
                                 {generateCheckboxes([
                                     { number: 1, type: "Technology" },
                                     { number: 26, type: "AI" },

@@ -132,7 +132,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 break;
             case "Social": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Social").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Cultural").sort((a, b) => a.name.localeCompare(b.name));
+            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Culture").sort((a, b) => a.name.localeCompare(b.name));
                 break;
             case "Sports": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Sports").sort((a, b) => a.name.localeCompare(b.name));
                 break;

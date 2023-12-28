@@ -280,9 +280,9 @@ h2 {
     position: relative;
     flex-direction: column;
     background: linear-gradient(to right, var(--bg2), var(--bg));
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 0px solid var(--hover);
     animation: fadeInUp 1s ease 0s 1 normal forwards;
     opacity: 0;

@@ -11,7 +11,8 @@ import { useFormsContext } from '../../hooks/useFormContext'
 
 const Internships = ({ language, languageData, api }) => {
 
-    const { internships, dispatch } = useFormsContext()
+    const { internships = [], dispatch } = useFormsContext();
+
 
     const languageText = languageData[language];
 
@@ -21,6 +22,8 @@ const Internships = ({ language, languageData, api }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
+    const [selectedLocation, setSelectedLocation] = useState('');
+    const [selectedLocations, setSelectedLocations] = useState([]);
 
     const Button = ({ item, languageText }) => {
 
@@ -95,7 +98,7 @@ const Internships = ({ language, languageData, api }) => {
             }
         };
         fetchData();
-    }, [api, dispatch]);;
+    }, [api, dispatch, internships]);;
 
 
 
@@ -156,10 +159,48 @@ const Internships = ({ language, languageData, api }) => {
             });
         }
 
+
+
         const select = e.target;
         const selectedOption = select.options[select.selectedIndex];
         selectedOption.classList.add('selected-option');
     };
+
+
+
+
+
+
+    const handleLocationChange = (e) => {
+        const selectedLocation = e.target.value;
+        setSelectedLocation(selectedLocation === '' ? 'all' : selectedLocation);
+        if (selectedLocation === '') {
+            // If "All Locations" is selected, clear the selected locations
+            setSelectedLocations([]);
+            const select = document.getElementById('locationFilter');
+            const options = select.options;
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove('selected-option');
+            }
+        } else {
+            setSelectedLocations((prevSelectedLocations) => {
+                if (prevSelectedLocations.includes(selectedLocation)) {
+                    // Remove location if already selected
+                    return prevSelectedLocations.filter((location) => location !== selectedLocation);
+                } else {
+                    // Add location if not already selected
+                    return [...prevSelectedLocations, selectedLocation];
+                }
+            });
+        }
+
+        const select = e.target;
+        const selectedOption = select.options[select.selectedIndex];
+        selectedOption.classList.add('selected-option');
+    };
+
+
+
 
     const clearFilters = () => {
         // Clear selected category, categories, and search term
@@ -172,6 +213,56 @@ const Internships = ({ language, languageData, api }) => {
             options[i].classList.remove('selected-option');
         }
 
+    };
+
+
+
+    const renderSelectedCategories = () => {
+        if (selectedCategories.length === 0) {
+            return <p style={{ display: 'none' }}></p>;
+        }
+
+        return (
+            <div className="selectedCategories">
+                {/* <p>Selected Categories:</p> */}
+                <div className="rowCategories">
+                    {selectedCategories.map((category) => (
+                        <div key={category}> • {category}</div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+
+
+
+    const clearLocationFilters = () => {
+        // Clear selected location, locations, and search term
+        setSelectedLocation('');
+        setSelectedLocations([]);
+        setSearchTerm('');
+        const select = document.getElementById('locationFilter');
+        const options = select.options;
+        for (let i = 0; i < options.length; i++) {
+            options[i].classList.remove('selected-option');
+        }
+    };
+
+    const renderSelectedLocations = () => {
+        if (selectedLocations.length === 0) {
+            return <p style={{ display: 'none' }}></p>;
+        }
+
+        return (
+            <div className="selectedCategories">
+                <div className="rowCategories rowLocations">
+                    {selectedLocations.map((location) => (
+                        <div key={location}> • {location}</div>
+                    ))}
+                </div>
+            </div>
+        );
     };
 
     const categoryOptions = [
@@ -282,29 +373,33 @@ const Internships = ({ language, languageData, api }) => {
     ];
 
 
-    const renderSelectedCategories = () => {
-        if (selectedCategories.length === 0) {
-            return <p style={{ display: 'none' }}></p>;
-        }
 
-        return (
-            <div className="selectedCategories">
-                {/* <p>Selected Categories:</p> */}
-                <div className="rowCategories">
-                    {selectedCategories.map((category) => (
-                        <div key={category}> • {category}</div>
-                    ))}
-                </div>
-            </div>
-        );
-    };
+    const locationOptions = [
+        {
+            value: '',
+            label: languageText.allLocation
+        },
+        {
+            value: 'Johor Bahru',
+            label: "Johor Bahru"
+        },
+        {
+            value: 'Selangor',
+            label: "Selangor"
+        }
+    ];
+
+
+
+
 
     const card = (text, number) => {
         const internsToShow = allInterns(number).filter((intern) => {
             const matchesSearch = (
                 intern.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 intern.faculty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                intern.categories.toLowerCase().includes(searchTerm.toLowerCase())
+                intern.categories.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                intern.location.toLowerCase().includes(searchTerm.toLowerCase())
             );
 
             const matchesCategories = (
@@ -312,7 +407,11 @@ const Internships = ({ language, languageData, api }) => {
                 (intern.categories && intern.categories.some((category) => selectedCategories.includes(category)))
             );
 
-            return matchesSearch && matchesCategories;
+            const matchesLocations = (
+                selectedLocations.length === 0 ||
+                (intern.location && intern.location.some((location) => selectedLocations.includes(location)))
+            );
+            return matchesSearch && matchesCategories && matchesLocations;
         });
 
         if (!internsToShow.length) {
@@ -370,41 +469,69 @@ const Internships = ({ language, languageData, api }) => {
     return (
         <div className="internships">
             <h1 className="title">{languageText.internships}</h1>
+            <div className="allFilters">
+                <div className="categoryFilter">
+                    {/* <label htmlFor="categoryFilter">{languageText.chooseCategory}</label> */}
+                    <select
+                        id="categoryFilter"
+                        value={selectedCategory}
+                        onChange={handleCategoryChange}
+                        className={selectedCategory ? 'selected' : ''}
+                    >
 
-            <div className="categoryFilter">
-                <label htmlFor="categoryFilter">{languageText.chooseCategory}</label>
-                <select
-                    id="categoryFilter"
-                    value={selectedCategory}
-                    onChange={handleCategoryChange}
-                    className={selectedCategory ? 'selected' : ''}
-                >
+
+                        {categoryOptions.map((option) => (
+                            <option
+                                key={option.value}
+                                value={option.value}
+                            >
+                                {selectedCategories.includes(option.value) && (
+                                    <div className="checkIcon">✓ </div>
+                                )}
+                                {option.label}
+
+                            </option>
+                        ))}
+                    </select>
+
+                    <button className={`icon filter`} onClick={clearFilters}>
+                        <span className="tooltip" >{languageText.clear}</span>
+                        <span><FontAwesomeIcon icon={faXmark} /></span>
+                    </button>
 
 
-                    {categoryOptions.map((option) => (
-                        <option
-                            key={option.value}
-                            value={option.value}
-                        >
-                            {selectedCategories.includes(option.value) && (
-                                // <FontAwesomeIcon icon={faCheck} className="checkIcon" />
-                                <div className="checkIcon">✓ </div>
-                            )}
-                            {option.label}
+                </div>
+                <div className="categoryFilter locationFilter">
+                    {/* <label htmlFor="locationFilter">{languageText.chooseLocation}</label> */}
+                    <select
+                        id="locationFilter"
+                        value={selectedLocation}
+                        onChange={handleLocationChange}
+                        className={selectedLocation ? 'selected' : ''}
+                    >
+                        {locationOptions.map((option) => (
+                            <option
+                                key={option.value}
+                                value={option.value}
+                            >
+                                {selectedLocations.includes(option.value) && (
+                                    <div className="checkIcon">✓ </div>
+                                )}
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+                    <button className={`icon filter`} onClick={clearLocationFilters}>
+                        <span className="tooltip" >{languageText.clear}</span>
+                        <span><FontAwesomeIcon icon={faXmark} /></span>
+                    </button>
 
-                        </option>
-                    ))}
-                </select>
-
-                {/* <button onClick={clearFilters} className="clearFilter"><FontAwesomeIcon icon={faXmark} /></button> */}
-                <button className={`icon filter`} onClick={clearFilters}>
-                    <span className="tooltip" >{languageText.clear}</span>
-                    <span><FontAwesomeIcon icon={faXmark} /></span>
-                </button>
-
+                </div>
             </div>
-            {renderSelectedCategories()}
-
+            <div className="filters">
+                {renderSelectedCategories()}
+                {renderSelectedLocations()}
+            </div>
             <div className="textBox">
                 <div className="hintField">
                     <FontAwesomeIcon icon={faInfoCircle} className="hintIcon" />
@@ -433,20 +560,28 @@ const Internships = ({ language, languageData, api }) => {
 
             </div>
 
-
-            <div className="sectionBox">
-                {card(languageText.FKE, 1)}
-                {card(languageText.FC, 2)}
-                {card(languageText.FKM, 3)}
-                {card(languageText.FKA, 4)}
-                {card(languageText.FKT, 5)}
-                {card(languageText.General, 6)}
-                {loading && (
-                    <div><Loader /></div>
-                )}
-
-
-
+            <div className="scroll">
+                <div className="sectionBox">
+                    {internships.length === 0 && searchTerm === '' && (
+                        <p>No internships available.</p>
+                    )}
+                    {filteredInternships.length === 0 && searchTerm !== '' && (
+                        <p>No results found.</p>
+                    )}
+                    {filteredInternships.length > 0 && (
+                        <>
+                            {card(languageText.FKE, 1)}
+                            {card(languageText.FC, 2)}
+                            {card(languageText.FKM, 3)}
+                            {card(languageText.FKA, 4)}
+                            {card(languageText.FKT, 5)}
+                            {card(languageText.General, 6)}
+                            {loading && (
+                                <div><Loader /></div>
+                            )}
+                        </>
+                    )}
+                </div>
 
                 {/* {popupVisible && selectedItem && (
                         <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>

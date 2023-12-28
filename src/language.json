@@ -288,7 +288,9 @@
 
     "announcements": "Announcements",
     "chooseCategory": "Choose a Category",
+    "chooseLocation": "Choose a Location",
     "allCategory": "All Categories",
+    "allLocation": "All Locations",
     "technology": "Technology",
     "ai": "AI",
     "healthcare": "Healthcare",
@@ -629,7 +631,9 @@
 
     "announcements": "الإعلانات",
     "chooseCategory": "اختر التصنيف",
+    "chooseLocation": "اختر الموقع",
     "allCategory": "جميع التصنيفات",
+    "allLocation": "جميع المواقع",
     "technology": "تكنولوجيا",
     "ai": "الذكاء الاصطناعي",
     "finance": "التمويل",

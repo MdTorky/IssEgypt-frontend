@@ -3,33 +3,56 @@
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    margin-right: 130px;
-    position: relative;
+    /* box-sizing: border-box; */
+    /* margin-right: 275px; */
+    /* justify-content: center; */
+
+
 
 }
 
+
 .arabic .internships {
     font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-left: 275px;
+    /* margin-left: 275px; */
     margin-top: -15px;
     margin-right: 0;
 
 }
 
+
+.allFilters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    /* width: 100%; */
+}
+
+.scroll {
+    /* margin: auto */
+    display: flex;
+    justify-content: center;
+}
+
 .internships .sectionBox {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     padding: 20px;
     box-sizing: border-box;
-    margin: auto;
     gap: 50px;
     border-radius: 20px;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    overflow-y: hidden;
-    justify-content: center;
-
+    /* scroll-snap-type: x; */
+    /* overflow-x: auto; */
+    /* margin: auto; */
+    white-space: nowrap;
+    overflow: auto !important;
 
 }
 
@@ -242,13 +265,7 @@
     cursor: pointer;
 }
 
-/* .categorySelect:focus {
-    color: var(--bg);
-}
 
-.categorySelect select, .categorySelect option {
-    color: var(--bg);
-} */
 
 .internships .category {
     background: var(--theme);
@@ -287,6 +304,10 @@
     color: white;
 }
 
+.internships .categoryFilter.locationFilter option.selected-option {
+    background-color: mediumseagreen;
+    color: white;
+}
 
 
 .internships .categoryFilter option {
@@ -297,46 +318,37 @@
     padding: 5px;
 }
 
-/* .internships .clearFilter {
-    background: var(--theme);
-    border: none;
-    color: var(--bg);
-    padding: 6px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: 0.5s ease-in-out;
-    width: 25px;
-    height: 25px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.internships .clearFilter:hover {
-    transform: scale(1.2);
-} */
 
 .icon.filter {
     background: var(--theme);
     color: var(--bg);
 }
 
-.internships .selectedCategories {
+/* .internships .selectedCategories {
     width: fit-content;
     margin: 20px auto 0px auto;
-}
+} */
 
 .internships .rowCategories {
     display: flex;
     justify-content: center;
     gap: 10px;
     background: var(--bg2);
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+
     color: var(--theme);
     font-weight: 700;
     padding: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    background: linear-gradient(to right, var(--bg2), var(--bg));
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
     flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.rowCategories.rowLocations {
+    color: mediumseagreen
 }
 
 
