@@ -2,7 +2,7 @@ import "./Internships.css"
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faInfoCircle, faAt, faSquareUpRight, faCheck, faEnvelope, faXmark
+    faInfoCircle, faAt, faSquareUpRight, faCheck, faEnvelope, faXmark, faLocationDot
 } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Loader from '../Loader/Loader'
@@ -258,7 +258,7 @@ const Internships = ({ language, languageData, api }) => {
             <div className="selectedCategories">
                 <div className="rowCategories rowLocations">
                     {selectedLocations.map((location) => (
-                        <div key={location}> • {location}</div>
+                        <div key={location}> <FontAwesomeIcon icon={faLocationDot} />      {location}</div>
                     ))}
                 </div>
             </div>
@@ -369,6 +369,10 @@ const Internships = ({ language, languageData, api }) => {
         {
             value: 'E-Commerce',
             label: languageText.eCommerce
+        },
+        {
+            value: 'Cybersecurity',
+            label: languageText.security
         }
     ];
 
@@ -380,12 +384,60 @@ const Internships = ({ language, languageData, api }) => {
             label: languageText.allLocation
         },
         {
-            value: 'Johor Bahru',
-            label: "Johor Bahru"
+            value: 'Johor',
+            label: "Johor"
+        },
+        {
+            value: 'Kedah',
+            label: "Kedah"
+        },
+        {
+            value: 'Kelantan',
+            label: "Kelantan"
+        },
+        {
+            value: 'Kuala Lumpur',
+            label: "Kuala Lumpur"
+        },
+        {
+            value: 'Melacca',
+            label: "Melacca"
+        },
+        {
+            value: 'Negeri Sembilan',
+            label: "Negeri Sembilan"
+        },
+        {
+            value: 'Pahang',
+            label: "Pahang"
+        },
+        {
+            value: 'Penang',
+            label: "Penang"
+        },
+        {
+            value: 'Perak',
+            label: "Perak"
+        },
+        {
+            value: 'Perlis',
+            label: "Perlis"
+        },
+        {
+            value: 'Sabah',
+            label: "Sabah"
+        },
+        {
+            value: 'Sarawak',
+            label: "Sarawak"
         },
         {
             value: 'Selangor',
             label: "Selangor"
+        },
+        {
+            value: 'Terengganu',
+            label: "Terengganu"
         }
     ];
 
@@ -562,25 +614,25 @@ const Internships = ({ language, languageData, api }) => {
 
             <div className="scroll">
                 <div className="sectionBox">
-                    {internships.length === 0 && searchTerm === '' && (
+
+                    {/* {internships.length === 0 && searchTerm === '' && (
                         <p>No internships available.</p>
                     )}
                     {filteredInternships.length === 0 && searchTerm !== '' && (
                         <p>No results found.</p>
-                    )}
-                    {filteredInternships.length > 0 && (
-                        <>
-                            {card(languageText.FKE, 1)}
-                            {card(languageText.FC, 2)}
-                            {card(languageText.FKM, 3)}
-                            {card(languageText.FKA, 4)}
-                            {card(languageText.FKT, 5)}
-                            {card(languageText.General, 6)}
-                            {loading && (
-                                <div><Loader /></div>
-                            )}
-                        </>
-                    )}
+                    )} */}
+                    <>
+                        {card(languageText.FKE, 1)}
+                        {card(languageText.FC, 2)}
+                        {card(languageText.FKM, 3)}
+                        {card(languageText.FKA, 4)}
+                        {card(languageText.FKT, 5)}
+                        {card(languageText.General, 6)}
+                        {loading && (
+                            <div><Loader /></div>
+                        )}
+                    </>
+
                 </div>
 
                 {/* {popupVisible && selectedItem && (

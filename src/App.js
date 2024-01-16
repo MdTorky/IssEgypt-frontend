@@ -25,6 +25,7 @@ import MemberForm from './Components/Form/MemberForm';
 import MemberDetails from './Components/Members/MemberDetails'
 import AllMembers from './Components/Admin/AllMembers'
 import InternshipForm from './Components/Form/InternshipForm';
+import FormCreator from './Components/Form/FormCreator';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -104,6 +105,7 @@ function App() {
               <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/formCreator" element={<FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}

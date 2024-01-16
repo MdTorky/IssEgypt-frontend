@@ -99,9 +99,8 @@ const Services = ({ language, languageData }) => {
         //     calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
         // },
         {
-            id: 2,
             img: CultureImg,
-            backgroundImg: "https://drive.google.com/uc?export=view&id=1ZMJTmxW76yfpVMXidFUDUocolf9vjMLM",
+            backgroundImg: "https://i.ibb.co/w6CjD9D/Ann2.jpg",
             title: "Stories of the Prophets",
             titleArabic: "قصص الأنبياء",
             organizer: Culture,
@@ -368,11 +367,11 @@ const Services = ({ language, languageData }) => {
                     <div className="newStudents">
                         <h2>{languageText.extraServices}</h2>
                         <div className="newStudentsRow2">
-                            {/* <Link to="/internships" className="newStudentCard"> */}
-                            <Link to="" className="newStudentCard notyet">
+                            <Link to="/internships" className="newStudentCard">
+                                {/* <Link to="" className="newStudentCard notyet"> */}
                                 <p className="time-text"><span>{languageText.internships}</span><span className="time-sub-text"></span></p>
-                                {/* <p className="day-text">{languageText.internships2}</p> */}
-                                <p className="day-text">{languageText.handbook2}</p>
+                                <p className="day-text">{languageText.internships2}</p>
+                                {/* <p className="day-text">{languageText.handbook2}</p> */}
                                 {/* <FontAwesomeIcon icon={faTelegram} className='moon' /> */}
                                 <FontAwesomeIcon icon={faBuilding} className='moon' />
                             </Link>

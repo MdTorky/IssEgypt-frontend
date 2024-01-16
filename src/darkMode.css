@@ -994,9 +994,8 @@ body.dark-mode {
     background: linear-gradient(to right, var(--hover), var(--hover2));
     color: var(--bg2);
     box-shadow: rgba(7, 7, 7, 0.2) 0px 2px 8px 0px;
-
-
 }
+
 
 @media screen and (max-width: 700px) {
     .dark-mode .navbar ul li.active icon::after {

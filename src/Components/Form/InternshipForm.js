@@ -79,10 +79,10 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
 
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
 
-    const matricRegex = /^[A-Za-z][2][0-4][A-Za-z]{2}\d{4}$/;
+    // const matricRegex = /^[A-Za-z][2][0-4][A-Za-z]{2}\d{4}$/;
 
 
 
@@ -195,9 +195,20 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                             </div>
                             <div id="locationsCheckboxes" style={{ display: expandedLocations ? 'flex' : 'none', flexDirection: 'column' }}>
                                 {generateLocationCheckboxes([
-                                    { city: "Selangor" },
+                                    { city: "Johor" },
+                                    { city: "Kedah" },
+                                    { city: "Kelantan" },
+                                    { city: "Kuala Lumpur" },
+                                    { city: "Melacca" },
+                                    { city: "Negeri Sembilan" },
+                                    { city: "Pahang" },
                                     { city: "Penang" },
-                                    { city: "Johor Bahru" },
+                                    { city: "Perak" },
+                                    { city: "Perlis" },
+                                    { city: "Sabah" },
+                                    { city: "Sarawak" },
+                                    { city: "Selangor" },
+                                    { city: "Terengganu" },
                                     // Add more Malaysian cities as needed
                                 ])}
                             </div>
@@ -238,6 +249,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                                     { number: 23, type: "Logistics" },
                                     { number: 24, type: "Internet Services" },
                                     { number: 25, type: "E-Commerce" },
+                                    { number: 27, type: "Cybersecurity" },
                                 ])}
                             </div>
                         </div>
