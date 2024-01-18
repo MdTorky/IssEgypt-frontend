@@ -288,7 +288,7 @@ const FormCreator = ({ language, languageData, api }) => {
 
                             >
                                 <option value="" disabled selected hidden>Choose a Committee</option>
-                                <option value="Social Committee" >Social Committee</option>
+                                <option value="Social Committee" >Socials Committee</option>
                                 <option value="Academic Committee" >Academic Committee</option>
                                 <option value="Cultural Committee" >Cultural Committee</option>
                                 <option value="Sports Committee" >Sports Committee</option>
