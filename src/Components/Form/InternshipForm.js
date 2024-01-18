@@ -79,7 +79,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
 
     }
 
-    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
 
     // const matricRegex = /^[A-Za-z][2][0-4][A-Za-z]{2}\d{4}$/;

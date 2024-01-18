@@ -622,12 +622,12 @@ const Internships = ({ language, languageData, api }) => {
                         <p>No results found.</p>
                     )} */}
                     <>
+                        {card(languageText.General, 6)}
                         {card(languageText.FKE, 1)}
                         {card(languageText.FC, 2)}
                         {card(languageText.FKM, 3)}
                         {card(languageText.FKA, 4)}
                         {card(languageText.FKT, 5)}
-                        {card(languageText.General, 6)}
                         {loading && (
                             <div><Loader /></div>
                         )}

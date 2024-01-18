@@ -6,15 +6,24 @@ import { useFormsContext } from '../../hooks/useFormContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { } from '@fortawesome/free-solid-svg-icons';
-
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+// require('dotenv').config();
+// import
+// import 'core-js/modules/es.promise';
+// import 'core-js/modules/es.object.assign';
+// import 'core-js/modules/es.array.includes';
+// import 'core-js/modules/es.array.iterator';
 
 
 const FormCreator = ({ language, languageData, api }) => {
     const { dispatch } = useFormsContext()
 
+
+    const languageText = languageData[language];
+
     const [eventName, setEventName] = useState('');
     const [arabicEventName, setArabicEventName] = useState('');
-    const [eventImg, setEventImg] = useState('');
     const [type, setType] = useState('');
     const [eventDescription, setEventDescription] = useState('');
     const [sheetLink, setSheetLink] = useState('');
@@ -22,83 +31,161 @@ const FormCreator = ({ language, languageData, api }) => {
     const [error, setError] = useState(null);
     const [expandedCategories, setExpandedCategories] = useState(false);
     const [inputs, setInputs] = useState([]);
+    // const [eventImg, setEventImg] = useState('');
+    const [img, setImg] = useState(null);
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
 
-
-
-
-    const UploadState = {
-        IDLE: 1,
-        UPLOADING: 2,
-        UPLOADED: 3,
-    };
-    Object.freeze(UploadState);
-    const [uploadState, setUploadState] = useState(UploadState.IDLE);
 
     const [selectedImage, setSelectedImage] = useState(null);
 
 
-    const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            // Set the image file to the state
-            setEventImg(file);
+    // const handleImageUpload = (e) => {
+    //     const file = e.target.files[0];
+    //     if (file) {
+    //         setEventImg(file);
 
-            // Optionally, preview the selected image
-            setSelectedImage(URL.createObjectURL(file));
+
+    //         setSelectedImage(URL.createObjectURL(file));
+    //     }
+    // };
+
+
+    const uploadFile = async (type) => {
+        const data = new FormData();
+        data.append("file", type === 'image' ? img : '');
+        data.append("upload_preset", type === 'image' ? 'images_preset' : '');
+
+        try {
+            let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+            console.log('Cloud Name:', process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
+            let resourceType = type === 'image' ? 'image' : 'video';
+            let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
+
+            const res = await axios.post(api, data);
+            const { secure_url } = res.data;
+            console.log(secure_url);
+            return secure_url;
+        } catch (error) {
+            console.error(error);
         }
-    };
+    }
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     setUploadState(UploadState.UPLOADING);
+
+    //     const formData = new FormData();
+    //     formData.append("eventName", eventName);
+    //     formData.append("arabicEventName", arabicEventName);
+    //     formData.append("file", eventImg);
+    //     formData.append("eventDescription", eventDescription);
+    //     formData.append("sheetLink", sheetLink);
+    //     formData.append("type", type);
+    //     formData.append("inputs", JSON.stringify(inputs));
+    //     formData.append("groupLink", groupLink);
+
+    //     try {
+    //         const response = await fetch(`${api}/api/forms`, {
+    //             method: 'POST',
+    //             body: formData,
+    //         });
+
+    //         if (!response.ok) {
+    //             const json = await response.json();
+    //             setError(json.error);
+    //         } else {
+    //             setError(null);
+    //             const json = await response.json();
+    //             dispatch({
+    //                 type: 'CREATE_FORM',
+    //                 collection: "forms",
+    //                 payload: json
+    //             });
+
+    //             setEventImg(json.secure_url);
+    //             setUploadState(UploadState.UPLOADED);
+
+    //             alert("Thank you!");
+    //             setEventName('');
+    //             setArabicEventName('');
+    //             setEventImg('');
+    //             setType('');
+    //             setEventDescription('');
+    //             setSheetLink('');
+    //             setGroupLink('');
+    //             setInputs([]);
+    //         }
+    //     } catch (error) {
+    //         console.error("Error submitting form:", error);
+    //         setError("Error submitting form. Please try again.");
+    //     }
+    // };
+
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         setLoading(true);
+
+    //         const imgUrl = await uploadFile('image');
+
+    //         await axios.post(`${api}/api/forms`, { imgUrl: imgUrl });
+
+    //         setImg(null);
+
+    //         console.log("File upload success!");
+    //         setLoading(false);
+    //         navigate("/")
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setUploadState(UploadState.UPLOADING);
 
-        const formData = new FormData();
-        formData.append("eventName", eventName);
-        formData.append("arabicEventName", arabicEventName);
-        formData.append("file", eventImg); // Use the actual file, not e.target.value
-        formData.append("eventDescription", eventDescription);
-        formData.append("sheetLink", sheetLink);
-        formData.append("type", type);
-        formData.append("inputs", JSON.stringify(inputs)); // Convert inputs array to a string
-        formData.append("groupLink", groupLink);
+        const imgUrl = await uploadFile('image');
+        const form = { eventImg: imgUrl }
 
-        try {
-            const response = await fetch(`${api}/api/forms`, {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (!response.ok) {
-                const json = await response.json();
-                setError(json.error);
-            } else {
-                setError(null);
-                const json = await response.json();
-                dispatch({
-                    type: 'CREATE_FORM',
-                    collection: "forms",
-                    payload: json
-                });
-
-                setEventImg(json.secure_url);
-                setUploadState(UploadState.UPLOADED);
-
-                alert("Thank you!");
-                setEventName('');
-                setArabicEventName('');
-                setEventImg('');
-                setType('');
-                setEventDescription('');
-                setSheetLink('');
-                setGroupLink('');
-                setInputs([]);
+        const response = await fetch(`${api}/api/forms`, {
+            method: 'POST',
+            body: JSON.stringify(form),
+            headers: {
+                'Content-Type': 'application/json'
             }
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            setError("Error submitting form. Please try again.");
+        })
+
+        const json = await response.json()
+
+
+        if (!response.ok) {
+            setError(json.error)
         }
-    };
+
+        if (response.ok) {
+            setError(null)
+
+            dispatch({
+                type: 'CREATE_FORM',
+                collection: "forms",
+                payload: json
+            })
+            setImg(null);
+            console.log("File upload success!");
+            navigate("/")
+        }
+
+    }
+
+
+
+
+
+
+
 
 
 
@@ -161,7 +248,7 @@ const FormCreator = ({ language, languageData, api }) => {
                                 type="text"
                                 className={`input ${(eventName) ? 'valid' : 'invalid'}`}
                                 onChange={(e) => { setEventName(e.target.value) }}
-                                required
+                            // required
                             />
                         </div>
 
@@ -171,7 +258,7 @@ const FormCreator = ({ language, languageData, api }) => {
                                 type="text"
                                 className={`input ${(arabicEventName) ? 'valid' : 'invalid'}`}
                                 onChange={(e) => { setArabicEventName(e.target.value) }}
-                                required
+                            // required
 
                             />
                         </div>
@@ -181,20 +268,23 @@ const FormCreator = ({ language, languageData, api }) => {
                             <input
                                 placeholder=" &#xf0e0; &nbsp; Event Img"
                                 type="file"
-                                className={`input ${(eventImg) ? 'valid' : 'invalid'}`}
-                                onChange={handleImageUpload}
+                                accept="image/*"
+                                id="img"
+                                className={`input ${(img) ? 'valid' : 'invalid'}`}
+                                onChange={(e) => setImg((prev) => e.target.files[0])}
                             />
                         </div>
                         {/* {selectedImage && (
                             <img src={selectedImage} alt="Selected" style={{ width: "300px", marginTop: "10px" }} />
                         )} */}
 
+
                         <div className="InputField">
                             <select
                                 className={`input ${(type) ? 'valid' : 'invalid'}`}
 
                                 onChange={(e) => setType(e.target.value)}
-                                required
+                            // required
 
                             >
                                 <option value="" disabled selected hidden>Choose a Committee</option>
@@ -219,7 +309,7 @@ const FormCreator = ({ language, languageData, api }) => {
                                 placeholder=" &#xf15b; &nbsp; Event Description"
                                 onChange={(e) => setEventDescription(e.target.value)}
                                 value={eventDescription}
-                                required
+                            // required
 
                             />
                         </div>
@@ -229,7 +319,7 @@ const FormCreator = ({ language, languageData, api }) => {
                                 type="text"
                                 className={`input ${(sheetLink) ? 'valid' : 'invalid'}`}
                                 onChange={(e) => { setSheetLink(e.target.value) }}
-                                required
+                            // required
 
                             />
                         </div>
@@ -265,7 +355,7 @@ const FormCreator = ({ language, languageData, api }) => {
                                 type="text"
                                 className={`input ${(groupLink) ? 'valid' : 'invalid'}`}
                                 onChange={(e) => { setGroupLink(e.target.value) }}
-                                required
+                            // required
 
                             />
                         </div>

@@ -6,6 +6,12 @@ import App from './App';
 import { LanguageProvider } from './language';
 import { DarkModeProvider } from './DarkModeContext';
 import { FormsContextProvider } from './context/formContext';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
