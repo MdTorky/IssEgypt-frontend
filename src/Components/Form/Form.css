@@ -236,7 +236,7 @@ button.CustomInputButton {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    white-space: wrap;
+    white-space: nowrap;
 
 }
 
@@ -250,7 +250,7 @@ button.CustomInputButton {
     display: flex;
     width: 100%;
     position: relative;
-    white-space: wrap;
+    white-space: nowrap;
 
 }
 
@@ -265,7 +265,7 @@ button.CustomInputButton {
     display: flex;
     align-items: center;
     gap: 8px;
-    white-space: wrap;
+    white-space: nowrap;
 }
 
 
