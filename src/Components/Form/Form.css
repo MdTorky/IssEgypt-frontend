@@ -1,10 +1,12 @@
-.Form {
+.Form, .CreatedForm {
     margin-bottom: 10%;
     font-family: 'Poppins', sans-serif;
     margin-right: 130px;
 }
 
-.arabic .Form {
+
+
+.arabic .Form, .arabic .CreatedForm {
     font-family: 'Noto Kufi Arabic', sans-serif;
     margin-left: 130px;
     margin-right: 0px;
@@ -19,7 +21,9 @@
     padding: 10px;
     border-radius: 20px;
     margin: auto;
+    /* justify-content: center; */
 }
+
 
 .formBox h2 {
     text-align: center;
@@ -38,54 +42,112 @@
 
 
 
-/* .formBox input,
-.formBox select,
-.formBox textarea {
-    border-radius: 20px;
-    border: 1px solid var(--theme);
-    padding: 5px;
-}
-
-.formBox input:placeholder-shown,
-.formBox textarea:placeholder-shown {
-    padding: 10px;
-}
-
-.formBox textarea:placeholder-shown {
-    font-size: 0.8em;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.formBox input:focus,
-.formBox textarea:focus {
-    padding: 10px;
-} */
-
-.formBox button {
+.formBox button, .formBox .GroupLink {
     background: var(--theme);
     color: var(--bg);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     cursor: pointer;
     padding: 10px;
     font-weight: 700;
     text-transform: uppercase;
     transition: 0.5s ease;
+    /* margin: auto; */
 }
+
+.formBox .GroupLink, .formBox .button {
+    margin: auto;
+
+}
+
 
 .formBox button:hover {
     transform: translateY(2px);
     box-shadow: none;
     letter-spacing: 1px;
+}
 
+
+.formBox .GroupLink {
+    background: mediumaquamarine;
+    width: 70%;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: none;
+    text-align: center;
+    text-transform: none;
+}
+
+.formBox .GroupLink:hover {
+    width: 50%;
+    transform: none;
+    letter-spacing: 5px;
+    background: mediumseagreen;
+
+
+}
+
+.formBox .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+    /* margin-left: 90% */
+}
+
+.formBox .button .svgIcon {
+    width: 20px;
+    transition-duration: .3s;
+}
+
+.formBox .button .svgIcon path {
+    fill: white;
+}
+
+.formBox .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background: linear-gradient(to right, var(--theme), var(--theme));
+    align-items: center;
+}
+
+.formBox .button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+}
+
+.formBox .button::before {
+    position: absolute;
+    top: -20px;
+    content: attr(data-content);
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+}
+
+.formBox .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
 }
 
 
 .arabic .formBox button {
     font-family: 'Noto Kufi Arabic', sans-serif;
-
 }
 
 
@@ -95,13 +157,46 @@
     gap: 10px;
     /* justify-content: space-between; */
     width: 100%;
+    align-items: center;
+
+}
+
+.CustomInputs {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .InputField {
     display: flex;
     width: 300px;
+    position: relative;
+
     /* flex-direction: column */
 }
+
+button.CustomInputButton {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 50px;
+    border-radius: 10px;
+    /* background: none; */
+}
+
+.arabic button.CustomInputButton {
+    position: absolute;
+    left: 0;
+    right: inherit;
+    /* background: none; */
+}
+
+.InputField.eventDescription {
+    width: 100%;
+}
+
 
 .formBox form .InputField .InputError.password {
     text-align: left;
@@ -116,7 +211,7 @@
 }
 
 
-.formBox form .input, .formBox select {
+.formBox form .input, .formBox select, .formBox form .LabelInputImg {
 
     width: 100%;
     padding: 12px;
@@ -128,10 +223,68 @@
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, var(--bg2), var(--bg));
     position: relative;
+    color: var(--hover);
 
 }
 
 
+.formBox form .LabelInputImg {
+    cursor: pointer;
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--hover);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.arabic .formBox form .LabelInputImg, .arabic .formBox form select {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+
+.InputLabelField {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+
+.LabelInput {
+    position: absolute;
+    z-index: 99;
+    top: 15px;
+    left: 16px;
+    font-size: 0.9em;
+    cursor: text;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.arabic .LabelInput {
+    top: 13px;
+    left: 0;
+    right: 16px;
+}
+
+.LabelInput.valid {
+    color: mediumseagreen;
+}
+
+.LabelInput.invalid {
+    color: var(--theme);
+}
+
+.formBox button.XImgButton {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    box-shadow: none;
+}
 
 .formBox form select option:checked {
     background-color: var(--theme);
@@ -145,7 +298,6 @@ select:focus {
 }
 
 
-/* Matric Number */
 .formBox form .input.matric {
     text-transform: uppercase;
 }
@@ -154,7 +306,7 @@ select:focus {
     font-family: 'FontAwesome', sans-serif;
 }
 
-.formBox form .input.valid {
+.formBox form .input.valid, .formBox form .LabelInputImg.valid {
 
     border: 3px solid mediumaquamarine;
     box-shadow: 0px 0px 20px -17px;
@@ -162,7 +314,7 @@ select:focus {
 
 }
 
-.formBox form .input.invalid {
+.formBox form .input.invalid, .formBox form .LabelInputImg.invalid {
     border: 3px solid var(--theme);
     box-shadow: 0px 0px 20px -17px;
     color: var(--theme);
@@ -173,11 +325,6 @@ select:focus {
 }
 
 
-.formBox form .input:placeholder-shown {
-    border: 3px solid lightgrey;
-    text-transform: none;
-}
-
 input::placeholder {
     font-weight: 700;
 
@@ -185,7 +332,6 @@ input::placeholder {
 
 .arabic input::placeholder {
     font-family: 'Noto Kufi Arabic', sans-serif;
-
 }
 
 
@@ -226,6 +372,212 @@ input::placeholder {
 
 
 
+
+
+
+
+
+
+/* Created Forms */
+
+.CreatedForm {
+    display: flex;
+    width: 100%;
+}
+
+.FormAll {
+    display: flex;
+    gap: 90px;
+    /* justify-content: center; */
+    margin: auto;
+    /* background: red; */
+}
+
+.CreatedForm .FormLeft {
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+.CreatedForm .FormLeft img {
+    width: 600px;
+    height: 600px;
+    background: var(--hover);
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.FormLeftDetails {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.FormLeftDetails h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--theme);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.arabic .FormLeftDetails h2 {
+    font-size: 1.5em;
+}
+
+
+.FormLeftDetails p {
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+}
+
+
+.CreatedForm .FormCenter {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 20px;
+    width: 700px;
+    box-sizing: border-box;
+}
+
+.CreatedForm .FormCenter .FormTitle {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--theme);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+}
+
+.Hint {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+
+}
+
+.Hint p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: mediumaquamarine;
+    border: 3px mediumaquamarine solid;
+    padding: 5px 20px;
+    border-radius: 10px
+}
+
+.Hint p:last-child {
+    color: var(--theme);
+    border: 3px var(--theme) solid;
+
+}
+
+.formBox.PeopleForm {
+    margin: 0;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.formBox.PeopleForm form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.formBox .PersonalFields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    /* background: var(--hover); */
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+.formBox .PersonalFields.PaymentFields {
+    flex-direction: column;
+    display: flex;
+}
+
+.PaymentFields p {
+    text-align: center;
+    margin: -20px 0 0 0;
+    font-size: 1.2em;
+    color: var(--theme);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+.formBox hr {
+    margin: 0 auto;
+    width: 80%;
+    height: 5px;
+    border-radius: 20px;
+    background: var(--theme);
+    border: none;
+}
+
+.InputLogo {
+    width: 20px;
+}
+
+.QRPayment {
+    display: flex;
+    justify-content: space-around
+}
+
+
+.QRCode {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+    background: var(--hover);
+    padding: 5px;
+}
+
+.PaymentAmount {
+    margin: auto;
+    padding: 5px;
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+    border-radius: 0 0 20px 20px;
+    border-bottom: 5px solid var(--hover);
+    border-left: 5px solid var(--hover);
+    border-right: 5px solid var(--hover);
+    color: var(--bg) !important;
+}
+
+
+.CreatedForm .FormRight {
+    display: flex;
+    justify-content: center;
+    background: red;
+    align-items: center;
+    width: max-content;
+    border-radius: 20px;
+    height: fit-content;
+    margin: auto;
+}
+
+
+
+
+
 @media screen and (max-width: 700px) {
     .Form {
         margin-bottom: 40%;
@@ -235,4 +587,123 @@ input::placeholder {
     .arabic .Form {
         margin: 10% 0 40% 0
     }
+
+    .InputRow {
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    .InputField {
+        width: 100%;
+    }
+
+    .formBox .button {
+        width: 140px;
+        border-radius: 50px;
+        transition-duration: .3s;
+        background: linear-gradient(to right, var(--theme), var(--theme));
+        align-items: center;
+    }
+
+    .formBox .button .svgIcon {
+        width: 50px;
+        transition-duration: .3s;
+        transform: translateY(60%);
+    }
+
+    .formBox .button::before {
+        font-size: 13px;
+        opacity: 1;
+        transform: translateY(30px);
+        transition-duration: .3s;
+        position: absolute;
+        top: -20px;
+        content: attr(data-content);
+        color: white;
+    }
+
+
+
+
+
+
+
+    .FormAll {
+        flex-direction: column;
+        gap: -10px
+    }
+
+
+
+    .CreatedForm {
+        display: flex;
+        width: 100%;
+        margin-bottom: 90%;
+    }
+
+    .arabic .CreatedForm {
+        margin-top: 17%;
+    }
+
+    .CreatedForm .FormLeft {
+        width: fit-content;
+        margin: auto;
+    }
+
+
+    .CreatedForm .FormLeft img {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    .FormLeftDetails h2 {
+        font-size: 1.4em;
+        text-align: center;
+        margin: auto;
+    }
+
+    .arabic .FormLeftDetails h2 {
+        font-size: 1.4em;
+    }
+
+
+    .FormLeftDetails p {
+        font-size: 0.8em;
+
+    }
+
+    .CreatedForm .FormCenter {
+        width: 100%;
+        box-sizing: none;
+    }
+
+
+    .Hint p {
+        font-size: 0.7em;
+    }
+
+
+    .InputLogo {
+        width: 20px;
+    }
+
+    .QRPayment {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .QRCode {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+
+
+
+
+
+
 }

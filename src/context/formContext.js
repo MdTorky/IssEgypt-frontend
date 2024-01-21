@@ -64,7 +64,8 @@ export const formsReducer = (state, action) => {
 export const FormsContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(formsReducer, {
         forms: [],
-        members: []
+        members: [],
+        issForms: []
     })
 
     return (

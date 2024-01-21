@@ -11,7 +11,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
 
 /* font-family: 'Noto Kufi Arabic', sans-serif; */
-
+@font-face {
+  font-family: "FontAwesome 5 Free";
+  src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0");
+}
 
 :root {
   /* --theme: #F05454; */
@@ -79,7 +82,13 @@ body {
 
 
 
-
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+  width: 100%;
+}
 
 
 
