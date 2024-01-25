@@ -373,6 +373,10 @@ const Internships = ({ language, languageData, api }) => {
         {
             value: 'Cybersecurity',
             label: languageText.security
+        },
+        {
+            value: 'Research',
+            label: languageText.research
         }
     ];
 
@@ -438,6 +442,10 @@ const Internships = ({ language, languageData, api }) => {
         {
             value: 'Terengganu',
             label: "Terengganu"
+        },
+        {
+            value: 'Overseas',
+            label: "Overseas"
         }
     ];
 

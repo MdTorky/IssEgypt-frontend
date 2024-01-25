@@ -316,7 +316,7 @@ const CreateForm = ({ language, languageData, api }) => {
                                         </div>
                                     )}
                                     {form.inputs.includes("Semester") && (
-                                        <div className="InputField eventDescription">
+                                        <div className="InputField">
                                             <select
                                                 className={`input ${(semester) ? 'valid' : 'invalid'}`}
                                                 onChange={(e) => setSemester(e.target.value)}

@@ -176,14 +176,14 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
 
 
 
-                    {/* <div className="InputField">
+                    <div className="InputField">
                         <input
                             placeholder=" &#xf0e0; &nbsp; Email"
                             type="email"
                             className={`input ${emailRegex.test(email) ? 'valid' : 'invalid'}`}
                             onChange={(e) => { setEmail(e.target.value) }}
                         />
-                    </div> */}
+                    </div>
 
                     <div className="InputField">
                         <div className="multiselect">
@@ -209,6 +209,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                                     { city: "Sarawak" },
                                     { city: "Selangor" },
                                     { city: "Terengganu" },
+                                    { city: "Overseas" },
                                     // Add more Malaysian cities as needed
                                 ])}
                             </div>
@@ -250,6 +251,7 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
                                     { number: 24, type: "Internet Services" },
                                     { number: 25, type: "E-Commerce" },
                                     { number: 27, type: "Cybersecurity" },
+                                    { number: 28, type: "Research" },
                                 ])}
                             </div>
                         </div>
