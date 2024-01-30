@@ -12,9 +12,10 @@ import withReactContent from 'sweetalert2-react-content'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-
-const CreateForm = ({ language, languageData, api }) => {
+const CreateForm = ({ language, languageData, api, darkMode }) => {
     const { type, formId } = useParams();
     // console.log(formId);
     const navigate = useNavigate();
@@ -202,13 +203,23 @@ const CreateForm = ({ language, languageData, api }) => {
                 collection: "issForms",
                 payload: json
             })
-            Swal.fire({
-                icon: "success",
-                theme: "borderless",
-                title: "Submitted",
-                text: "Form Submitted Successfully",
-                // footer: '<a href="#">Why do I have this issue?</a>'
-            });
+            {
+                toast.success(`${languageText.formSubmitted}`, {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: darkMode ? "dark" : "colored",
+                    style: {
+                        fontFamily: language === 'ar' ?
+                            'Noto Kufi Arabic, sans-serif' :
+                            'Poppins, sans-serif',
+                    },
+                });
+            }
             navigate("/")
 
         }
@@ -271,6 +282,7 @@ const CreateForm = ({ language, languageData, api }) => {
                                                             onChange={(e) => { setMatric(e.target.value) }}
                                                             required
                                                             id="matric"
+                                                            style={{ textTransform: "uppercase" }}
                                                         />
                                                         {!matric && <label for="matric" className={`LabelInput ${(matric) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faIdCard} /> {languageText.Matric}</label>}
                                                     </div>
@@ -465,7 +477,7 @@ const CreateForm = ({ language, languageData, api }) => {
                                                 className="GroupLink"
                                                 to={form.groupLink}
                                                 target="_blank">
-                                                Group Link
+                                                {languageText.GroupLink}
                                             </Link>
                                         )}
                                         <button className="button" data-content={languageText.Submit}>

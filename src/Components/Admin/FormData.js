@@ -350,7 +350,7 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                                         <tr className="ResponseHeader ResponseContent" key={formData._id}>
                                             {form.inputs.includes("Picture") && (<td><img src={formData.picture} alt="" /></td>)}
                                             {form.inputs.includes("Full Name") && (<td>{formData.fullName}</td>)}
-                                            {form.inputs.includes("Matric") && (<td>{formData.matric}</td>)}
+                                            {form.inputs.includes("Matric") && (<td style={{ textTransform: "uppercase" }}>{formData.matric}</td>)}
                                             {form.inputs.includes("Email") && (<td>{formData.email}</td>)}
                                             {form.inputs.includes("Phone No.") && (<td>{formData.phone}</td>)}
                                             {form.inputs.includes("Faculty") && (<td>{formData.faculty}</td>)}

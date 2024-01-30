@@ -155,7 +155,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
 
 
 
-    const handleStatusChange = async (form) => {
+    const handleStatusChange = async (selectedForm) => {
         try {
 
 
@@ -168,12 +168,18 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                 return;
             }
 
-            const response = await fetch(`${api}/api/forms/${form._id}`, {
+            let state = null;
+            if (selectedForm.status === true) {
+                state = false;
+            } else {
+                state = true;
+            }
+            const response = await fetch(`${api}/api/forms/${selectedForm._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ status: !formToUpdate.status }),
+                body: JSON.stringify({ status: state }),
 
             });
 
@@ -189,7 +195,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
             dispatch({
                 type: 'UPDATE_ITEM',
                 collection: 'forms',
-                payload: { id: form._id, changes: { status: !formToUpdate.status } },
+                payload: { id: selectedForm._id, changes: { status: state } },
             });
 
             {
@@ -235,6 +241,53 @@ const Admin = ({ language, languageData, api, darkMode }) => {
     };
 
 
+
+
+
+
+    const handleFormDelete = async ({ forms }) => {
+        try {
+            const response = await fetch(`${api}/api/forms/${forms._id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+            if (response.ok) {
+                const json = await response.json();
+                dispatch({
+                    type: 'DELETE_ITEM',
+                    collection: "forms",
+                    payload: json
+                });
+                {
+                    toast.success(`${languageText.formDeleted}`, {
+                        position: "bottom-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: darkMode ? "dark" : "colored",
+                        style: {
+                            fontFamily: language === 'ar' ?
+                                'Noto Kufi Arabic, sans-serif' :
+                                'Poppins, sans-serif',
+                        },
+                    });
+                }
+
+            }
+
+        } catch (error) {
+            console.error('An error occurred while deleting data:', error);
+        }
+    };
+
+
     const Forms = (form) => {
 
         return (
@@ -268,7 +321,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             <span class="tooltip Delete" >{languageText.changeStatus}</span>
                             <span><FontAwesomeIcon icon={faBolt} /></span>
                         </button>
-                        <button className="icon Delete" onClick={() => { }}>
+                        <button className="icon Delete" onClick={() => { handleFormDelete({ forms: form }) }}>
                             <span class="tooltip Delete" >{languageText.delete}</span>
                             <span><FontAwesomeIcon icon={faTrash} /></span>
                         </button>
