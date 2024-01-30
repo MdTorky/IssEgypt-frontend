@@ -87,7 +87,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
             >
                 <div className="normMemberCard">
                     <div className="presidentImg">
-                        <img src={`${api}/uploads/${member.img}`} alt="" />
+                        <img src={member.img} alt="" />
                     </div>
                     <div className="presidentInfo MemberInfo">
                         {language === "ar" ? <p className='presidentName'>{member.arabicName}</p> : <p className='presidentName'>{member.name}</p>}
@@ -136,7 +136,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                                     {/* Content inside .backId */}
                                 </div>
                                 <div className="idImg">
-                                    <img src={`${api}/uploads/${member.img}`} alt="" />
+                                    <img src={member.img} alt="" />
                                 </div>
 
                                 {language === "ar" ? <p className='idName'>{member.arabicName}</p> : <p className='idName'>{member.name}</p>}
@@ -164,7 +164,7 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                                         >
                                             <div className="presidentCard">
                                                 <div className="presidentImg">
-                                                    <img src={`${api}/uploads/${president.img}`} alt="" />
+                                                    <img src={president.img} alt="" />
                                                 </div>
                                                 <div className="presidentInfo">
                                                     {language === "ar" ? <p className='presidentName'>{president.arabicName}</p> : <p className='presidentName'>{president.name}</p>}

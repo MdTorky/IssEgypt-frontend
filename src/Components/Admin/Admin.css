@@ -545,4 +545,10 @@
         border-radius: 10px;
     }
 
+    .TableHeading .icons .icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+    }
+
 }

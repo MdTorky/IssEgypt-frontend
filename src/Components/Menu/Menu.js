@@ -220,7 +220,7 @@ const Menu = ({ language, languageData, api }) => {
                                 <div className="people" key={index}>
                                     <div className="peopleCard">
                                         <div className="peopleImg">
-                                            <img src={`${api}/uploads/${person.img}`} alt="" />
+                                            <img src={person.img} alt="" />
                                         </div>
                                         <div className="peopleText">
                                             {language === 'ar' ? <p className="name">{person.arabicName}</p> : <p className="name">{person.name}</p>}

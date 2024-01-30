@@ -444,6 +444,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                 gap: "15px"
                                                             }}>
                                                             <img src={form.paymentQR} className="QRCode" alt="" />
+                                                            {/* {form.paymentAmount && <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>} */}
                                                             <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>
 
                                                         </div>

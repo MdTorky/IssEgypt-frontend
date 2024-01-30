@@ -106,7 +106,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
         return (
             <tr className={`TableHeading TableItems`}>
                 <td>
-                    <img src={`${api}/uploads/${member.img}`} alt="" />
+                    <img src={member.img} alt="" />
 
                 </td>
                 <td className="NameStyle"

@@ -51,7 +51,7 @@ const MemberCard = ({ api, member, languageText, language }) => {
                 <div className="mBorder">
                     <div className='back2' />
                     <div className="mImg">
-                        <img src={`${api}/uploads/${member.img}`} alt="" />
+                        <img src={member.img} alt="" />
 
                     </div>
                     {/* Use onClick to stop propagation of the click event */}
