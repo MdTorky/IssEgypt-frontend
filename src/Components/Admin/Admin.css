@@ -487,6 +487,7 @@
     .TableHeading td, .TableHeading th {
         width: 100%;
         display: flex;
+        white-space: wrap
     }
 
     .TableHeading th {
@@ -495,14 +496,15 @@
 
     .FacultyStyle {
         font-size: 0.8em;
-        white-space: wrap;
+        white-space: wrap !important;
+
         gap: 0;
         flex-direction: column;
     }
 
     .NameStyle {
         font-size: 0.9em;
-        white-space: wrap
+        white-space: wrap !important;
     }
 
 
