@@ -22,9 +22,11 @@
     "cors": "^2.8.5",
     "country-flag-icons": "^1.5.7",
     "dotenv": "^16.3.1",
+    "file-saver": "^2.0.5",
     "flag-icons": "^6.11.1",
     "font-awesome": "^4.7.0",
     "https-browserify": "^1.0.0",
+    "jszip": "^3.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^6.1.6",
@@ -38,7 +40,8 @@
     "sweetalert2-react-content": "^5.0.7",
     "url": "^0.11.3",
     "util": "^0.12.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",

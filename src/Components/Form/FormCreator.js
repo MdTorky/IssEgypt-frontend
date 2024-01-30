@@ -168,7 +168,8 @@ const FormCreator = ({ language, languageData, api }) => {
             groupLink,
             paymentQR: paymentQRUrl, // Updated to use payment QR URL
             paymentAmount,
-            customInputs
+            customInputs,
+            status: true
         }
 
         const response = await fetch(`${api}/api/forms`, {
@@ -216,7 +217,9 @@ const FormCreator = ({ language, languageData, api }) => {
                     // Redirect to the form link
                     navigate(`/ISSForm/${type}/${json._id}`);
                 } else if (result.isDenied) {
-                    Swal.fire("Changes are not saved", "", "info");
+                    // Swal.fire("Changes are not saved", "", "info");
+                    navigate(`/formEditor/${type}/${json._id}`);
+
                 }
             });
         }
@@ -344,11 +347,11 @@ const FormCreator = ({ language, languageData, api }) => {
                                 <option value="" disabled selected hidden>{languageText.ChooseCommittee}</option>
                                 <option value="Social" >{languageText.SocialCommittee}</option>
                                 <option value="Academic" >{languageText.AcademicCommittee}</option>
-                                <option value="KnowledgeBank" >{languageText.BankCommittee}</option>
-                                <option value="Cultural" >{languageText.CultureCommittee}</option>
+                                <option value="Bank" >{languageText.BankCommittee}</option>
+                                <option value="Culture" >{languageText.CultureCommittee}</option>
                                 <option value="Sports" >{languageText.SportCommittee}</option>
-                                <option value="Women's Affair" >{languageText.WomenCommittee}</option>
-                                <option value="Reading Club" >{languageText.ReadingClub}</option>
+                                <option value="Women Affairs" >{languageText.WomenCommittee}</option>
+                                <option value="Reading" >{languageText.ReadingClub}</option>
                             </select>
                         </div>
                     </div>
@@ -404,9 +407,9 @@ const FormCreator = ({ language, languageData, api }) => {
                                         { type: "Faculty" },
                                         { type: "Year" },
                                         { type: "Semester" },
+                                        { type: "Picture" },
                                         { type: "Payment" },
                                         { type: "Custom Inputs" },
-                                        // ...customInputs.map((input, index) => ({ type: input, index }))
                                     ])}
                                 </div>
                             </div>
@@ -443,7 +446,7 @@ const FormCreator = ({ language, languageData, api }) => {
                                     accept="image/*"
                                     id="QrImg"
                                     style={{ display: 'none' }}
-
+                                    required
                                     className={`input ${(paymentQR) ? 'valid' : ''}`}
                                     onChange={handleQRImgChange}
                                 />

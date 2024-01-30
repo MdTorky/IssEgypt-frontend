@@ -56,6 +56,18 @@ export const formsReducer = (state, action) => {
                 ...state,
                 [action.collection]: state[action.collection].map(item => (item._id === action.payload.id ? action.payload : item))
             };
+        case 'UPDATE_ITEM':
+            return {
+                ...state,
+                [action.collection]: state[action.collection].map(item =>
+                    item._id === action.payload.id ? { ...item, ...action.payload.changes } : item
+                ),
+            };
+        // case 'UPDATE_STATUS':
+        //     return {
+        //         ...state,
+        //         forms: state.forms.map(form => (form._id === action.payload.id ? { ...form, status: action.payload.status } : form))
+        //     };
         default:
             return state;
     }
@@ -65,8 +77,10 @@ export const FormsContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(formsReducer, {
         forms: [],
         members: [],
-        issForms: []
+        ISSForm: []
     })
+
+
 
     return (
         <FormsContext.Provider value={{ ...state, dispatch }}>

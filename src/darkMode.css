@@ -1042,6 +1042,82 @@ body.dark-mode {
     box-shadow: rgba(7, 7, 7, 0.2) 0px 2px 8px 0px;
 }
 
+.dark-mode .icon.Delete {
+    color: var(--bg);
+    background: rgb(204, 19, 19);
+}
+
+
+.dark-mode .icon.Status {
+    background: mediumseagreen;
+    color: var(--bg)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Admin */
+
+.dark-mode .StatisticsBox {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 320px;
+    height: fit-content;
+}
+
+
+
+
+
+/* Form Data */
+
+
+.dark-mode .FormResponses {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+/* .dark-mode .DownloadButton.Excel {
+    color: var(--bg);
+}
+
+.dark-mode .DownloadButton.Proof {
+    color: var(--bg);
+} */
+
+.dark-mode .DownloadButton.Pictures {
+    color: var(--bg);
+    border: 2px solid var(--bg);
+}
+
+.dark-mode .DownloadButton.Pictures::before {
+    background: var(--bg);
+    color: var(--hover)
+}
+
+.dark-mode .DownloadButton.Pictures:hover {
+    color: var(--hover);
+}
+
+
+
+
 
 @media screen and (max-width: 700px) {
     .dark-mode .navbar ul li.active icon::after {

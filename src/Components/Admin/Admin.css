@@ -1,0 +1,545 @@
+.Admin {
+    margin-bottom: 10%;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 90px;
+
+}
+
+
+
+.arabic .Admin {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    margin-left: 130px;
+    margin-right: 0px;
+
+}
+
+.DashboardTop {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.PresidentBox {
+    display: flex;
+    /* justify-content: space-evenly; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background: linear-gradient(to left, var(--theme), var(--theme2));
+    padding: 10px 10px 0 10px;
+    border-radius: 10px;
+    width: 320px;
+    position: relative;
+
+}
+
+
+.PresidentBox .PresidentBoxLeft {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+
+.PresidentBox h2 {
+    margin: 0;
+    color: var(--bg);
+    /* font-size: 1.4em; */
+    /* white-space: nowrap; */
+    font-weight: 800;
+    text-transform: uppercase;
+    /* z-index: 1; */
+
+}
+
+.PresidentBox p {
+    margin: 0;
+    color: var(--bg);
+    opacity: 0.8;
+    font-size: 0.6em;
+    white-space: nowrap;
+}
+
+.PresidentBox .ProfileButton {
+    margin-top: 50px;
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+    color: var(--bg);
+    padding: 5px 10px;
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    transition: 1s all ease;
+}
+
+.PresidentBox .ProfileButton:hover {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    transform: scale(1.1);
+
+}
+
+.PresidentBox img {
+    width: 30%;
+    top: 0%;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    position: absolute;
+    transition: 0.5s ease all;
+}
+
+
+.arabic .PresidentBox img {
+    right: inherit;
+    left: 0;
+}
+
+
+.PresidentBox:hover img {
+    transform: scale(1.5);
+    top: -20%;
+}
+
+.arabic .PresidentBox:hover img {
+    transform: scale(1.5);
+    top: -20%;
+}
+
+.PresidentBox:hover h2 {
+    font-size: 1.2em;
+}
+
+
+.Statistics {
+    display: flex;
+    gap: 20px;
+}
+
+
+.StatisticsBox {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 320px;
+    height: fit-content;
+}
+
+.MembersBox {
+    display: flex;
+    padding: 10px;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.MembersBoxLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.MembersBoxLeft p {
+    margin: 0;
+}
+
+.MembersBoxLeft p:first-child {
+    font-size: 0.8em;
+}
+
+.MembersBoxLeft p:last-child {
+    font-size: 4em;
+    font-weight: 900;
+    transition: 0.5s all;
+}
+
+.StatisticsIcon {
+    font-size: 150px;
+    transition: 0.5s all;
+
+}
+
+
+.StatisticsBox:hover p:last-child {
+    color: var(--theme);
+    /* transform: scale(1.4); */
+}
+
+.StatisticsBox:hover .StatisticsIcon {
+    color: var(--theme);
+    /* transform: scale(1.4); */
+}
+
+
+
+
+.DashboardBottom {
+    display: flex;
+    margin-top: 90px;
+    width: 100%;
+    /* background: red; */
+    /* justify-content: space-evenly; */
+}
+
+.DashboardBottom h2 {
+    width: 20%;
+    margin: auto;
+}
+
+.Members {
+    position: relative;
+}
+
+.Members .AddFormButton {
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    color: var(--bg);
+    padding: 10px;
+    border-radius: 10px 0 10px 0;
+    font-weight: 600;
+    transition: 0.5s all ease;
+}
+
+.Members .AddFormButton:hover {
+    /* position: absolute; */
+    box-shadow: none;
+
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+    color: var(--bg2);
+    border-radius: 0 10px 0 10px;
+}
+
+
+.TableHeading {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin: 10px auto;
+    color: var(--bg);
+    border-radius: 10px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.TableHeading td, .TableHeading th {
+    width: 150px;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    /* font-weight: 800; */
+
+}
+
+.FacultyStyle {
+    font-size: 0.8em;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.NameStyle {
+    font-size: 1em;
+    white-space: nowrap
+}
+
+.TableHeading tr td {
+    width: 100px;
+    font-weight: 900;
+    position: relative;
+    transition: all 0.5s
+}
+
+.TableItems {
+    padding: 5px 0;
+    background: var(--theme);
+    position: relative;
+}
+
+.TableItems td {
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+
+
+.TableItems img {
+    width: 5%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 40px;
+    transition: 0.5s all ease;
+    border-radius: 5px;
+
+}
+
+.arabic .TableItems img {
+    right: 40px;
+    left: inherit
+}
+
+.TableItems:hover img {
+    width: 10%;
+}
+
+.TableItems:hover td:nth-child(2) {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+}
+
+.TableIcons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon.Delete {
+    background: rgb(204, 19, 19);
+    color: var(--bg)
+}
+
+.icon.Delete:hover .tooltip,
+.icon.Delete:hover .tooltip::before {
+    background: var(--theme);
+    color: var(--bg);
+    white-space: nowrap;
+}
+
+.icon.Status {
+    background: mediumseagreen;
+    color: var(--bg)
+}
+
+.icon.Status:hover .tooltip,
+.icon.Status:hover .tooltip::before {
+    background: mediumseagreen;
+    color: var(--bg);
+    white-space: nowrap;
+}
+
+.True {
+    background: mediumaquamarine;
+    color: mediumaquamarine;
+    width: fit-content !important;
+    margin: auto
+}
+
+.False {
+    background: rgb(125, 33, 33);
+    color: rgb(125, 33, 33);
+    width: fit-content !important;
+    margin: auto
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+
+
+    .Admin {
+        margin-right: 0;
+        padding: 10px;
+        margin-bottom: 40%;
+    }
+
+    .arabic .Admin {
+        margin-left: 0;
+        margin-top: 15%;
+        padding: 10px;
+    }
+
+    .DashboardTop {
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .PresidentBox {
+        width: 95%;
+    }
+
+
+    .PresidentBox h2 {
+        font-size: 1.2em;
+    }
+
+    .PresidentBox img {
+        top: -30%;
+    }
+
+    .arabic .PresidentBox img {
+        right: inherit;
+        left: 0;
+        top: -16%;
+    }
+
+    .PresidentBox:hover img {
+        top: -52%;
+        right: 20px
+    }
+
+    .arabic .PresidentBox:hover img {
+        top: -38%;
+        right: inherit;
+        left: 20px
+    }
+
+    .PresidentBox:hover h2 {
+        font-size: 1em;
+    }
+
+
+
+
+
+
+    .Statistics {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+
+    }
+
+    .StatisticsBox {
+        background: linear-gradient(to right, var(--bg), var(--bg2));
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .MembersBox {
+        align-items: center;
+    }
+
+    .MembersBoxLeft p:first-child {
+        font-size: 0.7em;
+        white-space: nowrap;
+    }
+
+    .MembersBoxLeft p:last-child {
+        font-size: 2em;
+    }
+
+    .StatisticsIcon {
+        font-size: 2em;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .DashboardBottom {
+        flex-direction: column;
+        margin-top: 50px;
+        box-sizing: border-box;
+    }
+
+    .DashboardBottom h2 {
+        width: 50%;
+    }
+
+    .Members {
+        position: relative;
+        width: 100%;
+    }
+
+    .Members table {
+        width: 100%;
+    }
+
+    .Members .AddFormButton {
+        font-size: 0.8em;
+        bottom: 280px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 40%;
+        margin: auto;
+        z-index: 1;
+    }
+
+    .arabic .Members .AddFormButton {
+        bottom: 300px;
+    }
+
+
+    .TableHeading {
+        width: 100%;
+    }
+
+    .TableHeading td, .TableHeading th {
+        width: 100%;
+        display: flex;
+    }
+
+    .TableHeading th {
+        font-size: 0.8em
+    }
+
+    .FacultyStyle {
+        font-size: 0.8em;
+        white-space: wrap;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .NameStyle {
+        font-size: 0.9em;
+        white-space: wrap
+    }
+
+
+    .TableItems td {
+        transition: 0.5s all ease;
+        cursor: pointer;
+        white-space: wrap;
+    }
+
+    .TableItems img {
+        width: 15%;
+        left: 10px;
+    }
+
+    .arabic .TableItems img {
+        right: 10px;
+    }
+
+    .TableItems:hover img {
+        width: 20%;
+    }
+
+    .TableItems:hover td:nth-child(2) {
+        font-size: 0.9em !important;
+        font-weight: 800 !important;
+    }
+
+    .TableIcons {
+        flex-direction: column;
+        gap: 5px;
+
+    }
+
+    .TableItems img.EventImg {
+        width: 100%;
+        position: relative;
+        border-radius: 10px;
+    }
+
+}

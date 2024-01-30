@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faBook, faPerson } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faBook, faPerson, faUsers } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -36,7 +36,7 @@ const NavBar = ({ language, toggleLanguage, languageData }) => {
                 </li>
                 <li className={location.pathname === '/members' ? 'active' : ''}>
                     <Link to="/members">
-                        <icon data-content={languageText.members}><FontAwesomeIcon icon={faPerson} /></icon>
+                        <icon data-content={languageText.members}><FontAwesomeIcon icon={faUsers} /></icon>
                     </Link>
                 </li>
                 {/* <li className={location.pathname === '/gallery' ? 'active' : ''}><a href="/gallery"><icon data-content={languageText.gallery}><FontAwesomeIcon icon={faImage} /></icon></a></li> */}

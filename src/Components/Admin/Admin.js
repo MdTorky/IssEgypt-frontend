@@ -1,8 +1,370 @@
-const Admin = () => {
+import './Admin.css'
+import { useParams, Link } from 'react-router-dom';
+import { useFormsContext } from '../../hooks/useFormContext'
+import { useEffect, useState } from "react";
+import logo from '../../images/logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import 'font-awesome/css/font-awesome.min.css';
+import { faCommentDots, faStar, faUser, faEnvelope, faPen, faTrash, faEye, faBolt, faFileExcel, faPlus } from '@fortawesome/free-solid-svg-icons';
+import roleChecker from '../Members/MemberLoader'
+import Loader from '../Loader/Loader'
+import { faWpforms, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import FacultyCard from '../components/FacultyCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+const Admin = ({ language, languageData, api, darkMode }) => {
+    const { committee } = useParams();
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [messages, setMessages] = useState(true);
+    const { members, forms = [], dispatch } = useFormsContext()
+    const languageText = languageData[language];
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${api}/api/member`);
+                if (!response.ok) {
+                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
+                    setError('Failed to fetch data');
+                    setMessages(true);
+
+                    return;
+                }
+
+                const data = await response.json();
+                console.log(data);
+                dispatch({
+                    type: 'SET_ITEM',
+                    collection: 'members',
+                    payload: data,
+                });
+                setMessages(false);
+            } catch (error) {
+                console.error('An error occurred while fetching data:', error);
+                setError('An error occurred while fetching data');
+                setMessages(true);
+            } finally {
+                // Set loading to false once the data is fetched (success or error)
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [api, dispatch, committee]);
+
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${api}/api/forms`);
+                if (!response.ok) {
+                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
+                    setError('Failed to fetch data');
+                    setMessages(true);
+
+                    return;
+                }
+
+                const data = await response.json();
+                // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
+                dispatch({
+                    type: 'SET_ITEM',
+                    collection: "forms",
+                    payload: data,
+                });
+                setMessages(false);
+            } catch (error) {
+                console.error('An error occurred while fetching data:', error);
+                setError('An error occurred while fetching data');
+                setMessages(true);
+            } finally {
+                // Set loading to false once the data is fetched (success or error)
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, [api, dispatch, committee]);
+
+
+    const adminFilter = members.filter((member) => member.committee === committee);
+    const presidentFilter = adminFilter.find((member) => member.type === 'President' || member.type === 'VicePresident');
+    const normalMember = adminFilter.filter((member) => member.type === 'Member').sort((a, b) => a.name.localeCompare(b.name));
+
+    const membersCount = normalMember.filter((member) => member.committee === committee).length;
+
+
+
+    const formsCount = forms.filter((form) => form.type === committee).length;
+    const formsFilter = forms.filter((form) => form.type === committee);
+
+    const Members = (member) => {
+        return (
+            <tr className={`TableHeading TableItems`}>
+                <td>
+                    <img src={`${api}/uploads/${member.img}`} alt="" />
+
+                </td>
+                <td className="NameStyle"
+
+                >
+                    {language === "en" ? member?.name : member?.arabicName}
+
+                </td>
+                <td>
+                    <div className="icons TableIcons">
+
+                        <button className="icon whatsApp" onClick={() => { window.open(`http://wa.me/${member.phone}`, "_blank") }}>
+                            <span class="tooltip" >{languageText.Group}</span>
+                            <span><FontAwesomeIcon icon={faWhatsapp} /></span>
+                        </button>
+                        <button className="icon" onClick={() => { window.open(`mailto:${member.email}`, "_blank") }}>
+                            <span class="tooltip" >{languageText.Email}</span>
+                            <span><FontAwesomeIcon icon={faEnvelope} /></span>
+                        </button>
+                        {member.linkedIn && <button className="icon linkedIn" onClick={() => { window.open(`${member.linkedIn}`, "_blank") }}>
+                            <span class="tooltip" >{languageText.linkedin}</span>
+                            <span><FontAwesomeIcon icon={faLinkedin} /></span>
+                        </button>}
+                    </div>
+                </td>
+                <td className='FacultyStyle'
+                >
+                    <FacultyCard languageText={languageText} faculty={member.faculty} /></td>
+                <td>
+                    <div className="icons TableIcons">
+
+                        <button className="icon" onClick={() => { }}>
+                            <span class="tooltip" >{languageText.Edit}</span>
+                            <span><FontAwesomeIcon icon={faPen} /></span>
+                        </button>
+                        <button className="icon Delete" onClick={() => { }}>
+                            <span class="tooltip Delete" >{languageText.delete}</span>
+                            <span><FontAwesomeIcon icon={faTrash} /></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        )
+    }
+
+
+
+
+    const handleStatusChange = async (form) => {
+        try {
+
+
+            // Find the form in the state based on formId
+            const formToUpdate = forms.find((form) => form._id === form._id);
+
+            // Ensure the form was found
+            if (!formToUpdate) {
+                console.error('Form not found in state');
+                return;
+            }
+
+            const response = await fetch(`${api}/api/forms/${form._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ status: !formToUpdate.status }),
+
+            });
+
+
+            console.log('API Response:', response);
+
+            if (!response.ok) {
+                console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+
+
+            dispatch({
+                type: 'UPDATE_ITEM',
+                collection: 'forms',
+                payload: { id: form._id, changes: { status: !formToUpdate.status } },
+            });
+
+            {
+                toast.success(`${languageText.statusChanged}`, {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: darkMode ? "dark" : "colored",
+                    style: {
+                        fontFamily: language === 'ar' ?
+                            'Noto Kufi Arabic, sans-serif' :
+                            'Poppins, sans-serif',
+                    },
+                });
+            }
+
+        } catch (error) {
+            console.error('An error occurred while updating form status:', error);
+        }
+    };
+
+
+
+    const copyLink = (link) => {
+        navigator.clipboard.writeText(link);
+        toast.success(`${languageText.linkCopied}`, {
+            position: 'bottom-center',
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: darkMode ? 'dark' : 'colored',
+            style: {
+                fontFamily: language === 'ar' ? 'Noto Kufi Arabic, sans-serif' : 'Poppins, sans-serif',
+            },
+        });
+    };
+
+
+    const Forms = (form) => {
+
+        return (
+            <tr className={`TableHeading TableItems`}>
+                {/* <tr className={`TableHeading TableItems`} onClick={() => copyLink(`issegypt.vercel.app/ISSform/${form.type}/${form._id}`)}> */}
+                <td>
+
+                    <img src={form.eventImg} alt="" className='EventImg' />
+                </td>
+                <td className='NameStyle'>
+                    {language === "en" ? form?.eventName : form?.arabicEventName}
+                </td>
+                <td ><div className={`${form.status === true ? 'True' : "False"}`}>STATUS</div></td>
+                <td>
+                    <div className="icons TableIcons">
+
+
+                        <Link className="icon" to={`/ISSform/${form.type}/${form._id}`}>
+                            <span class="tooltip" >{languageText.view}</span>
+                            <span><FontAwesomeIcon icon={faEye} /></span>
+                        </Link>
+                        <Link className="icon" to={`/formData/${form.type}/${form._id}`}>
+                            <span class="tooltip" >{languageText.data}</span>
+                            <span><FontAwesomeIcon icon={faFileExcel} /></span>
+                        </Link>
+                        <Link className="icon" to={`/formEditor/${form.type}/${form._id}`}>
+                            <span class="tooltip" >{languageText.Edit}</span>
+                            <span><FontAwesomeIcon icon={faPen} /></span>
+                        </Link>
+                        <button className="icon Status" onClick={() => handleStatusChange(form)}>
+                            <span class="tooltip Delete" >{languageText.changeStatus}</span>
+                            <span><FontAwesomeIcon icon={faBolt} /></span>
+                        </button>
+                        <button className="icon Delete" onClick={() => { }}>
+                            <span class="tooltip Delete" >{languageText.delete}</span>
+                            <span><FontAwesomeIcon icon={faTrash} /></span>
+                        </button>
+                    </div>
+
+                </td>
+            </tr>
+        )
+    }
+
     return (
         <div className="Admin">
+            {loading ? (
+                <div><Loader /></div>
+            ) : (
+                <>
+                    <div className="DashboardTop">
 
-        </div>
+                        <div className="PresidentBox">
+                            <div className="PresidentBoxLeft">
+                                <>
+                                    {language === "en" ? <h2>{presidentFilter?.name}</h2> : <h2>{presidentFilter?.arabicName}</h2>}
+                                    <p>{roleChecker({ languageText: languageText, committee: presidentFilter?.committee, role: presidentFilter?.type })}</p>
+                                </>
+                                <Link className="ProfileButton" to="/">{languageText.viewProfile}</Link>
+                            </div>
+                            <img src={presidentFilter?.img} alt="" />
+                        </div>
+                        <div className="Statistics">
+                            <div className="StatisticsBox">
+                                <div className="MembersBox">
+                                    <div className="MembersBoxLeft">
+                                        <p>{languageText.NoMembers}</p>
+                                        <p>{membersCount}</p>
+                                    </div>
+                                    <FontAwesomeIcon icon={faUser} className='StatisticsIcon' />
+                                </div>
+                            </div>
+                            <div className="StatisticsBox">
+                                <div className="MembersBox">
+                                    <div className="MembersBoxLeft">
+                                        <p>{languageText.NoForms}</p>
+                                        <p>{formsCount}</p>
+                                    </div>
+                                    <FontAwesomeIcon icon={faWpforms} className='StatisticsIcon' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="DashboardBottom">
+                        <div className="Members">
+                            <h2>{languageText.members}</h2>
+                            <table>
+                                <tr className="TableHeading">
+                                    <th></th>
+                                    <th>{languageText.FullName}</th>
+                                    <th>{languageText.Contact}</th>
+                                    <th>{languageText.Faculty}</th>
+                                    <th>{languageText.Action}</th>
+                                </tr>
+                            </table>
+
+                            {normalMember.map((member) => (
+                                <div>
+                                    {Members(member)}
+                                </div>
+                            ))}
+                        </div>
+                        <div className="Members">
+
+                            <Link to="/formCreator/admin" className='AddFormButton'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
+
+                            <h2>{languageText.forms}</h2>
+
+
+                            <table>
+                                <tr className="TableHeading">
+                                    <th></th>
+                                    <th>{languageText.eventName}</th>
+                                    <th>{languageText.Status}</th>
+                                    <th>{languageText.Action}</th>
+                                </tr>
+                            </table>
+
+                            {formsFilter.map((form) => (
+                                <div>
+                                    {Forms(form)}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </>
+            )
+            }
+        </div >
     );
 }
 
