@@ -9,21 +9,16 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const NotFound = ({ darkMode, language, languageData }) => {
+const UnderCons = ({ darkMode, language, languageData }) => {
 
     useEffect(() => {
     }, [language, languageData]);
     const languageText = languageData[language];
     return (
-        <div className="notFound">
-            <div className="TopFound">
-                <h2>4</h2>
-                {!darkMode ? <img src={circle} alt="" /> : <img src={circle2} alt="" />}
-                <h2>4</h2>
-            </div>
-            <div className="BottomFound">
-                <h2>{languageText.nothing}</h2>
-                <p>{languageText.exists}</p>
+        <div className="underConst">
+            <div className="BottomFound underConstBack">
+                <h2 className="UnderConstruction">{languageText.underCon}</h2>
+                {/* <p>{languageText.exists}</p> */}
                 <div className="freePal">
                     <p>{languageText.Palestine}</p>
                     <PS className='flag' />
@@ -37,9 +32,9 @@ const NotFound = ({ darkMode, language, languageData }) => {
                         {language === 'en' ? <FontAwesomeIcon icon={faArrowRight} /> : <FontAwesomeIcon icon={faArrowLeft} />}
                     </div>
                 </Link>
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }
 
-export default NotFound;
+export default UnderCons;

@@ -30,6 +30,8 @@ import CreateForm from './Components/Form/CreatedForms';
 import Admin from './Components/Admin/Admin';
 import FormEditor from './Components/Admin/FormEditor';
 import FormData from './Components/Admin/FormData';
+import UnderCons from './Components/NotFound/UnderCons';
+import MemberEditor from './Components/Admin/MemberEditor';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -116,8 +118,10 @@ function App() {
               <Route path="/adminDashboard/:committee" element={<Admin darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/formEditor/:committee/:formId" element={<FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/formData/:committee/:formId" element={<FormData darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/memberEditor/:committee/:memberId" element={<MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
+              <Route path="/underConstruction" element={<UnderCons darkMode={darkMode} language={language} languageData={languageData} />} />
               {/* <Route path="/groups" element={<Groups language={language} languageData={languageData} />} /> */}
 
             </Routes>

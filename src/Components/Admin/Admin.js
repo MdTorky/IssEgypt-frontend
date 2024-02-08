@@ -138,11 +138,11 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                 <td>
                     <div className="icons TableIcons">
 
-                        <button className="icon" onClick={() => { }}>
+                        <Link className="icon" to={`/memberEditor/${member.committee}/${member._id}`}>
                             <span class="tooltip" >{languageText.Edit}</span>
                             <span><FontAwesomeIcon icon={faPen} /></span>
-                        </button>
-                        <button className="icon Delete" onClick={() => { }}>
+                        </Link>
+                        <button className="icon Delete" onClick={() => { handleMemberDelete({ member: member }) }}>
                             <span class="tooltip Delete" >{languageText.delete}</span>
                             <span><FontAwesomeIcon icon={faTrash} /></span>
                         </button>
@@ -288,6 +288,50 @@ const Admin = ({ language, languageData, api, darkMode }) => {
     };
 
 
+
+    const handleMemberDelete = async ({ member }) => {
+        try {
+            const response = await fetch(`${api}/api/member/${member._id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+            if (response.ok) {
+                const json = await response.json();
+                dispatch({
+                    type: 'DELETE_ITEM',
+                    collection: "members",
+                    payload: json
+                });
+                {
+                    toast.success(`${languageText.memberDeleted}`, {
+                        position: "bottom-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: darkMode ? "dark" : "colored",
+                        style: {
+                            fontFamily: language === 'ar' ?
+                                'Noto Kufi Arabic, sans-serif' :
+                                'Poppins, sans-serif',
+                        },
+                    });
+                }
+
+            }
+
+        } catch (error) {
+            console.error('An error occurred while deleting data:', error);
+        }
+    };
+
+
     const Forms = (form) => {
 
         return (
@@ -346,7 +390,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     {language === "en" ? <h2>{presidentFilter?.name}</h2> : <h2>{presidentFilter?.arabicName}</h2>}
                                     <p>{roleChecker({ languageText: languageText, committee: presidentFilter?.committee, role: presidentFilter?.type })}</p>
                                 </>
-                                <Link className="ProfileButton" to="/">{languageText.viewProfile}</Link>
+                                <Link className="ProfileButton" to="/underConstruction">{languageText.viewProfile}</Link>
                             </div>
                             <img src={presidentFilter?.img} alt="" />
                         </div>
@@ -394,6 +438,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                         <div className="Members">
 
                             <Link to="/formCreator/admin" className='AddFormButton'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
+                            <Link to="/formCreator/admin" className='AddFormButtonPhone'><FontAwesomeIcon icon={faPlus} /></Link>
 
                             <h2>{languageText.forms}</h2>
 

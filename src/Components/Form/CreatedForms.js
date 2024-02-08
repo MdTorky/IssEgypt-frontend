@@ -234,7 +234,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     // Example usage
 
     return (
-
         filter && filter.length > 0 && filter[0].status === true ? (
 
             <div className="CreatedForm">

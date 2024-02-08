@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { useLocation } from 'react-router-dom';
 import { useDarkMode } from '../../DarkModeContext'; // Import useDarkMode
-
+import { Icon } from '@iconify/react';
 const NavBar = ({ language, toggleLanguage, languageData }) => {
     const location = useLocation();
     const { darkMode, toggleDarkMode } = useDarkMode(); // Get dark mode state and toggle function
@@ -26,24 +26,28 @@ const NavBar = ({ language, toggleLanguage, languageData }) => {
             <ul>
                 <li className={location.pathname === '/' ? 'active' : ''}>
                     <Link to="/">
-                        <icon data-content={languageText.home}><FontAwesomeIcon icon={faHouse} /></icon>
+                        {/* <icon data-content={languageText.home}><FontAwesomeIcon icon={faHouse} /></icon> */}
+                        <icon data-content={languageText.home}><Icon icon="gravity-ui:house" width="2rem" height="2rem" /></icon>
                     </Link>
                 </li>
                 <li className={location.pathname === '/services' ? 'active' : ''}>
                     <Link to="/services">
-                        <icon data-content={languageText.services}><FontAwesomeIcon icon={faBook} /></icon>
+                        {/* <icon data-content={languageText.services}><FontAwesomeIcon icon={faBook} /></icon> */}
+                        <icon data-content={languageText.services}><Icon icon="fa-solid:hands-helping" width="2rem" height="2rem" /></icon>
                     </Link>
                 </li>
                 <li className={location.pathname === '/members' ? 'active' : ''}>
                     <Link to="/members">
-                        <icon data-content={languageText.members}><FontAwesomeIcon icon={faUsers} /></icon>
+                        {/* <icon data-content={languageText.members}><FontAwesomeIcon icon={faUsers} /></icon> */}
+                        <icon data-content={languageText.members}><Icon icon="heroicons:users-solid" width="2rem" height="2rem" /></icon>
                     </Link>
                 </li>
                 {/* <li className={location.pathname === '/gallery' ? 'active' : ''}><a href="/gallery"><icon data-content={languageText.gallery}><FontAwesomeIcon icon={faImage} /></icon></a></li> */}
                 <li onClick={toggleLanguage} className='language'>
 
                     <icon data-content={languageText.language}>
-                        {language === "en" ? "EN" : "ع"}
+                        {/* {language === "en" ? "EN" : "ع"} */}
+                        {language === "en" ? <Icon icon="ri:english-input" width="2rem" height="2rem" /> : <Icon icon="mdi:abjad-arabic" width="2rem" height="2rem" />}
                     </icon>
 
                 </li>

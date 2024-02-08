@@ -206,6 +206,14 @@
     border-radius: 0 10px 0 10px;
 }
 
+.Members .AddFormButtonPhone {
+    position: fixed;
+    margin-top: 900px;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 .TableHeading {
     display: flex;

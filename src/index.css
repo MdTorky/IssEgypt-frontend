@@ -161,6 +161,16 @@ body.english {
 }
 
 
+.Updating {
+  text-align: center;
+  color: var(--theme);
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+
 @keyframes horizontalScaleAnim {
   0% {
     transform: scaleX(0);

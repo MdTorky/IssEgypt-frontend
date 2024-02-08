@@ -3,6 +3,14 @@ body.dark-mode {
     color: var(--bg);
 }
 
+
+/* Loader */
+
+.dark-mode .loader {
+    --dot: var(--bg);
+
+}
+
 /* NavBar */
 
 .dark-mode .logo {
