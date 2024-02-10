@@ -265,6 +265,16 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                 console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
                 return;
             }
+
+            const responseDelete = await fetch(`${api}/api/issForms/${forms._id}`, {
+                method: 'DELETE',
+            });
+
+            if (!responseDelete.ok) {
+                console.error(`Error deleting form responses. Status: ${responseDelete.status}, ${responseDelete.statusText}`);
+                return;
+            }
+
             if (response.ok) {
                 const json = await response.json();
                 dispatch({
@@ -290,6 +300,15 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                     });
                 }
 
+            }
+
+            if (responseDelete.ok) {
+                const json = await response.json();
+                dispatch({
+                    type: 'DELETE_ITEM',
+                    collection: "ISSForm",
+                    payload: json
+                });
             }
 
         } catch (error) {
