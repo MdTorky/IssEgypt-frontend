@@ -670,13 +670,23 @@ input::placeholder {
     margin: auto;
 }
 
+.CustomInputRow {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* background: red */
+}
+
+.CustomButton {
+    display: flex;
+}
 
 
 
 
 @media screen and (max-width: 700px) {
     .Form {
-        margin-bottom: 40%;
+        margin-bottom: 50% !important;
         margin-right: 0;
     }
 
@@ -699,7 +709,7 @@ input::placeholder {
 
 
     .InputField {
-        width: 100%;
+        width: 300px;
     }
 
     .formBox .button {

@@ -533,9 +533,9 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                             {customInputs.length > 0 && (
                                 <div className="CustomInputs">
                                     {customInputs.map((input, index) => (
-                                        <div className="InputRow" key={index}>
+                                        <div className="CustomInputRow" key={index}>
                                             <div className="CustomLabel">{input}</div>
-                                            <button type="button" onClick={() => removeCustomInput(index)}>
+                                            <button type="button" onClick={() => removeCustomInput(index)} className="CustomButton">
                                                 <FontAwesomeIcon icon={faXmark} />
                                             </button>
                                         </div>

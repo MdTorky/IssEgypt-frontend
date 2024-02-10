@@ -397,44 +397,40 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
 
 
                                 <div className="InputField">
-                                    <select
-                                        className={`input ${(form.type) ? 'valid' : ''}`}
-                                        value={form.type}
-                                        onChange={handleInputChange}
-                                        required
-                                        name="type"
-                                    >
-                                        <option value="" disabled selected hidden>{languageText.ChooseCommittee}</option>
-                                        <option value="Social" >{languageText.SocialCommittee}</option>
-                                        <option value="Academic" >{languageText.AcademicCommittee}</option>
-                                        <option value="Bank" >{languageText.BankCommittee}</option>
-                                        <option value="Culture" >{languageText.CultureCommittee}</option>
-                                        <option value="Sports" >{languageText.SportCommittee}</option>
-                                        <option value="Women Affairs" >{languageText.WomenCommittee}</option>
-                                        <option value="Reading" >{languageText.ReadingClub}</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="InputField eventDescription">
-                                <div className="InputLabelField">
-
-                                    <textarea
-                                        rows="1"
-                                        className={`input ${(form.eventDescription) ? 'valid' : ''}`}
-                                        columns="20"
-                                        onChange={handleInputChange}
-                                        value={form.eventDescription}
-                                        required
-                                        id="EventDesc"
-                                        name="eventDescription"
-
-                                    />
-                                    {!form.eventDescription && <label for="EventDesc" className={`LabelInput ${(form.eventDescription) ? 'valid' : ''}`}><FontAwesomeIcon icon={faFile} /> {languageText.EventDesc}</label>}
-
+                                    <div className="InputLabelField">
+                                        <input
+                                            // placeholder=" &#xf5fd; &nbsp; Group Link"
+                                            type="text"
+                                            className={`input ${(form.groupLink) ? 'valid' : ''}`}
+                                            onChange={handleInputChange}
+                                            id="GroupLink"
+                                            value={form.groupLink}
+                                            style={{ height: 'fit-content', }}
+                                            name="groupLink"
+                                        />
+                                        {!form.groupLink && <label for="GroupLink" className={`LabelInput ${(form.groupLink) ? 'valid' : ''}`}><FontAwesomeIcon icon={faWhatsapp} /> {languageText.GroupLink}</label>}
+                                    </div>
                                 </div>
                             </div>
                             <div className="InputRow">
+                                <div className="InputField">
+                                    <div className="InputLabelField">
+
+                                        <textarea
+                                            rows="1"
+                                            className={`input ${(form.eventDescription) ? 'valid' : ''}`}
+                                            columns="20"
+                                            onChange={handleInputChange}
+                                            value={form.eventDescription}
+                                            required
+                                            id="EventDesc"
+                                            name="eventDescription"
+
+                                        />
+                                        {!form.eventDescription && <label for="EventDesc" className={`LabelInput ${(form.eventDescription) ? 'valid' : ''}`}><FontAwesomeIcon icon={faFile} /> {languageText.EventDesc}</label>}
+
+                                    </div>
+                                </div>
                                 <div className="InputField">
                                     <div className="multiselect">
                                         <div className="selectBox" onClick={() => showCheckboxes('categories')}>
@@ -459,23 +455,8 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="InputField">
-                                    <div className="InputLabelField">
-                                        <input
-                                            // placeholder=" &#xf5fd; &nbsp; Group Link"
-                                            type="text"
-                                            className={`input ${(form.groupLink) ? 'valid' : ''}`}
-                                            onChange={handleInputChange}
-                                            id="GroupLink"
-                                            value={form.groupLink}
-                                            style={{ height: 'fit-content', }}
-                                            name="groupLink"
-                                        />
-                                        {!form.groupLink && <label for="GroupLink" className={`LabelInput ${(form.groupLink) ? 'valid' : ''}`}><FontAwesomeIcon icon={faWhatsapp} /> {languageText.GroupLink}</label>}
-                                    </div>
-                                </div>
                             </div>
+
 
                             {inputs.includes("Payment") && (
                                 <div className="InputRow">
@@ -546,7 +527,7 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
                                     {form.customInputs.map((input, index) => (
                                         <div className="InputRow" key={index}>
                                             <div className="CustomLabel">{input}</div>
-                                            <button type="button" onClick={() => handleRemoveCustomInput(index)}>
+                                            <button type="button" onClick={() => handleRemoveCustomInput(index)} className="CustomButton">
                                                 <FontAwesomeIcon icon={faXmark} />
                                             </button>
                                         </div>
@@ -554,7 +535,7 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
                                     {customInputs.map((input, index) => (
                                         <div className="InputRow" key={index}>
                                             <div className="CustomLabel">{input}</div>
-                                            <button type="button" onClick={() => handleRemoveCustomInput(index + form.customInputs.length)}>
+                                            <button type="button" onClick={() => handleRemoveCustomInput(index + form.customInputs.length)} className="CustomButton">
                                                 <FontAwesomeIcon icon={faXmark} />
                                             </button>
                                         </div>

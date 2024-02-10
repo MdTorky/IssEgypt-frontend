@@ -477,7 +477,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                         <div className="Members">
 
                             <Link to="/formCreator/admin" className='AddFormButton'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
-                            {/* <Link to="/formCreator/admin" className='AddFormButtonPhone'><FontAwesomeIcon icon={faPlus} /></Link> */}
+                            <Link to="/formCreator/admin" className='AddFormButtonPhone'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
 
                             <h2>{languageText.forms}</h2>
                             {/* <h2>{user?.type}</h2> */}

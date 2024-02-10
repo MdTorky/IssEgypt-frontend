@@ -228,12 +228,20 @@
 }
 
 .Members .AddFormButtonPhone {
-    position: fixed;
-    margin-top: 900px;
-    z-index: 1000;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    /* position: fixed; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    /* margin-top: 900px; */
+    color: var(--bg);
+    padding: 10px;
+    border-radius: 10px 0 10px 0;
+    font-weight: 600;
+    transition: 0.5s all ease;
+    width: fit-content;
+    font-size: 0.9em;
+    display: none;
+    gap: 10px;
+    margin: 0 auto 10px auto;
 }
 
 .TableHeading {
@@ -494,7 +502,7 @@
         width: 100%;
     }
 
-    .Members .AddFormButton {
+    /* .Members .AddFormButton {
         font-size: 0.8em;
         bottom: 280px;
         left: 0;
@@ -503,11 +511,22 @@
         width: 40%;
         margin: auto;
         z-index: 1;
+
+        position: relative;
+    } */
+
+    .Members .AddFormButton {
+        display: none;
     }
 
-    .arabic .Members .AddFormButton {
-        bottom: 300px;
+    .Members .AddFormButtonPhone {
+        display: block;
     }
+
+    /* .arabic .Members .AddFormButton {
+        bottom: 300px;
+    } */
+
 
 
     .TableHeading {
