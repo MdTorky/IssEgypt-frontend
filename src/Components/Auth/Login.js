@@ -25,21 +25,21 @@ const Login = ({ language, languageData, api, darkMode }) => {
 
         await login(email, password)
         {
-            toast.success(`${languageText.loginSuccess}`, {
-                position: "bottom-center",
-                autoClose: 3000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: darkMode ? "dark" : "colored",
-                style: {
-                    fontFamily: language === 'ar' ?
-                        'Noto Kufi Arabic, sans-serif' :
-                        'Poppins, sans-serif',
-                },
-            });
+            // toast.success(`${languageText.loginSuccess}`, {
+            //     position: "bottom-center",
+            //     autoClose: 3000,
+            //     hideProgressBar: true,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: darkMode ? "dark" : "colored",
+            //     style: {
+            //         fontFamily: language === 'ar' ?
+            //             'Noto Kufi Arabic, sans-serif' :
+            //             'Poppins, sans-serif',
+            //     },
+            // });
         }
     }
 
