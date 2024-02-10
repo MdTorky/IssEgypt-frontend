@@ -328,7 +328,7 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
                                 </div>
                             </div>
 
-                            <div className="InputRow">
+                            {/* <div className="InputRow">
                                 <div className="InputField">
 
                                     <label for="img" className={`LabelInputImg ${(member.img) ? 'valid' : ''}`}>
@@ -348,7 +348,7 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
                                         onChange={handleImgChange}
                                     />
                                 </div>
-                            </div>
+                            </div> */}
                             <button type="submit">{languageText.Update}</button>
 
                         </form>
