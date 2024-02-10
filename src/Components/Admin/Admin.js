@@ -1,5 +1,5 @@
 import './Admin.css'
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext'
 import { useEffect, useState } from "react";
 import logo from '../../images/logo.png'
@@ -12,15 +12,23 @@ import { faWpforms, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-
 import FacultyCard from '../components/FacultyCard';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Icon } from '@iconify/react';
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { useNavigate } from "react-router-dom";
 
 const Admin = ({ language, languageData, api, darkMode }) => {
-    const { committee } = useParams();
+    // const { committee } = useParams();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
     const [messages, setMessages] = useState(true);
     const { members, forms = [], dispatch } = useFormsContext()
     const languageText = languageData[language];
+    const { user } = useAuthContext()
+    const navigate = useNavigate();
+
+
+
 
 
     useEffect(() => {
@@ -54,7 +62,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
         };
 
         fetchData();
-    }, [api, dispatch, committee]);
+    }, [api, dispatch]);
 
 
 
@@ -88,19 +96,21 @@ const Admin = ({ language, languageData, api, darkMode }) => {
             }
         };
         fetchData();
-    }, [api, dispatch, committee]);
+    }, [api, dispatch]);
 
 
-    const adminFilter = members.filter((member) => member.committee === committee);
+    const adminFilter = members.filter((member) => member.committee === user?.committee);
     const presidentFilter = adminFilter.find((member) => member.type === 'President' || member.type === 'VicePresident');
-    const normalMember = adminFilter.filter((member) => member.type === 'Member').sort((a, b) => a.name.localeCompare(b.name));
+    const normalMember = adminFilter.filter((member) => member.type === 'Member' || member.type === 'VicePresident').sort((a, b) => a.name.localeCompare(b.name));
 
-    const membersCount = normalMember.filter((member) => member.committee === committee).length;
+    const membersCount = normalMember.filter((member) => member.committee === user?.committee).length;
 
 
 
-    const formsCount = forms.filter((form) => form.type === committee).length;
-    const formsFilter = forms.filter((form) => form.type === committee);
+    const formsCount = forms.filter((form) => form.type === user?.committee).length;
+    const formsFilter = forms.filter((form) => form.type === user?.committee);
+
+
 
     const Members = (member) => {
         return (
@@ -332,11 +342,14 @@ const Admin = ({ language, languageData, api, darkMode }) => {
     };
 
 
+
     const Forms = (form) => {
 
         return (
-            <tr className={`TableHeading TableItems`}>
-                {/* <tr className={`TableHeading TableItems`} onClick={() => copyLink(`issegypt.vercel.app/ISSform/${form.type}/${form._id}`)}> */}
+            // <tr className={`TableHeading TableItems`}>
+            <tr className={`TableHeading TableItems`} onClick={(e) => {
+                copyLink(`issegypt.vercel.app/ISSform/${form.type}/${form._id}`)
+            }}>
                 <td>
 
                     <img src={form.eventImg} alt="" className='EventImg' />
@@ -349,23 +362,35 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                     <div className="icons TableIcons">
 
 
-                        <Link className="icon" to={`/ISSform/${form.type}/${form._id}`}>
+                        <Link className="icon" to={`/ISSform/${form._id}`}
+                            onClick={(e) => {
+                                e.stopPropagation(); // Stop the propagation of the click event
+                            }}>
                             <span class="tooltip" >{languageText.view}</span>
                             <span><FontAwesomeIcon icon={faEye} /></span>
                         </Link>
-                        <Link className="icon" to={`/formData/${form.type}/${form._id}`}>
+                        <Link className="icon" to={`/formData/${form.type}/${form._id}`}
+                            onClick={(e) => {
+                                e.stopPropagation(); // Stop the propagation of the click event
+                            }}>
                             <span class="tooltip" >{languageText.data}</span>
                             <span><FontAwesomeIcon icon={faFileExcel} /></span>
                         </Link>
-                        <Link className="icon" to={`/formEditor/${form.type}/${form._id}`}>
+                        <Link className="icon" to={`/formEditor/${form.type}/${form._id}`}
+                            onClick={(e) => {
+                                e.stopPropagation(); // Stop the propagation of the click event
+                            }}>
                             <span class="tooltip" >{languageText.Edit}</span>
                             <span><FontAwesomeIcon icon={faPen} /></span>
                         </Link>
-                        <button className="icon Status" onClick={() => handleStatusChange(form)}>
+                        <button className="icon Status" onClick={(e) => {
+                            e.stopPropagation();
+                            handleStatusChange(form)
+                        }}>
                             <span class="tooltip Delete" >{languageText.changeStatus}</span>
                             <span><FontAwesomeIcon icon={faBolt} /></span>
                         </button>
-                        <button className="icon Delete" onClick={() => { handleFormDelete({ forms: form }) }}>
+                        <button className="icon Delete" onClick={(e) => { e.stopPropagation(); handleFormDelete({ forms: form }) }}>
                             <span class="tooltip Delete" >{languageText.delete}</span>
                             <span><FontAwesomeIcon icon={faTrash} /></span>
                         </button>
@@ -376,6 +401,13 @@ const Admin = ({ language, languageData, api, darkMode }) => {
         )
     }
 
+    const { logout } = useLogout()
+
+    const handleClick = () => {
+        logout()
+    }
+
+    // if (user && user.type === "admin") {
     return (
         <div className="Admin">
             {loading ? (
@@ -390,7 +422,14 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     {language === "en" ? <h2>{presidentFilter?.name}</h2> : <h2>{presidentFilter?.arabicName}</h2>}
                                     <p>{roleChecker({ languageText: languageText, committee: presidentFilter?.committee, role: presidentFilter?.type })}</p>
                                 </>
-                                <Link className="ProfileButton" to="/underConstruction">{languageText.viewProfile}</Link>
+                                <div className="ProfileButtons">
+                                    <Link className="ProfileButton" to="/underConstruction">{languageText.viewProfile}</Link>
+                                    {/* <button className="ProfileButton Logout" to="/"><Icon icon="solar:logout-outline" /></button> */}
+                                    <button className="icon Logout" onClick={handleClick}>
+                                        <span class="tooltip Delete" >{languageText.Logout}</span>
+                                        <span><Icon icon="uiw:logout" /></span>
+                                    </button>
+                                </div>
                             </div>
                             <img src={presidentFilter?.img} alt="" />
                         </div>
@@ -438,10 +477,10 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                         <div className="Members">
 
                             <Link to="/formCreator/admin" className='AddFormButton'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
-                            <Link to="/formCreator/admin" className='AddFormButtonPhone'><FontAwesomeIcon icon={faPlus} /></Link>
+                            {/* <Link to="/formCreator/admin" className='AddFormButtonPhone'><FontAwesomeIcon icon={faPlus} /></Link> */}
 
                             <h2>{languageText.forms}</h2>
-
+                            {/* <h2>{user?.type}</h2> */}
 
                             <table>
                                 <tr className="TableHeading">
@@ -464,6 +503,9 @@ const Admin = ({ language, languageData, api, darkMode }) => {
             }
         </div >
     );
+
+
 }
+
 
 export default Admin;

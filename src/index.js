@@ -6,25 +6,27 @@ import App from './App';
 import { LanguageProvider } from './language';
 import { DarkModeProvider } from './DarkModeContext';
 import { FormsContextProvider } from './context/formContext';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-  Route,
-} from "react-router-dom";
+import { AuthContextProvider } from './context/authContext';
+// import {
+//   createBrowserRouter,
+//   createRoutesFromElements,
+//   RouterProvider,
+//   Route,
+// } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //   <App />
   <React.StrictMode>
-
-    <FormsContextProvider>
-      <DarkModeProvider> {/* Wrap your app with DarkModeProvider */}
-        <LanguageProvider>
-          <App />
-        </LanguageProvider>
-      </DarkModeProvider>
-    </FormsContextProvider>
+    <AuthContextProvider>
+      <FormsContextProvider>
+        <DarkModeProvider>
+          <LanguageProvider>
+            <App />
+          </LanguageProvider>
+        </DarkModeProvider>
+      </FormsContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 
   // document.getElementById('root')

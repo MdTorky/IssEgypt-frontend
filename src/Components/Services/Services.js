@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCalendarDays, faXmark, faCircleInfo, faCarBattery, faFileLines, faBellSlash,
     faLaptopCode, faHelmetSafety, faGears, faFlaskVial, faBookBookmark, faEnvelope, faLocationDot, faInfoCircle,
-    faBuilding, faMapLocationDot, faCarSide, faFilePdf, faCreditCard, faGraduationCap, faFutbol, faHouseChimney
+    faBuilding, faMapLocationDot, faCarSide, faFilePdf, faCreditCard, faGraduationCap, faFutbol, faHouseChimney, faBriefcase, faUmbrellaBeach
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons';
 
@@ -13,7 +13,8 @@ import images from "../../data/images.json";
 import links from "../../data/upcomingEvents.json";
 import faculties from "../../data/faculties.json";
 import { useLanguage } from '../../language';
-import useFetch from '../../hooks/useFetch';
+import { Icon } from '@iconify/react';
+
 // import announcements from "../../data/announcements.json";
 
 const Services = ({ language, languageData }) => {
@@ -350,7 +351,9 @@ const Services = ({ language, languageData }) => {
                             <Link to="/attractions" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.attractions}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.attractions2}</p>
-                                <FontAwesomeIcon icon={faMapLocationDot} className='moon' />
+                                {/* <FontAwesomeIcon icon={faMapLocationDot} className='moon' /> */}
+                                <FontAwesomeIcon icon={faUmbrellaBeach} className='moon' />
+                                {/* <Icon icon="fluent:beach-20-regular" className='moon' /> */}
                             </Link>
                             <Link to="/transportation" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.transportation}</span><span className="time-sub-text"></span></p>
@@ -373,7 +376,9 @@ const Services = ({ language, languageData }) => {
                                 <p className="day-text">{languageText.internships2}</p>
                                 {/* <p className="day-text">{languageText.handbook2}</p> */}
                                 {/* <FontAwesomeIcon icon={faTelegram} className='moon' /> */}
-                                <FontAwesomeIcon icon={faBuilding} className='moon' />
+                                {/* <FontAwesomeIcon icon={faBuilding} className='moon' /> */}
+                                <FontAwesomeIcon icon={faBriefcase} className='moon' />
+                                {/* <Icon icon="ic:baseline-work" className='moon' /> */}
                             </Link>
                             <Link to="/openAccount" className="newStudentCard smaller">
                                 <p className="time-text"><span>{languageText.bankAccount}</span><span className="time-sub-text"></span></p>

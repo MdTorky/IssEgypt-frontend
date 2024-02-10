@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route, BrowserRouter as Router, Navigate } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext'
 import Home from './Components/Home/Home';
 import Menu from './Components/Menu/Menu';
 import Services from './Components/Services/Services';
@@ -32,6 +33,8 @@ import FormEditor from './Components/Admin/FormEditor';
 import FormData from './Components/Admin/FormData';
 import UnderCons from './Components/NotFound/UnderCons';
 import MemberEditor from './Components/Admin/MemberEditor';
+import Register from './Components/Auth/Register';
+import Login from './Components/Auth/Login';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -44,6 +47,7 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  const { user } = useAuthContext()
 
   // Function to toggle the language
   const toggleLanguage = () => {
@@ -111,14 +115,17 @@ function App() {
               <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/formCreator/admin" element={<FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/ISSForm/:type/:formId" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/ISSForm/:formId" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
 
-              <Route path="/adminDashboard/:committee" element={<Admin darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/formEditor/:committee/:formId" element={<FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/formData/:committee/:formId" element={<FormData darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/memberEditor/:committee/:memberId" element={<MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/formCreator/admin" element={user ? <FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+
+              <Route path="/register/admin" element={!user ? <Register darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />
+              <Route path="/login" element={!user ? <Login darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />
 
               <Route path="*" element={<NotFound darkMode={darkMode} language={language} languageData={languageData} />} />
               <Route path="/underConstruction" element={<UnderCons darkMode={darkMode} language={language} languageData={languageData} />} />

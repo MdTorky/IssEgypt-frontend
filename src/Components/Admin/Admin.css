@@ -59,6 +59,12 @@
     white-space: nowrap;
 }
 
+.PresidentBox .ProfileButtons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .PresidentBox .ProfileButton {
     margin-top: 50px;
     background: linear-gradient(to left, var(--hover), var(--hover2));
@@ -74,6 +80,21 @@
     background: linear-gradient(to right, var(--hover), var(--hover2));
     transform: scale(1.1);
 
+}
+
+.PresidentBox .icon.Logout {
+    margin-top: 50px;
+    /* background: var(--bg);
+    border: none;
+    cursor: pointer;*/
+    color: var(--theme);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 1em;
+    text-align: center;
+    font-weight: 700;
 }
 
 .PresidentBox img {

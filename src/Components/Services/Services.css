@@ -356,9 +356,11 @@ a:visited {
 .newStudentsRow .moon,
 .newStudentsRow2 .moon {
     font-size: 1.3em;
+    /* font-size: 1.9em; */
     position: absolute;
     right: 15px;
     top: 15px;
+
     transition: all 0.3s ease-in-out;
 }
 

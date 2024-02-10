@@ -962,9 +962,19 @@ body.dark-mode {
     color: var(--hover) !important;
 }
 
+.dark-mode .PasswordCheckBack {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
 
+}
 
+.dark-mode .TogglePass {
+    color: var(--bg);
+}
 
+.dark-mode .Pass {
+    /* color: rgb(222, 190, 9) */
+    color: var(--theme2)
+}
 
 
 

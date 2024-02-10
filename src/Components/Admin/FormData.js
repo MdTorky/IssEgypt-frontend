@@ -14,6 +14,7 @@ import * as XLSX from 'xlsx';
 import { utils } from 'xlsx';
 import JSZip from 'jszip';  // Import JSZip
 import { saveAs } from 'file-saver';
+import { Icon } from '@iconify/react';
 
 import './FormData.css'
 import FacultyCard from '../components/FacultyCard';
@@ -298,7 +299,8 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                             <p>{languageText.NoResponses}</p>
                             <p>{filterLength}</p>
                         </div>
-                        <FontAwesomeIcon icon={faReply} className='FormResponsesIcon' />
+                        {/* <FontAwesomeIcon icon={faReply} className='FormResponsesIcon' /> */}
+                        <Icon icon="fluent:person-feedback-48-filled" className='FormResponsesIcon' />
                     </div>
                     <div className="SearchForms">
                         <input
@@ -312,9 +314,9 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                     </div>
                     <p className="HeaderCopy">{languageText.Header}</p>
                     <div className="ButtonsContainer">
-                        <button className="DownloadButton Excel" onClick={handleDownloadExcel}>
+                        {filterLength > 0 && <button className="DownloadButton Excel" onClick={handleDownloadExcel}>
                             <FontAwesomeIcon icon={faFileExcel} /> {languageText.Excel}
-                        </button>
+                        </button>}
                         {form?.inputs.includes("Picture") && <button className="DownloadButton Pictures" onClick={handleDownloadAllPictures}>
                             <FontAwesomeIcon icon={faImage} />  {languageText.dPictures}
                         </button>}

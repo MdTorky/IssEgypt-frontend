@@ -5,6 +5,7 @@
     "Palestine": "Free Palestine",
     "underCon": "🚧 Under Construction 😁 🚧",
     "Updating": "Updating...",
+    "Creating": "Creating...",
 
     "IssPres": "ISS Committee Presidents",
     "IssPres2": "Committee Presidents",
@@ -186,6 +187,7 @@
     "Location": "Location",
     "Website": "Website",
     "Email": "Email",
+    "Password": "Password",
     "Phone": "Phone",
     "Image": "Image",
     "Form": "Form",
@@ -341,10 +343,13 @@
     "memberDeleted": "Member Deleted Successfully",
     "memberEdited": "Member Edited Successfully",
     "statusChanged": "Status Changed Successfully",
+    "formCreated": "Form Created Successfully",
     "formEdited": "Form Updated Successfully",
     "formDeleted": "Form Deleted Successfully",
     "formSubmitted": "Form Submitted Successfully",
     "linkCopied": "Link Copied to Clipboard!",
+    "loginSuccess": "Login Successfully",
+    "registerSuccess": "Account Created Successfully",
 
     "board": "The Board",
     "committeeP": "Committees Presidents",
@@ -362,6 +367,7 @@
     "EventArabicName": "Event Arabic Name",
     "EventImg": "Event Image",
     "ChooseCommittee": "Choose a Committee",
+    "ChooseRole": "Choose Your Role",
     "EventDesc": "Event Description",
     "SelectInputs": "Select Inputs",
     "GroupLink": "Group Link",
@@ -415,7 +421,15 @@
     "Excel": "Download as Excel",
     "dPictures": "Download All Pictures",
     "dProof": "Download All Proof Pictures",
-    "ScrollHorizontal": "Scroll Horizontally to View all the Data"
+    "ScrollHorizontal": "Scroll Horizontally to View all the Data",
+
+    "Register": "Register Account",
+    "Login": "Login",
+    "Logout": "Logout",
+    "CharRegex": "It has to be at least 8 characters long",
+    "LetterRegex": "Contains both upper and lowercase letters",
+    "DigitRegex": "Contains at least one digit",
+    "SpecialRegex": "Contains at least one special character"
   },
   "ar": {
     "language": "عربي",
@@ -423,6 +437,7 @@
     "Palestine": "فلسطين حرة",
     "underCon": "🚧 تحت الإنشاء 😁 🚧",
     "Updating": "جارٍ التحديث...",
+    "Creating": "جارٍ الإنشاء...",
 
     "IssPres": "رؤساء لجان الاتحاد",
     "IssPres2": "رؤساء اللجان",
@@ -605,6 +620,8 @@
     "Location": "العنوان",
     "Website": "الموقع",
     "Email": "البريد",
+    "Password": "كلمة المرور",
+
     "Phone": "الهاتف",
     "Image": "صورة",
     "Form": "استمارة",
@@ -761,10 +778,13 @@
     "memberDeleted": "تم حذف العضو بنجاح",
     "memberEdited": "تم تحديث معلومات العضو بنجاح",
     "statusChanged": "تم تغيير الحالة بنجاح",
+    "formCreated": "تم إنشاء النموذج بنجاح",
     "formEdited": "تم تحديث النموذج بنجاح",
     "formDeleted": "تم حذف النموذج بنجاح",
     "formSubmitted": "تم تقديم النموذج بنجاح",
     "linkCopied": "تم نسخ الرابط!",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "registerSuccess": "تم إنشاء الحساب بنجاح",
 
     "board": "مجلس الإدارة",
     "committeeP": "رؤساء اللجان",
@@ -782,6 +802,7 @@
     "EventArabicName": "الاسم العربي للحدث",
     "EventImg": "صورة الحدث",
     "ChooseCommittee": "اختر الجنة المنظمة",
+    "ChooseRole": "اختر منصبك",
     "EventDesc": "وصف للحدث",
     "SelectInputs": "حدد المدخلات",
     "GroupLink": "رابط المجموعة",
@@ -826,7 +847,7 @@
     "invalid": "غير صالح",
     "RM": "رينجت",
     "eventName": "اسم الحدث",
-    "viewProfile": "عرض الصفحة الشخصية",
+    "viewProfile": "الصفحة الشخصية",
     "createForm": "إنشاء نموذج",
     "NoMembers": "عدد الأعضاء",
     "NoForms": "عدد النماذج",
@@ -836,6 +857,14 @@
     "Excel": "تنزيل بصيغة Excel",
     "dPictures": "تحميل جميع الصور",
     "dProof": "تحميل جميع الصور الإثباتية",
-    "ScrollHorizontal": "قم بالتمرير أفقيًا لعرض كافة البيانات"
+    "ScrollHorizontal": "قم بالتمرير أفقيًا لعرض كافة البيانات",
+
+    "Register": "تسجيل حساب",
+    "Login": "تسجيل الدخول",
+    "Logout": "تسجيل خروج",
+    "CharRegex": "يجب أن يكون طوله 8 أحرف على الأقل",
+    "LetterRegex": "يحتوي على كل من الحروف الكبيرة والصغيرة",
+    "DigitRegex": "يحتوي على رقم واحد على الأقل",
+    "SpecialRegex": "يحتوي على حرف خاص واحد على الأقل"
   }
 }
