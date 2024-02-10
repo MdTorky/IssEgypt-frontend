@@ -152,10 +152,10 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             <span class="tooltip" >{languageText.Edit}</span>
                             <span><FontAwesomeIcon icon={faPen} /></span>
                         </Link>
-                        <button className="icon Delete" onClick={() => { handleMemberDelete({ member: member }) }}>
+                        {/* <button className="icon Delete" onClick={() => { handleMemberDelete({ member: member }) }}>
                             <span class="tooltip Delete" >{languageText.delete}</span>
                             <span><FontAwesomeIcon icon={faTrash} /></span>
-                        </button>
+                        </button> */}
                     </div>
                 </td>
             </tr>
