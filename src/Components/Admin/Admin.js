@@ -453,15 +453,16 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             <img src={presidentFilter?.img} alt="" />
                         </div>
                         <div className="Statistics">
-                            <div className="StatisticsBox">
-                                <div className="MembersBox">
-                                    <div className="MembersBoxLeft">
-                                        <p>{languageText.NoMembers}</p>
-                                        <p>{membersCount}</p>
+                            {membersCount > 0 &&
+                                <div className="StatisticsBox">
+                                    <div className="MembersBox">
+                                        <div className="MembersBoxLeft">
+                                            <p>{languageText.NoMembers}</p>
+                                            <p>{membersCount}</p>
+                                        </div>
+                                        <FontAwesomeIcon icon={faUser} className='StatisticsIcon' />
                                     </div>
-                                    <FontAwesomeIcon icon={faUser} className='StatisticsIcon' />
-                                </div>
-                            </div>
+                                </div>}
                             <div className="StatisticsBox">
                                 <div className="MembersBox">
                                     <div className="MembersBoxLeft">
@@ -475,24 +476,26 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                     </div>
 
                     <div className="DashboardBottom">
-                        <div className="Members">
-                            <h2>{languageText.members}</h2>
-                            <table>
-                                <tr className="TableHeading">
-                                    <th></th>
-                                    <th>{languageText.FullName}</th>
-                                    <th>{languageText.Contact}</th>
-                                    <th>{languageText.Faculty}</th>
-                                    <th>{languageText.Action}</th>
-                                </tr>
-                            </table>
 
-                            {normalMember.map((member) => (
-                                <div>
-                                    {Members(member)}
-                                </div>
-                            ))}
-                        </div>
+                        {membersCount > 0 &&
+                            <div className="Members">
+                                <h2>{languageText.members}</h2>
+                                <table>
+                                    <tr className="TableHeading">
+                                        <th></th>
+                                        <th>{languageText.FullName}</th>
+                                        <th>{languageText.Contact}</th>
+                                        <th>{languageText.Faculty}</th>
+                                        <th>{languageText.Action}</th>
+                                    </tr>
+                                </table>
+
+                                {normalMember.map((member) => (
+                                    <div>
+                                        {Members(member)}
+                                    </div>
+                                ))}
+                            </div>}
                         <div className="Members">
 
                             <Link to="/formCreator/admin" className='AddFormButton'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
