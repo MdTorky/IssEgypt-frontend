@@ -5,7 +5,7 @@ import {
     faLocationDot, faInfoCircle, faEnvelope, faPhone, faBuilding
 } from '@fortawesome/free-solid-svg-icons';
 import kollegesData from "../../data/kolleges.json"
-import { useLanguage } from '../../language';
+import { useLanguage } from '../../context/language';
 import React, { useState, useEffect } from 'react';
 
 

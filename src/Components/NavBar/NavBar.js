@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { useLocation } from 'react-router-dom';
-import { useDarkMode } from '../../DarkModeContext'; // Import useDarkMode
+import { useDarkMode } from '../../context/DarkModeContext'; // Import useDarkMode
 import { Icon } from '@iconify/react';
 const NavBar = ({ language, toggleLanguage, languageData }) => {
     const location = useLocation();

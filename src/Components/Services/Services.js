@@ -12,7 +12,7 @@ import { faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import images from "../../data/images.json";
 import links from "../../data/upcomingEvents.json";
 import faculties from "../../data/faculties.json";
-import { useLanguage } from '../../language';
+import { useLanguage } from '../../context/language';
 import { Icon } from '@iconify/react';
 
 // import announcements from "../../data/announcements.json";
@@ -99,17 +99,17 @@ const Services = ({ language, languageData }) => {
         //     link: "",
         //     calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
         // },
-        {
-            img: CultureImg,
-            backgroundImg: "https://i.ibb.co/w6CjD9D/Ann2.jpg",
-            title: "Stories of the Prophets",
-            titleArabic: "قصص الأنبياء",
-            organizer: Culture,
-            organizerArabic: Culture,
-            form: '',
-            link: "https://chat.whatsapp.com/EUU9mUlO1fpLWjLofX50a8",
-            calendarLink: ""
-        },
+        // {
+        //     img: CultureImg,
+        //     backgroundImg: "https://i.ibb.co/w6CjD9D/Ann2.jpg",
+        //     title: "Stories of the Prophets",
+        //     titleArabic: "قصص الأنبياء",
+        //     organizer: Culture,
+        //     organizerArabic: Culture,
+        //     form: '',
+        //     link: "https://chat.whatsapp.com/EUU9mUlO1fpLWjLofX50a8",
+        //     calendarLink: ""
+        // },
 
     ];
 

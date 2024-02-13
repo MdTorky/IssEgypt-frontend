@@ -59,6 +59,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
 
@@ -247,8 +248,15 @@ button.CustomInputButton {
     background: linear-gradient(to right, var(--bg2), var(--bg));
     position: relative;
     color: var(--hover);
+}
+
+.CustomSelect {
+    width: 100%;
+    border: none;
+    cursor: pointer;
 
 }
+
 
 
 .formBox form .LabelInputImg {

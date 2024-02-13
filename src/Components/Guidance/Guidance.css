@@ -1,0 +1,42 @@
+.CharityText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    /* gap: 10px; */
+}
+
+
+
+.CharityText h2 {
+    /* text-align: center; */
+    font-size: 2em;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    color: var(--theme);
+    margin: 0
+}
+
+.CharityText h3 {
+    /* text-align: center; */
+    font-size: 1.7em;
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.CharityText>p {
+    margin: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    color: var(--theme);
+    gap: 5px;
+}
+
+.InputField .input {
+
+    margin: auto
+}

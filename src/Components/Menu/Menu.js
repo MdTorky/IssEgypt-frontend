@@ -1,5 +1,5 @@
 import "./Menu.css"
-import { useLanguage } from '../../language';
+import { useLanguage } from '../../context/language';
 import { Link, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import people from "../../data/people.json";

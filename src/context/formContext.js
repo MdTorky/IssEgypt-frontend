@@ -77,7 +77,9 @@ export const FormsContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(formsReducer, {
         forms: [],
         members: [],
-        ISSForm: []
+        ISSForm: [],
+        faculties: [],
+        courses: []
     })
 
 

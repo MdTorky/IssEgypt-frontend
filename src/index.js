@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './darkMode.css';
 import App from './App';
-import { LanguageProvider } from './language';
-import { DarkModeProvider } from './DarkModeContext';
+import { LanguageProvider } from './context/language';
+import { DarkModeProvider } from './context/DarkModeContext';
 import { FormsContextProvider } from './context/formContext';
 import { AuthContextProvider } from './context/authContext';
 // import {

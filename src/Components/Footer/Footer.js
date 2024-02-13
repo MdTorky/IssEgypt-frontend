@@ -1,7 +1,7 @@
 import "./Footer.css";
 import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useLanguage } from '../../language';
+import { useLanguage } from '../../context/language';
 import { Link } from "react-router-dom";
 import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';

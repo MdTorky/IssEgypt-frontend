@@ -1649,16 +1649,16 @@ a:visited {
     }
 
     .services .leftContainer .collegesBoxTitle {
-        /* overflow: auto; */
-        scroll-snap-type: x mandatory;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow: auto;
+        /* overflow-x: auto; */
+        /* overflow-y: hidden; */
 
     }
 
     .services .leftContainer .collegesBoxTitle .collegesBox {
         flex-direction: row;
         line-height: 15px;
+        justify-content: flex-start;
 
     }
 

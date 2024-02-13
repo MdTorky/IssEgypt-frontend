@@ -1,26 +1,21 @@
 // Home.js
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import { useLanguage } from '../../language';
-import Logo from './Logo';
+import { useLanguage } from '../../context/language';
+// import Logo from './Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the Logo component
-import { faArrowUp, faArrowDown, faXmark, faTree, faEnvelope, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faLinkedin, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faTree, faEnvelope, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import images from '../../data/images.json';
 import link from '../../data/upcomingEvents.json'
-import { PS } from 'country-flag-icons/react/3x2'
-import Loader from '../Loader/Loader'
+// import { PS } from 'country-flag-icons/react/3x2'
+// import Loader from '../Loader/Loader'
 import { useFormsContext } from '../../hooks/useFormContext'
-import roleChecker from '../Members/MemberLoader'
-import { useLocation, Link } from 'react-router-dom';
+// import roleChecker from '../Members/MemberLoader'
+// import { useLocation, Link } from 'react-router-dom';
 
 function Home({ language, languageData, api }) {
-    const { toggleLanguage } = useLanguage();
 
-    useEffect(() => {
-        // Ensure that the languageData and language are updated when the language changes
-        // You can use this hook to make sure the component updates when the language changes
-    }, [language, languageData]);
 
     const root = document.documentElement; // Access the root element
     const themeColor = getComputedStyle(root).getPropertyValue('--theme');
@@ -33,13 +28,12 @@ function Home({ language, languageData, api }) {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const [messages, setMessages] = useState(true)
-    const [searchTerm, setSearchTerm] = useState('');
 
-    const isEmpty = (obj) => {
-        return Object.keys(obj).length == 0;
-    };
+    // const isEmpty = (obj) => {
+    //     return Object.keys(obj).length == 0;
+    // };
     const isRtl = language === 'ar';
-    const [isExpanded, setIsExpanded] = useState(false);
+    // const [isExpanded, setIsExpanded] = useState(false);
     // Define an array of objects with logo and text data
 
 

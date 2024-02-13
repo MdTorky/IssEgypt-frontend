@@ -12,7 +12,7 @@ import Residences from './Components/Residences/Residences';
 import Footer from './Components/Footer/Footer';
 import img1 from './images/logo.png';
 import languageData from './language.json';
-import { useDarkMode } from './DarkModeContext';
+import { useDarkMode } from './context/DarkModeContext';
 import Attractions from './Components/Attractions/Attractions';
 import Transportation from './Components/Transportation/Transportation';
 import BankAccount from './Components/BankAccount/BankAccount';
@@ -35,6 +35,8 @@ import UnderCons from './Components/NotFound/UnderCons';
 import MemberEditor from './Components/Admin/MemberEditor';
 import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
+import CharityForm from './Components/Guidance/CharityForm';
+import CharityEditor from './Components/Admin/CharityEditor';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -116,6 +118,7 @@ function App() {
               <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/ISSForm/:formId" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/charity" element={<CharityForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
 
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
@@ -123,6 +126,7 @@ function App() {
               <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               <Route path="/register/admin" element={!user ? <Register darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />
               <Route path="/login" element={!user ? <Login darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />

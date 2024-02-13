@@ -19,10 +19,10 @@ import { useNavigate } from "react-router-dom";
 
 const Admin = ({ language, languageData, api, darkMode }) => {
     // const { committee } = useParams();
+    const { members, forms = [], dispatch } = useFormsContext()
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
     const [messages, setMessages] = useState(true);
-    const { members, forms = [], dispatch } = useFormsContext()
     const languageText = languageData[language];
     const { user } = useAuthContext()
     const navigate = useNavigate();
