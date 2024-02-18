@@ -1651,7 +1651,7 @@ a:visited {
     .services .leftContainer .collegesBoxTitle {
         overflow: auto;
         /* overflow-x: auto; */
-        /* overflow-y: hidden; */
+        overflow-y: hidden;
 
     }
 

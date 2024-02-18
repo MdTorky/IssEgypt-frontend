@@ -18,7 +18,7 @@ const SelectStyles = (darkMode) => ({
         cursor: "pointer",
         // borderRadius: "10px",
         color: state.isSelected ? "var(--bg)" : "",
-        ":hover": { background: darkMode ? "var(--bg)" : "var(--theme)", color: darkMode ? "var(--hover)" : "var(--bg)" }
+        ":hover": { background: darkMode ? "var(--bg)" : "var(--theme2)", color: darkMode ? "var(--hover)" : "var(--bg)" }
 
 
     }),

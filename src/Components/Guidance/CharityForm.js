@@ -32,6 +32,9 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
     const [sem, setSem] = useState('')
     const [course, setCourse] = useState()
     const [advice, setAdvice] = useState()
+    const [name, setName] = useState('')
+    const [condition, setCondition] = useState('')
+    // const [state, setState] = useState()
     const [industrial, setIndustrial] = useState()
     const [links, setLinks] = useState([{ type: "", link: "" }]);
     const [pdf, setPdf] = useState(null)
@@ -138,13 +141,25 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
         value: course.courseName
     }));
 
-    const filteredFaculties = faculties.slice(0, 6).map((faculty) => {
-        const id = faculty.facultyId;
-        return {
-            label: languageText[id],
-            value: faculty.facultyId
-        };
-    });
+    const indicesToInclude = [0, 1, 2, 3, 4, 5, 11];
+
+    // const filteredFaculties = faculties.slice(0, 6).map((faculty) => {
+    //     const id = faculty.facultyId;
+    //     return {
+    //         label: languageText[id],
+    //         value: faculty.facultyId
+    //     };
+    // });
+
+    const filteredFaculties = faculties
+        .filter((_, index) => indicesToInclude.includes(index)) // Filter based on indicesToInclude array
+        .map((faculty) => {
+            const id = faculty.facultyId;
+            return {
+                label: languageText[id],
+                value: faculty.facultyId
+            };
+        });
 
 
     const training = [
@@ -154,6 +169,11 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
         "SET* 3915 Industrial Training",
         "SBE* Industrial Training (HW)",
 
+    ]
+
+    const ConditionOption = [
+        { value: true, label: "Yes" },
+        { value: false, label: "No" }
     ]
 
     const SemOptions = [
@@ -248,13 +268,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
         setLinks(updatedLinks);
     };
 
-    // const handleFileInputChange = (index, e) => {
-    //     const file = e.target.files[0];
-    //     setUploadingFile(true);
-    //     handleFileUpload(index, file);
-    // };
-
-
     const handleFileInputChange = (index, e) => {
         const file = e.target.files[0];
         if (file) {
@@ -267,10 +280,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
         }
     };
 
-    // const handleLinkInputChange = (index, e) => {
-    //     const value = e.target.value;
-    //     handleLinkChange(index, value);
-    // };
+
 
     const handleLinkChange = (index, value) => {
         const updatedLinks = [...links];
@@ -317,7 +327,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                 setUploadingFile(false);;
             } catch (error) {
                 console.error('Error uploading file:', error);
-                // Handle error uploading file
+
             }
         }
     };
@@ -377,11 +387,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
     }
 
 
-    // useEffect(() => {
-    //     if (fileUrl) {
-    //         submitForm();
-    //     }
-    // }, [fileUrl]);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -396,10 +402,10 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
             // Wait for all files to upload
             await Promise.all(fileUploadPromises);
 
-            // After all files are uploaded, extract the URLs and submit the form
+
             const formattedLinks = links.map(link => ({
                 type: link.type,
-                url: link.type === "File" ? link.link : link.link // Use file URL if link type is "File"
+                url: link.type === "File" ? link.link : link.link
             }));
 
             const charity = {
@@ -409,10 +415,13 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                 advice,
                 links: formattedLinks,
                 industrial,
-                file: fileUrl // Assuming `fileUrl` contains the URL of the uploaded file
+                file: fileUrl,
+                name,
+                condition,
+                status: false,
             };
 
-            // Submit the form with the extracted links
+
             const response = await fetch(`${api}/api/charity`, {
                 method: 'POST',
                 body: JSON.stringify(charity),
@@ -473,10 +482,47 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                 <div className="Instruction">
                     <div className="formBox">
                         <div className="InstructionText">
-                            <h2>Instructions</h2>
-                            <p>1. Select Your Faculty (Easy Right <Icon icon="mingcute:emoji-2-fill" />)</p>
-                            <p>Intrcutions2</p>
-                            <p>Intrcutions3</p>
+                            <h2>{languageText.Instructions}</h2>
+                            <p className='AboutIt'>
+                                {languageText.InstructionsIntro}
+                            </p>
+                            <p className="CHATGPT">{languageText.RecordChatGPT}</p>
+                            <blockquote className="Quote">
+                                <p className='QuoteText'>{languageText.OscarWildeQuote}</p>
+                                <span>{languageText.OscarWilde}</span>
+                            </blockquote>
+
+
+
+
+                            {/* <hr />
+                            <div className="QuoteBack">
+                                <p className='QuoteText'>"The only thing to do with good advice is to pass it on. It is never of any use to oneself."</p>
+                                <span>Oscar Wilde</span>
+                            </div>
+                            <hr /> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div className="Steps">
+                                <div className="StepText">1.<p>{languageText.FirstStep} ( {languageText.EasyRight} <Icon icon="mingcute:emoji-2-fill" />)</p></div>
+                                <div className="StepText">2.<p>{languageText.SecondStep}</p></div>
+                                <div className="StepText">3.<p>{languageText.ThirdStep}</p></div>
+                                <div className="StepText">4.<p>{languageText.FourthStep}</p></div>
+                                <div className="StepText">5.<p>{languageText.FifthStep}</p></div>
+                                <div className="StepText">6.<p>{languageText.SixthStep}</p></div>
+                            </div>
+                            <h4 className='Charity'><Icon icon="mdi:charity" className='CharityIcon' />{languageText.RememberFellow}</h4>
                         </div>
                     </div>
                 </div>
@@ -503,7 +549,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                         // placeholder={languageText.FacultyHelp}
 
                                         options={filteredFaculties}
-                                        isSearchable
+                                        // isSearchable
                                         noOptionsMessage={() => languageText.NoFaculty}
                                         onChange={opt => {
                                             setFaculty(opt.value);
@@ -522,24 +568,14 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                     />
                                 </div>
 
-                                {/* <select
-                                    className={`input ${(faculty) ? 'valid' : ''}`}
-                                    onChange={(e) => setFaculty(e.target.value)}
-                                    required
-                                >
-                                    {faculties.map((faculty) => (
-                                        <option value={faculty.facultyId}><AllFacultyCards languageText={languageText} facultyId={faculty.facultyId} /></option>
-                                    ))}
-                                </select> */}
 
-
-                                <div className="InputField AnimatedInput2">
+                                <div className="InputField AnimatedInput">
                                     <Select
                                         className={`CustomSelect ${(sem) ? 'valid' : ''}`}
                                         placeholder={<><Icon icon="lets-icons:date-fill" className="IconSize" /> {languageText.SemesterHelp}</>}
 
                                         options={SemOptions}
-                                        isSearchable
+                                        // isSearchable
                                         noOptionsMessage={() => languageText.NoSemester}
                                         onChange={opt => {
                                             setSem(opt.value);
@@ -558,14 +594,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                     />
                                 </div>
 
-                                {/* <div className="InputField">
-                                <input
-                                    className="Search"
-                                    placeholder={languageText.searchResponse}
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                />
-                            </div> */}
+
                                 {faculty && sem && courseLoading ? (
                                     <div className={loading ? 'InputField animated-input' : 'InputField'}>
                                         <InputLoader /></div>) : (
@@ -591,7 +620,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                     },
                                                 })}
                                             />
-                                            {/* {course} */}
+
                                         </div>
 
 
@@ -619,7 +648,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                 }
 
 
-
                                 {training.includes(course) && faculty && sem && FilterCourse.length > 0 && advice &&
                                     <div className="InputField AnimatedInput">
                                         <div className="InputLabelField">
@@ -636,8 +664,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
 
                                 }
                                 {course && advice && <p className="ExternalLink">{languageText.SecretLink} <Icon icon="fontisto:wink" className="IconSize" /></p>}
-
-
                                 {course && advice && links.map((link, index) => (
                                     <div key={index} className="Links AnimatedInput">
                                         <div className="InputField AnimatedInput" >
@@ -648,7 +674,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
 
                                                 value={link.type.value}
                                                 onChange={(opt) => handleLinkTypeChange(index, opt.value)}
-                                                isSearchable
                                                 options={LinkTypes}
 
                                                 noOptionsMessage={() => languageText.NoLinkType}
@@ -661,17 +686,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                     },
                                                 })}
                                             />
-
-                                            {/* <select
-                                            className={`input ${(link.type) ? 'valid' : ''}`}
-                                            onChange={(e) => handleLinkTypeChange(index, e.target.value)}
-                                            required
-                                        >
-                                            <option value="Google">Google</option>
-
-                                        </select> */}
                                         </div>
-                                        {/* {link.type} */}
                                         {link.type && advice && link.type != "File" &&
                                             <div className="InputField AnimatedInput">
                                                 <div className="InputLabelField">
@@ -687,8 +702,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                 </div>
                                             </div>
                                         }
-
-
                                         {link.type === "File" && advice &&
 
                                             <div className="InputField AnimatedInput">
@@ -723,14 +736,57 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                             </div>
                                         }
 
-                                        <button className="icon DeleteLinkButton" onClick={() => handleRemoveLink(index)}>
+                                        <div className="icon DeleteLinkButton" onClick={() => handleRemoveLink(index)}>
                                             <span className="tooltip" >{languageText.RemoveLink}</span>
                                             <span><Icon icon="ic:twotone-link-off" /></span>
-                                        </button>
+                                        </div>
 
                                     </div>
 
                                 ))}
+
+                                {advice &&
+                                    <>
+                                        <div className="InputField AnimatedInput">
+                                            <div className="InputLabelField">
+
+                                                <input
+                                                    type="text"
+                                                    value={name}
+                                                    onChange={(e) => setName(e.target.value)}
+                                                    className={`input ${(name) ? 'valid' : ''}`}
+                                                    id="name"
+                                                    required
+                                                />
+                                                {!name && <label for="name" className={`LabelInput ${(name) ? 'valid' : ''}`}><Icon icon="icon-park-outline:edit-name" className="IconSize" />{languageText.FullName}</label>}
+                                            </div>
+                                        </div>
+
+                                        {advice && name &&
+                                            <div className="InputField AnimatedInput" >
+                                                <Select
+                                                    className={`CustomSelect ${(condition) ? 'valid' : ''}`}
+                                                    styles={styles}
+                                                    placeholder={<><Icon icon="openmoji:european-name-badge" className="IconSize" /> {languageText.ShowName}</>}
+
+
+                                                    onChange={opt => setCondition(opt.value)}
+                                                    options={ConditionOption}
+
+                                                    theme={theme => ({
+                                                        ...theme,
+                                                        colors: {
+                                                            ...theme.colors,
+                                                            primary25: 'lightgray',
+                                                            primary: 'var(--theme)',
+                                                        },
+                                                    })}
+                                                />
+
+                                            </div>
+                                        }
+                                    </>
+                                }
 
                                 {course && advice &&
                                     < button className={`icon AddLinkButton`} onClick={handleAddLink}>
@@ -739,28 +795,9 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                     </button>
                                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 {faculty && course && advice && !uploadingFile && <button style={{ width: '50%', borderRadius: "10px" }}>{languageText.LeaveImpact}</button>}
-
-
                             </form>
                         )}
-
-
                     </div>
                 )}
             </div>

@@ -470,7 +470,21 @@
     "GeneralLink": "General Link",
     "FileUploaded": "File Uploaded",
     "LeaveImpact": "Leave a Good Deed",
-    "ImpactLeft": "Congrats On Sharing Your Knowledge Successfully"
+    "ShowName": "Display Name?",
+    "ImpactLeft": "Congrats On Sharing Your Knowledge Successfully",
+    "Instructions": "Instructions",
+    "InstructionsIntro": "Alright, scholarly savants! Time to drop some knowledge bombs and save your peers from academic oblivion. Share your top-secret hacks for conquering courses, and watch as confusion flees in terror. Let's be the heroes of the classroom and spread wisdom like wildfire.",
+    "RecordChatGPT": "For the record, ChatGPT Wrote It",
+    "OscarWildeQuote": "The only thing to do with good advice is to pass it on. It is never of any use to oneself.",
+    "OscarWilde": "Oscar Wilde",
+    "FirstStep": "Select your faculty",
+    "EasyRight": "Easy Right",
+    "SecondStep": "Pick your last semester or any semester; it doesn't matter.",
+    "ThirdStep": "Look for the course you want to leave a piece of advice for, and if it's not available, it will be in another semester.",
+    "FourthStep": "Leave your valuable and most well-deserved advice.",
+    "FifthStep": "You can choose whether or not to add an external link or upload a file (Sharing is caring, after all).",
+    "SixthStep": "Enter your gorgeous name or not; it's up to you. If you change your mind and enter it, you may choose whether to display it with the advice.",
+    "RememberFellow": " Remember, you're doing this to leave a good deed behind by helping a fellow student, and this deed will return to you one day."
   },
   "ar": {
     "language": "عربي",
@@ -945,6 +959,20 @@
     "GeneralLink": "رابط عام",
     "FileUploaded": "تم تحميل الملف",
     "LeaveImpact": "اترك حسنة",
-    "ImpactLeft": "تهانينا على مشاركة معرفتك بنجاح"
+    "ShowName": "إظهار الاسم؟",
+    "ImpactLeft": "تهانينا على مشاركة معرفتك بنجاح",
+    "Instructions": "التعليمات",
+    "InstructionsIntro": "حسنًا أيها العلماء! حان الوقت لإسقاط بعض القنابل المعرفية وإنقاذ زملائك من النسيان الأكاديمي. شارك حيلك السرية للغاية للتغلب على الدورات التدريبية. دعونا نكون أبطال الفصل الدراسي وننشر الحكمة كالنار في الهشيم.",
+    "RecordChatGPT": "ChatGPT الكتبه",
+    "OscarWildeQuote": "الشيء الوحيد الذي يجب فعله بالنصيحة الجيدة هو تمريرها. انها ليست ابدا استخدام شخصي.",
+    "OscarWilde": "أوسكار وايلد",
+    "FirstStep": "اختر كليتك",
+    "EasyRight": "سهلة صح؟",
+    "SecondStep": "اختر الفصل الدراسي الأخير أو أي فصل دراسي؛ لا يهم.",
+    "ThirdStep": "ابحث عن المقرر الذي تريد ترك نصيحة له، وإذا لم يكن متوفراً فسيكون في فصل دراسي آخر.",
+    "FourthStep": "اترك نصيحتك القيمة والأكثر جدارة بالاستحقاق.",
+    "FifthStep": "يمكنك اختيار إضافة رابط خارجي أو تحميل ملف أم لا (المشاركة تعني الاهتمام).",
+    "SixthStep": "أدخل اسمك الرائع أم لا؛ الأمر متروك لك. إذا غيرت رأيك وأدخلته، فيمكنك اختيار عرضه مع النصيحة أم لا.",
+    "RememberFellow": "وتذكر أنك تفعل هذا لتترك وراءك حسنة من خلال مساعدة زميل لك، وهذا العمل سيعود إليك يومًا ما"
   }
 }

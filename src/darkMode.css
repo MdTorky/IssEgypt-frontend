@@ -1152,6 +1152,18 @@ body.dark-mode {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+.dark-mode .InstructionText {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+}
+
+.dark-mode .Quote {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+}
+
+.dark-mode .Steps p {
+    color: var(--bg);
+}
+
 
 
 

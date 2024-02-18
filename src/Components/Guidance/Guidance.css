@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+@import url(https://fonts.googleapis.com/css?family=Special+Elite);
+
 .CharityPage {
     display: flex;
     width: 100%;
@@ -168,7 +171,9 @@
     }
 }
 
-
+.Guidance .formBox {
+    height: fit-content;
+}
 
 /* Instructions */
 
@@ -178,13 +183,185 @@
     background: linear-gradient(to left, var(--bg), var(--bg2));
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 20px;
-    max-width: 300px;
+    max-width: 350px;
+    text-align: justify;
 }
 
 .InstructionText p {
     margin: 0;
     /* white-space: wrap; */
 }
+
+.InstructionText .AboutIt {
+    font-weight: 800;
+    font-size: 0.9em;
+    /* line-height: 120% */
+}
+
+.InstructionText .CHATGPT {
+    font-weight: 800;
+    font-size: 0.6em;
+    margin-bottom: 10px;
+    color: mediumseagreen
+}
+
+
+
+.Quote {
+    font-size: 1.4em;
+    margin: auto;
+    font-family: Open Sans;
+    font-style: italic;
+    color: #d5d5d5;
+    padding: 1em 20px 0.8em 20px;
+    border-left: 8px solid var(--theme);
+    line-height: 1.6;
+    position: relative;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    border-radius: 5px;
+    box-shadow: rgba(214, 42, 3, 0.3) 0px 0px 0px 3px;
+}
+
+.arabic .Quote {
+    border-right: 8px solid var(--theme);
+    border-left: none;
+
+}
+
+.Quote::before {
+    font-family: Arial;
+    content: "\201C";
+    color: var(--theme);
+    font-size: 1.8em;
+    position: absolute;
+    left: 10px;
+    top: -5px;
+}
+
+.arabic .Quote::before {
+    left: inherit;
+    right: 10px;
+    direction: rtl;
+    content: "\201D";
+
+}
+
+.Quote::after {
+    content: '';
+}
+
+.Quote .QuoteText {
+    font-style: italic;
+    font-size: 0.6em;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.arabic .Quote .QuoteText {
+    font-style: italic;
+    font-size: 0.6em;
+    font-weight: 500;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    margin-bottom: 2px;
+
+
+}
+
+.Quote span {
+    display: block;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 0.5em;
+    color: var(--theme);
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.arabic .Quote span {
+
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+
+}
+
+
+/* .InstructionText hr {
+    height: 0.2em !important;
+    margin: 10px auto;
+    width: 70%;
+}
+
+.QuoteBack {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QuoteBack .QuoteText {
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9em;
+    width: 70%;
+    margin: auto;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.QuoteBack span {
+    font-size: 0.8em;
+    color: var(--theme);
+    font-weight: 800;
+}*/
+
+
+.Steps {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Steps .StepText {
+    display: flex;
+    color: var(--theme);
+    font-weight: 900;
+    align-items: center;
+    font-size: 0.8em;
+    gap: 5px;
+
+}
+
+.Steps p {
+    color: var(--hover);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.InstructionText .Charity {
+    background: var(--theme);
+    padding: 10px;
+    font-size: 0.7em;
+    font-weight: 900;
+    color: var(--bg);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.InstructionText .Charity .CharityIcon {
+    width: 3em;
+    height: 3em;
+    font-size: 15px !important
+}
+
 
 
 
