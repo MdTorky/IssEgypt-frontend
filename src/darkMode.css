@@ -1137,6 +1137,24 @@ body.dark-mode {
 
 
 
+
+
+
+
+
+
+
+
+/* Charity */
+
+.dark-mode .Links {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+
+
 @media screen and (max-width: 700px) {
     .dark-mode .navbar ul li.active icon::after {
         color: var(--bg);

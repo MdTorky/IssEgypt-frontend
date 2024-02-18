@@ -1,3 +1,16 @@
+.CharityPage {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.CharityPage .formBox {
+    /* width: fit-content; */
+    margin: inherit;
+    /* justify-content: center; */
+}
+
 .CharityText {
     display: flex;
     flex-direction: column;
@@ -21,6 +34,7 @@
     font-size: 1.7em;
     margin: 0;
     margin-bottom: 20px;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -36,7 +50,156 @@
     gap: 5px;
 }
 
+.IconSize {
+    font-size: 0.8em;
+}
+
 .InputField .input {
 
-    margin: auto
+    margin: auto;
+}
+
+.SelectLinkType {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.CourseNotFound {
+    width: 80%;
+    text-align: center;
+    white-space: wrap;
+    margin: 0;
+    color: var(--bg);
+    font-weight: 500;
+    background: var(--theme2);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.ExternalLink {
+    width: 70%;
+    text-align: center;
+    white-space: wrap;
+    margin: 0;
+    /* color: var(--hover); */
+    font-weight: 500;
+}
+
+.Links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.icon.DeleteLinkButton {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    /* background: lightgrey; */
+
+    font-size: 1.2em !important;
+    animation: none;
+    letter-spacing: none;
+}
+
+.arabic .icon.DeleteLinkButton {
+    position: absolute;
+    right: inherit;
+    left: 5px;
+    /* background: lightgrey; */
+
+    font-size: 1.2em !important;
+    animation: none;
+    letter-spacing: none;
+}
+
+.icon span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icon.AddLinkButton {
+    font-size: 1.2em !important;
+    animation: none;
+    letter-spacing: none;
+}
+
+
+
+
+
+.AnimatedInput {
+    transition: opacity 0.5s ease;
+    /* animation: fadeIn 0.5s ease; */
+    animation: myAnim 1s ease 0s;
+}
+
+.AnimatedInput2 {
+    transition: opacity 0.5s ease;
+    /* animation: fadeIn 0.5s ease; */
+    animation: myAnim 2s ease 0s;
+}
+
+@keyframes myAnim {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Instructions */
+
+
+.InstructionText {
+    padding: 15px;
+    background: linear-gradient(to left, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 20px;
+    max-width: 300px;
+}
+
+.InstructionText p {
+    margin: 0;
+    /* white-space: wrap; */
+}
+
+
+
+
+
+
+@media screen and (max-width:800px) {
+    .CharityPage {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
 }

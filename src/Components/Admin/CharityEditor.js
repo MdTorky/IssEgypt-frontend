@@ -17,11 +17,15 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
     const [error, setError] = useState('')
     const [messages, setMessages] = useState('')
     const languageText = languageData[language];
-    const courseName = 'SSCE 2193 Engineering Statistics'
+    const courseName = 'Construction Practice'
 
 
     const [inputs, setInputs] = useState([]);
+    // const [faculties, setFaculties] = useState([]);
     const [expandedCategories, setExpandedCategories] = useState(false);
+    const [expandedFaculty, setExpandedFaculty] = useState(false);
+
+
 
 
 
@@ -83,6 +87,7 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
                 });
                 setForm(data);
                 setInputs(data.semester)
+                // setFaculties(data.facultyId)
             } catch (error) {
                 console.error('An error occurred while fetching form data:', error);
             } finally {
@@ -98,12 +103,21 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
     const showCheckboxes = (type) => {
         if (type === 'categories') {
             setExpandedCategories(!expandedCategories);
+            // setExpandedFaculty(false)
+            // } else if (type === 'faculties') {
+            //     setExpandedFaculty(!expandedFaculty);
+            //     setExpandedCategories(false)
         }
     };
+
 
     const generateCheckbox = categories => {
         return categories.map(category => checkbox(category));
     };
+
+    // const generateFacultyCheckbox = categories => {
+    //     return categories.map(category => facultyCheckBox(category));
+    // };
 
     const checkbox = ({ type }) => {
         return (
@@ -120,6 +134,21 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
         )
     }
 
+    // const facultyCheckBox = ({ type }) => {
+    //     return (
+    //         <label htmlFor={type}>
+    //             <input
+    //                 type="checkbox"
+    //                 id={type}
+    //                 value={type}
+    //                 checked={faculties.includes(type)}
+    //                 onChange={() => handleFacultyCheckboxChange(type)}
+    //             />
+    //             {type}
+    //         </label>
+    //     )
+    // }
+
 
 
     const handleCheckboxChange = (value) => {
@@ -132,6 +161,15 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
         setInputs(updatedCategories);
     };
 
+    // const handleFacultyCheckboxChange = (value) => {
+    //     const updatedCategories = [...faculties];
+    //     if (updatedCategories.includes(value)) {
+    //         updatedCategories.splice(updatedCategories.indexOf(value), 1);
+    //     } else {
+    //         updatedCategories.push(value);
+    //     }
+    //     setFaculties(updatedCategories);
+    // };
 
 
 
@@ -324,10 +362,13 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
                                                 {generateCheckbox([
                                                     { type: "Year 1, Sem 1 (1)" },
                                                     { type: "Year 1, Sem 2 (2)" },
+                                                    { type: "Year 1, Sem 3 (Short)" },
                                                     { type: "Year 2, Sem 1 (3)" },
                                                     { type: "Year 2, Sem 2 (4)" },
+                                                    { type: "Year 2, Sem 3 (Short)" },
                                                     { type: "Year 3, Sem 1 (5)" },
                                                     { type: "Year 3, Sem 2 (6)" },
+                                                    { type: "Year 3, Sem 3 (Short)" },
                                                     { type: "Year 4, Sem 1 (7)" },
                                                     { type: "Year 4, Sem 2 (8)" },
                                                     { type: "Elective" },
@@ -335,7 +376,25 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="InputField">
+
+                                    {/* <div className="InputField">
+                                        <div className="multiselect">
+                                            <div className="selectBox" onClick={() => showCheckboxes('faculties')}>
+                                                <select>
+                                                    <option>{languageText.Faculty}</option>
+                                                </select>
+                                                <div className="overSelect"></div>
+                                            </div>
+                                            <div id="locationsCheckboxes" style={{ display: expandedFaculty ? 'flex' : 'none', flexDirection: 'column' }}>
+                                                {generateFacultyCheckbox([
+                                                    { type: "FKE" },
+                                                    { type: "FC" },
+                                                    { type: "FKM" },
+                                                ])}
+                                            </div>
+                                        </div>
+                                    </div> */}
+                                    {/* <div className="InputField">
                                         <div className="InputLabelField">
                                             <input
                                                 type="text"
@@ -349,7 +408,7 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
                                             {!course.courseName && <label for="courseName" className={`LabelInput ${(course.courseName) ? 'valid' : ''}`}>CourseName</label>}
                                         </div>
 
-                                    </div>
+                                    </div> */}
                                 </div>
 
 

@@ -220,6 +220,7 @@
 .icon:hover .tooltip {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
+    letter-spacing: 0;
 
 }
 

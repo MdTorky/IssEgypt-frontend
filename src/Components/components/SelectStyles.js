@@ -11,12 +11,15 @@ const SelectStyles = (darkMode) => ({
         //     color: "red"
         // }
     }),
+
     option: (baseStyles, state) => ({
         ...baseStyles,
         fontSize: "1em",
         cursor: "pointer",
         // borderRadius: "10px",
         color: state.isSelected ? "var(--bg)" : "",
+        ":hover": { background: darkMode ? "var(--bg)" : "var(--theme)", color: darkMode ? "var(--hover)" : "var(--bg)" }
+
 
     }),
     dropdownIndicator: (provided, state) => ({
@@ -43,7 +46,9 @@ const SelectStyles = (darkMode) => ({
     singleValue: (defaultStyles) => ({
         ...defaultStyles,
         // color: darkMode ? "var(--theme)" : "var(--theme)"
-        color: "var(--theme)"
+        color: "var(--theme)",
+        fontWeight: "700",
+        textTransform: "uppercase",
     }),
     input: (defaultStyles) => ({
         ...defaultStyles,

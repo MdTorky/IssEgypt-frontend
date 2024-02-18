@@ -23,6 +23,7 @@
     "country-flag-icons": "^1.5.7",
     "dotenv": "^16.3.1",
     "file-saver": "^2.0.5",
+    "firebase": "^10.8.0",
     "flag-icons": "^6.11.1",
     "font-awesome": "^4.7.0",
     "https-browserify": "^1.0.0",
