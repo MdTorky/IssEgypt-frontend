@@ -242,10 +242,10 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
             <div className="CreatedForm">
                 {loading ? (
-                    <div><Loader /></div>
+                    <div className="LoaderDiv"><Loader /></div>
                 ) : (
                     updating ? (
-                        <div>
+                        <div className="LoaderDiv">
                             <p className='Updating'>{languageText.Submitting}</p>
                             <Loader />
                         </div>
@@ -520,6 +520,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                     </div>}
             </div>
         ));
+
 }
 
 export default CreateForm;

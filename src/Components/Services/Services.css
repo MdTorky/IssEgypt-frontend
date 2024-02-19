@@ -77,53 +77,89 @@ h2 {
     padding: 10px;
 }
 
-/* .services .annContainer .annStories2 .box {
-    width: 70px;
-    height: 70px;
-    background: repeating-conic-gradient(from var(--a), var(--theme) 0%, var(--theme) 5%,
-            transparent 5%, transparent 40%, var(--theme) 50%);
-    position: relative;
-    animation: story 4s linear infinite;
-    border-radius: 25px;
+
+
+
+.AnnStories2Button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: rgb(20, 20, 20); */
+    background: var(--theme);
+    border: none;
+    font-weight: 600;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 3px;
-}
-
-@property --a {
-    syntax: '<angle>';
-    inherits: false;
-    initial-value: 0deg;
-}
-
-@keyframes story {
-    0% {
-        --a: 0deg;
-    }
-
-    100% {
-        --a: 360deg;
-    }
-}
-
-.services .annContainer .annStories2 .box::before {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    content: '';
-    animation: story 4s linear infinite;
-    animation-delay: -6s;
-    border-radius: 25px;
-}
-
-.announcement {
-    width: 65px;
-    height: 65px;
-    border-radius: 25px;
-    background-size: cover;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
     cursor: pointer;
-} */
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.AnnStories2Button .svgIcon {
+    /* width: 12px; */
+    font-size: 1.3em;
+    transition-duration: .3s;
+}
+
+.AnnStories2Button .svgIcon path {
+    fill: white;
+}
+
+.AnnStories2Button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    align-items: center;
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    color: var(--hover);
+}
+
+.AnnStories2Button:hover .svgIcon {
+    /* width: 50px; */
+    font-size: 4em;
+    transition-duration: .3s;
+    transform: translateY(60%);
+
+}
+
+.AnnStories2Button:hover .svgIcon path {
+    fill: var(--hover) !important;
+
+}
+
+.AnnStories2Button::before {
+    position: absolute;
+    top: -20px;
+    content: attr(data-text);
+    /* color: white; */
+    font-weight: 800;
+    text-transform: uppercase;
+    transition-duration: .3s;
+    font-size: 2px;
+}
+
+.AnnStories2Button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+    color: var(--hover);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .services .annContainer .annStories .box {
@@ -394,6 +430,10 @@ a:visited {
 
 .newStudentsRow2 :nth-child(4) .moon {
     color: #57CAEB;
+}
+
+.newStudentsRow2 :nth-child(5) .moon {
+    color: var(--theme);
 }
 
 
@@ -1459,13 +1499,24 @@ a:visited {
 
 
 
+
     .newStudents .newStudentsRow .newStudentCard,
     .newStudents .newStudentsRow2 .newStudentCard {
         width: 45%;
         height: 100px;
+        animation: fadeInUp 0.5s ease 0s 1 normal forwards !important;
 
     }
 
+
+    .college {
+        animation: fadeInLeft 1s ease 0s 1 normal forwards !important;
+    }
+
+    .arabic .college {
+        animation: fadeInRight 1s ease 0s 1 normal forwards !important;
+
+    }
 
     .newStudents .newStudentsRow:hover .newStudentCard,
     .newStudents .newStudentsRow2:hover .newStudentCard {

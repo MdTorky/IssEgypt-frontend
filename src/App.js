@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Routes, Route, BrowserRouter as Router, Navigate } from 'react-router-dom';
+import { Routes, Route, BrowserRouter as Router, Navigate, Link } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext'
 import Home from './Components/Home/Home';
 import Menu from './Components/Menu/Menu';
@@ -37,6 +37,7 @@ import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
 import CharityForm from './Components/Guidance/CharityForm';
 import CharityEditor from './Components/Admin/CharityEditor';
+import CoursesTips from './Components/Guidance/CoursesTips';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -88,8 +89,8 @@ function App() {
   return (
     <Router>
       <div className={`App ${language === 'ar' ? 'arabic' : ''}`}>
-        <div className="logo">
-          <img src={img1} alt="" />
+        <div className="logo" >
+          <Link className="logoImg" to='/'><img src={img1} alt="" /></Link>
         </div>
         <div className="appContainer">
           <NavBar
@@ -119,6 +120,7 @@ function App() {
               <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/ISSForm/:formId" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/charity" element={<CharityForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/coursesTips" element={<CoursesTips darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
 
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />

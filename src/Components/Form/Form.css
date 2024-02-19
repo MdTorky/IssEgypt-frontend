@@ -13,6 +13,29 @@
 
 }
 
+.LoaderDiv {
+    height: 400px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    padding: 0 150px 0 0;
+    flex-direction: column;
+    /* margin-left: 0 60% 0 auto; */
+}
+
+.arabic .LoaderDiv {
+    height: 400px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    padding: 0 0 0 150px;
+    margin-left: 0 60% 0 auto;
+}
+
 
 .NothingHere {
     margin-bottom: 40%;

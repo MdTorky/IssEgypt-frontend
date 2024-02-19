@@ -37,14 +37,13 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
     // const [state, setState] = useState()
     const [industrial, setIndustrial] = useState()
     const [links, setLinks] = useState([{ type: "", link: "" }]);
-    const [pdf, setPdf] = useState(null)
-    const [selectedText, setSelectedText] = useState(null);
+    // const [pdf, setPdf] = useState(null)
+    // const [selectedText, setSelectedText] = useState(null);
     const [fileUrl, setFileUrl] = useState()
 
     const [searchTerm, setSearchTerm] = useState('');
     const styles = SelectStyles(darkMode);
     const [uploadingFile, setUploadingFile] = useState(false);
-    const [fileUploaded, setFileUploaded] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -126,8 +125,9 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
         .filter((course) => {
             const searchRegex = new RegExp(searchTerm, 'i');
             return (
-                course.facultyId === faculty &&
-                course.semester.includes(sem) &&
+                ((course.facultyId === faculty &&
+                    course.semester.includes(sem)) ||
+                    (faculty === "Found" && course.facultyId === faculty)) &&
                 (searchRegex.test(course.courseName) ||
                     searchRegex.test(course.semester))
             );
@@ -501,19 +501,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                 <span>Oscar Wilde</span>
                             </div>
                             <hr /> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <div className="Steps">
                                 <div className="StepText">1.<p>{languageText.FirstStep} ( {languageText.EasyRight} <Icon icon="mingcute:emoji-2-fill" />)</p></div>
                                 <div className="StepText">2.<p>{languageText.SecondStep}</p></div>
@@ -546,14 +533,13 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                     <Select
                                         className={`CustomSelect ${(faculty) ? 'valid' : ''}`}
                                         placeholder={<><Icon icon="lucide:school" className="IconSize" /> {languageText.FacultyHelp}</>}
-                                        // placeholder={languageText.FacultyHelp}
-
                                         options={filteredFaculties}
-                                        // isSearchable
+                                        isSearchable={false}
                                         noOptionsMessage={() => languageText.NoFaculty}
                                         onChange={opt => {
                                             setFaculty(opt.value);
                                             setCourse(null);
+                                            // setSem(null);
                                             setAdvice(null);
                                         }}
                                         styles={styles}
@@ -569,13 +555,12 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                 </div>
 
 
-                                <div className="InputField AnimatedInput">
+                                {faculty != "Found" && <div className="InputField AnimatedInput">
                                     <Select
                                         className={`CustomSelect ${(sem) ? 'valid' : ''}`}
                                         placeholder={<><Icon icon="lets-icons:date-fill" className="IconSize" /> {languageText.SemesterHelp}</>}
-
                                         options={SemOptions}
-                                        // isSearchable
+                                        isSearchable={false}
                                         noOptionsMessage={() => languageText.NoSemester}
                                         onChange={opt => {
                                             setSem(opt.value);
@@ -592,14 +577,12 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                             },
                                         })}
                                     />
-                                </div>
-
-
-                                {faculty && sem && courseLoading ? (
+                                </div>}
+                                {((faculty && sem && courseLoading) || (faculty == "Found" && courseLoading)) ? (
                                     <div className={loading ? 'InputField animated-input' : 'InputField'}>
                                         <InputLoader /></div>) : (
 
-                                    faculty && sem && FilterCourse.length > 0 && (
+                                    ((faculty && sem && FilterCourse.length > 0) || (faculty == "Found")) && (
                                         <div className="InputField AnimatedInput">
                                             <Select
                                                 className={`CustomSelect ${(course) ? 'valid' : ''}`}
@@ -625,7 +608,8 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
 
 
                                     ))}
-                                {FilterCourse.length === 0 && sem && faculty && !courseLoading &&
+                                {((FilterCourse.length === 0 && sem && faculty && !courseLoading) ||
+                                    ((FilterCourse.length === 0 && faculty === "Found" && !courseLoading))) &&
                                     <p className="CourseNotFound">{languageText.CourseNotFound}</p>
                                 }
 
@@ -675,6 +659,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                 value={link.type.value}
                                                 onChange={(opt) => handleLinkTypeChange(index, opt.value)}
                                                 options={LinkTypes}
+                                                isSearchable={false}
 
                                                 noOptionsMessage={() => languageText.NoLinkType}
                                                 theme={theme => ({
@@ -756,7 +741,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                     onChange={(e) => setName(e.target.value)}
                                                     className={`input ${(name) ? 'valid' : ''}`}
                                                     id="name"
-                                                    required
                                                 />
                                                 {!name && <label for="name" className={`LabelInput ${(name) ? 'valid' : ''}`}><Icon icon="icon-park-outline:edit-name" className="IconSize" />{languageText.FullName}</label>}
                                             </div>
@@ -768,10 +752,9 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                     className={`CustomSelect ${(condition) ? 'valid' : ''}`}
                                                     styles={styles}
                                                     placeholder={<><Icon icon="openmoji:european-name-badge" className="IconSize" /> {languageText.ShowName}</>}
-
-
                                                     onChange={opt => setCondition(opt.value)}
                                                     options={ConditionOption}
+                                                    isSearchable={false}
 
                                                     theme={theme => ({
                                                         ...theme,

@@ -112,6 +112,11 @@ body {
   width: 100px;
 }
 
+.logoImg {
+  margin: auto;
+
+}
+
 .arabic {
   direction: rtl !important;
 }
@@ -153,7 +158,6 @@ body.english {
 }
 
 .reveal.active {
-  /* transform: translateY(0); */
   transform: translateX(0);
   transform: translateY(0);
 

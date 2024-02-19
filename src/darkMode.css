@@ -255,17 +255,18 @@ body.dark-mode {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-/* .dark-mode .services .annContainer .annStories .story {
-    background: var(--hover);
+.dark-mode .AnnStories2Button:hover {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
-.dark-mode .services .annContainer .annStories .story::before {
-    border: 2px solid var(--bg);
+
+.dark-mode .AnnStories2Button:hover .svgIcon path {
+    fill: var(--bg) !important;
 }
 
-.dark-mode .services .annContainer .annStories .story img {
-    background: var(--bg);
-} */
+.dark-mode .AnnStories2Button:hover::before {
+    color: var(--bg);
+}
 
 .dark-mode .services .annContainer .annStories .box {
     background: rgb(95, 95, 95);
@@ -1158,6 +1159,8 @@ body.dark-mode {
 
 .dark-mode .Quote {
     background: linear-gradient(to left, var(--hover), var(--hover2));
+    box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+
 }
 
 .dark-mode .Steps p {

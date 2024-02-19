@@ -224,7 +224,7 @@ const Services = ({ language, languageData }) => {
 
 
         peopleCards.forEach((card, index) => {
-            card.style.animationDelay = `${0.2 * index}s`; // Adjust the delay as needed
+            card.style.animationDelay = `${0.2 * index}s`;
         });
     }, []);
 
@@ -248,8 +248,6 @@ const Services = ({ language, languageData }) => {
                             >
                                 <div className="img">
                                     <FontAwesomeIcon icon={faculty.Icon} />
-
-                                    {/* <img src={faculty.image} alt="" /> */}
                                 </div>
                             </div>
                         ))}
@@ -258,26 +256,16 @@ const Services = ({ language, languageData }) => {
             </div>
             <div className="annContainer">
                 <div className="annContainer2">
-                    <div className="annStories">
+                    {/* <div className="annStories">
                         <h2>{languageText.announcements}</h2>
                         <div className='annStories2'>
                             {!isEmpty(announcements) ? (announcements.map((announcement, index) => (
-                                // <div className={`story ${popupVisible && selectedAnnouncement && selectedAnnouncement.id === announcement.id
-                                //     ? 'active' : ''}`}
-                                //     key={index}
-                                //     onClick={() => togglePopup(announcement)}
-                                // >
+
                                 <div className={`box ${popupVisible && selectedAnnouncement && selectedAnnouncement.id === announcement.id
                                     ? 'active' : ''}`}
                                     key={index}
-                                    onClick={() => togglePopup(announcement)}
-                                >
-                                    <div
-                                        className="announcement"
-                                    // style={{
-                                    //     backgroundImage: `url(${announcement.img})`
-                                    // }}
-                                    >
+                                    onClick={() => togglePopup(announcement)}>
+                                    <div className="announcement" >
                                         <img src={announcement.img} alt={announcement.title} />
                                     </div>
                                 </div>
@@ -290,7 +278,16 @@ const Services = ({ language, languageData }) => {
                                     </div>
                                 )}
                         </div>
+                    </div> */}
+                    <div className="annStories">
+                        <h2>{languageText.forms}</h2>
+                        <div className='annStories2'>
+                            <Link className="AnnStories2Button" to="/charity" data-text={languageText.courseTip}>
+                                <Icon icon="mdi:charity" className="svgIcon" />
+                            </Link>
+                        </div>
                     </div>
+
 
                     {popupVisible && selectedAnnouncement && (
                         <div className={`services popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`} style={{
@@ -391,11 +388,17 @@ const Services = ({ language, languageData }) => {
                                 <p className="day-text">{languageText.clubs2}</p>
                                 <FontAwesomeIcon icon={faFutbol} className='moon' />
                             </Link>
+                            <Link to="/coursesTips" className="newStudentCard">
+                                <p className="time-text"><span>{languageText.coursesTips}</span><span className="time-sub-text"></span></p>
+                                <p className="day-text">{languageText.coursesTips2}</p>
+                                <Icon icon="ic:baseline-tips-and-updates" className='moon' />
+                            </Link>
                             <Link to="/courses" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.extraCourses}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.extraCourses2}</p>
                                 <FontAwesomeIcon icon={faGraduationCap} className='moon' />
                             </Link>
+
                             {/* <Link to="/courses" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.extraCourses}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.extraCourses2}</p>
@@ -403,6 +406,18 @@ const Services = ({ language, languageData }) => {
                             </Link> */}
                         </div>
                     </div>
+
+                    {/* <div className="newStudents">
+                        <h2>{languageText.extraServices}</h2>
+                        <div className="newStudentsRow2">
+                            <Link to="/openAccount" className="newStudentCard smaller">
+                                <p className="time-text"><span>{languageText.bankAccount}</span><span className="time-sub-text"></span></p>
+                                <p className="day-text">{languageText.bankAccount2}</p>
+                                <FontAwesomeIcon icon={faCreditCard} className='moon' />
+                            </Link>
+
+                        </div>
+                    </div> */}
 
                 </div>
             </div>
