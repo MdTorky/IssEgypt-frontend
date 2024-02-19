@@ -256,7 +256,7 @@ const Services = ({ language, languageData }) => {
             </div>
             <div className="annContainer">
                 <div className="annContainer2">
-                    {/* <div className="annStories">
+                    <div className="annStories">
                         <h2>{languageText.announcements}</h2>
                         <div className='annStories2'>
                             {!isEmpty(announcements) ? (announcements.map((announcement, index) => (
@@ -278,15 +278,15 @@ const Services = ({ language, languageData }) => {
                                     </div>
                                 )}
                         </div>
-                    </div> */}
-                    <div className="annStories">
+                    </div>
+                    {/* <div className="annStories">
                         <h2>{languageText.forms}</h2>
                         <div className='annStories2'>
                             <Link className="AnnStories2Button" to="/charity" data-text={languageText.courseTip}>
                                 <Icon icon="mdi:charity" className="svgIcon" />
                             </Link>
                         </div>
-                    </div>
+                    </div> */}
 
 
                     {popupVisible && selectedAnnouncement && (
@@ -388,15 +388,19 @@ const Services = ({ language, languageData }) => {
                                 <p className="day-text">{languageText.clubs2}</p>
                                 <FontAwesomeIcon icon={faFutbol} className='moon' />
                             </Link>
-                            <Link to="/coursesTips" className="newStudentCard">
-                                <p className="time-text"><span>{languageText.coursesTips}</span><span className="time-sub-text"></span></p>
-                                <p className="day-text">{languageText.coursesTips2}</p>
-                                <Icon icon="ic:baseline-tips-and-updates" className='moon' />
-                            </Link>
+
                             <Link to="/courses" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.extraCourses}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.extraCourses2}</p>
                                 <FontAwesomeIcon icon={faGraduationCap} className='moon' />
+                            </Link>
+                            <Link to="" className="newStudentCard notyet">
+                                {/* <Link to="/coursesTips" className="newStudentCard"> */}
+                                <p className="time-text"><span>{languageText.coursesTips}</span><span className="time-sub-text"></span></p>
+                                {/* <p className="day-text">{languageText.coursesTips2}</p> */}
+                                <p className="day-text">{languageText.handbook2}</p>
+
+                                <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
 
                             {/* <Link to="/courses" className="newStudentCard">
