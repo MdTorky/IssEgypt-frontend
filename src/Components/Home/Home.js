@@ -13,6 +13,13 @@ import link from '../../data/upcomingEvents.json'
 import { useFormsContext } from '../../hooks/useFormContext'
 // import roleChecker from '../Members/MemberLoader'
 // import { useLocation, Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCreative, Navigation, Pagination, EffectCube } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-creative';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-cube';
 
 function Home({ language, languageData, api }) {
 
@@ -35,6 +42,14 @@ function Home({ language, languageData, api }) {
     const isRtl = language === 'ar';
     // const [isExpanded, setIsExpanded] = useState(false);
     // Define an array of objects with logo and text data
+    const [swiperKey, setSwiperKey] = useState(0);
+
+
+    useEffect(() => {
+        // Update the key to force re-render when language changes
+        setSwiperKey(prevKey => prevKey + 1);
+    }, [language]);
+
 
 
 
@@ -148,6 +163,10 @@ function Home({ language, languageData, api }) {
 
 
 
+
+
+
+
     function UpcomingEvent({ upcomingEventImg, upcomingEventSubtitle, upcomingEventDescription, eventLink }) {
         return (<div className="blogItem">
             <img src={upcomingEventImg} alt="" />
@@ -187,11 +206,113 @@ function Home({ language, languageData, api }) {
     }
 
 
+    // const SwipperSlide = (img, title, description, creator) => {
+    //     return (
+    //         <div >
+    //             <SwiperSlide style={{ display: "flex", flexDirection: 'column' }}>
+    //                 <img src={img} />
+    //                 <div className="EventDescription">
+    //                     <h2>{languageText.title}<span className="creator"> {languageText.AcademicEventCreator1}</span></h2>
+    //                     <p>{languageText.AcademicEventDescription1}</p>
+    //                 </div>
+    //             </SwiperSlide>
+    //         </div>
+
+    //     )
+    // }
+
+    //     return (
+    //         <div className="SwiperBox">
+    //             <Swiper
+    //                 key={swiperKey}
+
+    //                 effect={'cube'}
+    //                 grabCursor={true}
+    //                 cubeEffect={{
+    //                     shadow: true,
+    //                     slideShadows: true,
+    //                     shadowOffset: 20,
+    //                     shadowScale: 0.94,
+    //                 }}
+    //                 pagination={{
+    //                     clickable: true,
+    //                 }}
+    //                 loop={true}
+    //                 // navigation={true}
+    //                 modules={[EffectCube, Pagination]}
+    //                 className="mySwiper"
+    //             >
+    //                 {SwipperSlide("https://swiperjs.com/demos/images/nature-4.jpg", "AcademicEventTitle1", 'description', 'creator')}
+    //             </Swiper>
+
+    //         </div>
+    //     )
+    // }
 
 
-    // useEffect(()=>{
 
-    // })
+    const SwiperComponent = ({ slides }) => {
+        return (
+            <div className="SwiperBox">
+                <Swiper
+                    key={swiperKey}
+
+                    effect={'cube'}
+                    grabCursor={true}
+                    cubeEffect={{
+                        shadow: true,
+                        slideShadows: true,
+                        shadowOffset: 20,
+                        shadowScale: 0.94,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    loop={true}
+                    // navigation={true}
+                    modules={[EffectCube, Pagination]}
+                    className="mySwiper"
+                >
+                    {/* <SwiperSlide>
+                        <img src={img1} alt="Slide 1" />
+                        <div className="EventDescription">
+                            <h2>{languageText.title1}<span className="creator"> {languageText.creator1}</span></h2>
+                            <p>{languageText.desc1}</p>
+
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={img2} alt="Slide 2" />
+                        <div className="EventDescription">
+                            <h2>{languageText.title2}<span className="creator"> {languageText.creator2}</span></h2>
+                            <p>{languageText.desc2}</p>
+
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={img3} alt="Slide 3" />
+                        <div className="EventDescription">
+                            <h2>{languageText.title3}<span className="creator"> {languageText.creator3}</span></h2>
+                            <p>{languageText.desc3}</p>
+                        </div>
+                    </SwiperSlide> */}
+                    {slides.map((slide, index) => (
+                        <SwiperSlide key={index}>
+                            <img src={slide.img} alt={`Slide ${index + 1}`} />
+                            <div className="EventDescription">
+                                <h2>{slide.title}
+                                    {slide.creator &&
+                                        <span className="creator"> {slide.creator}</span>
+                                    }
+                                </h2>
+                                <p>{slide.description}</p>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        );
+    };
 
 
 
@@ -271,12 +392,59 @@ function Home({ language, languageData, api }) {
                     </div>
                 </div>
                 <div className="events">
-
-                    {/* Academic Events */}
                     <div className="eventBox reveal">
                         <EventBoxTitle text={languageText.AcademicEvents} themeColor={themeColor} isRtl={isRtl} />
+                        <SwiperComponent
+                            slides={[
+                                { img: images.academicImg1, title: languageText.AcademicEventTitle1, description: languageText.AcademicEventDescription1, creator: languageText.AcademicEventCreator1 },
+                                { img: images.academicImg2, title: languageText.AcademicEventTitle2, description: languageText.AcademicEventDescription2, creator: languageText.AcademicEventCreator2 },
+                                { img: images.academicImg3, title: languageText.AcademicEventTitle3, description: languageText.AcademicEventDescription3, creator: languageText.AcademicEventCreator3 },
+                            ]}
+                        />
+                    </div>
+                    <div className="eventBox reveal">
+                        <EventBoxTitle text={languageText.SocialEvents} themeColor={themeColor} isRtl={isRtl} />
+                        <SwiperComponent
+                            slides={[
+                                { img: images.socialImg1, title: languageText.SocialEventTitle1, description: languageText.SocialEventDescription1, creator: null },
+                            ]}
+                        />
+                    </div>
+                    <div className="eventBox reveal">
+                        <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
+                        <SwiperComponent
+                            slides={[
+                                { img: images.readingImg1, title: languageText.ReadingEventTitle1, description: languageText.ReadingEventDescription1, creator: languageText.ReadingClubCreator1 },
+                            ]}
+                        />
+                    </div>
 
-                        <div className="eventBox">
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* Academic Events */}
+                {/* <div className="eventBox reveal"> */}
+
+                {/* <div className="eventBox"> */}
+
+
+
+                {/* </div> */}
+                {/* </div> */}
+
+                {/* <div className="eventBox">
                             <div className="slide active ">
                                 <img src={images.academicImg1} alt="" />
                                 <div className="info special">
@@ -306,10 +474,10 @@ function Home({ language, languageData, api }) {
                                 <div className="btn"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
-                    {/* Social Events */}
-                    <div className="eventBox reveal">
+                {/* Social Events */}
+                {/* <div className="eventBox reveal">
 
                         <EventBoxTitle text={languageText.SocialEvents} themeColor={themeColor} isRtl={isRtl} />
 
@@ -321,32 +489,11 @@ function Home({ language, languageData, api }) {
                                     <p>{languageText.SocialEventDescription1}</p>
                                 </div>
                             </div>
-                            {/* <div className="slide2">
-                                <img src={images.socialImg2} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.SocialEventTitle2}</h2>
-                                    <p>{languageText.SocialEventDescription2}</p>
-
-                                </div>
-                            </div>
-                            <div className="slide2">
-                                <img src={images.socialImg3} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.SocialEventTitle3}</h2>
-                                    <p>{languageText.SocialEventDescription3}</p>
-
-                                </div>
-                            </div>
-                            <div className="navigation">
-                                <div className="btn2 active"></div>
-                                <div className="btn2"></div>
-                                <div className="btn2"></div>
-                            </div> */}
                         </div>
-                    </div>
+                    </div> */}
 
-                    {/* Cultural Events */}
-                    {/* <div className="eventBox reveal">
+                {/* Cultural Events */}
+                {/* <div className="eventBox reveal">
                         <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
 
                         <div className="eventBox">
@@ -382,7 +529,7 @@ function Home({ language, languageData, api }) {
                 </div> */}
 
 
-                    <div className="eventBox reveal">
+                {/* <div className="eventBox reveal">
                         <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
 
                         <div className="eventBox">
@@ -393,29 +540,11 @@ function Home({ language, languageData, api }) {
                                     <p>{languageText.ReadingEventDescription1}</p>
                                 </div>
                             </div>
-                            {/* <div className="slide3">
-                                <img src={images.cultureImg2} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.CultureEventTitle2}<span className="creator"> {languageText.CultureEventCreator2}</span></h2>
-                                    <p>{languageText.CultureEventDescription2}</p>
-
-                                </div>
-                            </div>
-                            <div className="slide3">
-                                <img src={images.cultureImg3} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.CultureEventTitle3}</h2>
-                                    <p>{languageText.CultureEventDescription3}</p>
-                                </div>
-                            </div>
-                            <div className="navigation ">
-                                <div className="btn3 active"></div>
-                                <div className="btn3"></div>
-                                <div className="btn3"></div>
-                            </div> */}
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
+                {/* </div> */}
+
 
 
                 <h1 className="connectTitle ">{languageText.connect}</h1>

@@ -17,8 +17,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCreative, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-creative';
-// import Swiper and modules styles
-import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -429,11 +427,12 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
                                     key={swiperKey}
                                     grabCursor={true}
                                     effect={'creative'}
-                                    loop={true}
+                                    // loop={true}
+                                    rewind={true}
+                                    // navigation={true}
                                     pagination={{
                                         clickable: true,
                                     }}
-                                    // navigation={true}
                                     creativeEffect={{
                                         prev: {
                                             shadow: true,
