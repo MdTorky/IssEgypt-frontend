@@ -898,11 +898,13 @@
     width: 90%;
     /* baopacity: 0.6; */
     border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    ;
 }
 
 .EventDescription h2 {
     font-size: 0.7em;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     /* font-family: 'Poppins', sans-serif; */
     line-height: 15px;
@@ -1911,11 +1913,9 @@
     }
 
 
-    .home-container .swiper-pagination {
-        /* position: absolute; */
-        /* bottom: inherit !important; */
-        /* top:0; */
-    }
+    /* .home-container .swiper-pagination {
+       
+    } */
 
 
     .home-container .swiper {
