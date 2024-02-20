@@ -273,29 +273,6 @@ function Home({ language, languageData, api }) {
                     modules={[EffectCube, Pagination]}
                     className="mySwiper"
                 >
-                    {/* <SwiperSlide>
-                        <img src={img1} alt="Slide 1" />
-                        <div className="EventDescription">
-                            <h2>{languageText.title1}<span className="creator"> {languageText.creator1}</span></h2>
-                            <p>{languageText.desc1}</p>
-
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img2} alt="Slide 2" />
-                        <div className="EventDescription">
-                            <h2>{languageText.title2}<span className="creator"> {languageText.creator2}</span></h2>
-                            <p>{languageText.desc2}</p>
-
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img3} alt="Slide 3" />
-                        <div className="EventDescription">
-                            <h2>{languageText.title3}<span className="creator"> {languageText.creator3}</span></h2>
-                            <p>{languageText.desc3}</p>
-                        </div>
-                    </SwiperSlide> */}
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
                             <img src={slide.img} alt={`Slide ${index + 1}`} />

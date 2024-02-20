@@ -904,11 +904,19 @@
     font-size: 0.7em;
     font-weight: 800;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     line-height: 15px;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.arabic .EventDescription h2 {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.arabic .EventDescription p {
+    font-family: 'Noto Kufi Arabic', sans-serif;
 }
 
 .EventDescription .creator {
@@ -929,7 +937,8 @@
     border: 1px solid rgba(0, 0, 0, 0.01);
     /* width: 90%; */
     height: 100%;
-    font-size: 15px;
+    /* font-size: 15px; */
+    font-size: 0.5em;
     padding: 10px;
     margin: auto;
     /* line-height: 17px; */
@@ -1819,7 +1828,7 @@
     .eventBox h1 {
         font-size: 1.1em;
         margin: 0;
-        /* margin-bottom: -20px; */
+        margin-bottom: 20px;
     }
 
     .eventBox .creator {
@@ -1903,15 +1912,23 @@
 
 
     .home-container .swiper-pagination {
-        position: absolute;
-        bottom: 30px !important;
+        /* position: absolute; */
+        /* bottom: inherit !important; */
+        /* top:0; */
     }
 
 
     .home-container .swiper {
         width: 300px;
         height: 300px;
+    }
 
+    .EventDescription h2 {
+        font-size: 0.6em;
+    }
+
+    .EventDescription p {
+        font-size: 0.4em;
     }
 
 
