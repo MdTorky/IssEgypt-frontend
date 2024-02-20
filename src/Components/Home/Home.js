@@ -321,7 +321,7 @@ function Home({ language, languageData, api }) {
                                     <p>{languageText.SocialEventDescription1}</p>
                                 </div>
                             </div>
-                            <div className="slide2">
+                            {/* <div className="slide2">
                                 <img src={images.socialImg2} alt="" />
                                 <div className="info">
                                     <h2>{languageText.SocialEventTitle2}</h2>
@@ -341,12 +341,12 @@ function Home({ language, languageData, api }) {
                                 <div className="btn2 active"></div>
                                 <div className="btn2"></div>
                                 <div className="btn2"></div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
                     {/* Cultural Events */}
-                    <div className="eventBox reveal">
+                    {/* <div className="eventBox reveal">
                         <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
 
                         <div className="eventBox">
@@ -377,6 +377,42 @@ function Home({ language, languageData, api }) {
                                 <div className="btn3"></div>
                                 <div className="btn3"></div>
                             </div>
+                        </div>
+                    </div>
+                </div> */}
+
+
+                    <div className="eventBox reveal">
+                        <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
+
+                        <div className="eventBox">
+                            <div className="slide3 active">
+                                <img src={images.readingImg1} alt="" />
+                                <div className="info">
+                                    <h2>{languageText.ReadingEventTitle1}<span className="creator"> {languageText.ReadingClubCreator1}</span></h2>
+                                    <p>{languageText.ReadingEventDescription1}</p>
+                                </div>
+                            </div>
+                            {/* <div className="slide3">
+                                <img src={images.cultureImg2} alt="" />
+                                <div className="info">
+                                    <h2>{languageText.CultureEventTitle2}<span className="creator"> {languageText.CultureEventCreator2}</span></h2>
+                                    <p>{languageText.CultureEventDescription2}</p>
+
+                                </div>
+                            </div>
+                            <div className="slide3">
+                                <img src={images.cultureImg3} alt="" />
+                                <div className="info">
+                                    <h2>{languageText.CultureEventTitle3}</h2>
+                                    <p>{languageText.CultureEventDescription3}</p>
+                                </div>
+                            </div>
+                            <div className="navigation ">
+                                <div className="btn3 active"></div>
+                                <div className="btn3"></div>
+                                <div className="btn3"></div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

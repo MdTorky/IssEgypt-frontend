@@ -131,21 +131,21 @@
     "blogDescription": "The International Student Society (ISS) Egypt has truly made remarkable strides in fostering a vibrant and inclusive community, leaving an indelible mark on the academic and social landscape. Through a rich tapestry of events and initiatives, ISS Egypt has demonstrated unwavering dedication to its members and the broader community. From meticulously organized academic symposiums that ignite intellectual curiosity to culturally enriching gatherings that celebrate diversity, ISS Egypt has showcased an impressive range of accomplishments. Their commitment to newcomers is especially noteworthy, as they extend a warm embrace to new students, easing their transition into the academic world. Moreover, during the sacred month of Ramadan, ISS Egypt's events have created a sense of togetherness and spirituality, embodying the essence of unity. Additionally, their Islamic events have served as platforms for deepening faith and understanding. In sum, ISS Egypt's achievements in organizing social, academic, cultural events, as well as their dedicated support for newcomers and the observance of important traditions, exemplify their outstanding commitment to fostering a vibrant and harmonious community.",
 
     "AcademicEvents": "Academic Committee Events",
-    "AcademicEventTitle1": "PCB Workshop 2023",
-    "AcademicEventCreator1": "Anas Amer",
-    "AcademicEventDescription1": "Participants dove into the world of PCB design, honing their skills with KiCad software and mastering the art of crafting incredible circuit boards.",
+    "AcademicEventTitle1": "From UTM to Abroad: Australia",
+    "AcademicEventCreator1": "GMS",
+    "AcademicEventDescription1": "We conducted a webinar to learn more about the Skilled Migration requirements for Engineers, IT Professionals, and other occupations that are currently in demand in Australia!",
 
-    "AcademicEventTitle2": "RoadMap To a Scholarship",
-    "AcademicEventCreator2": "Khaled Khalil",
-    "AcademicEventDescription2": "What exactly is a scholarship? How do I obtain it? The goal of obtaining a scholarship to fund their studies exists here.",
+    "AcademicEventTitle2": "Mathematics I Revision",
+    "AcademicEventCreator2": "Ahmed Islam",
+    "AcademicEventDescription2": "Revised Math 1 for the ISS students. The revision was held on 15th and 16th of December 2023",
 
-    "AcademicEventTitle3": "How To Secure a Job after Graduation",
-    "AcademicEventCreator3": "Mohamed Tarek",
-    "AcademicEventDescription3": "It provided vital guidance on post-graduation career opportunities, academic best practices, finding summer internships, using LinkedIn, and creating an outstanding CV.",
+    "AcademicEventTitle3": "Bridging Chemistry Revision",
+    "AcademicEventCreator3": "Ahmed Khalaf",
+    "AcademicEventDescription3": "Revised Chemistry Curriculum for Foundation and Bridging Students. It offered our students a unique opportunity to delve into the core principles of chemistry and enhance their academic prowess",
 
     "SocialEvents": "Social Committee Events",
-    "SocialEventTitle1": "KUNTAN PAHANG Trip",
-    "SocialEventDescription1": "Embarked on an exciting 2-day trip to Kuantan, Pahang, known for its captivating beaches.",
+    "SocialEventTitle1": "Symposium For Palestine",
+    "SocialEventDescription1": "In compliance with our duty towards the Palestinian issue, we, the Association of Arab Communities at UTM University, held a symposium for Palestine.",
 
     "SocialEventTitle2": "Gathering at UTM Hill",
     "SocialEventDescription2": "We celebrated the diversity, passion, and shared dreams that make our community thrive, and we must continue to create magical experiences and forge lifelong connections.",
@@ -164,6 +164,11 @@
 
     "CultureEventTitle3": "Ramadan Competition",
     "CultureEventDescription3": "Three Ramadan contests were held: Quran Recitation, Cultural Competition (Seerah), and Nasheed (Islamic Song) with prizes for the winners.",
+
+    "ReadingClubEvents": "Reading Club Events",
+    "ReadingEventTitle1": "Reading is a Lifestyle",
+    "ReadingClubCreator1": "Hatem bin Humaid",
+    "ReadingEventDescription1": "Reading Club conducted a meeting to address the importance of reading and its role in building personality, sound reading skills, and Dr. Hatem bin Humaid journey with reading.",
 
     "connect": "Connect With Us",
     "email": "Email Us",
@@ -626,21 +631,22 @@
     "blogDescription": "لقد أظهر الاتحاد المصري خطوات ملحوظة في تعزيز مجتمع نابض بالحياة وشامل، مما ترك علامة لا تمحى على المشهد الأكاديمي والاجتماعي. ومن خلال نسيج غني من الأحداث والمبادرات، أظهر الاتحاد تفانيًا لا يتزعزع تجاه أعضائها والمجتمع الأوسع. بدءًا من الندوات الأكاديمية المنظمة بدقة والتي تثير الفضول الفكري وحتى التجمعات الغنية ثقافيًا والتي تحتفي بالتنوع، عرض الاتحاد مجموعة رائعة من الإنجازات و التزامهم تجاه الطلاب الجدد جدير بالملاحظة بشكل خاص، حيث يقدمون احتضانًا دافئًا للطلاب الجدد، مما يسهل انتقالهم إلى العالم الأكاديمي. علاوة على ذلك، خلال شهر رمضان المبارك، أحدث الاتحاد شعورًا بالروحانيات الدينية، مما يجسد جوهر الوحدة. بالإضافة إلى ذلك، كانت مناسباتهم الإسلامية بمثابة منصات لتعميق الإيمان والتفاهم. باختصار، إن إنجازات الاتحاد في تنظيم الفعاليات الاجتماعية والأكاديمية والثقافية، فضلاً عن دعمهم المتفاني للوافدين الجدد ومراعاة التقاليد المهمة، تجسد التزامهم المتميز بتعزيز مجتمع نابض بالحياة ومتناغم.",
 
     "AcademicEvents": "فعاليات اللجنة  الأكاديمية",
-    "AcademicEventTitle1": "ورشة لوحات الدوائر المطبوعة 2023",
-    "AcademicEventCreator1": "أنس عامر",
-    "AcademicEventDescription1": "يغوص المشاركون في عالم تصميم لوحات الدوائر المطبوعة، ويصقلون مهاراتهم باستخدام برنامج KiCad ويتقنون فن صناعة لوحات الدوائر المذهلة.",
 
-    "AcademicEventTitle2": "الطريق إلى منحة دراسية",
-    "AcademicEventCreator2": "خالد خليل",
-    "AcademicEventDescription2": "ما هي المنحة الدراسية بالضبط؟ كيف يمكنني الحصول عليها؟ هدف الحصول على منحة دراسية لتمويل دراستهم موجود هنا.",
+    "AcademicEventTitle1": "من UTM إلى الخارج: أستراليا",
+    "AcademicEventCreator1": "GMS",
+    "AcademicEventDescription1": "لقد أجرينا ندوة عبر الإنترنت لمعرفة المزيد حول متطلبات هجرة المهارات للمهندسين ومتخصصي تكنولوجيا المعلومات والمهن الأخرى المطلوبة حاليًا في أستراليا!",
 
-    "AcademicEventTitle3": "كيفية تأمين وظيفة بعد التخرج",
-    "AcademicEventCreator3": "محمد طارق",
-    "AcademicEventDescription3": "وفرت هذه الفعالية إرشادات حيوية حول الفرص الوظيفية بعد التخرج، وأفضل الممارسات الأكاديمية، وإيجاد التدريب الصيفي، واستخدام LinkedIn، وإنشاء سيرة ذاتية متميز",
+    "AcademicEventTitle2": "مراجعة الرياضيات 1",
+    "AcademicEventCreator2": "احمد اسلام",
+    "AcademicEventDescription2": "مراجعة الرياضيات 1 لطلاب ISS. تمت المراجعة يومي 15 و 16 ديسمبر 2023",
+
+    "AcademicEventTitle3": "مراجعة الكيمياء التأسيسية",
+    "AcademicEventCreator3": "احمد خلف",
+    "AcademicEventDescription3": "مراجعة منهج الكيمياء لطلاب المرحلة التأسيسية والتجسير. لقد أتاح لطلابنا فرصة فريدة للتعمق في المبادئ الأساسية للكيمياء وتعزيز براعتهم الأكاديمية",
 
     "SocialEvents": "فعاليات اللجنة  الاجتماعية",
-    "SocialEventTitle1": "رحلة كونتان باهانج",
-    "SocialEventDescription1": "انطلقنا في رحلة مثيرة لمدة يومين إلى كوانتان، باهانج، المعروفة بشواطئها الجذابة.",
+    "SocialEventTitle1": "ندوة من أجل فلسطين",
+    "SocialEventDescription1": "وامتثالًا لواجبنا تجاه قضية فلسطين، قمنا نحن رابطة الجاليات العربية بجامعة UTM بعمل ندوة من أجل فلسطين",
 
     "SocialEventTitle2": "التجمع في تلة UTM",
     "SocialEventDescription2": "لقد احتفلنا بالتنوع والعاطفة والأحلام المشتركة التي تجعل مجتمعنا يزدهر، وعلينا أن نستمر في خلق تجارب سحرية وإقامة روابط تدوم مدى الحياة.",
@@ -659,6 +665,11 @@
 
     "CultureEventTitle3": "مسابقة رمضان",
     "CultureEventDescription3": "أقيمت ثلاث مسابقات رمضانية: تلاوة القرآن الكريم، والمسابقة الثقافية (سيرة)، والأناشيد الإسلامية مع جوائز للفائزين.",
+
+    "ReadingClubEvents": "فعاليات نادي  القراءة",
+    "ReadingEventTitle1": "القراءة أسلوب حياة",
+    "ReadingClubCreator1": "حاتم بن حميد",
+    "ReadingEventDescription1": "أجرى نادي القراءة لقاءً تناول أهمية القراءة ودورها في بناء الشخصية، ومهارات القراءة السليمة، ورحلة الدكتور حاتم بن حميد مع القراءة.",
 
     "connect": "تواصل معنا",
     "email": "ارسل لنا",

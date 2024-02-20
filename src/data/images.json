@@ -1,17 +1,19 @@
 {
   "achievementImg": "https://i.ibb.co/0twtH87/Welcome-Party.jpg",
 
-  "academicImg1": "https://i.ibb.co/8nwwncJ/Workshop.jpg",
-  "academicImg2": "https://i.ibb.co/kgtHrbj/Road-Map.jpg",
-  "academicImg3": "https://i.ibb.co/rdJzdC7/Job.jpg",
+  "academicImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708432727/Events/GMS_xxbzg7.jpg",
+  "academicImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708431393/Events/11_wkh47u.png",
+  "academicImg3": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708431398/Events/2_px5rjk.png",
 
-  "socialImg1": "https://i.ibb.co/6r2w0Sb/343228138-249980050775657-5856291989127280443-n.jpg",
+  "socialImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708432218/Events/Palestine_f4fk7p.jpg",
   "socialImg2": "https://i.ibb.co/G98RkKx/355273992-148176401606322-7149064945377305157-n.jpg",
   "socialImg3": "https://i.ibb.co/d0r16yz/Social.jpg",
 
   "cultureImg1": "https://i.ibb.co/KGgmv5V/Azhar.jpg",
   "cultureImg2": "https://i.ibb.co/HnWqmQK/Ahmed-Ali.jpg",
   "cultureImg3": "https://i.ibb.co/sjqwqqM/Ramadan.jpg",
+
+  "readingImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708433394/Events/Reading_nf7lwm.jpg",
 
   "academicAnnouncement": "https://i.ibb.co/TPtNVyQ/Academic.png",
   "socialAnnouncement": "https://i.ibb.co/6nzScnQ/Social.png",
