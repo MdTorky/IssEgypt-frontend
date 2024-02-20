@@ -1908,7 +1908,11 @@
     }
 
 
+    .home-container .swiper {
+        width: 300px;
+        height: 300px;
 
+    }
 
 
     /* Connect with us */
