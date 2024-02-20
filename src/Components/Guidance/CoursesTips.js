@@ -247,7 +247,7 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
 
                     <Icon icon={`${link.type === "Website" ? "fluent-mdl2:website" :
                         link.type === "Drive" ? "logos:google-drive" :
-                            link.type === "Youtube" ? "logos:youtube-icon" :
+                            link.type === "Youtube" ? "openmoji:youtube" :
                                 link.type === "Article" ? "ic:outline-article" :
                                     link.type === "Online Course" ? "fluent:hat-graduation-12-filled" :
                                         link.type === "General" ? "ph:link-simple-bold" :
@@ -269,6 +269,7 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
                     <p class="TipHeading">{languageText.courseTip}</p>
                     {faculty.name && faculty.condition === "true" && <p class="TipName">{faculty.name}</p>}
                     <p class="TipTip">{faculty.advice}</p>
+                    {faculty.industrial && <p class="TipIndustrial"><Icon icon="mdi:work" /> {faculty.industrial}</p>}
                     <div className="TipButtons">
 
                         {faculty.links.map((link, index) => (
@@ -420,8 +421,8 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
                                 <p>{languageText.File}</p>
                             </div>
                         </div> */}
+                        <h3 className="CourseTipName AnimatedCard2">{course}</h3>
                         <div className="CoursesTips AnimatedCard">
-                            <h3 className="CourseTipName">{course}</h3>
 
                             <div className="formBox">
                                 <Swiper

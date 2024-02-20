@@ -391,6 +391,10 @@
     /* color: var(--theme2) */
 }
 
+.arabic .CourseTipName {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 .swiper {
     margin: 0 auto;
@@ -491,6 +495,7 @@
     color: rgb(241, 241, 241);
     /* z-index: 2; */
     margin: 0;
+    text-transform: uppercase;
 }
 
 .TipName {
@@ -511,8 +516,16 @@
 
 }
 
-.TipTip a {
-    color: rgb(241, 241, 241);
+
+.TipIndustrial {
+    margin: -10px 0;
+    font-size: 0.8em;
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
 }
 
 .TipButtons {
@@ -669,6 +682,61 @@
 }
 
 
+
+
+
+
+
+
+
+@keyframes BounceTop {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+    38% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    55% {
+        animation-timing-function: ease-in;
+        transform: translateY(-65px);
+    }
+
+    72% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+
+    81% {
+        animation-timing-function: ease-in;
+        transform: translateY(-28px);
+    }
+
+    90% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+
+    95% {
+        animation-timing-function: ease-in;
+        transform: translateY(-8px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+}
+
+.AnimatedCard2 {
+
+    animation: BounceTop 2s ease 0s 1 normal forwards;
+}
 
 
 
