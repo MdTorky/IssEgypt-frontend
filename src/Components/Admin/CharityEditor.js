@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
 
 
-const CharityEditor = ({ language, languageData, api, darkMode }) => {
+const CharityEditor = ({ language, languageData, api, darkMode, visitorCount }) => {
     const { courses = [], dispatch } = useFormsContext()
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -377,6 +377,7 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
                                         </div>
                                     </div>
 
+
                                     {/* <div className="InputField">
                                         <div className="multiselect">
                                             <div className="selectBox" onClick={() => showCheckboxes('faculties')}>
@@ -443,7 +444,10 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
                         </form>
                     )}
                 </div>
+
             )}
+            {visitorCount}
+
         </div>
     );
 }
