@@ -88,14 +88,14 @@ function App() {
   }, [language, darkMode]);
 
 
-  useEffect(() => {
-    // Get the current count from local storage
-    const count = localStorage.getItem('visitorCount');
-    // Update the count in state
-    setVisitorCount(parseInt(count) || 0);
-    // Increment the count and store it back in local storage
-    localStorage.setItem('visitorCount', parseInt(count) + 1);
-  }, []);
+  // useEffect(() => {
+  //   // Get the current count from local storage
+  //   const count = localStorage.getItem('visitorCount');
+  //   // Update the count in state
+  //   setVisitorCount(parseInt(count) || 0);
+  //   // Increment the count and store it back in local storage
+  //   localStorage.setItem('visitorCount', parseInt(count) + 1);
+  // }, []);
 
   return (
     <Router>
@@ -139,7 +139,7 @@ function App() {
               <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageData={languageData} api={api} visitorCount={visitorCount} />} />
+              <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               <Route path="/register/admin" element={!user ? <Register darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />
               <Route path="/login" element={!user ? <Login darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />

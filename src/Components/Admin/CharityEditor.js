@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
 
 
-const CharityEditor = ({ language, languageData, api, darkMode, visitorCount }) => {
+const CharityEditor = ({ language, languageData, api, darkMode }) => {
     const { courses = [], dispatch } = useFormsContext()
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -446,7 +446,7 @@ const CharityEditor = ({ language, languageData, api, darkMode, visitorCount }) 
                 </div>
 
             )}
-            {visitorCount}
+            {/* {visitorCount} */}
 
         </div>
     );
