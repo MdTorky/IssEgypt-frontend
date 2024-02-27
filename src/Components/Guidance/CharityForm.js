@@ -631,7 +631,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
 
                                 }
 
-
                                 {training.includes(course) && faculty && sem && FilterCourse.length > 0 && advice &&
                                     <div className="InputField AnimatedInput">
                                         <div className="InputLabelField">

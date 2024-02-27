@@ -5,6 +5,8 @@
     flex-direction: column;
     box-sizing: border-box;
     margin-right: 130px;
+    overflow-x: auto;
+
 }
 
 .arabic .attraction {
