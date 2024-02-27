@@ -614,7 +614,7 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                 }
 
 
-                                {course && faculty && sem && FilterCourse.length > 0 &&
+                                {((course && faculty && sem && FilterCourse.length > 0) || (course && faculty === "Found" && FilterCourse.length > 0)) &&
                                     <div className="InputField AnimatedInput">
                                         <div className="InputLabelField">
                                             <textarea
