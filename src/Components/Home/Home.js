@@ -384,6 +384,7 @@ function Home({ language, languageData, api }) {
                         <SwiperComponent
                             slides={[
                                 { img: images.socialImg1, title: languageText.SocialEventTitle1, description: languageText.SocialEventDescription1, creator: null },
+                                { img: images.socialImg2, title: languageText.SocialEventTitle2, description: languageText.SocialEventDescription2, creator: null },
                             ]}
                         />
                     </div>

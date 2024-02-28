@@ -647,7 +647,7 @@
 .events {
     display: flex;
     /* grid-template-columns: repeat(3, 1fr); */
-    margin: 0px 0;
+    margin: 0 0 30px 0;
     width: 100%;
     justify-content: space-evenly;
     /* background: red; */
@@ -858,7 +858,6 @@
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-
 }
 
 .home-container .swiper-slide img {
@@ -866,8 +865,7 @@
     width: 100%;
     border-radius: 10px;
     filter: brightness(50%);
-
-
+    border: 6px double var(--theme)
 }
 
 
@@ -903,7 +901,7 @@
 }
 
 .EventDescription h2 {
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-weight: 600;
     text-transform: uppercase;
     /* font-family: 'Poppins', sans-serif; */
@@ -911,6 +909,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    white-space: nowrap;
 }
 
 .arabic .EventDescription h2 {
@@ -923,9 +922,9 @@
 
 .EventDescription .creator {
     font-size: 0.7em;
-    color: var(--hover);
-    background: gold;
-    padding: 1px 2px;
+    color: var(--bg);
+    background: var(--theme);
+    padding: 1px 3px;
     border-radius: 5px;
 }
 
