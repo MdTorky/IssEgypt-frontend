@@ -376,6 +376,8 @@ function Home({ language, languageData, api }) {
                                 { img: images.academicImg1, title: languageText.AcademicEventTitle1, description: languageText.AcademicEventDescription1, creator: languageText.AcademicEventCreator1 },
                                 { img: images.academicImg2, title: languageText.AcademicEventTitle2, description: languageText.AcademicEventDescription2, creator: languageText.AcademicEventCreator2 },
                                 { img: images.academicImg3, title: languageText.AcademicEventTitle3, description: languageText.AcademicEventDescription3, creator: languageText.AcademicEventCreator3 },
+                                { img: images.academicImg4, title: languageText.AcademicEventTitle4, description: languageText.AcademicEventDescription4, creator: languageText.AcademicEventCreator4 },
+                                { img: images.academicImg5, title: languageText.AcademicEventTitle5, description: languageText.AcademicEventDescription5, creator: languageText.AcademicEventCreator5 },
                             ]}
                         />
                     </div>

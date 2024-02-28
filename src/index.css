@@ -42,10 +42,17 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  /* background: linear-gradient(180deg, red, red, white, white, yellow, white, white, black, black); */
   background: var(--theme);
-  border-radius: 10px
+  border-radius: 10px;
+  transition: 0.8s ease all;
 }
+
+*::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: var(--theme2);
+  height: 100px;
+}
+
 
 
 

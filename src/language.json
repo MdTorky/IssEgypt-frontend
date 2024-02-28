@@ -143,6 +143,14 @@
     "AcademicEventCreator3": "Ahmed Khalaf",
     "AcademicEventDescription3": "Revised Chemistry Curriculum for Foundation and Bridging Students. It offered our students a unique opportunity to delve into the core principles of chemistry and enhance their academic prowess",
 
+    "AcademicEventTitle4": "Digital Electronics Revision",
+    "AcademicEventCreator4": "Mohamed Aly",
+    "AcademicEventDescription4": "Eng Mohamed Aly revised Digital Electronics for Finals for Electrical students. We provided a comprehensive revision platform, nurtured collaborative learning, and deepened fundamental concepts' understanding.",
+
+    "AcademicEventTitle5": "System Modeling Revision",
+    "AcademicEventCreator5": "Amro Zakaria",
+    "AcademicEventDescription5": "Eng Amro carried out a system modelling revision for the finals to aid students with their problems regarding this topic. He also solved a past test to give them a hint about how their exam will be.",
+
     "SocialEvents": "Social Committee Events",
     "SocialEventTitle1": "Symposium For Palestine",
     "SocialEventDescription1": "In compliance with our duty towards the Palestinian issue, we, the Association of Arab Communities at UTM University, held a symposium for Palestine.",
@@ -647,6 +655,14 @@
     "AcademicEventTitle3": "مراجعة الكيمياء التأسيسية",
     "AcademicEventCreator3": "احمد خلف",
     "AcademicEventDescription3": "مراجعة منهج الكيمياء لطلاب المرحلة التأسيسية والتجسير. لقد أتاح لطلابنا فرصة فريدة للتعمق في المبادئ الأساسية للكيمياء وتعزيز براعتهم الأكاديمية",
+
+    "AcademicEventTitle4": "مراجعة الالكترونيات الرقمية",
+    "AcademicEventCreator4": "محمد علي",
+    "AcademicEventDescription4": "قام المهندس محمد علي بمراجعة الإلكترونيات الرقمية للنهائيات لطلاب الكهرباء. لقد قدمنا منصة مراجعة شاملة، وعززنا التعلم التعاوني، وعمقنا فهم المفاهيم الأساسية.",
+
+    "AcademicEventTitle5": "مراجعة نمذجة النظام",
+    "AcademicEventCreator5": "عمرو زكريا",
+    "AcademicEventDescription5": "أجرى المهندس عمرو مراجعة لنموذج النظام للنهائيات لمساعدة الطلاب في حل مشكلاتهم المتعلقة بهذا الموضوع. لقد قام أيضًا بحل اختبار سابق لمنحهم تلميحًا حول كيفية امتحانهم.",
 
     "SocialEvents": "فعاليات اللجنة  الاجتماعية",
     "SocialEventTitle1": "ندوة من أجل فلسطين",
