@@ -404,8 +404,8 @@ const Services = ({ language, languageData, darkMode }) => {
 
                                 <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
-                            {/* <Link to="" className="newStudentCard notyet"> */}
-                            <Link to="/tokens" className="newStudentCard">
+                            <Link to="" className="newStudentCard notyet">
+                                {/* <Link to="/tokens" className="newStudentCard"> */}
                                 <p className="time-text"><span>{languageText.Tokens}</span><span className="time-sub-text"></span></p>
                                 {/* <p className="day-text">{languageText.coursesTips2}</p> */}
                                 <p className="day-text">{languageText.handbook2}</p>

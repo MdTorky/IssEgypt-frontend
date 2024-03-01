@@ -477,7 +477,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             </div>
 
                         </div>
-                        {user.committee === "Bank" &&
+                        {user.committee === "Academic" &&
                             <div className="BankLinks">
                                 <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
                                 <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
