@@ -14,10 +14,12 @@ import links from "../../data/upcomingEvents.json";
 import faculties from "../../data/faculties.json";
 import { useLanguage } from '../../context/language';
 import { Icon } from '@iconify/react';
+import HorusTokenDay from '../../images/HorusToken.svg'
+import HorusTokenDark from '../../images/HorusTokenDark.svg'
 
 // import announcements from "../../data/announcements.json";
 
-const Services = ({ language, languageData }) => {
+const Services = ({ language, languageData, darkMode }) => {
     const { toggleLanguage } = useLanguage();
     // Get the current location
     const location = useLocation();
@@ -402,6 +404,16 @@ const Services = ({ language, languageData }) => {
 
                                 <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
+                            {/* <Link to="" className="newStudentCard notyet"> */}
+                            <Link to="/tokens" className="newStudentCard">
+                                <p className="time-text"><span>{languageText.Tokens}</span><span className="time-sub-text"></span></p>
+                                {/* <p className="day-text">{languageText.coursesTips2}</p> */}
+                                <p className="day-text">{languageText.handbook2}</p>
+
+                                {!darkMode ?
+                                    <img src={HorusTokenDark} className="moon HorusLogoNumber" alt="" /> :
+                                    <img src={HorusTokenDark} className="moon HorusLogoNumber" alt="" />}
+                            </Link>
 
                             {/* <Link to="/courses" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.extraCourses}</span><span className="time-sub-text"></span></p>
@@ -424,7 +436,7 @@ const Services = ({ language, languageData }) => {
                     </div> */}
 
                 </div>
-            </div>
+            </div >
             <div className="leftContainer">
                 <div className="collegesBoxTitle">
                     <h2>{languageText.Faculties}</h2>

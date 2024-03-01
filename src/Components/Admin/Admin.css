@@ -142,6 +142,8 @@
     border-radius: 10px;
     width: 320px;
     height: fit-content;
+    border: 3px var(--bg2) solid;
+
 }
 
 .MembersBox {
@@ -187,6 +189,66 @@
     /* transform: scale(1.4); */
 }
 
+
+.BankLinks {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+    border-radius: 10px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border: 3px var(--bg2) solid;
+    gap: 10px;
+}
+
+.BankLink {
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    /* width: 200px; */
+    box-sizing: border-box;
+    background: linear-gradient(to left, var(--bg), var(--bg2));
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: relative;
+
+}
+
+.BankLink img {
+    width: 40px;
+}
+
+.BankLink::before {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: red;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.BankLink::after {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: red;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    transition: all 0.2s;
+}
+
+.BankLink:hover::before,
+.BankLink:hover::after {
+    height: 60%;
+}
 
 
 
@@ -353,6 +415,18 @@
     white-space: nowrap;
 }
 
+.icon.Zero {
+    background: goldenrod;
+    color: var(--bg)
+}
+
+.icon.Zero:hover .tooltip,
+.icon.Zero:hover .tooltip::before {
+    background: goldenrod;
+    color: var(--bg);
+    white-space: nowrap;
+}
+
 .True {
     background: mediumaquamarine;
     color: mediumaquamarine;
@@ -453,6 +527,11 @@
         border-radius: 10px;
         width: 100%;
         height: fit-content;
+    }
+
+    .BankLinks {
+        width: 100%;
+
     }
 
     .MembersBox {

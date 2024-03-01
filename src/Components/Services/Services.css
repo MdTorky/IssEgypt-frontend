@@ -401,6 +401,9 @@ a:visited {
 }
 
 
+
+
+
 .newStudentsRow :nth-child(1) .moon {
     color: #a0ced9;
 }
@@ -443,6 +446,22 @@ a:visited {
 .newStudents .newStudentsRow .newStudentCard:hover>.moon,
 .newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
     font-size: 4em;
+}
+
+.newStudentsRow .moon.HorusLogoNumber,
+.newStudentsRow2 .moon.HorusLogoNumber {
+    width: 40%;
+    height: 40%;
+    right: -10%;
+    top: 5%;
+}
+
+.newStudents .newStudentsRow .newStudentCard:hover>.HorusLogoNumber,
+.newStudents .newStudentsRow2 .newStudentCard:hover>.HorusLogoNumber {
+    width: 120%;
+    height: 120%;
+    right: -40%;
+    top: -10%;
 }
 
 .newStudents .newStudentsRow .newStudentCard:hover>.time-text,
@@ -498,6 +517,20 @@ a:visited {
 .arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.moon {
     font-size: 4em;
 }
+
+
+.arabic .newStudentsRow .moon.HorusLogoNumber,
+.arabic .newStudentsRow2 .moon.HorusLogoNumber {
+    right: inherit;
+    left: -10%;
+}
+
+.arabic .newStudents .newStudentsRow .newStudentCard:hover>.HorusLogoNumber,
+.arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.HorusLogoNumber {
+    left: -40%;
+    right: inherit;
+}
+
 
 .arabic .newStudents .newStudentsRow .newStudentCard:hover>.time-text,
 .arabic .newStudents .newStudentsRow2 .newStudentCard:hover>.time-text {

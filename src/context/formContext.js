@@ -80,7 +80,8 @@ export const FormsContextProvider = ({ children }) => {
         ISSForm: [],
         faculties: [],
         courses: [],
-        charities: []
+        charities: [],
+        points: []
     })
 
 

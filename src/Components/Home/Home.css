@@ -55,6 +55,8 @@
     margin-top: 50px;
     width: fit-content;
     animation: fadeInLeft 5s ease 0s 1 normal forwards;
+    margin: auto;
+
 }
 
 .homeWrapper p {
@@ -467,32 +469,44 @@
 }
 
 .homeBoxes .homeTitle {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.323);
-    margin: 20px 80px 20px 20px;
+    border-bottom: 2px double var(--theme);
+    margin: 0 0 0 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-
+    text-transform: uppercase;
+    width: 97%;
+    font-size: 2em
 }
 
 
 .blog {
-    margin: 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* margin: 20px; */
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    /* gap: 80px; */
+    /* grid-template-columns: 2fr 1fr; */
 }
 
 .blog .blogContainer {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid black;
-    margin-bottom: 20px;
+    border-bottom: 3px solid var(--theme);
+    /* margin-bottom: 20px; */
+    /* width: fit-content; */
+    /* background: red; */
 
 }
 
+
 .blog .blogImg img {
-    width: 850px;
+    display: flex;
+    /* width: 100%; */
+    width: 95%;
     border-radius: 10px;
-    /* animation: horizontalScaleAnim 2s ease 0s 1 normal forwards; */
+    /* border: 6px double var(--theme); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 
@@ -519,7 +533,7 @@
 .blog .blogText .description {
     font-size: 1em;
     line-height: 20px;
-    width: 92%;
+    width: 95%;
     font-family: 'Poppins', sans-serif;
     text-align: justify;
 }
@@ -557,8 +571,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin: 0 auto 20px auto;
-    border-bottom: 1px solid black;
+    /* margin: 0 auto 20px auto; */
+    border-bottom: 3px solid var(--theme);
+    /* background: blue; */
+    /* width: fit-content; */
+    /* box-sizing: border-box; */
     /* background: red; */
     /* padding: 10px; */
     /* width: min-content; */
@@ -567,6 +584,8 @@
 .blogContainer2 .blogItem img {
     width: 350px;
     border-radius: 10px;
+    border: 5px double var(--bg);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 
@@ -611,7 +630,7 @@
     font-family: 'Poppins', sans-serif;
     line-height: 15px;
     font-size: 0.8em;
-    width: 76%;
+    /* width: 76%; */
     text-align: justify;
     animation: fadeInUp 2s ease 0s 1 normal forwards;
 
@@ -634,7 +653,7 @@
     font-weight: 600;
     font-size: 0.8em;
     text-align: justify;
-    width: 76%;
+    /* width: 76%; */
     font-family: 'Noto Kufi Arabic', sans-serif;
 }
 
@@ -650,9 +669,6 @@
     margin: 0 0 30px 0;
     width: 100%;
     justify-content: space-evenly;
-    /* background: red; */
-
-    /* height: 500px; */
 
 }
 
@@ -806,7 +822,7 @@
 }
 
 .arabic .events {
-    margin: -20px 20px -20px 0;
+    /* margin: -20px 20px -20px 0; */
 }
 
 .arabic .eventBox .info h2 {
@@ -863,6 +879,7 @@
 .home-container .swiper-slide img {
     display: block;
     width: 100%;
+    /* min-width: 70%; */
     border-radius: 10px;
     filter: brightness(50%);
     border: 6px double var(--theme)
@@ -909,7 +926,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .arabic .EventDescription h2 {
@@ -1136,28 +1153,26 @@
 
 @media screen and (max-width: 1800px) {
 
-    /* Animation Text */
-
     .homeWrapper p {
         font-size: 30px;
     }
 
     .homeWrapper .words {
-        font-size: 35px;
-        height: 50px;
-        line-height: 50px;
+        /* font-size: 24px; */
+        /* height: 50px; */
+        /* line-height: 50px; */
     }
 
     .homeWrapper span {
-        font-size: 35px;
+        /* font-size: 3px; */
     }
 
-    .arabic .homeWrapper span {
+    /* .arabic .homeWrapper span {
         font-size: 30px;
 
-    }
+    } */
 
-    @keyframes animation {
+    /* @keyframes animation {
         0%, 100% {
             top: 0;
         }
@@ -1191,16 +1206,14 @@
         95% {
             top: -150px;
         }
-    }
+    } */
 
 
-
-    /* Phone Presidents */
 
     /* Blogs */
     .homeBoxes .homeTitle {
-        font-size: 1.5em;
-        margin: 20px;
+        /* font-size: 1.5em; */
+        /* margin: 20px; */
 
     }
 
@@ -1208,29 +1221,23 @@
         margin: 20px;
     }
 
-    .blog {
+    /* .blog {
         margin: 20px;
         display: grid;
         grid-template-columns: 2fr 1fr;
-    }
+    } */
 
-    .blog .blogContainer {
+    /* .blog .blogContainer {
         border-bottom: 1px solid rgba(0, 0, 0, 0.365);
-        /* margin-bottom: 30px; */
     }
 
     .blog .blogImg img {
-        width: 96%;
-    }
+    } */
 
     .blog .blogText .subtitle {
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
 
-
-    .blog .blogText .title {
-        font-size: 0.8em;
-    }
 
     .arabic .blog .blogText .title {
         font-size: 1.1em;
@@ -1252,30 +1259,19 @@
         font-size: 0.8em;
     }
 
-    .blogContainer2 {
-        gap: 0px;
-        border-bottom: 1px solid black;
 
-    }
-
-    .blogContainer2 .blogItem {
+    /* .blogContainer2 .blogItem {
         display: flex;
         flex-direction: column;
         width: 90%;
         margin: auto;
-    }
+    } */
 
     .blogContainer2 .blogItem .line {
         display: flex;
         justify-content: space-between;
     }
 
-
-
-    .blogContainer2 .blogItem img {
-        width: 100%;
-        margin: auto;
-    }
 
 
     .blogContainer2 .blogItem .subtitle {
@@ -1287,9 +1283,8 @@
     .blogContainer2 .blogItem .description {
         font-size: 0.7em;
         text-align: justify;
-        font-weight: 500;
         width: 100%;
-        font-family: 'Poppins', sans-serif;
+        /* font-family: 'Poppins', sans-serif; */
     }
 
     .arabic .blogContainer2 .blogItem .description {
@@ -1327,7 +1322,7 @@
     }
 
     .eventBox h1 {
-        font-size: 0.9em;
+        /* font-size: 0.9em; */
     }
 
     .eventBox .creator {
@@ -1686,9 +1681,11 @@
 
     /* Blogs */
     .homeBoxes .homeTitle {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.323);
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.323); */
         margin: 20px;
+        width: 90%;
         font-size: 1.2em;
+        /* text-align: center; */
     }
 
     .arabic .homeBoxes .homeTitle {
@@ -1697,23 +1694,24 @@
     }
 
     .blog {
-        grid-template-columns: 1fr;
-        margin-bottom: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .blog .blogContainer {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.365);
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.365); */
+        /* margin: 0 !important; */
         margin-bottom: 30px;
+
     }
 
     .blog .blogImg {
         display: flex;
         width: 100%;
         justify-content: center;
-    }
-
-    .blog .blogImg img {
-        width: 340px;
     }
 
 
@@ -1723,11 +1721,13 @@
         font-size: 0.7em;
         opacity: 0.5;
         text-align: center;
+
     }
 
 
     .blog .blogText .title {
         font-size: 1em;
+        text-align: center;
     }
 
     .blog .blogText .title .color {
@@ -1738,7 +1738,8 @@
     .blog .blogText .description {
         font-size: 0.75em;
         line-height: 18px;
-        width: 96%;
+        width: 100%;
+
     }
 
     .arabic .blog .blogText .description {
@@ -1748,13 +1749,14 @@
 
     .blogContainer2 {
         gap: 25px;
+        margin-bottom: 100px;
     }
 
     .blogContainer2 .blogItem {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        width: 80%;
+        /* width: 80%; */
     }
 
     .blogContainer2 .blogItem .line {
@@ -1774,7 +1776,7 @@
     }
 
     .blogContainer2 .blogItem img {
-        width: 300px;
+        width: 280px;
         margin: 0 auto;
     }
 
@@ -1782,7 +1784,9 @@
     .blogContainer2 .blogItem .subtitle {
         font-size: 0.6em;
         font-weight: 700;
-        /* text-align: center; */
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 
@@ -1792,13 +1796,18 @@
         font-size: 0.8em;
         text-align: justify;
         font-weight: 500;
-        width: 100%;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
         font-family: 'Poppins', sans-serif;
     }
 
     .arabic .blogContainer2 .blogItem .description {
-        min-width: 100%;
+        /* min-width: 100%; */
         font-weight: 500;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
 
     }
 

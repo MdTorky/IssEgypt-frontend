@@ -423,9 +423,9 @@
 
 
 
-@media screen and (max-width: 1800px) {
+/* @media screen and (max-width: 1800px) {
     .sideMenu {
-        width: 250px;
+        width: 340px;
     }
 
     .sideMenu.arabic {
@@ -456,7 +456,7 @@
     .sideMenu .popup {
         width: 20%;
     }
-}
+} */
 
 
 

@@ -16,6 +16,8 @@ import { Icon } from '@iconify/react';
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useNavigate } from "react-router-dom";
+import HorusTokenDay from '../../images/HorusToken.svg'
+import HorusTokenDark from '../../images/HorusTokenDark.svg'
 
 const Admin = ({ language, languageData, api, darkMode }) => {
     // const { committee } = useParams();
@@ -453,6 +455,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             <img src={presidentFilter?.img} alt="" />
                         </div>
                         <div className="Statistics">
+
                             {membersCount > 0 &&
                                 <div className="StatisticsBox">
                                     <div className="MembersBox">
@@ -472,7 +475,14 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     <FontAwesomeIcon icon={faWpforms} className='StatisticsIcon' />
                                 </div>
                             </div>
+
                         </div>
+                        {user.committee === "Bank" &&
+                            <div className="BankLinks">
+                                <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
+                                <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
+                            </div>
+                        }
                     </div>
 
                     <div className="DashboardBottom">

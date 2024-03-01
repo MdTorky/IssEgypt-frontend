@@ -120,14 +120,15 @@
     "view": "View",
     "data": "View Responses",
     "changeStatus": "Change Status",
+    "zeroChange": "Remove Tokens",
     "courseLink": "Course Link",
     "noAnnouncement": "Sorry.. No Announcements Yet",
 
-    "achievements": "The Committees' Achievements",
+    "achievements": "The ISS Egypt Achievements",
     "blogSubtitle": "Symposium For Palestine Group Picture",
     "blogTitle1": "The",
-    "blogTitle2": "International Student Society (ISS)",
-    "blogTitle3": "Egypt Achievements",
+    "blogTitle2": "International Student Society (ISS) Egypt",
+    "blogTitle3": "Achievements",
     "blogDescription": "The International Student Society (ISS) Egypt has truly made remarkable strides in fostering a vibrant and inclusive community, leaving an indelible mark on the academic and social landscape. Through a rich tapestry of events and initiatives, ISS Egypt has demonstrated unwavering dedication to its members and the broader community. From meticulously organized academic symposiums that ignite intellectual curiosity to culturally enriching gatherings that celebrate diversity, ISS Egypt has showcased an impressive range of accomplishments. Their commitment to newcomers is especially noteworthy, as they extend a warm embrace to new students, easing their transition into the academic world. Moreover, during the sacred month of Ramadan, ISS Egypt's events have created a sense of togetherness and spirituality, embodying the essence of unity. Additionally, their Islamic events have served as platforms for deepening faith and understanding. In sum, ISS Egypt's achievements in organizing social, academic, cultural events, as well as their dedicated support for newcomers and the observance of important traditions, exemplify their outstanding commitment to fostering a vibrant and harmonious community.",
 
     "AcademicEvents": "Academic Committee Events",
@@ -217,6 +218,8 @@
     "Email": "Email",
     "Password": "Password",
     "Phone": "Phone",
+    "Token": "Token",
+    "Tokens": "Tokens",
     "Image": "Image",
     "Form": "Form",
     "Edit": "Edit",
@@ -378,6 +381,8 @@
     "formEdited": "Form Updated Successfully",
     "formDeleted": "Form Deleted Successfully",
     "formSubmitted": "Form Submitted Successfully",
+    "TokensAdded": "Token Added Successfully",
+    "TokensRemoved": "Token Removed Successfully",
     "linkCopied": "Link Copied to Clipboard!",
     "loginSuccess": "Login Successfully",
     "registerSuccess": "Account Created Successfully",
@@ -394,6 +399,7 @@
     "noLinkedIn": "Sorry... This member does not have a LinkedIn account.",
 
     "CreateForm": "Create a New Form",
+    "TokensForm": "Tokens Form",
     "EventName": "Event Name",
     "EventArabicName": "Event Arabic Name",
     "EventImg": "Event Image",
@@ -414,7 +420,7 @@
     "FillForm": "Fill up the form",
     "FullName": "Full Name",
     "Contact": "Contact Info",
-    "Matric": "Matric Number",
+    "Matric": "Matric No",
     "Faculty": "Faculty",
     "Year": "Year",
     "Semester": "Semester",
@@ -508,7 +514,14 @@
 
     "ChooseCourse": "Choose the Course",
     "courseTip": "Course Tip",
-    "ForgetPrayer": "Don't Forget to Supplicate for the one who Shared this Tip"
+    "ForgetPrayer": "Don't Forget to Supplicate for the one who Shared this Tip",
+
+    "AddToken": "Add Token",
+    "TokensShowcase": "Tokens Showcase",
+    "TokensShowcaseAdmin": "Admin's Tokens Showcase",
+    "NoTokens": "Number of Tokens",
+    "searchToken": "Search For Your Name or Matric",
+    "ManageTokens": "Manage Tokens"
   },
   "ar": {
     "language": "عربي",
@@ -631,6 +644,7 @@
     "view": "عرض",
     "data": "عرض الردود",
     "changeStatus": "تغيير الحالة",
+    "zeroChange": "إزالة العملات",
     "courseLink": "رابط الدورة",
     "noAnnouncement": "عذرا.. لا توجد إعلانات حتى الآن",
 
@@ -638,8 +652,8 @@
 
     "blogSubtitle": " صورة جماعية لندوة من أجل فلسطين",
     "blogTitle1": "إنجازات",
-    "blogTitle2": "اتحاد الطلبة ",
-    "blogTitle3": "المصريين",
+    "blogTitle2": "اتحاد الطلبة المصريين",
+    "blogTitle3": "",
     "blogDescription": "لقد أظهر الاتحاد المصري خطوات ملحوظة في تعزيز مجتمع نابض بالحياة وشامل، مما ترك علامة لا تمحى على المشهد الأكاديمي والاجتماعي. ومن خلال نسيج غني من الأحداث والمبادرات، أظهر الاتحاد تفانيًا لا يتزعزع تجاه أعضائها والمجتمع الأوسع. بدءًا من الندوات الأكاديمية المنظمة بدقة والتي تثير الفضول الفكري وحتى التجمعات الغنية ثقافيًا والتي تحتفي بالتنوع، عرض الاتحاد مجموعة رائعة من الإنجازات و التزامهم تجاه الطلاب الجدد جدير بالملاحظة بشكل خاص، حيث يقدمون احتضانًا دافئًا للطلاب الجدد، مما يسهل انتقالهم إلى العالم الأكاديمي. علاوة على ذلك، خلال شهر رمضان المبارك، أحدث الاتحاد شعورًا بالروحانيات الدينية، مما يجسد جوهر الوحدة. بالإضافة إلى ذلك، كانت مناسباتهم الإسلامية بمثابة منصات لتعميق الإيمان والتفاهم. باختصار، إن إنجازات الاتحاد في تنظيم الفعاليات الاجتماعية والأكاديمية والثقافية، فضلاً عن دعمهم المتفاني للوافدين الجدد ومراعاة التقاليد المهمة، تجسد التزامهم المتميز بتعزيز مجتمع نابض بالحياة ومتناغم.",
 
     "AcademicEvents": "فعاليات اللجنة  الأكاديمية",
@@ -729,6 +743,9 @@
     "Password": "كلمة المرور",
 
     "Phone": "الهاتف",
+    "Token": "العملة",
+    "Tokens": "العملات",
+
     "Image": "صورة",
     "Form": "استمارة",
     "Edit": "تعديل",
@@ -891,6 +908,9 @@
     "formEdited": "تم تحديث النموذج بنجاح",
     "formDeleted": "تم حذف النموذج بنجاح",
     "formSubmitted": "تم تقديم النموذج بنجاح",
+    "TokensAdded": "تم إضافة العملة بنجاح",
+    "TokensRemoved": "تم إزالة العملة بنجاح",
+
     "linkCopied": "تم نسخ الرابط!",
     "loginSuccess": "تم تسجيل الدخول بنجاح",
     "registerSuccess": "تم إنشاء الحساب بنجاح",
@@ -907,6 +927,7 @@
     "noLinkedIn": "عذراً... هذا العضو لا يملك حساب على لينكدان",
 
     "CreateForm": "إنشاء نموذج جديد",
+    "TokensForm": "نموذج العملات",
     "EventName": "الاسم الانجليزي للحدث",
     "EventArabicName": "الاسم العربي للحدث",
     "EventImg": "صورة الحدث",
@@ -1022,6 +1043,13 @@
 
     "ChooseCourse": "اختر الدورة",
     "courseTip": "نصائح الدورة",
-    "ForgetPrayer": "لا تنسوا الدعاء لمن شارك هذه النصيحة"
+    "ForgetPrayer": "لا تنسوا الدعاء لمن شارك هذه النصيحة",
+
+    "AddToken": "إضافة عملة",
+    "TokensShowcase": "معرض العملات",
+    "TokensShowcaseAdmin": "مشرف معرض العملات",
+    "NoTokens": "عدد العملات",
+    "searchToken": "ابحث عن اسمك أو رقم الماترك",
+    "ManageTokens": "إدارة العملات"
   }
 }

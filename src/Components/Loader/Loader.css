@@ -459,3 +459,96 @@
         transform: translateY(-10px);
     }
 }
+
+
+
+
+
+
+
+.HorusLoader {
+    position: relative;
+}
+
+
+.HorusLoader img {
+    width: 40%;
+    display: flex;
+    justify-self: center;
+    margin: auto;
+}
+
+
+
+.HorusText {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    background: radial-gradient(circle closest-side, var(--theme) 94%, #0000) right/calc(200% - 1em) 100%;
+    animation: l24 1s infinite alternate linear;
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+
+}
+
+.arabic .HorusText {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+
+.HorusText::before {
+    content: attr(data-loading);
+    line-height: 1em;
+    color: #0000;
+    background: inherit;
+    background-image: radial-gradient(circle closest-side, var(--bg) 94%, var(--hover));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@keyframes l24 {
+    100% {
+        background-position: left
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+    .HorusLoader img {
+        width: 100%;
+    }
+
+
+    .HorusText {
+        font-size: 20px;
+    }
+}

@@ -38,6 +38,9 @@ import Login from './Components/Auth/Login';
 import CharityForm from './Components/Guidance/CharityForm';
 import CharityEditor from './Components/Admin/CharityEditor';
 import CoursesTips from './Components/Guidance/CoursesTips';
+import PointsForm from './Components/KnowledgeBank/PointsForm';
+import TokensDisplay from './Components/KnowledgeBank/TokensDisplay';
+import TokensShowcase from './Components/Admin/TokensShowcase';
 
 function App() {
   const api = "https://iss-egypt-backend.vercel.app";
@@ -113,8 +116,11 @@ function App() {
           />
           <div className={`routes ${language === 'ar' ? 'arabic' : ''}`}>
             <Routes>
+
+
+              {/* All Pages */}
               <Route exact path="/" element={<Home language={language} languageData={languageData} api={api} />} />
-              <Route path="/services" element={<Services language={language} languageData={languageData} />} />
+              <Route path="/services" element={<Services language={language} languageData={languageData} darkMode={darkMode} />} />
               <Route path="/members" element={<Members darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/memberForm/admin" element={<MemberForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
@@ -132,15 +138,24 @@ function App() {
               <Route path="/ISSForm/:formId" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/charity" element={<CharityForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/coursesTips" element={<CoursesTips darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/tokens" element={<TokensDisplay darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
-
+              {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formCreator/admin" element={user ? <FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/tokensShowcase" element={user ? <TokensShowcase darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              {/* <Route path="/tokensShowcase" element={<TokensShowcase darkMode={darkMode} language={language} languageData={languageData} api={api} />} /> */}
 
+
+              {/* KnowledgeBank */}
+              <Route path="/tokensForm" element={user ? <PointsForm darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+
+
+              {/* Auth */}
               <Route path="/register/admin" element={!user ? <Register darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />
               <Route path="/login" element={!user ? <Login darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/adminDashboard' />} />
 

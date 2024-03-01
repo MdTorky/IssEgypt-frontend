@@ -184,6 +184,8 @@
     color: var(--bg);
     border-radius: 20px 20px 0 0;
     padding: 10px 10px;
+
+
 }
 
 .ResponseHeader td, .ResponseHeader th {

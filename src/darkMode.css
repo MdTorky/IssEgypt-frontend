@@ -8,7 +8,24 @@ body.dark-mode {
 
 .dark-mode .loader {
     --dot: var(--bg);
+}
 
+
+
+
+.dark-mode .HorusText {
+    background: radial-gradient(circle closest-side, var(--theme) 94%, #0000) right/calc(200% - 1em) 100%;
+    animation: l24 1s infinite alternate linear;
+}
+
+
+
+.dark-mode .HorusText::before {
+    color: #0000;
+    background: inherit;
+    background-image: radial-gradient(circle closest-side, var(--hover) 94%, var(--bg));
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 /* NavBar */
@@ -886,7 +903,7 @@ body.dark-mode {
     background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
-.dark-mode .formBox form .input, .dark-mode .formBox select, .dark-mode .formBox .label, .dark-mode .formBox form .LabelInputImg {
+.dark-mode .formBox form .input, .dark-mode .formBox select, .dark-mode .formBox .label, .dark-mode .formBox form .LabelInputImg, .dark-mode .FormPopup .input {
     background: linear-gradient(to right, var(--hover), var(--hover2));
     border: 3px solid var(--bg);
     color: var(--bg)
@@ -975,6 +992,15 @@ body.dark-mode {
 .dark-mode .Pass {
     /* color: rgb(222, 190, 9) */
     color: var(--theme2)
+}
+
+
+
+.dark-mode .FormPopup {
+    backdrop-filter: blur(4px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.79);
+    border: 10px double var(--theme);
 }
 
 
@@ -1097,6 +1123,17 @@ body.dark-mode {
     border-radius: 10px;
     width: 320px;
     height: fit-content;
+    border: 3px var(--hover2) solid;
+
+}
+
+.dark-mode .BankLinks {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    border: 3px var(--hover2) solid;
+}
+
+.dark-mode .BankLink {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 
