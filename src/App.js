@@ -43,7 +43,7 @@ import TokensDisplay from './Components/KnowledgeBank/TokensDisplay';
 import TokensShowcase from './Components/Admin/TokensShowcase';
 
 function App() {
-  const api = "https://iss-egypt-backend.vercel.app";
+  const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
   // Initialize the language state with the default language (e.g., "en")
   const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
