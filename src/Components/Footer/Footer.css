@@ -26,7 +26,6 @@
 
 .arabic .TermsCondition {
     direction: ltr;
-    margin-top: 60px;
 }
 
 .TermsCondition h2 {
@@ -312,6 +311,10 @@
     .TermsCondition {
         margin-bottom: 30%;
         text-align: start;
+    }
+
+    .arabic .TermsCondition {
+        margin-top: 60px;
     }
 
     .TermsCondition h2 {
