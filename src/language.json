@@ -516,6 +516,8 @@
     "courseTip": "Course Tip",
     "ForgetPrayer": "Don't Forget to Supplicate for the one who Shared this Tip",
 
+    "joinGroup": "Join the group to be able to submit",
+
     "AddToken": "Add Token",
     "TokensShowcase": "Tokens Showcase",
     "TokensShowcaseAdmin": "Admin's Tokens Showcase",
@@ -1044,6 +1046,8 @@
     "ChooseCourse": "اختر الدورة",
     "courseTip": "نصائح الدورة",
     "ForgetPrayer": "لا تنسوا الدعاء لمن شارك هذه النصيحة",
+
+    "joinGroup": "انضم إلى المجموعة لتتمكن من الإرسال",
 
     "AddToken": "إضافة عملة",
     "TokensShowcase": "معرض العملات",

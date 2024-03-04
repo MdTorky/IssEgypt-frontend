@@ -39,6 +39,14 @@
 }
 
 
+.JoinGroup {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--theme);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .NothingHere {
     margin-bottom: -30px;
     font-size: 2em;

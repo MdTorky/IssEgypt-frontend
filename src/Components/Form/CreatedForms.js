@@ -492,6 +492,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                         </div>
                                                     </>
                                                 )}
+                                                <p className="JoinGroup">{languageText.joinGroup}</p>
                                                 {form.groupLink && (
                                                     <Link
                                                         className="GroupLink"
@@ -533,7 +534,9 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
             </div >
 
         ) : (
-            <div className="LoaderDiv"><Loader /></div>
+            <div className="CreatedForm">
+                <div className="LoaderDiv"><Loader /></div>
+            </div>
 
         ));
 
