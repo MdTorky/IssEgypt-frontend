@@ -819,11 +819,14 @@ input::placeholder {
     .InputRow {
         flex-direction: column;
         width: 100%;
+        justify-content: center;
+        align-content: center;
     }
 
 
     .InputField {
         width: 300px;
+        margin: auto;
     }
 
     .formBox .button {
