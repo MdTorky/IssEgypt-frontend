@@ -68,7 +68,13 @@ const Footer = ({ language, languageData }) => {
                 <li className="menu__item"><Link className="menu__link" to="/services">{languageText.services}</Link></li>
                 <li className="menu__item"><Link className="menu__link" to="/members">{languageText.members}</Link></li>
             </div>
-            <p>{languageText.rights}</p>
+            <Link to='./terms&Conditions' className="Terms"
+            >{languageText.terms}</Link>
+            <p className="Rights">{languageText.rights}</p>
+            <button className="Inquires"
+                onClick={() => window.open("https://wa.me/201554206775", '_blank')}
+            >{languageText.inquiries}</button>
+
         </footer>
     );
 }

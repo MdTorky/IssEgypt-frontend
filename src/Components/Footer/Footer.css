@@ -13,8 +13,36 @@
     flex-direction: column;
     /* position: fixed; */
     bottom: 0;
+}
 
+.TermsCondition {
+    margin-bottom: 10%;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 10px;
+    /* width: 95%; */
+}
 
+.TermsCondition h2 {
+    color: var(--theme);
+    text-transform: uppercase;
+}
+
+.Terms {
+    margin: 0px 0;
+    transition: 0.5s all ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.arabic .Terms {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+.Terms:hover {
+    letter-spacing: 3px;
 }
 
 .social-icon,
@@ -67,9 +95,6 @@
 
 
 
-/* span {
-    display: none;
-} */
 
 .menu__link:hover {
     opacity: 1;
@@ -162,6 +187,104 @@
     }
 }
 
+.Rights {
+    margin: 0 !important;
+}
+
+.Inquires {
+    margin: 0 !important;
+    margin-top: 10px !important;
+    background: var(--bg);
+    border: 3px solid var(--bg2);
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 3px 5px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    transition: 0.5s all linear;
+    text-decoration: none;
+    color: var(--hover)
+}
+
+.arabic .Inquires {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.Inquires::before {
+    width: 20px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    background: var(--theme);
+    bottom: 80%;
+    left: 90%;
+    border-radius: 20px;
+    transition: 0.5s all linear;
+
+    transform: translate(0)
+}
+
+.Inquires::after {
+    width: 20px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    background: var(--theme);
+    top: 80%;
+    right: 90%;
+    border-radius: 20px;
+    transition: 0.5s all linear;
+    transform: translate(0);
+
+}
+
+
+.Inquires:hover::before {
+    /* left: inherit;
+    right: 90%; */
+    transform: translate(-630%, 0)
+}
+
+.Inquires:hover::after {
+    /* left: inherit;
+    right: 90%; */
+    transform: translate(630%, 0)
+}
+
+.arabic .Inquires::before {
+    right: 90%;
+    left: inherit;
+}
+
+.arabic .Inquires::after {
+    right: inherit;
+    left: 90%;
+
+}
+
+.arabic .Inquires:hover::before {
+    /* left: inherit;
+    right: 90%; */
+    transform: translate(530%, 0)
+}
+
+.arabic .Inquires:hover::after {
+    /* left: inherit;
+    right: 90%; */
+    transform: translate(-530%, 0)
+}
+
+.Inquires:hover {
+    background: var(--hover);
+    color: var(--bg);
+    border: 3px double var(--hover)
+}
+
+
+
+
 
 @media screen and (max-width: 900px) {
 
@@ -177,6 +300,15 @@
         flex-direction: column;
         /* position: fixed; */
         bottom: 0;
+    }
+
+    .TermsCondition {
+        margin-bottom: 30%;
+        text-align: start;
+    }
+
+    .TermsCondition h2 {
+        text-align: center;
     }
 
     .social-icon,

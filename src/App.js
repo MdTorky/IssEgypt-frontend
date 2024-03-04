@@ -41,6 +41,7 @@ import CoursesTips from './Components/Guidance/CoursesTips';
 import PointsForm from './Components/KnowledgeBank/PointsForm';
 import TokensDisplay from './Components/KnowledgeBank/TokensDisplay';
 import TokensShowcase from './Components/Admin/TokensShowcase';
+import Terms from './Components/Footer/Terms';
 
 function App() {
   const api = process.env.REACT_APP_API_KEY;
@@ -120,6 +121,7 @@ function App() {
 
               {/* All Pages */}
               <Route exact path="/" element={<Home language={language} languageData={languageData} api={api} />} />
+              <Route exact path="/terms&Conditions" element={<Terms />} />
               <Route path="/services" element={<Services language={language} languageData={languageData} darkMode={darkMode} />} />
               <Route path="/members" element={<Members darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
