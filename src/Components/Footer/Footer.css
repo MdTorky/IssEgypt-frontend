@@ -24,6 +24,11 @@
     /* width: 95%; */
 }
 
+.arabic .TermsCondition {
+    direction: ltr;
+    margin-top: 60px;
+}
+
 .TermsCondition h2 {
     color: var(--theme);
     text-transform: uppercase;
