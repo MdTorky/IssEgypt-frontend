@@ -38,6 +38,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     const [selectedImageText, setSelectedImageText] = useState(null);
     const [selectedPictureText, setSelectedPictureText] = useState(null);
     const [updating, setUpdating] = useState(false);
+    const [buttonClicked, setButtonClicked] = useState(false)
 
 
     useEffect(() => {
@@ -230,6 +231,12 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
     }
 
+    const handleGroupClick = (e, groupLink) => {
+        e.preventDefault();
+        setButtonClicked(true)
+        window.open(groupLink)
+    }
+
 
 
 
@@ -238,7 +245,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     // Example usage
 
     return (
-        filter && filter.length > 0 && filter[0].status === true ? (
+        filter && filter.length > 0 ? (
 
             <div className="CreatedForm">
                 {loading ? (
@@ -251,252 +258,271 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                         </div>
                     ) : (
                         filter.map((form) => (
-                            <div className="FormAll">
-                                <div className="FormLeft">
-                                    <img src={form.eventImg} alt="" />
-                                    <div className="FormLeftDetails">
-                                        {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
-                                        <p>{form.eventDescription}</p>
+                            form.status === true ? (
+                                <div className="FormAll">
+                                    {console.log(form.status)}
+
+                                    <div className="FormLeft">
+                                        <img src={form.eventImg} alt="" />
+                                        <div className="FormLeftDetails">
+                                            {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
+                                            <p>{form.eventDescription}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="FormCenter">
-                                    <p className="FormTitle">{languageText.FillForm}</p>
-                                    <div className="Hint">
-                                        <p>{languageText.valid}</p>
-                                        <p>{languageText.invalid}</p>
-                                    </div>
-                                    <div className="formBox PeopleForm">
-                                        <form action="" onSubmit={handleSubmit} encType="multipart/form-data">
-                                            <div className="PersonalFields">
-                                                {form.inputs.includes("Full Name") && (
-                                                    <div className="InputField">
-                                                        <div className="InputLabelField">
-                                                            <input
-                                                                type="text"
-                                                                className={`input ${(fullNameRegex.test(fullName)) ? 'valid' : 'invalid'}`}
-                                                                onChange={(e) => { setFullName(e.target.value) }}
-                                                                required
-                                                                id="fullName"
-                                                            />
-                                                            {!fullName && <label for="fullName" className={`LabelInput ${(fullName) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faUser} /> {languageText.FullName}</label>}
+                                    <div className="FormCenter">
+                                        <p className="FormTitle">{languageText.FillForm}</p>
+                                        <div className="Hint">
+                                            <p>{languageText.valid}</p>
+                                            <p>{languageText.invalid}</p>
+                                        </div>
+                                        <div className="formBox PeopleForm">
+                                            <form action="" onSubmit={handleSubmit} encType="multipart/form-data">
+                                                <div className="PersonalFields">
+                                                    {form.inputs.includes("Full Name") && (
+                                                        <div className="InputField">
+                                                            <div className="InputLabelField">
+                                                                <input
+                                                                    type="text"
+                                                                    className={`input ${(fullNameRegex.test(fullName)) ? 'valid' : 'invalid'}`}
+                                                                    onChange={(e) => { setFullName(e.target.value) }}
+                                                                    required
+                                                                    id="fullName"
+                                                                />
+                                                                {!fullName && <label for="fullName" className={`LabelInput ${(fullName) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faUser} /> {languageText.FullName}</label>}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Matric") && (
-                                                    <div className="InputField">
-                                                        <div className="InputLabelField">
-                                                            <input
-                                                                type="text"
-                                                                className={`input ${(matricRegex.test(matric)) ? 'valid' : 'invalid'}`}
-                                                                onChange={(e) => { setMatric(e.target.value) }}
-                                                                required
-                                                                id="matric"
-                                                                style={{ textTransform: "uppercase" }}
-                                                            />
-                                                            {!matric && <label for="matric" className={`LabelInput ${(matric) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faIdCard} /> {languageText.Matric}</label>}
+                                                    )}
+                                                    {form.inputs.includes("Matric") && (
+                                                        <div className="InputField">
+                                                            <div className="InputLabelField">
+                                                                <input
+                                                                    type="text"
+                                                                    className={`input ${(matricRegex.test(matric)) ? 'valid' : 'invalid'}`}
+                                                                    onChange={(e) => { setMatric(e.target.value) }}
+                                                                    required
+                                                                    id="matric"
+                                                                    style={{ textTransform: "uppercase" }}
+                                                                />
+                                                                {!matric && <label for="matric" className={`LabelInput ${(matric) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faIdCard} /> {languageText.Matric}</label>}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Email") && (
-                                                    <div className="InputField">
-                                                        <div className="InputLabelField">
-                                                            <input
-                                                                type="email"
-                                                                className={`input ${(emailRegex.test(email)) ? 'valid' : 'invalid'}`}
-                                                                onChange={(e) => { setEmail(e.target.value) }}
-                                                                required
-                                                                id="email"
-                                                            />
-                                                            {!email && <label for="email" className={`LabelInput ${(email) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faEnvelope} /> {languageText.formEmail}</label>}
+                                                    )}
+                                                    {form.inputs.includes("Email") && (
+                                                        <div className="InputField">
+                                                            <div className="InputLabelField">
+                                                                <input
+                                                                    type="email"
+                                                                    className={`input ${(emailRegex.test(email)) ? 'valid' : 'invalid'}`}
+                                                                    onChange={(e) => { setEmail(e.target.value) }}
+                                                                    required
+                                                                    id="email"
+                                                                />
+                                                                {!email && <label for="email" className={`LabelInput ${(email) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faEnvelope} /> {languageText.formEmail}</label>}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Phone No.") && (
-                                                    <div className="InputField">
-                                                        <div className="InputLabelField">
-                                                            <input
-                                                                type="number"
-                                                                className={`input ${(combinedPhoneRegex.test(phone)) ? 'valid' : 'invalid'}`}
-                                                                onChange={(e) => { setPhone(e.target.value) }}
-                                                                required
-                                                                id="phone"
-                                                            />
-                                                            {!phone && <label for="phone" className={`LabelInput ${(phone) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faPhone} /> {languageText.formPhone}</label>}
+                                                    )}
+                                                    {form.inputs.includes("Phone No.") && (
+                                                        <div className="InputField">
+                                                            <div className="InputLabelField">
+                                                                <input
+                                                                    type="number"
+                                                                    className={`input ${(combinedPhoneRegex.test(phone)) ? 'valid' : 'invalid'}`}
+                                                                    onChange={(e) => { setPhone(e.target.value) }}
+                                                                    required
+                                                                    id="phone"
+                                                                />
+                                                                {!phone && <label for="phone" className={`LabelInput ${(phone) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faPhone} /> {languageText.formPhone}</label>}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Faculty") && (
-                                                    <div className="InputField">
-                                                        <select
-                                                            className={`input ${(faculty) ? 'valid' : 'invalid'}`}
-                                                            onChange={(e) => setFaculty(e.target.value)}
-                                                            required
-                                                        >
-                                                            <option value="" disabled selected hidden> {languageText.formFaculty}</option>
-                                                            <option value="Electrical" >{languageText.FKE}</option>
-                                                            <option value="Computing" >{languageText.FC}</option>
-                                                            <option value="Mechanical" >{languageText.FKM}</option>
-                                                            <option value="Civil" >{languageText.FKA}</option>
-                                                            <option value="Chemical" >{languageText.FKT}</option>
-                                                            <option value="Bridging" >{languageText.Found}</option>
-                                                            <option value="Other" >{languageText.Other}</option>
-                                                        </select>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Year") && (
-                                                    <div className="InputField">
-                                                        <select
-                                                            className={`input ${(year) ? 'valid' : 'invalid'}`}
-                                                            onChange={(e) => setYear(e.target.value)}
-                                                            required
-                                                        >
-                                                            <option value="" disabled selected hidden>{languageText.formYear}</option>
-                                                            <option value="2019" >2019</option>
-                                                            <option value="2020" >2020</option>
-                                                            <option value="2021" >2021</option>
-                                                            <option value="2022" >2022</option>
-                                                            <option value="2023" >2023</option>
-                                                            <option value="2024" >2024</option>
-                                                            {/* <option value="2025" >2025</option> */}
-                                                        </select>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Semester") && (
-                                                    <div className="InputField">
-                                                        <select
-                                                            className={`input ${(semester) ? 'valid' : 'invalid'}`}
-                                                            onChange={(e) => setSemester(e.target.value)}
-                                                            required
-                                                        >
-                                                            <option value="" disabled selected hidden>{languageText.formSemester}</option>
-                                                            <option value="Bridging & Foundation" >{languageText.Found}</option>
-                                                            <option value="1" >1</option>
-                                                            <option value="2" >2</option>
-                                                            <option value="3" >3</option>
-                                                            <option value="4" >4</option>
-                                                            <option value="5" >5</option>
-                                                            <option value="6" >6</option>
-                                                            <option value="7" >7</option>
-                                                            <option value="8" >8</option>
-                                                            <option value="Masters" >{languageText.Masters}</option>
-                                                            <option value="PhD" >{languageText.PhD}</option>
-                                                            {/* <option value="2025" >2025</option> */}
-                                                        </select>
-                                                    </div>
-                                                )}
-                                                {form.inputs.includes("Picture") && (
-                                                    <div className="InputField">
-                                                        <label for="picture" className={`LabelInputImg ${(picture) ? 'valid' : 'invalid'}`}>
-                                                            <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faCamera} />{selectedImageText || languageText.picture}</div>
-                                                            {(picture) ? <button className="XImgButton" onClick={handleRemovePictureImage}>
-                                                                <FontAwesomeIcon icon={faXmark} />
-                                                            </button>
-                                                                : <FontAwesomeIcon icon={faCloudArrowUp} />}
-                                                        </label>
-                                                        <input
-                                                            type="file"
-                                                            accept="image/*"
-                                                            id="picture"
-                                                            style={{ display: 'none' }}
-                                                            required
-                                                            className={`input ${(picture) ? 'valid' : ''}`}
-                                                            onChange={handlePictureImgChange}
+                                                    )}
+                                                    {form.inputs.includes("Faculty") && (
+                                                        <div className="InputField">
+                                                            <select
+                                                                className={`input ${(faculty) ? 'valid' : 'invalid'}`}
+                                                                onChange={(e) => setFaculty(e.target.value)}
+                                                                required
+                                                            >
+                                                                <option value="" disabled selected hidden> {languageText.formFaculty}</option>
+                                                                <option value="Electrical" >{languageText.FKE}</option>
+                                                                <option value="Computing" >{languageText.FC}</option>
+                                                                <option value="Mechanical" >{languageText.FKM}</option>
+                                                                <option value="Civil" >{languageText.FKA}</option>
+                                                                <option value="Chemical" >{languageText.FKT}</option>
+                                                                <option value="Bridging" >{languageText.Found}</option>
+                                                                <option value="Other" >{languageText.Other}</option>
+                                                            </select>
+                                                        </div>
+                                                    )}
+                                                    {form.inputs.includes("Year") && (
+                                                        <div className="InputField">
+                                                            <select
+                                                                className={`input ${(year) ? 'valid' : 'invalid'}`}
+                                                                onChange={(e) => setYear(e.target.value)}
+                                                                required
+                                                            >
+                                                                <option value="" disabled selected hidden>{languageText.formYear}</option>
+                                                                <option value="2019" >2019</option>
+                                                                <option value="2020" >2020</option>
+                                                                <option value="2021" >2021</option>
+                                                                <option value="2022" >2022</option>
+                                                                <option value="2023" >2023</option>
+                                                                <option value="2024" >2024</option>
+                                                                {/* <option value="2025" >2025</option> */}
+                                                            </select>
+                                                        </div>
+                                                    )}
+                                                    {form.inputs.includes("Semester") && (
+                                                        <div className="InputField">
+                                                            <select
+                                                                className={`input ${(semester) ? 'valid' : 'invalid'}`}
+                                                                onChange={(e) => setSemester(e.target.value)}
+                                                                required
+                                                            >
+                                                                <option value="" disabled selected hidden>{languageText.formSemester}</option>
+                                                                <option value="Bridging & Foundation" >{languageText.Found}</option>
+                                                                <option value="1" >1</option>
+                                                                <option value="2" >2</option>
+                                                                <option value="3" >3</option>
+                                                                <option value="4" >4</option>
+                                                                <option value="5" >5</option>
+                                                                <option value="6" >6</option>
+                                                                <option value="7" >7</option>
+                                                                <option value="8" >8</option>
+                                                                <option value="Masters" >{languageText.Masters}</option>
+                                                                <option value="PhD" >{languageText.PhD}</option>
+                                                                {/* <option value="2025" >2025</option> */}
+                                                            </select>
+                                                        </div>
+                                                    )}
+                                                    {form.inputs.includes("Picture") && (
+                                                        <div className="InputField">
+                                                            <label for="picture" className={`LabelInputImg ${(picture) ? 'valid' : 'invalid'}`}>
+                                                                <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faCamera} />{selectedImageText || languageText.picture}</div>
+                                                                {(picture) ? <button className="XImgButton" onClick={handleRemovePictureImage}>
+                                                                    <FontAwesomeIcon icon={faXmark} />
+                                                                </button>
+                                                                    : <FontAwesomeIcon icon={faCloudArrowUp} />}
+                                                            </label>
+                                                            <input
+                                                                type="file"
+                                                                accept="image/*"
+                                                                id="picture"
+                                                                style={{ display: 'none' }}
+                                                                required
+                                                                className={`input ${(picture) ? 'valid' : ''}`}
+                                                                onChange={handlePictureImgChange}
 
-                                                        />
-                                                    </div>
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                {form.inputs.includes("Custom Inputs") && form.customInputs != "" && (
+                                                    <><hr />
+                                                        <div className="PersonalFields">
+                                                            {form.customInputs.map((customInput, index) => (
+
+                                                                <div className="InputField " key={index}>
+                                                                    <div className="InputLabelField ">
+                                                                        <input
+                                                                            type="text"
+                                                                            // onChange={(e) => { setCustomInputs(e.target.value) }}
+                                                                            onChange={(e) => {
+                                                                                setCustomInputs((prevInputs) => {
+                                                                                    const newInputs = [...prevInputs];
+                                                                                    newInputs[index] = e.target.value;
+                                                                                    return newInputs;
+                                                                                })
+                                                                            }}
+                                                                            className={`input ${(customInputs[index]) ? 'valid' : 'invalid'}`}
+                                                                            required
+                                                                            id={`${customInput}_${index}`}
+                                                                        />
+                                                                        {!customInputs[index] && <label htmlFor={`${customInput}_${index}`} className={`LabelInput ${(customInputs[index]) ? 'valid' : 'invalid'}`}>
+                                                                            <img src={InputLogo} className="InputLogo" alt="" /> {customInput}
+                                                                        </label>}
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                            ))}
+                                                        </div>
+                                                    </>
                                                 )}
-                                            </div>
 
-                                            {form.inputs.includes("Custom Inputs") && form.customInputs != "" && (
-                                                <><hr />
-                                                    <div className="PersonalFields">
-                                                        {form.customInputs.map((customInput, index) => (
-
-                                                            <div className="InputField " key={index}>
-                                                                <div className="InputLabelField ">
-                                                                    <input
-                                                                        type="text"
-                                                                        // onChange={(e) => { setCustomInputs(e.target.value) }}
-                                                                        onChange={(e) => {
-                                                                            setCustomInputs((prevInputs) => {
-                                                                                const newInputs = [...prevInputs];
-                                                                                newInputs[index] = e.target.value;
-                                                                                return newInputs;
-                                                                            })
-                                                                        }}
-                                                                        className={`input ${(customInputs[index]) ? 'valid' : 'invalid'}`}
-                                                                        required
-                                                                        id={`${customInput}_${index}`}
-                                                                    />
-                                                                    {!customInputs[index] && <label htmlFor={`${customInput}_${index}`} className={`LabelInput ${(customInputs[index]) ? 'valid' : 'invalid'}`}>
-                                                                        <img src={InputLogo} className="InputLogo" alt="" /> {customInput}
-                                                                    </label>}
+                                                {form.inputs.includes("Payment") && form.paymentQR && (
+                                                    <><hr />
+                                                        <div className="PersonalFields PaymentFields">
+                                                            <p>{languageText.payment}</p>
+                                                            <div className="QRPayment">
+                                                                <div
+                                                                    style={{
+                                                                        display: "flex",
+                                                                        flexDirection: "column",
+                                                                        gap: "15px"
+                                                                    }}>
+                                                                    <img src={form.paymentQR} className="QRCode" alt="" />
+                                                                    {/* {form.paymentAmount && <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>} */}
+                                                                    <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>
 
                                                                 </div>
+                                                                <div className="InputField">
+                                                                    <label for="proof" className={`LabelInputImg ${(proof) ? 'valid' : 'invalid'}`}>
+                                                                        <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faReceipt} />{selectedImageText || languageText.proof}</div>
+                                                                        {(proof) ? <button className="XImgButton" onClick={handleRemoveProofImage}>
+                                                                            <FontAwesomeIcon icon={faXmark} />
+                                                                        </button>
+                                                                            : <FontAwesomeIcon icon={faCloudArrowUp} />}
+                                                                    </label>
+                                                                    <input
+                                                                        type="file"
+                                                                        accept="image/*"
+                                                                        id="proof"
+                                                                        style={{ display: 'none' }}
+                                                                        required
+                                                                        className={`input ${(proof) ? 'valid' : ''}`}
+                                                                        onChange={handleProofImgChange}
+
+                                                                    />
+                                                                </div>
                                                             </div>
-
-
-                                                        ))}
-                                                    </div>
-                                                </>
-                                            )}
-
-                                            {form.inputs.includes("Payment") && form.paymentQR && (
-                                                <><hr />
-                                                    <div className="PersonalFields PaymentFields">
-                                                        <p>{languageText.payment}</p>
-                                                        <div className="QRPayment">
-                                                            <div
-                                                                style={{
-                                                                    display: "flex",
-                                                                    flexDirection: "column",
-                                                                    gap: "15px"
-                                                                }}>
-                                                                <img src={form.paymentQR} className="QRCode" alt="" />
-                                                                {/* {form.paymentAmount && <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>} */}
-                                                                <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>
-
-                                                            </div>
-                                                            <div className="InputField">
-                                                                <label for="proof" className={`LabelInputImg ${(proof) ? 'valid' : 'invalid'}`}>
-                                                                    <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faReceipt} />{selectedImageText || languageText.proof}</div>
-                                                                    {(proof) ? <button className="XImgButton" onClick={handleRemoveProofImage}>
-                                                                        <FontAwesomeIcon icon={faXmark} />
-                                                                    </button>
-                                                                        : <FontAwesomeIcon icon={faCloudArrowUp} />}
-                                                                </label>
-                                                                <input
-                                                                    type="file"
-                                                                    accept="image/*"
-                                                                    id="proof"
-                                                                    style={{ display: 'none' }}
-                                                                    required
-                                                                    className={`input ${(proof) ? 'valid' : ''}`}
-                                                                    onChange={handleProofImgChange}
-
-                                                                />
-                                                            </div>
-                                                        </div>
-                                                        {/* <div className="PaymentAmount">
+                                                            {/* <div className="PaymentAmount">
                                             </div> */}
-                                                    </div>
-                                                </>
-                                            )}
-                                            {form.groupLink && (
-                                                <Link
-                                                    className="GroupLink"
-                                                    to={form.groupLink}
-                                                    target="_blank">
-                                                    {languageText.GroupLink}
-                                                </Link>
-                                            )}
-                                            <button className="button" data-content={languageText.Submit}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svgIcon"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" /></svg>
-                                            </button>
-                                        </form>
+                                                        </div>
+                                                    </>
+                                                )}
+                                                {form.groupLink && (
+                                                    <Link
+                                                        className="GroupLink"
+                                                        // to={}
+                                                        onClick={(e) => { handleGroupClick(e, form.groupLink) }}
+                                                        target="_blank">
+                                                        {languageText.GroupLink}
+                                                    </Link>
+                                                )}
+
+                                                {(buttonClicked || !form.groupLink) && <button className="button" data-content={languageText.Submit}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svgIcon"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" /></svg>
+                                                </button>}
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            ) : (
+                                <div className="CreatedForm NothingHere">
+                                    {language === "en" ? <h2 style={{ margin: "0" }}>Sorry...</h2> : <h2 style={{ margin: "0" }}>معذرة...</h2>}
+                                    {language === "en" ?
+
+                                        <div>The form was either  <span className="NothingColor"> DELETED <FontAwesomeIcon icon={faTrash} /> </span> or <span className="NothingColor"> reached its limit <FontAwesomeIcon icon={faLayerGroup} /></span></div>
+                                        :
+                                        <div>
+                                            <span className="NothingColor">تم حذف <FontAwesomeIcon icon={faTrash} /> </span>
+                                            النموذج أو
+                                            <span className="NothingColor"> وصل إلى الحد الأقصى <FontAwesomeIcon icon={faLayerGroup} /> </span>
+                                        </div>}
+                                </div>
+                            )
 
 
                         ))
@@ -507,18 +533,8 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
             </div >
 
         ) : (
-            <div className="CreatedForm NothingHere">
-                {language === "en" ? <h2 style={{ margin: "0" }}>Sorry...</h2> : <h2 style={{ margin: "0" }}>معذرة...</h2>}
-                {language === "en" ?
+            <div className="LoaderDiv"><Loader /></div>
 
-                    <div>The form was either  <span className="NothingColor"> DELETED <FontAwesomeIcon icon={faTrash} /> </span> or <span className="NothingColor"> reached its limit <FontAwesomeIcon icon={faLayerGroup} /></span></div>
-                    :
-                    <div>
-                        <span className="NothingColor">تم حذف <FontAwesomeIcon icon={faTrash} /> </span>
-                        النموذج أو
-                        <span className="NothingColor"> وصل إلى الحد الأقصى <FontAwesomeIcon icon={faLayerGroup} /> </span>
-                    </div>}
-            </div>
         ));
 
 }

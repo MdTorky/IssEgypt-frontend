@@ -19,8 +19,10 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 100%;
-    padding: 0 150px 0 0;
+    width: fit-content;
+    /* margin-left: -60px; */
+    /* background: red; */
+    /* padding: 0 150px 0 0; */
     flex-direction: column;
     /* margin-left: 0 60% 0 auto; */
 }
@@ -38,7 +40,7 @@
 
 
 .NothingHere {
-    margin-bottom: 40%;
+    margin-bottom: -30px;
     font-size: 2em;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
@@ -46,7 +48,8 @@
     text-align: center;
     justify-content: center;
     margin-left: -60px;
-    margin-top: -100px;
+
+    margin-top: 250px;
     /* align-items: center; */
     height: 100%;
     display: flex;
@@ -866,6 +869,7 @@ input::placeholder {
         width: fit-content;
         margin: auto;
     }
+
 
 
     .CreatedForm .FormLeft img {
