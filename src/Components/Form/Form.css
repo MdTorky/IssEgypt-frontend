@@ -142,7 +142,7 @@
 }
 
 .formBox .GroupLink:hover {
-    width: 50%;
+    /* width: 50%; */
     transform: none;
     letter-spacing: 5px;
     background: mediumseagreen;
