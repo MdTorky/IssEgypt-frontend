@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import { faCommentSlash } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const MemberForm = ({ language, languageData, api, darkMode }) => {
     const { dispatch } = useFormsContext()
@@ -17,12 +18,12 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
     const [faculty, setFaculty] = useState('');
     const [type, setType] = useState('');
     const [committee, setCommittee] = useState('');
-    const [img, setImg] = useState('');
     const [phone, setPhone] = useState('');
     const [linkedIn, setLinkedIn] = useState('');
     const [memberId, setMemberId] = useState('');
     const [error, setError] = useState(null);
 
+    const [img, setImg] = useState('');
 
 
     // const handleSubmit = async (e) => {
@@ -67,16 +68,62 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
 
     // }
 
+    // const handleImageUpload = (e) => {
+    //     const file = e.target.files[0];
+    //     if (file) {
+    //         setImg(file);
+    //     }
+    // };
+
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
+
         if (file) {
-            // Set the image file to the state
             setImg(file);
+            // setSelectedImageText(file.name);
         }
     };
 
+    const uploadFile = async (type, file) => {
+        const data = new FormData();
+        data.append("file", file);
+        data.append("upload_preset", type === 'image' ? 'members_preset' : '');
+
+        try {
+            let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+            // console.log('Cloud Name:', process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
+            let resourceType = type === 'image' ? 'image' : 'video';
+            let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
+
+            const res = await axios.post(api, data);
+            const { secure_url } = res.data;
+            console.log(secure_url);
+            return secure_url;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const imgUrl = await uploadFile('image', img);
+
+
+
+        const form = {
+            name,
+            arabicName,
+            email,
+            faculty,
+            type,
+            committee,
+            img: imgUrl,
+            phone,
+            linkedIn,
+            memberId,
+        }
 
         const formData = new FormData();
         formData.append('name', name);
@@ -91,22 +138,27 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
         formData.append('memberId', memberId);
 
 
-        for (const pair of formData.entries()) {
-            console.log(pair[0], pair[1]);
-        }
-
         try {
+            // const response = await fetch(`${api}/api/member`, {
+            //     method: 'POST',
+            //     body: formData,
+            //     access: 'public',
+            // });
             const response = await fetch(`${api}/api/member`, {
                 method: 'POST',
-                body: formData,
-                access: 'public',
+                body: JSON.stringify(form),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
 
+            const json = await response.json();
+
             if (!response.ok) {
-                const json = await response.json();
                 setError(json.error);
-            } else {
-                setError(null);
+            }
+            if (response.ok) {
+                setError(null)
 
                 const json = await response.json();
                 dispatch({
@@ -294,9 +346,14 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                             <input
                                 placeholder={`\uf03e  ${languageText.formImg}`}
                                 type="file"
+                                accept="image/*"
+                                id="img"
+
                                 className={`input ${(img) ? 'valid' : 'invalid'}`}
                                 // onChange={(e) => { setImg(e.target.value) }}
-                                onChange={(e) => handleImageUpload(e)}
+                                // onChange={(e) => handleImageUpload(e)}
+                                onChange={handleImageUpload}
+
                             />
                         </div>
                         <div className="InputField">
