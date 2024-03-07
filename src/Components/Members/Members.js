@@ -263,7 +263,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.SocialMembers, "Social")}
                 {card(languageText.CultureMembers, "Cultural")}
                 {card(languageText.SportMembers, "Sports")}
-                {card(languageText.MediaMembers, "Media")}
+                {/* {card(languageText.MediaMembers, "Media")} */}
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
                 {card(languageText.ReadingMembers, "Reading")}

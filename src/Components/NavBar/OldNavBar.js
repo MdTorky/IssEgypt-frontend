@@ -10,30 +10,17 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { useLocation } from 'react-router-dom';
 import { useDarkMode } from '../../context/DarkModeContext'; // Import useDarkMode
 import { Icon } from '@iconify/react';
-import { useLanguage } from '../../context/language';
-import languageData from '../../language.json';
-
-
-
-const NavBar = () => {
+const NavBar = ({ language, toggleLanguage, languageData }) => {
     const location = useLocation();
     const { darkMode, toggleDarkMode } = useDarkMode(); // Get dark mode state and toggle function
 
+    useEffect(() => {
+        // Ensure that the languageData and language are updated when the language changes
+    }, [language, toggleLanguage, languageData]);
 
-    // useEffect(() => {
-    // }, [language, toggleLanguage, languageData]);
+    const languageText = languageData[language];
+    const isRtl = language === 'ar';
 
-    // const languageText = languageData[language];
-    // const isRtl = language === 'ar';
-
-    const { language, changeLanguage } = useLanguage();
-    const { isRTL } = useLanguage();
-    const languageText = languageData[language]
-
-    const handleChangeLanguage = () => {
-        const newLanguage = language === 'en' ? 'ar' : 'en';
-        changeLanguage(newLanguage);
-    };
     return (
         <div className={`navbar ${language === "ar" ? "arabic" : ""}`}>
             <ul>
@@ -56,7 +43,8 @@ const NavBar = () => {
                     </Link>
                 </li>
                 {/* <li className={location.pathname === '/gallery' ? 'active' : ''}><a href="/gallery"><icon data-content={languageText.gallery}><FontAwesomeIcon icon={faImage} /></icon></a></li> */}
-                <li onClick={handleChangeLanguage} className='language'>
+                <li onClick={toggleLanguage} className='language'>
+
                     <icon data-content={languageText.language}>
                         {/* {language === "en" ? "EN" : "ع"} */}
                         {language === "en" ? <Icon icon="ri:english-input" width="2rem" height="2rem" /> : <Icon icon="mdi:abjad-arabic" width="2rem" height="2rem" />}
