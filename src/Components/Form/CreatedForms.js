@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Icon } from '@iconify/react';
 
 const CreateForm = ({ language, languageData, api, darkMode }) => {
     const { type, formId } = useParams();
@@ -492,7 +493,8 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                         </div>
                                                     </>
                                                 )}
-                                                {form.groupLink && <p className="JoinGroup">{languageText.joinGroup}</p>}
+                                                {/* {form.groupLink && <p className="JoinGroup">{languageText.joinGroup}</p>} */}
+                                                {form.groupLink && <p className="formError"><Icon icon="ooui:error" />{languageText.joinGroup}</p>}
                                                 {form.groupLink && (
                                                     <Link
                                                         className="GroupLink"
