@@ -337,7 +337,19 @@ button.CustomInputButton {
     display: flex;
     align-items: center;
     gap: 8px;
-    white-space: nowrap;
+    /* width: 0%; */
+    white-space: wrap;
+}
+
+.CustomInput {
+    height: 100px;
+}
+
+.CustomLabelInput {
+    /* display: flex; */
+    /* justify-content: center; */
+    top: 0 !important;
+    bottom: 0 !important;
 }
 
 

@@ -435,11 +435,11 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                                     return newInputs;
                                                                                 })
                                                                             }}
-                                                                            className={`input ${(customInputs[index]) ? 'valid' : 'invalid'}`}
+                                                                            className={`input CustomInput ${(customInputs[index]) ? 'valid' : 'invalid'}`}
                                                                             required
                                                                             id={`${customInput}_${index}`}
                                                                         />
-                                                                        {!customInputs[index] && <label htmlFor={`${customInput}_${index}`} className={`LabelInput ${(customInputs[index]) ? 'valid' : 'invalid'}`}>
+                                                                        {!customInputs[index] && <label htmlFor={`${customInput}_${index}`} className={`LabelInput CustomLabelInput ${(customInputs[index]) ? 'valid' : 'invalid'}`}>
                                                                             <img src={InputLogo} className="InputLogo" alt="" /> {customInput}
                                                                         </label>}
 
