@@ -6,6 +6,7 @@ import { faEnvelope, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 import Loader from '../Loader/Loader'
 import MemberCard from '../components/MemberCard';
@@ -126,23 +127,25 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 (a, b) => a.memberId - b.memberId
             );
                 break;
-            case "Academic": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Academic").sort((a, b) => a.name.localeCompare(b.name));
+            case "Academic": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Academic").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Bank": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Bank").sort((a, b) => a.name.localeCompare(b.name));
+            case "Bank": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Bank").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Social": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Social").sort((a, b) => a.name.localeCompare(b.name));
+            case "Social": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Social").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Cultural": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Culture").sort((a, b) => a.name.localeCompare(b.name));
+            case "Cultural": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Culture").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Sports": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Sports").sort((a, b) => a.name.localeCompare(b.name));
+            case "Sports": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Sports").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Logistics": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Logistics").sort((a, b) => a.name.localeCompare(b.name));
+            case "Logistics": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Logistics").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Media": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Media").sort((a, b) => a.name.localeCompare(b.name));
+            case "Media": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Media").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Women": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Women Affairs").sort((a, b) => a.name.localeCompare(b.name));
+            case "Women": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Women Affairs").sort((a, b) => a.name.localeCompare(b.name));
                 break;
-            case "Reading": members = filteredMembers.filter((member) => member.type == "Member" && member.committee == "Reading").sort((a, b) => a.name.localeCompare(b.name));
+            case "Reading": members = filteredMembers.filter((member) => (member.type == "Member" || member.type == "BestMember") && member.committee == "Reading").sort((a, b) => a.name.localeCompare(b.name));
+                break;
+            case "BestMembers": members = filteredMembers.filter((member) => member.type == "BestMember").sort((a, b) => a.name.localeCompare(b.name));
                 break;
             default: break;
         }
@@ -161,6 +164,9 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
         return defaultMember;
     }
+
+    // const BestMember = filteredMembers.filter((member) => member.type === "BestMember").sort((a, b) => a.name.localeCompare(b.name));
+
 
     // const boardMembers = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4);
 
@@ -223,7 +229,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
         return (
             <div className="memberBox">
                 <div className="memberBack">
-                    <h2>{text}</h2>
+                    <h2 className={`${text === "Best Members" ? "BestMemberText" : ""} `}>{text}</h2>
                     <div className="people">
                         {/* {loading ? (
                             <div><Loader /></div>
@@ -253,6 +259,10 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 />
             </div>
 
+            {/* <div className="bestMembersButton"> */}
+            <Link to="/underConstruction" className="bestMembersButton" data-content={languageText.premiumMembers}></Link>
+            {/* </div> */}
+
 
             <h1>{languageText.meettheteam}</h1>
             <div className="allMembers">
@@ -267,6 +277,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
                 {card(languageText.ReadingMembers, "Reading")}
+                {/* {card("Best Members", "BestMembers")} */}
                 {loading && (
                     <div><Loader /></div>
                 )}

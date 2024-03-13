@@ -99,7 +99,7 @@
 
 .PresidentBox img {
     width: 30%;
-    top: 0%;
+    top: 5%;
     bottom: 0;
     right: 0;
     padding: 10px;
@@ -339,8 +339,10 @@
 
 .NameStyle {
     font-size: 1em;
-    white-space: nowrap
+    white-space: nowrap;
 }
+
+
 
 .TableHeading tr td {
     width: 100px;
@@ -353,6 +355,11 @@
     padding: 5px 0;
     background: var(--theme);
     position: relative;
+}
+
+.TableHeading.TableItems.TableItemsBest {
+    background: mediumseagreen;
+
 }
 
 .TableItems td {
@@ -383,7 +390,7 @@
 }
 
 .TableItems:hover td:nth-child(2) {
-    font-size: 1.2em !important;
+    font-size: 1em !important;
     font-weight: bold !important;
 }
 
@@ -495,7 +502,7 @@
     }
 
     .PresidentBox:hover img {
-        top: -52%;
+        top: -60%;
         right: 20px
     }
 
@@ -516,9 +523,9 @@
 
     .Statistics {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         width: 100%;
-
+        box-sizing: border-box;
     }
 
     .StatisticsBox {

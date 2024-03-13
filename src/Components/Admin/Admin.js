@@ -103,7 +103,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
 
     const adminFilter = members.filter((member) => member.committee === user?.committee);
     const presidentFilter = adminFilter.find((member) => member.type === 'President' || member.type === 'VicePresident');
-    const normalMember = adminFilter.filter((member) => member.type === 'Member' || member.type === 'VicePresident').sort((a, b) => a.name.localeCompare(b.name));
+    const normalMember = adminFilter.filter((member) => member.type === 'Member' || member.type === 'VicePresident' || member.type === 'BestMember').sort((a, b) => a.name.localeCompare(b.name));
 
     const membersCount = normalMember.filter((member) => member.committee === user?.committee).length;
 
@@ -116,16 +116,15 @@ const Admin = ({ language, languageData, api, darkMode }) => {
 
     const Members = (member) => {
         return (
-            <tr className={`TableHeading TableItems`}>
+            <tr className={`TableHeading TableItems ${member.type === "BestMember" ? "TableItemsBest" : ""}`}>
+                {/* { && <Icon icon="openmoji:star" />} */}
                 <td>
                     <img src={member.img} alt="" />
 
                 </td>
                 <td className="NameStyle"
-
                 >
                     {language === "en" ? member?.name : member?.arabicName}
-
                 </td>
                 <td>
                     <div className="icons TableIcons">
@@ -158,12 +157,76 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             <span class="tooltip Delete" >{languageText.delete}</span>
                             <span><FontAwesomeIcon icon={faTrash} /></span>
                         </button> */}
+                        <button className="icon Star" onClick={() => { handleChangeMemberType({ member: member }) }}>
+                            <span class="tooltip Delete" >{member.type === "BestMember" ? languageText.demote : languageText.promote} </span>
+                            {/* <span><FontAwesomeIcon icon={faTrash} /></span> */}
+
+                            <span>{member.type != "BestMember" ? <Icon icon="openmoji:star" /> : <Icon icon="line-md:star-filled" />}</span>
+                        </button>
                     </div>
                 </td>
             </tr>
         )
     }
 
+
+    const handleChangeMemberType = async ({ member }) => {
+        try {
+
+
+            console.log(member.type)
+            let memberType = null;
+            if (member.type === "Member") {
+                memberType = "BestMember";
+            } else {
+                memberType = "Member";
+            }
+            const response = await fetch(`${api}/api/member/${member._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ type: memberType }),
+
+            });
+
+
+            // console.log('API Response:', response);
+
+            if (!response.ok) {
+                console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+
+
+            dispatch({
+                type: 'UPDATE_ITEM',
+                collection: 'members',
+                payload: { id: member._id, changes: { type: memberType } },
+            });
+
+            {
+                toast.success(`${languageText.statusChanged}`, {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: darkMode ? "dark" : "colored",
+                    style: {
+                        fontFamily: language === 'ar' ?
+                            'Noto Kufi Arabic, sans-serif' :
+                            'Poppins, sans-serif',
+                    },
+                });
+            }
+
+        } catch (error) {
+            console.error('An error occurred while updating form status:', error);
+        }
+    };
 
 
 

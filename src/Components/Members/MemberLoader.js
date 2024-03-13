@@ -46,34 +46,34 @@ const MemberLoader = ({ languageText, committee, role }) => {
     else if (committee === "Reading" && role === "VicePresident") {
         return languageText.ReadingVicePresident
     }
-    else if (committee === "Academic" && role === "Member") {
+    else if (committee === "Academic" && (role === "Member" || role === "BestMember")) {
         return languageText.AcademicMember
     }
-    else if (committee === "Bank" && role === "Member") {
+    else if (committee === "Bank" && (role == "Member" || role == "BestMember")) {
         return languageText.BankMember
     }
-    else if (committee === "Social" && role === "Member") {
+    else if (committee === "Social" && (role == "Member" || role == "BestMember")) {
         return languageText.SocialMember
     }
-    else if (committee === "Culture" && role === "Member") {
+    else if (committee === "Culture" && (role == "Member" || role == "BestMember")) {
         return languageText.CultureMember
     }
-    else if (committee === "Sports" && role === "Member") {
+    else if (committee === "Sports" && (role == "Member" || role == "BestMember")) {
         return languageText.SportMember
     }
-    else if (committee === "Media" && role === "Member") {
+    else if (committee === "Media" && (role == "Member" || role == "BestMember")) {
         return languageText.MediaMember
     }
-    else if (committee === "Logistics" && role === "Member") {
+    else if (committee === "Logistics" && (role == "Member" || role == "BestMember")) {
         return languageText.LogisticsMember
     }
-    else if (committee === "Women Affairs" && role === "Member") {
+    else if (committee === "Women Affairs" && (role == "Member" || role == "BestMember")) {
         return languageText.WomenMember
     }
     else if (committee === "PR" && role === "Member") {
         return languageText.PublicRelation
     }
-    else if (committee === "Reading" && role === "Member") {
+    else if (committee === "Reading" && (role == "Member" || role == "BestMember")) {
         return languageText.ReadingMember
     }
 }
