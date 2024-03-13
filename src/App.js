@@ -50,7 +50,6 @@ function App() {
   // Initialize the language state with the default language (e.g., "en")
   // const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
   const { darkMode, setDarkMode } = useDarkMode(); // Initialize to false
-  const [visitorCount, setVisitorCount] = useState(0);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
