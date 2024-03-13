@@ -241,6 +241,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                             {membersToShow.map((boardMember) => (
                                 <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
                             ))}
+                            {/* {loading2(number)} */}
                         </>
                     </div>
                 </div>
