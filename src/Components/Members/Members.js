@@ -38,7 +38,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 }
 
                 const data = await response.json();
-                console.log(data);
                 dispatch({
                     type: 'SET_ITEM',
                     collection: 'members',
@@ -259,9 +258,8 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 />
             </div>
 
-            {/* <div className="bestMembersButton"> */}
+            {/* <Link to="/premiumMembers" className="bestMembersButton" data-content={languageText.premiumMembers}></Link> */}
             <Link to="/underConstruction" className="bestMembersButton" data-content={languageText.premiumMembers}></Link>
-            {/* </div> */}
 
 
             <h1>{languageText.meettheteam}</h1>
@@ -277,7 +275,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
                 {card(languageText.ReadingMembers, "Reading")}
-                {/* {card("Best Members", "BestMembers")} */}
+                {card("Best Members", "BestMembers")}
                 {loading && (
                     <div><Loader /></div>
                 )}

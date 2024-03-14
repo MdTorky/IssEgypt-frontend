@@ -17,17 +17,18 @@
 }
 
 .underConst {
-    margin-bottom: 30%;
+    margin-bottom: 40%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     margin-top: -50px;
     align-items: center;
     height: 100%;
 
     justify-content: center;
 }
+
 
 .arabic .notFound {
     margin-right: 0;
@@ -237,6 +238,13 @@
 
     }
 
+
+    .arabic .underConst {
+        margin-bottom: 80%;
+        /* margin-top: 10px; */
+
+    }
+
     .TopFound h2 {
         font-size: 8em;
     }
@@ -247,7 +255,7 @@
 
     .BottomFound h2 {
         margin: 0;
-        font-size: 2.1em;
+        font-size: 1.6em;
     }
 
     .BottomFound>p {
