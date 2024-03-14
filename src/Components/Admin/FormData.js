@@ -350,7 +350,11 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                                 {form && form?.inputs && (
                                     filteredData.map((formData) => (
                                         <tr className="ResponseHeader ResponseContent" key={formData._id}>
-                                            {form.inputs.includes("Picture") && (<td><img src={formData.picture} alt="" /></td>)}
+                                            {form.inputs.includes("Picture") && (<td
+                                                style={{
+                                                    cursor: "pointer"
+                                                }}
+                                                onClick={() => { window.open(formData.picture, "_blank") }}><img src={formData.picture} alt="" /></td>)}
                                             {form.inputs.includes("Full Name") && (<td>{formData.fullName}</td>)}
                                             {form.inputs.includes("Matric") && (<td style={{ textTransform: "uppercase" }}>{formData.matric}</td>)}
                                             {form.inputs.includes("Email") && (<td>{formData.email}</td>)}
@@ -364,7 +368,11 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                                                 ))
 
                                             )}
-                                            {form.inputs.includes("Payment") && (<td><img src={formData.proof} alt="" /></td>)}
+                                            {form.inputs.includes("Payment") && (<td
+                                                style={{
+                                                    cursor: "pointer"
+                                                }}
+                                                onClick={() => { window.open(formData.proof, "_blank") }}><img src={formData.proof} alt="" /></td>)}
                                         </tr>
                                     ))
                                 )}
