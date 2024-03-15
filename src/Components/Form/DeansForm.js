@@ -392,7 +392,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
                                                                 required
                                                             >
                                                                 <option value="" disabled selected hidden>{languageText.formSemester}</option>
-                                                                <option value="Bridging & Foundation" >{languageText.Found}</option>
+                                                                {/* <option value="Bridging & Foundation" >{languageText.Found}</option> */}
                                                                 <option value="1" >1</option>
                                                                 <option value="2" >2</option>
                                                                 <option value="3" >3</option>
