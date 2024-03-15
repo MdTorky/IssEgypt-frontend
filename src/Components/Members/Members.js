@@ -275,7 +275,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
                 {card(languageText.ReadingMembers, "Reading")}
-                {card("Best Members", "BestMembers")}
+                {/* {card("Best Members", "BestMembers")} */}
                 {loading && (
                     <div><Loader /></div>
                 )}

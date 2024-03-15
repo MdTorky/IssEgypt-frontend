@@ -134,8 +134,8 @@ function App() {
 
               {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/memberForm/admin" element={user ? <MemberForm darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/allMembers/admin" element={user ? <AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/memberForm/admin" element={<MemberForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/formCreator/admin" element={user ? <FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
