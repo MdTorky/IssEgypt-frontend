@@ -110,7 +110,11 @@ const Admin = ({ language, languageData, api, darkMode }) => {
 
 
     const formsCount = forms.filter((form) => form.type === user?.committee).length;
-    const formsFilter = forms.filter((form) => form.type === user?.committee);
+    let formCommittee = user?.committee
+    if (user.committee === "Academic" || user.committee === "Vice") {
+        formCommittee = "Academic"
+    }
+    const formsFilter = forms.filter((form) => form.type === formCommittee);
 
 
 

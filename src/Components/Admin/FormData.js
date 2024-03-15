@@ -317,10 +317,10 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                         {filterLength > 0 && <button className="DownloadButton Excel" onClick={handleDownloadExcel}>
                             <FontAwesomeIcon icon={faFileExcel} /> {languageText.Excel}
                         </button>}
-                        {form?.inputs.includes("Picture") && <button className="DownloadButton Pictures" onClick={handleDownloadAllPictures}>
+                        {form?.inputs.includes("Picture") && filterLength > 0 && <button className="DownloadButton Pictures" onClick={handleDownloadAllPictures}>
                             <FontAwesomeIcon icon={faImage} />  {languageText.dPictures}
                         </button>}
-                        {form?.inputs.includes("Payment") && <button className="DownloadButton Proof" onClick={handleDownloadAllProofPictures}>
+                        {form?.inputs.includes("Payment") && filterLength > 0 && <button className="DownloadButton Proof" onClick={handleDownloadAllProofPictures}>
                             <FontAwesomeIcon icon={faFileZipper} />  {languageText.dProof}
                         </button>}
                     </div>
