@@ -287,9 +287,7 @@ const Services = ({ language, languageData, darkMode }) => {
                             <Link className="AnnStories2Button" to="/charity" data-text={languageText.courseTip}>
                                 <Icon icon="mdi:charity" className="svgIcon" />
                             </Link>
-                            <Link className="AnnStories2Button" to="/Dean's" data-text={languageText.Dean}>
-                                <Icon icon="solar:star-bold" className="svgIcon" />
-                            </Link>
+
                         </div>
                     </div>
 

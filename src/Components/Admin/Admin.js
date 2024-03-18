@@ -436,7 +436,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
         return (
             // <tr className={`TableHeading TableItems`}>
             <tr className={`TableHeading TableItems`} onClick={(e) => {
-                copyLink(`issegypt.vercel.app/ISSform/${form._id}`)
+                copyLink(`issegypt.vercel.app/${encodeURIComponent(form.eventName)}`)
             }}>
                 <td>
 
@@ -450,7 +450,8 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                     <div className="icons TableIcons">
 
 
-                        <Link className="icon" to={`/ISSform/${form._id}`}
+                        {/* <Link className="icon" to={`/ISSform/${form._id}`} */}
+                        <Link className="icon" to={`/${encodeURIComponent(form.eventName)}`}
                             onClick={(e) => {
                                 e.stopPropagation(); // Stop the propagation of the click event
                             }}>

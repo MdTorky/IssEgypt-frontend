@@ -420,6 +420,7 @@
     "GroupLink": "Group Link",
     "QrImage": "QR Image",
     "PaymentAmount": "Payment Amount",
+    "FormLimit": "Form Limit",
     "AddForm": "Create Form",
     "Submit": "Submit Form",
     "Update": "Update",
@@ -963,6 +964,8 @@
     "GroupLink": "رابط المجموعة",
     "QrImage": "صورة الQR",
     "PaymentAmount": "مبلغ الدفع",
+    "FormLimit": "حد النموذج",
+
     "AddForm": "قم بإنشاء النموذج",
     "Submit": "أرسال النموذج",
     "Update": "تحديث",

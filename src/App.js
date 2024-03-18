@@ -126,7 +126,7 @@ function App() {
               <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/ISSForm/:formId" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/:formName" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/Dean's" element={<DeansForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/charity" element={<CharityForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/coursesTips" element={<CoursesTips darkMode={darkMode} language={language} languageData={languageData} api={api} />} />

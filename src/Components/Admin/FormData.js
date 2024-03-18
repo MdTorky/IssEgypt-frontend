@@ -74,6 +74,7 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                 });
                 setForm(data);
 
+
             } catch (error) {
                 console.error('An error occurred while fetching form data:', error);
             } finally {
@@ -87,6 +88,14 @@ const FormData = ({ language, languageData, api, darkMode }) => {
 
 
 
+
+    // useEffect(() => {
+    //     const issResponses = ISSForm.filter((form) => form.eventID === formId).length;
+
+    //     if (form && issResponses >= form.limit) {
+    //         handleStatusChange(form);
+    //     }
+    // }, [ISSForm, form, formId]);
 
 
 
@@ -164,6 +173,77 @@ const FormData = ({ language, languageData, api, darkMode }) => {
 
 
     const filterLength = ISSForm.filter((form) => form.eventID === formId).length
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const handleStatusChange = async (selectedForm) => {
+    //     try {
+
+
+
+    //         const response = await fetch(`${api}/api/forms/${selectedForm._id}`, {
+    //             method: 'PATCH',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({ status: false }),
+
+    //         });
+
+
+    //         console.log('API Response:', response);
+
+    //         if (!response.ok) {
+    //             console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
+    //             return;
+    //         }
+
+
+    //         dispatch({
+    //             type: 'UPDATE_ITEM',
+    //             collection: 'forms',
+    //             payload: { id: selectedForm._id, changes: { status: false } },
+    //         });
+
+    //         {
+    //             toast.success(`${languageText.statusChanged}`, {
+    //                 position: "bottom-center",
+    //                 autoClose: 3000,
+    //                 hideProgressBar: true,
+    //                 closeOnClick: true,
+    //                 pauseOnHover: true,
+    //                 draggable: true,
+    //                 progress: undefined,
+    //                 theme: darkMode ? "dark" : "colored",
+    //                 style: {
+    //                     fontFamily: language === 'ar' ?
+    //                         'Noto Kufi Arabic, sans-serif' :
+    //                         'Poppins, sans-serif',
+    //                 },
+    //             });
+    //         }
+
+    //     } catch (error) {
+    //         console.error('An error occurred while updating form status:', error);
+    //     }
+    // };
+
+
+
+
+
+
 
     const handleDownloadExcel = () => {
         if (!filteredData || filteredData.length === 0) {

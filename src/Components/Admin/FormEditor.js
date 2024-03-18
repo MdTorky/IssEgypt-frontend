@@ -11,6 +11,8 @@ import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { Icon } from '@iconify/react';
+
 
 import "../Form/Form.css"
 
@@ -144,6 +146,7 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
                     paymentQR: paymentQRUrl,
                     paymentAmount: form.paymentAmount,
                     customInputs: [...form.customInputs, ...customInputs],
+                    limit: form.limit,
                 }),
             });
 
@@ -441,6 +444,7 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
                                         </div>
                                         <div id="locationsCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none', flexDirection: 'column' }}>
                                             {generateCheckbox([
+                                                { type: "Form Limit" },
                                                 { type: "Full Name" },
                                                 { type: "Matric" },
                                                 { type: "Email" },
@@ -457,6 +461,28 @@ const FormEditor = ({ language, languageData, api, darkMode }) => {
                                 </div>
                             </div>
 
+
+
+                            {inputs.includes("Form Limit") && (
+                                <div className="InputField">
+                                    <div className="InputLabelField">
+
+                                        <input
+                                            // placeholder=" &#xf0d6; &nbsp; Payment Amount"
+                                            type="number"
+                                            className={`input ${(form.limit) ? 'valid' : ''}`}
+                                            onChange={handleInputChange}
+                                            id="limit"
+                                            name="limit"
+                                            required
+                                            value={form.limit}
+
+                                        />
+                                        {!form.limit && <label for="limit" className={`LabelInput ${(form.limit) ? 'valid' : ''}`}><Icon icon="fluent:people-error-20-filled" /> {languageText.FormLimit}</label>}
+
+                                    </div>
+                                </div>
+                            )}
 
                             {inputs.includes("Payment") && (
                                 <div className="InputRow">

@@ -72,6 +72,7 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
     const [expandedCategories, setExpandedCategories] = useState(false);
     const [inputs, setInputs] = useState([]);
     const [paymentAmount, setPaymentAmount] = useState('');
+    const [formLimit, setFormLimit] = useState('');
     const [img, setImg] = useState(null);
     const [paymentQR, setPaymentQR] = useState(null);
     const navigate = useNavigate();
@@ -121,7 +122,8 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
     };
 
 
-    const handleRemoveImage = () => {
+    const handleRemoveImage = (e) => {
+        e.preventDefault()
         setImg(null);
         setSelectedImageText(null);
     }
@@ -177,7 +179,8 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
             paymentQR: paymentQRUrl, // Updated to use payment QR URL
             paymentAmount,
             customInputs,
-            status: true
+            status: true,
+            limit: formLimit
         }
 
         const response = await fetch(`${api}/api/forms`, {
@@ -448,6 +451,7 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                             </div>
                                             <div id="locationsCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none', flexDirection: 'column' }}>
                                                 {generateCheckbox([
+                                                    { type: "Form Limit" },
                                                     { type: "Full Name" },
                                                     { type: "Matric" },
                                                     { type: "Email" },
@@ -508,6 +512,26 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
                                 </div>
 
+
+                            )}
+
+                            {inputs.includes("Form Limit") && (
+                                <div className="InputField">
+                                    <div className="InputLabelField">
+
+                                        <input
+                                            // placeholder=" &#xf0d6; &nbsp; Payment Amount"
+                                            type="number"
+                                            className={`input ${(formLimit) ? 'valid' : ''}`}
+                                            onChange={(e) => { setFormLimit(e.target.value) }}
+                                            required
+                                            id="formLimit"
+
+                                        />
+                                        {!formLimit && <label for="formLimit" className={`LabelInput ${(formLimit) ? 'valid' : ''}`}><Icon icon="fluent:people-error-20-filled" /> {languageText.FormLimit}</label>}
+
+                                    </div>
+                                </div>
 
                             )}
                             {inputs.includes("Custom Inputs") && (

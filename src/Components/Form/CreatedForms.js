@@ -17,11 +17,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Icon } from '@iconify/react';
 
 const CreateForm = ({ language, languageData, api, darkMode }) => {
-    const { type, formId } = useParams();
+    const { type, formName } = useParams();
+    const formId = decodeURIComponent(formName);
     // console.log(formId);
     const navigate = useNavigate();
 
-    const { forms = [], dispatch } = useFormsContext();
+    const { ISSForm = [], forms = [], dispatch } = useFormsContext();
     const languageText = languageData[language];
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
@@ -45,6 +46,33 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [formId]);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${api}/api/issForms`);
+                if (!response.ok) {
+                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
+                    return;
+                }
+
+                const data = await response.json();
+                dispatch({
+                    type: 'SET_ITEM',
+                    collection: 'ISSForm',
+                    payload: data,
+                });
+            } catch (error) {
+                console.error('An error occurred while fetching data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [api, dispatch, formId]);
+
 
 
     useEffect(() => {
@@ -79,7 +107,54 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
         fetchData();
     }, [api, dispatch, formId]);
 
-    const filter = forms.filter((form) => form._id === formId);
+
+    const filter = forms.filter((form) => form.eventName === formId);
+
+
+    useEffect(() => {
+        const issResponses = ISSForm.filter((issForm) => issForm.eventID === filter[0]._id).length;
+
+        if (filter && issResponses >= filter[0]?.limit) {
+            handleStatusChange(filter[0]); // Pass the selected form to the function
+        }
+    }, []);
+
+
+
+    const handleStatusChange = async (selectedForm) => {
+        try {
+
+
+
+            const response = await fetch(`${api}/api/forms/${selectedForm._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ status: false }),
+
+            });
+
+
+            console.log('API Response:', response);
+
+            if (!response.ok) {
+                console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+
+
+            dispatch({
+                type: 'UPDATE_ITEM',
+                collection: 'forms',
+                payload: { id: selectedForm._id, changes: { status: false } },
+            });
+
+
+        } catch (error) {
+            console.error('An error occurred while updating form status:', error);
+        }
+    };
 
     const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -131,6 +206,8 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
 
 
+
+
     const uploadFile = async (type, file) => {
         const data = new FormData();
         data.append("file", file);
@@ -171,7 +248,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
         const form = {
             type: type,
             eventName: filter[0].eventName,
-            eventID: formId,
+            eventID: filter[0]._id,
             fullName,
             matric,
             email,
