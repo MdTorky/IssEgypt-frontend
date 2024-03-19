@@ -3,7 +3,8 @@
     "language": "English",
 
     "Deans": "This form is for students with a GPA of more than 3.5 in their last semester. Please submit the proof from the examination slip on your profile page at the UTM portal, and we wish you the best of success.",
-    "FormDeadline": "The Form Will Be Open from March 15 Till March 17",
+    "Exceptional": "This form is for students who have received an award at a university event, received a good employment offer, either inside Malaysia or overseas, or completed an achievement at UTM; basically, they performed something amazing during their university years.",
+    "FormDeadline": "The Form Will Be Open for the First 5 Members Only",
     "Dean": "Dean's List",
 
     "Palestine": "Free Palestine",
@@ -540,7 +541,10 @@
     "language": "عربي",
 
     "Deans": "هذا النموذج مخصص للطلاب الحاصلين على معدل تراكمي يزيد عن 3.5 في الفصل الدراسي الأخير. يُرجى إرسال الدليل من قسيمة الاختبار الموجودة على صفحة ملفك الشخصي على بوابة UTM، ونتمنى لك كل النجاح.",
-    "FormDeadline": "سيتم فتح النموذج من 15 مارس حتى 17 مارس",
+    "Exceptional": "هذا النموذج مخصص للطلاب الذين حصلوا على جائزة في إحدى الفعاليات الجامعية، أو حصلوا على عرض عمل جيد، سواء داخل ماليزيا أو في الخارج، أو أكملوا إنجازًا في UTM؛ من الأخر، قاموا بأداء شيء مذهل خلال سنوات دراستهم الجامعية.",
+
+    "FormDeadline": "سيتم فتح النموذج لأول 5 أعضاء فقط",
+
     "Dean": "قائمة العميد",
 
     "Palestine": "فلسطين حرة",

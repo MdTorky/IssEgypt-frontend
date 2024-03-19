@@ -79,7 +79,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
         fetchData();
     }, [api, dispatch, formId]);
 
-    const filter = forms.filter((form) => form._id === "65f31d912050e8c5f1d408f5");
+    const filter = forms.filter((form) => form._id === "65f9c155b9e5637508723686");
 
     const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -172,7 +172,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
         const form = {
             type: type,
             eventName: filter[0].eventName,
-            eventID: "65f31d912050e8c5f1d408f5",
+            eventID: "65f9c155b9e5637508723686",
             fullName,
             matric,
             email,
@@ -268,7 +268,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
                                         <img src={form.eventImg} alt="" />
                                         <div className="FormLeftDetails">
                                             {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
-                                            <p>{languageText.Deans}</p>
+                                            <p>{languageText.Exceptional}</p>
                                             <p style={{
                                                 display: "flex",
                                                 alignItems: "center",
@@ -401,8 +401,8 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
                                                                 <option value="6" >6</option>
                                                                 <option value="7" >7</option>
                                                                 <option value="8" >8</option>
-                                                                {/* <option value="Masters" >{languageText.Masters}</option> */}
-                                                                {/* <option value="PhD" >{languageText.PhD}</option> */}
+                                                                <option value="Masters" >{languageText.Masters}</option>
+                                                                <option value="PhD" >{languageText.PhD}</option>
                                                                 {/* <option value="2025" >2025</option> */}
                                                             </select>
                                                         </div>
@@ -467,7 +467,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
                                                 {form.inputs.includes("Payment") && form.paymentQR && (
                                                     <><hr />
                                                         <div className="PersonalFields PaymentFields">
-                                                            {/* <p>{languageText.payment}</p> */}
+                                                            <p>{languageText.proof} (PNG)</p>
                                                             <div className="QRPayment">
                                                                 {/* <div
                                                                     style={{
