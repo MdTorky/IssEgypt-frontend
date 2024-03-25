@@ -397,14 +397,23 @@ const Services = ({ language, languageData, darkMode }) => {
                                 <p className="day-text">{languageText.extraCourses2}</p>
                                 <FontAwesomeIcon icon={faGraduationCap} className='moon' />
                             </Link>
-                            <Link to="" className="newStudentCard notyet">
-                                {/* <Link to="/coursesTips" className="newStudentCard"> */}
+                            {/* <Link to="" className="newStudentCard notyet"> */}
+                            <Link to="/coursesTips" className="newStudentCard">
                                 <p className="time-text"><span>{languageText.coursesTips}</span><span className="time-sub-text"></span></p>
-                                {/* <p className="day-text">{languageText.coursesTips2}</p> */}
-                                <p className="day-text">{languageText.handbook2}</p>
+                                <p className="day-text">{languageText.coursesTips2}</p>
+                                {/* <p className="day-text">{languageText.handbook2}</p> */}
 
                                 <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
+
+                            <Link to="" className="newStudentCard notyet">
+                                <p className="time-text"><span>{languageText.library}</span><span className="time-sub-text"></span></p>
+                                {/* <p className="day-text">{languageText.library2}</p> */}
+                                <p className="day-text">{languageText.handbook2}</p>
+
+                                <Icon icon="ion:library" className='moon' />
+                            </Link>
+
                             <Link to="" className="newStudentCard notyet">
                                 {/* <Link to="/tokens" className="newStudentCard"> */}
                                 <p className="time-text"><span>{languageText.Tokens}</span><span className="time-sub-text"></span></p>

@@ -257,6 +257,7 @@
     "clubs": "Clubs",
     "extraCourses": "Extra Courses",
     "coursesTips": "Courses Tips",
+    "library": "ISS Library",
 
     "residence2": "Find Your Ideal Home",
     "attractions2": "Explore The City",
@@ -268,6 +269,7 @@
     "clubs2": "Join Vibrant Communities",
     "extraCourses2": "Supplemental Courses",
     "coursesTips2": "Get Some Fresh Tips",
+    "library2": "Book any Academic Book",
 
     "on": "On Campus",
     "off": "Off Campus",
@@ -799,6 +801,7 @@
     "bankAccount": "حساب البنك",
     "groups": "مجموعات",
     "internships": "التدريب",
+    "library": "مكتبة الاتحاد",
 
     "clubs": "الأندية",
     "extraCourses": "دورات اضافية",
@@ -813,6 +816,7 @@
     "clubs2": "انضم إلى الأندية المتعددة",
     "extraCourses2": "دورات تكميلية إضافية",
     "coursesTips2": "احصل على بعض النصائح الطازجة",
+    "library2": "احجز أي كتاب أكاديمي",
 
     "on": "داخل الحرم الجامعي",
     "off": "خارج الحرم الجامعي",
