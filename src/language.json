@@ -537,7 +537,13 @@
     "TokensShowcaseAdmin": "Admin's Tokens Showcase",
     "NoTokens": "Number of Tokens",
     "searchToken": "Search For Your Name or Matric",
-    "ManageTokens": "Manage Tokens"
+    "ManageTokens": "Manage Tokens",
+
+    "BookForm": "Book Form",
+    "BookName": "Book Title",
+    "BookImage": "Book Cover Image",
+    "BookFaculty": "Select the Book's Faculty",
+    "BookSubmitted": "Book Submitted Successfully"
   },
   "ar": {
     "language": "عربي",

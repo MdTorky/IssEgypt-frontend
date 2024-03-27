@@ -46,6 +46,7 @@ import { useLanguage } from './context/language';
 import languageData from './language.json';
 import BestMembers from './Components/Members/BestMembers';
 import DeansForm from './Components/Form/DeansForm';
+import BookForm from './Components/Book/BookForm';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -131,6 +132,7 @@ function App() {
               <Route path="/coursesTips" element={<CoursesTips darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/tokens" element={<TokensDisplay darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/ExceptionalStudents" element={<DeansForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/bookForm" element={<BookForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />

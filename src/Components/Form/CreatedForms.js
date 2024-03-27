@@ -114,8 +114,10 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     useEffect(() => {
         const issResponses = ISSForm.filter((issForm) => issForm.eventID === filter[0]._id).length;
 
-        if (filter && issResponses >= filter[0]?.limit) {
-            handleStatusChange(filter[0]); // Pass the selected form to the function
+        if (filter[0]?.limit) {
+            if (filter && issResponses >= filter[0]?.limit) {
+                handleStatusChange(filter[0]); // Pass the selected form to the function
+            }
         }
     }, []);
 
