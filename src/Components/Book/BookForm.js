@@ -123,7 +123,7 @@ const BookForm = ({ api, language, languageData, darkMode }) => {
         data.append("upload_preset", type === 'image' ? 'books_preset' : '');
 
         try {
-            let cloudName = "dmv4mxgn5";
+            let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME2;
             let resourceType = type === 'image' ? 'image' : 'video';
             let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
 
