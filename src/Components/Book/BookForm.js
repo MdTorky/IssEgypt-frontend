@@ -96,7 +96,7 @@ const BookForm = ({ api, language, languageData, darkMode }) => {
     };
     const facultyCheckboxes = ({ faculty, facultyId }) => {
         return (
-            <div className="CategoryInput" >
+            <div className="CategoryInput" key={facultyId} >
 
                 <input
                     type="checkbox"
@@ -219,7 +219,7 @@ const BookForm = ({ api, language, languageData, darkMode }) => {
 
                             <div className="InputField">
 
-                                <label for="bookImage" className={`LabelInputImg ${(bookImage) ? 'valid' : ''}`}>
+                                <label htmlFor="bookImage" className={`LabelInputImg ${(bookImage) ? 'valid' : ''}`}>
                                     <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="flowbite:book-solid" />{selectedImageText || languageText.BookImage}</div>
                                     {(bookImage)
                                         ? <button className="XImgButton" onClick={handleRemoveImage}>
@@ -240,7 +240,7 @@ const BookForm = ({ api, language, languageData, darkMode }) => {
                                 <div className="multiselect">
                                     <div className="selectBox" onClick={() => showCheckboxes()}>
                                         <select>
-                                            <option><Icon icon="lucide:university" />{languageText.BookFaculty}</option>
+                                            <option>{languageText.BookFaculty}</option>
                                         </select>
                                         <div className="overSelect"></div>
                                     </div>

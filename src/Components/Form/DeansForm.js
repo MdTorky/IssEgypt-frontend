@@ -79,7 +79,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
         fetchData();
     }, [api, dispatch, formId]);
 
-    const filter = forms.filter((form) => form._id === "65f9c155b9e5637508723686");
+    const filter = forms.filter((form) => form._id === "660c25d3a30eefa713a22182");
 
     const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -172,7 +172,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
         const form = {
             type: type,
             eventName: filter[0].eventName,
-            eventID: "65f9c155b9e5637508723686",
+            eventID: "660c25d3a30eefa713a22182",
             fullName,
             matric,
             email,
@@ -265,10 +265,10 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
                                     {console.log(form.status)}
 
                                     <div className="FormLeft">
-                                        <img src={form.eventImg} alt="" />
+                                        {/* <img src={form.eventImg} alt="" /> */}
                                         <div className="FormLeftDetails">
                                             {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
-                                            <p>{languageText.Exceptional}</p>
+                                            {/* <p>{languageText.Exceptional}</p>
                                             <p style={{
                                                 display: "flex",
                                                 alignItems: "center",
@@ -278,7 +278,7 @@ const DeansForm = ({ language, languageData, api, darkMode }) => {
                                                 margin: "auto",
                                                 color: "var(--bg)",
                                                 padding: "5px 10px"
-                                            }}><Icon icon="ooui:error" />{languageText.FormDeadline}</p>
+                                            }}><Icon icon="ooui:error" />{languageText.FormDeadline}</p> */}
                                             {/* <p>{form._id}</p> */}
                                         </div>
                                     </div>

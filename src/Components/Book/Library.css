@@ -1,0 +1,258 @@
+.Library {
+    margin-bottom: 20%;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 130px;
+}
+
+.arabic .Library {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    margin-left: 130px;
+    margin-right: 0px;
+
+}
+
+.LibraryContainer {
+    /* background: blue; */
+    padding: 10px;
+    display: flex;
+    /* flex-direction: row; */
+    flex-direction: column;
+    gap: 20px;
+}
+
+.SearchBar button {
+    border: none;
+    background: none;
+    color: #8b8ba7;
+}
+
+/* styling of whole input container */
+.SearchBar {
+    --timing: 0.3s;
+    --width-of-input: 200px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --input-bg: #fff;
+    --border-color: var(--theme);
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg, #fff);
+}
+
+.SearchInput {
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+}
+
+.SearchBar:before {
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: var(--border-height);
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    transition: transform var(--timing) ease;
+}
+
+.SearchBar:focus-within {
+    border-radius: var(--after-border-radius);
+}
+
+.SearchBar input:focus {
+    outline: none;
+}
+
+.SearchBar:focus-within:before {
+    transform: scale(1);
+}
+
+.SearchReset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.SearchBar input:not(:placeholder-shown)~.SearchReset {
+    opacity: 1;
+    visibility: visible;
+}
+
+.SearchBar svg {
+    width: 17px;
+    margin-top: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.NormalBooksContainer {
+    background: var(--bg2);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+
+.NormalBooks {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.BookCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--bg2);
+    /* padding: 30px 30px 0 30px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 150px;
+    padding: 0 5px;
+    position: relative;
+}
+
+
+.BookAvailability {
+    position: absolute;
+    color: mediumspringgreen;
+    right: 0;
+}
+
+.BookImage {
+    padding: 15px;
+    background: var(--hover);
+    border-radius: 10px 10px 0 0;
+}
+
+
+.BookCard img {
+    width: 130px;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: rgba(255, 255, 255, 0.629) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.BookCardText {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
+    height: 100%;
+    margin: 10px 0;
+}
+
+
+.BookCardText h3 {
+    margin: 0;
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: 800;
+    white-space: wrap;
+}
+
+
+.BookBox {
+    width: 80px;
+    height: auto;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 0.9em;
+    color: var(--theme)
+}
+
+.BookBox:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+}
+
+.BookBox:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+}
+
+.BookBox:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.BookBox:hover:before {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+}
+
+.BookBox:hover:after {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+}
+
+.BookCardText button {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
