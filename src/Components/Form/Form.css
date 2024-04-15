@@ -874,6 +874,37 @@ input::placeholder {
 
 
 
+.FormImage {
+    width: 150px;
+    /* background: blue; */
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.FormImage img {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 4px double var(--theme)
+}
+
+.FormDetails {
+    margin: 0;
+    font-weight: 800;
+    /* background: var(--hover); */
+    color: var(--hover);
+    padding: 5px;
+    border-radius: 10px;
+    border: 4px double var(--theme)
+}
+
+input[type=datetime-local]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+
+
+
 @media screen and (max-width: 700px) {
     .Form {
         margin-bottom: 50% !important;

@@ -16,13 +16,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Icon } from '@iconify/react';
 
-const CreateForm = ({ language, languageData, api, darkMode }) => {
-    const { type, formName } = useParams();
-    const formId = decodeURIComponent(formName);
+const WebApplicationsSecurity = ({ language, languageData, api, darkMode }) => {
+    const { type, formId } = useParams();
     // console.log(formId);
     const navigate = useNavigate();
 
-    const { ISSForm = [], forms = [], dispatch } = useFormsContext();
+    const { forms = [], dispatch } = useFormsContext();
     const languageText = languageData[language];
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
@@ -46,33 +45,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [formId]);
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${api}/api/issForms`);
-                if (!response.ok) {
-                    console.error(`Error fetching suggestions. Status: ${response.status}, ${response.statusText}`);
-                    return;
-                }
-
-                const data = await response.json();
-                dispatch({
-                    type: 'SET_ITEM',
-                    collection: 'ISSForm',
-                    payload: data,
-                });
-            } catch (error) {
-                console.error('An error occurred while fetching data:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, [api, dispatch, formId]);
-
 
 
     useEffect(() => {
@@ -107,56 +79,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
         fetchData();
     }, [api, dispatch, formId]);
 
-
-    const filter = forms.filter((form) => form.eventName === formId);
-
-
-    useEffect(() => {
-        const issResponses = ISSForm.filter((issForm) => issForm.eventID === filter[0]._id).length;
-
-        if (filter[0]?.limit) {
-            if (filter && issResponses >= filter[0]?.limit) {
-                handleStatusChange(filter[0]); // Pass the selected form to the function
-            }
-        }
-    }, []);
-
-
-
-    const handleStatusChange = async (selectedForm) => {
-        try {
-
-
-
-            const response = await fetch(`${api}/api/forms/${selectedForm._id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ status: false }),
-
-            });
-
-
-            console.log('API Response:', response);
-
-            if (!response.ok) {
-                console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
-                return;
-            }
-
-
-            dispatch({
-                type: 'UPDATE_ITEM',
-                collection: 'forms',
-                payload: { id: selectedForm._id, changes: { status: false } },
-            });
-
-
-        } catch (error) {
-            console.error('An error occurred while updating form status:', error);
-        }
-    };
+    const filter = forms.filter((form) => form._id === "661c9cbb09fe92d45be6d34a");
 
     const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -176,7 +99,8 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     };
 
 
-    const handleRemoveProofImage = () => {
+    const handleRemoveProofImage = (e) => {
+        e.preventDefault()
         setProof(null);
         setSelectedImageText(null);
     };
@@ -194,12 +118,11 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     };
 
 
-    const handleRemovePictureImage = () => {
+    const handleRemovePictureImage = (e) => {
+        e.preventDefault()
         setPicture(null);
         setSelectedPictureText(null);
     };
-
-
 
 
 
@@ -250,7 +173,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
         const form = {
             type: type,
             eventName: filter[0].eventName,
-            eventID: filter[0]._id,
+            eventID: "661c9cbb09fe92d45be6d34a",
             fullName,
             matric,
             email,
@@ -320,8 +243,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
 
 
-
-
     // Example usage
 
     return (
@@ -340,19 +261,35 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                         filter.map((form) => (
                             form.status === true ? (
                                 <div className="FormAll">
-                                    {console.log(form.status)}
 
                                     <div className="FormLeft">
                                         <img src={form.eventImg} alt="" />
                                         <div className="FormLeftDetails">
                                             {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
-                                            <p>{form.eventDescription}</p>
+                                            {/* <p>{languageText.Exceptional}</p> */}
+                                            <p style={{ direction: "rtl" }}>☀ السلام عليكم ورحمة الله وبركاته ☀</p>
+                                            <p> The Academic Committee of the Egyptian Federation is pleased to open registration for the Web Applications Security 101 workshop under the supervision of Team CyberX </p>
+                                            <ul>📌 Topics covered in this workshop:
+                                                <li><p>Covering topics about programming websites from scratch and how to build websites.   </p></li>
+                                                <li><p>Covering the basics of the Linux operating system and how to use it.</p></li>
+                                                <li><p>Covering how to secure websites and how to hack them.</p></li>
+                                                <li><p>Competition and prizes on the last day for participants.</p></li>
+                                            </ul>
+                                            {/* <p style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: "10px",
+                                                background: "var(--theme)",
+                                                width: "fit-content",
+                                                margin: "auto",
+                                                color: "var(--bg)",
+                                                padding: "5px 10px"
+                                            }}><Icon icon="ooui:error" />{languageText.FormDeadline}</p> */}
                                         </div>
                                     </div>
                                     <div className="FormCenter">
                                         <p className="FormTitle">{languageText.FillForm}</p>
                                         <div className="Hint">
-
                                             <p>{languageText.valid}</p>
                                             <p>{languageText.invalid}</p>
                                         </div>
@@ -460,7 +397,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                 required
                                                             >
                                                                 <option value="" disabled selected hidden>{languageText.formSemester}</option>
-                                                                <option value="Bridging & Foundation" >{languageText.Found}</option>
+                                                                {/* <option value="Bridging & Foundation" >{languageText.Found}</option> */}
                                                                 <option value="1" >1</option>
                                                                 <option value="2" >2</option>
                                                                 <option value="3" >3</option>
@@ -535,7 +472,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                 {form.inputs.includes("Payment") && form.paymentQR && (
                                                     <><hr />
                                                         <div className="PersonalFields PaymentFields">
-                                                            <p>{languageText.payment}</p>
+                                                            <p>{languageText.proof} (PNG)</p>
                                                             <div className="QRPayment">
                                                                 <div
                                                                     style={{
@@ -544,7 +481,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                         gap: "15px"
                                                                     }}>
                                                                     <img src={form.paymentQR} className="QRCode" alt="" />
-                                                                    {/* {form.paymentAmount && <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>} */}
                                                                     <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>
 
                                                                 </div>
@@ -574,7 +510,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                     </>
                                                 )}
                                                 {/* {form.groupLink && <p className="JoinGroup">{languageText.joinGroup}</p>} */}
-                                                {form.groupLink && <p className="formError"><Icon icon="ooui:error" />{languageText.joinGroup}</p>}
+                                                {form.groupLink && <p className="formError"><Icon icon="ooui:error" />{languageText.UploadProof}</p>}
                                                 {form.groupLink && (
                                                     <Link
                                                         className="GroupLink"
@@ -585,12 +521,9 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                     </Link>
                                                 )}
 
-                                                {/* {(buttonClicked || !form.groupLink) && <button className="button" data-content={languageText.Submit}>
+                                                {proof && <button className="button" data-content={languageText.Submit}>
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svgIcon"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" /></svg>
-                                                </button>} */}
-                                                <button className="button" data-content={languageText.Submit}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svgIcon"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" /></svg>
-                                                </button>
+                                                </button>}
                                             </form>
                                         </div>
                                     </div>
@@ -627,5 +560,5 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
 }
 
-export default CreateForm;
+export default WebApplicationsSecurity;
 

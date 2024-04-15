@@ -406,7 +406,8 @@ const Services = ({ language, languageData, darkMode }) => {
                                 <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
 
-                            <Link to="/library" className="newStudentCard notyet">
+                            {/* <Link to="/library" className="newStudentCard notyet"> */}
+                            <Link to="/" className="newStudentCard notyet">
                                 <p className="time-text"><span>{languageText.library}</span><span className="time-sub-text"></span></p>
                                 {/* <p className="day-text">{languageText.library2}</p> */}
                                 <p className="day-text">{languageText.handbook2}</p>

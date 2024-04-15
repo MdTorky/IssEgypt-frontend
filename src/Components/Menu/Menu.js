@@ -132,7 +132,7 @@ const Menu = ({ language, languageData, api }) => {
                 }
 
                 const data = await response.json();
-                console.log(data);
+                // console.log(data);
                 dispatch({
                     type: 'SET_ITEM',
                     collection: 'members',

@@ -2,7 +2,7 @@ import './Library.css'
 import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { Icon } from '@iconify/react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,9 +13,41 @@ import InputField from '../components/FormInputField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus } from '@fortawesome/free-solid-svg-icons';
+import ScrollableFeed from 'react-scrollable-feed'
+const Categories = ({ text, status, onChange, type }) => {
+
+    return (
+        // <div className="CategoriesCheckbox">
+        //     <input
+        //         id={text}
+        //         className="CheckBoxInput"
+        //         type="checkbox"
+        //         checked={status}
+        //         onChange={() => onChange(type)}
+        //         disabled={status === "true" ? "disabled" : ""}
+        //     />
+        //     <label htmlFor={text} className="CheckBoxLabel">
+        //         {!status && <span className="CheckBoxSpan"></span>}
+        //         <div className="CheckBoxText">{text}</div>
+        //     </label>
+        // </div>
+
+        <div className="CustomCheckBoxHolder">
+
+            <input type="checkbox" onChange={() => onChange(type)} id={text} className="CustomCheckBoxInput" />
+            <label for={text} className="CustomCheckBoxWrapper">
+                <div className="CustomCheckBox">
+                    <div className="InnerText">{text}</div>
+                </div>
+            </label>
+
+        </div>
+    );
+};
 
 
-const Library = ({ api, languageData, language }) => {
+
+const Library = ({ api, languageData, language, darkMode }) => {
 
     const [search, setSearch] = useState();
     const languageText = languageData[language];
@@ -26,9 +58,12 @@ const Library = ({ api, languageData, language }) => {
     const [error, setError] = useState(null);
     const [messages, setMessages] = useState(false)
     const [searchTerm, setSearchTerm] = useState('');
+    const [showCategories, setShowCategories] = useState(false);
+    const [selectedCategories, setSelectedCategories] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true)
             try {
                 const response = await fetch(`${api}/api/book`);
                 if (!response.ok) {
@@ -48,6 +83,8 @@ const Library = ({ api, languageData, language }) => {
                     payload: data,
                 });
                 setMessages(false);
+                setLoading(false)
+
                 // setFacultyLoading(false);
 
             } catch (error) {
@@ -69,21 +106,38 @@ const Library = ({ api, languageData, language }) => {
     });
 
 
+    const handleCategoryChange = (category) => {
+        if (category === 'All') {
+            setSelectedCategories([]);
+        } else {
+            const index = selectedCategories.indexOf(category);
+            if (index === -1) {
+                setSelectedCategories([...selectedCategories, category]);
+            } else {
+                setSelectedCategories(selectedCategories.filter((cat) => cat !== category));
+            }
+        }
+    };
+    const FilterBooks = (books) => {
+        const categoryFilter = selectedCategories.length === 0 || books.bookFaculty.some((book) => selectedCategories.includes(book));
+        return categoryFilter;
+    };
+
 
     const BookCard = ({ book }) => {
         return (
             <div className="BookCard">
-                <div className="BookAvailability"><Icon icon="oui:dot" /></div>
+                <div className={`BookAvailability ${book.bookStatus === 'Available' ? 'Available' : ""}`}><Icon icon="oui:dot" /></div>
                 <div className="BookImage">
+                    <div className={`BookStatus ${book.bookStatus === 'Available' ? 'Available' : ""}`} data-attr={book.bookStatus}></div>
                     <img src={book.bookImage} alt="" />
                 </div>
                 <div className="BookCardText">
                     <h3>{book.bookName}</h3>
-                    <button>
-                        <span class="BookBox">
-                            Book Now
-                        </span>
-                    </button>
+                    {book.bookStatus === "Available" && <Link className='BookingButton' to={`/bookingForm/${book._id}`} ><span class="BookNow">Book Now</span>
+                        <span class="BookNowIcon">
+                            <Icon icon="fluent:book-star-20-filled" />
+                        </span></Link>}
                 </div>
             </div>
         )
@@ -113,12 +167,56 @@ const Library = ({ api, languageData, language }) => {
                 </div>
 
                 <div className="NormalBooksContainer">
+
+
+
                     <h2>Library Books</h2>
-                    <div className="NormalBooks">
-                        {filteredData.map((book) => (
-                            <BookCard book={book} key={book.id} />
-                        ))}
+                    {loading ? (
+                        <div><Loader darkMode={darkMode} /></div>
+                    ) : (
+                        <div className="NormalBooks">
+                            {filteredData.map((book) => (
+                                <BookCard book={book} key={book.id} />
+                            ))}
+                        </div>
+                    )}
+
+                </div>
+
+                <div className="NormalBooksContainer">
+                    <h2>{languageText.Faculty}</h2>
+
+
+                    <div className="BookCategories">
+                        <div className="BookFaculties">
+                            {Categories({ text: "All", status: selectedCategories.includes("All"), onChange: handleCategoryChange, type: "All" })}
+                            {Categories({ text: languageText.FKE, status: selectedCategories.includes("FKE"), onChange: handleCategoryChange, type: "FKE" })}
+                            {Categories({ text: languageText.FC, status: selectedCategories.includes("FC"), onChange: handleCategoryChange, type: "FC" })}
+                            {Categories({ text: languageText.FKM, status: selectedCategories.includes("FKM"), onChange: handleCategoryChange, type: "FKM" })}
+                            {Categories({ text: languageText.FKA, status: selectedCategories.includes("FKA"), onChange: handleCategoryChange, type: "FKA" })}
+                            {Categories({ text: languageText.FKT, status: selectedCategories.includes("FKT"), onChange: handleCategoryChange, type: "FKT" })}
+                            {Categories({ text: languageText.FAB, status: selectedCategories.includes("FAB"), onChange: handleCategoryChange, type: "FAB" })}
+                            {Categories({ text: languageText.FGHT, status: selectedCategories.includes("FGHT"), onChange: handleCategoryChange, type: "FGHT" })}
+                            {Categories({ text: languageText.FP, status: selectedCategories.includes("FP"), onChange: handleCategoryChange, type: "FP" })}
+                            {Categories({ text: languageText.FM, status: selectedCategories.includes("FM"), onChange: handleCategoryChange, type: "FM" })}
+                            {Categories({ text: languageText.FS, status: selectedCategories.includes("FS"), onChange: handleCategoryChange, type: "FS" })}
+                            {Categories({ text: languageText.FIC, status: selectedCategories.includes("FIC"), onChange: handleCategoryChange, type: "FIC" })}
+                            {Categories({ text: languageText.Found, status: selectedCategories.includes("Found"), onChange: handleCategoryChange, type: "Found" })}
+
+                        </div>
+
+
                     </div>
+                    {loading ? (
+                        <div><Loader darkMode={darkMode} /></div>
+                    ) : (
+                        <div className="NormalBooks">
+                            {filteredData.filter(FilterBooks).map((book) => (
+                                <BookCard book={book} key={book.id} />
+                            ))}
+                        </div>
+
+                    )}
                 </div>
             </div>
         </div>

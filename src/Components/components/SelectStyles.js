@@ -4,7 +4,7 @@ const SelectStyles = (darkMode) => ({
         borderRadius: "15px",
         padding: "5px",
         cursor: "pointer",
-        background: darkMode ? "linear-gradient(to right, var(--hover), var(--hover2));" : '',
+        background: darkMode ? "linear-gradient(to right, var(--hover), var(--hover2));" : 'linear-gradient(to left, var(--bg), var(--bg2))',
         border: state.isFocused ? "3px solid var(--theme)" : "3px solid lightgrey",
         // "&:hover": {
         //     borderColor: "red",

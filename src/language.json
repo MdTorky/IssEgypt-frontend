@@ -140,6 +140,13 @@
     "blogTitle3": "Achievements",
     "blogDescription": "The International Student Society (ISS) Egypt has truly made remarkable strides in fostering a vibrant and inclusive community, leaving an indelible mark on the academic and social landscape. Through a rich tapestry of events and initiatives, ISS Egypt has demonstrated unwavering dedication to its members and the broader community. From meticulously organized academic symposiums that ignite intellectual curiosity to culturally enriching gatherings that celebrate diversity, ISS Egypt has showcased an impressive range of accomplishments. Their commitment to newcomers is especially noteworthy, as they extend a warm embrace to new students, easing their transition into the academic world. Moreover, during the sacred month of Ramadan, ISS Egypt's events have created a sense of togetherness and spirituality, embodying the essence of unity. Additionally, their Islamic events have served as platforms for deepening faith and understanding. In sum, ISS Egypt's achievements in organizing social, academic, cultural events, as well as their dedicated support for newcomers and the observance of important traditions, exemplify their outstanding commitment to fostering a vibrant and harmonious community.",
 
+    "ISSEgyptEvents": "ISSEgypt Events",
+    "ISSEventTitle1": "Eid Celebrations",
+    "ISSEventDescription1": "It offered a glimpse into how ISS Egypt celebrates Eid in partnership with other student societies such as ISS Yemen, Sudan, and many more at UTM. There were other activities, such as free face painting for children and free henna for girls.",
+
+    "ISSEventTitle2": "Arab Iftar Gathering",
+    "ISSEventDescription2": "All Arabic societies at UTM University were pleased to organize an event for a special Arabic breakfast. It was a big event where students enjoyed the best Arabic food and the magical Ramadan atmosphere.",
+
     "AcademicEvents": "Academic Committee Events",
     "AcademicEventTitle1": "From UTM to Abroad: Australia",
     "AcademicEventCreator1": "GMS",
@@ -161,27 +168,27 @@
     "AcademicEventCreator5": "Amro Zakaria",
     "AcademicEventDescription5": "Eng Amro carried out a system modelling revision for the finals to aid students with their problems regarding this topic. He also solved a past test to give them a hint about how their exam will be.",
 
+    "AcademicEventTitle6": "Mastering A Competition",
+    "AcademicEventCreator6": "Adnan Shafi",
+    "AcademicEventDescription6": "This seminar taught students excellent ideas and tactics for achieving in academic, professional, and extracurricular competitions, ranging from explaining how to find competitions to strategies for simply winning them.",
+
     "SocialEvents": "Social Committee Events",
-    "SocialEventTitle1": "Symposium For Palestine",
-    "SocialEventDescription1": "In compliance with our duty towards the Palestinian issue, we, the Association of Arab Communities at UTM University, held a symposium for Palestine.",
+    "SocialEventTitle1": "Welcome Day 2024",
+    "SocialEventDescription1": "It was an event where all Egyptian students and prominent guests could attend the Welcome Day reception and breakfast together and get to know each other, particularly new students. Students who succeeded academically and were distinguished by their accomplishments or membership in clubs were honored.",
 
-    "SocialEventTitle2": "School Trip Inside UTM",
-    "SocialEventDescription2": "A school trip was organized to introduce students to university, foster connections with future generations, and encourage them to choose the appropriate major for their university career.",
+    "SocialEventTitle2": "Symposium For Palestine",
+    "SocialEventDescription2": "In compliance with our duty towards the Palestinian issue, we, the Association of Arab Communities at UTM University, held a symposium for Palestine.",
 
-    "SocialEventTitle3": "First-Aid Workshop",
-    "SocialEventDescription3": "We delved into the world of emergency response, equipping participants with life-saving skills and knowledge. From basic CPR techniques to handling critical situations.",
+    "SocialEventTitle3": "School Trip Inside UTM",
+    "SocialEventDescription3": "A school trip was organized to introduce students to university, foster connections with future generations, and encourage them to choose the appropriate major for their university career.",
 
     "CultureEvents": "Cultural Committee Events",
-    "CultureEventTitle1": "Al-Azhar Al-Shareef Lecture",
-    "CultureEventCreator1": "Hossam Elmihy",
-    "CultureEventDescription1": "Al-Azhar Alshareef was invited to Malaysia to discuss Ramadan and how to make the most of it.",
+    "CultureEventTitle1": "Ramadan Qur'an Competition",
+    "CultureEventDescription1": "Both ISS Egypt and Yemen cooperated to conduct one of the largest Islamic tournaments in UTM. It was separated into three sections: Hifz (Al Kahf, 1, 3, and 5 Chapters), Telawah, and Hadith.",
 
-    "CultureEventTitle2": "The Prophet Muhammad's Biography Lecture",
-    "CultureEventCreator2": "Ahmed Ali",
-    "CultureEventDescription2": "Sheikh Ahmed Ali listed some images from the Messenger Muhammad's biography, may God bless him and grant him peace.",
-
-    "CultureEventTitle3": "Ramadan Competition",
-    "CultureEventDescription3": "Three Ramadan contests were held: Quran Recitation, Cultural Competition (Seerah), and Nasheed (Islamic Song) with prizes for the winners.",
+    "CultureEventTitle2": "Ramadan; Fasting of the Eyes and Tongue",
+    "CultureEventCreator2": "Dr. Ramadan Khamis",
+    "CultureEventDescription2": "It was an event to greet Ramadan by explaining to students that fasting isn't just about stopping eating; there are other things we need to stop doing, such as fasting with the eye and tongue.",
 
     "ReadingClubEvents": "Reading Club Events",
     "ReadingEventTitle1": "Reading is a Lifestyle",
@@ -191,6 +198,10 @@
     "ReadingEventTitle2": "Arabic; Identity and civilization",
     "ReadingClubCreator2": "Abdulhadi Saleh",
     "ReadingEventDescription2": "The Reading Club and Cultural Committee organized a seminar to promote the importance of the Arabic language, its impact on languages, daily use, language sources, books, and benefits.",
+
+    "SportsEvents": "Sports Committee Events",
+    "SportsEventTitle1": "Nile League Championship",
+    "SportsEventDescription1": "A Futsal League was organized amongst teams from various countries to determine which would hold the league cup.",
 
     "connect": "Connect With Us",
     "email": "Email Us",
@@ -531,6 +542,7 @@
     "ForgetPrayer": "Don't Forget to Supplicate for the one who Shared this Tip",
 
     "joinGroup": "Join the group and the submit button will appear",
+    "UploadProof": "Upload the Proof and the submit button will appear",
 
     "AddToken": "Add Token",
     "TokensShowcase": "Tokens Showcase",
@@ -543,7 +555,10 @@
     "BookName": "Book Title",
     "BookImage": "Book Cover Image",
     "BookFaculty": "Select the Book's Faculty",
-    "BookSubmitted": "Book Submitted Successfully"
+    "BookSubmitted": "Book Submitted Successfully",
+    "BookingForm": "Booking Form",
+    "ReturnDate": "Return Date",
+    "BookingSubmitted": "Booking Submitted Successfully"
   },
   "ar": {
     "language": "عربي",
@@ -690,8 +705,14 @@
     "blogTitle3": "",
     "blogDescription": "لقد أظهر الاتحاد المصري خطوات ملحوظة في تعزيز مجتمع نابض بالحياة وشامل، مما ترك علامة لا تمحى على المشهد الأكاديمي والاجتماعي. ومن خلال نسيج غني من الأحداث والمبادرات، أظهر الاتحاد تفانيًا لا يتزعزع تجاه أعضائها والمجتمع الأوسع. بدءًا من الندوات الأكاديمية المنظمة بدقة والتي تثير الفضول الفكري وحتى التجمعات الغنية ثقافيًا والتي تحتفي بالتنوع، عرض الاتحاد مجموعة رائعة من الإنجازات و التزامهم تجاه الطلاب الجدد جدير بالملاحظة بشكل خاص، حيث يقدمون احتضانًا دافئًا للطلاب الجدد، مما يسهل انتقالهم إلى العالم الأكاديمي. علاوة على ذلك، خلال شهر رمضان المبارك، أحدث الاتحاد شعورًا بالروحانيات الدينية، مما يجسد جوهر الوحدة. بالإضافة إلى ذلك، كانت مناسباتهم الإسلامية بمثابة منصات لتعميق الإيمان والتفاهم. باختصار، إن إنجازات الاتحاد في تنظيم الفعاليات الاجتماعية والأكاديمية والثقافية، فضلاً عن دعمهم المتفاني للوافدين الجدد ومراعاة التقاليد المهمة، تجسد التزامهم المتميز بتعزيز مجتمع نابض بالحياة ومتناغم.",
 
-    "AcademicEvents": "فعاليات اللجنة  الأكاديمية",
+    "ISSEgyptEvents": "فعاليات الاتحاد المصري",
+    "ISSEventTitle1": "تفاريح العيد",
+    "ISSEventDescription1": "قدمت لمحة عن كيفية احتفال الاتحاد المصري بالعيد بالشراكة مع الاتحادات الطلابية الأخرى مثل اليمن والسودان وغيرها الكثير في جامعة UTM. وكانت هناك أنشطة أخرى مثل الرسم المجاني على الوجوه للأطفال والحناء المجانية للفتيات.",
 
+    "ISSEventTitle2": "تجمع الإفطار العربي",
+    "ISSEventDescription2": "يسر جميع الاتحادات العربية في جامعة UTM تنظيم فعالية إفطار عربي مميز. لقد كان حدثًا كبيرًا حيث استمتع الطلاب بأفضل المأكولات العربية والأجواء الرمضانية الساحرة.",
+
+    "AcademicEvents": "فعاليات اللجنة  الأكاديمية",
     "AcademicEventTitle1": "من UTM إلى الخارج: أستراليا",
     "AcademicEventCreator1": "GMS",
     "AcademicEventDescription1": "لقد أجرينا ندوة عبر الإنترنت لمعرفة المزيد حول متطلبات هجرة المهارات للمهندسين ومتخصصي تكنولوجيا المعلومات والمهن الأخرى المطلوبة حاليًا في أستراليا!",
@@ -712,27 +733,27 @@
     "AcademicEventCreator5": "عمرو زكريا",
     "AcademicEventDescription5": "أجرى المهندس عمرو مراجعة لنموذج النظام للنهائيات لمساعدة الطلاب في حل مشكلاتهم المتعلقة بهذا الموضوع. لقد قام أيضًا بحل اختبار سابق لمنحهم تلميحًا حول كيفية امتحانهم.",
 
+    "AcademicEventTitle6": "إتقان المسابقة",
+    "AcademicEventCreator6": "عدنان شافي",
+    "AcademicEventDescription6": "علمت هذه الندوة الطلاب أفكارًا وأساليب ممتازة لتحقيق النجاح في المسابقات الأكاديمية والمهنية واللامنهجية، بدءًا من شرح كيفية العثور على المسابقات إلى استراتيجيات الفوز بها ببساطة.",
+
     "SocialEvents": "فعاليات اللجنة  الاجتماعية",
-    "SocialEventTitle1": "ندوة من أجل فلسطين",
-    "SocialEventDescription1": "وامتثالًا لواجبنا تجاه قضية فلسطين، قمنا نحن رابطة الجاليات العربية بجامعة UTM بعمل ندوة من أجل فلسطين",
+    "SocialEventTitle1": "يوم الترحيب 2024",
+    "SocialEventDescription1": "لقد كان حدثًا تمكن فيه جميع الطلاب المصريين والضيوف البارزين من حضور حفل الاستقبال ووجبة الإفطار معًا والتعرف على بعضهم البعض، وخاصة الطلاب الجدد. وتم تكريم الطلاب الناجحين دراسياً والمتميزين بإنجازاتهم أو عضويتهم في الأندية.",
 
-    "SocialEventTitle2": "رحلة مدرسية داخل UTM",
-    "SocialEventDescription2": "وتم تنظيم رحلة مدرسية لتعريف الطلاب بالجامعة وتعزيز التواصل مع الأجيال القادمة وتشجيعهم على اختيار التخصص المناسب لمسيرتهم الجامعية.",
+    "SocialEventTitle2": "ندوة من أجل فلسطين",
+    "SocialEventDescription2": "وامتثالًا لواجبنا تجاه قضية فلسطين، قمنا نحن رابطة الجاليات العربية بجامعة UTM بعمل ندوة من أجل فلسطين",
 
-    "SocialEventTitle3": "ورشة الإسعافات الأولية",
-    "SocialEventDescription3": "لقد تعمقنا في عالم حالات الطوارئ، وزودنا المشاركين بالمهارات والمعرفة المنقذة للحياة من تقنيات الإنعاش القلبي الرئوي الأساسية إلى التعامل مع المواقف الحرجة.",
+    "SocialEventTitle3": "رحلة مدرسية داخل UTM",
+    "SocialEventDescription3": "وتم تنظيم رحلة مدرسية لتعريف الطلاب بالجامعة وتعزيز التواصل مع الأجيال القادمة وتشجيعهم على اختيار التخصص المناسب لمسيرتهم الجامعية.",
 
     "CultureEvents": "فعاليات اللجنة  الثقافية",
-    "CultureEventTitle1": "محاضرة الأزهر الشريف",
-    "CultureEventCreator1": "حسام الميهي",
-    "CultureEventDescription1": "تمت دعوة الأزهر الشريف إلى ماليزيا لمناقشة شهر رمضان وكيفية الاستفادة منه.",
+    "CultureEventTitle1": "مسابقة القرآن الكريم الرمضانية",
+    "CultureEventDescription1": "تعاون كل من الاتحاد المصري واليمني لإجراء واحدة من أكبر المسابقات الإسلامية في UTM. وقد تم تقسيمه إلى ثلاثة أقسام: الحفظ (الكهف، الأجزاء 1، 3، 5)، التلاوة، والحديث.",
 
-    "CultureEventTitle2": "محاضرة السيرة النبوية",
-    "CultureEventCreator2": "أحمد علي",
-    "CultureEventDescription2": "قام الشيخ أحمد علي بسرد بعض الصور من سيرة الرسول محمد صلى الله عليه وسلم.",
-
-    "CultureEventTitle3": "مسابقة رمضان",
-    "CultureEventDescription3": "أقيمت ثلاث مسابقات رمضانية: تلاوة القرآن الكريم، والمسابقة الثقافية (سيرة)، والأناشيد الإسلامية مع جوائز للفائزين.",
+    "CultureEventTitle2": "رمضان؛ صيام العين واللسان",
+    "CultureEventCreator2": "دكتور رمضان خميس",
+    "CultureEventDescription2": "لقد كان حدثًا لاستقبال شهر رمضان من خلال الشرح للطلاب أن الصيام لا يقتصر على التوقف عن الأكل فحسب؛ وهناك أشياء أخرى يجب أن نتوقف عنها، مثل صيام العين واللسان.",
 
     "ReadingClubEvents": "فعاليات نادي  القراءة",
     "ReadingEventTitle1": "القراءة أسلوب حياة",
@@ -742,6 +763,10 @@
     "ReadingEventTitle2": "اللغة العربية؛ هوية وحضارة",
     "ReadingClubCreator2": "عبد الهادي صالح",
     "ReadingEventDescription2": "نظم نادي القراءة واللجنة الثقافية ندوة للتعريف بأهمية اللغة العربية وأثرها على اللغات والاستخدام اليومي ومصادر اللغة والكتب والفوائد.",
+
+    "SportsEvents": "فعاليات اللجنة الرياضية",
+    "SportsEventTitle1": "بطولة النيل",
+    "SportsEventDescription1": "تم تنظيم دوري كرة الصالات بين فرق من مختلف البلدان لتحديد الفريق الذي سيحمل كأس الدوري.",
 
     "connect": "تواصل معنا",
     "email": "ارسل لنا",
@@ -1088,6 +1113,7 @@
     "ForgetPrayer": "لا تنسوا الدعاء لمن شارك هذه النصيحة",
 
     "joinGroup": "انضم إلى المجموعة وسيظهر زر الإرسال",
+    "UploadProof": "قم بتحميل الإثبات وسيظهر زر الإرسال",
 
     "AddToken": "إضافة عملة",
     "TokensShowcase": "معرض العملات",

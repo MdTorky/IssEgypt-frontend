@@ -121,15 +121,26 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 10px 15px;
     border-radius: 20px;
+
+}
+
+
+.NormalBooksContainer h2 {
+    font-size: 1.6em;
+    text-transform: uppercase;
 }
 
 
 .NormalBooks {
     display: flex;
+    /* overflow-x: auto; */
+    /* overflow-y: hidden; */
+    /* white-space: nowrap; */
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
 }
+
 
 .BookCard {
     display: flex;
@@ -138,23 +149,54 @@
     border-radius: 10px;
     background-color: var(--bg2);
     /* padding: 30px 30px 0 30px; */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     width: 150px;
     padding: 0 5px;
     position: relative;
+    transition: 0.5s ease all;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.BookCard:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
 
 
 .BookAvailability {
     position: absolute;
-    color: mediumspringgreen;
+    color: var(--theme);
     right: 0;
+}
+
+.BookAvailability.Available {
+    color: mediumspringgreen;
 }
 
 .BookImage {
     padding: 15px;
     background: var(--hover);
     border-radius: 10px 10px 0 0;
+}
+
+
+.BookCard:hover .BookStatus::after {
+    position: absolute;
+    color: var(--theme);
+    content: attr(data-attr);
+    top: 5px;
+    font-weight: 800;
+    background: rgba(6, 6, 6, 0.818);
+    padding: 2px 5px;
+    border-radius: 5px;
+
+}
+
+.BookCard:hover .BookStatus.Available::after {
+    color: mediumaquamarine;
 }
 
 
@@ -171,7 +213,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    /* gap: 5px; */
     height: 100%;
     margin: 10px 0;
 }
@@ -186,73 +227,237 @@
 }
 
 
-.BookBox {
-    width: 80px;
-    height: auto;
-    float: left;
-    transition: .5s linear;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    padding: 10px;
-    text-align: center;
-    margin: 0 5px;
-    background: transparent;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 0.9em;
-    color: var(--theme)
+
+.BookCard .BookingButton {
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8em;
 }
 
-.BookBox:before {
+.BookCard .BookingButton, .BookCard .BookingButton span {
+    transition: 200ms;
+}
+
+.BookCard .BookingButton .BookNow {
+    transform: translateX(35px);
+    color: var(--theme);
+    font-weight: bold;
+}
+
+.BookCard .BookingButton .BookNowIcon {
     position: absolute;
-    content: '';
-    left: 0;
-    bottom: 0;
-    height: 1px;
-    width: 100%;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid transparent;
-    box-sizing: border-box;
-    transform: translateX(100%);
+    border-left: 1px solid var(--theme);
+    transform: translateX(110px);
+    height: 20px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.BookBox:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border-top: 4px solid transparent;
-    border-right: 4px solid transparent;
-    box-sizing: border-box;
-    transform: translateX(-100%);
+.BookCard .BookingButton svg {
+    width: 30px;
+    height: 20px;
+    color: var(--theme);
 }
 
-.BookBox:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+.BookCard .BookingButton:hover svg {
+    color: var(--bg);
 }
 
-.BookBox:hover:before {
-    border-color: #262626;
-    height: 100%;
+.BookCard .BookingButton:hover {
+    background: var(--theme);
+}
+
+.BookCard .BookingButton:hover .BookNow {
+    color: transparent;
+}
+
+.BookCard .BookingButton:hover .BookNowIcon {
+    width: 155px;
+    border-left: none;
     transform: translateX(0);
-    transition: .3s transform linear, .3s height linear .3s;
+
 }
 
-.BookBox:hover:after {
-    border-color: #262626;
-    height: 100%;
-    transform: translateX(0);
-    transition: .3s transform linear, .3s height linear .5s;
+.BookCard .BookingButton:focus {
+    outline: none;
 }
 
-.BookCardText button {
+.BookCard .BookingButton:active .BookNowIcon svg {
+    transform: scale(0.8);
+}
+
+.BookCardText .BookingButton {
     color: black;
     text-decoration: none;
     cursor: pointer;
     outline: none;
     border: none;
     background: transparent;
+}
+
+
+
+
+.BookFaculties {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+
+}
+
+
+.CustomCheckBoxHolder {
+    display: flex;
+    margin: 10px;
+}
+
+.CustomCheckBox {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 8px;
+    /* background-color: rgba(0, 0, 0, 0.458); */
+    background-color: #da00377d;
+    border-radius: 0px;
+    color: rgba(255, 255, 255, 0.7);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: color, background-color, box-shadow;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+    outline: none;
+    justify-content: center;
+    min-width: 55px;
+}
+
+.CustomCheckBox:hover {
+    background-color: var(--theme);
+    /* background-color: #2c2c2c; */
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.CustomCheckBox .InnerText {
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: 900;
+    pointer-events: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: transform;
+    transform: translateY(0px);
+}
+
+.CustomCheckBox:hover .InnerText {
+    transform: translateY(-2px);
+}
+
+/* Multiple Checkboxes can be chained together for a radio input */
+.CustomCheckBoxWrapper:first-of-type .CustomCheckBox {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: 0px;
+}
+
+.CustomCheckBoxWrapper:last-of-type .CustomCheckBox {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 0px;
+}
+
+.CustomCheckBoxInput {
+    display: none;
+}
+
+.CustomCheckBoxInput:checked+.CustomCheckBoxWrapper .CustomCheckBox {
+    /* background-color: var(--hover); */
+    background-color: var(--theme);
+
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.CustomCheckBoxInput:checked+.CustomCheckBoxWrapper .CustomCheckBox .inner {
+    transform: translateY(-2px);
+}
+
+.CustomCheckBoxInput:checked+.CustomCheckBoxWrapper .CustomCheckBox:hover {
+    /* background-color: var(--hover2); */
+    background-color: var(--theme2);
+
+    box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
+}
+
+.CustomCheckBoxWrapper .CustomCheckBox:hover .InnerText {
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+.RecommendedBooks {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    animation: fadeInUp 2s ease 0s 1 normal forwards;
+    flex-wrap: wrap;
+}
+
+
+.RecommendedBooks:hover .RecommendedBook {
+    filter: blur(3px);
+}
+
+.RecommendedBooks:hover .RecommendedBook:hover {
+    filter: blur(0);
+}
+
+.RecommendedBook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease !important;
+    /* background: var(--bg); */
+
+}
+
+.RecommendedBook:hover {
+    transform: scale(1.2) !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+
+.RecommendedBook img {
+    width: 100px;
+}
+
+.RecommendedBook h6 {
+    margin: 0;
+
 }
