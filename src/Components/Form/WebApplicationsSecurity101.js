@@ -275,6 +275,9 @@ const WebApplicationsSecurity = ({ language, languageData, api, darkMode }) => {
                                                 <li><p>Covering how to secure websites and how to hack them.</p></li>
                                                 <li><p>Competition and prizes on the last day for participants.</p></li>
                                             </ul>
+
+                                            <p>📍 Hall: P19</p>
+                                            <p>The workshop is available for all specializations and all levels, from beginner to advanced programmer</p>
                                             {/* <p style={{
                                                 display: "flex",
                                                 alignItems: "center",
