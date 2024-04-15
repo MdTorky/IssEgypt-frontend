@@ -268,7 +268,7 @@ const WebApplicationsSecurity = ({ language, languageData, api, darkMode }) => {
                                             {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
                                             {/* <p>{languageText.Exceptional}</p> */}
                                             <p style={{ direction: "rtl" }}>☀ السلام عليكم ورحمة الله وبركاته ☀</p>
-                                            <p> The Academic Committee of the Egyptian Federation is pleased to open registration for the Web Applications Security 101 workshop under the supervision of Team CyberX </p>
+                                            <p> The Academic Committee of the ISS Egypt is pleased to open registration for the Web Applications Security 101 workshop under the supervision of Team CyberX </p>
                                             <ul>📌 Topics covered in this workshop:
                                                 <li><p>Covering topics about programming websites from scratch and how to build websites.   </p></li>
                                                 <li><p>Covering the basics of the Linux operating system and how to use it.</p></li>
