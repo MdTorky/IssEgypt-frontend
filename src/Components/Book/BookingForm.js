@@ -226,8 +226,8 @@ const BookingForm = ({ api, language, languageData, darkMode }) => {
     useEffect(() => {
         const filterBooksByFaculty = () => {
             if (reserverFaculty) {
-                // const filtered = books.filter((book) => book.bookFaculty.includes(reserverFaculty) && book._id != id);
-                const filtered = books.filter((book) => book.bookFaculty.includes(reserverFaculty));
+                const filtered = books.filter((book) => book.bookFaculty.includes(reserverFaculty) && book._id != id && book.bookStatus === "Available");
+                // const filtered = books.filter((book) => book.bookFaculty.includes(reserverFaculty));
                 setFilteredBooks(filtered);
             }
         };
