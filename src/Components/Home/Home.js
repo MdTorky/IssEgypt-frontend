@@ -368,88 +368,89 @@ function Home({ language, languageData, api }) {
                         />
                     </div>
                 </div>
-                <div className="events">
+                <div className="AllEvents">
+                    <div className="events">
 
-                    <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.ISSEgyptEvents} themeColor={themeColor} isRtl={isRtl} />
-                        <SwiperComponent
-                            slides={[
-                                { img: images.issImg1, title: languageText.ISSEventTitle1, description: languageText.ISSEventDescription1, creator: null },
-                                { img: images.issImg2, title: languageText.ISSEventTitle2, description: languageText.ISSEventDescription2, creator: null },
-                            ]}
-                        />
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.ISSEgyptEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.issImg1, title: languageText.ISSEventTitle1, description: languageText.ISSEventDescription1, creator: null },
+                                    { img: images.issImg2, title: languageText.ISSEventTitle2, description: languageText.ISSEventDescription2, creator: null },
+                                ]}
+                            />
+
+                        </div>
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.AcademicEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.academicImg1, title: languageText.AcademicEventTitle1, description: languageText.AcademicEventDescription1, creator: languageText.AcademicEventCreator1 },
+                                    { img: images.academicImg2, title: languageText.AcademicEventTitle2, description: languageText.AcademicEventDescription2, creator: languageText.AcademicEventCreator2 },
+                                    { img: images.academicImg3, title: languageText.AcademicEventTitle3, description: languageText.AcademicEventDescription3, creator: languageText.AcademicEventCreator3 },
+                                    { img: images.academicImg4, title: languageText.AcademicEventTitle4, description: languageText.AcademicEventDescription4, creator: languageText.AcademicEventCreator4 },
+                                    { img: images.academicImg5, title: languageText.AcademicEventTitle5, description: languageText.AcademicEventDescription5, creator: languageText.AcademicEventCreator5 },
+                                    { img: images.academicImg6, title: languageText.AcademicEventTitle6, description: languageText.AcademicEventDescription6, creator: languageText.AcademicEventCreator6 },
+                                ]}
+                            />
+                        </div>
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.SocialEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.socialImg1, title: languageText.SocialEventTitle1, description: languageText.SocialEventDescription1, creator: null },
+                                    { img: images.socialImg2, title: languageText.SocialEventTitle2, description: languageText.SocialEventDescription2, creator: null },
+                                    { img: images.socialImg3, title: languageText.SocialEventTitle3, description: languageText.SocialEventDescription3, creator: null },
+                                ]}
+                            />
+
+                        </div>
+
+
+
+
 
                     </div>
-                    <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.AcademicEvents} themeColor={themeColor} isRtl={isRtl} />
-                        <SwiperComponent
-                            slides={[
-                                { img: images.academicImg1, title: languageText.AcademicEventTitle1, description: languageText.AcademicEventDescription1, creator: languageText.AcademicEventCreator1 },
-                                { img: images.academicImg2, title: languageText.AcademicEventTitle2, description: languageText.AcademicEventDescription2, creator: languageText.AcademicEventCreator2 },
-                                { img: images.academicImg3, title: languageText.AcademicEventTitle3, description: languageText.AcademicEventDescription3, creator: languageText.AcademicEventCreator3 },
-                                { img: images.academicImg4, title: languageText.AcademicEventTitle4, description: languageText.AcademicEventDescription4, creator: languageText.AcademicEventCreator4 },
-                                { img: images.academicImg5, title: languageText.AcademicEventTitle5, description: languageText.AcademicEventDescription5, creator: languageText.AcademicEventCreator5 },
-                                { img: images.academicImg6, title: languageText.AcademicEventTitle6, description: languageText.AcademicEventDescription6, creator: languageText.AcademicEventCreator6 },
-                            ]}
-                        />
-                    </div>
-                    <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.SocialEvents} themeColor={themeColor} isRtl={isRtl} />
-                        <SwiperComponent
-                            slides={[
-                                { img: images.socialImg1, title: languageText.SocialEventTitle1, description: languageText.SocialEventDescription1, creator: null },
-                                { img: images.socialImg2, title: languageText.SocialEventTitle2, description: languageText.SocialEventDescription2, creator: null },
-                                { img: images.socialImg3, title: languageText.SocialEventTitle3, description: languageText.SocialEventDescription3, creator: null },
-                            ]}
-                        />
+
+
+                    <div className="events">
+
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.cultureImg1, title: languageText.CultureEventTitle1, description: languageText.CultureEventDescription1, creator: null },
+                                    { img: images.cultureImg2, title: languageText.CultureEventTitle2, description: languageText.CultureEventDescription2, creator: languageText.CultureEventCreator2 },
+                                    // { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
+                                ]}
+                            />
+                        </div>
+
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.readingImg1, title: languageText.ReadingEventTitle1, description: languageText.ReadingEventDescription1, creator: languageText.ReadingClubCreator1 },
+                                    { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
+                                ]}
+                            />
+                        </div>
+
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.SportsEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.sportsImg1, title: languageText.SportsEventTitle1, description: languageText.SportsEventDescription1 },
+                                ]}
+                            />
+                        </div>
+
 
                     </div>
-
-
 
 
 
                 </div>
-
-
-                <div className="events">
-
-                    <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
-                        <SwiperComponent
-                            slides={[
-                                { img: images.cultureImg1, title: languageText.CultureEventTitle1, description: languageText.CultureEventDescription1, creator: null },
-                                { img: images.cultureImg2, title: languageText.CultureEventTitle2, description: languageText.CultureEventDescription2, creator: languageText.CultureEventCreator2 },
-                                // { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
-                            ]}
-                        />
-                    </div>
-
-                    <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
-                        <SwiperComponent
-                            slides={[
-                                { img: images.readingImg1, title: languageText.ReadingEventTitle1, description: languageText.ReadingEventDescription1, creator: languageText.ReadingClubCreator1 },
-                                { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
-                            ]}
-                        />
-                    </div>
-
-                    <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.SportsEvents} themeColor={themeColor} isRtl={isRtl} />
-                        <SwiperComponent
-                            slides={[
-                                { img: images.sportsImg1, title: languageText.SportsEventTitle1, description: languageText.SportsEventDescription1 },
-                            ]}
-                        />
-                    </div>
-
-
-                </div>
-
-
-
-
 
 
 

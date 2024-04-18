@@ -1678,7 +1678,17 @@
         font-weight: 600;
     }
 
+    .homeBoxes {
+        /* gap: 90px;
+        display: flex;
+        flex-direction: column; */
+    }
 
+    .AllEvents {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+    }
 
     /* Blogs */
     .homeBoxes .homeTitle {
