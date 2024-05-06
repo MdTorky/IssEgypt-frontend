@@ -33,6 +33,8 @@ const Magazine = () => {
             book.style.transform = "translateX(50%)";
             prevBtn.style.transform = "translateX(-180px)";
             nextBtn.style.transform = "translateX(180px)";
+            nextBtn.style.zIndex = 9000;
+
         }
 
         function closeBook(isAtBeginning) {
@@ -44,6 +46,8 @@ const Magazine = () => {
 
             prevBtn.style.transform = "translateX(0px)";
             nextBtn.style.transform = "translateX(0px)";
+            prevBtn.style.zIndex = 9000;
+
         }
 
         function goNextPage() {

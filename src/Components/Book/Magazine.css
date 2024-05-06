@@ -408,4 +408,13 @@
     }
 
 
+    #next-btn {
+        /* right: 200px; */
+        transform: translateX(30px) !important
+    }
+
+    #prev-btn {
+        /* left: 200px; */
+        transform: translateX(-30px) !important
+    }
 }
