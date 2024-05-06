@@ -387,8 +387,8 @@
 
     .book {
         position: relative;
-        width: 180px;
-        height: 290px;
+        width: 200px;
+        height: 300px;
         margin: auto;
         transition: transform 0.5s;
         border-radius: 20px;
