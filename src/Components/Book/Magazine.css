@@ -1,0 +1,411 @@
+.Magazine {
+    font-family: "Poppin", sans-serif;
+    /* background-color: #2e3537; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book {
+    width: 550px;
+    height: 650px;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 1500;
+}
+
+.Magazine input {
+    display: none;
+}
+
+.cover, .back-cover {
+    background-color: var(--theme);
+    width: 100%;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 0 5px rgb(41, 41, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center left;
+}
+
+.cover {
+    position: absolute;
+    z-index: 4;
+    transition: transform 1s;
+}
+
+.cover label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.back-cover {
+    position: relative;
+    z-index: -1;
+}
+
+.page {
+    position: absolute;
+    background-color: white;
+    /* width: 330px; */
+    /* height: 430px; */
+    width: 530px;
+    height: 630px;
+    /* border-radius: 0 15px 15px 0; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition-duration: 1.5s;
+    border-radius: 15px;
+
+}
+
+.page img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+}
+
+.front-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+
+    /* padding: 1rem; */
+}
+
+.back-page {
+    transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    z-index: 99;
+    border-radius: 15px;
+
+}
+
+.next, .prev {
+    position: absolute;
+    bottom: 1em;
+    cursor: pointer;
+}
+
+.next {
+    right: 0.6em;
+    bottom: 10px;
+    font-size: 2em;
+    color: white;
+    border-radius: 50px;
+    background: var(--theme);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 0.5s all ease;
+}
+
+.next:hover, .prev:hover {
+    transform: scale(1.1);
+}
+
+.prev {
+    left: 1em;
+    bottom: 10px;
+    font-size: 2em;
+    color: white;
+    border-radius: 50px;
+    background: var(--theme);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 0.5s all ease;
+}
+
+
+#page1 {
+    z-index: 5;
+}
+
+#page2 {
+    z-index: 4;
+}
+
+#page3 {
+    z-index: 3;
+}
+
+#page4 {
+    z-index: 2;
+}
+
+#page5 {
+    z-index: 1;
+}
+
+#checkbox-cover:checked~.book {
+    transform: translateX(200px);
+}
+
+#checkbox-cover:checked~.book .cover {
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    transform: rotateY(-180deg);
+    z-index: 1;
+}
+
+#checkbox-cover:checked~.book .page {
+    box-shadow: 0 0 3px rgb(99, 98, 98);
+}
+
+#checkbox-page1:checked~.book #page1 {
+    transform: rotateY(-180deg);
+    z-index: 2;
+}
+
+#checkbox-page2:checked~.book #page2 {
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+
+#checkbox-page3:checked~.book #page3 {
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+
+#checkbox-page4:checked~.book #page4 {
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
+
+#checkbox-page5:checked~.book #page5 {
+    transform: rotateY(-180deg);
+    z-index: 6;
+}
+
+
+
+
+
+
+
+.Magazine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-bottom: 30%;
+    position: relative;
+}
+
+
+
+
+
+
+.book {
+    position: relative;
+    width: 600px;
+    height: 750px;
+    margin: auto;
+    transition: transform 0.5s;
+    border-radius: 20px;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+    border-radius: 20px;
+
+
+}
+
+.front,
+.back {
+    background-color: var(--theme);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    border-radius: 20px;
+    /* border: 5px double var(--hover); */
+
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-radius: 20px;
+
+    /* border-left: 3px solid powderblue; */
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+.front-content img {
+    width: 95%;
+    height: 95%;
+    border-radius: 20px;
+    /* border: 10px double var(--theme); */
+}
+
+.back-content img {
+    width: 95%;
+    height: 95%;
+
+    border-radius: 20px;
+    /* border: 10px double var(--theme); */
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+.Magazine button {
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: auto;
+    transition: transform 0.5s;
+    font-size: 2em;
+    color: white;
+    border-radius: 50px;
+    background: var(--theme);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 0.5s all ease;
+
+}
+
+.Magazine button:focus {
+    outline: none;
+
+    font-size: 2em;
+    color: white;
+    border-radius: 50px;
+    background: var(--theme);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 0.5s all ease;
+}
+
+.Magazine button:hover i {
+    color: #636363;
+}
+
+
+
+/* Paper stack order */
+#p1 {
+    z-index: 7;
+}
+
+#p2 {
+    z-index: 6;
+}
+
+#p3 {
+    z-index: 5;
+}
+
+#p4 {
+    z-index: 4;
+}
+
+#p5 {
+    z-index: 3;
+}
+
+#p6 {
+    z-index: 2;
+}
+
+#p7 {
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:700px) {
+
+
+    .Magazine {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+
+        /* margin-bottom: 90%; */
+    }
+
+
+    .book {
+        position: relative;
+        width: 170px;
+        height: 250px;
+        margin: auto;
+        transition: transform 0.5s;
+        border-radius: 20px;
+    }
+
+    /* Controller Buttons */
+    .Magazine button {
+        font-size: 1em;
+        position: absolute;
+        top: 0;
+
+    }
+
+    .Magazine button:focus {
+        font-size: 1em;
+        position: absolute;
+    }
+
+
+}

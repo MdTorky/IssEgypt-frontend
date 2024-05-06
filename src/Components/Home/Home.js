@@ -452,8 +452,20 @@ function Home({ language, languageData, api }) {
 
                 </div>
 
+                {/* 
+                <div className="events">
 
-
+<div className="eventBox reveal">
+    <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
+    <SwiperComponent
+        slides={[
+            { img: images.cultureImg1, title: languageText.CultureEventTitle1, description: languageText.CultureEventDescription1, creator: null },
+            { img: images.cultureImg2, title: languageText.CultureEventTitle2, description: languageText.CultureEventDescription2, creator: languageText.CultureEventCreator2 },
+            // { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
+        ]}
+    />
+</div>
+</div> */}
 
 
 
@@ -590,47 +602,7 @@ function Home({ language, languageData, api }) {
                         </a>
                     </div>
                 </div>
-                {/* {popupVisible && selectedItem && (
-                    <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
-                        <div className="popup-content">
 
-                            <div className="topPart">
-                                <button className="icon" onClick={closePopup}>
-                                    <span className="tooltip" >{languageText.close}</span>
-                                    <span><FontAwesomeIcon icon={faXmark} /></span>
-                                </button>
-
-                            </div>
-
-                            <div className="middlePart">
-                                <>
-                                    <img src={selectedItem.imgSrc} alt="" />
-                                </>
-
-
-                            </div>
-                            <div className="bottomPart">
-                                <div className="text">
-                                    <h3>{selectedItem.name}</h3>
-                                    <p>{selectedItem.text}</p>
-                                </div>
-                                <div className="links">
-                                    <button className="icon" onClick={() => window.open(selectedItem.no, "_blank")}>
-                                        <span className="tooltip" >{languageText.Group}</span>
-                                        <span><FontAwesomeIcon icon={faWhatsapp} /></span>
-                                    </button>
-                                    <button className="icon" onClick={() => window.open(selectedItem.linkedIn, "_blank")}>
-                                        <span className="tooltip" >{languageText.linkedin}</span>
-                                        <span><FontAwesomeIcon icon={faLinkedin} /></span>
-                                    </button>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                )} */}
             </div>
         </div >
     );
