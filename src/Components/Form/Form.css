@@ -717,7 +717,8 @@ input::placeholder {
     white-space: wrap;
     width: 600px;
     text-align: justify;
-    /* background: var(--bg) */
+    white-space: pre-wrap
+        /* background: var(--bg) */
 }
 
 
