@@ -51,6 +51,7 @@ import Library from './Components/Book/Library';
 import BookingForm from './Components/Book/BookingForm';
 import WebApplicationsSecurity from './Components/Form/WebApplicationsSecurity101';
 import Magazine from './Components/Book/Magazine';
+import LecturerForm from './Components/Form/LecturerForm';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -141,6 +142,7 @@ function App() {
               <Route path="/WebApplicationsSecurity101" element={<WebApplicationsSecurity darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/bookForm" element={<BookForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/magazine" element={<Magazine darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/addLecturer" element={<LecturerForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />

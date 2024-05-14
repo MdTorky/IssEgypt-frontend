@@ -562,7 +562,14 @@
     "BookSubmitted": "Book Submitted Successfully",
     "BookingForm": "Booking Form",
     "ReturnDate": "Return Date",
-    "BookingSubmitted": "Booking Submitted Successfully"
+    "BookingSubmitted": "Booking Submitted Successfully",
+
+    "LecturerForm": "Add Lecturer's Details",
+    "LecturerName": "Lecturer Name",
+    "LecturerPhone": "Lecturer Phone",
+    "LecturerEmail": "Lecturer Email",
+    "LecturerFaculty": "Lecturer Faculty",
+    "LecturerSubmitted": "Lecturer Details Submitted Successfully"
   },
   "ar": {
     "language": "عربي",
@@ -1124,6 +1131,13 @@
     "TokensShowcaseAdmin": "مشرف معرض العملات",
     "NoTokens": "عدد العملات",
     "searchToken": "ابحث عن اسمك أو رقم الماترك",
-    "ManageTokens": "إدارة العملات"
+    "ManageTokens": "إدارة العملات",
+
+    "LecturerForm": "إضافة بيانات المحاضر",
+    "LecturerName": "اسم المحاضر",
+    "LecturerPhone": "رقم هاتف المحاضر",
+    "LecturerEmail": "البريد الإلكتروني للمحاضر",
+    "LecturerFaculty": "كلية المحاضر",
+    "LecturerSubmitted": "تم إرسال تفاصيل المحاضر بنجاح"
   }
 }

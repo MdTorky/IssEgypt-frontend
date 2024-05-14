@@ -261,7 +261,6 @@ const WebApplicationsSecurity = ({ language, languageData, api, darkMode }) => {
                         filter.map((form) => (
                             form.status === true ? (
                                 <div className="FormAll">
-
                                     <div className="FormLeft">
                                         <img src={form.eventImg} alt="" />
                                         <div className="FormLeftDetails">
