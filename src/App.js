@@ -166,9 +166,11 @@ function App() {
 
 
               {/* Auth */}
-              <Route path="/register/admin" element={!user ? <Register darkMode={darkMode}
+              <Route path="/register/admin" element={<Register darkMode={darkMode}
+                language={language} languageData={languageData} api={api} />} />
+              {/* <Route path="/register/admin" element={!user ? <Register darkMode={darkMode}
                 language={language} languageData={languageData} api={api} /> :
-                <Navigate to='/adminDashboard' />} />
+                <Navigate to='/adminDashboard' />} /> */}
               <Route path="/login" element={!user ? <Login darkMode={darkMode} language={language}
                 languageData={languageData} api={api} /> :
                 <Navigate to='/adminDashboard' />} />
