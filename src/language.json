@@ -565,11 +565,11 @@
     "BookingSubmitted": "Booking Submitted Successfully",
 
     "LecturerForm": "Add Lecturer's Details",
-    "LecturerName": "Lecturer Name",
-    "LecturerPhone": "Lecturer Phone",
-    "LecturerEmail": "Lecturer Email",
-    "LecturerFaculty": "Lecturer Faculty",
-    "LecturerOffice": "Lecturer Office if Possible",
+    "LecturerName": "Lecturer's Name",
+    "LecturerPhone": "Lecturer's Phone",
+    "LecturerEmail": "Lecturer's Email",
+    "LecturerFaculty": "Lecturer's Faculty",
+    "LecturerOffice": "Lecturer's Office if Possible",
     "LecturerSubmitted": "Lecturer Details Submitted Successfully"
   },
   "ar": {
@@ -1139,6 +1139,7 @@
     "LecturerPhone": "رقم هاتف المحاضر",
     "LecturerEmail": "البريد الإلكتروني للمحاضر",
     "LecturerFaculty": "كلية المحاضر",
+    "LecturerOffice": "مكتب المحاضر إذا أمكن",
     "LecturerSubmitted": "تم إرسال تفاصيل المحاضر بنجاح"
   }
 }
