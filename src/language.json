@@ -569,6 +569,7 @@
     "LecturerPhone": "Lecturer Phone",
     "LecturerEmail": "Lecturer Email",
     "LecturerFaculty": "Lecturer Faculty",
+    "LecturerOffice": "Lecturer Office if Possible",
     "LecturerSubmitted": "Lecturer Details Submitted Successfully"
   },
   "ar": {
