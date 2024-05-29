@@ -52,6 +52,7 @@ import BookingForm from './Components/Book/BookingForm';
 import WebApplicationsSecurity from './Components/Form/WebApplicationsSecurity101';
 import Magazine from './Components/Book/Magazine';
 import LecturerForm from './Components/Form/LecturerForm';
+import MegaImages from './Components/Home/Images';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -117,6 +118,7 @@ function App() {
 
               {/* All Pages */}
               <Route exact path="/" element={<Home language={language} languageData={languageData} api={api} />} />
+              <Route path="/gallery" element={<MegaImages language={language} languageData={languageData} api={api} />} />
               <Route exact path="/terms&Conditions" element={<Terms />} />
               <Route path="/services" element={<Services language={language} languageData={languageData} darkMode={darkMode} />} />
               <Route path="/members" element={<Members darkMode={darkMode} language={language} languageData={languageData} api={api} />} />

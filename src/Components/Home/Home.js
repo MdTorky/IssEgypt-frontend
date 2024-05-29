@@ -337,7 +337,8 @@ function Home({ language, languageData, api }) {
                 <div className="blog">
                     <div className="blogContainer ">
                         <div className="blogImg">
-                            <img src={images.achievementImg} alt="" />
+                            {/* <img src={images.achievementImg} alt="" /> */}
+                            <img src='https://mega.nz/file/veRHBCLT#OUzHpdNd_zox7jfOTF0TMxRigc1pWEg_ID8-KJiy33E' alt="" />
                         </div>
                         <div className="blogText reveal">
                             <p className="subtitle">{languageText.blogSubtitle}</p>
