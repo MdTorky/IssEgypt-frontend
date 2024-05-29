@@ -575,6 +575,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                 )}
                                                 {/* {form.groupLink && <p className="JoinGroup">{languageText.joinGroup}</p>} */}
                                                 {form.groupLink && <p className="formError"><Icon icon="ooui:error" />{languageText.joinGroup}</p>}
+                                                {form.inputs.includes("Payment") && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{languageText.SubmitProof}</p>}
                                                 {(form.groupLink && !form.inputs.includes("Payment")) || (form.groupLink && form.inputs.includes("Payment") && proof) ? (
                                                     <Link
                                                         className="GroupLink"
