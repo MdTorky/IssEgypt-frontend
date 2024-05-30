@@ -92,6 +92,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
 
     return (
         <div className="Gallery">
+
             <h2>{languageText.gallery}</h2>
 
             <div className="LibraryContainer">
@@ -117,15 +118,16 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
                 </div>
             </div>
 
+            {loading ? (
+                <div><Loader darkMode={darkMode} /></div>
+            ) : (
+                <div class="GalleryContainer">
 
-            <div class="GalleryContainer">
-
-                {filteredData.map((folder) => (
-                    <GalleryCard folder={folder} key={folder._id} />
-                ))}
-
-
-            </div>
+                    {filteredData.map((folder) => (
+                        <GalleryCard folder={folder} key={folder._id} />
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
