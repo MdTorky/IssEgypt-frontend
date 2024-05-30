@@ -69,9 +69,30 @@ body.dark-mode {
 
 }
 
+.dark-mode .navbar ul li.active .NavBarIcon {
+    color: var(--bg);
+}
+
+.dark-mode .navbar ul li:hover .NavBarIcon {
+    color: var(--hover);
+}
+
+.dark-mode .navbar ul li:hover.active .NavBarIcon {
+    color: var(--bg);
+}
+
+.dark-mode .navbar ul li:hover.active .NavBarIcon::after {
+    color: var(--bg);
+    background: var(--hover);
+}
+
 .dark-mode .navbar ul li.active icon::after {
     color: var(--bg);
-    /* display: none; */
+}
+
+.dark-mode .navbar ul li:hover .NavBarIcon::after {
+    color: var(--hover);
+    background: var(--bg);
 }
 
 .dark-mode .navbar ul li:hover.active icon::after {
@@ -83,6 +104,13 @@ body.dark-mode {
     color: var(--bg);
 
 }
+
+
+
+.dark-mode .SearchBar {
+    background: var(--hover2);
+}
+
 
 
 
