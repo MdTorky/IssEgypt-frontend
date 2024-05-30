@@ -60,6 +60,7 @@ body.dark-mode {
     background: var(--hover);
     border-radius: 25px;
 
+
 }
 
 
@@ -256,6 +257,49 @@ body.dark-mode {
     background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
+
+
+
+
+/* Gallery */
+
+
+.dark-mode .GalleryContainer {
+    background: var(--hover2);
+}
+
+
+
+.dark-mode .GalleryCard {
+    background: var(--hover);
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    border: 1px gray solid;
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.dark-mode .GalleryText {
+    padding: 10px;
+    color: var(--hover);
+    /* background: red; */
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    /* align-items: center; */
+}
+
+.dark-mode .GalleryText h3 {
+    background: linear-gradient(to right, var(--hover), var(--hover2));
+    color: var(--bg);
+    border: 3px gray solid;
+}
+
+
+.dark-mode .GalleryText button {
+    color: var(--bg);
+    border: 3px gray solid;
+
+}
 
 
 
