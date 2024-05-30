@@ -1,0 +1,230 @@
+.Gallery {
+    margin-bottom: 20%;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 130px;
+}
+
+.arabic .Gallery {
+    margin-left: 130px;
+    margin-right: 0px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+
+}
+
+
+.GalleryNo {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+    background: var(--theme2);
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    border-radius: 20px;
+    color: var(--bg);
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Gallery h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    background: var(--theme);
+    width: 40%;
+    color: var(--bg);
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.GalleryContainer {
+    width: 80%;
+    /* max-width: fit; */
+
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: var(--bg2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s all ease;
+    /* height: fit-content; */
+}
+
+/* .GalleryContainer:hover .GalleryCard {
+    filter: blur(3px);
+}
+
+.GalleryContainer:hover .GalleryCard:hover {
+    filter: blur(0px);
+} */
+
+
+.GalleryCard {
+    background: var(--bg);
+    width: calc(33.333% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px lightgray solid;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.GalleryCard:hover {
+    transform: scale(1.05);
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.GalleryImage {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+
+}
+
+.GalleryImage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+.GalleryBottom {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .GalleryIcon {
+    font-size: 3em;
+} */
+
+.GalleryText {
+    padding: 10px;
+    color: var(--bg);
+    /* background: red; */
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    /* align-items: center; */
+}
+
+.GalleryText h3 {
+    margin: 0 auto;
+    /* text-transform: uppercase; */
+    text-align: center;
+    background: var(--hover);
+    width: 80%;
+    font-size: 1em;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 3px lightgray solid;
+}
+
+.ComingSoon {
+    background: var(--theme2) !important;
+    letter-spacing: 3px;
+
+}
+
+.GalleryText button {
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    background: var(--theme);
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    color: var(--bg);
+    cursor: pointer;
+    border: 3px lightgray solid;
+    transition: 0.5s all ease;
+}
+
+.GalleryText button:hover {
+    transform: scale(1.2);
+
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .GalleryCard {
+        width: calc(50% - 20px);
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .Gallery {
+        margin: 0;
+        margin: 0 auto 40% 0;
+    }
+
+    .arabic .Gallery {
+        margin: 0;
+        margin: 60px auto 40% 0;
+    }
+
+    .GalleryContainer {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .GalleryCard {
+        width: 100%;
+    }
+
+
+    .GalleryImage {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .GalleryImage img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+
+    }
+
+    .GalleryText h3 {
+        font-size: 0.8em;
+        /* Adjust font size for small screens */
+    }
+
+    .SearchBar {
+        margin: auto;
+    }
+}

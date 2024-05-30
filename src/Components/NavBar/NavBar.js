@@ -49,6 +49,11 @@ const NavBar = () => {
                         <div className="NavBarIcon" data-content={languageText.services}><Icon icon="fa-solid:hands-helping" width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
+                <li className={location.pathname === '/gallery' ? 'active' : ''}>
+                    <Link to="/gallery">
+                        <div className="NavBarIcon" data-content={languageText.gallery}><Icon icon="solar:gallery-wide-bold" width="2rem" height="2rem" /></div>
+                    </Link>
+                </li>
                 <li className={location.pathname === '/members' ? 'active' : ''}>
                     <Link to="/members">
                         {/* <icon data-content={languageText.members}><FontAwesomeIcon icon={faUsers} /></icon> */}

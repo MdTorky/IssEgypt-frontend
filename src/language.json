@@ -147,6 +147,9 @@
     "ISSEventTitle2": "Arab Iftar Gathering",
     "ISSEventDescription2": "All Arabic societies at UTM University were pleased to organize an event for a special Arabic breakfast. It was a big event where students enjoyed the best Arabic food and the magical Ramadan atmosphere.",
 
+    "ISSEventTitle3": "Attribution and Support For Palestine",
+    "ISSEventDescription3": "On May 3rd, the majority of the Arabic Student Societies and the UTM MPP came together to express sympathy and support for Palestine.",
+
     "AcademicEvents": "Academic Committee Events",
     "AcademicEventTitle1": "From UTM to Abroad: Australia",
     "AcademicEventCreator1": "GMS",
@@ -172,6 +175,14 @@
     "AcademicEventCreator6": "Adnan Shafi",
     "AcademicEventDescription6": "This seminar taught students excellent ideas and tactics for achieving in academic, professional, and extracurricular competitions, ranging from explaining how to find competitions to strategies for simply winning them.",
 
+    "AcademicEventTitle7": "Web Applications Security 101",
+    "AcademicEventCreator7": "CyberX",
+    "AcademicEventDescription7": "A four-day Web Applications Security 101 session was conducted with the CyberX team, covering website development, Linux operating system fundamentals, and website protection and hacking. Competitors will receive rewards on the final day.",
+
+    "AcademicEventTitle8": "Road To Germany",
+    "AcademicEventCreator8": "Khalid Khalil",
+    "AcademicEventDescription8": "A quick session was held to assist students in learning more about Germany and how to study there and acquire a visa; it also addressed challenges such as living expenses, studies, higher education, master's degrees, life in general, and more.",
+
     "SocialEvents": "Social Committee Events",
     "SocialEventTitle1": "Welcome Day 2024",
     "SocialEventDescription1": "It was an event where all Egyptian students and prominent guests could attend the Welcome Day reception and breakfast together and get to know each other, particularly new students. Students who succeeded academically and were distinguished by their accomplishments or membership in clubs were honored.",
@@ -182,6 +193,9 @@
     "SocialEventTitle3": "School Trip Inside UTM",
     "SocialEventDescription3": "A school trip was organized to introduce students to university, foster connections with future generations, and encourage them to choose the appropriate major for their university career.",
 
+    "SocialEventTitle4": "Melaka Trip",
+    "SocialEventDescription4": "Students took a trip to Melaka to keep their minds off of their studies. The trip lasted for one day, and they visited several sights, including Masjid Selat Melaka, Dutch Square, and A'Famosa, and even went on a river cruise.",
+
     "CultureEvents": "Cultural Committee Events",
     "CultureEventTitle1": "Ramadan Qur'an Competition",
     "CultureEventDescription1": "Both ISS Egypt and Yemen cooperated to conduct one of the largest Islamic tournaments in UTM. It was separated into three sections: Hifz (Al Kahf, 1, 3, and 5 Chapters), Telawah, and Hadith.",
@@ -189,6 +203,10 @@
     "CultureEventTitle2": "Ramadan; Fasting of the Eyes and Tongue",
     "CultureEventCreator2": "Dr. Ramadan Khamis",
     "CultureEventDescription2": "It was an event to greet Ramadan by explaining to students that fasting isn't just about stopping eating; there are other things we need to stop doing, such as fasting with the eye and tongue.",
+
+    "CultureEventTitle3": "Arabic; Beauty & Magnificence",
+    "CultureEventCreator3": "Dr. Said Salem",
+    "CultureEventDescription3": "Because the Semitic Arabic language is an essential language for us; speaking, considering, and comprehending, the Cultural Committee hosted an Arabic Language event highlighting the magnificence of the Arabic Language.",
 
     "ReadingClubEvents": "Reading Club Events",
     "ReadingEventTitle1": "Reading is a Lifestyle",

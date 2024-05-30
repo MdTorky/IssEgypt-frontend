@@ -337,8 +337,8 @@ function Home({ language, languageData, api }) {
                 <div className="blog">
                     <div className="blogContainer ">
                         <div className="blogImg">
-                            {/* <img src={images.achievementImg} alt="" /> */}
-                            <img src='https://mega.nz/file/veRHBCLT#OUzHpdNd_zox7jfOTF0TMxRigc1pWEg_ID8-KJiy33E' alt="" />
+                            <img src={images.achievementImg} alt="" />
+                            {/* <img src='https://mega.nz/file/veRHBCLT#OUzHpdNd_zox7jfOTF0TMxRigc1pWEg_ID8-KJiy33E' alt="" /> */}
                         </div>
                         <div className="blogText reveal">
                             <p className="subtitle">{languageText.blogSubtitle}</p>
@@ -378,6 +378,7 @@ function Home({ language, languageData, api }) {
                                 slides={[
                                     { img: images.issImg1, title: languageText.ISSEventTitle1, description: languageText.ISSEventDescription1, creator: null },
                                     { img: images.issImg2, title: languageText.ISSEventTitle2, description: languageText.ISSEventDescription2, creator: null },
+                                    { img: images.issImg3, title: languageText.ISSEventTitle3, description: languageText.ISSEventDescription3, creator: null },
                                 ]}
                             />
 
@@ -392,6 +393,8 @@ function Home({ language, languageData, api }) {
                                     { img: images.academicImg4, title: languageText.AcademicEventTitle4, description: languageText.AcademicEventDescription4, creator: languageText.AcademicEventCreator4 },
                                     { img: images.academicImg5, title: languageText.AcademicEventTitle5, description: languageText.AcademicEventDescription5, creator: languageText.AcademicEventCreator5 },
                                     { img: images.academicImg6, title: languageText.AcademicEventTitle6, description: languageText.AcademicEventDescription6, creator: languageText.AcademicEventCreator6 },
+                                    { img: images.academicImg7, title: languageText.AcademicEventTitle7, description: languageText.AcademicEventDescription7, creator: languageText.AcademicEventCreator7 },
+                                    { img: images.academicImg8, title: languageText.AcademicEventTitle8, description: languageText.AcademicEventDescription8, creator: languageText.AcademicEventCreator8 },
                                 ]}
                             />
                         </div>
@@ -402,6 +405,7 @@ function Home({ language, languageData, api }) {
                                     { img: images.socialImg1, title: languageText.SocialEventTitle1, description: languageText.SocialEventDescription1, creator: null },
                                     { img: images.socialImg2, title: languageText.SocialEventTitle2, description: languageText.SocialEventDescription2, creator: null },
                                     { img: images.socialImg3, title: languageText.SocialEventTitle3, description: languageText.SocialEventDescription3, creator: null },
+                                    { img: images.socialImg4, title: languageText.SocialEventTitle4, description: languageText.SocialEventDescription4, creator: null },
                                 ]}
                             />
 
@@ -422,6 +426,8 @@ function Home({ language, languageData, api }) {
                                 slides={[
                                     { img: images.cultureImg1, title: languageText.CultureEventTitle1, description: languageText.CultureEventDescription1, creator: null },
                                     { img: images.cultureImg2, title: languageText.CultureEventTitle2, description: languageText.CultureEventDescription2, creator: languageText.CultureEventCreator2 },
+                                    { img: images.cultureImg3, title: languageText.CultureEventTitle3, description: languageText.CultureEventDescription3, creator: languageText.CultureEventCreator3 },
+                                    { img: images.cultureImg4, title: languageText.CultureEventTitle4, description: languageText.CultureEventDescription4, creator: languageText.CultureEventCreator4 },
                                     // { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
                                 ]}
                             />
@@ -442,6 +448,8 @@ function Home({ language, languageData, api }) {
                             <SwiperComponent
                                 slides={[
                                     { img: images.sportsImg1, title: languageText.SportsEventTitle1, description: languageText.SportsEventDescription1 },
+                                    { img: images.sportsImg2, title: languageText.SportsEventTitle2, description: languageText.SportsEventDescription2 },
+                                    { img: images.sportsImg3, title: languageText.SportsEventTitle3, description: languageText.SportsEventDescription3 },
                                 ]}
                             />
                         </div>

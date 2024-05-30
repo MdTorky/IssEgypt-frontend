@@ -3,6 +3,7 @@
 
   "issImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713132245/Events/Eid_Celebrations_vuffps.png",
   "issImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713132368/Events/Arab_Iftar_Gathering_ywufy3.png",
+  "issImg3": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028633/Events/Palestine_lseaho.png",
 
   "academicImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708432727/Events/GMS_xxbzg7.jpg",
   "academicImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708431393/Events/11_wkh47u.png",
@@ -10,19 +11,25 @@
   "academicImg4": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708431390/Events/4_ynnssv.png",
   "academicImg5": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708431397/Events/5_lkxixc.png",
   "academicImg6": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713132709/Events/Mastering_A_Competition_ch7hqc.png",
+  "academicImg7": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028630/Events/Cyber_xhghiv.png",
+  "academicImg8": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028629/Events/Road_to_germany_mcoyqi.png",
 
   "socialImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713132921/Events/Welcome_Square_Poster_gugdju.png",
   "socialImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708432218/Events/Palestine_f4fk7p.jpg",
   "socialImg3": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1709144636/Events/Social_2_tpivay.png",
+  "socialImg4": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028632/Events/Malaka_dv656r.png",
 
   "cultureImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713133576/Events/Whatsapp_Poster_czeydb.png",
   "cultureImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713133476/Events/Culture_Event_1_ycxajs.jpg",
-  "cultureImg3": "https://i.ibb.co/sjqwqqM/Ramadan.jpg",
+  "cultureImg3": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028628/Events/Arabic_jtvhjh.png",
+  "cultureImg4": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028634/Events/Prince_xudyxt.png",
 
   "readingImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1708433394/Events/Reading_nf7lwm.jpg",
   "readingImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1709143669/Events/Reading2_eymgbp.jpg",
 
   "sportsImg1": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1713134390/Events/Nile_League_Championship_rbbpx3.png",
+  "sportsImg2": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028629/Events/Ping_dwemma.png",
+  "sportsImg3": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1717028629/Events/Chess_hofe6c.png",
 
   "academicAnnouncement": "https://i.ibb.co/TPtNVyQ/Academic.png",
   "socialAnnouncement": "https://i.ibb.co/6nzScnQ/Social.png",
