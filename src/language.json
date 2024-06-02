@@ -208,6 +208,10 @@
     "CultureEventCreator3": "Dr. Said Salem",
     "CultureEventDescription3": "Because the Semitic Arabic language is an essential language for us; speaking, considering, and comprehending, the Cultural Committee hosted an Arabic Language event highlighting the magnificence of the Arabic Language.",
 
+    "CultureEventTitle4": "Prince of the Poets",
+    "CultureEventCreator4": "Dr. Said Salem",
+    "CultureEventDescription4": "",
+
     "ReadingClubEvents": "Reading Club Events",
     "ReadingEventTitle1": "Reading is a Lifestyle",
     "ReadingClubCreator1": "Hatem bin Humaid",
@@ -221,9 +225,15 @@
     "SportsEventTitle1": "Nile League Championship",
     "SportsEventDescription1": "A Futsal League was organized amongst teams from various countries to determine which would hold the league cup.",
 
-    "WomenEvents": "Women Committee Events",
-    "WomenEventTitle1": "Nile League Championship",
-    "WomenEventDescription1": "A Futsal League was organized amongst teams from various countries to determine which would hold the league cup.",
+    "SportsEventTitle2": "Ping Pong Tournament",
+    "SportsEventDescription2": "",
+
+    "SportsEventTitle3": "Chess Tournament",
+    "SportsEventDescription3": "",
+
+    "WomenEvents": "Women Affairs Committee Events",
+    "WomenEventTitle1": "Girls Iftar Ramadan Gathering",
+    "WomenEventDescription1": "The \"Iftar Ramadan Gathering,\" an iftar hosted by the girls' representatives, was a lovely evening of celebration, unity, and spirituality that was exclusively for females. Together, attendees enjoyed in a delicious iftar, which was complemented by a nostalgic movie screening.  Furthermore, \"Iftar Ramadan Gathering\" offered a unique experience throughout the holy month of Ramadan.",
 
     "connect": "Connect With Us",
     "email": "Email Us",
@@ -736,7 +746,7 @@
     "blogTitle3": "",
     "blogDescription": "لقد أظهر الاتحاد المصري خطوات ملحوظة في تعزيز مجتمع نابض بالحياة وشامل، مما ترك علامة لا تمحى على المشهد الأكاديمي والاجتماعي. ومن خلال نسيج غني من الأحداث والمبادرات، أظهر الاتحاد تفانيًا لا يتزعزع تجاه أعضائها والمجتمع الأوسع. بدءًا من الندوات الأكاديمية المنظمة بدقة والتي تثير الفضول الفكري وحتى التجمعات الغنية ثقافيًا والتي تحتفي بالتنوع، عرض الاتحاد مجموعة رائعة من الإنجازات و التزامهم تجاه الطلاب الجدد جدير بالملاحظة بشكل خاص، حيث يقدمون احتضانًا دافئًا للطلاب الجدد، مما يسهل انتقالهم إلى العالم الأكاديمي. علاوة على ذلك، خلال شهر رمضان المبارك، أحدث الاتحاد شعورًا بالروحانيات الدينية، مما يجسد جوهر الوحدة. بالإضافة إلى ذلك، كانت مناسباتهم الإسلامية بمثابة منصات لتعميق الإيمان والتفاهم. باختصار، إن إنجازات الاتحاد في تنظيم الفعاليات الاجتماعية والأكاديمية والثقافية، فضلاً عن دعمهم المتفاني للوافدين الجدد ومراعاة التقاليد المهمة، تجسد التزامهم المتميز بتعزيز مجتمع نابض بالحياة ومتناغم.",
 
-    "ISSEgyptEvents": "فعاليات الاتحاد المصري",
+    "ISSEgyptEvents": "فعاليات الاتحاد  المصري",
     "ISSEventTitle1": "تفاريح العيد",
     "ISSEventDescription1": "قدمت لمحة عن كيفية احتفال الاتحاد المصري بالعيد بالشراكة مع الاتحادات الطلابية الأخرى مثل اليمن والسودان وغيرها الكثير في جامعة UTM. وكانت هناك أنشطة أخرى مثل الرسم المجاني على الوجوه للأطفال والحناء المجانية للفتيات.",
 
@@ -795,9 +805,13 @@
     "ReadingClubCreator2": "عبد الهادي صالح",
     "ReadingEventDescription2": "نظم نادي القراءة واللجنة الثقافية ندوة للتعريف بأهمية اللغة العربية وأثرها على اللغات والاستخدام اليومي ومصادر اللغة والكتب والفوائد.",
 
-    "SportsEvents": "فعاليات اللجنة الرياضية",
+    "SportsEvents": "فعاليات اللجنة  الرياضية",
     "SportsEventTitle1": "بطولة النيل",
     "SportsEventDescription1": "تم تنظيم دوري كرة الصالات بين فرق من مختلف البلدان لتحديد الفريق الذي سيحمل كأس الدوري.",
+
+    "WomenEvents": "فعالياتا لجنة شئون  المرأة",
+    "WomenEventTitle1": "تجمع البنات لافطار رمضان",
+    "WomenEventDescription1": "كان \"لقاء الإفطار الرمضاني\"، وهو إفطار استضافته ممثلات الفتيات، أمسية جميلة مليئة بالاحتفال والوحدة والروحانية كانت مخصصة للإناث فقط. واستمتع الحضور معًا بوجبة إفطار لذيذة، ترافقت مع عرض فيلم يبعث على الحنين. علاوة على ذلك، قدمت \"تجمع الإفطار الرمضاني\" تجربة فريدة طوال شهر رمضان المبارك.",
 
     "connect": "تواصل معنا",
     "email": "ارسل لنا",

@@ -434,14 +434,14 @@ function Home({ language, languageData, api }) {
                         </div>
 
                         <div className="eventBox reveal">
-                            <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <EventBoxTitle text={languageText.WomenEvents} themeColor={themeColor} isRtl={isRtl} />
                             <SwiperComponent
                                 slides={[
-                                    { img: images.readingImg1, title: languageText.ReadingEventTitle1, description: languageText.ReadingEventDescription1, creator: languageText.ReadingClubCreator1 },
-                                    { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
+                                    { img: images.womenImg1, title: languageText.WomenEventTitle1, description: languageText.WomenEventDescription1, creator: null },
                                 ]}
                             />
                         </div>
+
 
                         <div className="eventBox reveal">
                             <EventBoxTitle text={languageText.SportsEvents} themeColor={themeColor} isRtl={isRtl} />
@@ -454,8 +454,22 @@ function Home({ language, languageData, api }) {
                             />
                         </div>
 
+                    </div>
+
+                    <div className="events">
+                        <div className="eventBox reveal">
+                            <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
+                            <SwiperComponent
+                                slides={[
+                                    { img: images.readingImg1, title: languageText.ReadingEventTitle1, description: languageText.ReadingEventDescription1, creator: languageText.ReadingClubCreator1 },
+                                    { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
+                                ]}
+                            />
+                        </div>
 
                     </div>
+
+
 
 
 
