@@ -8,11 +8,9 @@ import { faTree, faEnvelope, faCalendarDays } from '@fortawesome/free-solid-svg-
 import { faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import images from '../../data/images.json';
 import link from '../../data/upcomingEvents.json'
-// import { PS } from 'country-flag-icons/react/3x2'
-// import Loader from '../Loader/Loader'
 import { useFormsContext } from '../../hooks/useFormContext'
-// import roleChecker from '../Members/MemberLoader'
-// import { useLocation, Link } from 'react-router-dom';
+import { Icon } from "@iconify/react";
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCreative, Navigation, Pagination, EffectCube } from 'swiper/modules';
 import 'swiper/css';
@@ -172,7 +170,7 @@ function Home({ language, languageData, api }) {
             <img src={upcomingEventImg} alt="" />
             <div className="line">
                 <p className="subtitle">{upcomingEventSubtitle}</p>
-                {eventLink && <a target="_blank" href={eventLink}><button>{languageText.calender} <FontAwesomeIcon icon={faCalendarDays} /></button></a>
+                {eventLink && <a target="_blank" href={eventLink}><button>{languageText.Website} <Icon icon="dashicons:admin-site-alt3" /></button></a>
                 }
             </div>
             <h2 className="description">{upcomingEventDescription}</h2>

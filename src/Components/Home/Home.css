@@ -597,6 +597,9 @@
 
 .blogContainer2 .blogItem .line button {
     padding: 2px 9px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     /* background: var(--hover); */
     background: transparent;
     color: var(--hover);
