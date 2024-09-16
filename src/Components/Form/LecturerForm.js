@@ -23,8 +23,10 @@ const LecturerForm = ({ api, language, languageData, darkMode }) => {
   const [updating, setUpdating] = useState(false);
   const [error, setError] = useState(null);
   const [lecturerName, setLecturerName] = useState("");
+  const [lecturerImage, setLecturerImage] = useState("");
   const [lecturerPhone, setLecturerPhone] = useState("");
   const [lecturerEmail, setLecturerEmail] = useState("");
+  const [lecturerJob, setLecturerJob] = useState("");
   const [lecturerFaculty, setLecturerFaculty] = useState("");
   const [lecturerOffice, setLecturerOffice] = useState("");
   const styles = SelectStyles(darkMode);
@@ -72,8 +74,10 @@ const LecturerForm = ({ api, language, languageData, darkMode }) => {
       lecturerName,
       lecturerEmail,
       lecturerPhone,
-      lecturerFaculty,
+      lecturerFaculty: "FKT",
       lecturerOffice,
+      lecturerImage,
+      lecturerJob
     }
 
     const response = await fetch(`${api}/api/lecturer`, {
@@ -122,6 +126,8 @@ const LecturerForm = ({ api, language, languageData, darkMode }) => {
       setLecturerFaculty("")
       setLecturerEmail("")
       setLecturerOffice("")
+      setLecturerImage('')
+      setLecturerJob('')
     }
   }
 
@@ -156,9 +162,11 @@ const LecturerForm = ({ api, language, languageData, darkMode }) => {
               <InputField option={lecturerName} setOption={setLecturerName} languageText={languageText.LecturerName} icon={"bx:rename"} type={"text"} required={true} option2={"lecturerName"} />
               <InputField option={lecturerPhone} setOption={setLecturerPhone} languageText={languageText.LecturerPhone} icon={"bi:phone"} type={"number"} required={true} option2={"lecturerPhone"} />
               <InputField option={lecturerEmail} setOption={setLecturerEmail} languageText={languageText.LecturerEmail} icon={"eva:email-outline"} type={"email"} required={true} option2={"lecturerEmail"} />
+              <InputField option={lecturerImage} setOption={setLecturerImage} languageText={languageText.LecturerImage} icon={"gg:profile"} type={"text"} required={false} option2={"lecturerImage"} />
+              <InputField option={lecturerJob} setOption={setLecturerJob} languageText={languageText.LecturerJob} icon={"hugeicons:new-job"} type={"text"} required={false} option2={"lecturerJob"} />
               <InputField option={lecturerOffice} setOption={setLecturerOffice} languageText={languageText.LecturerOffice} icon={"mdi:office-chair"} type={"text"} required={false} option2={"lecturerOffice"} />
 
-              <div className="InputField">
+              {/* <div className="InputField">
                 <Select
                   className={`CustomSelect ${(lecturerFaculty) ? 'valid' : ''}`}
                   placeholder={<><Icon icon="lucide:school" className="IconSize" /> {languageText.LecturerFaculty}</>}
@@ -178,7 +186,7 @@ const LecturerForm = ({ api, language, languageData, darkMode }) => {
                     },
                   })}
                 />
-              </div>
+              </div> */}
               <button disabled={loading}>{languageText.Submit}</button>
 
             </form>

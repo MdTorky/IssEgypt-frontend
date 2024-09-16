@@ -288,7 +288,12 @@ const Services = ({ language, languageData, darkMode }) => {
                                 <Icon icon="mdi:charity" className="svgIcon" />
                             </Link>
 
+                            {/* <Link className="AnnStories2Button" to="/addLecturer" data-text={languageText.AddLecturer} style={{ backgroundColor: "mediumseagreen" }}>
+                                <Icon icon="mdi:lecturn" className="svgIcon" />
+                            </Link> */}
+
                         </div>
+
                     </div>
 
 
@@ -361,9 +366,12 @@ const Services = ({ language, languageData, darkMode }) => {
                                 <FontAwesomeIcon icon={faCarSide} className='moon' />
                             </Link>
                             <div className="newStudentCard notyet">
-                                <p className="time-text"><span>{languageText.handbook}</span><span className="time-sub-text"></span></p>
+                                <p className="time-text"><span>{languageText.Seniors}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.handbook2}</p>
-                                <FontAwesomeIcon icon={faFilePdf} className='moon' />
+                                <Icon icon="fa-solid:user-graduate" className='moon' />
+
+                                {/* <FontAwesomeIcon icon={faFilePdf} className='moon' /> */}
+
                             </div>
                         </div>
                     </div>
@@ -406,45 +414,35 @@ const Services = ({ language, languageData, darkMode }) => {
                                 <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
 
-                            {/* <Link to="/library" className="newStudentCard notyet"> */}
+                            {/* <Link to="/lecturers" className="newStudentCard notyet"> */}
                             <Link to="/" className="newStudentCard notyet">
+                                <p className="time-text"><span>{languageText.Lecturers}</span><span className="time-sub-text"></span></p>
+                                <p className="day-text">{languageText.handbook2}</p>
+
+                                <Icon icon="mdi:lecture" className='moon' />
+                            </Link>
+
+                            {/* <Link to="/library" className="newStudentCard notyet"> */}
+                            {/* <Link to="/" className="newStudentCard notyet">
                                 <p className="time-text"><span>{languageText.library}</span><span className="time-sub-text"></span></p>
-                                {/* <p className="day-text">{languageText.library2}</p> */}
                                 <p className="day-text">{languageText.handbook2}</p>
 
                                 <Icon icon="ion:library" className='moon' />
-                            </Link>
+                            </Link> */}
 
-                            <Link to="" className="newStudentCard notyet">
-                                {/* <Link to="/tokens" className="newStudentCard"> */}
+                            {/* <Link to="/tokens" className="newStudentCard"> */}
+                            {/* <p className="day-text">{languageText.coursesTips2}</p> */}
+                            {/* <Link to="" className="newStudentCard notyet">
                                 <p className="time-text"><span>{languageText.Tokens}</span><span className="time-sub-text"></span></p>
-                                {/* <p className="day-text">{languageText.coursesTips2}</p> */}
                                 <p className="day-text">{languageText.handbook2}</p>
 
                                 {!darkMode ?
                                     <img src={HorusTokenDark} className="moon HorusLogoNumber" alt="" /> :
                                     <img src={HorusTokenDark} className="moon HorusLogoNumber" alt="" />}
-                            </Link>
-
-                            {/* <Link to="/courses" className="newStudentCard">
-                                <p className="time-text"><span>{languageText.extraCourses}</span><span className="time-sub-text"></span></p>
-                                <p className="day-text">{languageText.extraCourses2}</p>
-                                <FontAwesomeIcon icon={faGraduationCap} className='moon' />
                             </Link> */}
+
                         </div>
                     </div>
-
-                    {/* <div className="newStudents">
-                        <h2>{languageText.extraServices}</h2>
-                        <div className="newStudentsRow2">
-                            <Link to="/openAccount" className="newStudentCard smaller">
-                                <p className="time-text"><span>{languageText.bankAccount}</span><span className="time-sub-text"></span></p>
-                                <p className="day-text">{languageText.bankAccount2}</p>
-                                <FontAwesomeIcon icon={faCreditCard} className='moon' />
-                            </Link>
-
-                        </div>
-                    </div> */}
 
                 </div>
             </div >

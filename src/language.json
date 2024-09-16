@@ -269,6 +269,7 @@
     "Location": "Location",
     "Website": "Website",
     "Email": "Email",
+    "Office": "Office",
     "Password": "Password",
     "Phone": "Phone",
     "Token": "Token",
@@ -420,8 +421,8 @@
     "upcomingEventSubtitle1": "Free Palestine",
     "upcomingEventDescription1": "Oh God, grant victory to our people in Palestine and be of help to them. Oh God, make it easy for them. Oh God, grant us victory that will enrage these occupiers. Oh God, shake the ground from under their feet.",
 
-    "upcomingEventSubtitle2": "ISS EGYPT Website",
-    "upcomingEventDescription2": "We are delighted to introduce you to the brand new ISS Egypt Website.",
+    "upcomingEventSubtitle2": "Omar Awad Ongoing Charity",
+    "upcomingEventDescription2": "The Messenger of Allah (ﷺ) advised that after death, three deeds remain: ongoing charity, beneficial knowledge, and a righteous child praying for them. A charity project is being initiated in memory of Omar Awad Abdulhadi, an Egyptian student who studied engineering in Malaysia.",
 
     "search": "Search for a member",
     "premiumMembers": "Premium Members",
@@ -593,13 +594,20 @@
     "ReturnDate": "Return Date",
     "BookingSubmitted": "Booking Submitted Successfully",
 
+    "Lecturers": "Lecturers",
     "LecturerForm": "Add Lecturer's Details",
     "LecturerName": "Lecturer's Name",
     "LecturerPhone": "Lecturer's Phone",
     "LecturerEmail": "Lecturer's Email",
+    "LecturerImage": "Lecturer's Image",
+    "LecturerJob": "Lecturer's Website",
     "LecturerFaculty": "Lecturer's Faculty",
     "LecturerOffice": "Lecturer's Office if Possible",
-    "LecturerSubmitted": "Lecturer Details Submitted Successfully"
+    "LecturerSubmitted": "Lecturer Details Submitted Successfully",
+    "SearchLecturer": "Search for a Lecturer",
+    "AddLecturer": "Add Lecturer",
+
+    "Seniors": "Seniors"
   },
   "ar": {
     "language": "عربي",
@@ -846,6 +854,7 @@
     "Location": "العنوان",
     "Website": "الموقع",
     "Email": "البريد",
+    "Office": "المكتب",
     "Password": "كلمة المرور",
 
     "Phone": "الهاتف",
@@ -1000,8 +1009,8 @@
     "upcomingEventSubtitle1": "فلسطين حرة",
     "upcomingEventDescription1": "اللهم انصر اهلنا في فلسطين و كن لهم عونا، اللهم يسر لهم، اللهم نصرا يغيظ به هولاء المحتلين ، اللهم زلزل الأرض من تحت اقدامهم",
 
-    "upcomingEventSubtitle2": "موقع الاتحاد المصري",
-    "upcomingEventDescription2": "يسعدنا أن نقدم لكم الموقع الإلكتروني الجديد للاتحاد المصري.",
+    "upcomingEventSubtitle2": "صدقة عمر عوض الجارية",
+    "upcomingEventDescription2": "أشار رسول الله صلى الله عليه وسلم إلى أن بعد الموت ثلاث أعمال تبقى: صدقة جارية، وعلم ينتفع به، وولد صالح يدعو له.. انطلاق مشروع خيري تخليداً لذكرى الطالب المصري عمر عوض عبد الهادي الذي كان يدرس الهندسة في ماليزيا.",
 
     "editForm": "تعديل النموذج",
     "editMember": "تعديل معلومات العضو",
@@ -1168,12 +1177,19 @@
     "searchToken": "ابحث عن اسمك أو رقم الماترك",
     "ManageTokens": "إدارة العملات",
 
+    "Lecturers": "المحاضرون",
     "LecturerForm": "إضافة بيانات المحاضر",
     "LecturerName": "اسم المحاضر",
     "LecturerPhone": "رقم هاتف المحاضر",
     "LecturerEmail": "البريد الإلكتروني للمحاضر",
     "LecturerFaculty": "كلية المحاضر",
     "LecturerOffice": "مكتب المحاضر إذا أمكن",
-    "LecturerSubmitted": "تم إرسال تفاصيل المحاضر بنجاح"
+    "LecturerSubmitted": "تم إرسال تفاصيل المحاضر بنجاح",
+    "LecturerImage": "صورة المحاضر",
+    "LecturerJob": "موقع المحاضر",
+    "SearchLecturer": "ابحث عن محاضر",
+    "AddLecturer": "إضافة محاضر",
+
+    "Seniors": "الكبار"
   }
 }

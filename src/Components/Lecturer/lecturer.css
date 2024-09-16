@@ -1,0 +1,166 @@
+.lecturers {
+  margin-right: 120px;
+  margin-bottom: 20%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.arabic .lecturers {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-left: 120px;
+  margin-right: 0;
+}
+
+.lecturers .title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--theme);
+  text-transform: uppercase;
+}
+
+.lecturers .sectionBox {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.lecturerOuterBox {
+  background: var(--bg2);
+  padding: 20px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.lecturerInnerBox {
+  background: var(--bg);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lecturerCards {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lecturerInnerBox h2 {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.lecturerCard {
+  background: linear-gradient(to right, var(--bg2), var(--bg));
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  display: flex;
+  transition: 0.7s ease;
+  align-items: center;
+  width: 350px;
+  gap: 10px;
+}
+
+.lecturerCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 3px solid var(--hover);
+  padding: 2px;
+}
+
+.lecturerCard p {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 0.9em;
+  white-space: wrap;
+}
+
+.lecturerText {
+  width: 100%;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px var(--hover) dashed;
+  padding-left: 10px;
+  gap: 10px;
+}
+
+.arabic .lecturerText {
+  border-left: none;
+  border-right: 2px var(--hover) dashed;
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+.lecturerSocial {
+  display: flex;
+  gap: 10px;
+  font-size: 1.4em;
+  /* justify-content: end; */
+  /* margin-right: 10px; */
+}
+
+.lecturerSearchContainer {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  width: 50%;
+  margin: auto;
+  z-index: 3000;
+}
+
+@media screen and (max-width: 700px) {
+  .lecturers {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 90%;
+    align-items: center;
+    margin: 0 auto 50% auto;
+  }
+
+  .arabic .lecturers {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    margin: 0;
+    margin: 40px auto 50% auto;
+  }
+
+  .lecturers .sectionBox {
+    width: fit-content;
+    flex-direction: column;
+    padding: 15px;
+    gap: 50px;
+    width: 100%;
+  }
+
+  .lecturerCard {
+    width: 280px;
+    gap: 10px
+  }
+
+  .lecturerCard p {
+    font-size: 0.8em;
+  }
+
+  .lecturerSearchContainer {
+    display: flex;
+    position: relative;
+    top: 0;
+    z-index: 9000;
+    width: 80%;
+    left: 0%;
+    transform: none;
+  }
+}

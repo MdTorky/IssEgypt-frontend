@@ -54,6 +54,7 @@ import Magazine from './Components/Book/Magazine';
 import LecturerForm from './Components/Form/LecturerForm';
 import MegaImages from './Components/Home/Images';
 import Gallery from './Components/Gallery/Gallery';
+import Lecturers from './Components/Lecturer/Lecturers';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -146,6 +147,7 @@ function App() {
               <Route path="/bookForm" element={<BookForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/magazine" element={<Magazine darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/addLecturer" element={<LecturerForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/lecturers" element={<Lecturers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
 
               {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />

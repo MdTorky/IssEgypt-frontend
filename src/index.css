@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 /* font-family: 'Poppins', sans-serif; */
 
-
 /* Arabic Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap");
 
 /* font-family: 'Noto Kufi Arabic', sans-serif; */
 @font-face {
@@ -18,27 +17,24 @@
 
 :root {
   /* --theme: #F05454; */
-  --theme: #DA0037;
+  --theme: #da0037;
   --theme2: #b50934;
   /* --hover: #30475E; */
   --hover: #252525;
-  --bg: #E8F9FD;
-  --test: #122D4B;
+  --bg: #e8f9fd;
+  --test: #122d4b;
   --bg2: rgb(255, 255, 255);
   --hover2: #353535;
-
 }
-
-
 
 *::-webkit-scrollbar {
   width: 8px;
-  border-radius: 20px
+  border-radius: 20px;
 }
 
 *::-webkit-scrollbar-track {
   background-color: transparent;
-  border-radius: 20px
+  border-radius: 20px;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -53,9 +49,6 @@
   height: 100px;
 }
 
-
-
-
 .App {
   overflow-x: hidden;
 }
@@ -66,9 +59,8 @@ body {
   background: var(--bg);
   /* background-size: 50%; */
   /* font-family: 'Poppins', sans-serif; */
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
-
 
 .appContainer {
   display: flex;
@@ -88,8 +80,6 @@ body {
   /* background: red; */
 }
 
-
-
 .column {
   display: flex;
   flex-direction: column;
@@ -97,8 +87,6 @@ body {
   margin: auto;
   width: 100%;
 }
-
-
 
 .logo {
   align-items: center;
@@ -132,7 +120,6 @@ body {
 
 .logoImg {
   margin: auto;
-
 }
 
 .arabic {
@@ -143,7 +130,6 @@ body {
   direction: ltr !important;
 }
 
-
 body.arabic {
   direction: rtl;
 }
@@ -151,10 +137,6 @@ body.arabic {
 body.english {
   direction: ltr;
 }
-
-
-
-
 
 .reveal {
   position: relative;
@@ -182,7 +164,6 @@ body.english {
   opacity: 1;
 }
 
-
 .Updating {
   text-align: center;
   color: var(--theme);
@@ -191,7 +172,6 @@ body.english {
   margin: 5px 0;
   text-transform: uppercase;
 }
-
 
 @keyframes horizontalScaleAnim {
   0% {
@@ -202,7 +182,6 @@ body.english {
     transform: scaleX(1);
   }
 }
-
 
 @keyframes fadeInLeft {
   0% {
@@ -215,7 +194,6 @@ body.english {
     transform: translateX(0);
   }
 }
-
 
 @keyframes fadeInRight {
   0% {
@@ -241,10 +219,7 @@ body.english {
   }
 }
 
-
-@media screen and (max-width:700px) {
-
-
+@media screen and (max-width: 700px) {
   .appContainer .routes {
     margin: 190px auto 0 auto;
   }

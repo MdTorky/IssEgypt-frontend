@@ -85,7 +85,8 @@ export const FormsContextProvider = ({ children }) => {
         books: [],
         bookings: [],
         lecturers: [],
-        galleries: []
+        galleries: [],
+        lecturers: []
     })
 
 

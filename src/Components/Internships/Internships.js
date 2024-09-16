@@ -486,6 +486,7 @@ const Internships = ({ language, languageData, api }) => {
                         {internsToShow && internsToShow.map((intern) => (
                             <div className="card">
                                 <div className="img"><img src={intern.img} alt="" /></div>
+                                <p>{intern._id}</p>
                                 <div className="cardsBottomContent">
                                     <p>{intern.name} </p>
                                     <Button item={intern} languageText={languageText} />
