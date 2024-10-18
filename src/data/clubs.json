@@ -2,18 +2,24 @@
   "selfImprovement": [
     {
       "id": 1,
+      "name": "Al-Resala Club",
+      "link": "https://bio.site/al_resala_club",
+      "img": "https://media.bio.site/sites/c5aa80d5-0bd1-4369-b469-cfef74bf542d/CTt3uTTaemXP88NGjmuFmE.jpg"
+    },
+    {
+      "id": 2,
       "name": "AIESEC",
       "link": "https://aiesec.my/",
       "img": "https://i.ibb.co/Wpzjx4m/Aiesec.png"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "TED x UTM",
       "link": "https://linktr.ee/tedxutm",
       "img": "https://i.ibb.co/DGh1g1K/Ted.jpg"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Toastmasters",
       "link": " https://www.facebook.com/utmtmcpage",
       "img": "https://i.ibb.co/7yBFj5c/Toast-Masters.jpg"
