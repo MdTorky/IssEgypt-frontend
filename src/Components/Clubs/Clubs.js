@@ -30,8 +30,13 @@ const Clubs = ({ language, languageData }) => {
 
 
         selfImprovement: [
+
             {
                 id: 1,
+                description: languageText.resalaDesc
+            },
+            {
+                id: 2,
                 description: languageText.aiesecDesc
             },
             {
@@ -44,6 +49,7 @@ const Clubs = ({ language, languageData }) => {
                 description: languageText.toastDesc
 
             },
+
         ],
         hobby: [
             {
