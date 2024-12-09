@@ -160,10 +160,10 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             <span class="tooltip" >{languageText.Edit}</span>
                             <span><FontAwesomeIcon icon={faPen} /></span>
                         </Link>
-                        {/* <button className="icon Delete" onClick={() => { handleMemberDelete({ member: member }) }}>
+                        {(user.committee === "Secretary" || user.committee === "Admin") && <button className="icon Delete" onClick={() => { handleMemberDelete({ member: member }) }}>
                             <span class="tooltip Delete" >{languageText.delete}</span>
                             <span><FontAwesomeIcon icon={faTrash} /></span>
-                        </button> */}
+                        </button>}
                         <button className="icon Star" onClick={() => { handleChangeMemberType({ member: member }) }}>
                             <span class="tooltip Delete" >{member.type === "BestMember" ? languageText.demote : languageText.promote} </span>
                             {/* <span><FontAwesomeIcon icon={faTrash} /></span> */}
