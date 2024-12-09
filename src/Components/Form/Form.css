@@ -1,446 +1,431 @@
-.Form, .CreatedForm {
-    margin-bottom: 20%;
-    font-family: 'Poppins', sans-serif;
-    margin-right: 130px;
+.Form,
+.CreatedForm {
+  margin-bottom: 20%;
+  font-family: "Poppins", sans-serif;
+  margin-right: 130px;
 }
 
-
-
-.arabic .Form, .arabic .CreatedForm {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-left: 130px;
-    margin-right: 0px;
-
+.arabic .Form,
+.arabic .CreatedForm {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-left: 130px;
+  margin-right: 0px;
 }
 
 .LoaderDiv {
-    height: 400px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: fit-content;
-    /* margin-left: -60px; */
-    /* background: red; */
-    /* padding: 0 150px 0 0; */
-    flex-direction: column;
-    /* margin-left: 0 60% 0 auto; */
+  height: 400px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: fit-content;
+  /* margin-left: -60px; */
+  /* background: red; */
+  /* padding: 0 150px 0 0; */
+  flex-direction: column;
+  /* margin-left: 0 60% 0 auto; */
 }
 
 .arabic .LoaderDiv {
-    height: 400px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-    padding: 0 0 0 150px;
-    margin-left: 0 60% 0 auto;
+  height: 400px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  padding: 0 0 0 150px;
+  margin-left: 0 60% 0 auto;
 }
 
-
 .JoinGroup {
-    text-align: center;
-    margin: 0 auto;
-    color: var(--theme);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8em
+  text-align: center;
+  margin: 0 auto;
+  color: var(--theme);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
 }
 
 .NothingHere {
-    margin-bottom: -30px;
-    font-size: 2em;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-left: -60px;
+  margin-bottom: -30px;
+  font-size: 2em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-left: -60px;
 
-    margin-top: 250px;
-    /* align-items: center; */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  margin-top: 250px;
+  /* align-items: center; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .NothingColor {
-    color: var(--theme);
-    text-transform: uppercase;
+  color: var(--theme);
+  text-transform: uppercase;
 }
 
 .formBox {
-    background: var(--bg2);
-    width: fit-content;
-    padding: 10px;
-    border-radius: 20px;
-    margin: auto;
-    /* justify-content: center; */
+  background: var(--bg2);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 20px;
+  margin: auto;
+  /* justify-content: center; */
 }
-
 
 .formBox h2 {
-    text-align: center;
-    color: var(--theme);
+  text-align: center;
+  color: var(--theme);
 }
 
-.formBox form, .FormPopup {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    background: linear-gradient(to right, var(--bg2), var(--bg));
-    border-radius: 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+.formBox form,
+.FormPopup {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: linear-gradient(to right, var(--bg2), var(--bg));
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
-
-
-.formBox button, .formBox .GroupLink, .FormPopup .SubmitButton {
-    background: var(--theme);
-    color: var(--bg);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: 0.5s ease;
-    /* margin: auto; */
+.formBox button,
+.formBox .GroupLink,
+.FormPopup .SubmitButton {
+  background: var(--theme);
+  color: var(--bg);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  /* margin: auto; */
 }
 
-.formBox .GroupLink, .formBox .button, .FormPopup .SubmitButton {
-    margin: auto;
+.formBox .GroupLink,
+.formBox .button,
+.FormPopup .SubmitButton {
+  margin: auto;
 }
-
 
 .FormPopup .SubmitButton {
-    margin-top: 10px;
-    display: flex;
+  margin-top: 10px;
+  display: flex;
 }
 
-
-.formBox button:hover, .FormPopup .SubmitButton:hover {
-    transform: translateY(2px);
-    box-shadow: none;
-    letter-spacing: 1px;
+.formBox button:hover,
+.FormPopup .SubmitButton:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+  letter-spacing: 1px;
 }
-
 
 .formBox .GroupLink {
-    background: mediumaquamarine;
-    width: 70%;
-    border-radius: 10px;
-    font-weight: 700;
-    box-shadow: none;
-    text-align: center;
-    text-transform: none;
+  background: mediumaquamarine;
+  width: 70%;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: none;
+  text-align: center;
+  text-transform: none;
 }
 
 .formBox .GroupLink:hover {
-    /* width: 50%; */
-    transform: none;
-    letter-spacing: 5px;
-    background: mediumseagreen;
-
-
+  /* width: 50%; */
+  transform: none;
+  letter-spacing: 5px;
+  background: mediumseagreen;
 }
 
 .formBox .button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-    cursor: pointer;
-    transition-duration: .3s;
-    overflow: hidden;
-    position: relative;
-    /* margin-left: 90% */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  /* margin-left: 90% */
 }
 
 .formBox .button .svgIcon {
-    width: 20px;
-    transition-duration: .3s;
+  width: 20px;
+  transition-duration: 0.3s;
 }
 
 .formBox .button .svgIcon path {
-    fill: white;
+  fill: white;
 }
 
 .formBox .button:hover {
-    width: 140px;
-    border-radius: 50px;
-    transition-duration: .3s;
-    background: linear-gradient(to right, var(--theme), var(--theme));
-    align-items: center;
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background: linear-gradient(to right, var(--theme), var(--theme));
+  align-items: center;
 }
 
 .formBox .button:hover .svgIcon {
-    width: 50px;
-    transition-duration: .3s;
-    transform: translateY(60%);
+  width: 50px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
 }
 
 .formBox .button::before {
-    position: absolute;
-    top: -20px;
-    content: attr(data-content);
-    color: white;
-    transition-duration: .3s;
-    font-size: 2px;
+  position: absolute;
+  top: -20px;
+  content: attr(data-content);
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
 }
 
 .formBox .button:hover::before {
-    font-size: 13px;
-    opacity: 1;
-    transform: translateY(30px);
-    transition-duration: .3s;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: 0.3s;
 }
 
-
-.arabic .formBox button, .FormPopup button {
-    font-family: 'Noto Kufi Arabic', sans-serif;
+.arabic .formBox button,
+.FormPopup button {
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
-
-
 
 .InputRow {
-    display: flex;
-    gap: 10px;
-    /* justify-content: space-between; */
-    width: 100%;
-    align-items: center;
-
+  display: flex;
+  gap: 10px;
+  /* justify-content: space-between; */
+  width: 100%;
+  align-items: center;
 }
 
 .CustomInputs {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .InputField {
-    display: flex;
-    width: 100%;
-    width: 300px;
+  display: flex;
+  width: 100%;
+  width: 300px;
 
-    position: relative;
+  position: relative;
 
-    /* flex-direction: column */
+  /* flex-direction: column */
 }
 
 button.CustomInputButton {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 50px;
-    border-radius: 10px;
-    /* background: none; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 50px;
+  border-radius: 10px;
+  /* background: none; */
 }
 
 .arabic button.CustomInputButton {
-    position: absolute;
-    left: 0;
-    right: inherit;
-    /* background: none; */
+  position: absolute;
+  left: 0;
+  right: inherit;
+  /* background: none; */
 }
 
 .InputField.eventDescription {
-    width: 100%;
+  width: 100%;
 }
 
-
 .formBox form .InputField .InputError.password {
-    text-align: left;
+  text-align: left;
 }
 
 .formBox form .InputField .PasswordStrength:has(.Plus) {
-    color: mediumaquamarine;
+  color: mediumaquamarine;
 }
 
 .formBox form .InputField .PasswordStrength:has(.Minus) {
-    color: var(--theme);
+  color: var(--theme);
 }
 
-
-.formBox form .input, .formBox select, .formBox form .LabelInputImg, .FormPopup .input {
-
-    width: 100%;
-    padding: 12px;
-    border-radius: 15px;
-    border: 3px solid lightgrey;
-    outline: none;
-    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0px 0px 20px -18px;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, var(--bg2), var(--bg));
-    position: relative;
-    color: var(--hover);
+.formBox form .input,
+.formBox select,
+.formBox form .LabelInputImg,
+.FormPopup .input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  border: 3px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, var(--bg2), var(--bg));
+  position: relative;
+  color: var(--hover);
 }
 
 .CustomSelect {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-
+  width: 100%;
+  border: none;
+  cursor: pointer;
 }
-
-
-
 
 .formBox form .LabelInputImg {
-    cursor: pointer;
-    margin: 0;
-    font-size: 0.9em;
-    color: var(--hover);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-
+  cursor: pointer;
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--hover);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
 }
 
-
-.arabic .formBox form .LabelInputImg, .arabic .formBox form select {
-    font-family: 'Noto Kufi Arabic', sans-serif;
+.arabic .formBox form .LabelInputImg,
+.arabic .formBox form select {
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
-
 
 .InputLabelField {
-    display: flex;
-    width: 100%;
-    position: relative;
-    white-space: nowrap;
-
+  display: flex;
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
 }
 
-
-.LabelInput, .FormPopup .LabelInput {
-    position: absolute;
-    z-index: 99;
-    top: 15px;
-    left: 16px;
-    font-size: 0.9em;
-    cursor: text;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    /* width: 0%; */
-    white-space: wrap;
+.LabelInput,
+.FormPopup .LabelInput {
+  position: absolute;
+  z-index: 99;
+  top: 15px;
+  left: 16px;
+  font-size: 0.9em;
+  cursor: text;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* width: 0%; */
+  white-space: wrap;
 }
 
 .CustomInput {
-    height: 100px;
+  height: 100px;
 }
 
 .CustomLabelInput {
-    /* display: flex; */
-    /* justify-content: center; */
-    top: 0 !important;
-    bottom: 0 !important;
-    width: 90%;
+  /* display: flex; */
+  /* justify-content: center; */
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 90%;
 }
 
-
-.arabic .LabelInput, .arabic .FormPopup .LabelInput {
-    top: 13px;
-    left: 0;
-    right: 16px;
+.arabic .LabelInput,
+.arabic .FormPopup .LabelInput {
+  top: 13px;
+  left: 0;
+  right: 16px;
 }
 
-.LabelInput.valid, .FormPopup .LabelInput.valid {
-    color: mediumseagreen;
+.LabelInput.valid,
+.FormPopup .LabelInput.valid {
+  color: mediumseagreen;
 }
 
 .LabelInput.invalid {
-    color: var(--theme);
+  color: var(--theme);
 }
 
 .formBox button.XImgButton {
-    padding: 0;
-    border: none;
-    background: none;
-    color: inherit;
-    box-shadow: none;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  box-shadow: none;
 }
 
 .formBox form select option:checked {
-    background-color: var(--theme);
-    color: var(--bg);
-    font-weight: 700;
+  background-color: var(--theme);
+  color: var(--bg);
+  font-weight: 700;
 }
 
 select:focus {
-    border: 3px solid mediumaquamarine;
-    color: var(--hover)
+  border: 3px solid mediumaquamarine;
+  color: var(--hover);
 }
 
-
 .formBox form .input.matric {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .formBox form .input::placeholder {
-    font-family: 'FontAwesome', sans-serif;
+  font-family: "FontAwesome", sans-serif;
 }
 
-.formBox form .input.valid, .formBox form .LabelInputImg.valid, .FormPopup .input.valid {
-
-    border: 3px solid mediumaquamarine;
-    box-shadow: 0px 0px 20px -17px;
-    color: mediumseagreen;
-
+.formBox form .input.valid,
+.formBox form .LabelInputImg.valid,
+.FormPopup .input.valid {
+  border: 3px solid mediumaquamarine;
+  box-shadow: 0px 0px 20px -17px;
+  color: mediumseagreen;
 }
 
-.formBox form .input.invalid, .formBox form .LabelInputImg.invalid, .FormPopup .input.invalid {
-    border: 3px solid var(--theme);
-    box-shadow: 0px 0px 20px -17px;
-    color: var(--theme);
+.formBox form .input.invalid,
+.formBox form .LabelInputImg.invalid,
+.FormPopup .input.invalid {
+  border: 3px solid var(--theme);
+  box-shadow: 0px 0px 20px -17px;
+  color: var(--theme);
 }
 
-.formBox form .input:active, .FormPopup .input:active {
-    transform: scale(0.95);
+.formBox form .input:active,
+.FormPopup .input:active {
+  transform: scale(0.95);
 }
-
 
 input::placeholder {
-    font-weight: 700;
-
+  font-weight: 700;
 }
 
 .arabic input::placeholder {
-    font-family: 'Noto Kufi Arabic', sans-serif;
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
 
-
 .TogglePass {
-    position: absolute;
-    margin: 4% 0px 0px 90%;
-    color: var(--hover);
-    font-size: 1em;
-    cursor: pointer;
-    transition: 0.4s all ease-in-out;
+  position: absolute;
+  margin: 4% 0px 0px 90%;
+  color: var(--hover);
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.4s all ease-in-out;
 }
 
 .arabic .TogglePass {
-    margin: 4% 90% 0px 0;
+  margin: 4% 90% 0px 0;
 }
 
 .Pass {
-    /* color: rgb(222, 190, 9) */
-    color: var(--theme2)
+  /* color: rgb(222, 190, 9) */
+  color: var(--theme2);
 }
 
 /* .formBox form .input.inputPass {
@@ -450,613 +435,546 @@ input::placeholder {
 } */
 
 .formError {
-    background: var(--hover);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 5px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    color: var(--bg);
-    width: fit-content;
-    margin: 10px auto;
-    white-space: wrap;
+  background: var(--hover);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--bg);
+  width: fit-content;
+  margin: 10px auto;
+  white-space: wrap;
 }
 
 .PasswordCheckBack {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 0.8em;
-    background: linear-gradient(to left, var(--bg), var(--bg2));
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.8em;
+  background: linear-gradient(to left, var(--bg), var(--bg2));
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .PasswordCheck {
-    color: var(--theme);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  color: var(--theme);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .PasswordCheck .PasswordIcon {
-    width: 0.65em;
-    height: 0.65em
+  width: 0.65em;
+  height: 0.65em;
 }
-
 
 .PasswordCheckerValid {
-    color: mediumaquamarine
+  color: mediumaquamarine;
 }
 
-
-
 .multiselect {
-    width: 100%;
+  width: 100%;
 }
 
 .selectBox {
-    position: relative;
+  position: relative;
 }
 
-
 .overSelect {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 #checkboxes {
-    display: none;
-    border: 1px #dadada solid;
+  display: none;
+  border: 1px #dadada solid;
 }
 
 #checkboxes label {
-    display: block;
+  display: block;
 }
 
 #checkboxes label:hover {
-    background-color: #1e90ff;
+  background-color: #1e90ff;
 }
-
-
-
-
-
 
 .CategoryInput input[type="checkbox"] {
-    display: none;
+  display: none;
 }
 
-.CategoryInput input[type="checkbox"]+label {
-    display: flex;
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 20px;
-    align-items: center;
-    /* margin-top: 3px; */
-    /* font: 14px/20px; */
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+.CategoryInput input[type="checkbox"] + label {
+  display: flex;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 20px;
+  align-items: center;
+  /* margin-top: 3px; */
+  /* font: 14px/20px; */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-.CategoryInput input[type="checkbox"]:hover+label:hover {
-    color: var(--theme2);
+.CategoryInput input[type="checkbox"]:hover + label:hover {
+  color: var(--theme2);
 }
 
-.CategoryInput input[type="checkbox"]:hover+label:before {
-    background: var(--theme2);
-    box-shadow: inset 0px 0px 0px 2px #f7f2f2;
+.CategoryInput input[type="checkbox"]:hover + label:before {
+  background: var(--theme2);
+  box-shadow: inset 0px 0px 0px 2px #f7f2f2;
 }
 
-.CategoryInput input[type="checkbox"]+label:last-child {
-    margin-bottom: 0;
+.CategoryInput input[type="checkbox"] + label:last-child {
+  margin-bottom: 0;
 }
 
-.CategoryInput input[type="checkbox"]+label:before {
-    content: "";
-    display: block;
-    width: 1em;
-    height: 1em;
-    border: 1px solid #343a3f;
-    border-radius: 0.2em;
-    position: absolute;
-    left: 0;
-    /* top: 0; */
-    -webkit-transition: all 0.2s, background 0.2s ease-in-out;
-    transition: all 0.2s, background 0.2s ease-in-out;
-    background: #f3f3f3;
+.CategoryInput input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #343a3f;
+  border-radius: 0.2em;
+  position: absolute;
+  left: 0;
+  /* top: 0; */
+  -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+  transition: all 0.2s, background 0.2s ease-in-out;
+  background: #f3f3f3;
 }
 
-.CategoryInput input[type="checkbox"]:checked+label:before {
-    width: 0.9em;
-    height: 0.9em;
-    border-radius: 0.2em;
-    border: 2px solid #fff;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    background: var(--theme);
-    box-shadow: 0 0 0 1px #000;
+.CategoryInput input[type="checkbox"]:checked + label:before {
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 0.2em;
+  border: 2px solid #fff;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background: var(--theme);
+  box-shadow: 0 0 0 1px #000;
 }
-
-
-
-
-
-
-
 
 .FormPopup {
-    position: absolute;
-    flex-direction: column;
-    display: flex;
-    background: white;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    justify-self: center;
-    align-self: center;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 20px;
-    justify-content: space-around;
-    backdrop-filter: blur(4px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.79);
-    border-radius: 12px;
-    border: 10px double var(--theme);
-    z-index: 0;
-    animation: ScaleCenter 0.5s ease 0s 1 normal forwards;
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  background: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  justify-self: center;
+  align-self: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+  justify-content: space-around;
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.79);
+  border-radius: 12px;
+  border: 10px double var(--theme);
+  z-index: 0;
+  animation: ScaleCenter 0.5s ease 0s 1 normal forwards;
 }
 
 .arabic .FormPopup {
-    font-family: 'Noto Kufi Arabic', sans-serif;
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
 
-
 .FormPopup h3 {
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-size: 1.4em;
-    text-align: center;
-    text-transform: uppercase
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.4em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .FormPopup .CloseFormButton {
-    position: absolute;
-    top: 5px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .arabic .FormPopup .CloseFormButton {
-    left: 0;
-    right: 90%;
-
+  left: 0;
+  right: 90%;
 }
-
-
-
-
 
 /* Created Forms */
 
 .CreatedForm {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .FormAll {
-    display: flex;
-    gap: 90px;
-    /* justify-content: center; */
-    margin: auto;
-    /* background: red; */
+  display: flex;
+  gap: 90px;
+  /* justify-content: center; */
+  margin: auto;
+  /* background: red; */
 }
 
 .CreatedForm .FormLeft {
-    background: var(--bg2);
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 20px;
-    height: fit-content;
+  background: var(--bg2);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 20px;
+  height: fit-content;
 }
 
-
 .CreatedForm .FormLeft img {
-    width: 600px;
-    height: 600px;
-    /* background: var(--bg); */
-    border: 2px solid var(--theme);
-    padding: 10px;
-    border-radius: 20px;
-
+  width: 600px;
+  height: 600px;
+  /* background: var(--bg); */
+  border: 2px solid var(--theme);
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .FormLeftDetails {
-    border-radius: 10px;
-    padding: 10px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .FormLeftDetails h2 {
-    margin: 0;
-    text-transform: uppercase;
-    color: var(--theme);
-    width: fit-content;
-    padding: 5px 10px;
-    border-radius: 10px;
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--theme);
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 .arabic .FormLeftDetails h2 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
-
 
 .FormLeftDetails p {
-    margin: 0;
-    padding: 5px 10px;
-    border-radius: 10px;
-    /* width: 300px; */
-    box-sizing: border-box;
-    white-space: wrap;
-    width: 600px;
-    text-align: justify;
-    white-space: pre-wrap
-        /* background: var(--bg) */
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* width: 300px; */
+  box-sizing: border-box;
+  white-space: wrap;
+  width: 600px;
+  text-align: justify;
+  white-space: pre-wrap;
+  /* background: var(--bg) */
 }
 
-
 .CreatedForm .FormCenter {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 10px;
-    border-radius: 20px;
-    width: 700px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 20px;
+  width: 700px;
+  box-sizing: border-box;
 }
 
 .CreatedForm .FormCenter .FormTitle {
-    margin: 0;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 900;
-    color: var(--theme);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: var(--theme);
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .Hint {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
 }
 
 .Hint p {
-    margin: 0;
-    font-size: 1em;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: mediumaquamarine;
-    border: 3px mediumaquamarine solid;
-    padding: 5px 20px;
-    border-radius: 10px
+  margin: 0;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: mediumaquamarine;
+  border: 3px mediumaquamarine solid;
+  padding: 5px 20px;
+  border-radius: 10px;
 }
 
 .Hint p:last-child {
-    color: var(--theme);
-    border: 3px var(--theme) solid;
-
+  color: var(--theme);
+  border: 3px var(--theme) solid;
 }
 
 .formBox.PeopleForm {
-    margin: 0;
-    width: fit-content;
-    box-sizing: border-box;
+  margin: 0;
+  width: fit-content;
+  box-sizing: border-box;
 }
 
 .formBox.PeopleForm form {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    box-sizing: border-box;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .formBox .PersonalFields {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    width: 100%;
-    /* background: var(--hover); */
-    border-radius: 20px;
-    padding: 10px;
-    position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  /* background: var(--hover); */
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
 }
 
 .formBox .PersonalFields.PaymentFields {
-    flex-direction: column;
-    display: flex;
+  flex-direction: column;
+  display: flex;
 }
 
 .PaymentFields p {
-    text-align: center;
-    margin: -20px 0 0 0;
-    font-size: 1.2em;
-    color: var(--theme);
-    font-weight: 800;
-    text-transform: uppercase;
+  text-align: center;
+  margin: -20px 0 0 0;
+  font-size: 1.2em;
+  color: var(--theme);
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-
 .formBox hr {
-    margin: 0 auto;
-    width: 80%;
-    height: 5px;
-    border-radius: 20px;
-    background: var(--theme);
-    border: none;
+  margin: 0 auto;
+  width: 80%;
+  height: 5px;
+  border-radius: 20px;
+  background: var(--theme);
+  border: none;
 }
 
 .InputLogo {
-    width: 20px;
-    /* margin: 0; */
+  width: 20px;
+  /* margin: 0; */
 }
-
-
 
 .QRPayment {
-    display: flex;
-    justify-content: space-around
+  display: flex;
+  justify-content: space-around;
 }
 
-
 .QRCode {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px 20px 0 0;
-    background: var(--hover);
-    padding: 5px;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px 20px 0 0;
+  background: var(--hover);
+  padding: 5px;
 }
 
 .PaymentAmount {
-    margin: auto;
-    padding: 5px;
-    background: linear-gradient(to left, var(--hover), var(--hover2));
-    border-radius: 0 0 20px 20px;
-    border-bottom: 5px solid var(--hover);
-    border-left: 5px solid var(--hover);
-    border-right: 5px solid var(--hover);
-    color: var(--bg) !important;
+  margin: auto;
+  padding: 5px;
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  border-radius: 0 0 20px 20px;
+  border-bottom: 5px solid var(--hover);
+  border-left: 5px solid var(--hover);
+  border-right: 5px solid var(--hover);
+  color: var(--bg) !important;
 }
 
-
 .CreatedForm .FormRight {
-    display: flex;
-    justify-content: center;
-    background: red;
-    align-items: center;
-    width: max-content;
-    border-radius: 20px;
-    height: fit-content;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  background: red;
+  align-items: center;
+  width: max-content;
+  border-radius: 20px;
+  height: fit-content;
+  margin: auto;
 }
 
 .CustomInputRow {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    /* background: red */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* background: red */
 }
 
 .CustomButton {
-    display: flex;
+  display: flex;
 }
 
-
-
-
 .FormImage {
-    width: 150px;
-    /* background: blue; */
-    display: flex;
-    align-items: center;
-    margin-top: -20px;
+  width: 150px;
+  /* background: blue; */
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
 }
 
 .FormImage img {
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 10px;
-    border: 4px double var(--theme)
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 4px double var(--theme);
 }
 
 .FormDetails {
-    margin: 0;
-    font-weight: 800;
-    /* background: var(--hover); */
-    color: var(--hover);
-    padding: 5px;
-    border-radius: 10px;
-    border: 4px double var(--theme)
+  margin: 0;
+  font-weight: 800;
+  /* background: var(--hover); */
+  color: var(--hover);
+  padding: 5px;
+  border-radius: 10px;
+  border: 4px double var(--theme);
 }
 
-input[type=datetime-local]:required:invalid::-webkit-datetime-edit {
-    color: transparent;
+input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
 }
-
-
 
 @media screen and (max-width: 700px) {
-    .Form {
-        margin-bottom: 50% !important;
-        margin-right: 0;
-    }
+  .Form {
+    margin-bottom: 50% !important;
+    margin-right: 0;
+  }
 
-    .arabic .Form {
-        margin: 10% 0 40% 0
-    }
+  .arabic .Form {
+    margin: 10% 0 40% 0;
+  }
 
+  .NothingHere {
+    margin: auto;
+    margin-top: 20px !important;
+    margin-bottom: -20px !important;
+  }
 
-    .NothingHere {
-        margin: auto;
-        margin-top: 20px !important;
-        margin-bottom: -20px !important;
-    }
+  .arabic .NothingHere {
+    margin: auto;
+    margin-top: 20px !important;
+  }
 
-    .arabic .NothingHere {
+  .InputRow {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+  }
 
-        margin: auto;
-        margin-top: 20px !important;
+  .InputField {
+    width: 300px;
+    margin: auto;
+  }
 
-    }
+  .formBox .button {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background: linear-gradient(to right, var(--theme), var(--theme));
+    align-items: center;
+  }
 
+  .formBox .button .svgIcon {
+    width: 50px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+  }
 
-    .InputRow {
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-content: center;
-    }
+  .formBox .button::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: 0.3s;
+    position: absolute;
+    top: -20px;
+    content: attr(data-content);
+    color: white;
+  }
 
+  .FormAll {
+    flex-direction: column;
+    gap: -10px;
+  }
 
-    .InputField {
-        width: 300px;
-        margin: auto;
-    }
+  .CreatedForm {
+    display: flex;
+    width: 100%;
+    margin-bottom: 90%;
+  }
 
-    .formBox .button {
-        width: 140px;
-        border-radius: 50px;
-        transition-duration: .3s;
-        background: linear-gradient(to right, var(--theme), var(--theme));
-        align-items: center;
-    }
+  .arabic .CreatedForm {
+    margin-top: 17%;
+  }
 
-    .formBox .button .svgIcon {
-        width: 50px;
-        transition-duration: .3s;
-        transform: translateY(60%);
-    }
+  .CreatedForm .FormLeft {
+    width: fit-content;
+    margin: auto;
+  }
 
-    .formBox .button::before {
-        font-size: 13px;
-        opacity: 1;
-        transform: translateY(30px);
-        transition-duration: .3s;
-        position: absolute;
-        top: -20px;
-        content: attr(data-content);
-        color: white;
-    }
+  .CreatedForm .FormLeft img {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
 
+  .FormLeftDetails h2 {
+    font-size: 1.4em;
+    text-align: center;
+    margin: auto;
+  }
 
+  .arabic .FormLeftDetails h2 {
+    font-size: 1.4em;
+  }
 
+  .FormLeftDetails p {
+    font-size: 0.8em;
+    width: inherit;
+    /* width: 200px; */
+  }
 
+  .CreatedForm .FormCenter {
+    width: 100%;
+    box-sizing: none;
+    margin-top: -40px;
+  }
 
+  .Hint p {
+    font-size: 0.7em;
+  }
 
+  .InputLogo {
+    width: 20px;
+  }
 
-    .FormAll {
-        flex-direction: column;
-        gap: -10px
-    }
+  .QRPayment {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-
-
-    .CreatedForm {
-        display: flex;
-        width: 100%;
-        margin-bottom: 90%;
-    }
-
-    .arabic .CreatedForm {
-        margin-top: 17%;
-    }
-
-    .CreatedForm .FormLeft {
-        width: fit-content;
-        margin: auto;
-    }
-
-
-
-    .CreatedForm .FormLeft img {
-        width: 300px;
-        height: 300px;
-        margin: auto;
-    }
-
-
-    .FormLeftDetails h2 {
-        font-size: 1.4em;
-        text-align: center;
-        margin: auto;
-    }
-
-    .arabic .FormLeftDetails h2 {
-        font-size: 1.4em;
-    }
-
-
-    .FormLeftDetails p {
-        font-size: 0.8em;
-        width: inherit
-            /* width: 200px; */
-    }
-
-
-
-    .CreatedForm .FormCenter {
-        width: 100%;
-        box-sizing: none;
-        margin-top: -40px;
-
-    }
-
-
-    .Hint p {
-        font-size: 0.7em;
-    }
-
-
-    .InputLogo {
-        width: 20px;
-    }
-
-    .QRPayment {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .QRCode {
-        width: 300px;
-        height: 300px;
-        margin: auto;
-    }
-
-
-
-
-
-
+  .QRCode {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
 }

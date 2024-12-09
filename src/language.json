@@ -15,7 +15,7 @@
 
     "IssPres": "ISS Committee Presidents",
     "IssPres2": "Committee Presidents",
-    "Egypt": "ISS Egypt",
+    "Egypt": "ISS EGYPT 2025",
 
     "President": "ISS Egypt President",
     "PresidentName": "Ahmed Khalaf",
@@ -23,7 +23,7 @@
     "VicePresident": "Vice President",
     "VicePresidentName": "Abdullah Tarek",
 
-    "Secretary": "General Secretary",
+    "Secretary": "Secretary",
     "SecretaryName": "Anas Fahmy",
 
     "Treasurer": "Treasurer",
@@ -44,7 +44,7 @@
     "Sport": "Sports President",
     "SportName": "Moustafa Mohsen",
 
-    "HR": "Human Resources",
+    "HR": "Human Resources President",
     "HRName": "Adham Ahmed",
 
     "Logistics": "Logistics President",
@@ -134,7 +134,7 @@
     "noAnnouncement": "Sorry.. No Announcements Yet",
 
     "achievements": "The ISS Egypt Achievements",
-    "blogSubtitle": "Symposium For Palestine Group Picture",
+    "blogSubtitle": "Welcome & Appreciation Day Group Picture",
     "blogTitle1": "The",
     "blogTitle2": "International Student Society (ISS) Egypt",
     "blogTitle3": "Achievements",
@@ -628,7 +628,7 @@
 
     "IssPres": "رؤساء لجان الاتحاد",
     "IssPres2": "رؤساء اللجان",
-    "Egypt": "الاتحاد المصري",
+    "Egypt": "الاتحاد المصري 2025",
 
     "President": "رئيس الاتحاد",
     "PresidentName": "أحمد خلف",
@@ -636,7 +636,7 @@
     "VicePresident": "نائب الرئيس",
     "VicePresidentName": "عبدالله طارق",
 
-    "Secretary": "الاداري العام",
+    "Secretary": "السكرتيرة",
     "SecretaryName": "أنس فهمي",
 
     "Treasurer": "أمين صندوق",
@@ -657,7 +657,7 @@
     "Sport": "رئيس اللجنة الرياضية",
     "SportName": "مصطفى محسن",
 
-    "HR": "HR",
+    "HR": "رئيس الموارد البشرية",
     "HRName": "أدهم أحمد",
 
     "Logistics": "رئيس الخدمات اللوجستية",
@@ -749,7 +749,7 @@
 
     "achievements": "إنجازات الاتحاد",
 
-    "blogSubtitle": " صورة جماعية لندوة من أجل فلسطين",
+    "blogSubtitle": "صورة جماعية ليوم الترحيب والتقدير",
     "blogTitle1": "إنجازات",
     "blogTitle2": "اتحاد الطلبة المصريين",
     "blogTitle3": "",

@@ -28,6 +28,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
     const languageText = languageData[language];
     const { user } = useAuthContext()
     const navigate = useNavigate();
+    const [memberCommittee, setMemberCommittee] = useState("")
 
 
 
@@ -101,20 +102,22 @@ const Admin = ({ language, languageData, api, darkMode }) => {
     }, [api, dispatch]);
 
 
-    const adminFilter = members.filter((member) => member.committee === user?.committee);
-    const presidentFilter = adminFilter.find((member) => member.type === 'President' || member.type === 'VicePresident');
+
+
+
+
+
+    const [formCommittee, setFormCommittee] = useState(user?.committee)
+
+    const adminFilter = members.filter((member) => member.committee === formCommittee);
+    const adminFilter2 = members.filter((member) => member.committee === user?.committee);
+    const presidentFilter = adminFilter2.find((member) => member.type === 'President' || member.type === 'VicePresident' || member.type === 'Admin');
     const normalMember = adminFilter.filter((member) => member.type === 'Member' || member.type === 'VicePresident' || member.type === 'BestMember').sort((a, b) => a.name.localeCompare(b.name));
 
-    const membersCount = normalMember.filter((member) => member.committee === user?.committee).length;
 
-
-
-    const formsCount = forms.filter((form) => form.type === user?.committee).length;
-    let formCommittee = user?.committee
-    if (user.committee === "Academic" || user.committee === "Vice") {
-        formCommittee = "Academic"
-    }
     const formsFilter = forms.filter((form) => form.type === formCommittee);
+    const membersCount = normalMember.filter((member) => member.committee === formCommittee).length;
+    const formsCount = forms.filter((form) => form.type === formCommittee).length;
 
 
 
@@ -545,10 +548,32 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             </div>
 
                         </div>
-                        {user.committee === "Bank" &&
+                        {user.committee === "Academic" &&
                             <div className="BankLinks">
                                 <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
                                 <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
+                            </div>
+                        }
+
+                        {(user.committee === "Secretary" || user.committee === "Admin") &&
+                            <div className="BankLinks">
+                                <p>{languageText.formCommittee}</p>
+                                <select className={`input ${(formCommittee) ? 'valid' : ''}`} onChange={e => (setFormCommittee(e.target.value))}>
+                                    <option value={user?.committee}>{user?.committee}</option>
+                                    {user?.committee === "Admin" && <option value="ISS Egypt">President</option>}
+                                    {user?.committee === "Admin" && <option value="Vice">Vice-President</option>}
+                                    {user?.committee === "Admin" && <option value="Secretary">Secretary</option>}
+                                    {user?.committee === "Admin" && <option value="Treasurer">Treasurer</option>}
+                                    <option value="Social">Social</option>
+                                    <option value="Academic">Academic</option>
+                                    <option value="Culture">Culture</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Women Affairs">Women Affairs</option>
+                                    <option value="Media">Media</option>
+                                    <option value="HR">HR</option>
+                                    <option value="PR">PR</option>
+                                    <option value="Reading">Reading</option>
+                                </select>
                             </div>
                         }
                     </div>

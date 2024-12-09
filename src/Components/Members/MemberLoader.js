@@ -40,6 +40,9 @@ const MemberLoader = ({ languageText, committee, role }) => {
     else if (committee === "PR" && role === "President") {
         return languageText.PublicRelation
     }
+    else if (committee === "HR" && role === "President") {
+        return languageText.HR
+    }
     else if (committee === "Reading" && role === "President") {
         return languageText.ReadingPresident
     }

@@ -105,13 +105,14 @@ const Register = ({ language, languageData, api, darkMode }) => {
                             <option value="Secretary" >{languageText.Secretary}</option>
                             <option value="Social" >{languageText.SocialPresident}</option>
                             <option value="Academic" >{languageText.AcademicPresident}</option>
-                            <option value="Bank" >{languageText.BankPresident}</option>
+                            {/* <option value="Bank" >{languageText.BankPresident}</option> */}
                             <option value="Culture" >{languageText.CulturePresident}</option>
                             <option value="Sports" >{languageText.SportPresident}</option>
                             <option value="Media" >{languageText.MediaPresident}</option>
                             <option value="Women Affairs" >{languageText.WomenPresident}</option>
-                            <option value="Reading" >{languageText.ReadingPresident}</option>
+                            {/* <option value="Reading" >{languageText.ReadingPresident}</option> */}
                             <option value="PR" >{languageText.PublicRelation}</option>
+                            <option value="HR" >{languageText.HR}</option>
                         </select>
                     </div>
 
