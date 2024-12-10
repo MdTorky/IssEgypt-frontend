@@ -10,6 +10,7 @@ import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 import "../Form/Form.css"
 
@@ -23,6 +24,7 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
     const [selectedImageText, setSelectedImageText] = useState(null);
     const [updating, setUpdating] = useState(false);
     const navigate = useNavigate();
+    const { user } = useAuthContext()
 
 
     useEffect(() => {
@@ -119,6 +121,7 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
                     phone: member.phone,
                     linkedIn: member.linkedIn,
                     img: imgUrl,
+                    committee: member.committee
                 }),
             });
 
@@ -219,6 +222,7 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
                         <form onSubmit={handleUpdate}>
                             <h2>{languageText.editMember}</h2>
 
+                            <img src={member.img} className="MemberEditorImg" />
 
                             <div className="InputRow">
                                 <div className="InputField">
@@ -297,6 +301,8 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
                                     </select>
                                 </div>
 
+
+
                             </div>
                             <div className="InputRow">
                                 <div className="InputField">
@@ -327,28 +333,63 @@ const MemberEditor = ({ language, languageData, api, darkMode }) => {
                                     </div>
                                 </div>
                             </div>
+                            {(user.committee === "Admin" || user.committee === "Secretary") &&
 
-                            {/* <div className="InputRow">
-                                <div className="InputField">
 
-                                    <label for="img" className={`LabelInputImg ${(member.img) ? 'valid' : ''}`}>
-                                        <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faImage} />{selectedImageText || languageText.Picture}</div>
-                                        {(member.img)
-                                            ? <button className="XImgButton" onClick={handleRemoveImage}>
-                                                <FontAwesomeIcon icon={faXmark} />
-                                            </button>
-                                            : <FontAwesomeIcon icon={faCloudArrowUp} />}
-                                    </label>
-                                    <input
-                                        type="file"
-                                        accept="image/*"
-                                        id="img"
-                                        className={`input ${(member.eventImg) ? 'valid' : ''}`}
-                                        style={{ display: 'none' }}
-                                        onChange={handleImgChange}
-                                    />
+
+                                <div className="InputRow">
+
+
+                                    <div className="InputField">
+                                        <select
+                                            className={`input ${(member.committee) ? 'valid' : ''}`}
+                                            value={member.committee}
+                                            onChange={handleInputChange}
+                                            required
+                                            name="committee"
+                                        >
+                                            <option value="" disabled selected hidden>{languageText.ChooseFaculty}</option>
+                                            {user.committee === "Admin" && <option value="Admin" >Admin</option>}
+                                            {(user.committee === "ISS Egypt" || user.committee === "Admin") && <option value="ISS Egypt" >{languageText.President}</option>}
+                                            {(user.committee === "Vice" || user.committee === "Admin") && <option value="Vice" >{languageText.VicePresident}</option>}
+                                            {(user.committee === "Secretary" || user.committee === "Admin") && <option value="Secretary" >{languageText.Secretary}</option>}
+                                            {(user.committee === "Treasurer" || user.committee === "Admin") && <option value="Treasurer" >{languageText.Treasurer}</option>}
+                                            <option value="Social" >{languageText.SocialCommittee}</option>
+                                            <option value="Academic" >{languageText.AcademicCommittee}</option>
+                                            <option value="Culture" >{languageText.CultureCommittee}</option>
+                                            <option value="Sports" >{languageText.SportCommittee}</option>
+                                            <option value="Media" >{languageText.MediaCommittee}</option>
+                                            <option value="Women Affairs" >{languageText.WomenCommittee}</option>
+                                            <option value="PR" >{languageText.PRCommittee}</option>
+                                            <option value="HR" >{languageText.HRCommittee}</option>
+                                            <option value="Reading" >{languageText.ReadingClub}</option>
+
+                                        </select>
+                                    </div>
+
+
+
+                                    <div className="InputField">
+
+                                        <label for="img" className={`LabelInputImg ${(member.img) ? 'valid' : ''}`}>
+                                            <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faImage} />{selectedImageText || languageText.Picture}</div>
+                                            {(member.img)
+                                                ? <button className="XImgButton" onClick={handleRemoveImage}>
+                                                    <FontAwesomeIcon icon={faXmark} />
+                                                </button>
+                                                : <FontAwesomeIcon icon={faCloudArrowUp} />}
+                                        </label>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            id="img"
+                                            className={`input ${(member.eventImg) ? 'valid' : ''}`}
+                                            style={{ display: 'none' }}
+                                            onChange={handleImgChange}
+                                        />
+                                    </div>
                                 </div>
-                            </div> */}
+                            }
                             <button type="submit">{languageText.Update}</button>
 
                         </form>

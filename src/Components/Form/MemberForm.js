@@ -307,7 +307,7 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                         <option value="Secretary">General Secretary</option>
                                         <option value="Treasurer">Treasurer</option>
                                         <option value="Academic">Academic Committee</option>
-                                        <option value="Bank">Knowledge Bank</option>
+                                        {/* <option value="Bank">Knowledge Bank</option> */}
                                         <option value="Social">Social Committee</option>
                                         <option value="Culture">Culture Committee</option>
                                         <option value="Sports">Sports Committee</option>
@@ -315,6 +315,7 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                         <option value="Logistics">Logistics Committee</option>
                                         <option value="Women Affairs">Women Affairs</option>
                                         <option value="PR">Public Relations</option>
+                                        <option value="HR">HR</option>
                                         <option value="Reading">Reading Club</option>
                                     </select>
 

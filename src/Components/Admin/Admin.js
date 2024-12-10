@@ -515,7 +515,8 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     <p>{roleChecker({ languageText: languageText, committee: presidentFilter?.committee, role: presidentFilter?.type })}</p>
                                 </>
                                 <div className="ProfileButtons">
-                                    <Link className="ProfileButton" to="/underConstruction">{languageText.viewProfile}</Link>
+                                    {/* <Link className="ProfileButton" to="/underConstruction">{languageText.viewProfile}</Link> */}
+                                    <Link className="ProfileButton" to={`/memberEditor/${user?.committee}/${presidentFilter?._id}`}>{languageText.editProfile}</Link>
                                     {/* <button className="ProfileButton Logout" to="/"><Icon icon="solar:logout-outline" /></button> */}
                                     <button className="icon Logout" onClick={handleClick}>
                                         <span class="tooltip Delete" >{languageText.Logout}</span>

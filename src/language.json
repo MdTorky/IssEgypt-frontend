@@ -98,6 +98,8 @@
     "SportCommittee": "Sports Committee",
     "LogisticsCommittee": "Logistics Committee",
     "WomenCommittee": "Women Affairs Committee",
+    "PRCommittee": "PR Committee",
+    "HRCommittee": "HR Committee",
     "ReadingClub": "Reading Club",
 
     "facebook": "Facebook",
@@ -508,6 +510,7 @@
     "RM": "RM",
     "eventName": "Event Name",
     "viewProfile": "View Profile",
+    "editProfile": "Edit Profile",
     "createForm": "Create a Form",
     "NoMembers": "Number of Members",
     "NoForms": "Number of Forms",
@@ -711,6 +714,8 @@
     "SportCommittee": "اللجنة الرياضية",
     "LogisticsCommittee": "اللجنة اللوجستية",
     "WomenCommittee": "لجنة شؤون الطالبات",
+    "PRCommittee": "لجنة العلاقات العامة",
+    "HRCommittee": "لجنة الموارد البشرية",
     "ReadingClub": "نادي القراءة",
 
     "facebook": "فيسبوك",
@@ -1101,6 +1106,7 @@
     "RM": "رينجت",
     "eventName": "اسم الحدث",
     "viewProfile": "الصفحة الشخصية",
+    "editProfile": "تعديل الصفحة الشخصية",
     "createForm": "إنشاء نموذج",
     "NoMembers": "عدد الأعضاء",
     "NoForms": "عدد النماذج",
