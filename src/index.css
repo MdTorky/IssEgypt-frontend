@@ -18,9 +18,11 @@
 :root {
   /* --theme: #F05454; */
   --theme: #da0037;
+  /* --theme: #a30000; */
   --theme2: #b50934;
   /* --hover: #30475E; */
-  --hover: #252525;
+  /* --hover: #252525; */
+  --hover: #1e1e1e;
   --bg: #e8f9fd;
   --test: #122d4b;
   --bg2: rgb(255, 255, 255);

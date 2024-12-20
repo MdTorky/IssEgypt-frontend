@@ -340,7 +340,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                         filter.map((form) => (
                             form.status === true ? (
                                 <div className="FormAll">
-                                    {console.log(form.status)}
+                                    {/* {console.log(form.status)} */}
 
                                     <div className="FormLeft">
                                         <img src={form.eventImg} alt="" />

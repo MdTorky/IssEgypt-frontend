@@ -135,7 +135,7 @@
     "courseLink": "Course Link",
     "noAnnouncement": "Sorry.. No Announcements Yet",
 
-    "achievements": "The ISS Egypt Achievements",
+    "achievements": "ISS Egypt Achievements",
     "blogSubtitle": "Welcome & Appreciation Day Group Picture",
     "blogTitle1": "The",
     "blogTitle2": "International Student Society (ISS) Egypt",
@@ -611,7 +611,9 @@
     "SearchLecturer": "Search for a Lecturer",
     "AddLecturer": "Add Lecturer",
 
-    "Seniors": "Seniors"
+    "Seniors": "Seniors",
+
+    "ISSShop": "ISS EGYPT SHOP"
   },
   "ar": {
     "language": "عربي",
@@ -1198,6 +1200,8 @@
     "SearchLecturer": "ابحث عن محاضر",
     "AddLecturer": "إضافة محاضر",
 
-    "Seniors": "الكبار"
+    "Seniors": "الكبار",
+
+    "ISSShop": "متجر الاتحاد المصري"
   }
 }

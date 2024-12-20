@@ -1,8 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/Components/Shop/*.{html,js}"], // Only scan new pages
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
