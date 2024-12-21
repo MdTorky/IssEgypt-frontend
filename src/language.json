@@ -496,6 +496,7 @@
     "formPhone": "Phone Number",
     "formYear": "Choose your Year",
     "formSemester": "Choose your Semester",
+    "formAddress": "Choose your Address",
     "formFaculty": "Choose the Faculty",
     "formCommittee": "Choose the Committee",
     "formRole": "Choose the Role",
@@ -620,7 +621,12 @@
     "Size": "Size",
     "Recommendations": "Recommendations",
     "NoRecommendations": "No Recommendations",
-    "PleaseSelectSize": "Please Select a Size"
+    "PleaseSelectSize": "Please Select a Size",
+    "PersonalDetails": "Personal Details",
+    "ProductDetails": "Product Details",
+    "Name": "Name",
+    "Address": "Address",
+    "Pieces": "Pieces"
   },
   "ar": {
     "language": "عربي",
@@ -1101,6 +1107,7 @@
     "formPhone": "رقم الهاتف",
     "formYear": "اختر سنتك الدراسية",
     "formSemester": "اختر الفصل الدراسي الخاص بك",
+    "formAddress": "اختر عنوانك",
     "formFaculty": "اختر الكلية",
     "formCommittee": "اختر اللجنة",
     "formRole": "اختر الدور",
@@ -1216,6 +1223,11 @@
     "Size": "المقاس",
     "Recommendations": "اقتراحات",
     "NoRecommendations": "لا توجد اقتراحات",
-    "PleaseSelectSize": "الرجاء اختيار المقاس"
+    "PleaseSelectSize": "الرجاء اختيار المقاس",
+    "PersonalDetails": "التفاصيل الشخصية",
+    "ProductDetails": "تفاصيل المنتج",
+    "Name": "الاسم",
+    "Address": "العنوان",
+    "Pieces": "قِطَع"
   }
 }

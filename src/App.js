@@ -58,11 +58,10 @@ import Lecturers from './Components/Lecturer/Lecturers';
 import Shop from './Components/Shop/Shop';
 import Product from './Components/Shop/Product';
 import PurchaseForm from './Components/Shop/PurchaseForm';
+import Reference from './Components/Shop/Reference';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
-  // Initialize the language state with the default language (e.g., "en")
-  // const [language, setLanguage] = useState(localStorage.getItem('selectedLanguage') || 'en');
   const { darkMode, setDarkMode } = useDarkMode(); // Initialize to false
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -70,12 +69,6 @@ function App() {
 
   const { user } = useAuthContext()
 
-  // Function to toggle the language
-  // const toggleLanguage = () => {
-  // const newLanguage = language === 'ar' ? 'en' : 'ar';
-  // setLanguage(newLanguage);
-  // localStorage.setItem('selectedLanguage', newLanguage);
-  // };
 
   const { isRTL, language } = useLanguage();
   const languageText = languageData[language];
@@ -98,18 +91,9 @@ function App() {
   }, [language, darkMode]);
 
 
-  // useEffect(() => {
-  // // Get the current count from local storage
-  // const count = localStorage.getItem('visitorCount');
-  // // Update the count in state
-  // setVisitorCount(parseInt(count) || 0);
-  // // Increment the count and store it back in local storage
-  // localStorage.setItem('visitorCount', parseInt(count) + 1);
-  // }, []);
 
   return (
     <Router>
-      {/* <div className={`App ${language==='ar' ? 'arabic' : '' }`}> */}
       <div className={`App ${isRTL ? 'arabic' : ''}`}>
         <div className="logo">
           <Link className="logoImg" to='/'><img src={img1} alt="" /></Link>
@@ -154,6 +138,7 @@ function App() {
               <Route path="/shop" element={<Shop darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/product/:productId" element={<Product darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/purchase/:productId" element={<PurchaseForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/reference/:referenceNumber" element={<Reference darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
 
               {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />

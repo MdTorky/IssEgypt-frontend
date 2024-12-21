@@ -1,0 +1,263 @@
+.Reference {
+  display: flex;
+  margin: 0 auto 0 480px;
+}
+
+.arabic .Reference {
+  display: flex;
+  margin: 0 480px 0 auto;
+}
+
+.ReferenceForm {
+  display: flex;
+  /* width: 100%; */
+  margin: 10px 0;
+  justify-content: space-between;
+}
+
+.ReferenceDetails {
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+
+  padding: 10px;
+  /* width: 100%; */
+  border-radius: 20px;
+  border: 1px rgba(128, 128, 128, 0.12) solid;
+  border: 2px solid #b5bfd9;
+  width: 280px;
+}
+
+.ReferenceDetails .ReferenceTitle {
+  margin: 0;
+  text-align: center;
+  color: var(--bg);
+}
+
+.ReferenceDetails .ReferenceDetail {
+  margin: 0;
+  margin-top: 10px;
+  color: var(--bg2);
+  font-size: 0.8em;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ReferenceDetails .ReferenceDetail span {
+  padding: 2px 4px;
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--theme);
+  border-radius: 4px;
+}
+
+.ReferenceNumber {
+  margin: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--theme);
+  border-radius: 10px;
+  color: var(--bg);
+  border: 2px solid #b5bfd9;
+}
+
+.ReferenceDetailsProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.ReferenceProductTitle {
+  font-size: 1.8em;
+  color: var(--bg);
+  margin: 0;
+}
+.ReferenceProductDescription {
+  color: lightgray;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ReferenceProductDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ReferenceProductDetails > p {
+  /* background: var(--theme); */
+  color: var(--bg);
+  width: fit-content;
+  padding: 0 10px;
+  border-radius: 7px;
+  text-align: end;
+  display: flex;
+  /* margin-left: auto; */
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+
+  border: 2px solid #b5bfd9;
+}
+
+.ReferenceDetails h2,
+.ReferenceDetails p {
+  margin: 0;
+}
+
+.ReferenceDetails .Status {
+  margin: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--bg);
+  /* font-size: 2em; */
+  border: 2px solid #b5bfd9;
+}
+
+.ReferenceDetails .OutOfOrder {
+  background: var(--theme2);
+}
+
+.ReferenceDetails .Available {
+  background: #5cb338;
+  /* color: var(--hover); */
+}
+
+@media screen and (max-width: 700px) {
+  .Reference {
+    margin: auto;
+  }
+
+  .arabic .Reference {
+    margin: auto;
+  }
+
+  .ReferenceForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* width: 100%; */
+    margin: 10px auto;
+    justify-content: space-between;
+  }
+
+  .ReferenceDetails {
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+
+    padding: 10px;
+    /* width: 100%; */
+    border-radius: 20px;
+    border: 1px rgba(128, 128, 128, 0.12) solid;
+    border: 2px solid #b5bfd9;
+    width: 280px;
+  }
+
+  .ReferenceDetails .ReferenceTitle {
+    margin: 0;
+    text-align: center;
+    color: var(--bg);
+  }
+
+  .ReferenceDetails .ReferenceDetail {
+    margin: 0;
+    margin-top: 10px;
+    color: var(--bg2);
+    font-size: 0.8em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ReferenceDetails .ReferenceDetail span {
+    padding: 2px 4px;
+    font-weight: 500;
+    background: var(--bg);
+    color: var(--theme);
+    border-radius: 4px;
+  }
+
+  .ReferenceNumber {
+    margin: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme);
+    border-radius: 10px;
+    color: var(--bg);
+    border: 2px solid #b5bfd9;
+  }
+
+  .ReferenceDetailsProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+
+  .ReferenceProductTitle {
+    font-size: 1.8em;
+    color: var(--bg);
+    margin: 0;
+  }
+  .ReferenceProductDescription {
+    color: lightgray;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .ReferenceProductDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ReferenceProductDetails > p {
+    /* background: var(--theme); */
+    color: var(--bg);
+    width: fit-content;
+    padding: 0 10px;
+    border-radius: 7px;
+    text-align: end;
+    display: flex;
+    /* margin-left: auto; */
+    background: linear-gradient(to left, var(--hover), var(--hover2));
+
+    border: 2px solid #b5bfd9;
+  }
+
+  .ReferenceDetails h2,
+  .ReferenceDetails p {
+    margin: 0;
+  }
+
+  .ReferenceDetails .Status {
+    margin: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: var(--bg);
+    /* font-size: 2em; */
+    border: 2px solid #b5bfd9;
+  }
+
+  .ReferenceDetails .OutOfOrder {
+    background: var(--theme2);
+  }
+
+  .ReferenceDetails .Available {
+    background: #5cb338;
+    /* color: var(--hover); */
+  }
+}

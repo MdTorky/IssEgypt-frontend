@@ -51,10 +51,9 @@ const Shop = ({ languageText, api, darkMode, language }) => {
                         <p>{language === "en" ? product.pTitle : product.pArabicTitle}</p>
                         <p>{product.pPrice} {languageText.RM}</p>
                     </div>
-                    <div className="ShopCardDesc">
-                        {/* <p>Description</p> */}
+                    {/* <div className="ShopCardDesc">
                         <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button>
-                    </div>
+                    </div> */}
                 </div>
             </Link>
         )

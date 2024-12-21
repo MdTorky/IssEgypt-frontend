@@ -17,7 +17,7 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [faculty, setFaculty] = useState('')
-    const [semester, setSemester] = useState('')
+    const [address, setAddress] = useState('')
     const [proof, setProof] = useState(null);
     const [selectedImageText, setSelectedImageText] = useState(null);
     const { transactions = [], dispatch } = useFormsContext();
@@ -141,7 +141,7 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
             buyerEmail: email,
             buyerPhone: phone,// Updated to use payment QR URL
             buyerFaculty: faculty,
-            buyerSemester: semester,
+            buyerAddress: address,
             productQuantity: quantity,
             productSize: size,
             proof: proofUrl,
@@ -299,22 +299,21 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
                                     </div>
                                     <div className="InputField">
                                         <select
-                                            className={`input ${(semester) ? 'valid' : 'invalid'}`}
-                                            onChange={(e) => setSemester(e.target.value)}
+                                            className={`input ${(address) ? 'valid' : 'invalid'}`}
+                                            onChange={(e) => setAddress(e.target.value)}
                                             required
                                         >
-                                            <option value="" disabled selected hidden>{languageText.formSemester}</option>
-                                            <option value="Bridging & Foundation" >{languageText.Found}</option>
-                                            <option value="1" >1</option>
-                                            <option value="2" >2</option>
-                                            <option value="3" >3</option>
-                                            <option value="4" >4</option>
-                                            <option value="5" >5</option>
-                                            <option value="6" >6</option>
-                                            <option value="7" >7</option>
-                                            <option value="8" >8</option>
+                                            <option value="" disabled selected hidden>{languageText.formAddress}</option>
+                                            <option value="Melawis" >Melawis</option>
+                                            <option value="Melana" >Melana</option>
+                                            <option value="Desa" >Desa</option>
+                                            <option value="Garden" >Garden</option>
+                                            <option value="D'Summit" >D'Summit</option>
+                                            <option value="Flora" >Flora</option>
+                                            <option value="Other" >{languageText.Other}</option>
+                                            {/* <option value="8" >8</option>
                                             <option value="Masters" >{languageText.Masters}</option>
-                                            <option value="PhD" >{languageText.PhD}</option>
+                                            <option value="PhD" >{languageText.PhD}</option> */}
                                         </select>
                                     </div>
                                 </div>

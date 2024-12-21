@@ -1,960 +1,867 @@
 body.dark-mode {
-    background: var(--hover);
-    color: var(--bg);
+  background: var(--hover);
+  color: var(--bg);
 }
 
 /* Loader */
 
 .dark-mode .loader {
-    --dot: var(--bg);
+  --dot: var(--bg);
 }
 
 .dark-mode .HorusText {
-    background: radial-gradient(circle closest-side, var(--theme) 94%, #0000) right/calc(200% - 1em) 100%;
-    animation: l24 1s infinite alternate linear;
+  background: radial-gradient(circle closest-side, var(--theme) 94%, #0000)
+    right/calc(200% - 1em) 100%;
+  animation: l24 1s infinite alternate linear;
 }
 
 .dark-mode .HorusText::before {
-    color: #0000;
-    background: inherit;
-    background-image: radial-gradient(circle closest-side,
-            var(--hover) 94%,
-            var(--bg));
-    -webkit-background-clip: text;
-    background-clip: text;
+  color: #0000;
+  background: inherit;
+  background-image: radial-gradient(
+    circle closest-side,
+    var(--hover) 94%,
+    var(--bg)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* NavBar */
 
 .dark-mode .logo {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .navbar ul li icon {
-    color: var(--hover);
+  color: var(--hover);
 }
 
 .dark-mode .navbar ul li:hover icon {
-    color: var(--hover);
+  color: var(--hover);
 }
 
 .dark-mode .navbar ul li:hover {
-    background: var(--bg);
-    /* border-left: 2px dashed var(--bg);
+  background: var(--bg);
+  /* border-left: 2px dashed var(--bg);
     border-bottom: 2px solid var(--bg);
     border-top: 2px solid var(--bg); */
 }
 
 .dark-mode .navbar ul li:hover icon::after {
-    background: var(--bg);
-    /* border-right: 2px solid var(--hover);
+  background: var(--bg);
+  /* border-right: 2px solid var(--hover);
     border-bottom: 1px solid var(--hover);
     border-top: 1px solid var(--hover); */
 }
 
 .dark-mode .navbar ul li.active {
-    background: var(--hover);
-    border-radius: 25px;
+  background: var(--hover);
+  border-radius: 25px;
 }
 
 .dark-mode .navbar ul li.active icon {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .navbar ul li.active .NavBarIcon {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .navbar ul li:hover .NavBarIcon {
-    color: var(--hover);
+  color: var(--hover);
 }
 
 .dark-mode .navbar ul li:hover.active .NavBarIcon {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .navbar ul li:hover.active .NavBarIcon::after {
-    color: var(--bg);
-    background: var(--hover);
+  color: var(--bg);
+  background: var(--hover);
 }
 
 .dark-mode .navbar ul li.active icon::after {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .navbar ul li:hover .NavBarIcon::after {
-    color: var(--hover);
-    background: var(--bg);
+  color: var(--hover);
+  background: var(--bg);
 }
 
 .dark-mode .navbar ul li:hover.active icon::after {
-    color: var(--bg);
-    background: var(--hover);
+  color: var(--bg);
+  background: var(--hover);
 }
 
 .dark-mode .navbar ul li:hover.active icon {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .SearchBar {
-    background: var(--hover2);
+  background: var(--hover2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Side Menu */
 
 .dark-mode .sideMenu {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .sideMenu .liveBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .sideMenu .liveBox .title h3 {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .sideMenu .popup {
-    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+  background: var(--hover);
 }
 
 .dark-mode .sideMenu .popup .middlePart img {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .dark-mode .sideMenu .bottomPart {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .sideMenu .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .mLink {
-    text-decoration: none;
-    color: var(--bg);
+  text-decoration: none;
+  color: var(--bg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Home */
 
 .dark-mode .homeWrapper p {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .homeWrapper span {
-    color: var(--theme);
+  color: var(--theme);
 }
 
 .dark-mode .nameTitle {
-    /* border-bottom: 1px solid var(--bg); */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+  /* border-bottom: 1px solid var(--bg); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.323);
 
-    /* opacity: 0.9; */
+  /* opacity: 0.9; */
 }
 
 .dark-mode .row .rowCircle {
-    /* box-shadow: rgba(255, 255, 255, 0.34) 0px 3px 8px; */
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  /* box-shadow: rgba(255, 255, 255, 0.34) 0px 3px 8px; */
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .homeBoxes .homeTitle {
-    /* border-bottom: 1px solid var(--bg); */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+  /* border-bottom: 1px solid var(--bg); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.323);
 }
 
 .dark-mode .blog .blogContainer {
-    /* border-bottom: 1px solid var(--bg); */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+  /* border-bottom: 1px solid var(--bg); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.323);
 }
 
 .dark-mode .blogContainer2 {
-    /* border-bottom: 1px solid var(--bg); */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+  /* border-bottom: 1px solid var(--bg); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.323);
 }
 
 .dark-mode .blogContainer2 .blogItem .line button {
-    color: var(--bg);
-    border: 1px solid var(--bg);
+  color: var(--bg);
+  border: 1px solid var(--bg);
 }
 
 .dark-mode .blogContainer2 .blogItem .line button:hover {
-    background: var(--bg);
-    color: var(--hover);
-    border: 1px solid var(--bg);
-    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  background: var(--bg);
+  color: var(--hover);
+  border: 1px solid var(--bg);
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }
 
 .dark-mode .eventBox h1 {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .connectTitle {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.323);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.323);
 }
 
 .dark-mode .connect .socialCircle {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 
-    color: var(--bg);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+  color: var(--bg);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .arabic .connect .socialCircle {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .connect .socialCircle:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
+  background: linear-gradient(to right, var(--bg), var(--bg2));
 
-    color: var(--hover);
-    /* box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.2); */
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  color: var(--hover);
+  /* box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 0.2); */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .dark-mode .connect .button {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 
-    /* border: 2px solid var(--bg) */
+  /* border: 2px solid var(--bg) */
 }
 
 .dark-mode .connect .button .button__text {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .connect .button .button__icon {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
+  background: linear-gradient(to right, var(--bg), var(--bg2));
 
-    color: var(--hover);
+  color: var(--hover);
 }
 
 .dark-mode .connect .button:hover .button__icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .connect .button:active .button__icon {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .home-container .popup {
-    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+  background: var(--hover);
 }
 
 .dark-mode .home-container .popup .middlePart img {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .dark-mode .home-container .bottomPart {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .home-container .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 /* Gallery */
 
 .dark-mode .GalleryContainer {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .GalleryCard {
-    background: var(--hover);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    border: 1px gray solid;
-    box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 3px,
-        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background: var(--hover);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 1px gray solid;
+  box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .dark-mode .GalleryText {
-    padding: 10px;
-    color: var(--hover);
-    /* background: red; */
-    height: 100%;
-    display: flex;
-    gap: 10px;
-    flex-grow: 1;
-    /* align-items: center; */
+  padding: 10px;
+  color: var(--hover);
+  /* background: red; */
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  flex-grow: 1;
+  /* align-items: center; */
 }
 
 .dark-mode .GalleryText h3 {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    color: var(--bg);
-    border: 3px gray solid;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
+  border: 3px gray solid;
 }
 
 .dark-mode .GalleryText button {
-    color: var(--bg);
-    border: 3px gray solid;
+  color: var(--bg);
+  border: 3px gray solid;
 }
 
 /* Services */
 
 .dark-mode .services .annContainer {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .services .annContainer .annContainer2 {
-    background: var(--hover);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background: var(--hover);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .dark-mode .AnnStories2Button:hover {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .AnnStories2Button:hover .svgIcon path {
-    fill: var(--bg) !important;
+  fill: var(--bg) !important;
 }
 
 .dark-mode .AnnStories2Button:hover::before {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .services .annContainer .annStories .box {
-    background: rgb(95, 95, 95);
+  background: rgb(95, 95, 95);
 }
 
 .dark-mode .services .annContainer .annStories .box::before {
-    background: var(--theme);
+  background: var(--theme);
 }
 
 .dark-mode .services .annContainer .annStories .box::after {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .services .annContainer .annStories .box .announcement img {
-    /* background: var(--hover2); */
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  /* background: var(--hover2); */
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .services .annContainer .annStories .box .announcement img {
-    /* background: var(--hover2); */
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  /* background: var(--hover2); */
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .services .rightContainer {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .services .rightContainer .collegesBoxTitle {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .rightContainer .college .img {
-    color: var(--bg);
-    /* background: var(--hover2); */
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    border: 3px var(--hover2) solid;
+  color: var(--bg);
+  /* background: var(--hover2); */
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 3px var(--hover2) solid;
 }
 
 .dark-mode .arabic .rightContainer .college .img {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
-.dark-mode .rightContainer .college:hover>.img {
-    background: var(--bg);
-    color: var(--hover);
+.dark-mode .rightContainer .college:hover > .img {
+  background: var(--bg);
+  color: var(--hover);
 }
 
 .dark-mode .services .leftContainer {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .services .leftContainer .collegesBoxTitle {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .leftContainer .college .img {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    border: 3px var(--hover2) solid;
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 3px var(--hover2) solid;
 }
 
 .dark-mode .arabic .leftContainer .college .img {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
-.dark-mode .leftContainer .college:hover>.img {
-    background: var(--bg);
-    color: var(--hover);
+.dark-mode .leftContainer .college:hover > .img {
+  background: var(--bg);
+  color: var(--hover);
 }
 
 .dark-mode .leftContainer .college .span {
-    background: var(--bg);
-    color: var(--hover);
+  background: var(--bg);
+  color: var(--hover);
 }
 
 .dark-mode .popupFaculty {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .popupFaculty .container {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .topSection .img {
-    color: var(--bg);
-    /* background: linear-gradient(var(--theme), var(--hover)); */
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: var(--bg);
+  /* background: linear-gradient(var(--theme), var(--hover)); */
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .arabic .topSection .img {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .popupFaculty .bottomSection .bottomLinks button {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.594);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.594);
 }
 
 .dark-mode .arabic .popupFaculty .bottomSection .bottomLinks button {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .popupFaculty .bottomSection .bottomLinks .sign {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .popupFaculty .bottomSection .bottomLinks .text {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .newStudents .newStudentsRow .newStudentCard,
 .dark-mode .newStudents .newStudentsRow2 .newStudentCard {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    text-decoration: none;
-    color: var(--bg2);
-    border: 3px var(--hover2) solid;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  text-decoration: none;
+  color: var(--bg2);
+  border: 3px var(--hover2) solid;
 }
 
 .dark-mode .newStudents .newStudentsRow .newStudentCard.notyet,
 .dark-mode .newStudents .newStudentsRow2 .newStudentCard.notyet {
-    background: #5a0009;
-    color: var(--bg);
+  background: #5a0009;
+  color: var(--bg);
 }
 
 .dark-mode .arabic .newStudents .newStudentsRow .newStudentCard.notyet,
 .dark-mode .arabic .newStudents .newStudentsRow2 .newStudentCard.notyet {
-    background: #5a0009;
-    color: var(--bg);
+  background: #5a0009;
+  color: var(--bg);
 }
 
 .dark-mode .newStudentsRow2 :nth-child(3) .moon {
-    color: var(--bg2);
+  color: var(--bg2);
 }
 
 .dark-mode .arabic .newStudents .newStudentsRow .newStudentCard,
 .dark-mode .arabic .newStudents .newStudentsRow2 .newStudentCard {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .noAnn2 {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
 }
 
 .dark-mode .arabic .noAnn2 {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Pages */
 
 .dark-mode .section .sectionBox {
-    /* background: var(--hover2); */
+  /* background: var(--hover2); */
 }
 
 .dark-mode .section .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .section .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .attraction .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .attraction .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .cards .card {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .icons .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .icon:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--hover);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--hover);
 }
 
 .dark-mode .icon:hover .tooltip,
 .dark-mode .icon:hover .tooltip::before {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .icon.delete:hover {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .icon.delete,
 .dark-mode .tooltip.delete {
-    background: var(--theme);
-    color: var(--bg);
+  background: var(--theme);
+  color: var(--bg);
 }
 
 .dark-mode .icon.delete:hover .tooltip.delete,
 .dark-mode .icon.delete:hover .tooltip.delete::before {
-    background: var(--theme);
-    color: var(--bg);
-    white-space: nowrap;
+  background: var(--theme);
+  color: var(--bg);
+  white-space: nowrap;
 }
 
 .dark-mode .arabic .cards .card {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .attraction .popup {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover);
 }
 
 .dark-mode .attraction .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .attraction .icon:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--hover);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--hover);
 }
 
 .dark-mode .attraction .popup-opening {
-    display: block;
-    animation: popup-open 0.5s ease-in-out forwards;
+  display: block;
+  animation: popup-open 0.5s ease-in-out forwards;
 }
 
 .dark-mode .attraction .popup-closing {
-    opacity: 0;
-    transform: scale(0.8) translate(-50%, -50%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dark-mode .attraction .top {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .attraction .bottom {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .transportation .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .transportation .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .transportation .cards .card {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .transportation .cards .card {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .transportation .popup {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover);
 }
 
 .dark-mode .transportation .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .transportation .icon:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--hover);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--hover);
 }
 
 .dark-mode .transportation .popup-opening {
-    display: block;
-    animation: popup-open 0.5s ease-in-out forwards;
+  display: block;
+  animation: popup-open 0.5s ease-in-out forwards;
 }
 
 .dark-mode .transportation .popup-closing {
-    opacity: 0;
-    transform: scale(0.8) translate(-50%, -50%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dark-mode .transportation .top {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .transportation .bottom {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .account .outerBox .innerBox .button .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .pop {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .pop .popup-content {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .account .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .account .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .clubs .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .clubs .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .clubs .cards .card {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .clubs .cards .card {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .clubs .popup {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover);
 }
 
 .dark-mode .clubs .popup .bottom {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover2);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover2);
 }
 
 .dark-mode .clubs .popup .bottom .header {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .clubs .popup .bottom .header {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .clubs .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .clubs .icon:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--hover);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--hover);
 }
 
 .dark-mode .clubs .popup-opening {
-    display: block;
-    animation: popup-open 0.5s ease-in-out forwards;
+  display: block;
+  animation: popup-open 0.5s ease-in-out forwards;
 }
 
 .dark-mode .clubs .popup-closing {
-    opacity: 0;
-    transform: scale(0.8) translate(-50%, -50%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dark-mode .clubs .top {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .clubs .bottom {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .dark-mode .internships .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .internships .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .internships .cards .card {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .internships .cards .card {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .internships .popup {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover);
 }
 
 .dark-mode .internships .popup .bottom {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover2);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover2);
 }
 
 .dark-mode .internships .popup .bottom .header {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .internships .popup .bottom .header {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .internships .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .internships .icon:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--hover);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--hover);
 }
 
 .dark-mode .courses .outerBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .courses .outerBox .innerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .courses .cards .card {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .courses .cards .card {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .courses .popup {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover);
 }
 
 .dark-mode .courses .popup .bottom {
-    /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
-    background: var(--hover2);
+  /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
+  background: var(--hover2);
 }
 
 .dark-mode .courses .popup .bottom .header {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .courses .popup .bottom .header {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 .dark-mode .courses .icon {
-    color: var(--bg);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .courses .icon:hover {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--hover);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--hover);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* NotFound */
 
 .dark-mode .BottomFound .link {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .arabic .BottomFound .link {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 /* Suggestions */
 .dark-mode .suggestionTable {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .suggestionCard {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .bottomSuggestion {
-    background: var(--hover2);
+  background: var(--hover2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Loader */
 
 .dark-mode .circle1 {
-    background: var(--bg);
+  background: var(--bg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Form */
 
 .dark-mode .formBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .formBox form {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .formBox form .input,
@@ -962,291 +869,228 @@ body.dark-mode {
 .dark-mode .formBox .label,
 .dark-mode .formBox form .LabelInputImg,
 .dark-mode .FormPopup .input {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    border: 3px solid var(--bg);
-    color: var(--bg);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 3px solid var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .arabic .formBox form .input,
 .dark-mode .arabic .formBox select {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
-    border: 3px solid var(--bg);
-    color: var(--bg);
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  border: 3px solid var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .formBox form .input:placeholder-shown {
-    border: 3px solid var(--bg);
-    color: var(--bg);
+  border: 3px solid var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode ::placeholder {
-    color: var(--bg) !important;
+  color: var(--bg) !important;
 }
 
 .dark-mode option {
-    background-color: var(--hover);
-    color: var(--bg);
+  background-color: var(--hover);
+  color: var(--bg);
 }
 
 .dark-mode .CreatedForm .FormLeft {
-    background-color: var(--hover2);
+  background-color: var(--hover2);
 }
 
 .dark-mode .CreatedForm .FormLeft img {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .CreatedForm .FormCenter .FormTitle {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .PaymentFields p {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .formBox form .input.invalid,
 .dark-mode .formBox form .LabelInputImg.invalid {
-    border: 3px solid var(--bg);
-    box-shadow: 0px 0px 20px -17px;
-    color: var(--bg);
+  border: 3px solid var(--bg);
+  box-shadow: 0px 0px 20px -17px;
+  color: var(--bg);
 }
 
 .dark-mode .LabelInput.invalid {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .Hint p:last-child {
-    color: var(--bg);
-    border: 3px var(--bg) solid;
+  color: var(--bg);
+  border: 3px var(--bg) solid;
 }
 
 .dark-mode .formBox hr {
-    background: var(--bg);
+  background: var(--bg);
 }
 
 .dark-mode .QRCode {
-    background: var(--bg);
+  background: var(--bg);
 }
 
 .dark-mode .PaymentAmount {
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    border-radius: 0 0 20px 20px;
-    border-bottom: 5px solid var(--bg);
-    border-left: 5px solid var(--bg);
-    border-right: 5px solid var(--bg);
-    color: var(--hover) !important;
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  border-radius: 0 0 20px 20px;
+  border-bottom: 5px solid var(--bg);
+  border-left: 5px solid var(--bg);
+  border-right: 5px solid var(--bg);
+  color: var(--hover) !important;
 }
 
 .dark-mode .PasswordCheckBack {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .TogglePass {
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .Pass {
-    /* color: rgb(222, 190, 9) */
-    color: var(--theme2);
+  /* color: rgb(222, 190, 9) */
+  color: var(--theme2);
 }
 
 .dark-mode .FormPopup {
-    backdrop-filter: blur(4px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%);
-    background-color: rgba(0, 0, 0, 0.79);
-    border: 10px double var(--theme);
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.79);
+  border: 10px double var(--theme);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Members */
 
 .dark-mode .Search {
-    background: var(--bg);
+  background: var(--bg);
 }
 
 .dark-mode .Search::placeholder {
-    color: var(--hover) !important;
+  color: var(--hover) !important;
 }
 
 .dark-mode .Search:hover,
 .dark-mode .Search:focus {
-    box-shadow: 0px 0px 0px 7px rgba(243, 243, 243, 0.444);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: 0px 0px 0px 7px rgba(243, 243, 243, 0.444);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 
-    color: var(--bg);
+  color: var(--bg);
 }
 
 .dark-mode .Search:focus::placeholder {
-    color: var(--bg) !important;
+  color: var(--bg) !important;
 }
 
 .dark-mode .memberBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .memberBack {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .mBorder .mLink {
-    background: var(--hover);
-    color: white !important;
+  background: var(--hover);
+  color: white !important;
 }
-
-
-
-
-
-
-
-
-
 
 /* Member Details */
 .dark-mode .MainMember {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .OtherMembers {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .presidentInfo .role {
-    /* color: var(--hover2); */
-    background: var(--theme);
+  /* color: var(--hover2); */
+  background: var(--theme);
 }
 
 .dark-mode hr {
-    background: var(--bg);
+  background: var(--bg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Internships */
 
 .dark-mode .internships .rowCategories {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    color: var(--bg2);
-    box-shadow: rgba(7, 7, 7, 0.2) 0px 2px 8px 0px;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  color: var(--bg2);
+  box-shadow: rgba(7, 7, 7, 0.2) 0px 2px 8px 0px;
 }
 
 .dark-mode .icon.Delete {
-    color: var(--bg);
-    background: rgb(204, 19, 19);
+  color: var(--bg);
+  background: rgb(204, 19, 19);
 }
 
 .dark-mode .icon.Status {
-    background: mediumseagreen;
-    color: var(--bg);
+  background: mediumseagreen;
+  color: var(--bg);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Lecturers */
 
 .dark-mode .lecturerOuterBox {
-    background: var(--hover2);
+  background: var(--hover2);
 }
 
 .dark-mode .lecturerInnerBox {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 .dark-mode .lecturerCard {
-    background: linear-gradient(to right, var(--hover2), var(--hover));
-    /* border: 1px black solid; */
-    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: linear-gradient(to right, var(--hover2), var(--hover));
+  /* border: 1px black solid; */
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .lecturerText {
-    border-left: 2px var(--bg) dashed;
+  border-left: 2px var(--bg) dashed;
 }
 
 .dark-mode .arabic .lecturerText {
-    border-right: 2px var(--bg) dashed;
-    border-left: none;
-
-
+  border-right: 2px var(--bg) dashed;
+  border-left: none;
 }
 
 .dark-mode .lecturerCard img {
-    border: 3px solid var(--bg);
-
+  border: 3px solid var(--bg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Admin */
 
 .dark-mode .StatisticsBox {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 320px;
-    height: fit-content;
-    border: 3px var(--hover2) solid;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 320px;
+  height: fit-content;
+  border: 3px var(--hover2) solid;
 }
 
 .dark-mode .BankLinks {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    border: 3px var(--hover2) solid;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 3px var(--hover2) solid;
 }
 
 .dark-mode .BankLink {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
+  background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
 /* Form Data */
 
 .dark-mode .FormResponses {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 /* .dark-mode .DownloadButton.Excel {
@@ -1258,82 +1102,136 @@ body.dark-mode {
 } */
 
 .dark-mode .DownloadButton.Pictures {
-    color: var(--bg);
-    border: 2px solid var(--bg);
+  color: var(--bg);
+  border: 2px solid var(--bg);
 }
 
 .dark-mode .DownloadButton.Pictures::before {
-    background: var(--bg);
-    color: var(--hover);
+  background: var(--bg);
+  color: var(--hover);
 }
 
 .dark-mode .DownloadButton.Pictures:hover {
-    color: var(--hover);
+  color: var(--hover);
 }
 
 /* Charity */
 
 .dark-mode .Links {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dark-mode .InstructionText {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .dark-mode .Quote {
-    background: linear-gradient(to left, var(--hover), var(--hover2));
-    box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
 }
 
 .dark-mode .Steps p {
-    color: var(--bg);
+  color: var(--bg);
 }
 
+/* Shop */
 
+.dark-mode .ShopCard img {
+  background-color: var(--hover2);
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
 
+.dark-mode .ShopCardNamePrice {
+  color: var(--bg);
+}
 
+.dark-mode .ShopCardDesc button {
+  border: 2px var(--hover2) solid;
+}
+
+.dark-mode .ProductImg img {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .SizeTitle {
+  border: 2px var(--hover2) solid;
+  background-color: var(--hover);
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .SizeTitle:before {
+  border: 2px var(--hover2) solid;
+  background-color: var(--hover);
+}
+
+.dark-mode .SizeLabel {
+  color: var(--bg);
+}
+
+.dark-mode .SizeGuide {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .ProductQuantity button {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 2px;
+}
+
+.dark-mode .ProductPurchase .PurchaseButton {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .ProductPurchase .ProductShareButton {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .NoRecommendations p {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
 
 @media screen and (max-width: 700px) {
-    .dark-mode .navbar ul li.active icon::after {
-        color: var(--hover);
-    }
+  .dark-mode .navbar ul li.active icon::after {
+    color: var(--hover);
+  }
 
-    .dark-mode .navbar ul li.active icon {
-        color: var(--hover)
-    }
+  .dark-mode .navbar ul li.active icon {
+    color: var(--hover);
+  }
 
-    .dark-mode .navbar ul li {
-        background: none;
-    }
+  .dark-mode .navbar ul li {
+    background: none;
+  }
 
-    .dark-mode .navbar ul li:hover icon {
-        background: none;
-    }
+  .dark-mode .navbar ul li:hover icon {
+    background: none;
+  }
 
-    .dark-mode .navbar ul li:hover {
-        box-shadow: none;
-        background: none;
-    }
+  .dark-mode .navbar ul li:hover {
+    box-shadow: none;
+    background: none;
+  }
 
-    .dark-mode .navbar ul li.active {
-        background: none;
-        color: var(--hover)
-    }
+  .dark-mode .navbar ul li.active {
+    background: none;
+    color: var(--hover);
+  }
 
-    .dark-mode .navbar ul li:hover icon::after {
-        background: none;
+  .dark-mode .navbar ul li:hover icon::after {
+    background: none;
+  }
 
-    }
+  .dark-mode .navbar ul li:hover.active icon::after {
+    background: none;
+  }
 
-    .dark-mode .navbar ul li:hover.active icon::after {
-        background: none;
-
-    }
-
-    .dark-mode .navbar ul li.active .NavBarIcon {
-        color: var(--hover);
-    }
-
+  .dark-mode .navbar ul li.active .NavBarIcon {
+    color: var(--hover);
+  }
 }
