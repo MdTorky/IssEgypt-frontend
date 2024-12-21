@@ -47,6 +47,7 @@
   margin: 0;
   justify-content: space-between;
   padding: 0px 5px;
+  color: var(--hover);
 }
 
 .ShopCardNamePrice p {
@@ -104,6 +105,11 @@
   font-size: 1em;
   font-weight: bold;
   border: 2px solid #b5bfd9;
+  font-family: "Poppins", sans-serif;
+}
+
+.arabic .ShopCardDesc button {
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
 
 .ShopCardDesc button:hover {
@@ -137,7 +143,6 @@
   width: 500px;
   border-radius: 20px;
   background: var(--bg2);
-  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
   border: 2px solid #b5bfd9;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -166,8 +171,8 @@
 .ProductTitle p {
   margin: 0;
   color: gray;
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.25rem; /* 20px */
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   white-space: nowrap;
 }
 
@@ -329,6 +334,46 @@
   transform: scale(1.1);
 }
 
+.ProductQuantity {
+  margin-top: 10px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+  width: 40%;
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+  height: fit-content;
+  height: 50px;
+}
+
+.ProductQuantity button {
+  font-weight: bold;
+  font-size: 1.25rem;
+  cursor: pointer;
+  background-color: var(--bg);
+  border: 2px solid #b5bfd9;
+  border-radius: 10px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s all ease-in-out;
+  /* font-bold text-sm md:text-xl hover:scale-125 ease-in-out duration-300 */
+}
+
+.ProductQuantity button:hover {
+  transform: scale(1.1);
+}
+
+.ProductQuantity h3 {
+  margin: none;
+  color: var(--bg);
+}
+
 .ProductPurchase {
   margin-top: 10px;
   padding: 5px 0;
@@ -354,6 +399,11 @@
   font-size: 1em;
   font-weight: bold;
   border: 2px solid #b5bfd9;
+  font-family: "Poppins", sans-serif;
+}
+
+.arabic .ProductPurchase .PurchaseButton {
+  font-family: "Noto Kufi Arabic", sans-serif !important;
 }
 
 .ProductPurchase .PurchaseButton:hover {
@@ -418,12 +468,76 @@
   align-items: center;
 }
 
+.FormLeftDetailsPrice {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--theme);
+  border-radius: 10px;
+  /* border: 2px solid #b5bfd9; */
+}
+
 .FormDetailsProduct p {
   width: 100px;
+  white-space: nowrap;
+}
+.FormLeftDetailsPrice p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom: -20px;
+  color: var(--bg2);
 }
 
 .FormLeftDetailsPrice h2 {
-  color: var(--hover);
+  color: var(--bg);
+}
+
+.ProductForm {
+  position: relative;
+}
+.ProductForm h3 {
+  position: absolute;
+  background: var(--theme);
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: auto;
+  padding: 5px 25px;
+  color: var(--bg2);
+  border-radius: 0 0 10px 10px;
+  font-size: 1.3em;
+}
+
+.NoRecommendations p {
+  display: flex;
+  margin: 0;
+  background-color: var(--theme);
+  padding: 10px;
+  align-items: center;
+  width: fit-content;
+  color: var(--bg);
+  gap: 5px;
+  justify-content: center;
+  border: 2px solid #b5bfd9;
+  border-radius: 5px;
+}
+
+.SizeError {
+  display: flex;
+  margin: 0;
+  padding: 5px 10px;
+  align-items: center;
+  width: fit-content;
+  font-weight: 800;
+  color: var(--theme);
+  gap: 5px;
+  justify-content: center;
+  border: 2px solid #b5bfd9;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
@@ -545,5 +659,18 @@
     justify-content: space-between;
     padding: 0px 5px;
     align-items: center;
+  }
+
+  .ProductQuantity {
+    margin: 10px auto;
+    width: 75%;
+  }
+
+  .NoRecommendations p {
+    margin: auto;
+  }
+
+  .SizeError {
+    margin: 5px auto 0 auto;
   }
 }

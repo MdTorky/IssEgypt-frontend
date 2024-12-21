@@ -12,6 +12,7 @@
     "Updating": "Updating...",
     "Creating": "Creating...",
     "Submitting": "Submitting...",
+    "Loading": "Loading...",
 
     "IssPres": "ISS Committee Presidents",
     "IssPres2": "Committee Presidents",
@@ -613,7 +614,13 @@
 
     "Seniors": "Seniors",
 
-    "ISSShop": "ISS EGYPT SHOP"
+    "ISSShop": "ISS EGYPT SHOP",
+    "Purchase": "Purchase",
+    "SizeGuide": "Size Guide",
+    "Size": "Size",
+    "Recommendations": "Recommendations",
+    "NoRecommendations": "No Recommendations",
+    "PleaseSelectSize": "Please Select a Size"
   },
   "ar": {
     "language": "عربي",
@@ -630,6 +637,7 @@
     "Updating": "جارٍ التحديث...",
     "Creating": "جارٍ الإنشاء...",
     "Submitting": "جارٍ الإرسال...",
+    "Loading": "جار التحميل...",
 
     "IssPres": "رؤساء لجان الاتحاد",
     "IssPres2": "رؤساء اللجان",
@@ -1202,6 +1210,12 @@
 
     "Seniors": "الكبار",
 
-    "ISSShop": "متجر الاتحاد المصري"
+    "ISSShop": "متجر الاتحاد المصري",
+    "Purchase": "شراء",
+    "SizeGuide": "دليل المقاسات",
+    "Size": "المقاس",
+    "Recommendations": "اقتراحات",
+    "NoRecommendations": "لا توجد اقتراحات",
+    "PleaseSelectSize": "الرجاء اختيار المقاس"
   }
 }
