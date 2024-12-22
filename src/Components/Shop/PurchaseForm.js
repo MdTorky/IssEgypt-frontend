@@ -215,7 +215,7 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
                                 <p>{language === "en" ? product.pDescription : product.pArabicDescription}</p>
                             </div>
                             <div className="FormLeftDetailsPrice">
-                                <p>Quantity: {quantity}</p>
+                                <p>{languageText.Quantity}: {quantity}</p>
                                 <h2>{quantity * product.pPrice} {languageText.RM}</h2>
                             </div>
                         </div>

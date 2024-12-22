@@ -46,7 +46,13 @@ const Product = ({ api, language, languageText, darkMode }) => {
             }
         };
         fetchData();
-    }, [api, dispatch]);
+        setSize(null);
+        setQuantity(1);
+        setSizeError("");
+        localStorage.removeItem('selectedSize');
+        localStorage.setItem('selectedPrice', 30);
+        localStorage.setItem('selectedQuantity', 1);
+    }, [api, dispatch, productId]);
 
 
     useEffect(() => {
@@ -85,7 +91,7 @@ const Product = ({ api, language, languageText, darkMode }) => {
             product.pCategory &&
             product.pCategory.length > 0 &&
             product.pCategory.some(category => product.pCategory.includes(category)) &&
-            product._id !== product._id &&
+            product._id !== productId &&
             product.pStatus === "Active"
         )
         .slice(0, 6)
@@ -147,13 +153,11 @@ const Product = ({ api, language, languageText, darkMode }) => {
     };
 
 
-    useEffect(() => {
-        // Reset the size and quantity in localStorage on component mount or page reload
-        localStorage.removeItem('selectedSize');
-        localStorage.setItem('selectedPrice', 30);
-        localStorage.setItem('selectedQuantity', 1);
+    // useEffect(() => {
 
-    }, []);
+
+
+    // }, []);
     const handleShare = async () => {
         if (navigator.share) {
             try {

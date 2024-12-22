@@ -38,6 +38,7 @@
 
 .ShopCard img {
   width: 250px;
+  height: 200px;
   background-color: var(--bg2);
   padding: 5px;
   /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -449,7 +450,7 @@
 }
 
 .Recommendation .ShopCard img {
-  width: 150px;
+  width: 250px;
 }
 
 .Recommendation .ShopCardNamePrice {
