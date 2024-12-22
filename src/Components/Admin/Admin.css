@@ -279,6 +279,22 @@
   height: 60%;
 }
 
+.ProductsDataButton {
+  background: var(--theme);
+  color: var(--bg) !important;
+  padding: 5px;
+  text-align: center;
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+  border-radius: 10px;
+  margin-top: 15px;
+  transition: 0.5s all ease-in-out;
+}
+
+.ProductsDataButton:hover {
+  box-shadow: none;
+}
+
 .DashboardBottom {
   display: flex;
   margin-top: 90px;

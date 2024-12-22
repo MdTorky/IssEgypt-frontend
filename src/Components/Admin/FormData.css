@@ -1,370 +1,400 @@
 .FormData {
-    margin-bottom: 25%;
-    font-family: 'Poppins', sans-serif;
-    margin-right: 90px;
-    position: relative;
-
+  margin-bottom: 25%;
+  font-family: "Poppins", sans-serif;
+  margin-right: 90px;
+  position: relative;
 }
-
 
 .arabic .FormData {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-left: 130px;
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-left: 130px;
+  margin-right: 0;
 }
 
-
 .EventName {
-    text-align: center;
-    font-size: 3em;
-    color: var(--bg);
-    text-transform: uppercase;
-    font-weight: 800;
-    background: var(--theme);
-    border-radius: 10px;
-    padding: 0 10px;
-    width: fit-content;
-    margin: 10px auto;
+  text-align: center;
+  font-size: 3em;
+  color: var(--bg);
+  text-transform: uppercase;
+  font-weight: 800;
+  background: var(--theme);
+  border-radius: 10px;
+  padding: 0 10px;
+  width: fit-content;
+  margin: 10px auto;
 }
 
 .FormResponses {
-    background: var(--bg2);
-    position: absolute;
-    display: flex;
-    padding: 10px;
-    top: 70px;
-    left: 20px;
-    align-items: center;
-    border-radius: 10px;
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    width: 200px;
-    justify-content: space-between;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: var(--bg2);
+  position: absolute;
+  display: flex;
+  padding: 10px;
+  top: 70px;
+  left: 20px;
+  align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  width: 200px;
+  justify-content: space-between;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .arabic .FormResponses {
-    right: 20px;
-    left: inherit
+  right: 20px;
+  left: inherit;
 }
 
 .FormResponsesLeft p:first-child {
-    font-size: 0.8em;
-    margin: 0;
+  font-size: 0.8em;
+  margin: 0;
 }
 
 .FormResponsesLeft p:last-child {
-    font-size: 2em;
-    font-weight: 900;
-    transition: 0.5s all;
-    margin: 0;
-    color: var(--theme);
+  font-size: 2em;
+  font-weight: 900;
+  transition: 0.5s all;
+  margin: 0;
+  color: var(--theme);
 }
 
 .FormResponsesIcon {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .SearchForms {
-    width: 50%;
-    margin: auto;
+  width: 50%;
+  margin: auto;
 }
 
 .ButtonsContainer {
-    display: flex;
-    margin: 20px auto;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  margin: 20px auto;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .DownloadButton {
-    cursor: pointer;
-    position: relative;
-    padding: 5px 20px;
-    font-size: 1em;
-    border-radius: 34px;
-    background-color: transparent;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 20px;
+  font-size: 1em;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .arabic .DownloadButton {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
 
 .DownloadButton.Excel {
-    color: #1D6F42;
-    border: 2px solid #1D6F42;
+  color: #1d6f42;
+  border: 2px solid #1d6f42;
 }
 
 .DownloadButton.Pictures {
-    color: var(--hover);
-    border: 2px solid var(--hover);
+  color: var(--hover);
+  border: 2px solid var(--hover);
 }
 
 .DownloadButton.Proof {
-    color: var(--theme);
-    border: 2px solid var(--theme);
+  color: var(--theme);
+  border: 2px solid var(--theme);
 }
 
 .DownloadButton::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 200px;
-    height: 50px;
-    border-radius: inherit;
-    scale: 0;
-    z-index: -1;
-    background: rgb(193, 163, 98);
-    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background: rgb(193, 163, 98);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .DownloadButton.Excel::before {
-    background: #1D6F42;
+  background: #1d6f42;
 }
 
 .DownloadButton.Pictures::before {
-    background: var(--hover);
+  background: var(--hover);
 }
-
 
 .DownloadButton.Proof::before {
-    background: var(--theme);
+  background: var(--theme);
 }
 
-
-
 .DownloadButton:hover::before {
-    scale: 3;
+  scale: 3;
 }
 
 .DownloadButton:hover {
-    color: var(--bg);
-    scale: 1.1;
+  color: var(--bg);
+  scale: 1.1;
 }
 
 .DownloadButton:active {
-    scale: 1;
+  scale: 1;
 }
 
-
 .HeaderCopy {
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--theme)
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--theme);
 }
 
 .ResponseBack {
-    display: flex;
-    /* background: var(--bg2); */
-    margin-top: 0px;
-    padding: 10px;
-    /* width: */
+  display: flex;
+  /* background: var(--bg2); */
+  margin-top: 0px;
+  padding: 10px;
+  /* width: */
 }
 
 .ResponseBack table {
-    margin: auto;
-    width: 100%;
+  margin: auto;
+  width: 100%;
 }
 
 .ResponseHeader {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    margin: 0 auto;
-    gap: 10px;
-    color: var(--bg);
-    border-radius: 20px 20px 0 0;
-    padding: 10px 10px;
-
-
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  margin: 0 auto;
+  gap: 10px;
+  color: var(--bg);
+  border-radius: 20px 20px 0 0;
+  padding: 10px 10px;
 }
 
-.ResponseHeader td, .ResponseHeader th {
-    width: 120px;
-    justify-content: center;
-    margin: auto;
-    text-align: center;
-    /* white-space: nowrap; */
+.ResponseHeader td,
+.ResponseHeader th {
+  width: 120px;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  /* white-space: nowrap; */
 }
 
 .ResponseHeader th {
-    cursor: pointer;
-    transition: all 0.5s ease;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .ResponseHeader th:hover {
-    letter-spacing: 1.3px;
-    background: var(--bg);
-    color: var(--hover);
-    border-radius: 10px;
+  letter-spacing: 1.3px;
+  background: var(--bg);
+  color: var(--hover);
+  border-radius: 10px;
 }
 
 .ResponseHeader td {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
 .ResponseContent:nth-child(even) {
-    background: var(--theme);
-    border-radius: 0 0 0 0;
+  background: var(--theme);
+  border-radius: 0 0 0 0;
 }
 
 .ResponseContent:nth-child(odd) {
-    background: var(--theme2);
-    border-radius: 0 0 0 0;
+  background: var(--theme2);
+  border-radius: 0 0 0 0;
 }
 
 .ResponseContent:last-child {
-    border-radius: 0 0 20px 20px;
+  border-radius: 0 0 20px 20px;
 }
 
 .ResponseContent img {
-    width: 50%;
+  width: 50%;
 }
-
-
-
 
 .OverFlow {
-    text-align: center;
-    margin: 0;
-    font-weight: 800;
-    display: none;
+  text-align: center;
+  margin: 0;
+  font-weight: 800;
+  display: none;
 }
 
+.ResponseHeader .TransactionStatus {
+  padding: 2px;
+  font-weight: bold;
+  border-radius: 20px;
+  background: #5cb338;
+}
 
+.ResponseHeader .TransactionStatus.OutOfOrder {
+  background: red !important;
+}
 
+.ResponseHeader .TransactionStatus.Available {
+  background: goldenrod;
+}
 
+.StatusDropdown {
+  cursor: pointer;
+  padding: 5px 20px;
+  font-size: 1em;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding-right: 30px; /* Make room for custom arrow */
+}
 
+.arabic .StatusDropdown {
+  font-family: "Noto Kufi Arabic", sans-serif;
+}
 
+.StatusDropdown::-ms-expand {
+  display: none;
+}
 
+.StatusDropdown option:hover {
+  background-color: var(--hover);
+  color: var(--bg);
+}
 
+/* Style for disabled option */
+.StatusDropdown option:disabled {
+  color: #999;
+  font-style: italic;
+}
 
+.StatusDropdown:hover {
+  color: var(--bg);
+}
 
+.StatusDropdown:focus {
+  outline: none;
+  border: none;
+}
 
+.StatusDropdown option {
+  background: var(--hover);
+  color: var(--bg);
+}
 
+@media screen and (max-width: 786px) {
+  .FormData {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 50%;
+  }
 
-@media screen and (max-width:786px) {
+  .arabic .FormData {
+    margin-left: 0;
+    margin-top: 15%;
+  }
 
+  .FormDataBack {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  .EventName {
+    font-size: 1.7em;
+  }
 
+  .FormResponses {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    width: 80%;
+    box-sizing: border-box;
+    margin: 10px auto;
+  }
 
-    .FormData {
-        margin-right: 0;
-        width: 100%;
-        margin-bottom: 50%;
-    }
+  .arabic .FormResponses {
+    right: inherit;
+  }
 
+  .SearchForms {
+    width: 80%;
+    box-sizing: border-box;
+    margin: auto auto;
+    padding: 10px;
+  }
 
-    .arabic .FormData {
-        margin-left: 0;
-        margin-top: 15%;
+  .SearchForms input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
 
-    }
+  .SearchForms input:placeholder-shown {
+    font-size: 0.65em;
+    white-space: wrap;
+  }
 
-    .FormDataBack {
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .arabic .SearchForms input:placeholder-shown {
+    font-size: 0.5em;
+  }
 
-    .EventName {
-        font-size: 1.7em;
-    }
+  .ButtonsContainer {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-    .FormResponses {
-        position: relative;
-        top: inherit;
-        left: inherit;
-        width: 80%;
-        box-sizing: border-box;
-        margin: 10px auto;
-    }
+  .DownloadButton {
+    padding: 5px 5px;
+    font-size: 0.7em;
+  }
 
-    .arabic .FormResponses {
-        right: inherit;
-    }
+  .HeaderCopy {
+    font-size: 0.9em;
+  }
 
-    .SearchForms {
-        width: 80%;
-        box-sizing: border-box;
-        margin: auto auto;
-        padding: 10px;
-    }
+  .ResponseBack {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+  }
 
-    .SearchForms input {
-        width: 100%;
-        box-sizing: border-box;
-        border-radius: 5px;
-    }
+  .ResponseBack table {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    .SearchForms input:placeholder-shown {
-        font-size: 0.65em;
-        white-space: wrap;
-    }
+  .ResponseHeader {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    .arabic .SearchForms input:placeholder-shown {
-        font-size: 0.5em;
-    }
+  .ResponseHeader td,
+  .ResponseHeader th {
+    display: flex;
+    font-size: 0.6em !important;
+  }
 
+  .ResponseHeader th {
+    font-size: 0.7em;
+  }
 
-    .ButtonsContainer {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .DownloadButton {
-        padding: 5px 5px;
-        font-size: 0.7em;
-    }
-
-
-
-
-    .HeaderCopy {
-        font-size: 0.9em;
-    }
-
-    .ResponseBack {
-        width: 100%;
-        box-sizing: border-box;
-        overflow: auto;
-
-    }
-
-    .ResponseBack table {
-        width: 100%;
-        box-sizing: border-box;
-
-    }
-
-    .ResponseHeader {
-        width: 100%;
-        box-sizing: border-box;
-
-    }
-
-    .ResponseHeader td, .ResponseHeader th {
-        display: flex;
-        font-size: 0.6em !important;
-    }
-
-    .ResponseHeader th {
-        font-size: 0.7em;
-    }
-
-    .OverFlow {
-        display: inherit;
-    }
-
-
-
+  .OverFlow {
+    display: inherit;
+  }
 }

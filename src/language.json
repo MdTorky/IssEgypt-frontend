@@ -626,7 +626,24 @@
     "ProductDetails": "Product Details",
     "Name": "Name",
     "Address": "Address",
-    "Pieces": "Pieces"
+    "Pieces": "Pieces",
+    "searchResponse2": "Search for a Purchase (Buyer Name, Matric, Email, Phone, Address)",
+    "PurchaseHeader": " • Click the header to sort the data in the column",
+
+    "NumberOfPurchases": "Number of Purchases",
+    "PurchasesData": "Purchases Data",
+    "Purchases": "Purchases",
+    "ReferenceNo": "Reference No",
+    "Product": "Product",
+    "Available": "Available",
+    "DidntArrive": "Didn't Arrive",
+    "Delivered": "Delivered",
+    "Quantity": "Quantity",
+    "ApplyStatus": "Apply Status to All",
+    "StatusDidntArrive": "Change Status to Didn't Arrive",
+    "StatusArrived": "Change Status to Arrived",
+    "StatusDelivered": "Change Status to Delivered",
+    "TransactionsConfirm": "Are you sure you want to update all transaction statuses?"
   },
   "ar": {
     "language": "عربي",
@@ -1228,6 +1245,23 @@
     "ProductDetails": "تفاصيل المنتج",
     "Name": "الاسم",
     "Address": "العنوان",
-    "Pieces": "قِطَع"
+    "Pieces": "قِطَع",
+    "searchResponse2": "بحث عن عملية شراء (اسم المشتري، الماترك، البريد الإلكتروني، الهاتف، العنوان)",
+    "PurchaseHeader": " • انقر فوق العنوان لفرز البيانات في العمود",
+
+    "NumberOfPurchases": "عدد المشتريات",
+    "PurchasesData": "بيانات المشتريات",
+    "Purchases": "المشتريات",
+    "ReferenceNo": "رقم المرجع",
+    "Product": "المنتج",
+    "Available": "متاح",
+    "DidntArrive": "لم يصل",
+    "Delivered": "تم التسليم",
+    "Quantity": "الكمية",
+    "ApplyStatus": "تطبيق الحالة على الجميع",
+    "StatusDidntArrive": "تغيير الحالة إلى لم يصل",
+    "StatusArrived": "تغيير الحالة إلى وصل",
+    "StatusDelivered": "تغيير الحالة إلى تم التسليم",
+    "TransactionsConfirm": "هل أنت متأكد أنك تريد تحديث جميع حالات المعاملات؟"
   }
 }

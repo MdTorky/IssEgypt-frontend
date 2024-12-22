@@ -181,7 +181,6 @@ const Admin = ({ language, languageData, api, darkMode }) => {
         try {
 
 
-            console.log(member.type)
             let memberType = null;
             if (member.type === "Member") {
                 memberType = "BestMember";
@@ -198,7 +197,6 @@ const Admin = ({ language, languageData, api, darkMode }) => {
             });
 
 
-            // console.log('API Response:', response);
 
             if (!response.ok) {
                 console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
@@ -575,6 +573,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     <option value="PR">PR</option>
                                     <option value="Reading">Reading</option>
                                 </select>
+                                <Link to="/productData" className='ProductsDataButton'>Products Data</Link>
                             </div>
                         }
                     </div>

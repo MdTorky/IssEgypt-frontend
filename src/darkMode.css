@@ -1115,6 +1115,14 @@ body.dark-mode {
   color: var(--hover);
 }
 
+.dark-mode .StatusDropdown {
+  color: var(--bg);
+}
+
+.dark-mode .StatusDropdown:hover {
+  color: var(--hover);
+}
+
 /* Charity */
 
 .dark-mode .Links {

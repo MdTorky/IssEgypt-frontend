@@ -102,7 +102,8 @@ const Reference = ({ api, language, languageText }) => {
                                             : ""
                                         }`}
                                 >
-                                    • {transaction.transactionStatus}
+                                    {/* •  */}
+                                    {transaction.transactionStatus}
                                 </h2>
                             </div>
                         </div>

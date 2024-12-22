@@ -59,6 +59,7 @@ import Shop from './Components/Shop/Shop';
 import Product from './Components/Shop/Product';
 import PurchaseForm from './Components/Shop/PurchaseForm';
 import Reference from './Components/Shop/Reference';
+import ProductsData from './Components/Admin/ProductsData';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -139,9 +140,11 @@ function App() {
               <Route path="/product/:productId" element={<Product darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/purchase/:productId" element={<PurchaseForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/reference/:referenceNumber" element={<Reference darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/productData" element={<ProductsData darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
 
               {/* Admin */}
               <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              {/* <Route path="/productData" element={user ? <ProductsData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} /> */}
               <Route path="/memberForm/admin" element={<MemberForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/formCreator/admin" element={user ? <FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
