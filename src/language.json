@@ -442,6 +442,7 @@
     "formEdited": "Form Updated Successfully",
     "formDeleted": "Form Deleted Successfully",
     "formSubmitted": "Form Submitted Successfully",
+    "emailSuccessful": "Email Sent Successfully",
     "TokensAdded": "Token Added Successfully",
     "TokensRemoved": "Token Removed Successfully",
     "linkCopied": "Link Copied to Clipboard!",
@@ -627,7 +628,7 @@
     "Name": "Name",
     "Address": "Address",
     "Pieces": "Pieces",
-    "searchResponse2": "Search for a Purchase (Buyer Name, Matric, Email, Phone, Address)",
+    "searchResponse2": "Search for a Purchase (Buyer Name, Matric, Email, Phone, Address, Reference Number)",
     "PurchaseHeader": " • Click the header to sort the data in the column",
 
     "NumberOfPurchases": "Number of Purchases",
@@ -643,7 +644,10 @@
     "StatusDidntArrive": "Change Status to Didn't Arrive",
     "StatusArrived": "Change Status to Arrived",
     "StatusDelivered": "Change Status to Delivered",
-    "TransactionsConfirm": "Are you sure you want to update all transaction statuses?"
+    "SendAvailableEmail": "Send Available Email",
+    "TransactionsConfirm": "Are you sure you want to update all transaction statuses?",
+    "EmailConfirm": "Are you sure you want to send emails to all recipients?",
+    "SendEmailltoAll": "Send Email to all Recipients"
   },
   "ar": {
     "language": "عربي",
@@ -1067,6 +1071,8 @@
     "formEdited": "تم تحديث النموذج بنجاح",
     "formDeleted": "تم حذف النموذج بنجاح",
     "formSubmitted": "تم تقديم النموذج بنجاح",
+    "emailSuccessful": "تم إرسال البريد الإلكتروني بنجاح",
+
     "TokensAdded": "تم إضافة العملة بنجاح",
     "TokensRemoved": "تم إزالة العملة بنجاح",
 
@@ -1262,6 +1268,9 @@
     "StatusDidntArrive": "تغيير الحالة إلى لم يصل",
     "StatusArrived": "تغيير الحالة إلى وصل",
     "StatusDelivered": "تغيير الحالة إلى تم التسليم",
-    "TransactionsConfirm": "هل أنت متأكد أنك تريد تحديث جميع حالات المعاملات؟"
+    "SendAvailableEmail": "أرسل البريد الإلكتروني المتوفر",
+    "TransactionsConfirm": "هل أنت متأكد أنك تريد تحديث جميع حالات المعاملات؟",
+    "EmailConfirm": "هل أنت متأكد أنك تريد إرسال رسائل البريد الإلكتروني إلى جميع المستلمين؟",
+    "SendEmailltoAll": "إرسال بريد إلكتروني إلى جميع المستلمين"
   }
 }

@@ -108,6 +108,11 @@
   border: 2px solid var(--theme);
 }
 
+.DownloadButton.Email {
+  color: mediumvioletred;
+  border: 2px solid mediumvioletred;
+}
+
 .DownloadButton::before {
   content: "";
   position: absolute;
@@ -132,6 +137,10 @@
 
 .DownloadButton.Proof::before {
   background: var(--theme);
+}
+
+.DownloadButton.Email::before {
+  background: mediumvioletred;
 }
 
 .DownloadButton:hover::before {

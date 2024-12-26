@@ -20,6 +20,7 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [combinedData, setCombinedData] = useState([]);
     const [sortConfig, setSortConfig] = useState({ key: '', direction: 'asc' });
+    const [error, setError] = useState('')
 
     useEffect(() => {
         const fetchData = async () => {
@@ -106,6 +107,7 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
         const searchRegex = new RegExp(searchTerm, 'i');
         return (
             searchRegex.test(item.buyerName) ||
+            searchRegex.test(item.referenceNumber) ||
             searchRegex.test(item.buyerEmail) ||
             searchRegex.test(item.buyerPhone) ||
             searchRegex.test(item.buyerAddress) ||
@@ -274,6 +276,107 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
     };
 
 
+
+    const handleSendEmail = async ({ item }) => {
+        setLoading(true);
+
+        const response = await fetch(`${api}/api/transaction/sendEmail/${item}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const json = await response.json()
+
+
+        if (!response.ok) {
+            setError(json.error)
+        }
+
+        if (response.ok) {
+            setError(null)
+
+            dispatch({
+                type: 'CREATE_FORM',
+                collection: "transactions",
+                payload: json
+            })
+            {
+                toast.success(`${languageText.emailSuccessful}`, {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: darkMode ? "dark" : "colored",
+                    style: {
+                        fontFamily: language === 'ar' ?
+                            'Noto Kufi Arabic, sans-serif' :
+                            'Poppins, sans-serif',
+                    },
+                });
+            }
+            setLoading(false);
+            // navigate("/")
+
+        }
+
+    }
+
+    const handleSendAllEmail = async () => {
+        setLoading(true);
+
+        const response = await fetch(`${api}/api/transaction/sendAllEmail`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const json = await response.json()
+
+
+        if (!response.ok) {
+            setError(json.error)
+        }
+
+        if (response.ok) {
+            setError(null)
+
+            dispatch({
+                type: 'CREATE_FORM',
+                collection: "transactions",
+                payload: json
+            })
+            {
+                toast.success(`${languageText.emailSuccessful}`, {
+                    position: "bottom-center",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: darkMode ? "dark" : "colored",
+                    style: {
+                        fontFamily: language === 'ar' ?
+                            'Noto Kufi Arabic, sans-serif' :
+                            'Poppins, sans-serif',
+                    },
+                });
+            }
+            setLoading(false);
+
+        }
+
+    }
+
+
+
+
     return (
         <div className="FormData">
             {loading ? (
@@ -325,6 +428,17 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
                                         <option value="Delivered">{languageText.Delivered}</option>
                                     </select>
                                 </div>
+                                <button
+                                    className="DownloadButton Email"
+                                    onClick={async () => {
+                                        const userConfirmed = window.confirm(languageText.EmailConfirm);
+                                        if (userConfirmed) {
+                                            await handleSendAllEmail();
+                                        }
+                                    }}
+                                >
+                                    <Icon icon="mdi:cube-send" /> {languageText.SendEmailltoAll}
+                                </button>
                             </>
                         )}
                     </div>
@@ -401,6 +515,15 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
                                             }}>
                                                 <span class="tooltip Delete" >{languageText.StatusDelivered}</span>
                                                 <span><Icon icon="hugeicons:delivered-sent" /></span>
+                                            </button>
+                                            <button className="icon Email" onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleSendEmail({ item: item.referenceNumber })
+
+
+                                            }}>
+                                                <span class="tooltip Delete" >{languageText.SendAvailableEmail}</span>
+                                                <span><Icon icon="mdi:email-fast" /></span>
                                             </button>
                                         </div>
                                     </td>
