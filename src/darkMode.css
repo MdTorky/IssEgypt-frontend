@@ -303,6 +303,16 @@ body.dark-mode {
   border: 3px gray solid;
 }
 
+.dark-mode .SessionTabs {
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.dark-mode .SessionTab {
+  color: var(--bg);
+}
+
 /* Services */
 
 .dark-mode .services .annContainer {

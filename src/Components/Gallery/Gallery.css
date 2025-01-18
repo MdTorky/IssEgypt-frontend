@@ -196,8 +196,8 @@
   height: 30px;
   width: 50px;
   font-size: 0.8rem;
-  color: black;
-  font-weight: 500;
+  color: var(--hover);
+  font-weight: 800;
   border-radius: 99px;
   cursor: pointer;
   transition: color 0.15s ease-in;
@@ -221,6 +221,22 @@
 
 .SessionContainer input[id="2025"]:checked ~ .SessionGlider {
   transform: translateX(300%);
+}
+
+.arabic .SessionContainer input[id="2022"]:checked ~ .SessionGlider {
+  transform: translateX(0);
+}
+
+.arabic .SessionContainer input[id="2023"]:checked ~ .SessionGlider {
+  transform: translateX(-100%);
+}
+
+.arabic .SessionContainer input[id="2024"]:checked ~ .SessionGlider {
+  transform: translateX(-200%);
+}
+
+.arabic .SessionContainer input[id="2025"]:checked ~ .SessionGlider {
+  transform: translateX(-300%);
 }
 
 .SessionGlider {

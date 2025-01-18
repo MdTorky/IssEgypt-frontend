@@ -305,6 +305,7 @@
     "extraCourses": "Extra Courses",
     "coursesTips": "Courses Tips",
     "library": "ISS Library",
+    "TypeEventName": "Type the Event's Name",
 
     "residence2": "Find Your Ideal Home",
     "attractions2": "Explore The City",
@@ -930,6 +931,7 @@
     "groups": "مجموعات",
     "internships": "التدريب",
     "library": "مكتبة الاتحاد",
+    "TypeEventName": "اكتب اسم الحدث",
 
     "clubs": "الأندية",
     "extraCourses": "دورات اضافية",
