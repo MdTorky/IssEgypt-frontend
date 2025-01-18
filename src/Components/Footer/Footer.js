@@ -42,7 +42,7 @@ const Footer = ({ language, languageData }) => {
                     </a>
                 </li>
                 <li className="social-icon__item">
-                    <a className="social-icon__link" href="https://www.youtube.com/@issegypt7345">
+                    <a className="social-icon__link" href="https://www.youtube.com/@issegypt">
                         <FontAwesomeIcon icon={faYoutube} />
                         {/* <span>{languageText.youtube}</span> */}
 
