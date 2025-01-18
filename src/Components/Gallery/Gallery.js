@@ -12,6 +12,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
     const languageText = languageData[language];
     const { galleries, dispatch } = useFormsContext()
     const [loading, setLoading] = useState(false);
+    const [session, setSession] = useState('2024')
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -52,9 +53,11 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
     const filteredData = galleries.filter((image) => {
         const searchRegex = new RegExp(searchTerm, 'i');
         return (
-            (searchRegex.test(image.folderName) || searchRegex.test(image.arabicFolderName))
+            (searchRegex.test(image.folderName) || searchRegex.test(image.arabicFolderName)) &&
+            (!session || image.session === session) // Check for session match if session is selected
         );
     });
+
 
     const GalleryCard = ({ folder }) => {
         return (
@@ -114,6 +117,28 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
+                    </div>
+
+
+                    <div className="SessionContainer">
+                        <div className="SessionTabs">
+                            <input type="radio" id="2022" name="session" value="2022" checked={session === "2022"}
+                                onChange={(e) => setSession(e.target.value)} />
+                            <label className="SessionTab" htmlFor="2022">2022</label>
+
+                            <input type="radio" id="2023" name="session" value="2023" checked={session === "2023"}
+                                onChange={(e) => setSession(e.target.value)} />
+                            <label className="SessionTab" htmlFor="2023">2023</label>
+
+                            <input type="radio" id="2024" name="session" value="2024" checked={session === "2024"}
+                                onChange={(e) => setSession(e.target.value)} />
+                            <label className="SessionTab" htmlFor="2024">2024</label>
+
+                            <input type="radio" id="2025" name="session" value="2025" checked={session === "2025"}
+                                onChange={(e) => setSession(e.target.value)} />
+                            <label className="SessionTab" htmlFor="2025">2025</label>
+                            <span className="SessionGlider"></span>
+                        </div>
                     </div>
                 </div>
             </div>
