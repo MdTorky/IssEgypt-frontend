@@ -154,7 +154,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
                             <GalleryCard folder={folder} key={folder._id} />
                         ))
                     ) : (
-                        <h2>{languageText.NoEventsYet}</h2>
+                        <h3>{languageText.NoEventsYet}</h3>
                     )}
                 </div>
             )}
