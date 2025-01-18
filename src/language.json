@@ -306,6 +306,7 @@
     "coursesTips": "Courses Tips",
     "library": "ISS Library",
     "TypeEventName": "Type the Event's Name",
+    "NoEventsYet": "No Events Yet",
 
     "residence2": "Find Your Ideal Home",
     "attractions2": "Explore The City",
@@ -932,6 +933,7 @@
     "internships": "التدريب",
     "library": "مكتبة الاتحاد",
     "TypeEventName": "اكتب اسم الحدث",
+    "NoEventsYet": "لا يوجد أحداث حتى الآن",
 
     "clubs": "الأندية",
     "extraCourses": "دورات اضافية",

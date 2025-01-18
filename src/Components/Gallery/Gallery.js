@@ -144,15 +144,21 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
             </div>
 
             {loading ? (
-                <div><Loader darkMode={darkMode} /></div>
+                <div>
+                    <Loader darkMode={darkMode} />
+                </div>
             ) : (
-                <div class="GalleryContainer">
-
-                    {filteredData.map((folder) => (
-                        <GalleryCard folder={folder} key={folder._id} />
-                    ))}
+                <div className="GalleryContainer">
+                    {filteredData && filteredData.length > 0 ? (
+                        filteredData.map((folder) => (
+                            <GalleryCard folder={folder} key={folder._id} />
+                        ))
+                    ) : (
+                        <h2>{languageText.NoEventsYet}</h2>
+                    )}
                 </div>
             )}
+
         </div>
     )
 }

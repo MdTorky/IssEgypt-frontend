@@ -166,8 +166,8 @@
 }
 
 .SearchBar {
-  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15),
-    0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  box-shadow: 0 0 1px 0 rgba(224, 24, 61, 0.15),
+    0 6px 12px 0 rgba(224, 24, 61, 0.15);
 }
 
 /* From Uiverse.io by Pradeepsaranbishnoi */
@@ -175,8 +175,8 @@
   display: flex;
   position: relative;
   background-color: var(--bg2);
-  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15),
-    0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  box-shadow: 0 0 1px 0 rgba(224, 24, 61, 0.15),
+    0 6px 12px 0 rgba(224, 24, 61, 0.15);
   padding: 0.7rem;
   border-radius: 99px;
 }
