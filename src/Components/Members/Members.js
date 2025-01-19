@@ -60,50 +60,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
 
 
-
-    // const handleDelete = async ({ member }) => {
-    //     try {
-    //         const response = await fetch(`${api}/api/member/${member._id}`, {
-    //             method: 'DELETE',
-    //         });
-
-    //         if (!response.ok) {
-    //             console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
-    //             return;
-    //         }
-    //         if (response.ok) {
-    //             const json = await response.json();
-    //             dispatch({
-    //                 type: 'DELETE_ITEM',
-    //                 collection: "members",
-    //                 payload: json
-    //             });
-    //             {
-    //                 toast.success(`${languageText.suggestionDelete}`, {
-    //                     position: "bottom-center",
-    //                     autoClose: 5000,
-    //                     hideProgressBar: true,
-    //                     closeOnClick: true,
-    //                     pauseOnHover: true,
-    //                     draggable: true,
-    //                     progress: undefined,
-    //                     theme: darkMode ? "dark" : "colored",
-    //                     style: {
-    //                         fontFamily: language === 'ar' ?
-    //                             'Noto Kufi Arabic, sans-serif' :
-    //                             'Poppins, sans-serif',
-    //                     },
-    //                 });
-    //             }
-
-    //         }
-
-    //     } catch (error) {
-    //         console.error('An error occurred while deleting data:', error);
-    //     }
-    // };
-
-
     const filteredMembers = Array.isArray(members) ? members.filter(
         (member) =>
             member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -196,15 +152,15 @@ const Members = ({ language, languageData, api, darkMode }) => {
     //     </div>
     // </div>
 
-    const loading2 = (number) => {
-        return (
-            <>
-                {loading && (
-                    <div><Loader /></div>
-                )}
-            </>
-        );
-    };
+    // const loading2 = (number) => {
+    //     return (
+    //         <>
+    //             {loading && (
+    //                 <div><Loader /></div>
+    //             )}
+    //         </>
+    //     );
+    // };
 
 
     const card = (text, number) => {
@@ -234,9 +190,13 @@ const Members = ({ language, languageData, api, darkMode }) => {
                                     <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
                                     {user && user.type === "Admin" && <button
                                         className='deleteButton'
-                                        onClick={() => { handleDelete({ member: boardMember }) }}
+                                        onClick={() => handleDelete({ member: boardMember })}
                                     ><Icon icon="material-symbols:delete-rounded" /></button>}
+                                    {user && user.type === "Admin" && <Link to={`/memberEditor/${boardMember.committee}/${boardMember._id}`}
+                                        className='editButton'
+                                    ><Icon icon="flowbite:user-edit-solid" /></Link>}
                                 </div>
+
 
 
                             ))}
@@ -252,46 +212,43 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
 
     const handleDelete = async ({ member }) => {
+        const confirmation = window.confirm(`Are you sure you want to delete ${member.name}?`);
+        if (!confirmation) return;
+
         try {
             const response = await fetch(`${api}/api/member/${member._id}`, {
                 method: 'DELETE',
             });
 
             if (!response.ok) {
-                console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
+                console.error(`Error deleting member. Status: ${response.status}, ${response.statusText}`);
                 return;
             }
-            if (response.ok) {
-                const json = await response.json();
-                dispatch({
-                    type: 'DELETE_ITEM',
-                    collection: "members",
-                    payload: json
-                });
-                {
-                    toast.success(`${languageText.memberDeleted}`, {
-                        position: "bottom-center",
-                        autoClose: 3000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: darkMode ? "dark" : "colored",
-                        style: {
-                            fontFamily: language === 'ar' ?
-                                'Noto Kufi Arabic, sans-serif' :
-                                'Poppins, sans-serif',
-                        },
-                    });
-                }
 
-            }
+            const json = await response.json();
+            dispatch({
+                type: 'DELETE_ITEM',
+                collection: "members",
+                payload: json,
+            });
 
+            toast.success(`${languageText.memberDeleted}`, {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: darkMode ? "dark" : "colored",
+                style: {
+                    fontFamily: language === 'ar' ? 'Noto Kufi Arabic, sans-serif' : 'Poppins, sans-serif',
+                },
+            });
         } catch (error) {
             console.error('An error occurred while deleting data:', error);
         }
     };
+
 
 
     return (
