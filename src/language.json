@@ -440,6 +440,7 @@
     "memberDeleted": "Member Deleted Successfully",
     "memberEdited": "Member Edited Successfully",
     "statusChanged": "Status Changed Successfully",
+    "galleryEdited": "Gallery Edited Successfully",
     "formCreated": "Form Created Successfully",
     "formEdited": "Form Updated Successfully",
     "formDeleted": "Form Deleted Successfully",
@@ -450,6 +451,7 @@
     "linkCopied": "Link Copied to Clipboard!",
     "loginSuccess": "Login Successfully",
     "registerSuccess": "Account Created Successfully",
+    "editGallery": "Edit Gallery Details",
 
     "board": "The Board",
     "committeeP": "Committees Presidents",
@@ -1071,6 +1073,7 @@
     "memberDeleted": "تم حذف العضو بنجاح",
     "memberEdited": "تم تحديث معلومات العضو بنجاح",
     "statusChanged": "تم تغيير الحالة بنجاح",
+    "galleryEdited": "تم تغيير المعرض بنجاح",
     "formCreated": "تم إنشاء النموذج بنجاح",
     "formEdited": "تم تحديث النموذج بنجاح",
     "formDeleted": "تم حذف النموذج بنجاح",
@@ -1083,6 +1086,7 @@
     "linkCopied": "تم نسخ الرابط!",
     "loginSuccess": "تم تسجيل الدخول بنجاح",
     "registerSuccess": "تم إنشاء الحساب بنجاح",
+    "editGallery": "تعديل معلومات المعرض",
 
     "board": "مجلس الإدارة",
     "committeeP": "رؤساء اللجان",

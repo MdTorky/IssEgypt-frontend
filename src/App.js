@@ -60,6 +60,7 @@ import Product from './Components/Shop/Product';
 import PurchaseForm from './Components/Shop/PurchaseForm';
 import Reference from './Components/Shop/Reference';
 import ProductsData from './Components/Admin/ProductsData';
+import GalleryEdit from './Components/Gallery/GalleryEdit';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -153,6 +154,7 @@ function App() {
               <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
               <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
               <Route path="/tokensShowcase" element={user ? <TokensShowcase darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/galleryedit/:id" element={user ? <GalleryEdit darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
               {/*
                             <Route path="/tokensShowcase" element={<TokensShowcase darkMode={darkMode}
                                 language={language} languageData={languageData} api={api} />} /> */}

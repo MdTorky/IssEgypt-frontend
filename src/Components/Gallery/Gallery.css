@@ -27,6 +27,23 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.GalleryEdit {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 1.2em !important;
+  background: var(--theme2);
+  padding: 10px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  border-radius: 20px;
+  color: var(--bg) !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .Gallery h2 {
   font-size: 2em;
   text-transform: uppercase;

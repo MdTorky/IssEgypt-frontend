@@ -4,6 +4,8 @@ import { Icon } from '@iconify/react';
 import Loader from '../Loader/Loader'
 import { useFormsContext } from '../../hooks/useFormContext'
 import { useState, useEffect } from "react"
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { Link } from 'react-router-dom';
 
 
 const Gallery = ({ api, languageData, language, darkMode }) => {
@@ -13,6 +15,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
     const { galleries, dispatch } = useFormsContext()
     const [loading, setLoading] = useState(false);
     const [session, setSession] = useState('2024')
+    const { user } = useAuthContext()
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -65,6 +68,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
 
                 <div className="GalleryImage">
                     <p className="GalleryNo">{folder.time}</p>
+                    {user && <Link to={`/galleryedit/${folder._id}`} className="GalleryEdit"><Icon icon="uil:image-edit" /></Link>}
                     <img src={folder.folderImage} alt="" />
                 </div>
                 {folder.folderLink === "Coming Soon" ? (
