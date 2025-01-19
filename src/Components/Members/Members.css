@@ -360,6 +360,11 @@ button.deleteButton {
   border-radius: 20px;
   padding: 10px;
   cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+button.deleteButton:hover {
+  transform: scale(1.2);
 }
 
 .adminCard .editButton {
@@ -377,6 +382,11 @@ button.deleteButton {
   border-radius: 20px;
   padding: 10px;
   cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.adminCard .editButton:hover {
+  transform: scale(1.2);
 }
 /* Premium Members */
 
