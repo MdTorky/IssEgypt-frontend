@@ -1,12 +1,11 @@
 import './Members.css'
 import { useEffect, useState } from 'react'
 import { useFormsContext } from '../../hooks/useFormContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faUserSlash } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { Icon } from '@iconify/react';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 import Loader from '../Loader/Loader'
 import MemberCard from '../components/MemberCard';
@@ -14,6 +13,7 @@ import MemberCard from '../components/MemberCard';
 const Members = ({ language, languageData, api, darkMode }) => {
     const { members, dispatch } = useFormsContext()
     const languageText = languageData[language];
+    const { user } = useAuthContext()
 
 
     const [error, setError] = useState('')
@@ -148,12 +148,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 break;
             default: break;
         }
-
-        // const sortedMembers = members.sort(
-        //     (a, b) => a.memberId - b.memberId
-        // );
-
-        // const sortedMembers = members.sort((a, b) => a.name.localeCompare(b.name));
         const sortedMembers = members
 
         const defaultMember = members.map((member, index) => ({
@@ -225,20 +219,26 @@ const Members = ({ language, languageData, api, darkMode }) => {
             return null;
         }
 
+
+
+
         return (
             <div className="memberBox">
                 <div className="memberBack">
                     <h2 className={`${text === "Best Members" ? "BestMemberText" : ""} `}>{text}</h2>
                     <div className="people">
-                        {/* {loading ? (
-                            <div><Loader /></div>
-                        ) : (
-                           
-                        )} */}
 
                         <>
                             {membersToShow.map((boardMember) => (
-                                <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
+                                <div className="adminCard">
+                                    <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
+                                    {user && user.type === "Admin" && <button
+                                        className='deleteButton'
+                                        onClick={() => { handleDelete({ member: boardMember }) }}
+                                    ><Icon icon="material-symbols:delete-rounded" /></button>}
+                                </div>
+
+
                             ))}
                             {/* {loading2(number)} */}
                         </>
@@ -247,6 +247,53 @@ const Members = ({ language, languageData, api, darkMode }) => {
             </div>
         );
     };
+
+
+
+
+    const handleDelete = async ({ member }) => {
+        try {
+            const response = await fetch(`${api}/api/member/${member._id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                console.error(`Error deleting suggestion. Status: ${response.status}, ${response.statusText}`);
+                return;
+            }
+            if (response.ok) {
+                const json = await response.json();
+                dispatch({
+                    type: 'DELETE_ITEM',
+                    collection: "members",
+                    payload: json
+                });
+                {
+                    toast.success(`${languageText.memberDeleted}`, {
+                        position: "bottom-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: darkMode ? "dark" : "colored",
+                        style: {
+                            fontFamily: language === 'ar' ?
+                                'Noto Kufi Arabic, sans-serif' :
+                                'Poppins, sans-serif',
+                        },
+                    });
+                }
+
+            }
+
+        } catch (error) {
+            console.error('An error occurred while deleting data:', error);
+        }
+    };
+
+
     return (
         <div className="Members">
             <div className="searchContainer">
