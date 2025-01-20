@@ -42,6 +42,25 @@ const Shop = ({ languageText, api, darkMode, language }) => {
         fetchData();
     }, [api, dispatch]);
 
+    const handleShare = async (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "Check this ISS EGYPT Product Out!",
+                    text: "Have a look at this amazing product!",
+                    url: window.location.href, // Current page URL
+                });
+                console.log("Content shared successfully!");
+            } catch (error) {
+                console.error("Error sharing content:", error);
+            }
+        } else {
+            alert("Web Share API not supported in your browser.");
+        }
+    };
+
     const ShopCard = ({ product }) => {
         return (
             <Link to={`/product/${product._id}`} >
@@ -49,11 +68,15 @@ const Shop = ({ languageText, api, darkMode, language }) => {
                     <img src={product.pImage} alt="" />
                     <div className="ShopCardNamePrice">
                         <p>{language === "en" ? product.pTitle : product.pArabicTitle}</p>
-                        <p>{product.pPrice} {languageText.RM}</p>
                     </div>
-                    {/* <div className="ShopCardDesc">
-                        <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button>
-                    </div> */}
+                    <div className="ShopCardDesc">
+                        <p >{product.pDescription}</p>
+                        {/* <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button> */}
+                    </div>
+                    <div className="ShopCardPriceDetails">
+                        <p>{product.pPrice} {languageText.RM}</p>
+                        <button> <Icon icon="fluent:share-16-filled" className="ShopCardIcon" onClick={(e) => handleShare(e)} /></button>
+                    </div>
                 </div>
             </Link>
         )

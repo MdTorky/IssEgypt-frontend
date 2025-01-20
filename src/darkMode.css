@@ -1159,10 +1159,15 @@ body.dark-mode {
 
 /* Shop */
 
+.dark-mode .ShopCard {
+  background-color: var(--hover2);
+  border: 3px gray solid;
+}
+
 .dark-mode .ShopCard img {
   background-color: var(--hover2);
-  border: 2px var(--hover2) solid;
-  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+  /* border: 2px var(--hover2) solid; */
+  /* box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px; */
 }
 
 .dark-mode .ShopCardNamePrice {
@@ -1171,6 +1176,16 @@ body.dark-mode {
 
 .dark-mode .ShopCardDesc button {
   border: 2px var(--hover2) solid;
+}
+
+.dark-mode .ShopCardPriceDetails button {
+  background: var(--hover2);
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .ShopCardPriceDetails button .ShopCardIcon {
+  background: var(--hover);
+  color: var(--bg2);
 }
 
 .dark-mode .ProductImg img {
