@@ -27,14 +27,14 @@ const Services = ({ language, languageData, darkMode }) => {
     useEffect(() => {
     }, [language, languageData]);
 
-    useEffect(() => {
-        if (selectedAnnouncement && selectedAnnouncement.id) {
-            const updatedAnnouncement = announcements.find(announcement => announcement.id === selectedAnnouncement.id);
-            if (updatedAnnouncement) {
-                setSelectedAnnouncement(updatedAnnouncement);
-            }
-        }
-    }, [language]);
+    // useEffect(() => {
+    //     if (selectedAnnouncement && selectedAnnouncement.id) {
+    //         const updatedAnnouncement = announcements.find(announcement => announcement.id === selectedAnnouncement.id);
+    //         if (updatedAnnouncement) {
+    //             setSelectedAnnouncement(updatedAnnouncement);
+    //         }
+    //     }
+    // }, [language]);
 
     useEffect(() => {
         if (selectedFaculty && selectedFaculty.id) {
@@ -48,72 +48,72 @@ const Services = ({ language, languageData, darkMode }) => {
 
 
 
-    var AcademicImg = images.academicAnnouncement;
-    var SocialImg = images.socialAnnouncement;
-    var CultureImg = images.cultureAnnouncement;
-    var ElectronImg = images.electionsAnnouncement;
-    var OtherImg = images.otherAnnouncement;
+    // var AcademicImg = images.academicAnnouncement;
+    // var SocialImg = images.socialAnnouncement;
+    // var CultureImg = images.cultureAnnouncement;
+    // var ElectronImg = images.electionsAnnouncement;
+    // var OtherImg = images.otherAnnouncement;
 
 
-    var Academic = languageText.academicAnnouncementOrganizer
-    var Social = languageText.socialAnnouncementOrganizer
-    var Culture = languageText.cultureAnnouncementOrganizer
-    var Election = languageText.electionAnnouncementOrganizer
-    var Other = languageText.otherAnnouncementOrganizer
-    // 1. Add a new Id
+    // var Academic = languageText.academicAnnouncementOrganizer
+    // var Social = languageText.socialAnnouncementOrganizer
+    // var Culture = languageText.cultureAnnouncementOrganizer
+    // var Election = languageText.electionAnnouncementOrganizer
+    // var Other = languageText.otherAnnouncementOrganizer
+    // // 1. Add a new Id
 
-    // 2. Add Icon based on the Announcement, choose from these
-    //              a. AcademicImg (if academic announcement)
-    //              b. SocialImg (if social announcement)
-    //              c. CultureImg (if culture announcement)
-    //              d. ElectionImg (if election announcement)
-    //              d. OtherImg (if any other announcement)
+    // // 2. Add Icon based on the Announcement, choose from these
+    // //              a. AcademicImg (if academic announcement)
+    // //              b. SocialImg (if social announcement)
+    // //              c. CultureImg (if culture announcement)
+    // //              d. ElectionImg (if election announcement)
+    // //              d. OtherImg (if any other announcement)
 
-    // 3. Add Event Image in the Background Image
+    // // 3. Add Event Image in the Background Image
 
-    // 4. Add A TITLE in English and Arabic
+    // // 4. Add A TITLE in English and Arabic
 
-    // 5. Add Organizer either
-    //               a. Academic (if the academic committee is the organizer)
-    //               b. Social (if the social committee is the organizer)
-    //               c. Culture (if the culture committee is the organizer)
-    //               d. Election (if the election committee is the organizer)
-    //               e. Other (if the other committee is the organizer)
+    // // 5. Add Organizer either
+    // //               a. Academic (if the academic committee is the organizer)
+    // //               b. Social (if the social committee is the organizer)
+    // //               c. Culture (if the culture committee is the organizer)
+    // //               d. Election (if the election committee is the organizer)
+    // //               e. Other (if the other committee is the organizer)
 
-    // FOR 6, 7, and 8 IF THERE IS NO LINKS LEAVE IT BLANK
+    // // FOR 6, 7, and 8 IF THERE IS NO LINKS LEAVE IT BLANK
 
-    // 6. Add the Form Link 
+    // // 6. Add the Form Link 
 
-    // 7. Add Social media link
+    // // 7. Add Social media link
 
-    // 8. Add the Calender Link
+    // // 8. Add the Calender Link
 
-    const announcements = [
-        // {
-        //     id: 1,
-        //     img: AcademicImg,
-        //     backgroundImg: "https://drive.google.com/uc?export=view&id=1R0tcmB5r21wsVwEKlpcc-Jb9Mht3XrcA",
-        //     title: "Math 1 Revision",
-        //     titleArabic: "مراجعة Math 1",
-        //     organizer: Academic,
-        //     organizerArabic: Academic,
-        //     form: 'https://math1revision.fillout.com/t/qiBP8y3KCnus',
-        //     link: "",
-        //     calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
-        // },
-        // {
-        //     img: CultureImg,
-        //     backgroundImg: "https://i.ibb.co/w6CjD9D/Ann2.jpg",
-        //     title: "Stories of the Prophets",
-        //     titleArabic: "قصص الأنبياء",
-        //     organizer: Culture,
-        //     organizerArabic: Culture,
-        //     form: '',
-        //     link: "https://chat.whatsapp.com/EUU9mUlO1fpLWjLofX50a8",
-        //     calendarLink: ""
-        // },
+    // const announcements = [
+    //     // {
+    //     //     id: 1,
+    //     //     img: AcademicImg,
+    //     //     backgroundImg: "https://drive.google.com/uc?export=view&id=1R0tcmB5r21wsVwEKlpcc-Jb9Mht3XrcA",
+    //     //     title: "Math 1 Revision",
+    //     //     titleArabic: "مراجعة Math 1",
+    //     //     organizer: Academic,
+    //     //     organizerArabic: Academic,
+    //     //     form: 'https://math1revision.fillout.com/t/qiBP8y3KCnus',
+    //     //     link: "",
+    //     //     calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3V0ZWZkaHMzaGs1ZG43NGVmaHJjODA3cTEgNzkyN2Y2YmQwNTE0Y2M4ZjBkYWNhYjEzM2I2MWYyZWZkNjkyNjA2NmRhNGEzZGY5NjNjZTY1NTA5YTM2OTlmMkBn&tmsrc=7927f6bd0514cc8f0dacab133b61f2efd6926066da4a3df963ce65509a3699f2%40group.calendar.google.com"
+    //     // },
+    //     // {
+    //     //     img: CultureImg,
+    //     //     backgroundImg: "https://i.ibb.co/w6CjD9D/Ann2.jpg",
+    //     //     title: "Stories of the Prophets",
+    //     //     titleArabic: "قصص الأنبياء",
+    //     //     organizer: Culture,
+    //     //     organizerArabic: Culture,
+    //     //     form: '',
+    //     //     link: "https://chat.whatsapp.com/EUU9mUlO1fpLWjLofX50a8",
+    //     //     calendarLink: ""
+    //     // },
 
-    ];
+    // ];
 
 
 
@@ -288,9 +288,9 @@ const Services = ({ language, languageData, darkMode }) => {
                                 <Icon icon="mdi:charity" className="svgIcon" />
                             </Link>
 
-                            {/* <Link className="AnnStories2Button" to="/addLecturer" data-text={languageText.AddLecturer} style={{ backgroundColor: "mediumseagreen" }}>
-                                <Icon icon="mdi:lecturn" className="svgIcon" />
-                            </Link> */}
+                            <Link className="AnnStories2Button" to="/underconstruction" data-text={languageText.Shop} style={{ backgroundColor: "mediumseagreen" }}>
+                                <Icon icon="solar:shop-bold" className="svgIcon" />
+                            </Link>
 
                         </div>
 

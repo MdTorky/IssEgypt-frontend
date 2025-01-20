@@ -111,6 +111,8 @@ body.dark-mode {
 
 .dark-mode .sideMenu .liveBox {
   background: var(--hover);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
 
 .dark-mode .sideMenu .liveBox .title h3 {
@@ -281,15 +283,12 @@ body.dark-mode {
     rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.dark-mode .GalleryText {
-  padding: 10px;
-  color: var(--hover);
-  /* background: red; */
-  height: 100%;
-  display: flex;
-  gap: 10px;
-  flex-grow: 1;
-  /* align-items: center; */
+.dark-mode .GalleryImage {
+  border: 3px gray solid;
+}
+
+.dark-mode .GalleryImage img {
+  border: 3px gray solid;
 }
 
 .dark-mode .GalleryText h3 {
@@ -323,6 +322,11 @@ body.dark-mode {
   background: var(--hover);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.dark-mode .AnnStories2Button {
+  /* border: 3px solid gray; */
+  border: 3px var(--hover2) solid;
 }
 
 .dark-mode .AnnStories2Button:hover {
@@ -1175,7 +1179,7 @@ body.dark-mode {
 }
 
 .dark-mode .SizeTitle {
-  border: 2px var(--hover2) solid;
+  border: 3px var(--hover2) solid;
   background-color: var(--hover);
   box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
 }
@@ -1192,6 +1196,11 @@ body.dark-mode {
 .dark-mode .SizeGuide {
   border: 2px var(--hover2) solid;
   box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .ProductQuantity {
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 2px;
 }
 
 .dark-mode .ProductQuantity button {

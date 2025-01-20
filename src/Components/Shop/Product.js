@@ -106,10 +106,10 @@ const Product = ({ api, language, languageText, darkMode }) => {
                         <p>{language === "en" ? product.pTitle : product.pArabicTitle}</p>
                         <p>{product.pPrice} {languageText.RM}</p>
                     </div>
-                    <div className="ShopCardDesc">
-                        {/* <p>Description</p> */}
-                        <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button>
-                    </div>
+                    {/* <div className="ShopCardDesc"> */}
+                    {/* <p>Description</p> */}
+                    {/* <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button> */}
+                    {/* </div> */}
                 </div>
             </Link>
         )

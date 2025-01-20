@@ -461,6 +461,7 @@
   border-radius: 10px;
   /* border: 6px double var(--theme); */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 5px lightgray double;
 }
 
 .blog .blogText .subtitle {
@@ -522,12 +523,6 @@
   gap: 20px;
   /* margin: 0 auto 20px auto; */
   border-bottom: 3px solid var(--theme);
-  /* background: blue; */
-  /* width: fit-content; */
-  /* box-sizing: border-box; */
-  /* background: red; */
-  /* padding: 10px; */
-  /* width: min-content; */
 }
 
 .blogContainer2 .blogItem img {
@@ -535,6 +530,7 @@
   border-radius: 10px;
   border: 5px double var(--bg);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 5px lightgray double;
 }
 
 .blogContainer2 .blogItem .line {

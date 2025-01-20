@@ -60,7 +60,7 @@
   /* max-width: fit; */
 
   margin: 10px auto;
-  padding: 15px;
+  padding: 20px 15px;
   border-radius: 20px;
   background: var(--bg2);
   display: flex;
@@ -127,6 +127,7 @@
   overflow: hidden; /* Ensures excess parts of the image are hidden */
   border-radius: 10px; /* Rounds the corners */
   background-color: #f0f0f0;
+  border: 3px lightgray solid;
 }
 
 .GalleryImage img {
@@ -136,6 +137,7 @@
   border-radius: 10px;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px lightgray solid;
 }
 
 .GalleryBottom {
@@ -149,7 +151,7 @@
 } */
 
 .GalleryText {
-  padding: 10px;
+  padding: 10px 5px;
   color: var(--bg);
   /* background: red; */
   height: 100%;
