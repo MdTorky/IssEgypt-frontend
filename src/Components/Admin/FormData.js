@@ -371,7 +371,7 @@ const FormData = ({ language, languageText, api, darkMode }) => {
                                                 onClick={() => { window.open(formData.picture, "_blank") }}><img src={formData.picture} alt="" /></td>)}
                                             {form.inputs.includes("Full Name") && (<td>{formData.fullName}</td>)}
                                             {form.inputs.includes("Matric") && (<td style={{ textTransform: "uppercase" }}>{formData.matric}</td>)}
-                                            {form.inputs.includes("Email") && (<td>{formData.email}</td>)}
+                                            {form.inputs.includes("Email") && (<td style={{ fontSize: "0.5em" }}>{formData.email}</td>)}
                                             {form.inputs.includes("Phone No.") && (<td>{formData.phone}</td>)}
                                             {form.inputs.includes("Faculty") && (<td>{formData.faculty}</td>)}
                                             {form.inputs.includes("Year") && (<td>{formData.year}</td>)}
@@ -403,8 +403,9 @@ const FormData = ({ language, languageText, api, darkMode }) => {
                     </div>
 
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 };
 
