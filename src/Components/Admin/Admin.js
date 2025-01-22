@@ -436,7 +436,7 @@ const Admin = ({ language, languageText, api, darkMode }) => {
             // <tr className={`TableHeading TableItems`}>
             <tr className={`TableHeading TableItems`} onClick={(e) => {
                 // copyLink(`issegypt.vercel.app/${encodeURIComponent(form.eventName)}`)
-                copyLink(`issegypt.vercel.app/form/${form._id}}`)
+                copyLink(`issegypt.vercel.app/form/${form._id}`)
             }}>
                 <td>
 
