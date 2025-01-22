@@ -70,7 +70,7 @@ const Services = ({ language, languageText, api }) => {
         {
             // Icon: faBookBookmark,
             Icon: "icon-park-solid:book-one",
-            Title: languageText.Found,
+            Title: languageText.Space,
 
         },
     ];
