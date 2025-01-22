@@ -116,7 +116,7 @@
 .FormPopup .SubmitButton:hover {
   transform: translateY(2px);
   box-shadow: none;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 
 .formBox .GroupLink {
@@ -132,7 +132,7 @@
 .formBox .GroupLink:hover {
   /* width: 50%; */
   transform: none;
-  letter-spacing: 5px;
+  /* letter-spacing: 5px; */
   background: mediumseagreen;
 }
 

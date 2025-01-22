@@ -222,7 +222,7 @@ const Services = ({ language, languageText, api }) => {
     };
 
 
-    const leadershipRoles = ["Vice", "ISS Egypt", "Secretary", "Treasurer"];
+    const leadershipRoles = ["Vice", "ISS Egypt", "Secretary", "Treasurer", "Admin"];
 
     return (
         <div className="services">
