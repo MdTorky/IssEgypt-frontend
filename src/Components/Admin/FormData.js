@@ -331,7 +331,7 @@ const FormData = ({ language, languageText, api, darkMode }) => {
                         {form?.inputs.includes("Picture") && filterLength > 0 && <button className="DownloadButton Pictures" onClick={handleDownloadAllPictures}>
                             <Icon icon="mage:image-fill" /> {languageText.dPictures}
                         </button>}
-                        {!form?.inputs.includes("Payment") && filterLength > 0 && <button className="DownloadButton Proof" onClick={handleDownloadAllProofPictures}>
+                        {form?.inputs.includes("Payment") && filterLength > 0 && <button className="DownloadButton Proof" onClick={handleDownloadAllProofPictures}>
                             <Icon icon="hugeicons:zip-02" />  {languageText.dProof}
                         </button>}
                     </div>
