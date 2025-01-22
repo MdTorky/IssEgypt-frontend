@@ -536,7 +536,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
 
                             {inputs.includes("Select Input") && (
                                 <div className="SelectInputsEditor">
-                                    <h3>{languageText.EditSelectInput}</h3>
+                                    <h3>{languageText.AddSelectInput}</h3>
                                     <div className="InputRow">
                                         <div className="InputLabelField">
                                             <input
