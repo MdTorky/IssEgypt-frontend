@@ -317,6 +317,13 @@ const Admin = ({ language, languageText, api, darkMode }) => {
 
 
     const handleFormDelete = async ({ forms }) => {
+        const userConfirmed = window.confirm(languageText.FormConfirm);
+
+        if (!userConfirmed) {
+            // If the user cancels the confirmation, exit the function.
+            return;
+        }
+
         try {
             const response = await fetch(`${api}/api/forms/${forms._id}`, {
                 method: 'DELETE',

@@ -3,10 +3,6 @@
 import "./Form.css"
 import { useState } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../../hooks/useAuthContext';
@@ -133,7 +129,11 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
         e.preventDefault();
         setUpdating(true);
 
-        const imgUrl = await uploadFile('image', img);
+        let imgUrl = null;
+        if (img) {
+            imgUrl = await uploadFile('image', img);
+        }
+
         let paymentQRUrl = null;
         if (paymentQR) {
             paymentQRUrl = await uploadFile('image', paymentQR);
@@ -142,7 +142,6 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
             eventName,
             arabicEventName,
             eventImg: imgUrl,
-            // eventImg: "fgagsgagsg",
             eventDescription,
             type: user?.committee,
             inputs,
@@ -358,7 +357,6 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
                                         className={`input ${(img) ? 'valid' : ''}`}
                                         style={{ display: 'none' }}
                                         onChange={handleImgChange}
-                                        required
                                     />
                                 </div>
 

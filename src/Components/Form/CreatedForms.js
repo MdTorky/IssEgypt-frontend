@@ -340,7 +340,7 @@ const CreateForm = ({ language, languageText, api, darkMode }) => {
                             form.status === true ? (
                                 <div className="FormAll">
                                     <div className="FormLeft">
-                                        <img src={form.eventImg} alt="" />
+                                        {form.eventImg && <img src={form.eventImg} alt="" />}
                                         <div className="FormLeftDetails">
                                             {language === 'en' ? <h2>{form.eventName}</h2> : <h2>{form.arabicEventName}</h2>}
                                             <p>{form.eventDescription}</p>
