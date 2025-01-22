@@ -13,11 +13,10 @@ import Select from 'react-select';
 import SelectStyles from '../components/SelectStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
-const BookingForm = ({ api, language, languageData, darkMode }) => {
+const BookingForm = ({ api, language, languageText, darkMode }) => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const languageText = languageData[language];
 
     const { books, faculties, dispatch } = useFormsContext()
     const [bookData, setBookData] = useState('')

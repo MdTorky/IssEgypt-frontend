@@ -1,33 +1,25 @@
 // NavBar.js
 
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faBook, faPerson, faUsers } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { useLocation } from 'react-router-dom';
 import { useDarkMode } from '../../context/DarkModeContext'; // Import useDarkMode
 import { Icon } from '@iconify/react';
 import { useLanguage } from '../../context/language';
 import languageData from '../../language.json';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 
 const NavBar = () => {
     const location = useLocation();
     const { darkMode, toggleDarkMode } = useDarkMode(); // Get dark mode state and toggle function
+    const { user } = useAuthContext()
 
-
-    // useEffect(() => {
-    // }, [language, toggleLanguage, languageData]);
-
-    // const languageText = languageData[language];
-    // const isRtl = language === 'ar';
 
     const { language, changeLanguage } = useLanguage();
-    const { isRTL } = useLanguage();
     const languageText = languageData[language]
 
     const handleChangeLanguage = () => {
@@ -60,10 +52,14 @@ const NavBar = () => {
                         <div className="NavBarIcon" data-content={languageText.members}><Icon icon="heroicons:users-solid" width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
-                {/* <li className={location.pathname === '/gallery' ? 'active' : ''}><a href="/gallery"><icon data-content={languageText.gallery}><FontAwesomeIcon icon={faImage} /></icon></a></li> */}
+                {user && <li className={location.pathname === '/adminDashboard' ? 'active' : ''}>
+                    <Link to="/adminDashboard">
+                        <div className="NavBarIcon" data-content={languageText.admin}><Icon icon="eos-icons:admin" width="2rem" height="2rem" /></div>
+                    </Link>
+                </li>
+                }
                 <li onClick={handleChangeLanguage} className='language'>
                     <div className="NavBarIcon" data-content={languageText.language}>
-                        {/* {language === "en" ? "EN" : "ع"} */}
                         {language === "en" ? <Icon icon="ri:english-input" width="2rem" height="2rem" /> : <Icon icon="mdi:abjad-arabic" width="2rem" height="2rem" />}
                     </div>
 

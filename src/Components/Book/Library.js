@@ -1,37 +1,13 @@
 import './Library.css'
 import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
-import axios from 'axios';
 import { useNavigate, Link } from "react-router-dom";
-import { useAuthContext } from '../../hooks/useAuthContext';
 import { Icon } from '@iconify/react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from '../Loader/Loader'
-import InputField from '../components/FormInputField';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus } from '@fortawesome/free-solid-svg-icons';
-import ScrollableFeed from 'react-scrollable-feed'
-const Categories = ({ text, status, onChange, type }) => {
+const Categories = ({ text, onChange, type }) => {
 
     return (
-        // <div className="CategoriesCheckbox">
-        //     <input
-        //         id={text}
-        //         className="CheckBoxInput"
-        //         type="checkbox"
-        //         checked={status}
-        //         onChange={() => onChange(type)}
-        //         disabled={status === "true" ? "disabled" : ""}
-        //     />
-        //     <label htmlFor={text} className="CheckBoxLabel">
-        //         {!status && <span className="CheckBoxSpan"></span>}
-        //         <div className="CheckBoxText">{text}</div>
-        //     </label>
-        // </div>
-
         <div className="CustomCheckBoxHolder">
 
             <input type="checkbox" onChange={() => onChange(type)} id={text} className="CustomCheckBoxInput" />
@@ -47,18 +23,13 @@ const Categories = ({ text, status, onChange, type }) => {
 
 
 
-const Library = ({ api, languageData, language, darkMode }) => {
+const Library = ({ api, languageText, darkMode }) => {
 
-    const [search, setSearch] = useState();
-    const languageText = languageData[language];
     const { books, dispatch } = useFormsContext()
-    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const [updating, setUpdating] = useState(false);
     const [error, setError] = useState(null);
     const [messages, setMessages] = useState(false)
     const [searchTerm, setSearchTerm] = useState('');
-    const [showCategories, setShowCategories] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
 
     useEffect(() => {
@@ -75,8 +46,6 @@ const Library = ({ api, languageData, language, darkMode }) => {
                 }
 
                 const data = await response.json();
-                // const sortData = data.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-                // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
                 dispatch({
                     type: 'SET_ITEM',
                     collection: "books",
@@ -135,7 +104,7 @@ const Library = ({ api, languageData, language, darkMode }) => {
                 <div className="BookCardText">
                     <h3>{book.bookName}</h3>
                     {book.bookStatus === "Available" && <Link className='BookingButton' to={`/bookingForm/${book._id}`} ><span class="BookNow">Book Now</span>
-                        <span class="BookNowIcon">
+                        <span className="BookNowIcon">
                             <Icon icon="fluent:book-star-20-filled" />
                         </span></Link>}
                 </div>
@@ -201,7 +170,7 @@ const Library = ({ api, languageData, language, darkMode }) => {
                             {Categories({ text: languageText.FM, status: selectedCategories.includes("FM"), onChange: handleCategoryChange, type: "FM" })}
                             {Categories({ text: languageText.FS, status: selectedCategories.includes("FS"), onChange: handleCategoryChange, type: "FS" })}
                             {Categories({ text: languageText.FIC, status: selectedCategories.includes("FIC"), onChange: handleCategoryChange, type: "FIC" })}
-                            {Categories({ text: languageText.Found, status: selectedCategories.includes("Found"), onChange: handleCategoryChange, type: "Found" })}
+                            {Categories({ text: languageText.Space, status: selectedCategories.includes("Found"), onChange: handleCategoryChange, type: "Found" })}
 
                         </div>
 

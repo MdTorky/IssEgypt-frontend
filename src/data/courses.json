@@ -1,25 +1,156 @@
 {
-  "Programming": [
+  "Electrical Engineering": [
     {
       "id": 1,
-      "name": "Harvard CS50",
-      "nameArabic": "هارفارد CS50",
+      "name": "Introduction to Electrical Engineering",
+      "nameArabic": "مقدمة في الهندسة الكهربائية",
+      "creator": "MIT OpenCourseWare",
+      "creatorArabic": "معهد ماساتشوستس للتكنولوجيا",
+      "link": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-01sc-introduction-to-electrical-engineering-and-computer-science-i-spring-2011/",
+      "img": "https://studyelectrical.com/wp-content/uploads/2020/03/Introduction-to-Electrical-Engineering-and-Computer-Science-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Power Electronics",
+      "nameArabic": "إلكترونيات القوى",
+      "creator": "Coursera (University of Colorado Boulder)",
+      "creatorArabic": "كورسيرا (جامعة كولورادو بولدر)",
+      "link": "https://www.coursera.org/learn/power-electronics",
+      "img": "https://i.ytimg.com/vi/owpdNJCS3AU/maxresdefault.jpg"
+    }
+  ],
+  "Computer Science": [
+    {
+      "id": 1,
+      "name": "CS50's Introduction to Computer Science",
+      "nameArabic": "مقدمة CS50 لعلوم الحاسب",
       "creator": "Harvard",
       "creatorArabic": "هارفارد",
       "link": "https://pll.harvard.edu/course/cs50-introduction-computer-science",
       "img": "https://pll.harvard.edu/sites/default/files/styles/16_9_medium/public/course/CS50x_pll.png?itok=PJhUTe4g"
-    }
-  ],
-
-  "AI": [
+    },
     {
       "id": 2,
-      "name": "Intro to Generative AI",
+      "name": "Introduction to Python Programming",
+      "nameArabic": "مقدمة في برمجة بايثون",
+      "creator": "Udemy",
+      "creatorArabic": "يوديمي",
+      "link": "https://www.udemy.com/course/pythonforbeginnersintro/",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZqZkpMyiN2uSuT7GAf6JSkJ44YsZqoQHdw&s"
+    },
+    {
+      "id": 3,
+      "name": "Machine Learning",
+      "nameArabic": "تعلم الآلة",
+      "creator": "Coursera (Stanford University)",
+      "creatorArabic": "كورسيرا (جامعة ستانفورد)",
+      "link": "https://www.coursera.org/learn/machine-learning",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDpDN1wTZ5dnBjtvQEWND5_oeTWt0Q2Flng&s"
+    },
+    {
+      "id": 4,
+      "name": "MERN Stack",
+      "nameArabic": "ميرن",
+      "creator": "Net Ninja",
+      "creatorArabic": "Net Ninja",
+      "link": "https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE",
+      "img": "https://i.ytimg.com/vi/98BzS5Oz5E4/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDcoq6Y1Tt-CK_5m3o-r_hmTHWG4w"
+    }
+  ],
+  "Mechanical Engineering": [
+    {
+      "id": 1,
+      "name": "Thermodynamics",
+      "nameArabic": "الديناميكا الحرارية",
+      "creator": "MIT OpenCourseWare",
+      "creatorArabic": "معهد ماساتشوستس للتكنولوجيا",
+      "link": "https://ocw.mit.edu/courses/mechanical-engineering/2-05-thermodynamics-fall-2002/"
+    },
+    {
+      "id": 2,
+      "name": "Introduction to Robotics",
+      "nameArabic": "مقدمة في الروبوتات",
+      "creator": "edX",
+      "creatorArabic": "إدكس",
+      "link": "https://www.edx.org/course/introduction-to-robotics"
+    }
+  ],
+  "Civil Engineering": [
+    {
+      "id": 1,
+      "name": "Introduction to Structural Engineering",
+      "nameArabic": "مقدمة في الهندسة الإنشائية",
+      "creator": "edX",
+      "creatorArabic": "إدكس",
+      "link": "https://www.edx.org/course/introduction-to-structural-engineering"
+    },
+    {
+      "id": 2,
+      "name": "Hydrology and Water Resources",
+      "nameArabic": "الهيدرولوجيا وموارد المياه",
+      "creator": "Coursera (University of Colorado Boulder)",
+      "creatorArabic": "كورسيرا (جامعة كولورادو بولدر)",
+      "link": "https://www.coursera.org/learn/hydrology"
+    },
+    {
+      "id": 3,
+      "name": "Construction Management",
+      "nameArabic": "إدارة البناء",
+      "creator": "FutureLearn",
+      "creatorArabic": "فيوتشر ليرن",
+      "link": "https://www.futurelearn.com/courses/construction-management"
+    }
+  ],
+  "Chemical Engineering": [
+    {
+      "id": 1,
+      "name": "Introduction to Chemical Engineering",
+      "nameArabic": "مقدمة في الهندسة الكيميائية",
+      "creator": "MIT OpenCourseWare",
+      "creatorArabic": "معهد ماساتشوستس للتكنولوجيا",
+      "link": "https://ocw.mit.edu/courses/chemical-engineering/10-10-introduction-to-chemical-engineering-fall-2003/"
+    },
+    {
+      "id": 2,
+      "name": "Fundamentals of Chemical Engineering",
+      "nameArabic": "أساسيات الهندسة الكيميائية",
+      "creator": "edX",
+      "creatorArabic": "إدكس",
+      "link": "https://www.edx.org/course/fundamentals-of-chemical-engineering"
+    },
+    {
+      "id": 3,
+      "name": "Process Safety Management",
+      "nameArabic": "إدارة سلامة العمليات",
+      "creator": "AIChE Academy",
+      "creatorArabic": "أكاديمية AIChE",
+      "link": "https://www.aiche.org/academy/courses/ela947/process-safety-management-overview"
+    }
+  ],
+  "General": [
+    {
+      "id": 1,
+      "name": "CS50's Introduction to Computer Science",
+      "nameArabic": "مقدمة CS50 لعلوم الحاسب",
+      "creator": "Harvard",
+      "creatorArabic": "هارفارد",
+      "link": "https://pll.harvard.edu/course/cs50-introduction-computer-science"
+    },
+    {
+      "id": 2,
+      "name": "Introduction to Generative AI",
       "nameArabic": "مقدمة إلى الذكاء الاصطناعي",
       "creator": "Google",
       "creatorArabic": "جوجل",
-      "link": "http://cloudskillsboost.google/course_templates/536",
-      "img": "https://qph.cf2.quoracdn.net/main-qimg-925b872f7bbcf62829f3bf44687dee78-pjlq"
+      "link": "https://cloudskillsboost.google/course_templates/536"
+    },
+    {
+      "id": 3,
+      "name": "Effective Communication Skills",
+      "nameArabic": "مهارات التواصل الفعّال",
+      "creator": "Udemy",
+      "creatorArabic": "يوديمي",
+      "link": "https://www.udemy.com/course/effective-communication-skills/"
     }
   ]
 }

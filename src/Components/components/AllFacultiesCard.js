@@ -28,8 +28,8 @@ const AllFacultyCard = ({ facultyId, languageText }) => {
                 faculties({ fac: 'FKM' })
             ) : facultyId === "FKT" ? (
                 faculties({ fac: 'FKT' })
-            ) : facultyId === "Found" ? (
-                faculties({ fac: "Found" })
+            ) : facultyId === "Space" ? (
+                faculties({ fac: "Space" })
             ) : facultyId === "FBME" ? (
                 faculties({ fac: "FBME" })
             ) : facultyId === "FAB" ? (
@@ -45,7 +45,7 @@ const AllFacultyCard = ({ facultyId, languageText }) => {
             ) : facultyId === "FIC" ? (
                 faculties({ fac: "FIC" })
             ) : (
-                faculties({ fac: 'Found' })
+                faculties({ fac: 'Space' })
             )}
         </>
     );

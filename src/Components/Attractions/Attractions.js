@@ -1,23 +1,16 @@
 import "./Attractions.css";
-// import { useLanguage } from '../../language';
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faLocationDot, faBus, faXmark, faVanShuttle
-} from '@fortawesome/free-solid-svg-icons';
 import attractionsData from "../../data/attractions.json"
-import useFetch from '../../hooks/useFetch'
+import { Icon } from '@iconify/react';
 
 var groceries = attractionsData.groceries
 var attractions = attractionsData.attractions
 var mosques = attractionsData.mosques
 var utm = attractionsData.utm
 
-const Attractions = ({ language, languageData }) => {
-    useEffect(() => {
-    }, [language, languageData]);
+const Attractions = ({ languageText }) => {
 
-    const languageText = languageData[language];
+
 
 
     const [popupVisible, setPopupVisible] = useState(false);
@@ -25,11 +18,9 @@ const Attractions = ({ language, languageData }) => {
 
     const togglePopup = (bus) => {
         if (selectedBus && selectedBus.id === bus.id) {
-            // If the same story is clicked again, close the popup
             setPopupVisible(false);
             setSelectedBus(null);
         } else {
-            // Close the college popup if open
             setSelectedBus(bus);
             setPopupVisible(true);
         }
@@ -49,7 +40,7 @@ const Attractions = ({ language, languageData }) => {
 
                 <button className="icon" onClick={() => { window.open(item.location, "_blank") }}>
                     <span class="tooltip" >{languageText.Location}</span>
-                    <span><FontAwesomeIcon icon={faLocationDot} /></span>
+                    <span><Icon icon="basil:location-solid" /></span>
                 </button>
                 {item && item.bus && (
 
@@ -64,7 +55,7 @@ const Attractions = ({ language, languageData }) => {
                             }
                         }}>
                         <span class="tooltip" >{languageText.Bus}</span>
-                        <span><FontAwesomeIcon icon={faBus} /></span>
+                        <span><Icon icon="mdi:bus-stop" /></span>
                     </button>
                 )}
             </div >
@@ -84,10 +75,6 @@ const Attractions = ({ language, languageData }) => {
     }, []);
 
 
-    // const { data: grocery, error, pending } = useFetch("http://localhost:8000/attractions");
-    // const { data: mosque } = useFetch("http://localhost:8000/mosques");
-    // const { data: utm } = useFetch("http://localhost:8000/utm");
-    // const { data: attraction } = useFetch("http://localhost:8000/attractions");
 
     return (
         <div className="attraction">
@@ -99,8 +86,6 @@ const Attractions = ({ language, languageData }) => {
                     <div className="innerBox">
                         <h2>{languageText.groceries}</h2>
                         <div className="cards">
-                            {/* {error && <div>{error}</div>}
-                            {pending && <div>Loading...</div>} */}
                             {groceries.map((grocery) => (
                                 // {
                                 <div className="card" >
@@ -110,7 +95,6 @@ const Attractions = ({ language, languageData }) => {
                                         <Button item={grocery} languageText={languageText} popupVisible={popupVisible} setPopupVisible={setPopupVisible} />
                                     </div>
                                 </div>
-                                // ))
                             ))}
                         </div>
                     </div>
@@ -119,8 +103,6 @@ const Attractions = ({ language, languageData }) => {
                     <div className="innerBox">
                         <h2>{languageText.mosques}</h2>
                         <div className="cards">
-                            {/* {error && <div>{error}</div>}
-                            {pending && <div>Loading...</div>} */}
                             {mosques.map((mosque) => (
                                 <div className="card">
                                     <div className="img"><img src={mosque.img} alt="" /></div>
@@ -178,14 +160,14 @@ const Attractions = ({ language, languageData }) => {
                                     <div className="bus">{selectedBus.bus}</div>
                                     <button className="icon" onClick={closePopup}>
                                         <span className="tooltip" >{languageText.close}</span>
-                                        <span><FontAwesomeIcon icon={faXmark} /></span>
+                                        <span><Icon icon="icon-park-outline:close-one" /></span>
                                     </button>
                                 </>
 
                             </div>
                             <div className="iconAnimation">
                                 <div className="busIcon">
-                                    <FontAwesomeIcon icon={faVanShuttle} />
+                                    <Icon icon="mingcute:bus-2-fill" />
                                 </div>
                             </div>
 

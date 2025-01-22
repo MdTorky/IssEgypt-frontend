@@ -1,371 +1,352 @@
 .MemberDetails {
-    margin: 0 140px 30% 0;
-    font-family: 'Poppins', sans-serif;
-    /* width: fit-content; */
+  margin: 0 140px 30% 0;
+  font-family: "Poppins", sans-serif;
+  /* width: fit-content; */
 }
 
 .arabic .MemberDetails {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin: 0 0 100% 140px;
-
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin: 0 0 100% 140px;
 }
 
 .MemberDetails h1 {
-    text-align: center;
-    background: var(--theme);
-    padding: 10px;
-    width: 60%;
-    margin: 0 auto 30px auto;
-    border-radius: 30px;
-    color: var(--bg);
-    letter-spacing: 7px;
+  text-align: center;
+  background: var(--theme);
+  padding: 10px;
+  width: 20%;
+  margin: 0 auto 30px auto;
+  border-radius: 20px;
+  color: var(--bg);
+  /* letter-spacing: 7px; */
 }
 
 .arabic .MemberDetails h1 {
-    letter-spacing: 0;
+  letter-spacing: 0;
 }
 
 .allMembersBackground {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
-
-
 
 /* LEFT MEMBER 
 
 MAIN MEMBER */
 .MainMember {
-    background: var(--bg2);
-    padding: 30px;
-    border-radius: 20px;
-    width: fit-content;
-    height: fit-content;
-
+  background: var(--bg2);
+  padding: 30px;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  border: 3px solid lightgray;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-
 .MainMember .MemberCard .idName {
-    position: absolute;
-    top: 300px;
-    left: 170px;
-    z-index: 7;
-    text-align: start;
-    font-size: 1.3em;
-    font-weight: 800;
-    color: var(--bg);
+  position: absolute;
+  top: 300px;
+  left: 170px;
+  z-index: 7;
+  text-align: start;
+  font-size: 1.3em;
+  font-weight: 800;
+  color: var(--bg);
 }
 
 .arabic .MainMember .MemberCard .idName {
-    white-space: wrap;
-    word-spacing: 9999999px;
-    left: -10px;
-    right: 20px;
-
+  white-space: wrap;
+  word-spacing: 9999999px;
+  left: -10px;
+  right: 20px;
 }
 
 .MainMember .MemberCard .role {
-    text-align: center;
-    margin: 20px 0 0 0;
-    background: var(--theme);
-    color: var(--bg);
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-    font-weight: 900;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
-
+  text-align: center;
+  margin: 20px 0 0 0;
+  background: var(--theme);
+  color: var(--bg);
+  border-top: 3px solid lightgray;
+  border-right: 3px solid lightgray;
+  border-left: 3px solid lightgray;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  font-weight: 900;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
 }
 
 .MainMember .MemberCard .faculty {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 0 0 15px 0;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 15px 0;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
-    color: var(--bg);
-    padding: 10px;
-    font-size: 0.9em;
-    border-radius: 0 0 10px 10px;
-    font-weight: 600
+  color: var(--bg);
+  padding: 10px;
+  font-size: 0.9em;
+  border-radius: 0 0 10px 10px;
+  font-weight: 600;
+  border-bottom: 3px solid lightgray;
+  border-right: 3px solid lightgray;
+  border-left: 3px solid lightgray;
 }
 
 .MainMember .MemberCard .faculty p {
-    margin: 0;
+  margin: 0;
 }
 
 .MainMember .MemberCard .icons {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
 }
 
 .MainMember .MemberCard .icons .icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .MainMember .MemberCard .icons .icon.whatsApp,
 .MainMember .MemberCard .icons .icon.whatsApp .tooltip,
 .MainMember .MemberCard .icons .icon.whatsApp .tooltip::before {
-    background: #0B846D;
-    color: var(--bg2);
+  background: #0b846d;
+  color: var(--bg2);
 }
-
 
 .MainMember .MemberCard .icons .icon.linkedIn,
 .MainMember .MemberCard .icons .icon.linkedIn .tooltip,
 .MainMember .MemberCard .icons .icon.linkedIn .tooltip::before {
-    background: #0A66C2;
-    color: var(--bg2);
+  background: #0a66c2;
+  color: var(--bg2);
 }
 
-
-
 .MemberID {
-    background: var(--bg);
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
-    padding: 10px;
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: url('../../images/backId.png');
-    background-size: cover;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-
+  background: var(--bg);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  padding: 10px;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: url("../../images/backId.png");
+  background-size: cover;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 3px solid lightgray;
 }
 
 .MemberID .backId {
-    position: absolute;
-    background: url('../../images/backId2.png');
-    background-size: cover;
-    left: 0;
-    top: -60px;
-    width: 320px;
-    height: 480px;
-    z-index: 6;
-    border-radius: 10px;
-
+  position: absolute;
+  background: url("../../images/backId2.png");
+  background-size: cover;
+  left: 0;
+  top: -60px;
+  width: 320px;
+  height: 480px;
+  z-index: 6;
+  border-radius: 10px;
 }
 
 .MemberID .idImg {
-    padding: 10px;
-    position: relative;
-    left: -0px;
-    top: -120px;
-    z-index: 5;
-    margin: auto;
+  padding: 10px;
+  position: relative;
+  left: -0px;
+  top: -120px;
+  z-index: 5;
+  margin: auto;
 }
 
 .arabic .MemberID .idImg {
-    padding: 10px;
-    position: relative;
-    left: 0px;
-    top: -120px;
-    z-index: 5;
+  padding: 10px;
+  position: relative;
+  left: 0px;
+  top: -120px;
+  z-index: 5;
 }
 
 .MemberID img {
-    /* width: 300px; */
-    height: 480px;
-    z-index: 5;
-
+  /* width: 300px; */
+  height: 480px;
+  z-index: 5;
 }
-
-
-
-
 
 /* Right Side
 
 All Members */
 
 .OtherMembers {
-    background: var(--bg2);
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 1000px;
+  background: var(--bg2);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  border: 3px solid lightgray;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-
 .OtherMembers h3 {
-    margin: 0 0 20px 0;
-    text-align: center;
+  margin: 0 0 20px 0;
+  text-align: center;
 }
 
 .OtherMembers .allRightMembers {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .OtherMembers .allRightMembers .PresidentMember {
-    margin: auto;
+  margin: auto;
 }
 
 .president {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .presidentCard {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .presidentImg {
-    background: #DFDFDF;
-    border: var(--theme) 3px solid;
-    border-radius: 20px 10px 20px 10px;
-    width: 100px;
-    height: 100px;
-    position: relative;
+  background: #dfdfdf;
+  border: var(--theme) 3px solid;
+  border-radius: 20px 10px 20px 10px;
+  width: 100px;
+  height: 100px;
+  position: relative;
 }
 
 .presidentImg img {
-    /* width: 150px; */
-    height: 150px;
-    top: -50px;
-    left: 0;
-    position: absolute;
+  /* width: 150px; */
+  height: 150px;
+  top: -50px;
+  left: 0;
+  position: absolute;
 }
 
 .presidentInfo {
-    display: flex;
-    flex-direction: column;
-    /* line-height: 4px; */
+  display: flex;
+  flex-direction: column;
+  /* line-height: 4px; */
 }
 
 .presidentInfo p {
-    margin: 0;
+  margin: 0;
 }
 
-
 .presidentInfo .presidentName {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .presidentInfo .role {
-    border-radius: 10px 20px 20px 10px;
-    padding: 5px;
-    font-size: 0.7em;
-    color: var(--bg2);
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-
+  border-radius: 10px 20px 20px 10px;
+  padding: 5px;
+  font-size: 0.7em;
+  color: var(--bg2);
+  background: linear-gradient(to right, var(--hover), var(--hover2));
 }
 
 .arabic .presidentInfo .role {
-    border-radius: 20px 10px 10px 20px;
+  border-radius: 20px 10px 10px 20px;
 }
 
-
-
 .presidentInfo .icons {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 0 0;
 }
 
 .presidentInfo .icons .icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
-
-
 
 .memberB {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-
 .normMemberCard .presidentImg {
-    margin: auto;
+  margin: auto;
 }
 
 .normMemberCard {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
 
 .MemberInfo .icons {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 0 0;
 }
-
 
 hr {
-    width: 100%;
-    height: 1px;
-    border-radius: 20px;
-    background: var(--theme);
-    margin: 20px auto 0 auto;
+  width: 100%;
+  height: 1px;
+  border-radius: 20px;
+  background: var(--theme);
+  margin: 20px auto 0 auto;
 }
 
+@media screen and (max-width: 700px) {
+  hr {
+    width: 65%;
+  }
 
-
-
-@media screen and (max-width:700px) {
-
-
-    hr {
-        width: 65%;
-    }
-
-    .MemberDetails {
-        margin: 0 auto 40% auto;
-        font-family: 'Poppins', sans-serif;
-        /* padding: 10px;
+  .MemberDetails {
+    margin: 0 auto 40% auto;
+    font-family: "Poppins", sans-serif;
+    /* padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center; */
-        /* width: fit-content; */
-    }
+    /* width: fit-content; */
+  }
 
-    .arabic .MemberDetails {
-        margin: 60px auto 40% auto;
-    }
+  .arabic .MemberDetails {
+    margin: 60px auto 40% auto;
+  }
 
-    .MemberDetails h1 {
-        font-size: 1.6em;
-        letter-spacing: 0
-    }
+  .MemberDetails h1 {
+    font-size: 1.6em;
+    letter-spacing: 0;
+  }
 
-    .allMembersBackground {
-        flex-direction: column;
-        gap: 30px;
-        margin: auto;
-        justify-content: center;
-        width: 100%;
-    }
+  .allMembersBackground {
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+  }
 
-    .MainMember {
-        margin: auto;
-    }
+  .MainMember {
+    margin: auto;
+  }
 
-    .OtherMembers {
-        /* width: 500px; */
-        margin: auto;
-        width: 300px;
-        white-space: nowrap;
+  .OtherMembers {
+    /* width: 500px; */
+    margin: auto;
+    width: 300px;
+    white-space: nowrap;
+  }
 
-    }
-
-    .normMemberCard .presidentName {
-        font-size: 0.7em;
-    }
-
+  .normMemberCard .presidentName {
+    font-size: 0.7em;
+  }
 }

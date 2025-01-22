@@ -13,11 +13,10 @@ import Loader from '../Loader/Loader'
 import { useFormsContext } from '../../hooks/useFormContext'
 
 
-const Suggestions = ({ language, languageData, api, darkMode }) => {
+const Suggestions = ({ language, languageText, api, darkMode }) => {
 
     const { forms, dispatch } = useFormsContext()
 
-    const languageText = languageData[language];
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)

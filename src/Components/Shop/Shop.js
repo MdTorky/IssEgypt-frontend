@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import Loader from "../Loader/Loader";
-
 import './Shop.css'
-import logo from '../../images/HorusToken.png'
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext';
 
-const Shop = ({ languageText, api, darkMode, language }) => {
+const Shop = ({ languageText, api, language }) => {
 
     const [loading, setLoading] = useState(false);
     const { products, dispatch } = useFormsContext();
@@ -27,8 +25,6 @@ const Shop = ({ languageText, api, darkMode, language }) => {
                 }
 
                 const data = await response.json();
-                // const sortedData = data.sort((a, b) => a.lecturerName.localeCompare(b.lecturerName)); // Sort data alphabetically by 'name' field
-
                 dispatch({
                     type: "SET_ITEM",
                     collection: "products",
@@ -71,7 +67,6 @@ const Shop = ({ languageText, api, darkMode, language }) => {
                     </div>
                     <div className="ShopCardDesc">
                         <p >{product.pDescription}</p>
-                        {/* <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button> */}
                     </div>
                     <div className="ShopCardPriceDetails">
                         <p>{product.pPrice} {languageText.RM}</p>

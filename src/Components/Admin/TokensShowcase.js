@@ -9,15 +9,11 @@ import Loader from '../Loader/HorusLoader'
 import HorusTokenDay from '../../images/HorusToken.svg'
 import HorusTokenDark from '../../images/HorusTokenDark.svg'
 import '../KnowledgeBank/KnowledgeBank.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faCommentDots, faStar, faUser, faEnvelope, faPen, faTrash, faEye, faBolt, faFileExcel, faPlus } from '@fortawesome/free-solid-svg-icons';
 import AddTokenForm from '../components/AddTokenForm'
 
-const TokensShowcase = ({ language, languageData, api, darkMode }) => {
+const TokensShowcase = ({ language, languageText, api, darkMode }) => {
     const { points, dispatch } = useFormsContext()
     const { user } = useAuthContext()
-    const languageText = languageData[language];
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [updating, setUpdating] = useState(false);

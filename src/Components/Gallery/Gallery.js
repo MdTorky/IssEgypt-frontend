@@ -4,18 +4,16 @@ import { Icon } from '@iconify/react';
 import Loader from '../Loader/Loader'
 import { useFormsContext } from '../../hooks/useFormContext'
 import { useState, useEffect } from "react"
-import { useAuthContext } from '../../hooks/useAuthContext';
 import { Link } from 'react-router-dom';
+import UserType from '../Auth/UserType';
 
 
-const Gallery = ({ api, languageData, language, darkMode }) => {
+const Gallery = ({ api, languageText, language, darkMode }) => {
 
 
-    const languageText = languageData[language];
     const { galleries, dispatch } = useFormsContext()
     const [loading, setLoading] = useState(false);
     const [session, setSession] = useState('2024')
-    const { user } = useAuthContext()
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -34,20 +32,15 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
 
                 const data = await response.json();
                 const sortedData = data.sort((a, b) => a.time - b.time);
-                // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
                 dispatch({
                     type: 'SET_ITEM',
                     collection: "galleries",
                     payload: sortedData,
                 });
                 setLoading(false)
-
-                // setFacultyLoading(false);
-
             } catch (error) {
                 console.error('An error occurred while fetching data:', error);
             } finally {
-                // Set loading to false once the data is fetched (success or error)
             }
         };
         fetchData();
@@ -57,7 +50,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
         const searchRegex = new RegExp(searchTerm, 'i');
         return (
             (searchRegex.test(image.folderName) || searchRegex.test(image.arabicFolderName)) &&
-            (!session || image.session === session) // Check for session match if session is selected
+            (!session || image.session === session)
         );
     });
 
@@ -68,7 +61,7 @@ const Gallery = ({ api, languageData, language, darkMode }) => {
 
                 <div className="GalleryImage">
                     <p className="GalleryNo">{folder.time}</p>
-                    {user && <Link to={`/galleryedit/${folder._id}`} className="GalleryEdit"><Icon icon="uil:image-edit" /></Link>}
+                    {UserType() && <Link to={`/galleryedit/${folder._id}`} className="GalleryEdit"><Icon icon="uil:image-edit" /></Link>}
                     <img src={folder.folderImage} alt="" />
                 </div>
                 {folder.folderLink === "Coming Soon" ? (

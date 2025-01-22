@@ -1,21 +1,11 @@
 import roleChecker from '../Members/MemberLoader'
-import { useLocation, Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faEnvelope, faUserSlash
-} from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import 'animate.css';
-const MemberCard = ({ api, member, languageText, language }) => {
-    const stopPropagation = (e) => {
-        e.stopPropagation();
-    };
-    const MySwal = withReactContent(Swal)
-    // const font = language === 'en' ? 'Poppins, sans-serif' : 'Noto Kufi Arabic, sans-serif;';
+import { Icon } from '@iconify/react';
+
+const MemberCard = ({ member, languageText, language }) => {
 
     const handleLinkedInClick = () => {
         if (member.linkedIn) {
@@ -31,7 +21,6 @@ const MemberCard = ({ api, member, languageText, language }) => {
                 },
                 confirmButtonText: 'OK', // Custom text for the "OK" button
                 confirmButtonColor: 'var(--theme)',
-                // font: font 
             });
         }
     };
@@ -54,17 +43,15 @@ const MemberCard = ({ api, member, languageText, language }) => {
                         <img src={member.img} alt="" />
 
                     </div>
-                    {/* Use onClick to stop propagation of the click event */}
-                    {/* <Link to={`http://wa.me/${member.phone}`} onClick={stopPropagation}> */}
                     <Link onClick={() => window.open(`http://wa.me/${member.phone}`, '_blank')}>
 
-                        <FontAwesomeIcon icon={faWhatsapp} className="mLink whatsApp" />
+                        <Icon icon="ic:baseline-whatsapp" className="mLink whatsApp" />
                     </Link>
                     <Link onClick={() => window.open(`mailto:${member.email}`, '_blank')}>
-                        <FontAwesomeIcon icon={faEnvelope} className="mLink email" />
+                        <Icon icon="entypo:email" className="mLink email" />
                     </Link>
                     <Link onClick={handleLinkedInClick}>
-                        <FontAwesomeIcon icon={faLinkedin} className="mLink linkedIn" />
+                        <Icon icon="uil:linkedin" className="mLink linkedIn" />
                     </Link>
                 </div>
                 <div className="mName">
@@ -76,7 +63,6 @@ const MemberCard = ({ api, member, languageText, language }) => {
                         }`}>
                     <p className="role">{roleChecker({ languageText: languageText, committee: member.committee, role: member.type })}</p>
                 </div>
-                {/* Use Link component for More Info */}
             </div>
         </Link>
     );

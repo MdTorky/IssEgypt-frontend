@@ -16,13 +16,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Icon } from '@iconify/react';
 
-const DeansForm = ({ language, languageData, api, darkMode }) => {
+const DeansForm = ({ language, languageText, api, darkMode }) => {
     const { type, formId } = useParams();
     // console.log(formId);
     const navigate = useNavigate();
 
     const { forms = [], dispatch } = useFormsContext();
-    const languageText = languageData[language];
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const [messages, setMessages] = useState(true)

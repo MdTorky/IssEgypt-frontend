@@ -1,29 +1,19 @@
 import "./Transportation.css";
-// import { useLanguage } from '../../language';
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faLocationDot, faBus, faXmark, faVanShuttle, faDownload, faFileLines
-} from '@fortawesome/free-solid-svg-icons';
-import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
-
 import transportationData from "../../data/transportation.json"
+import { Icon } from '@iconify/react';
+
 
 var utm = transportationData.UTM;
 var apps = transportationData.Apps;
-// var attractions = attractionsData.attractions
-// var mosques = attractionsData.mosques
 
 
 
 
 
 
-const Transportation = ({ language, languageData }) => {
-    useEffect(() => {
-    }, [language, languageData]);
+const Transportation = ({ language, languageText }) => {
 
-    const languageText = languageData[language];
 
 
 
@@ -120,19 +110,19 @@ const Transportation = ({ language, languageData }) => {
                 {item && item.linkAndroid && (
                     <button className="icon" onClick={() => { window.open(item.linkAndroid, "_blank") }}>
                         <span className="tooltip" >{languageText.Android}</span>
-                        <span><FontAwesomeIcon icon={faAndroid} /></span>
+                        <span><Icon icon="uil:android" /></span>
                     </button>
                 )}
                 {item && item.linkIOS && (
                     <button className="icon" onClick={() => { window.open(item.linkIOS, "_blank") }}>
                         <span className="tooltip" >{languageText.Apple}</span>
-                        <span><FontAwesomeIcon icon={faApple} /></span>
+                        <span><Icon icon="uil:apple" /></span>
                     </button>
                 )}
                 {item && item.link && (
                     <button className="icon" onClick={() => { window.open(item.link, "_blank") }}>
                         <span className="tooltip" >{languageText.Download}</span>
-                        <span><FontAwesomeIcon icon={faDownload} /></span>
+                        <span><Icon icon="mingcute:download-3-fill" /></span>
                     </button>
                 )}
                 {item && item.description && (
@@ -141,7 +131,7 @@ const Transportation = ({ language, languageData }) => {
                         ? 'active' : ''}`}
                         onClick={() => { togglePopup(item) }}>
                         <span className="tooltip" >{languageText.Description}</span>
-                        <span><FontAwesomeIcon icon={faFileLines} /></span>
+                        <span><Icon icon="material-symbols:description" /></span>
                     </button>
                 )}
             </div >
@@ -149,10 +139,6 @@ const Transportation = ({ language, languageData }) => {
         )
     }
 
-    // function busRoute(item) {
-    //     var busElement = document.getElementById("bus");
-    //     busElement.innerHTML = "Bus: " + item;
-    // }
 
     return (
         <div className="transportation">
@@ -197,16 +183,13 @@ const Transportation = ({ language, languageData }) => {
                     <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
                         <div className="popup-content">
 
-                            {/* <div className="top">
-                                <img src={selectedItem.busImg} alt="" />
-                            </div> */}
 
                             <div className="bottom">
                                 <>
                                     <div className="bus new">{selectedItem.description}</div>
                                     <button className="icon" onClick={closePopup}>
                                         <span className="tooltip" >{languageText.close}</span>
-                                        <span><FontAwesomeIcon icon={faXmark} /></span>
+                                        <span><Icon icon="icon-park-outline:close-one" /></span>
                                     </button>
                                 </>
 

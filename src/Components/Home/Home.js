@@ -1,16 +1,10 @@
 // Home.js
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import { useLanguage } from '../../context/language';
-// import Logo from './Logo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the Logo component
-import { faTree, faEnvelope, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import images from '../../data/images.json';
 import link from '../../data/upcomingEvents.json'
 import { useFormsContext } from '../../hooks/useFormContext'
 import { Icon } from "@iconify/react";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCreative, Navigation, Pagination, EffectCube } from 'swiper/modules';
 import 'swiper/css';
@@ -19,32 +13,24 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-cube';
 
-function Home({ language, languageData, api }) {
+function Home({ language, languageText, api }) {
 
 
-    const root = document.documentElement; // Access the root element
+    const root = document.documentElement;
     const themeColor = getComputedStyle(root).getPropertyValue('--theme');
 
 
     const { members, dispatch } = useFormsContext()
-    const languageText = languageData[language];
 
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const [messages, setMessages] = useState(true)
 
-    // const isEmpty = (obj) => {
-    //     return Object.keys(obj).length == 0;
-    // };
-    const isRtl = language === 'ar';
-    // const [isExpanded, setIsExpanded] = useState(false);
-    // Define an array of objects with logo and text data
     const [swiperKey, setSwiperKey] = useState(0);
 
 
     useEffect(() => {
-        // Update the key to force re-render when language changes
         setSwiperKey(prevKey => prevKey + 1);
     }, [language]);
 
@@ -336,7 +322,6 @@ function Home({ language, languageData, api }) {
                     <div className="blogContainer ">
                         <div className="blogImg">
                             <img src={images.achievementImg} alt="" />
-                            {/* <img src='https://mega.nz/file/veRHBCLT#OUzHpdNd_zox7jfOTF0TMxRigc1pWEg_ID8-KJiy33E' alt="" /> */}
                         </div>
                         <div className="blogText reveal">
                             <p className="subtitle">{languageText.blogSubtitle}</p>
@@ -345,14 +330,7 @@ function Home({ language, languageData, api }) {
                         </div>
                     </div>
                     <div className="blogContainer2">
-                        {/* <div className="blogItem">
-                            <img src={images.upcomingEventImg1} alt="" />
-                            <div className="line">
-                                <p className="subtitle">{languageText.upcomingEventSubtitle1}</p>
-                                <button>Add</button>
-                            </div>
-                            <h2 className="description">{languageText.upcomingEventDescription1}</h2>
-                        </div> */}
+
                         <UpcomingEvent
                             upcomingEventImg={link.upcomingEventImg1}
                             upcomingEventSubtitle={languageText.upcomingEventSubtitle1}
@@ -367,7 +345,7 @@ function Home({ language, languageData, api }) {
                         />
                     </div>
                 </div>
-                <div className="AllEvents">
+                {/* <div className="AllEvents">
                     <div className="events">
 
                         <div className="eventBox reveal">
@@ -471,154 +449,22 @@ function Home({ language, languageData, api }) {
 
 
 
-                </div>
-
-                {/* 
-                <div className="events">
-
-<div className="eventBox reveal">
-    <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
-    <SwiperComponent
-        slides={[
-            { img: images.cultureImg1, title: languageText.CultureEventTitle1, description: languageText.CultureEventDescription1, creator: null },
-            { img: images.cultureImg2, title: languageText.CultureEventTitle2, description: languageText.CultureEventDescription2, creator: languageText.CultureEventCreator2 },
-            // { img: images.readingImg2, title: languageText.ReadingEventTitle2, description: languageText.ReadingEventDescription2, creator: languageText.ReadingClubCreator2 },
-        ]}
-    />
-</div>
-</div> */}
-
-
-
-
-
-                {/* Academic Events */}
-                {/* <div className="eventBox reveal"> */}
-
-                {/* <div className="eventBox"> */}
-
-
-
-                {/* </div> */}
-                {/* </div> */}
-
-                {/* <div className="eventBox">
-                            <div className="slide active ">
-                                <img src={images.academicImg1} alt="" />
-                                <div className="info special">
-                                    <h2>{languageText.AcademicEventTitle1}<span className="creator"> {languageText.AcademicEventCreator1}</span></h2>
-                                    <p>{languageText.AcademicEventDescription1}</p>
-                                </div>
-                            </div>
-                            <div className="slide">
-                                <img src={images.academicImg2} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.AcademicEventTitle2}<span className="creator"> {languageText.AcademicEventCreator2}</span></h2>
-                                    <p>{languageText.AcademicEventDescription2}</p>
-
-                                </div>
-                            </div>
-                            <div className="slide">
-                                <img src={images.academicImg3} alt="" />
-                                <div className="info special">
-                                    <h2>{languageText.AcademicEventTitle3}<span className="creator"> {languageText.AcademicEventCreator3}</span></h2>
-                                    <p>{languageText.AcademicEventDescription3}</p>
-
-                                </div>
-                            </div>
-                            <div className="navigation">
-                                <div className="btn active"></div>
-                                <div className="btn"></div>
-                                <div className="btn"></div>
-                            </div>
-                        </div>
-                    </div> */}
-
-                {/* Social Events */}
-                {/* <div className="eventBox reveal">
-
-                        <EventBoxTitle text={languageText.SocialEvents} themeColor={themeColor} isRtl={isRtl} />
-
-                        <div className="eventBox">
-                            <div className="slide2 active">
-                                <img src={images.socialImg1} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.SocialEventTitle1}</h2>
-                                    <p>{languageText.SocialEventDescription1}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-
-                {/* Cultural Events */}
-                {/* <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.CultureEvents} themeColor={themeColor} isRtl={isRtl} />
-
-                        <div className="eventBox">
-                            <div className="slide3 active">
-                                <img src={images.cultureImg1} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.CultureEventTitle1}<span className="creator"> {languageText.CultureEventCreator1}</span></h2>
-                                    <p>{languageText.CultureEventDescription1}</p>
-                                </div>
-                            </div>
-                            <div className="slide3">
-                                <img src={images.cultureImg2} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.CultureEventTitle2}<span className="creator"> {languageText.CultureEventCreator2}</span></h2>
-                                    <p>{languageText.CultureEventDescription2}</p>
-
-                                </div>
-                            </div>
-                            <div className="slide3">
-                                <img src={images.cultureImg3} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.CultureEventTitle3}</h2>
-                                    <p>{languageText.CultureEventDescription3}</p>
-                                </div>
-                            </div>
-                            <div className="navigation ">
-                                <div className="btn3 active"></div>
-                                <div className="btn3"></div>
-                                <div className="btn3"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div> */}
-
-
-                {/* <div className="eventBox reveal">
-                        <EventBoxTitle text={languageText.ReadingClubEvents} themeColor={themeColor} isRtl={isRtl} />
-
-                        <div className="eventBox">
-                            <div className="slide3 active">
-                                <img src={images.readingImg1} alt="" />
-                                <div className="info">
-                                    <h2>{languageText.ReadingEventTitle1}<span className="creator"> {languageText.ReadingClubCreator1}</span></h2>
-                                    <p>{languageText.ReadingEventDescription1}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-                {/* </div> */}
-                {/* </div> */}
-
-
 
                 <h1 className="connectTitle ">{languageText.connect}</h1>
                 <div className="connect">
                     <div className="socialBar">
-                        <a href="https://www.facebook.com/Eg.UTM"><div className="socialCircle facebook"><FontAwesomeIcon icon={faFacebook} className="facebook" /></div></a>
-                        <a href="https://www.instagram.com/issegypt/"><div className="socialCircle instagram"><FontAwesomeIcon icon={faInstagram} className="instagram" /></div></a>
-                        <a href="https://www.youtube.com/@issegypt"><div className="socialCircle youtube"><FontAwesomeIcon icon={faYoutube} className="youtube" /></div></a>
-                        <a href="https://www.linkedin.com/in/iss-egypt-utm-821447267/"><div className="socialCircle linkedIn"><FontAwesomeIcon icon={faLinkedin} className="linkedIn" /></div></a>
-                        <a href="https://linktr.ee/issegypt?utm_source=linktree_profile_share&ltsid=fd5e7ee8-41ba-4efa-bbc0-ac5f555b3edb"><div className="socialCircle linktree"><FontAwesomeIcon icon={faTree} className="linktree" /></div></a>
+                        <a href="https://www.facebook.com/Eg.UTM"><div className="socialCircle facebook"><Icon icon="mingcute:facebook-fill" className='facebook' /></div></a>
+                        <a href="https://www.instagram.com/issegypt/"><div className="socialCircle instagram"><Icon icon="jam:instagram" className='instagram' /></div></a>
+                        <a href="https://www.youtube.com/@issegypt"><div className="socialCircle youtube"><Icon icon="mingcute:youtube-fill" className="youtube" /></div></a>
+                        <a href="https://www.linkedin.com/in/iss-egypt-utm-821447267/"><div className="socialCircle linkedIn"><Icon icon="mdi:linkedin" className="linkedIn" /></div></a>
+                        <a href="https://linktr.ee/issegypt?utm_source=linktree_profile_share&ltsid=fd5e7ee8-41ba-4efa-bbc0-ac5f555b3edb"><div className="socialCircle linktree"><Icon icon="ph:linktree-logo" className="linktree" /></div></a>
                     </div>
                     <div className="emailUs">
                         <a href='mailto:issegypt0@gmail.com'>
                             <button className="button" type="button">
                                 <span className="button__text">{languageText.email}</span>
-                                <span className="button__icon"><FontAwesomeIcon icon={faEnvelope} /></span>
+                                <span className="button__icon"><Icon icon="entypo:email" /></span>
                             </button>
                         </a>
                     </div>

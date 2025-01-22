@@ -1,29 +1,13 @@
 import "./Clubs.css";
-// import { useLanguage } from '../../language';
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faInfoCircle, faXmark, faFileLines
-} from '@fortawesome/free-solid-svg-icons';
-import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-
 import clubsData from "../../data/clubs.json"
-
-
+import { Icon } from '@iconify/react';
 var selfImprovement = clubsData.selfImprovement;
 var hobby = clubsData.hobby;
 var academic = clubsData.academic;
 
 
-const Clubs = ({ language, languageData }) => {
-
-    useEffect(() => {
-
-    }, [language, languageData]);
-
-    const languageText = languageData[language];
-
-
+const Clubs = ({ language, languageText }) => {
 
 
     const descriptions = {
@@ -109,11 +93,9 @@ const Clubs = ({ language, languageData }) => {
 
     const togglePopup = (bus) => {
         if (selectedItem && selectedItem.id === bus.id) {
-            // If the same story is clicked again, close the popup
             setPopupVisible(false);
             setSelectedItem(null);
         } else {
-            // Close the college popup if open
             setSelectedItem(bus);
             setPopupVisible(true);
         }
@@ -163,7 +145,7 @@ const Clubs = ({ language, languageData }) => {
                 {item && item.link && (
                     <button className="icon" onClick={() => { window.open(item.link, "_blank") }}>
                         <span className="tooltip" >{languageText.Website}</span>
-                        <span><FontAwesomeIcon icon={faInfoCircle} /></span>
+                        <span><Icon icon="mdi:web" /></span>
                     </button>
                 )}
                 {item && item.description && (
@@ -172,7 +154,7 @@ const Clubs = ({ language, languageData }) => {
                         ? 'active' : ''}`}
                         onClick={() => { togglePopup(item) }}>
                         <span className="tooltip" >{languageText.Description}</span>
-                        <span><FontAwesomeIcon icon={faFileLines} /></span>
+                        <span><Icon icon="material-symbols:description" /></span>
                     </button>
                 )}
             </div >
@@ -187,8 +169,6 @@ const Clubs = ({ language, languageData }) => {
     return (
         <div className="clubs">
             <h1 className="title">{languageText.clubs}</h1>
-
-
             <div className="sectionBox">
                 <div className="outerBox">
                     <div className="innerBox">
@@ -244,10 +224,6 @@ const Clubs = ({ language, languageData }) => {
                 {popupVisible && selectedItem && (
                     <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
                         <div className="popup-content">
-                            {/* <h3>{selectedItem.name}</h3> */}
-                            {/* <div className="top">
-                        <img src={selectedItem.busImg} alt="" />
-                    </div> */}
 
                             <div className="bottom">
                                 <>
@@ -259,21 +235,13 @@ const Clubs = ({ language, languageData }) => {
 
                                         <button className="icon" onClick={closePopup}>
                                             <span className="tooltip" >{languageText.close}</span>
-                                            <span><FontAwesomeIcon icon={faXmark} /></span>
+                                            <span><Icon icon="icon-park-outline:close-one" /></span>
                                         </button>
 
                                     </div>
                                     <div className="bus new">{selectedItem.description}</div>
-
                                 </>
-
                             </div>
-                            {/* <div className="iconAnimation">
-                        <div className="busIcon">
-                            <FontAwesomeIcon icon={faVanShuttle} />
-                        </div>
-                    </div> */}
-
                         </div>
                     </div>
                 )}

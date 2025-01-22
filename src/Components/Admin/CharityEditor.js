@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
 
 
-const CharityEditor = ({ language, languageData, api, darkMode }) => {
+const CharityEditor = ({ language, languageText, api, darkMode }) => {
     const { courses = [], dispatch } = useFormsContext()
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -16,7 +16,6 @@ const CharityEditor = ({ language, languageData, api, darkMode }) => {
     const [faculty, setFaculty] = useState("");
     const [error, setError] = useState('')
     const [messages, setMessages] = useState('')
-    const languageText = languageData[language];
     const courseName = 'Construction Practice'
 
 

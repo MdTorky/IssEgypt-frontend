@@ -7,44 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { Icon } from '@iconify/react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from '../Loader/Loader'
 
-// import 'core-js/modules/es.promise';
-// import 'core-js/modules/es.object.assign';
-// import 'core-js/modules/es.array.includes';
-// import 'core-js/modules/es.array.iterator';
-
-
-
-
-// const InputField = ({ type, value, setValue, id, icon, onChange, text }) => {
-//     return (
-//         <div className="InputField">
-//             <div className="InputLabelField">
-//                 <input
-//                     type={type}
-//                     className={`input ${(value) ? 'valid' : 'invalid'}`}
-//                     value={value}
-//                     onChange={(e) => { setValue(e.target.value) }}
-//                     required
-//                     id={id}
-//                 />
-//                 <label htmlFor={id} className={`LabelInput ${(value) ? 'valid' : 'invalid'}`}>
-//                     {icon && <FontAwesomeIcon icon={icon} />}
-//                     {text && text}
-//                 </label>
-//             </div>
-//         </div>
-//     );
-// }
 
 
 
@@ -55,17 +25,14 @@ import Loader from '../Loader/Loader'
 
 
 
-
-const FormCreator = ({ language, languageData, api, darkMode }) => {
+const FormCreator = ({ language, languageText, api, darkMode }) => {
     const { dispatch } = useFormsContext()
     const { user } = useAuthContext()
 
 
-    const languageText = languageData[language];
 
     const [eventName, setEventName] = useState('');
     const [arabicEventName, setArabicEventName] = useState('');
-    // const [type, setType] = useState('');
     const [eventDescription, setEventDescription] = useState('');
     const [groupLink, setGroupLink] = useState('');
     const [error, setError] = useState(null);
@@ -78,18 +45,18 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [updating, setUpdating] = useState(false);
-
-
     const [selectedImageText, setSelectedImageText] = useState(null);
     const [selectedQRImageText, setSelectedQRImageText] = useState(null);
-
-    // const [customInputs, setCustomInputs] = useState([]); // New state for custom inputs
-    // const [customInput, setCustomInput] = useState('');
-
-
-
     const [customInputs, setCustomInputs] = useState([]);
     const [newCustomInput, setNewCustomInput] = useState('');
+    const [selectInputs, setSelectInputs] = useState([]);
+    const [newSelectInput, setNewSelectInput] = useState({
+        label: '',
+        options: [],
+        isMultiSelect: false
+    });
+    const [currentOption, setCurrentOption] = useState('');
+    const [selectError, setSelectError] = useState()
 
     const handleAddCustomInput = () => {
         if (newCustomInput.trim() !== '') {
@@ -124,10 +91,14 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
     const handleRemoveImage = (e) => {
         e.preventDefault()
+        e.stopPropagation();
+
         setImg(null);
         setSelectedImageText(null);
     }
-    const handleRemoveQRImage = () => {
+    const handleRemoveQRImage = (e) => {
+        e.preventDefault()
+        e.stopPropagation();
         setPaymentQR(null);
         setSelectedQRImageText(null);
     };
@@ -142,7 +113,6 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
         try {
             let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-            // console.log('Cloud Name:', process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
             let resourceType = type === 'image' ? 'image' : 'video';
             let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
 
@@ -172,15 +142,17 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
             eventName,
             arabicEventName,
             eventImg: imgUrl,
+            // eventImg: "fgagsgagsg",
             eventDescription,
             type: user?.committee,
             inputs,
             groupLink,
-            paymentQR: paymentQRUrl, // Updated to use payment QR URL
+            paymentQR: paymentQRUrl,
             paymentAmount,
             customInputs,
             status: true,
-            limit: formLimit
+            limit: formLimit,
+            selectInputs
         }
 
         const response = await fetch(`${api}/api/forms`, {
@@ -206,30 +178,6 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                 collection: "forms",
                 payload: json
             })
-            // setEventName('')
-            // setArabicEventName('')
-            // setEventDescription('')
-            // // setEventType('');
-            // setGroupLink('');
-            // setImg(null);
-
-            // console.log("File upload success!");
-            // navigate("/formCreator/admin")
-
-            // Swal.fire({
-            //     title: "Form added successfully",
-            //     showDenyButton: true,
-            //     confirmButtonText: "Open Form",
-            //     denyButtonText: `Edit Form`
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-
-            //         navigate(`/ISSForm/${json._id}`);
-            //     } else if (result.isDenied) {
-            //         navigate(`/formEditor/${type}/${json._id}`);
-
-            //     }
-            // });
             {
                 toast.success(`${languageText.formCreated}`, {
                     position: "bottom-center",
@@ -262,7 +210,6 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
 
 
-    var expanded = false;
     const showCheckboxes = (type) => {
         if (type === 'categories') {
             setExpandedCategories(!expandedCategories);
@@ -275,7 +222,8 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
     const checkbox = ({ type }) => {
         return (
-            <label htmlFor={type}>
+            <div className="CategoryInput" >
+
                 <input
                     type="checkbox"
                     id={type}
@@ -283,8 +231,8 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                     checked={inputs.includes(type)}
                     onChange={() => handleCheckboxChange(type)}
                 />
-                {type}
-            </label>
+                <label htmlFor={type}>{" " + type}</label>
+            </div>
         )
     }
 
@@ -300,7 +248,48 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
 
 
+    const handleAddOption = () => {
+        if (currentOption.trim() !== '') {
+            setNewSelectInput(prev => ({
+                ...prev,
+                options: [...prev.options, currentOption.trim()]
+            }));
+            setCurrentOption('');
+        }
+    };
+    const handleAddSelectInput = () => {
+        // disabled={!newSelectInput.label || }
+        if (!newSelectInput.label) {
+            setSelectError(languageText.WriteALabel)
+        }
+        else if (newSelectInput.options.length === 0 || newSelectInput.options.length === 1) {
+            setSelectError(languageText.WriteOption)
 
+        }
+        else if (newSelectInput.label.trim() !== '' && newSelectInput.options.length > 0) {
+            setSelectInputs([...selectInputs, { ...newSelectInput }]);
+            setNewSelectInput({
+                label: '',
+                options: [],
+                isMultiSelect: false
+            });
+            setSelectError(null)
+
+        }
+    };
+
+    const removeSelectInput = (index) => {
+        const updatedInputs = [...selectInputs];
+        updatedInputs.splice(index, 1);
+        setSelectInputs(updatedInputs);
+    };
+
+    const removeOption = (optionIndex) => {
+        setNewSelectInput(prev => ({
+            ...prev,
+            options: prev.options.filter((_, index) => index !== optionIndex)
+        }));
+    };
 
 
 
@@ -341,7 +330,6 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                 <div className="InputField">
                                     <div className="InputLabelField">
                                         <input
-                                            // placeholder=" &#xf005; &nbsp; Event Arabic Name"
                                             type="text"
                                             className={`input ${(arabicEventName) ? 'valid' : ''}`}
                                             onChange={(e) => { setArabicEventName(e.target.value) }}
@@ -356,12 +344,12 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                 <div className="InputField">
 
                                     <label for="img" className={`LabelInputImg ${(img) ? 'valid' : ''}`}>
-                                        <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faImage} />{selectedImageText || languageText.EventImg}</div>
+                                        <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="mage:image-fill" />{selectedImageText || languageText.EventImg}</div>
                                         {(img)
-                                            ? <button className="XImgButton" onClick={handleRemoveImage}>
-                                                <FontAwesomeIcon icon={faXmark} />
+                                            ? <button className="XImgButton" onClick={(e) => handleRemoveImage(e)}>
+                                                <Icon icon="icon-park-outline:close-one" />
                                             </button>
-                                            : <FontAwesomeIcon icon={faCloudArrowUp} />}
+                                            : <Icon icon="material-symbols:arrow-upload-progress-rounded" />}
                                     </label>
                                     <input
                                         type="file"
@@ -370,6 +358,7 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                         className={`input ${(img) ? 'valid' : ''}`}
                                         style={{ display: 'none' }}
                                         onChange={handleImgChange}
+                                        required
                                     />
                                 </div>
 
@@ -383,28 +372,9 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                             id="GroupLink"
                                             style={{ height: 'fit-content', }}
                                         />
-                                        {!groupLink && <label for="GroupLink" className={`LabelInput ${(groupLink) ? 'valid' : ''}`}><FontAwesomeIcon icon={faWhatsapp} /> {languageText.GroupLink}</label>}
+                                        {!groupLink && <label for="GroupLink" className={`LabelInput ${(groupLink) ? 'valid' : ''}`}><Icon icon="ant-design:whats-app-outlined" /> {languageText.GroupLink}</label>}
                                     </div>
                                 </div>
-
-                                {/* <div className="InputField">
-                            <select
-                                className={`input ${(type) ? 'valid' : ''}`}
-
-                                onChange={(e) => setType(e.target.value)}
-                                required
-
-                            >
-                                <option value="" disabled selected hidden>{languageText.ChooseCommittee}</option>
-                                <option value="Social" >{languageText.SocialCommittee}</option>
-                                <option value="Academic" >{languageText.AcademicCommittee}</option>
-                                <option value="Bank" >{languageText.BankCommittee}</option>
-                                <option value="Culture" >{languageText.CultureCommittee}</option>
-                                <option value="Sports" >{languageText.SportCommittee}</option>
-                                <option value="Women Affairs" >{languageText.WomenCommittee}</option>
-                                <option value="Reading" >{languageText.ReadingClub}</option>
-                            </select>
-                        </div> */}
                             </div>
 
                             <div className="InputRow">
@@ -422,23 +392,10 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                             id="EventDesc"
 
                                         />
-                                        {!eventDescription && <label for="EventDesc" className={`LabelInput ${(eventDescription) ? 'valid' : ''}`}><FontAwesomeIcon icon={faFile} /> {languageText.EventDesc}</label>}
+                                        {!eventDescription && <label for="EventDesc" className={`LabelInput ${(eventDescription) ? 'valid' : ''}`}><Icon icon="material-symbols:description" /> {languageText.EventDesc}</label>}
 
                                     </div>
                                 </div>
-
-                                {/* <div className="InputField">
-                            <input
-                                placeholder=" &#xf1a0; &nbsp; Google Sheet Link"
-                                type="text"
-                                className={`input ${(sheetLink) ? 'valid' : ''}`}
-                                onChange={(e) => { setSheetLink(e.target.value) }}
-                            // required
-
-                            />
-                        </div> */}
-                                {/* </div> */}
-
 
                                 <div className="InputRow">
                                     <div className="InputField">
@@ -449,7 +406,7 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                                 </select>
                                                 <div className="overSelect"></div>
                                             </div>
-                                            <div id="locationsCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none', flexDirection: 'column' }}>
+                                            <div id="locationsCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none' }} className="CustomInputsContaner">
                                                 {generateCheckbox([
                                                     { type: "Form Limit" },
                                                     { type: "Full Name" },
@@ -462,6 +419,7 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
                                                     { type: "Picture" },
                                                     { type: "Payment" },
                                                     { type: "Custom Inputs" },
+                                                    { type: "Select Input" },
                                                 ])}
                                             </div>
                                         </div>
@@ -469,102 +427,215 @@ const FormCreator = ({ language, languageData, api, darkMode }) => {
 
                                 </div>
                             </div>
-                            {inputs.includes("Payment") && (
-                                <div className="InputRow">
 
-                                    <div className="InputField">
-
-                                        <label for="QrImg" className={`LabelInputImg ${(paymentQR) ? 'valid' : ''}`}>
-                                            <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faQrcode} />{selectedQRImageText || languageText.QrImage}</div>
-                                            {(paymentQR) ? <button className="XImgButton" onClick={handleRemoveQRImage}>
-                                                <FontAwesomeIcon icon={faXmark} />
-                                            </button>
-                                                : <FontAwesomeIcon icon={faCloudArrowUp} />}
-                                        </label>
-                                        <input
-                                            placeholder=" &#xf0e0; &nbsp; QR Img"
-                                            type="file"
-                                            accept="image/*"
-                                            id="QrImg"
-                                            style={{ display: 'none' }}
-                                            required
-                                            className={`input ${(paymentQR) ? 'valid' : ''}`}
-                                            onChange={handleQRImgChange}
-                                        />
-                                    </div>
-
-                                    <div className="InputField">
+                            {inputs.includes("Form Limit") && (
+                                <div className="SelectInputsEditor">
+                                    <h3>{languageText.AddLimit}</h3>
+                                    <div className="InputField" style={{ margin: 'auto' }}>
                                         <div className="InputLabelField">
 
                                             <input
-                                                // placeholder=" &#xf0d6; &nbsp; Payment Amount"
                                                 type="number"
-                                                className={`input ${(paymentAmount) ? 'valid' : ''}`}
-                                                onChange={(e) => { setPaymentAmount(e.target.value) }}
+                                                className={`input ${(formLimit) ? 'valid' : ''}`}
+                                                onChange={(e) => { setFormLimit(e.target.value) }}
                                                 required
-                                                id="PaymentAmount"
+                                                id="formLimit"
 
                                             />
-                                            {!paymentAmount && <label for="PaymentAmount" className={`LabelInput ${(paymentAmount) ? 'valid' : ''}`}><FontAwesomeIcon icon={faMoneyBill} /> {languageText.PaymentAmount}</label>}
+                                            {!formLimit && <label for="formLimit" className={`LabelInput ${(formLimit) ? 'valid' : ''}`}><Icon icon="fluent:people-error-20-filled" /> {languageText.FormLimit}</label>}
 
                                         </div>
                                     </div>
-
                                 </div>
 
-
                             )}
+                            {inputs.includes("Payment") && (
+                                <div className="SelectInputsEditor">
+                                    <h3>{languageText.AddPayment}</h3>
+                                    <div className="InputRow">
 
-                            {inputs.includes("Form Limit") && (
-                                <div className="InputField">
-                                    <div className="InputLabelField">
+                                        <div className="InputField">
 
-                                        <input
-                                            // placeholder=" &#xf0d6; &nbsp; Payment Amount"
-                                            type="number"
-                                            className={`input ${(formLimit) ? 'valid' : ''}`}
-                                            onChange={(e) => { setFormLimit(e.target.value) }}
-                                            required
-                                            id="formLimit"
+                                            <label for="QrImg" className={`LabelInputImg ${(paymentQR) ? 'valid' : ''}`}>
+                                                <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="weui:qr-code-filled" />{selectedQRImageText || languageText.QrImage}</div>
+                                                {(paymentQR) ? <button className="XImgButton" onClick={(e) => handleRemoveQRImage(e)}>
+                                                    <Icon icon="icon-park-outline:close-one" />
+                                                </button>
+                                                    : <Icon icon="material-symbols:arrow-upload-progress-rounded" />}
+                                            </label>
+                                            <input
+                                                placeholder=" &#xf0e0; &nbsp; QR Img"
+                                                type="file"
+                                                accept="image/*"
+                                                id="QrImg"
+                                                style={{ display: 'none' }}
+                                                required
+                                                className={`input ${(paymentQR) ? 'valid' : ''}`}
+                                                onChange={handleQRImgChange}
+                                            />
+                                        </div>
 
-                                        />
-                                        {!formLimit && <label for="formLimit" className={`LabelInput ${(formLimit) ? 'valid' : ''}`}><Icon icon="fluent:people-error-20-filled" /> {languageText.FormLimit}</label>}
+                                        <div className="InputField">
+                                            <div className="InputLabelField">
+
+                                                <input
+                                                    // placeholder=" &#xf0d6; &nbsp; Payment Amount"
+                                                    type="number"
+                                                    className={`input ${(paymentAmount) ? 'valid' : ''}`}
+                                                    onChange={(e) => { setPaymentAmount(e.target.value) }}
+                                                    required
+                                                    id="PaymentAmount"
+
+                                                />
+                                                {!paymentAmount && <label for="PaymentAmount" className={`LabelInput ${(paymentAmount) ? 'valid' : ''}`}><Icon icon="tdesign:money-filled" /> {languageText.PaymentAmount}</label>}
+
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
 
+
                             )}
+
                             {inputs.includes("Custom Inputs") && (
-                                <div className="InputRow">
-                                    <div className="InputField eventDescription">
+                                <div className="SelectInputsEditor">
+                                    <h3>{languageText.AddCustomInput}</h3>
+                                    <div className="InputRow">
+                                        <div className="InputField eventDescription">
+                                            <div className="InputLabelField">
+                                                <input
+                                                    type="text"
+                                                    value={newCustomInput}
+                                                    className={`input ${(newCustomInput) ? 'valid' : ''}`}
+                                                    onChange={(e) => setNewCustomInput(e.target.value)}
+                                                    id="CustomInputs"
+
+                                                />
+                                                {!newCustomInput && <label for="CustomInputs" className={`LabelInput ${(newCustomInput) ? 'valid' : ''}`}>
+                                                    <Icon icon="tabler:input-spark" /> {languageText.CustomInput}
+                                                </label>}
+                                            </div>
+                                            <button type="button" className="CustomInputButton" onClick={handleAddCustomInput}><Icon icon="subway:add" /></button>
+                                        </div>
+                                    </div>
+
+
+                                    {customInputs.length > 0 && (
+                                        <div className="AddedInputs">
+                                            {customInputs.map((input, index) => (
+                                                <div className="AddedInputsContainer" key={index}>
+                                                    <div>{input}</div>
+                                                    <button type="button" onClick={() => removeCustomInput(index)}>
+                                                        <Icon icon="ic:round-delete" />
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {inputs.includes("Select Input") && (
+                                <div className="SelectInputsEditor">
+                                    <h3>{languageText.EditSelectInput}</h3>
+                                    <div className="InputRow">
                                         <div className="InputLabelField">
                                             <input
                                                 type="text"
-                                                value={newCustomInput}
-                                                className={`input ${(newCustomInput) ? 'valid' : ''}`}
-                                                onChange={(e) => setNewCustomInput(e.target.value)}
-                                                id="CustomInputs"
-
+                                                value={newSelectInput.label}
+                                                className={`input ${newSelectInput.label ? 'valid' : ''}`}
+                                                onChange={(e) => setNewSelectInput(prev => ({
+                                                    ...prev,
+                                                    label: e.target.value
+                                                }))}
+                                                id="SelectInputLabel"
                                             />
-                                            {!newCustomInput && <label for="CustomInputs" className={`LabelInput ${(newCustomInput) ? 'valid' : ''}`}>
-                                                <FontAwesomeIcon icon={faPlus} /> {languageText.CustomInput}
+                                            {!newSelectInput.label && <label htmlFor="SelectInputLabel" className={`LabelInput ${newSelectInput.label ? 'valid' : ''}`}>
+                                                <Icon icon="material-symbols:label-outline" /> {languageText.SelectLabel}
                                             </label>}
                                         </div>
-                                        <button type="button" className="CustomInputButton" onClick={handleAddCustomInput}><FontAwesomeIcon icon={faPlus} /></button>
-                                    </div>
-                                </div>
-                            )}
-                            {customInputs.length > 0 && (
-                                <div className="CustomInputs">
-                                    {customInputs.map((input, index) => (
-                                        <div className="CustomInputRow" key={index}>
-                                            <div className="CustomLabel">{input}</div>
-                                            <button type="button" onClick={() => removeCustomInput(index)} className="CustomButton">
-                                                <FontAwesomeIcon icon={faXmark} />
+
+                                        <div className="InputLabelField">
+                                            <input
+                                                type="text"
+                                                value={currentOption}
+                                                className={`input ${currentOption ? 'valid' : ''}`}
+                                                onChange={(e) => setCurrentOption(e.target.value)}
+                                                id="SelectInputOption"
+                                            />
+                                            {!currentOption && <label htmlFor="SelectInputOption" className={`LabelInput ${currentOption ? 'valid' : ''}`}>
+                                                <Icon icon="famicons:list-outline" /> {languageText.AddOption}
+                                            </label>}
+                                            <button type="button" className="CustomInputButton" onClick={handleAddOption}>
+                                                <Icon icon="ci:list-add" />
                                             </button>
                                         </div>
-                                    ))}
+                                    </div>
+
+                                    <div className="CategoryInput Multiselect" >
+                                        <input
+                                            type="checkbox"
+                                            id="Multiselect"
+                                            value="Multiselect"
+                                            checked={newSelectInput.isMultiSelect}
+                                            onChange={(e) => setNewSelectInput(prev => ({
+                                                ...prev,
+                                                isMultiSelect: e.target.checked
+                                            }))}
+                                        />
+                                        <label htmlFor="Multiselect" style={{ fontWeight: "bold", color: "var(--theme)", marginTop: "15px" }}> {languageText.MultipleSelection}</label>
+                                    </div>
+
+                                    {newSelectInput.options.length > 0 && (
+                                        <div className="AddedInputs">
+                                            {newSelectInput.options.map((option, index) => (
+                                                <div className="AddedInputsContainer" key={index}>
+                                                    <div>{(index + 1) + ". " + option}</div>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeOption(index)}
+                                                    >
+                                                        <Icon icon="ic:round-delete" />
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    <button
+                                        type="button"
+                                        className="AddNewSelect"
+                                        onClick={handleAddSelectInput}
+                                    // disabled={!newSelectInput.label || newSelectInput.options.length === 0}
+                                    >
+                                        {languageText.AddSelectInput}
+                                    </button>
+                                    {selectError && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{selectError}</p>}
+
+                                    {selectInputs.length > 0 && (
+                                        <div className="AddedInputs">
+                                            {selectInputs.map((input, index) => (
+                                                <div className="AddedInputsContainer" key={index}>
+                                                    <div className="CustomLabel">
+                                                        <strong>{input.label}</strong> ({input.isMultiSelect ? languageText.MultiSelect : languageText.SingleSelect})
+                                                        <div className="options-list">
+                                                            {input.options.join(', ')}
+                                                        </div>
+                                                    </div>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeSelectInput(index)}
+                                                        className="CustomButton"
+                                                    >
+                                                        <Icon icon="ic:round-delete" />
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
+
                             )}
 
 

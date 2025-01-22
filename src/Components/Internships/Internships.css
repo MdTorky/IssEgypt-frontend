@@ -1,229 +1,208 @@
 .internships {
-    margin-bottom: 20%;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    /* box-sizing: border-box; */
-    margin-right: 275px;
-    /* justify-content: center; */
-
-
-
+  margin-bottom: 20%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* box-sizing: border-box; */
+  margin-right: 275px;
+  /* justify-content: center; */
 }
-
 
 .arabic .internships {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-left: 275px;
-    margin-top: -15px;
-    margin-right: 0;
-
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-left: 275px;
+  margin-top: -15px;
+  margin-right: 0;
 }
 
-
 .allFilters {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
 }
 
 .scroll {
-    /* margin: auto */
-    display: flex;
-    justify-content: center;
-    /* margin-right: 275px; */
+  display: flex;
+  justify-content: center;
 }
 
-
-
 .internships .sectionBox {
-    /* width: 100%; */
-    display: flex;
-    padding: 20px;
-    /* box-sizing: border-box; */
-    gap: 50px;
-    border-radius: 20px;
-    /* scroll-snap-type: x; */
-    /* overflow-x: auto; */
-    /* margin: auto; */
-    white-space: nowrap;
-    overflow: auto;
-
+  display: flex;
+  padding: 20px;
+  gap: 50px;
+  border-radius: 20px;
+  white-space: nowrap;
+  overflow: auto;
 }
 
 .internships .title {
-    text-align: center;
-    font-size: 2em;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--theme);
+  width: 40%;
+  color: var(--bg);
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
-
-
 .internships .outerBox {
-    background: var(--bg2);
-    padding: 20px;
-    border-radius: 20px;
-    height: max-content;
+  background: var(--bg2);
+  padding: 15px;
+  border-radius: 25px;
+  height: max-content;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .internships .outerBox .innerBox {
-    background: var(--bg);
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+  background: var(--bg);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  border: 2px lightgrey solid;
 }
 
 /* .arabic .internships .outerBox .innerBox {
     direction: ltr;
 } */
 
-
 .internships .cards {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .internships .cards .card {
-    background: linear-gradient(to right, var(--bg2), var(--bg));
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    transition: 0.7s ease;
-    align-items: center;
-    width: 300px;
-    /* padding: 5px; */
-    /* position: relative; */
-    /* width: 100%; */
-}
+  background: linear-gradient(to right, var(--bg2), var(--bg));
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.7s ease;
+  align-items: center;
+  width: 300px;
+  border: 2px lightgrey solid;
 
+  /* padding: 5px; */
+  /* position: relative; */
+  /* width: 100%; */
+}
 
 .internships .cards .card:hover {
-    box-shadow: var(--hover2) 0px 1px 4px, var(--hover) 0px 0px 0px 3px;
-    cursor: pointer;
-    transform: scale(1.1);
+  box-shadow: var(--hover2) 0px 1px 4px, var(--hover) 0px 0px 0px 3px;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-/* .cards .card:hover img {
-    transform: scale(2);
-    z-index: 8;
-} */
-
-
 .internships .cards .card .cardsBottomContent {
-    padding: 20px;
-    /* border-radius: 20px; */
-    display: flex;
-
-    /* justify-content: space-evenly; */
+  padding: 20px;
+  /* border-radius: 20px; */
+  display: flex;
 }
 
 .internships .cards .card .cardsBottomContent p {
-    margin: 0;
-    font-size: 1.1em;
-    font-weight: 600;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin: auto;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin: auto;
 }
 
 .internships .cards .card .cardsBottomContent p span {
-    color: var(--theme);
-    font-size: 0.7em;
-    margin-top: 5px;
+  color: var(--theme);
+  font-size: 0.7em;
+  margin-top: 5px;
 }
 
-
-
 .internships .cards .card .img {
-    width: 100%;
-    /* height: 100%; */
-    /* border-radius: 50px; */
-    transition: 0.7s ease;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-    /* background: red; */
-
+  width: 100%;
+  /* height: 100%; */
+  /* border-radius: 50px; */
+  transition: 0.7s ease;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  /* background: red; */
 }
 
 .internships .cards .card .img img {
-    width: 70%;
-    height: 90px;
-    box-sizing: border-box;
-    /* background: red; */
-    /* border-radius: 50px; */
-    transition: 0.7s ease;
-    box-shadow: 0;
-    border-radius: 0;
-
+  width: 70%;
+  height: 90px;
+  box-sizing: border-box;
+  /* background: red; */
+  /* border-radius: 50px; */
+  transition: 0.7s ease;
+  box-shadow: 0;
+  border-radius: 0;
 }
 
 .internships .cards .card .cardsBottomContent {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .internships .cards .card .cardsBottomContent .icons {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 10px;
-    font-size: 1.1em;
-    /* align-items: center; */
-
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  font-size: 1.1em;
+  /* align-items: center; */
 }
 
-
-
 .internships .textBox {
-    margin: auto;
-    display: flex;
-    font-weight: 800;
-    width: 100%;
-    justify-content: center;
-    gap: 100px;
+  margin: auto;
+  display: flex;
+  font-weight: 800;
+  width: 100%;
+  justify-content: center;
+  gap: 100px;
 }
 
 .internships .textBox .hintField {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .internships .textBox .hintIcon {
-    color: var(--theme)
+  color: var(--theme);
 }
 
 .internships .searchContainer {
-    display: flex;
-    margin-bottom: 20px;
-    position: fixed;
-    z-index: 9000;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0%;
-    width: 40%;
+  display: flex;
+  margin-bottom: 20px;
+  position: fixed;
+  z-index: 9000;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0%;
+  width: 40%;
 }
 
 .arabic .internships .searchContainer {
-    /* display: flex;
+  /* display: flex;
     margin-bottom: 20px;
     position: fixed;
     z-index: 9000;
@@ -231,120 +210,86 @@
     bottom: 77.5%;
     width: 10%; */
 
-    display: flex;
-    margin-bottom: 20px;
-    position: fixed;
-    z-index: 9000;
-    right: 50%;
-    transform: translateX(50%) translateY(95%);
-    bottom: 0;
+  display: flex;
+  margin-bottom: 20px;
+  position: fixed;
+  z-index: 9000;
+  right: 50%;
+  transform: translateX(50%) translateY(95%);
+  bottom: 0;
 
-    /* top: 0%; */
-    width: 40%;
+  /* top: 0%; */
+  width: 40%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .internships .categories {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 10px auto 0 auto;
-    width: 200px;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    white-space: wrap;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px auto 0 auto;
+  width: 200px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  white-space: wrap;
 }
 
 .categoryDropdown {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .categorySelect {
-    /* background-color: var(--theme); */
-    /* color: var(--bg); */
-    /* border: none; */
-    border-radius: 10px 0 10px 0;
-    padding: 5px;
-    transition: 0.5s ease all;
-    cursor: pointer;
+  border-radius: 10px 0 10px 0;
+  padding: 5px;
+  transition: 0.5s ease all;
+  cursor: pointer;
 }
-
-
 
 .internships .category {
-    background: var(--theme);
-    padding: 4px;
-    color: var(--bg);
-    border-radius: 10px;
-    font-size: 0.7em;
+  background: var(--theme);
+  padding: 4px;
+  color: var(--bg);
+  border-radius: 5px;
+  font-size: 0.7em;
 }
 
-
-
-
-
-
 .internships .categoryFilter {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .internships .categoryFilter select {
-    background: var(--hover);
-    color: var(--bg);
-    /* border: none; */
-    border-radius: 20px;
-    padding: 5px;
-    cursor: pointer;
+  background: var(--hover);
+  color: var(--bg);
+  /* border: none; */
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
 }
 
-
 .internships .categoryFilter option.selected-option {
-    background-color: var(--theme);
-    color: white;
+  background-color: var(--theme);
+  color: white;
 }
 
 .internships .categoryFilter.locationFilter option.selected-option {
-    background-color: mediumseagreen;
-    color: white;
+  background-color: mediumseagreen;
+  color: white;
 }
-
 
 .internships .categoryFilter option {
-    background: none;
-    color: var(--bg);
-    border: none;
-    border-radius: 20px;
-    padding: 5px;
+  background: none;
+  color: var(--bg);
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
 }
 
-
 .icon.filter {
-    background: var(--theme);
-    color: var(--bg);
+  background: var(--theme);
+  color: var(--bg);
 }
 
 /* .internships .selectedCategories {
@@ -353,127 +298,109 @@
 } */
 
 .internships .rowCategories {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background: var(--bg2);
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    color: var(--theme);
-    font-weight: 700;
-    padding: 10px;
-    background: linear-gradient(to right, var(--bg2), var(--bg));
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg2);
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  color: var(--theme);
+  font-weight: 700;
+  padding: 10px;
+  background: linear-gradient(to right, var(--bg2), var(--bg));
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .rowCategories.rowLocations {
-    color: mediumseagreen
+  color: mediumseagreen;
 }
 
+@media screen and (max-width: 700px) {
+  .internships {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 90%;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0 auto 50% auto;
+    /* Center vertically */
+    /* Center horizontally */
+  }
 
+  .internships .title {
+    width: 80%;
+    font-size: 1.7em;
+  }
 
+  .arabic .internships {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    margin: 0;
+    margin: 40px auto 50% auto;
+  }
 
+  .internships .sectionBox {
+    width: fit-content;
+    flex-direction: column;
+    padding: 15px;
+    gap: 50px;
+    width: 100%;
+  }
 
+  .allFilters {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:700px) {
-
-    .internships {
-        font-family: 'Poppins', sans-serif;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        width: 90%;
-        /* justify-content: center; */
-        align-items: center;
-        margin: 0 auto 50% auto;
-        /* Center vertically */
-        /* Center horizontally */
-    }
-
-
-    .arabic .internships {
-        font-family: 'Noto Kufi Arabic', sans-serif;
-        margin: 0;
-        margin: 40px auto 50% auto;
-    }
-
-    .internships .sectionBox {
-        width: fit-content;
-        flex-direction: column;
-        padding: 15px;
-        gap: 50px;
-        width: 100%;
-    }
-
-
-    /* .arabic .section .title {
+  /* .arabic .section .title {
         font-size: 0.1em
     } */
 
+  .internships .outerBox {
+    padding: 15px;
+  }
 
-    .internships .outerBox {
-        padding: 15px;
-    }
+  .internships .outerBox .innerBox {
+    /* background: var(--bg2); */
+    padding: 5px;
+  }
 
-    .internships .outerBox .innerBox {
-        /* background: var(--bg2); */
-        padding: 5px;
-    }
+  .internships .cards .card {
+    width: 100%;
+  }
 
+  .internships .textBox {
+    justify-content: space-evenly;
+    gap: 0;
+    column-gap: 50px;
+    flex-wrap: wrap;
+  }
 
+  .internships .searchContainer {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 9000;
+    width: 80%;
+    left: 0%;
+    transform: none;
+  }
 
+  .arabic .internships .searchContainer {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 9000;
+    width: 80%;
+    left: 0%;
+    right: 0%;
+    transform: none;
+  }
 
-
-    .internships .cards .card {
-        width: 100%;
-    }
-
-
-
-
-    .internships .textBox {
-        justify-content: space-evenly;
-        gap: 0;
-        column-gap: 50px;
-        flex-wrap: wrap;
-    }
-
-
-    .internships .searchContainer {
-        display: flex;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 9000;
-        width: 80%;
-        left: 0%;
-        transform: none;
-    }
-
-    .arabic .internships .searchContainer {
-        display: flex;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 9000;
-        width: 80%;
-        left: 0%;
-        right: 0%;
-        transform: none;
-
-    }
-
-    .internships .popup {
-        width: 70%;
-    }
+  .internships .popup {
+    width: 70%;
+  }
 }

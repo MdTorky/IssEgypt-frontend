@@ -7,7 +7,7 @@ import './Reference.css'
 
 const Reference = ({ api, language, languageText }) => {
     const [loading, setLoading] = useState(false);
-    const { transactions, dispatch } = useFormsContext();
+    const { dispatch } = useFormsContext();
     const { referenceNumber } = useParams();
     const [transaction, setTransaction] = useState(null);
     const [product, setProduct] = useState(null);
@@ -102,7 +102,6 @@ const Reference = ({ api, language, languageText }) => {
                                             : ""
                                         }`}
                                 >
-                                    {/* •  */}
                                     {transaction.transactionStatus}
                                 </h2>
                             </div>

@@ -98,12 +98,10 @@ body {
   width: 100%;
   top: 0px;
   z-index: 100000;
-  background: var(--bg);
-  /* background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(80, 244, 121, 1) 100%); *
-  /*
-  /* background-size: auto;
-  background-repeat: no-repeat;
-  background-size: 50%; */
+  /* background: var(--bg); */
+  background: linear-gradient(to left, var(--bg2), var(--bg));
+}
+/* background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(80, 244, 121, 1) 100%); *
 }
 
 /* .logo::before {
@@ -222,6 +220,10 @@ body.english {
 }
 
 @media screen and (max-width: 700px) {
+  .logo {
+    top: -1px;
+  }
+
   .appContainer .routes {
     margin: 190px auto 0 auto;
   }

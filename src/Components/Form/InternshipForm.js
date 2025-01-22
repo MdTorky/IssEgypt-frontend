@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const InternshipForm = ({ language, languageData, api, darkMode }) => {
+const InternshipForm = ({ language, languageText, api, darkMode }) => {
     const { dispatch } = useFormsContext()
 
     const [name, setName] = useState('');
@@ -24,7 +24,6 @@ const InternshipForm = ({ language, languageData, api, darkMode }) => {
     const [expandedLocations, setExpandedLocations] = useState(false);
     const [error, setError] = useState(null);
 
-    const languageText = languageData[language];
     const handleSubmit = async (e) => {
         e.preventDefault();
 

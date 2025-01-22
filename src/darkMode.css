@@ -30,7 +30,7 @@ body.dark-mode {
 /* NavBar */
 
 .dark-mode .logo {
-  background: var(--hover);
+  background: linear-gradient(to left, var(--hover2), var(--hover));
 }
 
 .dark-mode .navbar ul li icon {
@@ -107,6 +107,7 @@ body.dark-mode {
 
 .dark-mode .sideMenu {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .sideMenu .liveBox {
@@ -273,6 +274,7 @@ body.dark-mode {
 
 .dark-mode .GalleryContainer {
   background: var(--hover2);
+  border: 3px gray solid;
 }
 
 .dark-mode .GalleryCard {
@@ -316,12 +318,14 @@ body.dark-mode {
 
 .dark-mode .services .annContainer {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .services .annContainer .annContainer2 {
   background: var(--hover);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border: 2px gray solid;
 }
 
 .dark-mode .AnnStories2Button {
@@ -365,10 +369,12 @@ body.dark-mode {
 
 .dark-mode .services .rightContainer {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .services .rightContainer .collegesBoxTitle {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .rightContainer .college .img {
@@ -389,10 +395,12 @@ body.dark-mode {
 
 .dark-mode .services .leftContainer {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .services .leftContainer .collegesBoxTitle {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .leftContainer .college .img {
@@ -505,18 +513,22 @@ body.dark-mode {
 
 .dark-mode .section .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .section .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .attraction .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .attraction .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .cards .card {
@@ -524,6 +536,7 @@ body.dark-mode {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: 2px gray solid;
 }
 
 .dark-mode .icons .icon {
@@ -569,6 +582,7 @@ body.dark-mode {
 .dark-mode .attraction .popup {
   /* background: linear-gradient(to right, var(--hover), var(--hover2)); */
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .attraction .icon {
@@ -595,6 +609,7 @@ body.dark-mode {
 
 .dark-mode .attraction .top {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .attraction .bottom {
@@ -602,18 +617,26 @@ body.dark-mode {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: 2px gray solid;
+}
+
+.dark-mode .iconAnimation {
+  border: 3px gray solid;
 }
 
 .dark-mode .transportation .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .transportation .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .transportation .cards .card {
   background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
 
 .dark-mode .arabic .transportation .cards .card {
@@ -676,26 +699,40 @@ body.dark-mode {
 
 .dark-mode .account .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .account .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
+}
+
+.dark-mode .pop {
+  border: 2px gray solid;
+}
+
+.dark-mode .pop .popup-content {
+  border: 2px gray solid;
 }
 
 .dark-mode .clubs .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .clubs .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .clubs .cards .card {
   background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
 
 .dark-mode .arabic .clubs .cards .card {
   background: linear-gradient(to left, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
 
 .dark-mode .clubs .popup {
@@ -751,14 +788,17 @@ body.dark-mode {
 
 .dark-mode .internships .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .internships .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .internships .cards .card {
   background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
 
 .dark-mode .arabic .internships .cards .card {
@@ -796,14 +836,17 @@ body.dark-mode {
 
 .dark-mode .courses .outerBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .courses .outerBox .innerBox {
   background: var(--hover);
+  border: 2px gray solid;
 }
 
 .dark-mode .courses .cards .card {
   background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
 
 .dark-mode .arabic .courses .cards .card {
@@ -872,11 +915,19 @@ body.dark-mode {
 
 .dark-mode .formBox {
   background: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .formBox form {
   background: linear-gradient(to right, var(--hover), var(--hover2));
+  border: 2px gray solid;
 }
+
+/* .dark-mode .formBox h2 {
+  color: var(--bg);
+  border-top: 3px solid var(--bg);
+  border-bottom: 3px solid var(--bg);
+} */
 
 .dark-mode .formBox form .input,
 .dark-mode .formBox select,
@@ -911,6 +962,7 @@ body.dark-mode {
 
 .dark-mode .CreatedForm .FormLeft {
   background-color: var(--hover2);
+  border: 2px gray solid;
 }
 
 .dark-mode .CreatedForm .FormLeft img {
@@ -978,6 +1030,17 @@ body.dark-mode {
   border: 10px double var(--theme);
 }
 
+.dark-mode .SelectInputsEditor {
+  background: var(--hover);
+  border: 2px gray solid;
+}
+
+/* .dark-mode .SelectInputsEditor > h3 {
+  color: var(--bg);
+  border-top: 3px solid var(--bg);
+  border-bottom: 3px solid var(--bg);
+} */
+
 /* Members */
 
 .dark-mode .Search {
@@ -1000,12 +1063,18 @@ body.dark-mode {
   color: var(--bg) !important;
 }
 
+.dark-mode .Members h2 {
+  border: 4px solid var(--hover2);
+}
+
 .dark-mode .memberBox {
   background: var(--hover2);
+  border: 2px solid gray;
 }
 
 .dark-mode .memberBack {
   background: var(--hover);
+  border: 2px solid gray;
 }
 
 .dark-mode .mBorder .mLink {
@@ -1013,13 +1082,41 @@ body.dark-mode {
   color: white !important;
 }
 
+.dark-mode .mInfo .role {
+  border: 3px solid var(--hover2);
+}
+
+.dark-mode .AddedInputsContainer {
+  background: var(--bg2);
+  border: 2px gray solid;
+  color: var(--hover);
+}
+
 /* Member Details */
 .dark-mode .MainMember {
   background: var(--hover2);
+  border: 3px gray solid;
 }
 
 .dark-mode .OtherMembers {
   background: var(--hover2);
+  border: 3px gray solid;
+}
+
+.dark-mode .MainMember .MemberCard .role {
+  border-top: 3px solid gray;
+  border-right: 3px solid gray;
+  border-left: 3px solid gray;
+}
+
+.dark-mode .MainMember .MemberCard .faculty {
+  border-bottom: 3px solid gray;
+  border-right: 3px solid gray;
+  border-left: 3px solid gray;
+}
+
+.dark-mode .MemberID {
+  border: 3px gray solid;
 }
 
 .dark-mode .presidentInfo .role {
@@ -1100,20 +1197,27 @@ body.dark-mode {
   background: linear-gradient(to left, var(--hover), var(--hover2));
 }
 
+.dark-mode .TableHeading {
+  border: 3px gray solid;
+}
+
 /* Form Data */
 
 .dark-mode .FormResponses {
   background: linear-gradient(to right, var(--hover), var(--hover2));
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: 3px gray solid;
 }
 
-/* .dark-mode .DownloadButton.Excel {
-    color: var(--bg);
+.dark-mode .ResponseHeader {
+  border-top: 3px gray solid;
+  border-right: 3px gray solid;
+  border-left: 3px gray solid;
 }
 
-.dark-mode .DownloadButton.Proof {
-    color: var(--bg);
-} */
+.dark-mode .ResponseContent:last-child {
+  border-bottom: 3px gray solid;
+}
 
 .dark-mode .DownloadButton.Pictures {
   color: var(--bg);

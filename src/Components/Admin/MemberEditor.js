@@ -2,23 +2,22 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext'
 import Loader from '../Loader/Loader'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../../hooks/useAuthContext';
 
 import "../Form/Form.css"
 
-const MemberEditor = ({ language, languageData, api, darkMode }) => {
+const MemberEditor = ({ language, languageText, api, darkMode }) => {
     const { members = [], dispatch } = useFormsContext();
     const { committee, memberId } = useParams();
     const [member, setMember] = useState(null);
-    const languageText = languageData[language];
     const [loading, setLoading] = useState(true);
     const [img, setImg] = useState(null);
     const [selectedImageText, setSelectedImageText] = useState(null);

@@ -1,272 +1,178 @@
-/* .account {
-    margin-bottom: 100%;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-right: 130px;
-}
-
-.arabic .account {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-left: 275px;
-    margin-top: -15px;
-    margin-right: 0;
-
-}
-
-.account .title {
-    text-align: center;
-    font-size: 2em;
-}
-
-.account .outerBox {
-    width: fit-content;
-    display: flex;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: auto;
-    gap: 50px;
-    border-radius: 20px;
-}
-
-.accountBox {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: var(--bg2);
-    width: fit-content;
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-.account .outerBox .innerBox {
-    background: var(--bg);
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.account .outerBox .innerBox h2 {
-    text-align: center;
-}
-
-.account .outerBox .innerBox p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-
-}
-
-.account .outerBox .innerBox p::before {
-    content: '$';
-    font-weight: 800;
-    margin-right: 10px;
-}
-
-.account .outerBox .innerBox p span {
-    color: var(--theme);
-    font-weight: 600;
-} */
-
-
-
-
 .account {
-    margin-bottom: 10%;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-right: 130px;
+  margin-bottom: 10%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-right: 130px;
 }
 
 .arabic .account {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-left: 275px;
-    margin-top: -15px;
-    margin-right: 0;
-
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-left: 275px;
+  margin-top: -15px;
+  margin-right: 0;
 }
 
 .account .sectionBox {
-    width: fit-content;
-    display: flex;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: auto;
-    gap: 50px;
-    border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: auto;
+  gap: 50px;
+  border-radius: 20px;
 }
 
 .account .title {
-    text-align: center;
-    font-size: 2em;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--theme);
+  width: 40%;
+  color: var(--bg);
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
-
-
 .account .outerBox {
-    background: var(--bg2);
-    padding: 20px;
-    border-radius: 20px;
-    height: max-content;
-    line-height: 30px;
-
+  background: var(--bg2);
+  padding: 15px;
+  border-radius: 25px;
+  height: max-content;
+  line-height: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .account .outerBox .innerBox {
-    background: var(--bg);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* text-align: center; */
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px lightgrey solid;
+
+  /* text-align: center; */
 }
 
 .account .outerBox .innerBox h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .account .outerBox .innerBox p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    margin: 0;
-    padding: 10px;
-
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 10px;
 }
 
 .arabic .account .outerBox .innerBox p {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    font-weight: 600;
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-weight: 600;
 }
 
 .account .outerBox .innerBox p::before {
-    content: '$';
-    font-weight: 800;
-    margin-right: 10px;
+  content: "$";
+  font-weight: 800;
+  margin-right: 10px;
 }
 
 .account .outerBox .innerBox p span {
-    color: var(--theme);
-    font-weight: 600;
+  color: var(--theme);
+  font-weight: 600;
 }
 
 .account .outerBox .innerBox .button {
-    display: flex;
-    flex-direction: row;
-    /* background: red; */
-    /* padding: 10px; */
-    align-items: center;
-    justify-content: space-between;
-    /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+  /* background: red; */
+  /* padding: 10px; */
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
 }
 
 .account .outerBox .innerBox .buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px
-        /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  /* width: 100%; */
 }
 
 .outerOuterBox {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
-.outerOuterBox .outerBox:nth-child(2) {
-    /* background: var(--bg2); */
-    padding: 20px;
-    border-radius: 20px;
-    height: 100%;
-    line-height: 30px;
-}
-
 
 .outerOuterBox .outerBox:nth-child(2) .innerBox {
-    height: 150px;
-
+  height: 150px;
 }
 
 .outerOuterBox h2 {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
 }
 
 .account .outerBox .innerBox .button .icon {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    font-size: 0.75em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    cursor: pointer;
-    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border: none;
-    border-radius: 30px;
-    color: var(--hover);
-    background: linear-gradient(to right, var(--bg2), var(--bg));
-    margin: 0;
-
-
+  position: relative;
+  width: 25px;
+  height: 25px;
+  font-size: 0.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  cursor: pointer;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: none;
+  border-radius: 30px;
+  color: var(--hover);
+  background: linear-gradient(to right, var(--bg2), var(--bg));
+  margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .pop {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
-    background: var(--bg);
-    width: 15%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    padding: 20px;
-    z-index: 9999;
-    /* display: none; */
-    border-radius: 30px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: linear-gradient(to right, var(--bg), var(--bg2)); */
+  background: var(--bg);
+  width: 15%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 20px;
+  z-index: 9999;
+  /* display: none; */
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px lightgray solid;
 
-    /* Adjust the z-index as needed */
+  /* Adjust the z-index as needed */
 }
 
 .pop .popup-content {
-    background: var(--bg2);
-    padding: 20px;
-    border-radius: 20px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
+  background: var(--bg2);
+  padding: 20px;
+  border-radius: 20px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: 2px lightgray solid;
 }
 
 /* .pop .popup button {
@@ -274,107 +180,96 @@
 } */
 
 .pop button {
-    background: var(--theme);
-    border: none;
-    color: var(--bg);
-    /* font-size: 1.4em; */
-    align-self: end;
-    text-align: center;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.5s ease;
+  background: var(--theme);
+  border: none;
+  color: var(--bg);
+  /* font-size: 1.4em; */
+  align-self: end;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
 }
-
 
 .pop button:hover {
-    transform: scale(1.1);
-    color: var(--theme);
-    background: var(--bg);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: scale(1.1);
+  color: var(--theme);
+  background: var(--bg);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-
 .pop p {
-    margin: 0;
-    font-size: 1.3em;
-    font-weight: 600;
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
 
-    /* text-align: justify; */
+  /* text-align: justify; */
 }
 
 .pop .buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
+@media screen and (max-width: 700px) {
+  .account {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 90%;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0 auto 50% auto;
+  }
+  .account .title {
+    width: 80%;
+    font-size: 1.7em;
+  }
 
+  .arabic .account {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    margin: 0;
+    margin: 40px auto 50% auto;
+  }
 
-@media screen and (max-width:700px) {
+  .account .sectionBox {
+    width: fit-content;
+    flex-direction: column;
+    padding: 15px;
+    gap: 50px;
+    font-size: 0.9em;
+    /* width: 100%; */
+  }
 
-    .account {
-        font-family: 'Poppins', sans-serif;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        width: 90%;
-        /* justify-content: center; */
-        align-items: center;
-        margin: 0 auto 50% auto;
-
-    }
-
-
-    .arabic .account {
-        font-family: 'Noto Kufi Arabic', sans-serif;
-        margin: 0;
-        margin: 40px auto 50% auto;
-
-
-
-    }
-
-    .account .sectionBox {
-        width: fit-content;
-        flex-direction: column;
-        padding: 15px;
-        gap: 50px;
-        font-size: 0.9em;
-        /* width: 100%; */
-    }
-
-    /* .arabic .section .title {
+  /* .arabic .section .title {
         font-size: 0.1em
     } */
 
+  .account .outerBox {
+    padding: 15px;
+  }
 
-    .account .outerBox {
-        padding: 15px;
-    }
+  .account .outerBox .innerBox {
+    /* background: var(--bg2); */
+    padding: 5px;
+  }
 
-    .account .outerBox .innerBox {
-        /* background: var(--bg2); */
-        padding: 5px;
-    }
+  .cards .card .cardsBottomContent {
+    justify-content: space-evenly;
+  }
 
+  .cards .card .img img {
+    width: 100%;
+    height: 120px;
+  }
 
+  .account .pop {
+    width: 70%;
+  }
 
-    .cards .card .cardsBottomContent {
-        justify-content: space-evenly;
-    }
-
-    .cards .card .img img {
-        width: 100%;
-        height: 120px;
-    }
-
-    .account .pop {
-        width: 70%;
-    }
-
-
-    .outerOuterBox {
-        order: 1
-    }
-
+  .outerOuterBox {
+    order: 1;
+  }
 }

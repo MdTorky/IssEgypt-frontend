@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext'
 import Loader from '../Loader/Loader'
-import { useAuthContext } from '../../hooks/useAuthContext';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,13 +9,12 @@ import { Icon } from '@iconify/react';
 
 const GalleryEdit = ({ language, languageText, api, darkMode }) => {
 
-    const { galleries = [], dispatch } = useFormsContext();
+    const { dispatch } = useFormsContext();
     const { id } = useParams();
     const [gallery, setGallery] = useState()
     const [loading, setLoading] = useState(true);
     const [updating, setUpdating] = useState(false);
     const navigate = useNavigate();
-    const { user } = useAuthContext()
 
 
     useEffect(() => {

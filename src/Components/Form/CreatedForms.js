@@ -5,25 +5,20 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faUser, faIdCard, faEnvelope, faPhone, faReceipt, faTrash, faLayerGroup, faCamera } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import InputLogo from '../../images/input_logo.ico'
-import Swal from '@sweetalert2/theme-borderless'
-import withReactContent from 'sweetalert2-react-content'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Loader from '../Loader/Loader'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Icon } from '@iconify/react';
+import SelectInputField from "../components/SelectInputField";
 
-const CreateForm = ({ language, languageData, api, darkMode }) => {
-    const { type, formName } = useParams();
-    const formId = decodeURIComponent(formName);
-    // console.log(formId);
+const CreateForm = ({ language, languageText, api, darkMode }) => {
+    const { type, id } = useParams();
     const navigate = useNavigate();
 
     const { ISSForm = [], forms = [], dispatch } = useFormsContext();
-    const languageText = languageData[language];
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const [messages, setMessages] = useState(true)
@@ -37,6 +32,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     const [picture, setPicture] = useState(null)
     const [proof, setProof] = useState(null);
     const [customInputs, setCustomInputs] = useState([]);
+    const [selectInputValues, setSelectInputValues] = useState({});
     const [selectedImageText, setSelectedImageText] = useState(null);
     const [selectedPictureText, setSelectedPictureText] = useState(null);
     const [updating, setUpdating] = useState(false);
@@ -45,7 +41,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [formId]);
+    }, [id]);
 
 
     useEffect(() => {
@@ -71,7 +67,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
         };
 
         fetchData();
-    }, [api, dispatch, formId]);
+    }, [api, dispatch, id]);
 
 
 
@@ -88,7 +84,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                 }
 
                 const data = await response.json();
-                // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
                 dispatch({
                     type: 'SET_ITEM',
                     collection: "forms",
@@ -105,10 +100,10 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
             }
         };
         fetchData();
-    }, [api, dispatch, formId]);
+    }, [api, dispatch, id]);
 
 
-    const filter = forms.filter((form) => form.eventName === formId);
+    const filter = forms.filter((form) => form._id === id);
 
 
     useEffect(() => {
@@ -176,7 +171,9 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     };
 
 
-    const handleRemoveProofImage = () => {
+    const handleRemoveProofImage = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
         setProof(null);
         setSelectedImageText(null);
     };
@@ -194,7 +191,9 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
     };
 
 
-    const handleRemovePictureImage = () => {
+    const handleRemovePictureImage = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
         setPicture(null);
         setSelectedPictureText(null);
     };
@@ -217,7 +216,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
 
         try {
             let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-            // console.log('Cloud Name:', process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
             let resourceType = type === 'image' ? 'image' : 'video';
             let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
 
@@ -254,13 +252,14 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
             fullName,
             matric,
             email,
-            phone,// Updated to use payment QR URL
+            phone,
             faculty,
             year,
             semester,
             picture: pictureUrl,
             proof: proofUrl,
-            customInputs
+            customInputs,
+            selectInputs: selectInputValues
 
         }
 
@@ -340,8 +339,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                         filter.map((form) => (
                             form.status === true ? (
                                 <div className="FormAll">
-                                    {/* {console.log(form.status)} */}
-
                                     <div className="FormLeft">
                                         <img src={form.eventImg} alt="" />
                                         <div className="FormLeftDetails">
@@ -369,7 +366,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                     required
                                                                     id="fullName"
                                                                 />
-                                                                {!fullName && <label for="fullName" className={`LabelInput ${(fullName) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faUser} /> {languageText.FullName}</label>}
+                                                                {!fullName && <label for="fullName" className={`LabelInput ${(fullName) ? 'valid' : 'invalid'}`}><Icon icon="bx:rename" />{languageText.FullName}</label>}
                                                             </div>
                                                         </div>
                                                     )}
@@ -384,7 +381,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                     id="matric"
                                                                     style={{ textTransform: "uppercase" }}
                                                                 />
-                                                                {!matric && <label for="matric" className={`LabelInput ${(matric) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faIdCard} /> {languageText.Matric}</label>}
+                                                                {!matric && <label for="matric" className={`LabelInput ${(matric) ? 'valid' : 'invalid'}`}><Icon icon="famicons:id-card" /> {languageText.Matric}</label>}
                                                             </div>
                                                         </div>
                                                     )}
@@ -398,7 +395,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                     required
                                                                     id="email"
                                                                 />
-                                                                {!email && <label for="email" className={`LabelInput ${(email) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faEnvelope} /> {languageText.formEmail}</label>}
+                                                                {!email && <label for="email" className={`LabelInput ${(email) ? 'valid' : 'invalid'}`}><Icon icon="entypo:email" /> {languageText.formEmail}</label>}
                                                             </div>
                                                         </div>
                                                     )}
@@ -412,7 +409,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                     required
                                                                     id="phone"
                                                                 />
-                                                                {!phone && <label for="phone" className={`LabelInput ${(phone) ? 'valid' : 'invalid'}`}><FontAwesomeIcon icon={faPhone} /> {languageText.formPhone}</label>}
+                                                                {!phone && <label for="phone" className={`LabelInput ${(phone) ? 'valid' : 'invalid'}`}><Icon icon="ant-design:whats-app-outlined" /> {languageText.formPhone}</label>}
                                                             </div>
                                                         </div>
                                                     )}
@@ -429,7 +426,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                 <option value="Mechanical" >{languageText.FKM}</option>
                                                                 <option value="Civil" >{languageText.FKA}</option>
                                                                 <option value="Chemical" >{languageText.FKT}</option>
-                                                                <option value="Bridging" >{languageText.Found}</option>
+                                                                <option value="Bridging" >{languageText.Space}</option>
                                                                 <option value="Other" >{languageText.Other}</option>
                                                             </select>
                                                         </div>
@@ -448,7 +445,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                 <option value="2022" >2022</option>
                                                                 <option value="2023" >2023</option>
                                                                 <option value="2024" >2024</option>
-                                                                {/* <option value="2025" >2025</option> */}
+                                                                <option value="2025" >2025</option>
                                                             </select>
                                                         </div>
                                                     )}
@@ -460,7 +457,7 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                 required
                                                             >
                                                                 <option value="" disabled selected hidden>{languageText.formSemester}</option>
-                                                                <option value="Bridging & Foundation" >{languageText.Found}</option>
+                                                                <option value="Bridging & Foundation" >{languageText.Space}</option>
                                                                 <option value="1" >1</option>
                                                                 <option value="2" >2</option>
                                                                 <option value="3" >3</option>
@@ -478,11 +475,11 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                     {form.inputs.includes("Picture") && (
                                                         <div className="InputField">
                                                             <label for="picture" className={`LabelInputImg ${(picture) ? 'valid' : 'invalid'}`}>
-                                                                <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faCamera} />{selectedImageText || languageText.picture}</div>
-                                                                {(picture) ? <button className="XImgButton" onClick={handleRemovePictureImage}>
-                                                                    <FontAwesomeIcon icon={faXmark} />
+                                                                <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="wpf:stack-of-photos" />{selectedPictureText || languageText.picture}</div>
+                                                                {(picture) ? <button className="XImgButton" onClick={(e) => handleRemovePictureImage(e)}>
+                                                                    <Icon icon="icon-park-outline:close-one" />
                                                                 </button>
-                                                                    : <FontAwesomeIcon icon={faCloudArrowUp} />}
+                                                                    : <Icon icon="material-symbols:arrow-upload-progress-rounded" />}
                                                             </label>
                                                             <input
                                                                 type="file"
@@ -507,7 +504,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                     <div className="InputLabelField ">
                                                                         <input
                                                                             type="text"
-                                                                            // onChange={(e) => { setCustomInputs(e.target.value) }}
                                                                             onChange={(e) => {
                                                                                 setCustomInputs((prevInputs) => {
                                                                                     const newInputs = [...prevInputs];
@@ -532,6 +528,28 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                     </>
                                                 )}
 
+                                                {form.selectInputs && form.selectInputs.length > 0 && (
+                                                    <>
+                                                        <hr />
+                                                        <div className="PersonalFields">
+                                                            {form.selectInputs.map((selectInput, index) => (
+                                                                <SelectInputField
+                                                                    key={index}
+                                                                    selectInput={selectInput}
+                                                                    value={selectInputValues[selectInput.label] || ''}
+                                                                    onChange={(value) => {
+                                                                        setSelectInputValues(prev => ({
+                                                                            ...prev,
+                                                                            [selectInput.label]: value
+                                                                        }));
+                                                                    }}
+                                                                    language={language}
+                                                                />
+                                                            ))}
+                                                        </div>
+                                                    </>
+                                                )}
+
                                                 {form.inputs.includes("Payment") && form.paymentQR && (
                                                     <><hr />
                                                         <div className="PersonalFields PaymentFields">
@@ -544,17 +562,16 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                         gap: "15px"
                                                                     }}>
                                                                     <img src={form.paymentQR} className="QRCode" alt="" />
-                                                                    {/* {form.paymentAmount && <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>} */}
                                                                     <p className="PaymentAmount"> {form.paymentAmount} {languageText.RM} </p>
 
                                                                 </div>
                                                                 <div className="InputField">
                                                                     <label for="proof" className={`LabelInputImg ${(proof) ? 'valid' : 'invalid'}`}>
-                                                                        <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><FontAwesomeIcon icon={faReceipt} />{selectedImageText || languageText.proof}</div>
-                                                                        {(proof) ? <button className="XImgButton" onClick={handleRemoveProofImage}>
-                                                                            <FontAwesomeIcon icon={faXmark} />
+                                                                        <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="fluent:reciept-20-filled" />{selectedImageText || languageText.proof}</div>
+                                                                        {(proof) ? <button className="XImgButton" onClick={(e) => handleRemoveProofImage(e)}>
+                                                                            <Icon icon="icon-park-outline:close-one" />
                                                                         </button>
-                                                                            : <FontAwesomeIcon icon={faCloudArrowUp} />}
+                                                                            : <Icon icon="material-symbols:arrow-upload-progress-rounded" />}
                                                                     </label>
                                                                     <input
                                                                         type="file"
@@ -568,13 +585,17 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                                     />
                                                                 </div>
                                                             </div>
-                                                            {/* <div className="PaymentAmount">
-                                            </div> */}
                                                         </div>
                                                     </>
                                                 )}
-                                                {/* {form.groupLink && <p className="JoinGroup">{languageText.joinGroup}</p>} */}
-                                                {form.groupLink && <p className="formError"><Icon icon="ooui:error" />{languageText.joinGroup}</p>}
+                                                {form.groupLink && <div className="CategoryInput" style={{ margin: "auto" }} >
+                                                    <input
+                                                        type="checkbox"
+                                                        id="Joined"
+                                                        required
+                                                    />
+                                                    <label htmlFor="Joined">{languageText.JoinedGroup}</label></div>}
+                                                {/* {form.groupLink && <p className="formError"><Icon icon="ooui:error" />{languageText.joinGroup}</p>} */}
                                                 {form.inputs.includes("Payment") && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{languageText.SubmitProof}</p>}
                                                 {(form.groupLink && !form.inputs.includes("Payment")) || (form.groupLink && form.inputs.includes("Payment") && proof) ? (
                                                     <Link
@@ -585,10 +606,6 @@ const CreateForm = ({ language, languageData, api, darkMode }) => {
                                                         {languageText.GroupLink}
                                                     </Link>
                                                 ) : null}
-
-                                                {/* {(buttonClicked || !form.groupLink) && <button className="button" data-content={languageText.Submit}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svgIcon"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" /></svg>
-                                                </button>} */}
                                                 {(!form.inputs.includes("Payment")) || (form.inputs.includes("Payment") && proof) ? (
                                                     <button className="button" data-content={languageText.Submit}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="svgIcon"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" /></svg>

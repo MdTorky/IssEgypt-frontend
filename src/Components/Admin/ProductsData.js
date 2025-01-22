@@ -2,17 +2,12 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useFormsContext } from '../../hooks/useFormContext'
 import * as XLSX from 'xlsx';
-import { utils } from 'xlsx';
 import JSZip from 'jszip';  // Import JSZip
 import Loader from '../Loader/Loader'
 import { saveAs } from 'file-saver';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faFileExcel, faFileZipper } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
 
 const ProductsData = ({ language, languageText, api, darkMode }) => {
     const { products = [], transactions = [], dispatch } = useFormsContext();
@@ -387,7 +382,6 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
                     <div className="FormResponses">
                         <div className="FormResponsesLeft">
                             <p>{languageText.NumberOfPurchases}</p>
-                            {/* <p>2</p> */}
                             <p>{filterLength}</p>
                         </div>
                         <Icon icon="bxs:purchase-tag" className='FormResponsesIcon' />
@@ -456,7 +450,6 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
                                 <th onClick={() => handleSort('productQuantity')}>{languageText.Quantity}</th>
                                 <th onClick={() => handleSort('productSize')}>{languageText.Size}</th>
                                 <th onClick={() => handleSort('transactionStatus')}>{languageText.Status}</th>
-                                {/* <th onClick={() => handleSort('product.pPrice')}>Price</th> */}
                                 <th onClick={() => handleSort('buyerAddress')}>{languageText.Address}</th>
                                 <th>{languageText.Proof}</th>
                                 <th>{languageText.Action}</th>
@@ -482,7 +475,6 @@ const ProductsData = ({ language, languageText, api, darkMode }) => {
                                                 }`}
                                         >{item.transactionStatus}</div>
                                     </td>
-                                    {/* <td> {item.productQuantity * (item.product.pPrice || 0)}</td> */}
                                     <td>{item.buyerAddress}</td>
                                     <td
                                         style={{

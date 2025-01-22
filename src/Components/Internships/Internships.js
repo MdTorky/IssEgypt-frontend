@@ -1,20 +1,17 @@
 import "./Internships.css"
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faInfoCircle, faAt, faSquareUpRight, faCheck, faEnvelope, faXmark, faLocationDot
-} from '@fortawesome/free-solid-svg-icons';
-import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Loader from '../Loader/Loader'
-
+import { Icon } from '@iconify/react';
 import { useFormsContext } from '../../hooks/useFormContext'
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { Link } from "react-router-dom";
+import UserType from "../Auth/UserType";
 
-const Internships = ({ language, languageData, api }) => {
+
+const Internships = ({ languageText, api }) => {
 
     const { internships = [], dispatch } = useFormsContext();
-
-
-    const languageText = languageData[language];
+    const { user } = useAuthContext()
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
@@ -27,7 +24,6 @@ const Internships = ({ language, languageData, api }) => {
 
     const Button = ({ item, languageText }) => {
 
-        // const [popupVisible, setPopupVisible] = useState(false);
 
         return (
             <div className="icons">
@@ -35,29 +31,36 @@ const Internships = ({ language, languageData, api }) => {
                 {item && item.website && (
                     <button className="icon" onClick={() => { window.open(item.website, "_blank") }}>
                         <span className="tooltip" >{languageText.Website}</span>
-                        <span><FontAwesomeIcon icon={faInfoCircle} /></span>
+                        <span><Icon icon="mdi:web" /></span>
                     </button>
                 )}
                 {item && item.email && (
 
                     <button className={`icon`} onClick={() => { window.open(`mailto:${item.email}`, "_blank") }}>
                         <span className="tooltip" >{languageText.Email}</span>
-                        <span><FontAwesomeIcon icon={faEnvelope} /></span>
+                        <span><Icon icon="line-md:email-arrow-up-filled" /></span>
                     </button>
                 )}
                 {item && item.applyEmail && (
 
                     <button className={`icon`} onClick={() => { window.open(`mailto:${item.applyEmail}`, "_blank") }}>
                         <span className="tooltip" >{languageText.ApplyEmail}</span>
-                        <span><FontAwesomeIcon icon={faAt} /></span>
+                        <span><Icon icon="entypo:email" /></span>
                     </button>
                 )}
                 {item && item.apply && (
 
                     <button className={`icon`} onClick={() => { window.open(item.apply, "_blank") }}>
                         <span className="tooltip" >{languageText.Apply}</span>
-                        <span><FontAwesomeIcon icon={faSquareUpRight} /></span>
+                        <span><Icon icon="mdi:arrow-top-left-bold-box" /></span>
                     </button>
+                )}
+
+                {UserType() && (
+                    <Link className={`icon Delete`} to={`/internedit/${item._id}`}>
+                        <span className="tooltip" >{languageText.Edit}</span>
+                        <span><Icon icon="fluent:note-edit-20-filled" /></span>
+                    </Link>
                 )}
 
 
@@ -81,24 +84,24 @@ const Internships = ({ language, languageData, api }) => {
                 }
 
                 const data = await response.json();
-                const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
+                const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
                 dispatch({
                     type: 'SET_ITEM',
                     collection: "internships",
                     payload: sortedData,
                 });
+
                 setMessages(false);
             } catch (error) {
                 console.error('An error occurred while fetching data:', error);
                 setError('An error occurred while fetching data');
                 setMessages(true);
             } finally {
-                // Set loading to false once the data is fetched (success or error)
                 setLoading(false);
             }
         };
         fetchData();
-    }, [api, dispatch, internships]);;
+    }, [api, dispatch, internships]);
 
 
 
@@ -112,7 +115,7 @@ const Internships = ({ language, languageData, api }) => {
 
 
     const allInterns = (number) => {
-        let interns = filteredInternships; // Change const to let here
+        let interns = filteredInternships;
 
 
         switch (number) {
@@ -224,7 +227,6 @@ const Internships = ({ language, languageData, api }) => {
 
         return (
             <div className="selectedCategories">
-                {/* <p>Selected Categories:</p> */}
                 <div className="rowCategories">
                     {selectedCategories.map((category) => (
                         <div key={category}> • {category}</div>
@@ -258,7 +260,7 @@ const Internships = ({ language, languageData, api }) => {
             <div className="selectedCategories">
                 <div className="rowCategories rowLocations">
                     {selectedLocations.map((location) => (
-                        <div key={location}> <FontAwesomeIcon icon={faLocationDot} />      {location}</div>
+                        <div key={location}> <Icon icon="basil:location-solid" />     {location}</div>
                     ))}
                 </div>
             </div>
@@ -486,7 +488,6 @@ const Internships = ({ language, languageData, api }) => {
                         {internsToShow && internsToShow.map((intern) => (
                             <div className="card">
                                 <div className="img"><img src={intern.img} alt="" /></div>
-                                {/* <p>{intern._id}</p> */}
                                 <div className="cardsBottomContent">
                                     <p>{intern.name} </p>
                                     <Button item={intern} languageText={languageText} />
@@ -499,20 +500,6 @@ const Internships = ({ language, languageData, api }) => {
                                             ))}
                                         </div>
                                     )}
-
-                                    {/*   {intern && intern.categories && (
-                                        <div className="categoryDropdown">
-                                            <select className="categorySelect" value={selectedCategory}
-                                                onChange={handleCategoryChange}>
-                                                <option disabled selected value="" hidden>Categories</option>
-                                                {intern.categories.map((category) => (
-                                                    <option key={category} value={category}>
-                                                        {category}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    )} */}
                                 </div>
                             </div>
                         ))}
@@ -532,7 +519,6 @@ const Internships = ({ language, languageData, api }) => {
             <h1 className="title">{languageText.internships}</h1>
             <div className="allFilters">
                 <div className="categoryFilter">
-                    {/* <label htmlFor="categoryFilter">{languageText.chooseCategory}</label> */}
                     <select
                         id="categoryFilter"
                         value={selectedCategory}
@@ -557,7 +543,7 @@ const Internships = ({ language, languageData, api }) => {
 
                     <button className={`icon filter`} onClick={clearFilters}>
                         <span className="tooltip" >{languageText.clear}</span>
-                        <span><FontAwesomeIcon icon={faXmark} /></span>
+                        <span><Icon icon="icon-park-outline:close-one" /></span>
                     </button>
 
 
@@ -584,7 +570,7 @@ const Internships = ({ language, languageData, api }) => {
                     </select>
                     <button className={`icon filter`} onClick={clearLocationFilters}>
                         <span className="tooltip" >{languageText.clear}</span>
-                        <span><FontAwesomeIcon icon={faXmark} /></span>
+                        <span><Icon icon="icon-park-outline:close-one" /></span>
                     </button>
 
                 </div>
@@ -595,19 +581,19 @@ const Internships = ({ language, languageData, api }) => {
             </div>
             <div className="textBox">
                 <div className="hintField">
-                    <FontAwesomeIcon icon={faInfoCircle} className="hintIcon" />
+                    <Icon icon="mdi:web" className="hintIcon" />
                     <p>{languageText.Website}</p>
                 </div>
                 <div className="hintField">
-                    <FontAwesomeIcon icon={faEnvelope} className="hintIcon" />
+                    <Icon icon="line-md:email-arrow-up-filled" className="hintIcon" />
                     <p>{languageText.Email}</p>
                 </div>
                 <div className="hintField">
-                    <FontAwesomeIcon icon={faAt} className="hintIcon" />
+                    <Icon icon="entypo:email" className="hintIcon" />
                     <p>{languageText.ApplyEmail}</p>
                 </div>
                 <div className="hintField">
-                    <FontAwesomeIcon icon={faSquareUpRight} className="hintIcon" />
+                    <Icon icon="mdi:arrow-top-left-bold-box" className="hintIcon" />
                     <p>{languageText.Apply}</p>
                 </div>
             </div>
@@ -623,13 +609,6 @@ const Internships = ({ language, languageData, api }) => {
 
             <div className="scroll">
                 <div className="sectionBox">
-
-                    {/* {internships.length === 0 && searchTerm === '' && (
-                        <p>No internships available.</p>
-                    )}
-                    {filteredInternships.length === 0 && searchTerm !== '' && (
-                        <p>No results found.</p>
-                    )} */}
                     <>
                         {card(languageText.General, 6)}
                         {card(languageText.FKE, 1)}
@@ -643,35 +622,6 @@ const Internships = ({ language, languageData, api }) => {
                     </>
 
                 </div>
-
-                {/* {popupVisible && selectedItem && (
-                        <div className={`popup ${popupVisible ? 'popup-opening' : 'popup-closing'}`}>
-                            <div className="popup-content">
-
-                                <div className="bottom">
-                                    <>
-                                        <div className="header">
-                                            <div className="headerImg">
-                                                <img src={selectedItem.img} alt="" />
-                                                <div className="headerTitle">{selectedItem.name}</div>
-                                            </div>
-
-                                            <button className="icon" onClick={closePopup}>
-                                                <span className="tooltip" >{languageText.close}</span>
-                                                <span><FontAwesomeIcon icon={faXmark} /></span>
-                                            </button>
-
-                                        </div>
-                                        <div className="bus new">{selectedItem.description}</div>
-
-                                    </>
-
-                                </div>
-            
-
-                            </div>
-                        </div>
-                    )} */}
             </div>
         </div>
     );

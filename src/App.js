@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, BrowserRouter as Router, Navigate, Link } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext'
@@ -23,7 +23,6 @@ import SuggestionForm from './Components/Form/SuggestionForm';
 import Suggestions from './Components/Answers/Suggestions';
 import MemberForm from './Components/Form/MemberForm';
 import MemberDetails from './Components/Members/MemberDetails'
-import AllMembers from './Components/Admin/AllMembers'
 import InternshipForm from './Components/Form/InternshipForm';
 import FormCreator from './Components/Form/FormCreator';
 import CreateForm from './Components/Form/CreatedForms';
@@ -45,14 +44,10 @@ import Terms from './Components/Footer/Terms';
 import { useLanguage } from './context/language';
 import languageData from './language.json';
 import BestMembers from './Components/Members/BestMembers';
-import DeansForm from './Components/Form/DeansForm';
 import BookForm from './Components/Book/BookForm';
 import Library from './Components/Book/Library';
 import BookingForm from './Components/Book/BookingForm';
-import WebApplicationsSecurity from './Components/Form/WebApplicationsSecurity101';
-import Magazine from './Components/Book/Magazine';
 import LecturerForm from './Components/Form/LecturerForm';
-import MegaImages from './Components/Home/Images';
 import Gallery from './Components/Gallery/Gallery';
 import Lecturers from './Components/Lecturer/Lecturers';
 import Shop from './Components/Shop/Shop';
@@ -61,6 +56,7 @@ import PurchaseForm from './Components/Shop/PurchaseForm';
 import Reference from './Components/Shop/Reference';
 import ProductsData from './Components/Admin/ProductsData';
 import GalleryEdit from './Components/Gallery/GalleryEdit';
+import EditInternship from './Components/Internships/EditInternship';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -78,8 +74,8 @@ function App() {
 
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
-    var reveals2 = document.querySelectorAll(".reveal2");
-    var reveals3 = document.querySelectorAll(".reveal3");
+    // var reveals2 = document.querySelectorAll(".reveal2");
+    // var reveals3 = document.querySelectorAll(".reveal3");
 
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight; var
@@ -87,7 +83,7 @@ function App() {
           elementVisible) { reveals[i].classList.add("active"); } else { reveals[i].classList.remove("active"); }
     }
   }
-  window.addEventListener("scroll", reveal); // Set the document body class based on the selected language and dark
+  window.addEventListener("scroll", reveal);
   useEffect(() => {
     document.body.className = `${language === 'ar' ? 'arabic' : 'english'} ${darkMode ? 'dark-mode' : ''}`;
   }, [language, darkMode]);
@@ -106,55 +102,56 @@ function App() {
           <div className={`routes ${language === 'ar' ? 'arabic' : ''}`}>
             <Routes>
 
+              {/* <Route path="/MediaCommittee" element={<DeansForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} /> */}
+              {/* <Route path="/WebApplicationsSecurity101" element={<WebApplicationsSecurity darkMode={darkMode} language={language} languageText={languageText} api={api} />} /> */}
 
               {/* All Pages */}
-              <Route exact path="/" element={<Home language={language} languageData={languageData} api={api} />} />
-              <Route path="/gallery" element={<Gallery language={language} languageData={languageData} api={api} />} />
+              <Route exact path="/" element={<Home language={language} languageText={languageText} api={api} />} />
+              <Route path="/gallery" element={<Gallery language={language} languageText={languageText} api={api} />} />
               <Route exact path="/terms&Conditions" element={<Terms />} />
-              <Route path="/services" element={<Services language={language} languageData={languageData} darkMode={darkMode} />} />
-              <Route path="/members" element={<Members darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
+              <Route path="/services" element={<Services language={language} languageText={languageText} api={api} />} />
+              <Route path="/members" element={<Members darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/premiumMembers" element={<BestMembers languageText={languageText} language={language} api={api} />} />
-              <Route path="/members/:memberId" element={<MemberDetails darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/residences" element={<Residences language={language} languageData={languageData} />} />
-              <Route path="/attractions" element={<Attractions language={language} languageData={languageData} />} />
-              <Route path="/transportation" element={<Transportation language={language} languageData={languageData} />} />
-              <Route path="/openAccount" element={<BankAccount language={language} languageData={languageData} />} />
-              <Route path="/clubs" element={<Clubs language={language} languageData={languageData} />} />
-              <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageData={languageData} />} />
-              <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/internships" element={<Internships darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/:formName" element={<CreateForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/charity" element={<CharityForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/coursesTips" element={<CoursesTips darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/tokens" element={<TokensDisplay darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/library" element={<Library darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/bookingForm/:id" element={<BookingForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/MediaCommittee" element={<DeansForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/WebApplicationsSecurity101" element={<WebApplicationsSecurity darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/bookForm" element={<BookForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/magazine" element={<Magazine darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/addLecturer" element={<LecturerForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/lecturers" element={<Lecturers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/shop" element={<Shop darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
-              <Route path="/product/:productId" element={<Product darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/members/:memberId" element={<MemberDetails language={language} languageText={languageText} api={api} />} />
+              <Route path="/residences" element={<Residences languageText={languageText} />} />
+              <Route path="/attractions" element={<Attractions languageText={languageText} />} />
+              <Route path="/transportation" element={<Transportation language={language} languageText={languageText} />} />
+              <Route path="/openAccount" element={<BankAccount language={language} languageText={languageText} />} />
+              <Route path="/clubs" element={<Clubs language={language} languageText={languageText} />} />
+              <Route path="/courses" element={<Courses darkMode={darkMode} language={language} languageText={languageText} />} />
+              <Route path="/suggestionForm" element={<SuggestionForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/allSuggestions/admin" element={<Suggestions darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/internForm/admin" element={<InternshipForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/internships" element={<Internships languageText={languageText} api={api} />} />
+              <Route path="/form/:id" element={<CreateForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/charity" element={<CharityForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/coursesTips" element={<CoursesTips darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/tokens" element={<TokensDisplay darkMode={darkMode} languageText={languageText} api={api} />} />
+              <Route path="/library" element={<Library darkMode={darkMode} languageText={languageText} api={api} />} />
+              <Route path="/bookingForm/:id" element={<BookingForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/bookForm" element={<BookForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/addLecturer" element={<LecturerForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/lecturers" element={<Lecturers darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/shop" element={<Shop language={language} languageText={languageText} api={api} />} />
+              <Route path="/product/:productId" element={<Product language={language} languageText={languageText} api={api} />} />
               <Route path="/purchase/:productId" element={<PurchaseForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
-              <Route path="/reference/:referenceNumber" element={<Reference darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/reference/:referenceNumber" element={<Reference language={language} languageText={languageText} api={api} />} />
               <Route path="/productData" element={<ProductsData darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
 
               {/* Admin */}
-              <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              {/* <Route path="/productData" element={user ? <ProductsData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} /> */}
-              <Route path="/memberForm/admin" element={<MemberForm darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/formCreator/admin" element={user ? <FormCreator darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
-              <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageData={languageData} api={api} />} />
-              <Route path="/tokensShowcase" element={user ? <TokensShowcase darkMode={darkMode} language={language} languageData={languageData} api={api} /> : <Navigate to='/login' />} />
+              {/* <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageText={languageText} api={api} />} /> */}
+              <Route path="/adminDashboard" element={user ? <Admin darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/memberForm/admin" element={<MemberForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/formCreator/admin" element={user ? <FormCreator darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/formEditor/:committee/:formId" element={user ? <FormEditor darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/formData/:committee/:formId" element={user ? <FormData darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/memberEditor/:committee/:memberId" element={user ? <MemberEditor darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/charityEditor" element={<CharityEditor darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/tokensShowcase" element={user ? <TokensShowcase darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
               <Route path="/galleryedit/:id" element={user ? <GalleryEdit darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/internedit/:id" element={user ? <EditInternship darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              {/* <Route path="/productData" element={user ? <ProductsData darkMode={darkMode} language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} /> */}
+
               {/*
                             <Route path="/tokensShowcase" element={<TokensShowcase darkMode={darkMode}
                                 language={language} languageData={languageData} api={api} />} /> */}

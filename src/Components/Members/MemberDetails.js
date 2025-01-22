@@ -5,17 +5,14 @@ import { useFormsContext } from '../../hooks/useFormContext';
 import roleChecker from '../Members/MemberLoader'
 import FacultyCard from '../components/FacultyCard';
 import CommitteeLoader from '../components/CommitteeLoader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import 'animate.css';
+import { Icon } from '@iconify/react';
 
-const MemberDetails = ({ language, languageData, api, darkMode }) => {
+
+const MemberDetails = ({ language, languageText, api }) => {
     const { memberId } = useParams();
     const { members, dispatch } = useFormsContext();
-    const languageText = languageData[language];
 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
@@ -50,7 +47,6 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                 setError('An error occurred while fetching data');
                 setMessages(true);
             } finally {
-                // Set loading to false once the data is fetched (success or error)
                 setLoading(false);
             }
         };
@@ -65,15 +61,15 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
 
                 <button className="icon whatsApp" onClick={() => { window.open(`http://wa.me/${member.phone}`, "_blank") }}>
                     <span class="tooltip" >{languageText.Group}</span>
-                    <span><FontAwesomeIcon icon={faWhatsapp} /></span>
+                    <span><Icon icon="ic:baseline-whatsapp" /></span>
                 </button>
                 <button className="icon" onClick={() => { window.open(`mailto:${member.email}`, "_blank") }}>
                     <span class="tooltip" >{languageText.Email}</span>
-                    <span><FontAwesomeIcon icon={faEnvelope} /></span>
+                    <span> <Icon icon="entypo:email" /></span>
                 </button>
                 <button className="icon linkedIn" onClick={() => { handleLinkedInClick(member.linkedIn) }}>
                     <span class="tooltip" >{languageText.linkedin}</span>
-                    <span><FontAwesomeIcon icon={faLinkedin} /></span>
+                    <span> <Icon icon="uil:linkedin" /></span>
                 </button>
             </div>
         )
@@ -133,7 +129,6 @@ const MemberDetails = ({ language, languageData, api, darkMode }) => {
                         <div className="MemberCard">
                             <div className="MemberID">
                                 <div className="backId">
-                                    {/* Content inside .backId */}
                                 </div>
                                 <div className="idImg">
                                     <img src={member.img} alt="" />

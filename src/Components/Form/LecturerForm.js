@@ -14,9 +14,8 @@ import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
 
-const LecturerForm = ({ api, language, languageData, darkMode }) => {
+const LecturerForm = ({ api, language, languageText, darkMode }) => {
 
-  const languageText = languageData[language];
   const { lecturers, faculties, dispatch } = useFormsContext()
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);

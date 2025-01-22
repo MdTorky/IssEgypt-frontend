@@ -7,7 +7,7 @@ import { useFormsContext } from '../../hooks/useFormContext';
 import Loader from "../Loader/Loader";
 
 
-const Product = ({ api, language, languageText, darkMode }) => {
+const Product = ({ api, language, languageText }) => {
 
 
     const [size, setSize] = useState(null);
@@ -17,7 +17,6 @@ const Product = ({ api, language, languageText, darkMode }) => {
     const { products, dispatch } = useFormsContext();
     const { productId } = useParams();
     const [product, setProduct] = useState({});
-    // const [price, setPrice] = useState(1);
 
 
     useEffect(() => {
@@ -104,12 +103,14 @@ const Product = ({ api, language, languageText, darkMode }) => {
                     <img src={product.pImage} alt="" />
                     <div className="ShopCardNamePrice">
                         <p>{language === "en" ? product.pTitle : product.pArabicTitle}</p>
-                        <p>{product.pPrice} {languageText.RM}</p>
                     </div>
-                    {/* <div className="ShopCardDesc"> */}
-                    {/* <p>Description</p> */}
-                    {/* <button><Icon icon="solar:cart-check-broken" />{languageText.Purchase}</button> */}
-                    {/* </div> */}
+                    <div className="ShopCardDesc">
+                        <p >{product.pDescription}</p>
+                    </div>
+                    <div className="ShopCardPriceDetails">
+                        <p>{product.pPrice} {languageText.RM}</p>
+                        <button> <Icon icon="fluent:share-16-filled" className="ShopCardIcon" onClick={(e) => handleShare(e)} /></button>
+                    </div>
                 </div>
             </Link>
         )
@@ -136,7 +137,6 @@ const Product = ({ api, language, languageText, darkMode }) => {
             const updatedQuantity = quantity - 1;  // Calculate the new quantity first
             setQuantity(updatedQuantity);  // Update the state with the new quantity
             product.pPrice = (product.pPrice * updatedQuantity / quantity);  // Use updated quantity here
-            // localStorage.setItem('selectedPrice', product.pPrice);  // Save updated price
             localStorage.setItem('selectedQuantity', updatedQuantity);  // Save updated quantity
         }
     };
@@ -145,19 +145,12 @@ const Product = ({ api, language, languageText, darkMode }) => {
         if (quantity < 5) {
             const updatedQuantity = quantity + 1;  // Calculate the new quantity first
             setQuantity(updatedQuantity);  // Update the state with the new quantity
-            // product.pPrice = (product.pPrice * updatedQuantity / quantity).toFixed(2);  // Use updated quantity here
             product.pPrice = (product.pPrice * updatedQuantity / quantity);  // Use updated quantity here
-            // localStorage.setItem('selectedPrice', product.pPrice);  // Save updated price
             localStorage.setItem('selectedQuantity', updatedQuantity);  // Save updated quantity
         }
     };
 
 
-    // useEffect(() => {
-
-
-
-    // }, []);
     const handleShare = async () => {
         if (navigator.share) {
             try {
@@ -240,10 +233,8 @@ const Product = ({ api, language, languageText, darkMode }) => {
 
                         <div className='ProductPurchase'>
                             <Link
-                                // to={`/purchase/${product._id}`}
                                 onClick={handlePurchase}
                                 className='PurchaseButton'
-                            // onClick={handleAddToCart}
                             >
                                 <Icon icon="heroicons:shopping-bag" />
                                 <p >{languageText.Purchase}</p>

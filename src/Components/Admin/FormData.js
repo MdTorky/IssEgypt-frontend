@@ -2,30 +2,22 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext'
 import Loader from '../Loader/Loader'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus, faFileExcel, faFileZipper, faReply } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
 import * as XLSX from 'xlsx';
 import { utils } from 'xlsx';
-import JSZip from 'jszip';  // Import JSZip
+import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { Icon } from '@iconify/react';
 
 import './FormData.css'
-import FacultyCard from '../components/FacultyCard';
 
-const FormData = ({ language, languageData, api, darkMode }) => {
+const FormData = ({ language, languageText, api, darkMode }) => {
 
     const { ISSForm = [], forms = [], dispatch } = useFormsContext();
-    const { committee, formId } = useParams();
+    const { formId } = useParams();
     const [form, setForm] = useState(null);
-    const languageText = languageData[language];
-    const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -88,20 +80,6 @@ const FormData = ({ language, languageData, api, darkMode }) => {
 
 
 
-
-    // useEffect(() => {
-    //     const issResponses = ISSForm.filter((form) => form.eventID === formId).length;
-
-    //     if (form && issResponses >= form.limit) {
-    //         handleStatusChange(form);
-    //     }
-    // }, [ISSForm, form, formId]);
-
-
-
-
-
-
     const handleHeaderClick = (header) => {
         const columnData = filteredData.map((formData) => {
             switch (header) {
@@ -121,8 +99,13 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                     return formData.semester;
                 case "Custom Inputs":
                     return formData.customInputs ? formData.customInputs.join(', ') : '';
-                default:
-                    return '';
+                default: // Handle dynamic Select Input headers
+                    return formData.selectInputs?.[header]
+                        ? Array.isArray(formData.selectInputs[header])
+                            ? formData.selectInputs[header].join(', ')
+                            : formData.selectInputs[header]
+                        : '';
+
             }
         });
 
@@ -179,72 +162,6 @@ const FormData = ({ language, languageData, api, darkMode }) => {
 
 
 
-
-
-
-
-
-
-
-
-    // const handleStatusChange = async (selectedForm) => {
-    //     try {
-
-
-
-    //         const response = await fetch(`${api}/api/forms/${selectedForm._id}`, {
-    //             method: 'PATCH',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({ status: false }),
-
-    //         });
-
-
-    //         console.log('API Response:', response);
-
-    //         if (!response.ok) {
-    //             console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
-    //             return;
-    //         }
-
-
-    //         dispatch({
-    //             type: 'UPDATE_ITEM',
-    //             collection: 'forms',
-    //             payload: { id: selectedForm._id, changes: { status: false } },
-    //         });
-
-    //         {
-    //             toast.success(`${languageText.statusChanged}`, {
-    //                 position: "bottom-center",
-    //                 autoClose: 3000,
-    //                 hideProgressBar: true,
-    //                 closeOnClick: true,
-    //                 pauseOnHover: true,
-    //                 draggable: true,
-    //                 progress: undefined,
-    //                 theme: darkMode ? "dark" : "colored",
-    //                 style: {
-    //                     fontFamily: language === 'ar' ?
-    //                         'Noto Kufi Arabic, sans-serif' :
-    //                         'Poppins, sans-serif',
-    //                 },
-    //             });
-    //         }
-
-    //     } catch (error) {
-    //         console.error('An error occurred while updating form status:', error);
-    //     }
-    // };
-
-
-
-
-
-
-
     const handleDownloadExcel = () => {
         if (!filteredData || filteredData.length === 0) {
             toast.warning("No data to download", {
@@ -280,13 +197,27 @@ const FormData = ({ language, languageData, api, darkMode }) => {
             return;
         }
 
+        // Serialize data with Select Inputs included
         const serializedData = filteredData.map(formData => {
+            const selectInputData = {};
+
+            if (form.selectInputs) {
+                form.selectInputs.forEach(selectInput => {
+                    const label = selectInput.label;
+                    const value = formData?.selectInputs?.[label];
+
+                    selectInputData[label] = Array.isArray(value) ? value.join(', ') : value || '';
+                });
+            }
+
             return {
                 ...formData,
-                customInputs: JSON.stringify(formData.customInputs),
+                customInputs: JSON.stringify(formData.customInputs), // Include custom inputs as a JSON string
+                ...selectInputData, // Spread selectInput data into the serialized object
             };
         });
 
+        // Create Excel file
         const worksheet = utils.json_to_sheet(serializedData);
         const workbook = utils.book_new();
         utils.book_append_sheet(workbook, worksheet, 'Responses');
@@ -297,6 +228,7 @@ const FormData = ({ language, languageData, api, darkMode }) => {
             console.error('Error while writing Excel file:', error);
         }
     };
+
 
 
 
@@ -379,7 +311,6 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                             <p>{languageText.NoResponses}</p>
                             <p>{filterLength}</p>
                         </div>
-                        {/* <FontAwesomeIcon icon={faReply} className='FormResponsesIcon' /> */}
                         <Icon icon="fluent:person-feedback-48-filled" className='FormResponsesIcon' />
                     </div>
                     <div className="SearchForms">
@@ -395,13 +326,13 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                     <p className="HeaderCopy">{languageText.Header}</p>
                     <div className="ButtonsContainer">
                         {filterLength > 0 && <button className="DownloadButton Excel" onClick={handleDownloadExcel}>
-                            <FontAwesomeIcon icon={faFileExcel} /> {languageText.Excel}
+                            <Icon icon="file-icons:microsoft-excel" /> {languageText.Excel}
                         </button>}
                         {form?.inputs.includes("Picture") && filterLength > 0 && <button className="DownloadButton Pictures" onClick={handleDownloadAllPictures}>
-                            <FontAwesomeIcon icon={faImage} />  {languageText.dPictures}
+                            <Icon icon="mage:image-fill" /> {languageText.dPictures}
                         </button>}
-                        {form?.inputs.includes("Payment") && filterLength > 0 && <button className="DownloadButton Proof" onClick={handleDownloadAllProofPictures}>
-                            <FontAwesomeIcon icon={faFileZipper} />  {languageText.dProof}
+                        {!form?.inputs.includes("Payment") && filterLength > 0 && <button className="DownloadButton Proof" onClick={handleDownloadAllProofPictures}>
+                            <Icon icon="hugeicons:zip-02" />  {languageText.dProof}
                         </button>}
                     </div>
                     <div className="OverFlow">{languageText.ScrollHorizontal}</div>
@@ -420,9 +351,12 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                                     {form.inputs.includes("Custom Inputs") && form.customInputs != "" && (
                                         form.customInputs.map((customInput, index) => (
                                             <th onClick={() => handleHeaderClick("Custom Inputs")} >{form.customInputs[index]}</th>
-                                        ))
-                                    )
-                                    }
+                                        )))}
+                                    {form.inputs.includes("Select Input") && form?.selectInputs && form.selectInputs.map((selectInput, index) => (
+                                        <th key={index} onClick={() => handleHeaderClick(selectInput.label)}>
+                                            {selectInput.label}
+                                        </th>
+                                    ))}
                                     {form?.inputs.includes("Payment") && (
                                         <th>{languageText.Proof}</th>
                                     )}
@@ -448,6 +382,13 @@ const FormData = ({ language, languageData, api, darkMode }) => {
                                                 ))
 
                                             )}
+                                            {form.inputs.includes("Select Input") && form?.selectInputs && form.selectInputs.map((selectInput, index) => (
+                                                <td key={index}>
+                                                    {Array.isArray(formData?.selectInputs?.[selectInput.label])
+                                                        ? formData.selectInputs[selectInput.label].join(', ')
+                                                        : formData.selectInputs[selectInput.label] || '-'}
+                                                </td>
+                                            ))}
                                             {form.inputs.includes("Payment") && (<td
                                                 style={{
                                                     cursor: "pointer"

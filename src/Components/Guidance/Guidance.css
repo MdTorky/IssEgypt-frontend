@@ -2,761 +2,675 @@
 @import url(https://fonts.googleapis.com/css?family=Special+Elite);
 
 .CharityPage {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 10px;
 }
 
 .CharityPage .formBox {
-    /* width: fit-content; */
-    margin: inherit;
-    /* justify-content: center; */
+  /* width: fit-content; */
+  margin: inherit;
+  /* justify-content: center; */
 }
 
 .CharityText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: space-evenly; */
-    /* gap: 10px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  /* gap: 10px; */
 }
 
-
-
 .CharityText h2 {
-    /* text-align: center; */
-    font-size: 2em;
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    color: var(--theme);
-    margin: 0
+  /* text-align: center; */
+  font-size: 2em;
+  font-family: "Noto Kufi Arabic", sans-serif;
+  color: var(--theme);
+  margin: 0;
 }
 
 .CharityText h3 {
-    /* text-align: center; */
-    font-size: 1.7em;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-
+  /* text-align: center; */
+  font-size: 1.7em;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-.CharityText>p {
-    margin: 0;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    display: flex;
-    align-items: center;
-    color: var(--theme);
-    gap: 5px;
+.CharityText > p {
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  color: var(--theme);
+  gap: 5px;
 }
 
 .IconSize {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .InputField .input {
-
-    margin: auto;
+  margin: auto;
 }
 
 .SelectLinkType {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .CourseNotFound {
-    width: 80%;
-    text-align: center;
-    white-space: wrap;
-    margin: 0;
-    color: var(--bg);
-    font-weight: 500;
-    background: var(--theme2);
-    padding: 5px;
-    border-radius: 15px;
+  width: 80%;
+  text-align: center;
+  white-space: wrap;
+  margin: 0;
+  color: var(--bg);
+  font-weight: 500;
+  background: var(--theme2);
+  padding: 5px;
+  border-radius: 15px;
 }
 
 .ExternalLink {
-    width: 70%;
-    text-align: center;
-    white-space: wrap;
-    margin: 0;
-    /* color: var(--hover); */
-    font-weight: 500;
+  width: 70%;
+  text-align: center;
+  white-space: wrap;
+  margin: 0;
+  /* color: var(--hover); */
+  font-weight: 500;
 }
 
 .Links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    position: relative;
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    padding: 10px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  background: linear-gradient(to right, var(--bg), var(--bg2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .icon.DeleteLinkButton {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    /* background: lightgrey; */
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  /* background: lightgrey; */
 
-    font-size: 1.2em !important;
-    animation: none;
-    letter-spacing: none;
+  font-size: 1.2em !important;
+  animation: none;
+  letter-spacing: none;
 }
 
 .arabic .icon.DeleteLinkButton {
-    position: absolute;
-    right: inherit;
-    left: 5px;
-    /* background: lightgrey; */
+  position: absolute;
+  right: inherit;
+  left: 5px;
+  /* background: lightgrey; */
 
-    font-size: 1.2em !important;
-    animation: none;
-    letter-spacing: none;
+  font-size: 1.2em !important;
+  animation: none;
+  letter-spacing: none;
 }
 
 .icon span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .icon.AddLinkButton {
-    font-size: 1.2em !important;
-    animation: none;
-    letter-spacing: none;
+  font-size: 1.2em !important;
+  animation: none;
+  letter-spacing: none;
 }
 
-
-
-
-
 .AnimatedInput {
-    transition: opacity 0.5s ease;
-    /* animation: fadeIn 0.5s ease; */
-    animation: myAnim 1s ease 0s;
+  transition: opacity 0.5s ease;
+  /* animation: fadeIn 0.5s ease; */
+  animation: myAnim 1s ease 0s;
 }
 
 .AnimatedInput2 {
-    transition: opacity 0.5s ease;
-    /* animation: fadeIn 0.5s ease; */
-    animation: myAnim 2s ease 0s;
+  transition: opacity 0.5s ease;
+  /* animation: fadeIn 0.5s ease; */
+  animation: myAnim 2s ease 0s;
 }
 
-
 @keyframes myAnim {
-    0% {
-        transform: scale(0.5);
-    }
+  0% {
+    transform: scale(0.5);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .Guidance .formBox {
-    height: fit-content;
+  height: fit-content;
 }
 
 /* Instructions */
 
-
 .InstructionText {
-    padding: 15px;
-    background: linear-gradient(to left, var(--bg), var(--bg2));
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border-radius: 20px;
-    max-width: 350px;
-    text-align: justify;
+  padding: 15px;
+  background: linear-gradient(to left, var(--bg), var(--bg2));
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 20px;
+  max-width: 350px;
+  text-align: justify;
 }
 
 .InstructionText p {
-    margin: 0;
-    /* white-space: wrap; */
+  margin: 0;
+  /* white-space: wrap; */
 }
 
 .InstructionText .AboutIt {
-    font-weight: 800;
-    font-size: 0.9em;
-    /* line-height: 120% */
+  font-weight: 800;
+  font-size: 0.9em;
+  /* line-height: 120% */
 }
 
 .InstructionText .CHATGPT {
-    font-weight: 800;
-    font-size: 0.6em;
-    margin-bottom: 10px;
-    color: mediumseagreen
+  font-weight: 800;
+  font-size: 0.6em;
+  margin-bottom: 10px;
+  color: mediumseagreen;
 }
 
-
-
 .Quote {
-    font-size: 1.4em;
-    margin: auto;
-    font-family: Open Sans;
-    font-style: italic;
-    color: #d5d5d5;
-    padding: 1em 20px 0.8em 20px;
-    border-left: 8px solid var(--theme);
-    line-height: 1.6;
-    position: relative;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    border-radius: 5px;
-    box-shadow: rgba(214, 42, 3, 0.3) 0px 0px 0px 3px;
+  font-size: 1.4em;
+  margin: auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #d5d5d5;
+  padding: 1em 20px 0.8em 20px;
+  border-left: 8px solid var(--theme);
+  line-height: 1.6;
+  position: relative;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  border-radius: 5px;
+  box-shadow: rgba(214, 42, 3, 0.3) 0px 0px 0px 3px;
 }
 
 .arabic .Quote {
-    border-right: 8px solid var(--theme);
-    border-left: none;
-
+  border-right: 8px solid var(--theme);
+  border-left: none;
 }
 
 .Quote::before {
-    font-family: Arial;
-    content: "\201C";
-    color: var(--theme);
-    font-size: 1.8em;
-    position: absolute;
-    left: 10px;
-    top: -5px;
+  font-family: Arial;
+  content: "\201C";
+  color: var(--theme);
+  font-size: 1.8em;
+  position: absolute;
+  left: 10px;
+  top: -5px;
 }
 
 .arabic .Quote::before {
-    left: inherit;
-    right: 10px;
-    direction: rtl;
-    content: "\201D";
-
+  left: inherit;
+  right: 10px;
+  direction: rtl;
+  content: "\201D";
 }
 
 .Quote::after {
-    content: '';
+  content: "";
 }
 
 .Quote .QuoteText {
-    font-style: italic;
-    font-size: 0.6em;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-size: 0.6em;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
 }
 
 .arabic .Quote .QuoteText {
-    font-style: italic;
-    font-size: 0.6em;
-    font-weight: 500;
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    margin-bottom: 2px;
-
-
+  font-style: italic;
+  font-size: 0.6em;
+  font-weight: 500;
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-bottom: 2px;
 }
 
 .Quote span {
-    display: block;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 0.5em;
-    color: var(--theme);
-    font-family: 'Poppins', sans-serif;
-
+  display: block;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.5em;
+  color: var(--theme);
+  font-family: "Poppins", sans-serif;
 }
 
 .arabic .Quote span {
-
-    font-family: 'Noto Kufi Arabic', sans-serif;
-
-
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
-
-
-/* .InstructionText hr {
-    height: 0.2em !important;
-    margin: 10px auto;
-    width: 70%;
-}
-
-.QuoteBack {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.QuoteBack .QuoteText {
-    font-style: italic;
-    text-align: center;
-    font-size: 0.9em;
-    width: 70%;
-    margin: auto;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.QuoteBack span {
-    font-size: 0.8em;
-    color: var(--theme);
-    font-weight: 800;
-}*/
-
 
 .Steps {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .Steps .StepText {
-    display: flex;
-    color: var(--theme);
-    font-weight: 900;
-    align-items: center;
-    font-size: 0.8em;
-    gap: 5px;
-
+  display: flex;
+  color: var(--theme);
+  font-weight: 900;
+  align-items: center;
+  font-size: 0.8em;
+  gap: 5px;
 }
 
 .Steps p {
-    color: var(--hover);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  color: var(--hover);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .InstructionText .Charity {
-    background: var(--theme);
-    padding: 10px;
-    font-size: 0.7em;
-    font-weight: 900;
-    color: var(--bg);
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  background: var(--theme);
+  padding: 10px;
+  font-size: 0.7em;
+  font-weight: 900;
+  color: var(--bg);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-
 
 .InstructionText .Charity .CharityIcon {
-    width: 3em;
-    height: 3em;
-    font-size: 15px !important
+  width: 3em;
+  height: 3em;
+  font-size: 15px !important;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Courses Tips */
 
-
-.Guidance>h2 {
-    text-align: center;
-    font-size: 2em;
-    font-weight: 800;
-    color: var(--theme);
-    text-transform: uppercase;
+.Guidance > h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--theme);
+  width: 40%;
+  color: var(--bg);
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
 .CourseTipName {
-    text-align: center;
-    font-weight: 800;
-    /* color: var(--theme2) */
+  text-align: center;
+  font-weight: 800;
+  /* color: var(--theme2) */
 }
 
 .arabic .CourseTipName {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-
 .swiper {
-    margin: 0 auto;
-    width: 350px;
-    /* height: 240px; */
+  margin: 0 auto;
+  width: 350px;
+  /* height: 240px; */
 }
 
 .HintCourseTips {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .HintCourseTips .textBox {
-    margin: auto;
-    display: flex;
-    font-weight: 800;
-    width: 100%;
-    justify-content: center;
-    gap: 25px;
-    display: none;
-    flex-wrap: wrap;
+  margin: auto;
+  display: flex;
+  font-weight: 800;
+  width: 100%;
+  justify-content: center;
+  gap: 25px;
+  display: none;
+  flex-wrap: wrap;
 }
 
 .HintCourseTips .textBox .hintField {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .HintCourseTips .textBox .hintIcon {
-    color: var(--theme)
+  color: var(--theme);
 }
 
 .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    /* padding: 10px; */
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  /* padding: 10px; */
+  text-align: center;
 }
-
 
 .TipCard {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    background: linear-gradient(to right, var(--theme2), var(--theme));
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: linear-gradient(to right, var(--theme2), var(--theme));
 }
 
-
 .TipCard::before {
-    width: 160px;
-    height: 160px;
-    content: "";
-    background: linear-gradient(to right, var(--theme2), var(--theme));
-    position: absolute;
-    /* z-index: 1; */
-    border-radius: 50%;
-    right: -25%;
-    top: -25%;
-    /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12); */
-    /* box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09); */
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+  width: 160px;
+  height: 160px;
+  content: "";
+  background: linear-gradient(to right, var(--theme2), var(--theme));
+  position: absolute;
+  /* z-index: 1; */
+  border-radius: 50%;
+  right: -25%;
+  top: -25%;
+  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12); */
+  /* box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09); */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
 }
 
 .arabic .TipCard::before {
-    left: -25%;
-    right: inherit;
-    /* top: -25%; */
+  left: -25%;
+  right: inherit;
+  /* top: -25%; */
 }
 
 .TipNo {
-    position: absolute;
-    top: 0;
-    right: 30px;
+  position: absolute;
+  top: 0;
+  right: 30px;
 }
 
 .arabic .TipNo {
-    left: 30px;
-    right: inherit;
-
+  left: 30px;
+  right: inherit;
 }
 
 .TipHeading {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: rgb(241, 241, 241);
-    /* z-index: 2; */
-    margin: 0;
-    text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(241, 241, 241);
+  /* z-index: 2; */
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .TipName {
-    margin: -23px 0 0 5px;
-    font-size: 0.5em;
-    background: var(--bg2);
-    padding: 2px 5px;
-    color: var(--hover);
-    border-radius: 5px;
+  margin: -23px 0 0 5px;
+  font-size: 0.5em;
+  background: var(--bg2);
+  padding: 2px 5px;
+  color: var(--hover);
+  border-radius: 5px;
 }
 
 .TipTip {
-    font-size: 0.7em;
-    color: rgb(241, 241, 241);
-    /* z-index: 2; */
-    margin: 0;
-    text-align: start;
-
+  font-size: 0.7em;
+  color: rgb(241, 241, 241);
+  /* z-index: 2; */
+  margin: 0;
+  text-align: start;
 }
 
-
 .TipIndustrial {
-    margin: -10px 0;
-    font-size: 0.8em;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    padding: 5px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 10px;
+  margin: -10px 0;
+  font-size: 0.8em;
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
 }
 
 .TipButtons {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .TipDa3wa {
-    font-size: 0.6em;
-    margin: 0;
-    background: var(--bg);
-    color: var(--theme);
-    padding: 5px;
-    margin: auto;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  font-size: 0.6em;
+  margin: 0;
+  background: var(--bg);
+  color: var(--theme);
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .PrayerIcon {
-    width: 3em;
-    height: 3em;
-    font-size: 10px !important
+  width: 3em;
+  height: 3em;
+  font-size: 10px !important;
 }
 
 .arabic .PrayerIcon {
-    font-size: 8px !important;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+  font-size: 8px !important;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
-
-
 .mySwiper2 .swiper-pagination {
-    position: absolute;
-    bottom: -3px !important;
+  position: absolute;
+  bottom: -3px !important;
 }
 
 .mySwiper2 .swiper-pagination .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: var(--bg);
-    opacity: 0.9;
-    margin: 0 5px;
-    border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--bg);
+  opacity: 0.9;
+  margin: 0 5px;
+  border-radius: 50%;
 }
 
 .mySwiper2 .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: var(--hover);
+  background-color: var(--hover);
 }
 
-
-
 .AnimatedCard {
-    animation: Bounce 2s ease 0s 1 normal forwards;
+  animation: Bounce 2s ease 0s 1 normal forwards;
 }
 
 @keyframes Bounce {
-    0% {
-        animation-timing-function: ease-in;
-        opacity: 0;
-        transform: translateX(250px);
-    }
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateX(250px);
+  }
 
-    38% {
-        animation-timing-function: ease-out;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateX(0);
+  }
 
-    55% {
-        animation-timing-function: ease-in;
-        transform: translateX(68px);
-    }
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateX(68px);
+  }
 
-    72% {
-        animation-timing-function: ease-out;
-        transform: translateX(0);
-    }
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
 
-    81% {
-        animation-timing-function: ease-in;
-        transform: translateX(32px);
-    }
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateX(32px);
+  }
 
-    90% {
-        animation-timing-function: ease-out;
-        transform: translateX(0);
-    }
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
 
-    95% {
-        animation-timing-function: ease-in;
-        transform: translateX(8px);
-    }
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateX(8px);
+  }
 
-    100% {
-        animation-timing-function: ease-out;
-        transform: translateX(0);
-    }
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
 }
-
-
 
 @keyframes BounceBack {
-    0% {
-        animation-timing-function: ease-in;
-        opacity: 0;
-        transform: translateY(250px);
-    }
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateY(250px);
+  }
 
-    38% {
-        animation-timing-function: ease-out;
-        opacity: 1;
-        transform: translateY(0);
-    }
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    55% {
-        animation-timing-function: ease-in;
-        transform: translateY(65px);
-    }
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateY(65px);
+  }
 
-    72% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 
-    81% {
-        animation-timing-function: ease-in;
-        transform: translateY(28px);
-    }
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateY(28px);
+  }
 
-    90% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 
-    95% {
-        animation-timing-function: ease-in;
-        transform: translateY(8px);
-    }
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateY(8px);
+  }
 
-    100% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 }
 
-
-
-
-
-
-
-
-
 @keyframes BounceTop {
-    0% {
-        animation-timing-function: ease-in;
-        opacity: 0;
-        transform: translateY(-150px);
-    }
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateY(-150px);
+  }
 
-    38% {
-        animation-timing-function: ease-out;
-        opacity: 1;
-        transform: translateY(0);
-    }
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    55% {
-        animation-timing-function: ease-in;
-        transform: translateY(-65px);
-    }
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateY(-65px);
+  }
 
-    72% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 
-    81% {
-        animation-timing-function: ease-in;
-        transform: translateY(-28px);
-    }
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateY(-28px);
+  }
 
-    90% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 
-    95% {
-        animation-timing-function: ease-in;
-        transform: translateY(-8px);
-    }
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateY(-8px);
+  }
 
-    100% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 }
 
 .AnimatedCard2 {
-
-    animation: BounceTop 2s ease 0s 1 normal forwards;
+  animation: BounceTop 2s ease 0s 1 normal forwards;
 }
 
+@media screen and (max-width: 800px) {
+  .CharityPage {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
 
+  .HintCourseTips .textBox {
+    display: flex;
+  }
 
-@media screen and (max-width:800px) {
-    .CharityPage {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
+  .AnimatedCard {
+    animation: BounceBack 2s ease 0s 1 normal forwards;
+  }
 
-    .HintCourseTips .textBox {
-        display: flex;
-    }
-
-    .AnimatedCard {
-        animation: BounceBack 2s ease 0s 1 normal forwards;
-    }
-
+  .Guidance > h2 {
+    width: 80%;
+    font-size: 1.7em;
+  }
 }

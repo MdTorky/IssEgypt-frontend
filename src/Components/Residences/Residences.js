@@ -1,12 +1,7 @@
 import "./Residences.css"
-import images from "../../data/images.json";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faLocationDot, faInfoCircle, faEnvelope, faPhone, faBuilding
-} from '@fortawesome/free-solid-svg-icons';
 import kollegesData from "../../data/kolleges.json"
-import { useLanguage } from '../../context/language';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Icon } from '@iconify/react';
 
 
 const kolleges = kollegesData.on;
@@ -19,21 +14,21 @@ const Button = ({ kollege, languageText }) => {
         <div className="icons">
             <button className="icon" onClick={() => { if (kollege && kollege.link) { window.open(kollege.link, "_blank") } else { alert(languageText.error) } }}>
                 <span className="tooltip">{languageText.Website}</span>
-                <span><FontAwesomeIcon icon={faInfoCircle} /></span>
+                <span><Icon icon="mdi:web" /></span>
             </button>
             <button className="icon" onClick={() => { window.open(kollege.location, "_blank") }}>
 
                 <span className="tooltip" >{languageText.Location}</span>
-                <span><FontAwesomeIcon icon={faLocationDot} /></span>
+                <span><Icon icon="basil:location-solid" /></span>
             </button>
             <button className="icon" onClick={() => { window.open(kollege.phone, "_blank") }}>
                 <span className="tooltip" >{languageText.Phone}</span>
-                <span><FontAwesomeIcon icon={faPhone} /></span>
+                <span><Icon icon="iconamoon:phone-fill" /></span>
             </button>
             <button className="icon" onClick={() => { if (kollege && kollege.email) { window.open(kollege.email, "_blank") } else { alert(languageText.error2) } }}>
 
                 <span className="tooltip" >{languageText.Email}</span>
-                <span><FontAwesomeIcon icon={faEnvelope} /></span>
+                <span><Icon icon="material-symbols:alternate-email" /></span>
             </button>
 
         </div>
@@ -42,29 +37,23 @@ const Button = ({ kollege, languageText }) => {
 }
 
 
-const Residences = ({ language, languageData }) => {
+const Residences = ({ languageText }) => {
 
-    const { toggleLanguage } = useLanguage();
-    useEffect(() => {
-    }, [language, languageData]);
+
 
 
     useEffect(() => {
-        // Calculate and set animation delay for each card
         const peopleCards = document.querySelectorAll('.card');
 
 
         peopleCards.forEach((card, index) => {
-            card.style.animationDelay = `${0.2 * index}s`; // Adjust the delay as needed
+            card.style.animationDelay = `${0.2 * index}s`;
         });
     }, []);
 
-    const languageText = languageData[language];
     return (
         <div className="section">
             <h1 className="title">{languageText.residence}</h1>
-            {/* <map name="">aa</map> */}
-            {/* <div className="overlay"><FontAwesomeIcon icon={faBuilding} /></div> */}
             <div className="sectionBox">
                 <div className="outerBox">
                     <div className="innerBox">

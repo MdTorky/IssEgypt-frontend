@@ -1,38 +1,26 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Loader from '../Loader/Loader'
 import InputLoader from '../Loader/InputLoader'
-import LogoLoader from '../Loader/LogoLoader'
 import './Guidance.css'
 import { Icon } from '@iconify/react';
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
-import AllFacultyCards from '../components/AllFacultiesCard'
 import Select from 'react-select';
 import SelectStyles from '../components/SelectStyles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCreative, Navigation, Pagination } from 'swiper/modules';
+import { EffectCreative, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-creative';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus } from '@fortawesome/free-solid-svg-icons';
-
-// import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-// import app from '../../firebase'
 
 
 
 
 
-const CoursesTips = ({ language, languageData, api, darkMode }) => {
+const CoursesTips = ({ language, languageText, api, darkMode }) => {
     const { courses = [], faculties, charities = [], dispatch } = useFormsContext()
-    const navigate = useNavigate();
-    const languageText = languageData[language];
     const [loading, setLoading] = useState(false);
     const [facultyLoading, setFacultyLoading] = useState(true);
     const [courseLoading, setCourseLoading] = useState(true);
@@ -371,10 +359,6 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
 
 
                                 ))}
-                            {/* {FilterCourse.length === 0 && sem && faculty && !courseLoading &&
-                                <p className="CourseNotFound">{languageText.CourseNotFound}</p>
-                            } */}
-
                             {((FilterCourse.length === 0 && sem && faculty && !courseLoading) ||
                                 ((FilterCourse.length === 0 && faculty === "Found" && !courseLoading))) &&
                                 <p className="CourseNotFound">{languageText.CourseNotFound}</p>
@@ -389,36 +373,6 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
                 {/* {console.log(filteredCharities)} */}
                 {filteredCharities.length > 0 &&
                     <div className="HintCourseTips">
-                        {/* <div className="textBox">
-                            <div className="hintField">
-                                <Icon icon="fluent-mdl2:website" className="hintIcon" />
-                                <p>{languageText.Website}</p>
-                            </div>
-                            <div className="hintField">
-                                <Icon icon="logos:google-drive" className="hintIcon" />
-                                <p>{languageText.Drive}</p>
-                            </div>
-                            <div className="hintField">
-                                <Icon icon="logos:youtube-icon" className="hintIcon" />
-                                <p>{languageText.YoutubeVideo}</p>
-                            </div>
-                            <div className="hintField">
-                                <Icon icon="ic:outline-article" className="hintIcon" />
-                                <p>{languageText.Article}</p>
-                            </div>
-                            <div className="hintField">
-                                <Icon icon="fluent:hat-graduation-12-filled" className="hintIcon" />
-                                <p>{languageText.OnlineCourse}</p>
-                            </div>
-                            <div className="hintField">
-                                <Icon icon="ph:link-simple-bold" className="hintIcon" />
-                                <p>{languageText.GeneralLink}</p>
-                            </div>
-                            <div className="hintField">
-                                <Icon icon="fa6-regular:file-pdf" className="hintIcon" />
-                                <p>{languageText.File}</p>
-                            </div>
-                        </div> */}
                         <h3 className="CourseTipName AnimatedCard2">{course}</h3>
                         <div className="CoursesTips AnimatedCard">
 
@@ -427,9 +381,7 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
                                     key={swiperKey}
                                     grabCursor={true}
                                     effect={'creative'}
-                                    // loop={true}
                                     rewind={true}
-                                    // navigation={true}
                                     pagination={{
                                         clickable: true,
                                     }}
@@ -451,7 +403,6 @@ const CoursesTips = ({ language, languageData, api, darkMode }) => {
                                         <SwiperSlide key={index}>
                                             <TipCard faculty={charity} slideNumber={index} />
                                         </SwiperSlide>
-                                        // <TipCard key={index} faculty={charity} slideNumber={index} />
                                     ))}
 
                                 </Swiper>

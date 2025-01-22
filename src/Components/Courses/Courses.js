@@ -1,38 +1,8 @@
 import "./Courses.css"
-import { useEffect, useState } from 'react';
 import courses from "../../data/courses.json";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle, faLink } from '@fortawesome/free-solid-svg-icons';
+import { Icon } from '@iconify/react';
 
-var programming = courses.Programming
-var AI = courses.AI
-
-
-const Courses = ({ language, languageData }) => {
-    useEffect(() => {
-    }, [language, languageData]);
-
-    const languageText = languageData[language]
-
-
-    const [popupVisible, setPopupVisible] = useState(false);
-    const [selectedBus, setSelectedBus] = useState(null);
-
-    const togglePopup = (bus) => {
-        if (selectedBus && selectedBus.id === bus.id) {
-            // If the same story is clicked again, close the popup
-            setPopupVisible(false);
-            setSelectedBus(null);
-        } else {
-            // Close the college popup if open
-            setSelectedBus(bus);
-            setPopupVisible(true);
-        }
-    };
-
-    const closePopup = () => {
-        setPopupVisible(false);
-    };
+const Courses = ({ language, languageText }) => {
 
 
     return (
@@ -41,60 +11,42 @@ const Courses = ({ language, languageData }) => {
             <h1 className="bus" id="bus"></h1>
 
             <div className="sectionBox">
-                <div className="outerBox">
-                    <div className="innerBox">
-                        <h2>{languageText.programming}</h2>
-                        <div className="cards">
-                            {/* {error && <div>{error}</div>}
-                            {pending && <div>Loading...</div>} */}
-                            {programming.map((program) => (
-                                // {
-                                <div className="card" >
-                                    <div className="img"><img src={program.img} alt="" /></div>
-                                    <div className="cardsBottomContent">
-                                        <div className="coursesTitle">
-                                            {language == "ar" ? <p>{program.nameArabic} </p> : <p>{program.name} </p>}
-                                            {language == "ar" ? <p className="creator">{program.creatorArabic}</p> : <p className="creator">{program.creator} </p>}
+                {Object.keys(courses).map((faculty) => (
+                    <div className="outerBox">
+                        <div className="innerBox" key={faculty}>
+                            <h2>{language == "ar" ? languageText[faculty + "Arabic"] : faculty}</h2>
+                            <div className="cards">
+                                {courses[faculty].map((course) => (
+                                    <div className="card" key={course.id}>
+                                        <div className="img"><img src={course.img} alt="" /></div>
+                                        <div className="cardsBottomContent">
+                                            <div className="coursesTitle">
+                                                {language == "ar" ? (
+                                                    <>
+                                                        <p>{course.nameArabic}</p>
+                                                        <p className="creator">{course.creatorArabic}</p>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <p>{course.name}</p>
+                                                        <p className="creator">{course.creator}</p>
+                                                    </>
+                                                )}
+                                            </div>
 
+                                            <button className="icon" onClick={() => window.open(course.link, "_blank")}>
+                                                <span className="tooltip">{languageText.courseLink}</span>
+                                                <span>
+                                                    <Icon icon="fa-solid:link" />
+                                                </span>
+                                            </button>
                                         </div>
-                                        <button className="icon" onClick={() => window.open(program.link, "_blank")}>
-                                            <span className="tooltip">{languageText.courseLink}</span>
-                                            <span><FontAwesomeIcon icon={faLink} /></span>
-                                        </button>
                                     </div>
-                                </div>
-                                // ))
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="outerBox">
-                    <div className="innerBox">
-                        <h2>{languageText.AI}</h2>
-                        <div className="cards">
-                            {/* {error && <div>{error}</div>}
-                            {pending && <div>Loading...</div>} */}
-                            {AI.map((ai) => (
-                                // {
-                                <div className="card" >
-                                    <div className="img"><img src={ai.img} alt="" /></div>
-                                    <div className="cardsBottomContent">
-                                        <div className="coursesTitle">
-                                            {language == "ar" ? <p>{ai.nameArabic} </p> : <p>{ai.name} </p>}
-                                            {language == "ar" ? <p className="creator">{ai.creatorArabic}</p> : <p className="creator">{ai.creator} </p>}
-                                        </div>
-
-                                        <button className="icon" onClick={() => window.open(ai.link, "_blank")}>
-                                            <span className="tooltip">{languageText.courseLink}</span>
-                                            <span><FontAwesomeIcon icon={faLink} /></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                // ))
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );

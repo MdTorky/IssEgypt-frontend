@@ -6,8 +6,7 @@ import "./lecturer.css";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 
-const Lecturers = ({ darkMode, language, languageData, api }) => {
-  const languageText = languageData[language];
+const Lecturers = ({ darkMode, language, languageText, api }) => {
   const [loading, setLoading] = useState(false);
   const { lecturers, dispatch } = useFormsContext();
   const [searchTerm, setSearchTerm] = useState("");

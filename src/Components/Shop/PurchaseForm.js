@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext';
 import { Icon } from '@iconify/react';
 import logo from '../../images/HorusToken.png'
 import Loader from "../Loader/Loader";
 import React from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
     const [address, setAddress] = useState('')
     const [proof, setProof] = useState(null);
     const [selectedImageText, setSelectedImageText] = useState(null);
-    const { transactions = [], dispatch } = useFormsContext();
+    const { dispatch } = useFormsContext();
     const { productId } = useParams();
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(false);
@@ -46,7 +46,6 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
 
     const fullNameRegex = /^[a-zA-Z\s'-]{2,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // const matricRegex = /^[A-Za-z][2][0-4][A-Za-z]{2}\d{4}$/;
     const matricRegex = /^[A-Za-z](1[8-9]|2[0-5])[A-Za-z]{2}\d{4}$/;
     const combinedPhoneRegex = /^(\+?6?01\d{9}|01\d{8}|(\+?20)?1[0125]\d{8}|(\+?967)?[4567]\d{7}|(\+?234)?[789]\d{9}|(\+?966)?5[0-9]\d{7}|(\+?971)?5[024568]\d{7}|(\+?974)?[3567]\d{7}|(\+?965)?[569]\d{7}|(\+?968)?9[1-9]\d{6}|(\+?963)?9[0-9]\d{7})$/;
 
@@ -222,7 +221,7 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
                     </div>
 
                     <div className="FormCenter">
-                        <p className="FormTitle">Purchase Form</p>
+                        <p className="FormTitle">{languageText.PurchaseForm}</p>
                         <div className="Hint">
                             <p>{languageText.valid}</p>
                             <p>{languageText.invalid}</p>
@@ -292,8 +291,8 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
                                             <option value="Mechanical" >{languageText.FKM}</option>
                                             <option value="Civil" >{languageText.FKA}</option>
                                             <option value="Chemical" >{languageText.FKT}</option>
-                                            <option value="Architecture" >{languageText.Arch}</option>
-                                            <option value="Bridging" >{languageText.Found}</option>
+                                            <option value="Architecture" >{languageText.FAB}</option>
+                                            <option value="Bridging" >{languageText.Space}</option>
                                             <option value="Other" >{languageText.Other}</option>
                                         </select>
                                     </div>
@@ -311,9 +310,6 @@ const PurchaseForm = ({ languageText, api, language, darkMode }) => {
                                             <option value="D'Summit" >D'Summit</option>
                                             <option value="Flora" >Flora</option>
                                             <option value="Other" >{languageText.Other}</option>
-                                            {/* <option value="8" >8</option>
-                                            <option value="Masters" >{languageText.Masters}</option>
-                                            <option value="PhD" >{languageText.PhD}</option> */}
                                         </select>
                                     </div>
                                 </div>

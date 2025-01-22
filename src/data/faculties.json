@@ -8,7 +8,7 @@
     "location": "https://maps.app.goo.gl/7m9dCprx6KkZEQ3J8",
     "website": "https://fke.utm.my/?_gl=1%2Axwnnx%2A_ga%2ANzA2MTU5NjcyLjE2NDU1NTY0MjU.%2A_ga_N3HJW8G3P7%2AMTY5NTcyMTA3MS4zOS4xLjE2OTU3MjEyNDIuMC4wLjA.",
     "email2": "mailto:fke@utm.my",
-    "driveLink": "https://drive.google.com/drive/folders/1yk0w23H2iqhYkq6doAG0vPkAxS7MugXK?usp=drive_link"
+    "driveLink": "https://drive.google.com/drive/folders/1BJg71GTYRuo8Ssy8TbhGmdEVjg2VDaH8?usp=drive_link"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "location": "https://maps.app.goo.gl/dtchnq41oUz9JyyF9",
     "website": "https://comp.utm.my/?_gl=1%2A1rgf5oq%2A_ga%2ANzA2MTU5NjcyLjE2NDU1NTY0MjU.%2A_ga_N3HJW8G3P7%2AMTY5NTcyMTA3MS4zOS4xLjE2OTU3MjEyNDIuMC4wLjA.",
     "email2": "mailto:computing@utm.my",
-    "driveLink": "https://drive.google.com/drive/folders/1snKTnZHl7SumAS2_gSow8qxFXi6C-7iF?usp=drive_link"
+    "driveLink": "https://drive.google.com/drive/folders/1KZe61bKm-tXK1v5wOFNpe7igDPFIiQ-3?usp=drive_link"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "location": "https://maps.app.goo.gl/RNnDiqmYoukcCJvQ9",
     "website": "https://civil.utm.my/?_gl=1%2Ano3pno%2A_ga%2ANzA2MTU5NjcyLjE2NDU1NTY0MjU.%2A_ga_N3HJW8G3P7%2AMTY5NTcyNTgyMy40MC4xLjE2OTU3MjYwNzIuMC4wLjA.",
     "email2": "mailto:fka@utm.my",
-    "driveLink": "https://drive.google.com/drive/folders/1GQsgw1LiWO9jr8qEOj74mYdOYs10I66r?usp=drive_link"
+    "driveLink": "https://drive.google.com/drive/folders/1l_so3Rpu_h2Akq0dJjvtcV9OevHk3xfb?usp=sharing"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "location": "https://maps.app.goo.gl/TExbAcgN49gWoms77",
     "website": "https://mech.utm.my/?_gl=1%2A21wyfm%2A_ga%2ANzA2MTU5NjcyLjE2NDU1NTY0MjU.%2A_ga_N3HJW8G3P7%2AMTY5NTcyNTgyMy40MC4xLjE2OTU3MjYyNzkuMC4wLjA.",
     "email2": "mailto:fkm@utm.my",
-    "driveLink": "https://drive.google.com/drive/folders/1IhwCDN7GlZwR9tZqlAvpZ_0FYrQyJXRU?usp=drive_link"
+    "driveLink": "https://drive.google.com/drive/folders/1BH_MN_ntF6FiGfteNm7BpBPVYSr3YfFg?usp=sharing"
   },
   {
     "id": 5,
@@ -52,17 +52,27 @@
     "location": "https://maps.app.goo.gl/jw5yKKUYycqbv4pAA",
     "website": "https://fkt.utm.my/?_gl=1%2A1qyi737%2A_ga%2ANzA2MTU5NjcyLjE2NDU1NTY0MjU.%2A_ga_N3HJW8G3P7%2AMTY5NTcyNTgyMy40MC4xLjE2OTU3MjYyNzkuMC4wLjA.",
     "email2": "mailto:fcee@utm.my",
-    "driveLink": "https://drive.google.com/drive/folders/1UZYnhACbv7R0ym7EAQc7AtCQKIzUjakN?usp=drive_link"
+    "driveLink": "https://drive.google.com/drive/folders/1yUWDlEc1BkHmaHB4WtmDmqUrhE3GI1PE?usp=drive_link"
   },
   {
     "id": 6,
-    "abb": "Brid",
+    "abb": "FAB",
+    "email": "fabu@utm.my",
+    "image": "https://builtsurvey.utm.my/wp-content/uploads/2019/04/fabu.jpg",
+    "location": "https://maps.app.goo.gl/f5EGGyCaQzXuoUn29",
+    "website": "https://builtsurvey.utm.my/",
+    "email2": "mailto:fabu@utm.my",
+    "driveLink": "https://drive.google.com/drive/folders/1cDi2a4sU7ofIp6FQnMxWN7ZbK2VDbM52?usp=drive_link"
+  },
+  {
+    "id": 7,
+    "abb": "Space",
     "email": "space@utm.my",
     "image": "https://i.ibb.co/kMjkGC8/bridging.jpg",
     "group": "https://chat.whatsapp.com/D7fAG8LftxI8pSsmJ4g0td",
     "location": "https://maps.app.goo.gl/zn3Jya1CmhxUSYCj9",
     "website": "https://space.utm.my/foundation/",
     "email2": "mailto:space@utm.my",
-    "driveLink": "https://drive.google.com/drive/folders/1OgKjHTOLM8O-e6aD-uj96kWjzx9dNUYT?usp=drive_link"
+    "driveLink": "https://drive.google.com/drive/folders/1mMeDEcbvoFiLKOgfP7KAOP42bMAdiISM?usp=drive_link"
   }
 ]

@@ -1,29 +1,23 @@
 import './Members.css'
 import { useEffect, useState } from 'react'
 import { useFormsContext } from '../../hooks/useFormContext'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import { useAuthContext } from '../../hooks/useAuthContext';
 
 import Loader from '../Loader/Loader'
 import MemberCard from '../components/MemberCard';
+import UserType from '../Auth/UserType';
 
-const Members = ({ language, languageData, api, darkMode }) => {
+const Members = ({ language, languageText, api, darkMode }) => {
     const { members, dispatch } = useFormsContext()
-    const languageText = languageData[language];
-    const { user } = useAuthContext()
 
 
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
     const [messages, setMessages] = useState(true)
     const [searchTerm, setSearchTerm] = useState('');
-
-    const isEmpty = (obj) => {
-        return Object.keys(obj).length == 0;
-    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,7 +43,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 setError('An error occurred while fetching data');
                 setMessages(true);
             } finally {
-                // Set loading to false once the data is fetched (success or error)
                 setLoading(false);
 
 
@@ -70,7 +63,7 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
 
     const allMembers = (number) => {
-        let members = filteredMembers; // Change const to let here
+        let members = filteredMembers;
 
 
         switch (number) {
@@ -104,8 +97,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 break;
             default: break;
         }
-        const sortedMembers = members
-
         const defaultMember = members.map((member, index) => ({
             ...member,
             index,
@@ -113,54 +104,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
         return defaultMember;
     }
-
-    // const BestMember = filteredMembers.filter((member) => member.type === "BestMember").sort((a, b) => a.name.localeCompare(b.name));
-
-
-    // const boardMembers = filteredMembers.filter((member) => member.memberId >= 1 && member.memberId <= 4);
-
-    // const SortMembers = (members) => {
-    //     const sortedMembers = members.sort(
-    //         (a, b) => a.memberId - b.memberId
-    //     );
-
-    //     return sortedMembers
-    // }
-
-    // const Members = (members) => {
-    //     const defaultMember = members.map((member, index) => ({
-    //         ...member,
-    //         index,
-    //     }))
-
-    //     return defaultMember
-    // }
-
-    // <div key={boardMember._id} className="memberCard">
-    //     <div
-    //         key={boardMember._id}
-    //         className={`memberImg ${boardMember.index % 2 === 0 ? 'even' : 'odd'
-    //             }`}>
-    //         <img src={`${api}/${boardMember.img}`} alt="" />
-    //     </div>
-    //     {language == 'ar' ? <p>{boardMember.arabicName}</p> : <p>{boardMember.name}</p>}
-    //     <div
-    //         key={boardMember._id}
-    //         className={`memberInfo ${boardMember.index % 2 === 0 ? 'even' : 'odd'
-    //             }`}>
-    //         <p className="role">{roleChecker({ languageText: languageText, committee: boardMember.committee, role: boardMember.type })}</p>
-    //     </div>
-    // </div>
-
-    // const loading2 = (number) => {
-    //     return (
-    //         <>
-    //             {loading && (
-    //                 <div><Loader /></div>
-    //             )}
-    //         </>
-    //     );
-    // };
 
 
     const card = (text, number) => {
@@ -188,11 +131,11 @@ const Members = ({ language, languageData, api, darkMode }) => {
                             {membersToShow.map((boardMember) => (
                                 <div className="adminCard">
                                     <MemberCard key={boardMember.index} api={api} member={boardMember} languageText={languageText} language={language} />
-                                    {user && user.type === "Admin" && <button
+                                    {UserType() && <button
                                         className='deleteButton'
                                         onClick={() => handleDelete({ member: boardMember })}
                                     ><Icon icon="material-symbols:delete-rounded" /></button>}
-                                    {user && user.type === "Admin" && <Link to={`/memberEditor/${boardMember.committee}/${boardMember._id}`}
+                                    {UserType() && <Link to={`/memberEditor/${boardMember.committee}/${boardMember._id}`}
                                         className='editButton'
                                     ><Icon icon="flowbite:user-edit-solid" /></Link>}
                                 </div>
@@ -200,7 +143,6 @@ const Members = ({ language, languageData, api, darkMode }) => {
 
 
                             ))}
-                            {/* {loading2(number)} */}
                         </>
                     </div>
                 </div>
@@ -275,10 +217,10 @@ const Members = ({ language, languageData, api, darkMode }) => {
                 {card(languageText.SocialMembers, "Social")}
                 {card(languageText.CultureMembers, "Cultural")}
                 {card(languageText.SportMembers, "Sports")}
-                {/* {card(languageText.MediaMembers, "Media")} */}
+                {card(languageText.MediaMembers, "Media")}
                 {card(languageText.LogisticsMembers, "Logistics")}
                 {card(languageText.WomenMembers, "Women")}
-                {card(languageText.ReadingMembers, "Reading")}
+                {/* {card(languageText.ReadingMembers, "Reading")} */}
                 {/* {card("Best Members", "BestMembers")} */}
                 {loading && (
                     <div><Loader /></div>

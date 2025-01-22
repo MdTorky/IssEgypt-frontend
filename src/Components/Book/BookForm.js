@@ -16,8 +16,7 @@ import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill
 
 
 
-const BookForm = ({ api, language, languageData, darkMode }) => {
-    const languageText = languageData[language];
+const BookForm = ({ api, language, languageText, darkMode }) => {
     const { books, faculties, dispatch } = useFormsContext()
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);

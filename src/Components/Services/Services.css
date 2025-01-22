@@ -35,20 +35,24 @@ h2 {
   display: flex;
   flex-direction: column;
   background: var(--bg2);
-  padding: 20px;
-  border-radius: 20px;
+  padding: 15px;
+  border-radius: 25px;
   width: 65%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .services .annContainer .annContainer2 {
   background: var(--bg);
   padding: 10px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border: 2px lightgrey solid;
 }
 
 .services .annContainer h2 {
@@ -87,6 +91,7 @@ h2 {
   overflow: hidden;
   position: relative;
   border: 3px lightgrey solid;
+  text-align: center;
 }
 
 .AnnStories2Button .svgIcon {
@@ -280,7 +285,7 @@ h2 {
   opacity: 0;
   text-decoration: none;
   color: var(--hover);
-  border: 3px var(--bg2) solid;
+  border: 3px lightgray solid;
 }
 
 /* .newStudents .newStudentsRow .newStudentCard:nth-child(4),
@@ -342,7 +347,7 @@ a:visited {
 
 .newStudentsRow .moon,
 .newStudentsRow2 .moon {
-  font-size: 1.3em;
+  font-size: 1.5em;
   /* font-size: 1.9em; */
   position: absolute;
   right: 15px;
@@ -497,10 +502,13 @@ a:visited {
   display: flex;
   flex-direction: column;
   background: var(--bg2);
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 25px;
+  padding: 15px;
   /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   /* transition: all 0.3s ease-in-out; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .services .rightContainer .collegesBoxTitle {
@@ -510,9 +518,10 @@ a:visited {
   border-radius: 15px;
   padding: 10px;
   /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-  height: 100%;
+  border: 2px lightgrey solid;
 }
 
 .services .rightContainer .collegesBoxTitle > h2 {
@@ -566,7 +575,7 @@ a:visited {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   transition: all 0.3s ease-in-out;
-  border: 3px var(--bg2) solid;
+  border: 1px lightgray solid;
 }
 
 .rightContainer .college:hover > .img {
@@ -580,10 +589,11 @@ a:visited {
   display: flex;
   flex-direction: column;
   background: var(--bg2);
-  border-radius: 20px;
-  padding: 20px;
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-  /* transition: all 0.3s ease-in-out; */
+  border-radius: 25px;
+  padding: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .services .leftContainer .collegesBoxTitle {
@@ -595,6 +605,7 @@ a:visited {
   /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border: 2px lightgrey solid;
   height: 100%;
 }
 
@@ -649,7 +660,7 @@ a:visited {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   /* transition: all 0.5s ease-in-out; */
-  border: 3px var(--bg2) solid;
+  border: 1px lightgray solid;
 }
 
 .leftContainer .college:hover > .img {

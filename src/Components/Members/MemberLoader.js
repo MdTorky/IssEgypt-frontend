@@ -34,7 +34,7 @@ const MemberLoader = ({ languageText, committee, role }) => {
     else if (committee === "Logistics" && role === "President") {
         return languageText.LogisticsPresident
     }
-    else if (committee === "Women Affairs" && role === "President") {
+    else if (committee === "WomenAffairs" && role === "President") {
         return languageText.WomenPresident
     }
     else if (committee === "PR" && role === "President") {
@@ -70,7 +70,7 @@ const MemberLoader = ({ languageText, committee, role }) => {
     else if (committee === "Logistics" && (role == "Member" || role == "BestMember")) {
         return languageText.LogisticsMember
     }
-    else if (committee === "Women Affairs" && (role == "Member" || role == "BestMember")) {
+    else if (committee === "WomenAffairs" && (role == "Member" || role == "BestMember")) {
         return languageText.WomenMember
     }
     else if (committee === "PR" && role === "Member") {

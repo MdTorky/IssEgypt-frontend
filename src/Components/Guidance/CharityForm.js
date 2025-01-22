@@ -1,27 +1,20 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import Loader from '../Loader/Loader'
 import InputLoader from '../Loader/InputLoader'
 import LogoLoader from '../Loader/LogoLoader'
 import './Guidance.css'
 import { Icon } from '@iconify/react';
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
-import AllFacultyCards from '../components/AllFacultiesCard'
 import Select from 'react-select';
 import SelectStyles from '../components/SelectStyles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus } from '@fortawesome/free-solid-svg-icons';
-
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from '../../firebase'
 
-const CharityForm = ({ language, languageData, api, darkMode }) => {
+const CharityForm = ({ language, languageText, api, darkMode }) => {
     const { courses = [], faculties, dispatch } = useFormsContext()
     const navigate = useNavigate();
-    const languageText = languageData[language];
     const [loading, setLoading] = useState(false);
     const [facultyLoading, setFacultyLoading] = useState(true);
     const [courseLoading, setCourseLoading] = useState(true);
@@ -34,11 +27,8 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
     const [advice, setAdvice] = useState()
     const [name, setName] = useState('')
     const [condition, setCondition] = useState('')
-    // const [state, setState] = useState()
     const [industrial, setIndustrial] = useState()
     const [links, setLinks] = useState([{ type: "", link: "" }]);
-    // const [pdf, setPdf] = useState(null)
-    // const [selectedText, setSelectedText] = useState(null);
     const [fileUrl, setFileUrl] = useState()
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -94,7 +84,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
 
                 const data = await response.json();
                 const sortData = data.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-                // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
                 dispatch({
                     type: 'SET_ITEM',
                     collection: "faculties",
@@ -142,14 +131,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
     }));
 
     const indicesToInclude = [0, 1, 2, 3, 4, 5, 11];
-
-    // const filteredFaculties = faculties.slice(0, 6).map((faculty) => {
-    //     const id = faculty.facultyId;
-    //     return {
-    //         label: languageText[id],
-    //         value: faculty.facultyId
-    //     };
-    // });
 
     const filteredFaculties = faculties
         .filter((_, index) => indicesToInclude.includes(index)) // Filter based on indicesToInclude array
@@ -494,13 +475,6 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
 
 
 
-
-                            {/* <hr />
-                            <div className="QuoteBack">
-                                <p className='QuoteText'>"The only thing to do with good advice is to pass it on. It is never of any use to oneself."</p>
-                                <span>Oscar Wilde</span>
-                            </div>
-                            <hr /> */}
                             <div className="Steps">
                                 <div className="StepText">1.<p>{languageText.FirstStep} ( {languageText.EasyRight} <Icon icon="mingcute:emoji-2-fill" />)</p></div>
                                 <div className="StepText">2.<p>{languageText.SecondStep}</p></div>
@@ -689,9 +663,9 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                         {link.type === "File" && advice &&
 
                                             <div className="InputField AnimatedInput">
-                                                {uploadingFile ? ( // Conditional rendering based on uploading file state
+                                                {uploadingFile ? (
                                                     <div style={{ width: '100%', margin: 'auto' }}>
-                                                        <LogoLoader language={language} languageData={languageData} />
+                                                        <LogoLoader language={language} />
                                                     </div>
                                                 ) : (
                                                     <div className="InputField AnimatedInput">
@@ -701,10 +675,10 @@ const CharityForm = ({ language, languageData, api, darkMode }) => {
                                                             </div>
                                                             {link.link ? (
                                                                 <div className="XImgButton" onClick={handleRemoveFile}>
-                                                                    <FontAwesomeIcon icon={faXmark} />
+                                                                    <Icon icon="icon-park-outline:close-one" />
                                                                 </div>
                                                             ) : (
-                                                                <FontAwesomeIcon icon={faCloudArrowUp} />
+                                                                <Icon icon="material-symbols:arrow-upload-progress-rounded" />
                                                             )}
                                                         </label>
                                                         <input

@@ -1,34 +1,28 @@
 import './Admin.css'
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useFormsContext } from '../../hooks/useFormContext'
 import { useEffect, useState } from "react";
-import logo from '../../images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css';
-import { faCommentDots, faStar, faUser, faEnvelope, faPen, faTrash, faEye, faBolt, faFileExcel, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faPen, faTrash, faEye, faBolt, faFileExcel, faPlus } from '@fortawesome/free-solid-svg-icons';
 import roleChecker from '../Members/MemberLoader'
 import Loader from '../Loader/Loader'
 import { faWpforms, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import FacultyCard from '../components/FacultyCard';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Icon } from '@iconify/react';
 import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
-import { useNavigate } from "react-router-dom";
 import HorusTokenDay from '../../images/HorusToken.svg'
 import HorusTokenDark from '../../images/HorusTokenDark.svg'
 
-const Admin = ({ language, languageData, api, darkMode }) => {
-    // const { committee } = useParams();
+const Admin = ({ language, languageText, api, darkMode }) => {
     const { members, forms = [], dispatch } = useFormsContext()
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
     const [messages, setMessages] = useState(true);
-    const languageText = languageData[language];
     const { user } = useAuthContext()
-    const navigate = useNavigate();
-    const [memberCommittee, setMemberCommittee] = useState("")
 
 
 
@@ -82,7 +76,6 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                 }
 
                 const data = await response.json();
-                // const sortedData = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort data alphabetically by 'name' field
                 dispatch({
                     type: 'SET_ITEM',
                     collection: "forms",
@@ -94,7 +87,6 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                 setError('An error occurred while fetching data');
                 setMessages(true);
             } finally {
-                // Set loading to false once the data is fetched (success or error)
                 setLoading(false);
             }
         };
@@ -124,7 +116,6 @@ const Admin = ({ language, languageData, api, darkMode }) => {
     const Members = (member) => {
         return (
             <tr className={`TableHeading TableItems ${member.type === "BestMember" ? "TableItemsBest" : ""}`}>
-                {/* { && <Icon icon="openmoji:star" />} */}
                 <td>
                     <img src={member.img} alt="" />
 
@@ -437,7 +428,8 @@ const Admin = ({ language, languageData, api, darkMode }) => {
         return (
             // <tr className={`TableHeading TableItems`}>
             <tr className={`TableHeading TableItems`} onClick={(e) => {
-                copyLink(`issegypt.vercel.app/${encodeURIComponent(form.eventName)}`)
+                // copyLink(`issegypt.vercel.app/${encodeURIComponent(form.eventName)}`)
+                copyLink(`issegypt.vercel.app/form/${form._id}}`)
             }}>
                 <td>
 
@@ -451,8 +443,8 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                     <div className="icons TableIcons">
 
 
-                        {/* <Link className="icon" to={`/ISSform/${form._id}`} */}
-                        <Link className="icon" to={`/${encodeURIComponent(form.eventName)}`}
+                        <Link className="icon" to={`/form/${form._id}`}
+                            // <Link className="icon" to={`/${encodeURIComponent(form.eventName)}`}
                             onClick={(e) => {
                                 e.stopPropagation(); // Stop the propagation of the click event
                             }}>
@@ -513,9 +505,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     <p>{roleChecker({ languageText: languageText, committee: presidentFilter?.committee, role: presidentFilter?.type })}</p>
                                 </>
                                 <div className="ProfileButtons">
-                                    {/* <Link className="ProfileButton" to="/underConstruction">{languageText.viewProfile}</Link> */}
                                     <Link className="ProfileButton" to={`/memberEditor/${user?.committee}/${presidentFilter?._id}`}>{languageText.editProfile}</Link>
-                                    {/* <button className="ProfileButton Logout" to="/"><Icon icon="solar:logout-outline" /></button> */}
                                     <button className="icon Logout" onClick={handleClick}>
                                         <span class="tooltip Delete" >{languageText.Logout}</span>
                                         <span><Icon icon="uiw:logout" /></span>
@@ -547,7 +537,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                             </div>
 
                         </div>
-                        {user.committee === "Academic" &&
+                        {(user.committee === "Academic" || user.committee === "Admin") &&
                             <div className="BankLinks">
                                 <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
                                 <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
@@ -567,7 +557,7 @@ const Admin = ({ language, languageData, api, darkMode }) => {
                                     <option value="Academic">Academic</option>
                                     <option value="Culture">Culture</option>
                                     <option value="Sports">Sports</option>
-                                    <option value="Women Affairs">Women Affairs</option>
+                                    <option value="WomenAffairs">Women Affairs</option>
                                     <option value="Media">Media</option>
                                     <option value="HR">HR</option>
                                     <option value="PR">PR</option>

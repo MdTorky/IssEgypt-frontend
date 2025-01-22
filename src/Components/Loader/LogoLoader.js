@@ -1,9 +1,7 @@
 import React from 'react';
 import './Loader.css'
-import LogoSvg from '../../images/LogoSvg.svg'
-const LogoLoader = ({ language, languageData }) => {
+const LogoLoader = ({ language }) => {
 
-    const languageText = languageData[language];
 
     return (
         language === 'en' ?

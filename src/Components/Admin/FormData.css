@@ -37,6 +37,9 @@
   width: 200px;
   justify-content: space-between;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 3px lightgrey solid;
 }
 
 .arabic .FormResponses {
@@ -186,6 +189,9 @@
   color: var(--bg);
   border-radius: 20px 20px 0 0;
   padding: 10px 10px;
+  border-top: 3px lightgrey solid;
+  border-right: 3px lightgrey solid;
+  border-left: 3px lightgrey solid;
 }
 
 .ResponseHeader td,
@@ -216,15 +222,21 @@
 .ResponseContent:nth-child(even) {
   background: var(--theme);
   border-radius: 0 0 0 0;
+  border-top: none;
+  border-bottom: none;
 }
 
 .ResponseContent:nth-child(odd) {
   background: var(--theme2);
   border-radius: 0 0 0 0;
+  border-top: none;
+  border-bottom: none;
 }
 
 .ResponseContent:last-child {
   border-radius: 0 0 20px 20px;
+  border-bottom: 3px lightgrey solid;
+  border-top: none;
 }
 
 .ResponseContent img {
@@ -270,7 +282,7 @@
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  padding-right: 30px; /* Make room for custom arrow */
+  padding-right: 30px;
 }
 
 .arabic .StatusDropdown {

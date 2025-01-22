@@ -1,18 +1,14 @@
 import "./Form.css"
 import { useState } from "react"
 import { useFormsContext } from '../../hooks/useFormContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css';
-import { faCommentSlash } from '@fortawesome/free-solid-svg-icons';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import Loader from '../Loader/Loader'
 
 
-const MemberForm = ({ language, languageData, api, darkMode }) => {
+const MemberForm = ({ language, languageText, api, darkMode }) => {
     const { dispatch } = useFormsContext()
-    const languageText = languageData[language]
 
     const [name, setName] = useState('');
     const [arabicName, setArabicName] = useState('');
@@ -30,54 +26,6 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
 
     const [updating, setUpdating] = useState(false);
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     const member = { name, arabicName, email, faculty, type, committee, img, phone, linkedIn, memberId }
-
-    //     const response = await fetch(`${api}/api/member`, {
-    //         method: 'POST',
-    //         body: JSON.stringify(member),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-
-    //     const json = await response.json()
-
-    //     if (!response.ok) {
-    //         setError(json.error)
-    //     }
-
-    //     if (response.ok) {
-    //         setError(null)
-
-    //         dispatch({
-    //             type: 'CREATE_FORM',
-    //             collection: "members",
-    //             payload: json
-    //         })
-    //         alert("Member added successfully")
-    //         setName('')
-    //         setArabicName('')
-    //         setEmail('')
-    //         setFaculty('')
-    //         setType('')
-    //         setCommittee('')
-    //         setImg('')
-    //         setPhone('')
-    //         setLinkedIn('')
-    //         setMemberId('')
-    //     }
-
-    // }
-
-    // const handleImageUpload = (e) => {
-    //     const file = e.target.files[0];
-    //     if (file) {
-    //         setImg(file);
-    //     }
-    // };
 
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
@@ -302,10 +250,10 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                         required
                                     >
                                         <option value="" disabled selected hidden>{languageText.formCommittee}</option>
-                                        <option value="ISS Egypt">President</option>
-                                        <option value="Vice">Vice President</option>
-                                        <option value="Secretary">General Secretary</option>
-                                        <option value="Treasurer">Treasurer</option>
+                                        {/* <option value="ISS Egypt">President</option> */}
+                                        {/* <option value="Vice">Vice President</option> */}
+                                        {/* <option value="Secretary">General Secretary</option> */}
+                                        {/* <option value="Treasurer">Treasurer</option> */}
                                         <option value="Academic">Academic Committee</option>
                                         {/* <option value="Bank">Knowledge Bank</option> */}
                                         <option value="Social">Social Committee</option>
@@ -313,10 +261,10 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                         <option value="Sports">Sports Committee</option>
                                         <option value="Media">Media Committee</option>
                                         <option value="Logistics">Logistics Committee</option>
-                                        <option value="Women Affairs">Women Affairs</option>
+                                        <option value="WomenAffairs">Women Affairs</option>
                                         <option value="PR">Public Relations</option>
-                                        <option value="HR">HR</option>
-                                        <option value="Reading">Reading Club</option>
+                                        <option value="HR">Human Resources</option>
+                                        {/* <option value="Reading">Reading Club</option> */}
                                     </select>
 
                                 </div>
@@ -324,12 +272,11 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
 
                                 <div className="InputField">
                                     <select
-                                        // className={`input ${(type) ? 'valid' : 'invalid'}`}
                                         onChange={(e) => setType(e.target.value)}
                                         required
                                     >
                                         <option value="" disabled selected hidden>{languageText.formRole}</option>
-                                        <option value="President">President</option>
+                                        {/* <option value="President">President</option> */}
                                         <option value="Member" hidden={
                                             committee === 'ISS Egypt' ||
                                                 committee === 'Vice' ||
@@ -341,23 +288,6 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                 </div>
                             </div>
 
-                            {/* <div className="InputField">
-                        <input
-                            type="text"
-                            accept="image/*"
-                            onChange={(e) => setImg(e)}
-                            id="img"
-                            className="input"
-                        />
-                    </div> */}
-                            {/* <div className="InputField">
-                        <input
-                            placeholder={`\uf03e  ${languageText.formImg}`}
-                            type="text"
-                            className={`input ${(img) ? 'valid' : 'invalid'}`}
-                            onChange={(e) => { setImg(e.target.value) }}
-                        />
-                    </div> */}
                             <div className="InputRow">
                                 <div className="InputField">
                                     <input
@@ -367,8 +297,6 @@ const MemberForm = ({ language, languageData, api, darkMode }) => {
                                         id="img"
 
                                         className={`input ${(img) ? 'valid' : 'invalid'}`}
-                                        // onChange={(e) => { setImg(e.target.value) }}
-                                        // onChange={(e) => handleImageUpload(e)}
                                         onChange={handleImageUpload}
 
                                     />
