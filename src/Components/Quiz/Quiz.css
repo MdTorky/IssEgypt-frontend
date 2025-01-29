@@ -289,6 +289,7 @@
   cursor: pointer;
   transition-duration: 0.5s;
   border: 3px lightgrey solid;
+  font-size: 1.3em;
 }
 
 .arabic .ScreenShot {
@@ -337,6 +338,11 @@
 .ShowQuestions:hover {
   border: var(--hover) solid 2px;
   transform: scale(1.1);
+}
+
+.TableAnswers {
+  display: flex;
+  flex-direction: column;
 }
 
 .TableAnswer {
@@ -410,7 +416,8 @@
   /* margin: 10px auto; */
   display: flex;
   flex-direction: column;
-  min-width: 500px;
+  min-width: 480px;
+  /* width: 00px; */
 }
 
 .QuizUserInfo {
@@ -458,16 +465,13 @@
 }
 
 .PointsInput {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   font-weight: 500;
-  font-size: 0.8vw;
+  font-size: 0.6vw;
   background: linear-gradient(to left, var(--bg), var(--bg2));
   box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
-  border-radius: 0.4vw;
+  border-radius: 0.3vw;
   outline: none;
-  padding: 0.4vw;
+  padding: 0.3vw;
   max-width: 80%;
   transition: 0.4s;
   border: 2px lightgray solid;
@@ -538,6 +542,7 @@
 
   .WeeklyLeaderboardDate {
     width: 80%;
+    margin: auto;
   }
 
   .WeeklyLine {
@@ -566,8 +571,42 @@
     overflow-x: auto;
   }
 
+  .TableOverflow table {
+    width: 100%;
+  }
+
+  .TableOverflow table .TableHeading {
+    width: 100%;
+  }
+
+  .TableOverflow table.TableHeading td,
+  .TableOverflow table .TableHeading th {
+    width: 150px;
+    display: flex;
+  }
+
+  .TableOverflow table .TableHeading th {
+    font-size: 0.8em;
+  }
   .QuizContainer {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .ShowQuestions {
+    font-size: 1.1em;
+  }
+
+  .QuizUserInfo > p {
+    font-size: 0.5em;
+  }
+  .QuizUserInfo h3 {
+    font-size: 0.8em;
+  }
+
+  .PointsInput {
+    font-size: 2vw;
+    padding: 1vw;
+    max-width: 100%;
   }
 }

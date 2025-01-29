@@ -89,7 +89,7 @@ const ModifyPoints = ({ api, languageText }) => {
                                 <p className='QuizNoData'><Icon icon="ic:baseline-update-disabled" /> {languageText.NoDateFound}</p>
                             ) : (
                                 users.length > 0 && users.map((user, userIdx) => (
-                                    <div key={user._id} className="EditPointsContainer">
+                                    <div key={user._id} className="WeeklyLeaderboardContainer">
                                         <div className="QuizUserInfo">
                                             <div className="QuizUserPoints">
                                                 <h3>{user.name}</h3>
@@ -97,8 +97,9 @@ const ModifyPoints = ({ api, languageText }) => {
                                             </div>
                                             <p>{user.matric}</p>
                                         </div>
-                                        <table>
-                                            {/* {user.answers.map((answer, answerIdx) => (
+                                        <div className="TableOverflow">
+                                            <table>
+                                                {/* {user.answers.map((answer, answerIdx) => (
                                                 <li key={answerIdx}>
                                                     <strong>Q:</strong> {answer.question} <br />
                                                     <strong>A:</strong> {answer.answer} <br />
@@ -114,43 +115,44 @@ const ModifyPoints = ({ api, languageText }) => {
                                                     </div>
                                                 </li>
                                             ))} */}
-                                            <thead>
-                                                <tr className="TableHeading">
-                                                    {user.answers.map((answer, answerIdx) => (
-                                                        <th key={answerIdx}>{answer.question}</th>
-                                                    ))}
-                                                </tr>
-                                            </thead>
+                                                <thead>
+                                                    <tr className="TableHeading">
+                                                        {user.answers.map((answer, answerIdx) => (
+                                                            <th key={answerIdx}>{answer.question}</th>
+                                                        ))}
+                                                    </tr>
+                                                </thead>
 
-                                            <tbody>
-                                                <tr className="TableHeading TableItems">
-                                                    {user.answers.map((answer, answerIdx) => (
-                                                        <td key={answerIdx}>{answer.answer}</td>
-                                                    ))}
-                                                </tr>
-                                                <tr className="TableHeading TableItems">
-                                                    {user.answers.map((answer, answerIdx) => (
-                                                        <td key={answerIdx}>{answer.points}</td>
-                                                    ))}
-                                                </tr>
-                                                <tr className="TableHeading">
-                                                    {user.answers.map((answer, answerIdx) => (
-                                                        <td key={answerIdx}>
+                                                <tbody>
+                                                    <tr className="TableHeading TableItems">
+                                                        {user.answers.map((answer, answerIdx) => (
+                                                            <td key={answerIdx}>{answer.answer}</td>
+                                                        ))}
+                                                    </tr>
+                                                    <tr className="TableHeading TableItems">
+                                                        {user.answers.map((answer, answerIdx) => (
+                                                            <td key={answerIdx}>{answer.points}</td>
+                                                        ))}
+                                                    </tr>
+                                                    <tr className="TableHeading">
+                                                        {user.answers.map((answer, answerIdx) => (
+                                                            <td key={answerIdx}>
 
-                                                            <input
-                                                                required
-                                                                type="number"
-                                                                placeholder={languageText.EnterPoints}
-                                                                value={answer.newPoints || ''}
-                                                                onChange={(e) => handlePointsChange(userIdx, answerIdx, e)}
-                                                                className="PointsInput"
-                                                            />
+                                                                <input
+                                                                    required
+                                                                    type="number"
+                                                                    placeholder={languageText.EnterPoints}
+                                                                    value={answer.newPoints || ''}
+                                                                    onChange={(e) => handlePointsChange(userIdx, answerIdx, e)}
+                                                                    className="PointsInput"
+                                                                />
 
-                                                        </td>
-                                                    ))}
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                            </td>
+                                                        ))}
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         <button
                                             onClick={() =>
                                                 updateUserPoints(user._id, user.answers.map(answer => ({
@@ -162,8 +164,10 @@ const ModifyPoints = ({ api, languageText }) => {
                                         >
                                             {languageText.SaveAllPoints}
                                         </button>
-
+                                        <hr className="WeeklyLine" />
                                     </div>
+
+
                                 ))
                             )}
                         </div>

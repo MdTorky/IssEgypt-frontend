@@ -1195,6 +1195,7 @@ body.dark-mode {
 
 .dark-mode .BankLink {
   background: linear-gradient(to left, var(--hover), var(--hover2));
+  color: var(--bg) !important;
 }
 
 .dark-mode .TableHeading {

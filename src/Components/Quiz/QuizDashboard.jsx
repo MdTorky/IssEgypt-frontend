@@ -251,7 +251,7 @@ const QuizDashboard = ({ api, languageText }) => {
                                                 <th>{languageText.Matric}</th>
                                                 <th>{languageText.FullName}</th>
                                                 <th>{languageText.TotalPoints}</th>
-                                                {showQuestions && filteredUsers.length > 0 ? (questions.map((q, idx) => (<th key={idx} className="mb-2">{q.questionText} <span className="TableAnswer">{q.answer} </span><span className="TableAnswer TablePoint">{q.points} {q.points === 1 ? languageText.Point : languageText.Points} </span></th>
+                                                {showQuestions && filteredUsers.length > 0 ? (questions.map((q, idx) => (<th className='TableAnswers' key={idx}>{q.questionText} <span className="TableAnswer">{q.answer} </span><span className="TableAnswer TablePoint">{q.points} {q.points === 1 ? languageText.Point : languageText.Points} </span></th>
                                                 ))) : (<></>)}
 
                                             </tr>
