@@ -544,12 +544,23 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                             </div>
 
                         </div>
-                        {(user.committee === "Academic" || user.committee === "Admin") &&
+                        {(user.committee === "Academic" || user.committee === "Admin" || user.committee === "Culture") &&
+                            <div className="BankLinks">
+                                {(user.committee === "Academic" || user.committee === "Admin") && (<>
+                                    <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
+                                    <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
+                                </>)}
+                                {(user.committee === "Culture" || user.committee === "Admin") && <Link to='/quizDashboard' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.QuizDashboard}</Link>}
+                            </div>
+                        }
+                        {/* {(user.committee === "Culture" || user.committee === "Admin") &&
                             <div className="BankLinks">
                                 <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
                                 <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
                             </div>
-                        }
+                        } */}
+
+
 
                         {(user.committee === "Secretary" || user.committee === "Admin") &&
                             <div className="BankLinks">
