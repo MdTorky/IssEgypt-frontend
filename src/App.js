@@ -57,6 +57,10 @@ import Reference from './Components/Shop/Reference';
 import ProductsData from './Components/Admin/ProductsData';
 import GalleryEdit from './Components/Gallery/GalleryEdit';
 import EditInternship from './Components/Internships/EditInternship';
+import QuizDashboard from './Components/Quiz/QuizDashboard';
+import QuizPage from './Components/Quiz/Quiz';
+import ModifyPoints from './Components/Quiz/EditQuiz';
+import AddQuestion from './Components/Quiz/AddQuestion';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -136,6 +140,10 @@ function App() {
               <Route path="/product/:productId" element={<Product language={language} languageText={languageText} api={api} />} />
               <Route path="/purchase/:productId" element={<PurchaseForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/reference/:referenceNumber" element={<Reference language={language} languageText={languageText} api={api} />} />
+              <Route path="/quizDashboard" element={<QuizDashboard language={language} languageText={languageText} api={api} />} />
+              <Route path="/quiz" element={<QuizPage language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
+              <Route path="/editquiz" element={<ModifyPoints language={language} languageText={languageText} api={api} />} />
+              <Route path="/addQuestion" element={<AddQuestion language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
               <Route path="/productData" element={<ProductsData darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
 
               {/* Admin */}

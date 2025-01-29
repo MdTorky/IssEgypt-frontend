@@ -195,6 +195,9 @@
   flex-direction: column;
   border: 3px var(--bg2) solid;
   gap: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .BankLinks select {
@@ -238,7 +241,7 @@
   box-sizing: border-box;
   background: linear-gradient(to left, var(--bg), var(--bg2));
   padding: 5px 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 800;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -511,7 +514,7 @@
   }
 
   .PresidentBox {
-    width: 95%;
+    width: 90%;
   }
 
   .PresidentBox h2 {
@@ -519,7 +522,7 @@
   }
 
   .PresidentBox img {
-    top: -30%;
+    top: -35%;
   }
 
   .arabic .PresidentBox img {
@@ -560,7 +563,7 @@
   }
 
   .BankLinks {
-    width: 100%;
+    width: 90%;
   }
 
   .MembersBox {
@@ -659,7 +662,7 @@
   }
 
   .TableItems img {
-    width: 15%;
+    width: 10%;
     left: 10px;
   }
 
@@ -678,13 +681,17 @@
 
   .TableIcons {
     flex-direction: column;
+    /* flex-wrap: wrap; */
     gap: 5px;
   }
 
   .TableItems img.EventImg {
-    width: 100%;
+    width: 70%;
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: 2px lightgrey solid;
   }
 
   .TableHeading .icons .icon {

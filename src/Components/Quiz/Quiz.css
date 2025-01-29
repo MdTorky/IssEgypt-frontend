@@ -1,0 +1,573 @@
+.Quiz {
+  margin-bottom: 20%;
+  font-family: "Poppins", sans-serif;
+  margin-right: 130px;
+}
+
+.arabic .Quiz {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  margin-left: 130px;
+  margin-right: 0px;
+}
+
+.Quiz .QuizTitle {
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--theme);
+  width: 40%;
+  color: var(--bg);
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.QuizTables {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* gap: -10px; */
+}
+
+.OverallLeaderboard {
+  background: var(--bg2);
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
+  border-radius: 25px;
+  width: fit-content;
+  /* margin: 10px auto; */
+  display: flex;
+  gap: 10px;
+}
+
+.AddQuestionContainer {
+  display: flex;
+  background: var(--bg);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: 2px lightgrey solid;
+  border-radius: 20px;
+  padding: 10px;
+  align-items: center;
+  width: 400px;
+  gap: 10px;
+  transition: 0.5s all ease;
+  text-decoration: none;
+}
+
+.AddQuestionContainer:hover {
+  transform: scale(0.9);
+  font-size: 0.8em;
+  width: 100px;
+  box-shadow: none;
+}
+
+.AddQuestionContainer:active {
+  transform: scale(0.6);
+  box-shadow: none;
+}
+
+.AddQuestionContainer:hover .AddQuestionTextContainer {
+  display: none;
+}
+
+.AddQuestionContainer img {
+  width: 100px;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.AddQuestionTextContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  transition: 0.3s all ease;
+}
+
+.AddQuestionTextContainer h3,
+.AddQuestionTextContainer p {
+  margin: 0;
+}
+
+.AddQuestionTextContainer h3 {
+  font-weight: 800;
+  font-size: 1.4em;
+  color: var(--hover);
+}
+
+.AddQuestionTextContainer p {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.QuizButton {
+  display: flex;
+  background: var(--bg);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: 2px lightgrey solid;
+  border-radius: 20px;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  transition: 0.5s all ease;
+  text-decoration: none;
+  width: 180px;
+  text-decoration: none;
+  color: var(--hover);
+}
+
+.QuizButton:hover {
+  box-shadow: none;
+  transform: scale(0.95);
+}
+
+.QuizButtonIcon {
+  padding: 10px;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  border-radius: 50px;
+  color: #3b6790;
+}
+
+.QuizButtonIcon2 {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  color: #fef3e2;
+}
+
+.WeeklyLeaderboardContainer,
+.OverallLeaderboardContainer {
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: 2px lightgrey solid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.TableOverflow {
+  width: 480px;
+  display: flex;
+  overflow-x: auto;
+  margin: auto;
+}
+
+.OverallLeaderboard h2 {
+  text-align: center;
+  color: var(--theme);
+  border-top: 3px solid var(--theme);
+  border-bottom: 3px solid var(--theme);
+  /* width: 60%; */
+  padding: 10px 0;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.QuizTablePoints {
+  background: var(--hover);
+  padding: 3px 10px;
+  border-radius: 5px;
+  /* border: 2px lightgrey solid; */
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.WeeklyLeaderboardDatesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.QuizEditDate {
+  width: 80%;
+  margin: auto;
+}
+
+.WeeklyLeaderboardDates {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.WeeklyLeaderboardDate input[type="date"] {
+  background: var(--theme);
+  padding: 5px 10px;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
+  width: 100%;
+  max-width: 300px;
+}
+::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.WeeklyLeaderboardDate {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  align-items: center;
+}
+
+.WeeklyLeaderboardDatesContainer button {
+  background: linear-gradient(to right, var(--hover), var(--hover2));
+  padding: 5px 10px;
+  color: #ffffff;
+  font-size: 18px;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
+  cursor: pointer;
+  width: 90%;
+  margin: auto;
+  max-width: 300px;
+}
+
+.arabic .WeeklyLeaderboardDatesContainer button {
+  font-family: "Noto Kufi Arabic", sans-serif;
+}
+
+.QuizNoData {
+  margin: auto;
+  text-align: center;
+  background: var(--theme);
+  color: white;
+  border: 2px lightgrey solid;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.WeeklyLine {
+  width: 90%;
+  background: var(--theme);
+  height: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
+  display: none;
+}
+
+.ScreenShot {
+  position: absolute;
+  top: 30px;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--theme);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.5s;
+  border: 3px lightgrey solid;
+}
+
+.arabic .ScreenShot {
+  left: 5%;
+  right: inherit;
+}
+
+.ScreenShot:hover {
+  transform: scale(0.8);
+}
+
+.ShowQuestions {
+  display: flex;
+  margin: 10px auto 0 auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: none;
+  border: 2px lightgrey solid;
+  background-image: radial-gradient(
+    circle 439px at 47.1% 47.8%,
+    rgba(8, 208, 115, 1) 0%,
+    rgba(0, 0, 0, 1) 91.3%
+  );
+  color: var(--bg2);
+  font-size: 1.3em;
+  padding: 5;
+  border-radius: 10px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.arabic .ShowQuestions {
+  font-family: "Noto Kufi Arabic", sans-serif;
+}
+
+.HideQuestions {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(192, 54, 57, 1) 11.2%,
+    rgba(100, 20, 21, 1) 56.8%
+  );
+}
+
+.ShowQuestions:hover {
+  border: var(--hover) solid 2px;
+  transform: scale(1.1);
+}
+
+.TableAnswer {
+  display: block;
+  margin: 2px 0;
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+
+.TablePoint {
+  background: #155e95;
+}
+
+.QuizContainer {
+  display: flex;
+  gap: 20px;
+}
+.QuizQuestions {
+  margin: 5px 0;
+}
+
+.QuizQuestions p {
+  margin: 0 auto 10px auto;
+  text-align: center;
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  color: var(--bg);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.QuizMainTitle {
+  text-align: center;
+  color: var(--theme);
+  border-top: 3px solid var(--theme);
+  border-bottom: 3px solid var(--theme);
+  width: 60%;
+  padding: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.arabic .QuizMainTitle {
+  flex-direction: row-reverse;
+}
+
+.QuizDateContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.BigEditPointsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.EditPointsContainer {
+  background: var(--bg2);
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
+  border-radius: 25px;
+  width: fit-content;
+  /* margin: 10px auto; */
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.QuizUserInfo {
+  margin: 0;
+  padding: 10px;
+  background: var(--theme);
+  border: 3px lightgrey solid;
+  color: var(--bg);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-self: flex-end;
+  /* justify-content: center; */
+}
+
+.arabic .QuizUserInfo {
+  direction: ltr;
+  /* align-self: flex-start; */
+}
+
+.QuizUserInfo p,
+.QuizUserInfo h3 {
+  margin: 0;
+}
+
+.QuizUserInfo > p {
+  font-size: 0.8em;
+  color: lightgray;
+}
+
+.QuizUserPoints {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.QuizUserPoints p {
+  background: var(--hover);
+  padding: 3px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.PointsInput {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 0.8vw;
+  background: linear-gradient(to left, var(--bg), var(--bg2));
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.4vw;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 80%;
+  transition: 0.4s;
+  border: 2px lightgray solid;
+}
+
+.PointsInput:hover {
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+}
+
+.PointsInput:focus {
+  box-shadow: 0 0 0 0.15vw skyblue;
+}
+
+@media screen and (max-width: 768px) {
+  .Quiz {
+    margin-right: 0;
+    padding: 10px;
+    margin-bottom: 40%;
+  }
+
+  .arabic .Quiz {
+    margin-left: 0;
+    margin-top: 15%;
+    padding: 10px;
+  }
+
+  .QuizTables {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Quiz .QuizTitle {
+    width: 90%;
+    font-size: 1.5em;
+  }
+
+  .AddQuestionContainer {
+    width: 300px;
+  }
+
+  .AddQuestionContainer:hover {
+    width: 70px;
+  }
+
+  .AddQuestionContainer img {
+    width: 70px;
+  }
+
+  .QuizButton {
+    width: 130px;
+  }
+
+  .QuizButton:hover {
+    box-shadow: none;
+    transform: scale(0.95);
+  }
+  .OverallLeaderboardContainer {
+    width: 300px;
+  }
+
+  .QuizTableName {
+    font-size: 0.6em;
+  }
+
+  .WeeklyLeaderboardDates {
+    gap: 10px;
+  }
+
+  .WeeklyLeaderboardDate {
+    width: 80%;
+  }
+
+  .WeeklyLine {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .ScreenShot {
+    top: 0px;
+    right: 0%;
+  }
+
+  .ScreenShot2 {
+    top: -250px;
+    right: -10%;
+  }
+
+  .WeeklyLeaderboardContainer {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .TableOverflow {
+    width: 300px;
+    overflow-x: auto;
+  }
+
+  .QuizContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

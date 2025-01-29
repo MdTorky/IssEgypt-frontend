@@ -1342,6 +1342,62 @@ body.dark-mode {
   box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
 }
 
+/* Quiz */
+
+.dark-mode .OverallLeaderboard {
+  background: var(--hover2);
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .AddQuestionContainer {
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .AddQuestionTextContainer h3 {
+  color: var(--bg);
+}
+
+.dark-mode .AddQuestionTextContainer p {
+  color: lightgray;
+}
+
+.dark-mode .QuizButton {
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+  color: var(--bg);
+}
+
+.dark-mode .OverallLeaderboardContainer,
+.dark-mode .WeeklyLeaderboardContainer {
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .QuizQuestions p {
+  background: linear-gradient(to left, var(--bg), var(--bg2));
+  color: var(--hover);
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .EditPointsContainer {
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  border: 2px var(--hover2) solid;
+  box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
+}
+
+.dark-mode .PointsInput {
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+  color: var(--bg);
+}
+
 @media screen and (max-width: 700px) {
   .dark-mode .navbar ul li.active icon::after {
     color: var(--hover);
