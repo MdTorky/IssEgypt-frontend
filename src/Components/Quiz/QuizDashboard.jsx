@@ -175,7 +175,7 @@ const QuizDashboard = ({ api, languageText }) => {
                                             <th>{languageText.Matric}</th>
                                             <th>{languageText.FullName}</th>
                                             {/* <th>Email</th> */}
-                                            <th>{languageText.FullPoints}</th>
+                                            <th>{languageText.TotalPoints}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
