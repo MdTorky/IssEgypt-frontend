@@ -367,14 +367,39 @@
 
 .QuizQuestions p {
   margin: 0 auto 10px auto;
-  text-align: center;
+  /* text-align: center; */
   background: linear-gradient(to left, var(--hover), var(--hover2));
   color: var(--bg);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border: 2px lightgrey solid;
   border-radius: 5px;
-  width: 80%;
+  width: 95%;
+  padding: 5px;
+  position: relative;
+}
+
+.QuizPoints {
+  background: var(--theme);
+  padding: 5px 10px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  /* border-right: 2px lightgrey solid;
+  border-top: 2px lightgrey solid;
+  border-bottom: 2px lightgrey solid; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.arabic .QuizPoints {
+  left: 0;
+  right: inherit;
 }
 
 .QuizMainTitle {

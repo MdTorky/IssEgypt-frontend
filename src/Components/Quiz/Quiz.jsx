@@ -186,9 +186,13 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
                                 <div className="OverallLeaderboardContainer">
                                     <h3 className="SubFormTitle">{languageText.TodaysRiddles}</h3>
 
+                                    <div className="QuizQuestions">
+                                        <p>Question <span className="QuizPoints">Points</span></p>
+                                    </div>
+
                                     {questions.map((question, index) => (
                                         <div key={question._id} className="QuizQuestions">
-                                            <p>{languageText.QuestionAbb}{index + 1}: {question.questionText}</p>
+                                            <p>{languageText.QuestionAbb}{index + 1}: {question.questionText} <span className="QuizPoints">{question.points}</span></p>
                                             <div className="InputField">
                                                 <div className="InputLabelField">
                                                     <input
