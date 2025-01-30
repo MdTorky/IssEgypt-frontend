@@ -161,6 +161,11 @@
   margin: auto;
 }
 
+.TableOverflow table.TableHeading td,
+.TableOverflow table .TableHeading th {
+  width: 250px;
+}
+
 .OverallLeaderboard h2 {
   text-align: center;
   color: var(--theme);
