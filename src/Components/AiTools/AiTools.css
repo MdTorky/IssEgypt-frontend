@@ -145,13 +145,14 @@
   margin: 0;
   color: var(--bg);
   font-size: 1em;
+  width: 200px;
 }
 
 .AiCard .AiCardText p {
   margin: 0;
   color: lightgray;
   font-size: 0.8em;
-  width: 200px;
+  width: 180px;
 }
 
 .AiCardLink {

@@ -374,6 +374,10 @@
     "Video": "Video",
     "Productivity": "Productivity",
     "Coding": "Coding",
+    "ChatBots": "ChatBots",
+    "Humanizer": "Humanizer",
+    "AIDetectors": "AI Detectors",
+    "Others": "Others",
 
     "SelfImprovement": "Self Improvement",
     "Hobby": "Hobby",
@@ -1084,6 +1088,10 @@
     "Video": "الفيديو",
     "Productivity": "الإنتاجية",
     "Coding": "البرمجة",
+    "ChatBots": "روبوتات المحادثة",
+    "Humanizer": "محول",
+    "AIDetectors": "كاشفات الذكاء الاصطناعي",
+    "Others": "أخرى",
 
     "SelfImprovement": "تطوير الذات",
     "Hobby": "هواية",

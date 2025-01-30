@@ -43,42 +43,52 @@ const AiTools = ({ language, languageText }) => {
             <h1 className="title">{languageText.AiTools}</h1>
 
             <div className="sectionBox">
-                {/* Writing Category */}
                 <CategorySection
-                    categoryData={AiData.writing}
-                    categoryTitle={languageText.Writing}
-                    categoryIcon="jam:message-writing-f"
+                    categoryData={AiData.chatbots}
+                    categoryTitle={languageText.ChatBots}
+                    categoryIcon="tabler:message-chatbot-filled"
                 />
-
-                {/* Image Category */}
                 <CategorySection
                     categoryData={AiData.image}
                     categoryTitle={languageText.Image}
                     categoryIcon="mage:image-fill"
                 />
-
-                {/* Video Category */}
                 <CategorySection
                     categoryData={AiData.video}
                     categoryTitle={languageText.Video}
                     categoryIcon="icon-park-outline:video"
 
                 />
-
-                {/* Coding Category */}
                 <CategorySection
                     categoryData={AiData.coding}
                     categoryTitle={languageText.Coding}
                     categoryIcon="solar:code-2-linear"
 
                 />
-
-                {/* Productivity Category */}
+                <CategorySection
+                    categoryData={AiData.writing}
+                    categoryTitle={languageText.Writing}
+                    categoryIcon="jam:write-f"
+                />
                 <CategorySection
                     categoryData={AiData.productivity}
                     categoryTitle={languageText.Productivity}
                     categoryIcon="icon-park-outline:increase"
-
+                />
+                <CategorySection
+                    categoryData={AiData.humanizers}
+                    categoryTitle={languageText.Humanizer}
+                    categoryIcon="ph:finn-the-human"
+                />
+                <CategorySection
+                    categoryData={AiData.aiDetectors}
+                    categoryTitle={languageText.AIDetectors}
+                    categoryIcon="oui:ml-outlier-detection-job"
+                />
+                <CategorySection
+                    categoryData={AiData.others}
+                    categoryTitle={languageText.Others}
+                    categoryIcon="game-icons:perspective-dice-six-faces-random"
                 />
             </div>
         </div>

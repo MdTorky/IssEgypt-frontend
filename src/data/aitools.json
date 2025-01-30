@@ -1,5 +1,5 @@
 {
-  "writing": [
+  "chatbots": [
     {
       "id": 1,
       "name": "ChatGPT",
@@ -16,12 +16,39 @@
       "description": "AI Chat Assistant for writing and research",
       "arabicDescription": "مساعد الذكاء الاصطناعي للكتابة والبحث",
       "website": "https://www.deepseek.com/",
-      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/deepseek.png"
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/deepseek-color.png"
+    },
+    {
+      "id": 3,
+      "name": "Microsoft Copilot",
+      "arabicName": "مايكروسوفت كوبايلوت",
+      "description": "AI-powered assistant for coding, writing, and productivity",
+      "arabicDescription": "مساعد الذكاء الاصطناعي للبرمجة واكتشاف الأخطاء والإنتاجية",
+      "website": "https://copilot.microsoft.com/",
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/copilot-color.png"
+    },
+    {
+      "id": 4,
+      "name": "Claude AI",
+      "arabicName": "كلود أي",
+      "description": "AI-powered assistant for writing, research, coding, and math",
+      "arabicDescription": "مساعد مدعوم بالذكاء الاصطناعي للكتابة والبحث والبرمجة والرياضيات",
+      "website": "https://claude.ai/",
+      "img": "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png"
+    },
+    {
+      "id": 5,
+      "name": "Poe",
+      "arabicName": "بو",
+      "description": "Free AI chatbot for instant answers and conversations",
+      "arabicDescription": "روبوت دردشة مجاني للذكاء الاصطناعي للحصول على إجابات فورية ومحادثات",
+      "website": "https://poe.com/",
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/poe-color.png"
     }
   ],
   "image": [
     {
-      "id": 3,
+      "id": 1,
       "name": "DALL·E",
       "arabicName": "دالي",
       "description": "AI tool for generating images from text prompts",
@@ -30,7 +57,7 @@
       "img": "https://logosandtypes.com/wp-content/uploads/2022/07/openai.svg"
     },
     {
-      "id": 4,
+      "id": 2,
       "name": "Canva",
       "arabicName": "كانفا",
       "description": "Design tool with AI-powered features for creating visuals",
@@ -38,11 +65,38 @@
       "website": "https://www.canva.com/",
       "filter": true,
       "img": "https://public.canva.site/logo/media/dfb96cc174513093cd6ed61489ccb750.svg"
+    },
+    {
+      "id": 3,
+      "name": "Freepik's AI Image Generator",
+      "arabicName": "مولد الصور AI من فريبك",
+      "description": "Create photorealistic images and art from text prompts",
+      "arabicDescription": "إنشاء صور فوتوغرافية واقعية وفن رقمي من النصوص",
+      "website": "https://www.freepik.com/ai/image-generator",
+      "img": "https://cdn.worldvectorlogo.com/logos/freepik.svg"
+    },
+    {
+      "id": 4,
+      "name": "MidJourney",
+      "arabicName": "ميد جورني",
+      "description": "AI-powered tool for generating artistic images from text prompts",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء صور فنية من النصوص",
+      "website": "https://www.midjourney.com/",
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/midjourney.png"
+    },
+    {
+      "id": 5,
+      "name": "Artbreeder",
+      "arabicName": "آرت بريدر",
+      "description": "Free AI tool for creating and editing images",
+      "arabicDescription": "أداة مجانية للذكاء الاصطناعي لإنشاء وتحرير الصور",
+      "website": "https://www.artbreeder.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738217863/icons/ArtBreeder_p8m4ji.png"
     }
   ],
   "video": [
     {
-      "id": 5,
+      "id": 1,
       "name": "Runway",
       "arabicName": "رنوي",
       "description": "AI-powered video editing and creation tool",
@@ -51,18 +105,54 @@
       "img": "https://logosandtypes.com/wp-content/uploads/2023/04/runway.svg"
     },
     {
-      "id": 6,
+      "id": 2,
       "name": "Synthesia",
       "arabicName": "سينثيسيا",
       "description": "AI tool for creating videos with AI avatars",
       "arabicDescription": "أداة الذكاء الاصطناعي لإنشاء الفيديوهات باستخدام الصور الرمزية",
       "website": "https://www.synthesia.io/",
       "img": "https://logosandtypes.com/wp-content/uploads/2024/05/synthesia.svg"
+    },
+    {
+      "id": 3,
+      "name": "Lumen5",
+      "arabicName": "لومين 5",
+      "description": "AI-powered video creation tool that converts text into videos",
+      "arabicDescription": "أداة إنشاء الفيديو المدعومة بالذكاء الاصطناعي التي تحول النصوص إلى فيديوهات",
+      "website": "https://lumen5.com/",
+      "img": "https://lumen5.com/learn/wp-content/uploads/2022/03/L5-logo-fullColor-rgb-Purple-Square.png"
+    },
+    {
+      "id": 4,
+      "name": "Jitter",
+      "arabicName": "جيتير",
+      "description": "AI-powered tool for creating animated designs and videos",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء التصاميم المتحركة والفيديوهات",
+      "website": "https://jitter.video/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738216084/icons/Jitter_bot5iv.png"
+    },
+    {
+      "id": 5,
+      "name": "Pictory",
+      "arabicName": "بيكتوري",
+      "description": "Free AI tool for creating videos from text",
+      "arabicDescription": "أداة مجانية للذكاء الاصطناعي لإنشاء الفيديوهات من النصوص",
+      "website": "https://pictory.ai/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738218083/icons/Pictory_atdwgz.png"
+    },
+    {
+      "id": 6,
+      "name": "Animoto",
+      "arabicName": "أنيموتو",
+      "description": "Free AI tool for creating professional videos",
+      "arabicDescription": "أداة مجانية للذكاء الاصطناعي لإنشاء الفيديوهات الاحترافية",
+      "website": "https://animoto.com/",
+      "img": "https://animoto.com/static/logo-43a417c10b9d9b5119fa61a96c3be817.png"
     }
   ],
   "coding": [
     {
-      "id": 7,
+      "id": 1,
       "name": "GitHub Copilot",
       "arabicName": "جيت هاب كوبايلوت",
       "description": "AI-powered coding assistant for developers",
@@ -71,18 +161,106 @@
       "img": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-copilot-icon.png"
     },
     {
-      "id": 8,
+      "id": 2,
       "name": "Replit",
       "arabicName": "ريبليت",
       "description": "Online IDE with AI-powered coding assistance",
       "arabicDescription": "بيئة تطوير متكاملة عبر الإنترنت مع مساعدة برمجية مدعومة بالذكاء الاصطناعي",
       "website": "https://replit.com/",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/2048px-New_Replit_Logo.svg.png"
+    },
+    {
+      "id": 3,
+      "name": "SWE-agent",
+      "arabicName": "SWE-agent",
+      "description": "Free program for debugging and amending code for developers",
+      "arabicDescription": "برنامج مجاني لاكتشاف الأخطاء وتعديل الكود للمطورين",
+      "website": "https://swe-agent.com/latest/",
+      "filter": true,
+      "img": "https://swe-agent.com/latest/assets/swe-agent.svg"
+    },
+    {
+      "id": 4,
+      "name": "FlutterFlow",
+      "arabicName": "فلترفلو",
+      "description": "AI-powered tool for building mobile and web apps",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لبناء تطبيقات الهاتف والويب",
+      "website": "https://www.flutterflow.io/",
+      "filter": true,
+      "img": "https://avatars.githubusercontent.com/u/74943865?s=280&v=4"
+    },
+    {
+      "id": 5,
+      "name": "Codeium",
+      "arabicName": "كوديوم",
+      "description": "Free AI-powered code completion and search tool",
+      "arabicDescription": "أداة مجانية مدعومة بالذكاء الاصطناعي لإكمال الكود والبحث",
+      "website": "https://www.codeium.com/",
+      "filter": true,
+
+      "img": "https://media.licdn.com/dms/image/v2/D560BAQGLUQsYP7sqGA/company-logo_200_200/company-logo_200_200/0/1666809807679/codeiumdev_logo?e=2147483647&v=beta&t=6AQtPU8FK014qUSyWLyIcHKZ1Un7Gizrm_1vunhM6a4"
+    },
+    {
+      "id": 6,
+      "name": "Tabnine",
+      "arabicName": "تاب ناين",
+      "description": "Free AI-powered code completion tool",
+      "arabicDescription": "أداة مجانية مدعومة بالذكاء الاصطناعي لإكمال الكود",
+      "website": "https://www.tabnine.com/",
+      "img": "https://tabnine.gallerycdn.vsassets.io/extensions/tabnine/tabnine-vscode/3.226.0/1737640184373/Microsoft.VisualStudio.Services.Icons.Default"
+    }
+  ],
+  "writing": [
+    {
+      "id": 1,
+      "name": "Grammarly",
+      "arabicName": "جرامرلي",
+      "description": "AI-powered writing assistant for grammar and style",
+      "arabicDescription": "مساعد الكتابة المدعوم بالذكاء الاصطناعي لتحسين القواعد والأسلوب",
+      "website": "https://www.grammarly.com/",
+      "img": "https://logosandtypes.com/wp-content/uploads/2020/07/grammarly.svg"
+    },
+    {
+      "id": 2,
+      "name": "QuillBot",
+      "arabicName": "كويل بوت",
+      "description": "AI-powered paraphrasing and writing tool",
+      "arabicDescription": "أداة إعادة الصياغة والكتابة المدعومة بالذكاء الاصطناعي",
+      "website": "https://quillbot.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738208871/icons/Quillbot_rk1rge.png"
+    },
+    {
+      "id": 3,
+      "name": "WriteSonic",
+      "arabicName": "رايت سونيك",
+      "description": "AI-powered tool for generating high-quality content",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء محتوى عالي الجودة",
+      "website": "https://app.writesonic.com/",
+      "filter": true,
+      "img": "https://aiexplorer.io/wp-content/uploads/2023/01/logo-writesonic.png"
+    },
+    {
+      "id": 4,
+      "name": "Rytr",
+      "arabicName": "رايتور",
+      "description": "Free AI writing assistant for content creation",
+      "arabicDescription": "مساعد كتابة مجاني مدعوم بالذكاء الاصطناعي لإنشاء المحتوى",
+      "website": "https://rytr.me/",
+      "img": "https://www.sahu4you.com/images/tool/rytr.png"
+    },
+    {
+      "id": 5,
+      "name": "Simplified",
+      "arabicName": "سيمبليفايد",
+      "description": "Free AI writing and design tool for content creation",
+      "arabicDescription": "أداة كتابة وتصميم مجانية مدعومة بالذكاء الاصطناعي لإنشاء المحتوى",
+      "website": "https://simplified.com/",
+      "img": "https://cdn.freelogovectors.net/wp-content/uploads/2022/01/simplified-logo-freelogovectors.net_.png"
     }
   ],
   "productivity": [
     {
-      "id": 9,
+      "id": 1,
       "name": "Notion AI",
       "arabicName": "نوشن AI",
       "description": "AI-powered productivity tool for note-taking and task management",
@@ -92,13 +270,136 @@
       "img": "https://logosandtypes.com/wp-content/uploads/2020/07/notion.svg"
     },
     {
-      "id": 10,
-      "name": "Grammarly",
-      "arabicName": "جرامرلي",
-      "description": "AI-powered writing assistant for grammar and style",
-      "arabicDescription": "مساعد الكتابة المدعوم بالذكاء الاصطناعي لتحسين القواعد والأسلوب",
-      "website": "https://www.grammarly.com/",
-      "img": "https://logosandtypes.com/wp-content/uploads/2020/07/grammarly.svg"
+      "id": 2,
+      "name": "Unstuck Study",
+      "arabicName": "أنستاك ستادي",
+      "description": "Transforms your PDFs, Youtube, and much more into trusted study tools",
+      "arabicDescription": "يحول ملفات PDF وYouTube وغير ذلك الكثير إلى أدوات دراسية موثوقة",
+      "website": "https://unstuckstudy.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738216669/icons/Unstuck_vnzd3t.png"
+    },
+    {
+      "id": 3,
+      "name": "Gamma",
+      "arabicName": "جاما",
+      "description": "AI-powered tool for creating presentations and documents",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء العروض التقديمية والمستندات",
+      "website": "https://gamma.app/",
+      "img": "https://store-images.s-microsoft.com/image/apps.63360.13800228740496758.3ed8203a-9357-4240-af11-1c4d197a5191.a75be1f2-5bb7-4521-b003-bc0263ab8545"
+    },
+    {
+      "id": 4,
+      "name": "FlowCV",
+      "arabicName": "فلو سي في",
+      "description": "AI-powered tool for creating professional resumes",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء السير الذاتية الاحترافية",
+      "website": "https://flowcv.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738216853/icons/FlowCV_fa3yxa.png"
+    },
+    {
+      "id": 5,
+      "name": "Wonsulting AI",
+      "arabicName": "ونسولتينج AI",
+      "description": "AI-powered tool for career guidance and job search assistance",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لتوجيه المسار الوظيفي والمساعدة في البحث عن وظائف",
+      "website": "https://app.wonsulting.ai/",
+      "img": "https://cdn.prod.website-files.com/63ceaf62f99f0e75abf25e71/63cfcf6d7c15224046d21321_wonsultingai-webclip.png"
+    },
+    {
+      "id": 6,
+      "name": "Trello",
+      "arabicName": "تريلو",
+      "description": "Free AI-powered tool for project management and collaboration",
+      "arabicDescription": "أداة مجانية مدعومة بالذكاء الاصطناعي لإدارة المشاريع والتعاون",
+      "website": "https://trello.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738218613/icons/Trello_o1mphp.png"
+    }
+  ],
+  "humanizers": [
+    {
+      "id": 1,
+      "name": "StealthWriter",
+      "arabicName": "ستيلث رايتر",
+      "description": "AI-powered tool for rewriting and paraphrasing content",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإعادة صياغة المحتوى",
+      "website": "https://app.stealthwriter.ai/",
+      "img": "https://10web.io/wp-content/uploads/2024/08/StealthWriter_logo.png"
+    },
+    {
+      "id": 2,
+      "name": "AI Humanize",
+      "arabicName": "محول النصوص البشرية",
+      "description": "Converts AI-generated content into natural, human-like text",
+      "arabicDescription": "يحول المحتوى المولد بالذكاء الاصطناعي إلى نص طبيعي يشبه النص البشري",
+      "website": "https://aihumanize.io/",
+      "img": "https://aihumanize.io/assets/img/logo.png"
+    }
+  ],
+  "aiDetectors": [
+    {
+      "id": 1,
+      "name": "GPTZero",
+      "arabicName": "جي بي تي زيرو",
+      "description": "Detects AI-generated text and ensures authenticity",
+      "arabicDescription": "يكشف النصوص المولدة بالذكاء الاصطناعي ويضمن الأصالة",
+      "website": "https://gptzero.me/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738208215/icons/ZeroGpt_w6hsps.png"
+    },
+    {
+      "id": 2,
+      "name": "AI Detector",
+      "arabicName": "كاشف الذكاء الاصطناعي",
+      "description": "Tool to identify AI-generated content",
+      "arabicDescription": "أداة للكشف عن المحتوى المولد بالذكاء الاصطناعي",
+      "website": "https://aidetector.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738208507/icons/Ai_Detector_keu0x7.png"
+    },
+    {
+      "id": 3,
+      "name": "Copyleaks",
+      "arabicName": "كوبي ليكس",
+      "description": "Free AI detector for identifying AI-generated content",
+      "arabicDescription": "أداة مجانية للكشف عن المحتوى المولد بالذكاء الاصطناعي",
+      "website": "https://copyleaks.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738218803/icons/Copy_LEaks_ryw5qm.png"
+    }
+  ],
+  "others": [
+    {
+      "id": 1,
+      "name": "Auphonic",
+      "arabicName": "أوفونيك",
+      "description": "AI-powered audio post-production tool for podcasts and videos",
+      "arabicDescription": "أداة ما بعد الإنتاج الصوتي المدعومة بالذكاء الاصطناعي للبودكاست والفيديوهات",
+      "website": "https://auphonic.com/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738209959/icons/Auphonic_xdlkrp.png"
+    },
+    {
+      "id": 2,
+      "name": "Prompt Genie",
+      "arabicName": "برومبت جيني",
+      "description": "AI-powered tool for generating creative prompts",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء نصوص إبداعية",
+      "website": "https://www.prompt-genie.com/",
+      "img": "https://cdn.prod.website-files.com/648e04d4bbae7004f1b35f15/65c2a8995e2d67c03dc0baf1_prompt-genie-icon.png"
+    },
+    {
+      "id": 3,
+      "name": "Durable",
+      "arabicName": "دورابل",
+      "description": "AI-powered website builder for creating websites in minutes",
+      "arabicDescription": "أداة مدعومة بالذكاء الاصطناعي لإنشاء مواقع الويب في دقائق",
+      "website": "https://durable.co/ai-website-builder",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738216978/icons/Durable_drfqzc.png"
+    },
+    {
+      "id": 4,
+      "name": "Remove.bg",
+      "arabicName": "ريموف.بي جي",
+      "description": "Free AI tool for removing image backgrounds",
+      "arabicDescription": "أداة مجانية للذكاء الاصطناعي لإزالة خلفيات الصور",
+      "website": "https://www.remove.bg/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738218891/icons/Bgremover_lws7wr.png"
     }
   ]
 }
