@@ -454,8 +454,8 @@ function Home({ language, languageText, api }) {
                 <h1 className="connectTitle ">{languageText.connect}</h1>
                 <div className="connect">
                     <div className="socialBar">
-                        <a href="https://www.facebook.com/Eg.UTM"><div className="socialCircle facebook"><Icon icon="mingcute:facebook-fill" className='facebook' /></div></a>
                         <a href="https://www.instagram.com/issegypt/"><div className="socialCircle instagram"><Icon icon="jam:instagram" className='instagram' /></div></a>
+                        <a href="https://www.facebook.com/Eg.UTM"><div className="socialCircle facebook"><Icon icon="mingcute:facebook-fill" className='facebook' /></div></a>
                         <a href="https://www.youtube.com/@issegypt"><div className="socialCircle youtube"><Icon icon="mingcute:youtube-fill" className="youtube" /></div></a>
                         <a href="https://www.linkedin.com/in/iss-egypt-utm-821447267/"><div className="socialCircle linkedIn"><Icon icon="mdi:linkedin" className="linkedIn" /></div></a>
                         <a href="https://linktr.ee/issegypt?utm_source=linktree_profile_share&ltsid=fd5e7ee8-41ba-4efa-bbc0-ac5f555b3edb"><div className="socialCircle linktree"><Icon icon="ph:linktree-logo" className="linktree" /></div></a>

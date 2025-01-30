@@ -1,21 +1,13 @@
 import "./Footer.css";
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useLanguage } from '../../context/language';
 import { Link } from "react-router-dom";
-import { faTree } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Icon } from "@iconify/react";
+
+const Footer = ({ language, languageText }) => {
 
 
-const Footer = ({ language, languageData }) => {
-    const { toggleLanguage } = useLanguage();
-
-    useEffect(() => {
-        // Ensure that the languageData and language are updated when the language changes
-        // You can use this hook to make sure the component updates when language changes
-    }, [language, languageData]);
-
-    const languageText = languageData[language];
     const isRtl = language === 'ar';
 
     const footerClass = isRtl ? 'footer rtl' : 'footer';
@@ -29,36 +21,34 @@ const Footer = ({ language, languageData }) => {
                 <div className="wave" id="wave4"></div>
             </div>
             <div className="social-icon">
+
+
+
                 <li className="social-icon__item">
-                    <a className="social-icon__link" href="https://www.facebook.com/Eg.UTM">
-                        <FontAwesomeIcon icon={faFacebook} />
-                        {/* <span>{languageText.facebook}</span> */}
+                    <a className="social-icon__link" href="https://www.instagram.com/issegypt/">
+                        <Icon icon="jam:instagram" />
                     </a>
                 </li>
                 <li className="social-icon__item">
-                    <a className="social-icon__link" href="https://www.instagram.com/issegypt/">
-                        <FontAwesomeIcon icon={faInstagram} />
-                        {/* <span>{languageText.instagram}</span> */}
+                    <a className="social-icon__link" href="https://www.facebook.com/Eg.UTM">
+                        <Icon icon="mingcute:facebook-fill" />
                     </a>
                 </li>
                 <li className="social-icon__item">
                     <a className="social-icon__link" href="https://www.youtube.com/@issegypt">
-                        <FontAwesomeIcon icon={faYoutube} />
-                        {/* <span>{languageText.youtube}</span> */}
+                        <Icon icon="mingcute:youtube-fill" />
 
                     </a>
                 </li>
                 <li className="social-icon__item">
                     <a className="social-icon__link" href="https://www.linkedin.com/in/iss-egypt-utm-821447267/">
-                        <FontAwesomeIcon icon={faLinkedin} />
-                        {/* <span>{languageText.linkedin}</span> */}
+                        <Icon icon="mdi:linkedin" className="linkedIn" />
 
                     </a>
                 </li>
                 <li className="social-icon__item">
                     <a className="social-icon__link" href="https://linktr.ee/issegypt?utm_source=linktree_profile_share&ltsid=fd5e7ee8-41ba-4efa-bbc0-ac5f555b3edb">
-                        <FontAwesomeIcon icon={faTree} />
-                        {/* <span>{languageText.linktree}</span> */}
+                        <Icon icon="ph:linktree-logo" />
 
                     </a>
                 </li>
@@ -66,6 +56,7 @@ const Footer = ({ language, languageData }) => {
             <div className="menu">
                 <li className="menu__item"><Link className="menu__link" to="/">{languageText.home}</Link></li>
                 <li className="menu__item"><Link className="menu__link" to="/services">{languageText.services}</Link></li>
+                <li className="menu__item"><Link className="menu__link" to="/gallery">{languageText.gallery}</Link></li>
                 <li className="menu__item"><Link className="menu__link" to="/members">{languageText.members}</Link></li>
             </div>
             <Link to='./terms&Conditions' className="Terms"

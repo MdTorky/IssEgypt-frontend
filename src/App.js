@@ -195,7 +195,7 @@ function App() {
           </div>
           <Menu language={language} languageData={languageData} api={api} />
         </div>
-        <Footer language={language} languageData={languageData} />
+        <Footer language={language} languageText={languageText} />
       </div>
       <ToastContainer />
     </Router>

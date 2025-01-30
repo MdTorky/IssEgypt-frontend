@@ -174,16 +174,14 @@ const QuizDashboard = ({ api, languageText }) => {
                                         <tr className="TableHeading">
                                             <th>{languageText.Matric}</th>
                                             <th>{languageText.FullName}</th>
-                                            {/* <th>Email</th> */}
                                             <th>{languageText.TotalPoints}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {aggregatedUsers.map((user) => (
-                                            <tr className="TableHeading TableItems  " key={user.matricNumber}>
+                                            <tr className="TableHeading TableItems" key={user.matricNumber}>
                                                 <td style={{ textTransform: "uppercase" }}>{user.matricNumber}</td>
                                                 <td className='QuizTableName'>{user.fullName}</td>
-                                                {/* <td style={{ fontSize: "0.8em" }}>{user.email}</td> */}
                                                 <td ><span className='QuizTablePoints'>{user.totalPoints}</span></td>
                                             </tr>
                                         ))}
@@ -266,7 +264,6 @@ const QuizDashboard = ({ api, languageText }) => {
                                                         <td><span className='QuizTablePoints'>{user.totalPoints}</span></td>
 
                                                         {showQuestions && questions.map((q, idx) => {
-                                                            // Ensure user.answers is an array before calling .find()
                                                             const userAnswers = Array.isArray(user.answers) ? user.answers : [];
                                                             const userAnswer = userAnswers.find((a) => a.questionId.toString() === q._id.toString()); // Ensure to compare ObjectIds correctly
 

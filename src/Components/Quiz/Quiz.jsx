@@ -215,12 +215,12 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
 
                                 </div>
                             </div>
-                            {!submitting && <button type="submit" className="bg-blue-500 text-white p-2 w-full">
+                            {!submitting && <button type="submit">
                                 {languageText.SubmitAnswers}
                             </button>}
                             {submitting && (
                                 <button type="button" disabled="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 101" class="inline w-4 h-4 mr-3 text-white animate-bounce" role="status" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 101" role="status" aria-hidden="true">
                                         <circle fill="var(--bg)" r="45" cy="50" cx="50"></circle>
                                     </svg>
                                     {languageText.Submitting}
@@ -232,7 +232,7 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
                         </form>
                     </div>
                 ) : (
-                    <p>No questions available for today.</p>
+                    <p className="QuizNoData" >{languageText.NoRiddle}</p>
                 )
             )}
         </div>
