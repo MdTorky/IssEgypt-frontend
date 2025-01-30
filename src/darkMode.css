@@ -786,6 +786,24 @@ body.dark-mode {
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+.dark-mode .AiTools .outerBox {
+  background: var(--hover2);
+  border: 2px gray solid;
+}
+
+.dark-mode .AiCard {
+  border: 3px gray solid;
+}
+
+.dark-mode .AiTools .outerBox .innerBox {
+  background: var(--hover);
+  border: 2px gray solid;
+}
+
+.dark-mode .AiTools .icon:hover {
+  color: var(--bg);
+}
+
 .dark-mode .internships .outerBox {
   background: var(--hover2);
   border: 2px gray solid;

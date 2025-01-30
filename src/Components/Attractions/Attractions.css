@@ -141,7 +141,7 @@
   display: inline;
 }
 
-.cards .card .img img {
+.attraction .cards .card .img img {
   width: 300px;
   height: 150px;
   border-top-right-radius: 15px;
@@ -149,7 +149,7 @@
   transition: 0.7s ease;
 }
 
-.cards .card .cardsBottomContent .icons {
+.attraction .cards .card .cardsBottomContent .icons {
   display: flex;
   justify-content: space-evenly;
   gap: 10px;

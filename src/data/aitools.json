@@ -1,0 +1,104 @@
+{
+  "writing": [
+    {
+      "id": 1,
+      "name": "ChatGPT",
+      "arabicName": "شات جي بي تي",
+      "description": "AI Chat Assistant for writing, coding, and brainstorming",
+      "arabicDescription": "مساعد الذكاء الاصطناعي للكتابة والبرمجة والعصف الذهني",
+      "website": "https://chatgpt.com/",
+      "img": "https://logosandtypes.com/wp-content/uploads/2022/07/openai.svg"
+    },
+    {
+      "id": 2,
+      "name": "Deepseek",
+      "arabicName": "ديب سيك",
+      "description": "AI Chat Assistant for writing and research",
+      "arabicDescription": "مساعد الذكاء الاصطناعي للكتابة والبحث",
+      "website": "https://www.deepseek.com/",
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/deepseek.png"
+    }
+  ],
+  "image": [
+    {
+      "id": 3,
+      "name": "DALL·E",
+      "arabicName": "دالي",
+      "description": "AI tool for generating images from text prompts",
+      "arabicDescription": "أداة الذكاء الاصطناعي لإنشاء الصور من النصوص",
+      "website": "https://openai.com/dall-e",
+      "img": "https://logosandtypes.com/wp-content/uploads/2022/07/openai.svg"
+    },
+    {
+      "id": 4,
+      "name": "Canva",
+      "arabicName": "كانفا",
+      "description": "Design tool with AI-powered features for creating visuals",
+      "arabicDescription": "أداة تصميم مع ميزات مدعومة بالذكاء الاصطناعي لإنشاء المرئيات",
+      "website": "https://www.canva.com/",
+      "filter": true,
+      "img": "https://public.canva.site/logo/media/dfb96cc174513093cd6ed61489ccb750.svg"
+    }
+  ],
+  "video": [
+    {
+      "id": 5,
+      "name": "Runway",
+      "arabicName": "رنوي",
+      "description": "AI-powered video editing and creation tool",
+      "arabicDescription": "أداة تحرير وإنشاء الفيديو المدعومة بالذكاء الاصطناعي",
+      "website": "https://runwayml.com/",
+      "img": "https://logosandtypes.com/wp-content/uploads/2023/04/runway.svg"
+    },
+    {
+      "id": 6,
+      "name": "Synthesia",
+      "arabicName": "سينثيسيا",
+      "description": "AI tool for creating videos with AI avatars",
+      "arabicDescription": "أداة الذكاء الاصطناعي لإنشاء الفيديوهات باستخدام الصور الرمزية",
+      "website": "https://www.synthesia.io/",
+      "img": "https://logosandtypes.com/wp-content/uploads/2024/05/synthesia.svg"
+    }
+  ],
+  "coding": [
+    {
+      "id": 7,
+      "name": "GitHub Copilot",
+      "arabicName": "جيت هاب كوبايلوت",
+      "description": "AI-powered coding assistant for developers",
+      "arabicDescription": "مساعد البرمجة المدعوم بالذكاء الاصطناعي للمطورين",
+      "website": "https://github.com/features/copilot",
+      "img": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-copilot-icon.png"
+    },
+    {
+      "id": 8,
+      "name": "Replit",
+      "arabicName": "ريبليت",
+      "description": "Online IDE with AI-powered coding assistance",
+      "arabicDescription": "بيئة تطوير متكاملة عبر الإنترنت مع مساعدة برمجية مدعومة بالذكاء الاصطناعي",
+      "website": "https://replit.com/",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/2048px-New_Replit_Logo.svg.png"
+    }
+  ],
+  "productivity": [
+    {
+      "id": 9,
+      "name": "Notion AI",
+      "arabicName": "نوشن AI",
+      "description": "AI-powered productivity tool for note-taking and task management",
+      "arabicDescription": "أداة إنتاجية مدعومة بالذكاء الاصطناعي لتدوين الملاحظات وإدارة المهام",
+      "website": "https://www.notion.so/product/ai",
+      "filter": true,
+      "img": "https://logosandtypes.com/wp-content/uploads/2020/07/notion.svg"
+    },
+    {
+      "id": 10,
+      "name": "Grammarly",
+      "arabicName": "جرامرلي",
+      "description": "AI-powered writing assistant for grammar and style",
+      "arabicDescription": "مساعد الكتابة المدعوم بالذكاء الاصطناعي لتحسين القواعد والأسلوب",
+      "website": "https://www.grammarly.com/",
+      "img": "https://logosandtypes.com/wp-content/uploads/2020/07/grammarly.svg"
+    }
+  ]
+}

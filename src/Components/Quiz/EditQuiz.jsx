@@ -63,6 +63,10 @@ const ModifyPoints = ({ api, languageText }) => {
         setUsers(updatedUsers);
     };
 
+    const uniqueQuestions = [...new Map(
+        users.flatMap(user => user.answers.map(answer => [answer.questionId, answer]))
+    ).values()];
+
     return (
         <div className="Quiz">
             <h2 className='QuizTitle'>{languageText.PointsManagement}</h2>
@@ -99,26 +103,15 @@ const ModifyPoints = ({ api, languageText }) => {
                                         </div>
                                         <div className="TableOverflow">
                                             <table>
-                                                {/* {user.answers.map((answer, answerIdx) => (
-                                                <li key={answerIdx}>
-                                                    <strong>Q:</strong> {answer.question} <br />
-                                                    <strong>A:</strong> {answer.answer} <br />
-                                                    <strong>P:</strong> {answer.points} <br />
-                                                    <div className="points-controls">
-                                                        <input
-                                                            required
-                                                            type="number"
-                                                            placeholder="Enter points"
-                                                            value={answer.newPoints || ''}
-                                                            onChange={(e) => handlePointsChange(userIdx, answerIdx, e)}
-                                                        />
-                                                    </div>
-                                                </li>
-                                            ))} */}
+
                                                 <thead>
                                                     <tr className="TableHeading">
-                                                        {user.answers.map((answer, answerIdx) => (
-                                                            <th key={answerIdx}>{answer.question}</th>
+                                                        {uniqueQuestions.map((question, idx) => (
+                                                            <th className='TableAnswers' key={idx}>
+                                                                {question.question}
+                                                                <span className="TableAnswer">{question.qAnswer} </span>
+                                                                <span className="TableAnswer TablePoint">{question.qPoints} {question.qPoints === 1 ? languageText.Point : languageText.Points}</span>
+                                                            </th>
                                                         ))}
                                                     </tr>
                                                 </thead>
@@ -129,9 +122,9 @@ const ModifyPoints = ({ api, languageText }) => {
                                                             <td key={answerIdx}>{answer.answer}</td>
                                                         ))}
                                                     </tr>
-                                                    <tr className="TableHeading TableItems">
+                                                    <tr className="TableHeading TableItems" style={{ background: "#155e95" }}>
                                                         {user.answers.map((answer, answerIdx) => (
-                                                            <td key={answerIdx}>{answer.points}</td>
+                                                            <td key={answerIdx} >{answer.points}</td>
                                                         ))}
                                                     </tr>
                                                     <tr className="TableHeading">

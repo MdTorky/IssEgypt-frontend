@@ -305,6 +305,7 @@
     "clubs": "Clubs",
     "extraCourses": "Extra Courses",
     "coursesTips": "Courses Tips",
+    "AiTools": "Ai Tools",
     "library": "ISS Library",
     "TypeEventName": "Type the Event's Name",
     "NoEventsYet": "No Events Yet",
@@ -319,6 +320,8 @@
     "clubs2": "Join Vibrant Communities",
     "extraCourses2": "Supplemental Courses",
     "coursesTips2": "Get Some Fresh Tips",
+    "AiTools2": "Tools to Help you Get By",
+
     "library2": "Book any Academic Book",
 
     "on": "On Campus",
@@ -366,6 +369,11 @@
     "d6": "Latest Tuition Fees Receipt",
     "d7": "Eval (Immigration Approval)",
     "d8": "250RM Cash",
+
+    "Writing": "Writing",
+    "Video": "Video",
+    "Productivity": "Productivity",
+    "Coding": "Coding",
 
     "SelfImprovement": "Self Improvement",
     "Hobby": "Hobby",
@@ -1011,6 +1019,7 @@
     "clubs": "الأندية",
     "extraCourses": "كورسات اضافية",
     "coursesTips": "نصائح الكورسات",
+    "AiTools": "أدوات الذكاء الاصطناعي",
     "residence2": "ابحث عن منزلك المثالي",
     "attractions2": "اكتشف المدينة",
     "transportation2": "اكتشف خيارات تنقلك",
@@ -1021,6 +1030,8 @@
     "clubs2": "انضم إلى الأندية المتعددة",
     "extraCourses2": "كورسات تكميلية إضافية",
     "coursesTips2": "احصل على بعض النصائح الطازجة",
+    "AiTools2": "أدوات تساعدك على النجاح",
+
     "library2": "احجز أي كتاب أكاديمي",
 
     "on": "داخل الحرم الجامعي",
@@ -1068,6 +1079,11 @@
     "d6": " آخر إيصال للرسوم الدراسية",
     "d7": " Eval (الموافقة على الهجرة)",
     "d8": " 250 رينجيت ماليزي نقدًا",
+
+    "Writing": "الكتابة",
+    "Video": "الفيديو",
+    "Productivity": "الإنتاجية",
+    "Coding": "البرمجة",
 
     "SelfImprovement": "تطوير الذات",
     "Hobby": "هواية",

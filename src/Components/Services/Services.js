@@ -391,8 +391,14 @@ const Services = ({ language, languageText, api }) => {
 
                                 <Icon icon="ic:baseline-tips-and-updates" className='moon' />
                             </Link>
+                            <Link to="/aitools" className="newStudentCard">
+                                <p className="time-text"><span>{languageText.AiTools}</span><span className="time-sub-text"></span></p>
+                                <p className="day-text">{languageText.AiTools2}</p>
 
-                            <Link to="/" className="newStudentCard notyet">
+                                <Icon icon="hugeicons:ai-brain-03" className='moon' />
+                            </Link>
+
+                            <Link to="/underconstruction" className="newStudentCard notyet">
                                 <p className="time-text"><span>{languageText.Lecturers}</span><span className="time-sub-text"></span></p>
                                 <p className="day-text">{languageText.handbook2}</p>
 

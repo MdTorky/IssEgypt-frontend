@@ -61,6 +61,7 @@ import QuizDashboard from './Components/Quiz/QuizDashboard';
 import QuizPage from './Components/Quiz/Quiz';
 import ModifyPoints from './Components/Quiz/EditQuiz';
 import AddQuestion from './Components/Quiz/AddQuestion';
+import AiTools from './Components/AiTools/AiTools';
 function App() {
   const api = process.env.REACT_APP_API_KEY;
   // const api = "http://localhost:4000";
@@ -119,6 +120,7 @@ function App() {
               <Route path="/members/:memberId" element={<MemberDetails language={language} languageText={languageText} api={api} />} />
               <Route path="/residences" element={<Residences languageText={languageText} />} />
               <Route path="/attractions" element={<Attractions languageText={languageText} />} />
+              <Route path="/aitools" element={<AiTools languageText={languageText} language={language} />} />
               <Route path="/transportation" element={<Transportation language={language} languageText={languageText} />} />
               <Route path="/openAccount" element={<BankAccount language={language} languageText={languageText} />} />
               <Route path="/clubs" element={<Clubs language={language} languageText={languageText} />} />
