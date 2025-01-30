@@ -192,8 +192,8 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
 
                                     {questions.map((question, index) => (
                                         <div key={question._id} className="QuizQuestions">
-                                            <p>{languageText.QuestionAbb}{index + 1}: {question.questionText} <span className="QuizPoints">{question.points}</span></p>
-                                            <div className="InputField">
+                                            <p><p className="QuizQuestion">{languageText.QuestionAbb}{index + 1}: {question.questionText} </p><span className="QuizPoints">{question.points}</span></p>
+                                            <div className="InputField" style={{ width: '100%' }}>
                                                 <div className="InputLabelField">
                                                     <input
                                                         type="text"

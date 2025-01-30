@@ -149,7 +149,7 @@ const AddQuestion = ({ api, languageText, darkMode, language }) => {
                                     />
                                     {!input.points && (
                                         <label htmlFor={`points${index}`} className={`LabelInput ${input.points ? 'valid' : ''}`}>
-                                            <Icon icon="gravity-ui:circle-question-dot" /> {languageText.Points}
+                                            <Icon icon="gg:edit-black-point" /> {languageText.Points}
                                         </label>
                                     )}
                                 </div>

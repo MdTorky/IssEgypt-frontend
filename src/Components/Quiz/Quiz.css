@@ -363,20 +363,30 @@
 }
 .QuizQuestions {
   margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.QuizQuestions p {
-  margin: 0 auto 10px auto;
-  /* text-align: center; */
+.QuizQuestions > p {
+  width: 350px;
   background: linear-gradient(to left, var(--hover), var(--hover2));
-  color: var(--bg);
+  margin: 0 auto 10px auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border: 2px lightgrey solid;
-  border-radius: 5px;
-  width: 95%;
-  padding: 5px;
+  color: var(--bg);
   position: relative;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.QuizQuestions p .QuizQuestion {
+  margin: 0;
+  width: 320px;
+  border: none;
+
+  /* position: absolute; */
 }
 
 .QuizPoints {
@@ -392,6 +402,8 @@
   top: 0;
   bottom: 0;
   right: 0;
+  display: flex;
+  align-items: center;
   border-radius: none;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -633,5 +645,15 @@
     font-size: 2vw;
     padding: 1vw;
     max-width: 100%;
+  }
+
+  .QuizQuestions > p {
+    width: 290px;
+  }
+
+  .QuizQuestions p .QuizQuestion {
+    margin: 0;
+    width: 260px;
+    /* position: absolute; */
   }
 }

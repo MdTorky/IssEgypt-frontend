@@ -166,7 +166,7 @@ const QuizDashboard = ({ api, languageText }) => {
                     <div className="OverallLeaderboard" ref={leaderboardRef}>
                         <div className="OverallLeaderboardContainer">
                             <h2>{languageText.OverallLeaderboard}</h2>
-                            {(QuestionLoading || UserLoading) ? (
+                            {(QuestionLoading && UserLoading) ? (
                                 <div><Loader /></div>
                             ) : (
                                 <table >
@@ -178,13 +178,15 @@ const QuizDashboard = ({ api, languageText }) => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {aggregatedUsers.map((user) => (
+                                        {aggregatedUsers.length > 0 ? aggregatedUsers.map((user) => (
                                             <tr className="TableHeading TableItems" key={user.matricNumber}>
                                                 <td style={{ textTransform: "uppercase" }}>{user.matricNumber}</td>
                                                 <td className='QuizTableName'>{user.fullName}</td>
                                                 <td ><span className='QuizTablePoints'>{user.totalPoints}</span></td>
                                             </tr>
-                                        ))}
+                                        )) : (
+                                            <div className='QuizNoData'>No Users Yet</div>
+                                        )}
                                     </tbody>
                                 </table>
                             )}
