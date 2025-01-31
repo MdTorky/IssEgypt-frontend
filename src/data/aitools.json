@@ -58,6 +58,15 @@
     },
     {
       "id": 2,
+      "name": "Flux.1",
+      "arabicName": "فلكس.1",
+      "description": "AI tool for generating images from text prompts completely free [without credits]",
+      "arabicDescription": "أداة الذكاء الاصطناعي لإنشاء الصور من النصوص مجاني تمامًا [بدون اعتمادات]",
+      "website": "https://huggingface.co/spaces/black-forest-labs/FLUX.1-dev",
+      "img": "https://img-cdn.flux.ai/eyJidWNrZXQiOiJncmF2aXRvbi1lbGVjdHJpYy1zeW1ib2xzIiwia2V5IjoidXNlcl9hdmF0YXJzLzI0NHgyNDQtLS1Mb2dvLS1Pbi1UcnVlLUJsYWNrLS0zeC0wMmM3MTI0OC03YzhjLTQ3MjktYjNmMi05NjQ2NzViZWZiZGEucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozMjAsImhlaWdodCI6MzIwLCJmaXQiOiJjb3ZlciIsImJhY2tncm91bmQiOnsiciI6MCwiZyI6MCwiYiI6MCwiYWxwaGEiOjB9fX0sIm91dHB1dEZvcm1hdCI6IndlYnAifQ=="
+    },
+    {
+      "id": 3,
       "name": "Canva",
       "arabicName": "كانفا",
       "description": "Design tool with AI-powered features for creating visuals",
@@ -67,7 +76,7 @@
       "img": "https://public.canva.site/logo/media/dfb96cc174513093cd6ed61489ccb750.svg"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Freepik's AI Image Generator",
       "arabicName": "مولد الصور AI من فريبك",
       "description": "Create photorealistic images and art from text prompts",
@@ -76,7 +85,7 @@
       "img": "https://cdn.worldvectorlogo.com/logos/freepik.svg"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "MidJourney",
       "arabicName": "ميد جورني",
       "description": "AI-powered tool for generating artistic images from text prompts",
@@ -85,7 +94,7 @@
       "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/midjourney.png"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Artbreeder",
       "arabicName": "آرت بريدر",
       "description": "Free AI tool for creating and editing images",
@@ -367,6 +376,16 @@
   "others": [
     {
       "id": 1,
+      "name": "Hugging Face",
+      "arabicName": "هاجينج فيس",
+      "description": "A huge AI tools library for free",
+      "arabicDescription": "مكتبة ضخمة لأدوات الذكاء الاصطناعي مجانًا",
+      "website": "https://huggingface.co/spaces",
+      "filter": true,
+      "img": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.svg"
+    },
+    {
+      "id": 2,
       "name": "Auphonic",
       "arabicName": "أوفونيك",
       "description": "AI-powered audio post-production tool for podcasts and videos",
@@ -375,7 +394,7 @@
       "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738209959/icons/Auphonic_xdlkrp.png"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Prompt Genie",
       "arabicName": "برومبت جيني",
       "description": "AI-powered tool for generating creative prompts",
@@ -384,7 +403,7 @@
       "img": "https://cdn.prod.website-files.com/648e04d4bbae7004f1b35f15/65c2a8995e2d67c03dc0baf1_prompt-genie-icon.png"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Durable",
       "arabicName": "دورابل",
       "description": "AI-powered website builder for creating websites in minutes",
@@ -393,7 +412,7 @@
       "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738216978/icons/Durable_drfqzc.png"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Remove.bg",
       "arabicName": "ريموف.بي جي",
       "description": "Free AI tool for removing image backgrounds",
