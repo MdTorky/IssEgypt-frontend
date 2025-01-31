@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
 import { Icon } from '@iconify/react';
 import "./AiTools.css";
-import Logo from '../../images/logo.png';
 import AiData from '../../data/aitools.json';
 
 const AiTools = ({ language, languageText }) => {
-    // Reusable Category Section Component
     const CategorySection = ({ categoryData, categoryTitle, categoryIcon }) => {
         return (
             <div className="outerBox">
@@ -19,7 +16,6 @@ const AiTools = ({ language, languageText }) => {
         );
     };
 
-    // Reusable AI Card Component
     const AiCard = ({ item }) => {
         return (
             <div className="AiCard">

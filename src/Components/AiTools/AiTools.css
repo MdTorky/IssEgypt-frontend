@@ -70,6 +70,9 @@
 
 .AiTools .outerBox .innerBox > h2 span {
   color: var(--theme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .AiCard {
