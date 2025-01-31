@@ -1455,4 +1455,9 @@ body.dark-mode {
   .dark-mode .navbar ul li.active .NavBarIcon {
     color: var(--hover);
   }
+  .dark-mode .WeeklyLeaderboardContainer {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
 }

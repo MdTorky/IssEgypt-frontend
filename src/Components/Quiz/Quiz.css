@@ -527,9 +527,39 @@
   box-shadow: 0 0 0 0.15vw skyblue;
 }
 
+@media screen and (max-width: 1800px) {
+  .Quiz {
+    margin-right: 0;
+    padding: 10px;
+    margin-bottom: 40%;
+  }
+  .arabic .Quiz {
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 10px;
+  }
+
+  .Quiz .QuizTitle {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  .QuizButton {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .QuizTables {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .Quiz {
     margin-right: 0;
+    margin-top: 0;
     padding: 10px;
     margin-bottom: 40%;
   }

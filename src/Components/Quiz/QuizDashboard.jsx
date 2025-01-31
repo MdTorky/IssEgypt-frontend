@@ -27,7 +27,6 @@ const QuizDashboard = ({ api, languageText }) => {
     // Fetch all questions on component mount
     useEffect(() => {
         setQuestionLoading(true)
-        setUserLoading(true)
         fetch(`${api}/api/quiz/questions`)  // This now fetches all questions
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
@@ -36,8 +35,12 @@ const QuizDashboard = ({ api, languageText }) => {
 
             })
             .then((data) => setQuestions(data))
-            .catch((err) => console.error('Error fetching questions:', err));
+            .catch((err) => {
+                console.error('Error fetching questions:', err);
+                setQuestionLoading(false)
+            });
 
+        setUserLoading(true)
         fetch(`${api}/api/quiz/contestants`)
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
@@ -46,7 +49,10 @@ const QuizDashboard = ({ api, languageText }) => {
                 return res.json();
             })
             .then((data) => setAggregatedUsers(data))
-            .catch((err) => console.error("Error fetching aggregated users:", err));
+            .catch((err) => {
+                console.error("Error fetching aggregated users:", err);
+                setUserLoading(false)
+            });
     }, [api]);
 
     const [aggregatedUsers, setAggregatedUsers] = useState([]);
@@ -166,7 +172,7 @@ const QuizDashboard = ({ api, languageText }) => {
                     <div className="OverallLeaderboard" ref={leaderboardRef}>
                         <div className="OverallLeaderboardContainer">
                             <h2>{languageText.OverallLeaderboard}</h2>
-                            {(QuestionLoading && UserLoading) ? (
+                            {(QuestionLoading || UserLoading) ? (
                                 <div><Loader /></div>
                             ) : (
                                 <table >
@@ -185,7 +191,7 @@ const QuizDashboard = ({ api, languageText }) => {
                                                 <td ><span className='QuizTablePoints'>{user.totalPoints}</span></td>
                                             </tr>
                                         )) : (
-                                            <div className='QuizNoData'>No Users Yet</div>
+                                            <div className='QuizNoData'><Icon icon="tabler:user-off" />{languageText.NoUserAnswer}</div>
                                         )}
                                     </tbody>
                                 </table>
@@ -203,7 +209,6 @@ const QuizDashboard = ({ api, languageText }) => {
 
                 <div className='OverallLeaderboard'>
                     <div className="OverallLeaderboardContainer">
-
                         <div className="WeeklyLeaderboardDatesContainer">
                             <div className="WeeklyLeaderboardDates">
                                 <label className='WeeklyLeaderboardDate'>

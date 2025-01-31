@@ -989,7 +989,7 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
   justify-content: center;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1800px) {
   .Form {
     margin-bottom: 50% !important;
     margin-right: 0;

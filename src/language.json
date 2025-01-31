@@ -705,6 +705,7 @@
     "NoAnswerProvided": "No Answer Provided",
     "NoDataforDate": "No Data Available for this Date Range",
     "SelectStartEndDate": "Please Select Both Start and End Dates",
+    "NoUserAnswer": "No Contestant Answers Yet",
 
     "AddQuestions": "Add Questions",
     "RemoveQuestion": "Remove Question",
@@ -1406,7 +1407,7 @@
     "Addasmuchquestions": "أضف أكبر عدد ممكن من الأسئلة",
     "EditPoints": "تعديل النقاط",
     "QuizLink": "رابط المسابقة",
-    "OverallLeaderboard": "لوحة المتصدرين العامة",
+    "OverallLeaderboard": "لوحة المتصدرين",
     "TotalPoints": "مجموع النقاط",
     "StartDate": "تاريخ البداية",
     "EndDate": "تاريخ الانتهاء",
@@ -1417,6 +1418,7 @@
     "NoAnswerProvided": "لم يتم تقديم إجابة",
     "NoDataforDate": "لا توجد بيانات متاحة لهذه الفترة الزمنية",
     "SelectStartEndDate": "يرجى تحديد تاريخي البداية والنهاية",
+    "NoUserAnswer": "لا توجد إجابات من المتسابقين حتى الآن",
 
     "AddQuestions": "إضافة أسئلة",
     "RemoveQuestion": "إزالة السؤال",
