@@ -1,5 +1,7 @@
 body.dark-mode {
   background: var(--hover);
+  background: linear-gradient(to left, var(--hover), var(--hover2));
+
   color: var(--bg);
 }
 
@@ -1199,10 +1201,6 @@ body.dark-mode {
 .dark-mode .StatisticsBox {
   background: linear-gradient(to right, var(--hover), var(--hover2));
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  padding: 10px;
-  border-radius: 10px;
-  width: 320px;
-  height: fit-content;
   border: 3px var(--hover2) solid;
 }
 

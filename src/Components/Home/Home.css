@@ -28,22 +28,11 @@
   margin: 0;
 }
 
-/* .flag {
-    width: 1000px;
-    position: absolute;
-    opacity: 0.4;
-    z-index: -999;
-    position: fixed;
-} */
-
-/* Animation Text */
-
 .homeWrapper {
   display: flex;
   align-items: center;
   gap: 7px;
   background: inherit;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   padding: 30px;
   border-radius: 20px;
   box-sizing: border-box;
@@ -442,7 +431,6 @@
   padding: 20px;
   justify-content: space-evenly;
   /* gap: 80px; */
-  /* grid-template-columns: 2fr 1fr; */
 }
 
 .blog .blogContainer {
@@ -602,7 +590,6 @@
 
 .events {
   display: flex;
-  /* grid-template-columns: repeat(3, 1fr); */
   margin: 0 0 30px 0;
   width: 100%;
   justify-content: space-evenly;
@@ -892,7 +879,6 @@
 .connect {
   margin: 0px 20px 20px 20px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
 }
 
 .connectTitle {
@@ -1047,312 +1033,111 @@
   transform: translateX(10px);
 }
 
-/* .navbar ul li:nth-child(1) icon {
-    color: var(--hover)
+@media screen and (max-width: 1800px) {
+  .homeWrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .arabic .homeWrapper {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    margin: 40px auto 0 auto;
+  }
+
+  .homeWrapper p {
+    margin: 0;
+  }
+
+  /* Blogs */
+
+  .homeBoxes {
+    margin-bottom: 10%;
+  }
 }
 
-.navbar ul li:nth-child(1) icon::after {
-    color: var(--bg)
-} */
+/* Ipad View */
 
-/* IPad View */
-
-/* @media screen and (max-width: 1800px) {
-  .homeWrapper p {
-    font-size: 30px;
+@media screen and (max-width: 1000px) {
+  .blog {
+    flex-direction: column;
   }
 
-
-  .arabic .homeBoxes .homeTitle {
-    margin: 20px;
+  .blog .blogContainer {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
 
-
-  .blog .blogText .subtitle {
-    font-size: 0.7em;
+  .blog .blogImg img {
+    /* width: 100%; */
+    margin: auto;
   }
 
-  .arabic .blog .blogText .title {
-    font-size: 1.1em;
+  .blog .blogText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
   }
 
-  .blog .blogText .title .color {
-    font-size: 1em;
+  .blog .blogText .title {
+    font-size: 1.4em;
+    margin: 0;
   }
 
-  .blog .blogText .description {
-    font-size: 0.9em;
-    line-height: 18px;
-    width: 96%;
+  .blogContainer2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
   }
 
-  .arabic .blog .blogText .description {
-    width: 96%;
-    font-size: 0.8em;
+  .blogContainer2 .blogItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  .blogContainer2 .blogItem img {
+    width: 350px;
+    border-radius: 10px;
+    border: 5px double var(--bg);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 5px lightgray double;
+  }
 
   .blogContainer2 .blogItem .line {
     display: flex;
-    justify-content: space-between;
-  }
-
-  .blogContainer2 .blogItem .subtitle {
-    font-size: 0.5em;
-    font-weight: 700;
-  }
-
-  .blogContainer2 .blogItem .description {
-    font-size: 0.7em;
-    text-align: justify;
-    width: 100%;
-  }
-
-  .arabic .blogContainer2 .blogItem .description {
-    width: 100%;
-  }
-
-  .blogContainer2 .blogItem .line button {
-    padding: 0px 5px;
-    font-size: 0.6em;
-    opacity: 0.8;
-    white-space: nowrap;
-  }
-
-  .arabic .blogContainer2 .blogItem .line button {
-    font-size: 0.6em;
-    font-weight: 600;
-  }
-
-
-  .events {
-    display: flex;
-    flex-direction: row;
-   
-  }
-
-  .eventBox {
-    width: 100%;
-    height: 400px;
-    position: relative;
-  }
-
-
-  .eventBox .creator {
-    font-size: 0.7em;
-  }
-
-  .eventBox .slide,
-  .eventBox .slide2,
-  .eventBox .slide3 {
-    display: flex !important;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .eventBox .slide img,
-  .eventBox .slide2 img,
-  .eventBox .slide3 img {
-    width: 95%;
-    height: 300px;
-  }
-
-  .eventBox .info {
-    z-index: 3;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-  }
-
-  .eventBox .info h2 {
-    margin-left: 50px;
-    font-size: 0.7em;
-    width: 75%;
-  }
-
-  .eventBox .info p {
-    width: 80%;
-    font-size: 0.6em;
-  }
-
-  .eventBox .info.special {
-    top: 45%;
-  }
-
-  .eventBox .info.special h2 {
-    font-size: 0.6em;
-  }
-
-  .eventBox .info.special p {
-    font-size: 0.6em;
-    line-height: 14px;
-  }
-
-  .eventBox .navigation {
-    top: 68%;
-    display: flex;
-    left: 0;
-    right: 0;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
   }
 
-
-  .arabic .eventBox .info h2 {
-    font-size: 1em;
-    margin-right: 50px;
-  }
-
-  .arabic .eventBox .info.special {
-    top: 42%;
-  }
-
-  .arabic .eventBox .info.special h2 {
-    font-size: 1em;
-  }
-
-  .arabic .eventBox .info p {
-    line-height: 17px;
-  }
-
-  .arabic .eventBox .navigation {
-    left: 0;
-  }
-  
   .connect {
-    margin: 0px 20px 20px 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .connectTitle {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.323);
-    margin: 0px 80px 20px 20px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    margin: 0;
+    width: 95%;
+    padding-bottom: 20px;
+    margin: auto;
+    text-align: center;
+    border-bottom: 3px solid var(--theme);
   }
 
   .connect .socialBar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    gap: 10px;
-  }
-
-  .connect .socialCircle {
-    width: 80px;
-    height: 80px;
-    font-size: 1.9em;
-    color: var(--hover);
-
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-  }
-
-  .connect .socialCircle:hover.facebook {
-    color: #4867aa;
-  }
-
-  .connect .socialCircle:hover.instagram {
-    color: #d6249f;
-  }
-
-  .connect .socialCircle:hover.youtube {
-    color: #fe0000;
-  }
-
-  .connect .socialCircle:hover.linkedIn {
-    color: #0077b5;
-  }
-
-  .connect .socialCircle:hover.linktree {
-    color: #41df5d;
-  }
-
-  .connect .socialCircle:hover {
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-      rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-
-  .connect .emailUs {
-    padding: 20px;
-  }
-
-  .connect .button {
-    position: relative;
-    width: 250px;
-    height: 80px;
-    border-radius: 20px;
-    margin: 0;
-    background: var(--bg);
-
-  }
-
-  .connect .button .button__text {
-    font-size: 1.1em;
-  }
-
-  .connect .button .button__text {
-    transform: translateX(22%);
-    color: var(--hover);
-    font-family: "Poppins", sans-serif;
-  }
-
-  .connect .button .button__icon {
-    position: absolute;
-    transform: translateX(170%);
-    height: 100%;
-    width: 90px;
-    background: linear-gradient(to right, var(--hover), var(--hover2));
-
-    color: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-  }
-
-  .connect .button:hover .button__text {
-    color: transparent;
-  }
-
-  .connect .button:hover .button__icon {
-    width: 100%;
-    transform: translateX(-2.5%);
-    color: var(--hover);
-    background: var(--bg);
-    background: linear-gradient(to right, var(--bg), var(--bg2));
-  }
-
-  .connect .button:active .button__icon {
-    background: var(--bg);
-    color: var(--hover);
+    gap: 40px;
   }
 
   .arabic .connectTitle {
-    margin: 0px 20px 20px 20px;
-    font-weight: 600;
-  }
-
-  .arabic .connect .button .button__text {
-    transform: translateX(-22%);
-  }
-
-  .arabic .connect .button .button__icon {
-    transform: translateX(-170%);
-  }
-
-  .arabic .connect .button:hover .button__icon {
-    transform: translateX(2.5%);
-  }
-} */
-
-@media screen and (max-width: 1800px) {
-  .homeWrapper {
-    margin: 20px auto;
-  }
-  .arabic .homeWrapper {
-    margin: 20px auto;
+    margin: 0;
+    margin: auto;
   }
 }
 
@@ -1362,8 +1147,14 @@
   /* Animation Text */
 
   .homeWrapper {
+    flex-direction: row;
     margin: -40px auto 0 auto;
     justify-content: center;
+    text-align: start;
+  }
+
+  .arabic .homeWrapper {
+    margin: 20px auto 0 auto !important;
   }
 
   .homeWrapper p {
@@ -1426,77 +1217,16 @@
   }
 
   /* Phone Presidents */
-  .homeItems {
-    display: block;
-  }
-
-  .showMore {
-    display: inline-block;
-  }
-
-  .nameTitle {
-    display: block;
-    /* font-family: 'Noto Kufi Arabic', sans-serif; */
-    /* font-weight: 600; */
-  }
-
-  .arabic .nameTitle {
-    font-family: "Noto Kufi Arabic", sans-serif;
-    font-weight: 600;
-  }
-
-  .AllEvents {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-  }
 
   /* Blogs */
   .homeBoxes .homeTitle {
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.323); */
-    margin: 20px;
+    margin: 0 auto;
     width: 90%;
     font-size: 1.2em;
-    /* text-align: center; */
   }
 
   .arabic .homeBoxes .homeTitle {
-    margin: 20px;
-  }
-
-  .blog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  .blog .blogContainer {
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.365); */
-    /* margin: 0 !important; */
-    margin-bottom: 30px;
-  }
-
-  .blog .blogImg {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .blog .blogText .subtitle {
-    font-size: 0.7em;
-    opacity: 0.5;
-    text-align: center;
-  }
-
-  .blog .blogText .title {
-    font-size: 1em;
-    text-align: center;
-  }
-
-  .blog .blogText .title .color {
-    font-size: 1.1em;
   }
 
   .blog .blogText .description {
@@ -1511,64 +1241,29 @@
   }
 
   .blogContainer2 {
-    gap: 25px;
-    margin-bottom: 100px;
-  }
-
-  .blogContainer2 .blogItem {
-    display: flex;
     flex-direction: column;
-    margin: 0 auto;
-  }
-
-  .blogContainer2 .blogItem .line {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-bottom: 0;
   }
 
   .blogContainer2 .blogItem .line button {
-    padding: 0px 5px;
     font-size: 0.5em;
-    opacity: 0.8;
-    white-space: nowrap;
   }
 
   .blogContainer2 .blogItem img {
-    width: 280px;
-    margin: 0 auto;
-  }
-
-  .blogContainer2 .blogItem .subtitle {
-    font-size: 0.6em;
-    font-weight: 700;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    width: 350px;
   }
 
   .blogContainer2 .blogItem .description {
     font-size: 0.8em;
-    text-align: justify;
     font-weight: 500;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "Poppins", sans-serif;
+    width: 95%;
+    margin: 10px auto;
   }
 
   .arabic .blogContainer2 .blogItem .description {
-    /* min-width: 100%; */
     font-weight: 500;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .arabic .blogContainer2 .blogItem .line button {
-    font-size: 0.6em;
-    font-weight: 600;
+    width: 95%;
+    margin: 10px auto;
   }
 
   /* Event */
@@ -1577,16 +1272,6 @@
     margin: -100px auto -20px auto;
     overflow: hidden;
   }
-
-  /* .eventBox {
-        width: 100%;
-    }
-
-    .eventBox .slide, .eventBox .slide2, .eventBox .slide3 {
-        z-index: 1;
-        position: absolute;
-        clip-path: circle(0% at 0 50%);
-    } */
 
   .eventBox h1 {
     font-size: 1.1em;
@@ -1695,15 +1380,15 @@
   /* Connect with us */
 
   .connect {
-    margin: 0px 20px 30% 20px;
+    /* margin: 0px 20px 30% 20px; */
+    margin: 0 auto 30% auto;
     display: grid;
-    grid-template-columns: 2fr;
   }
 
   .connectTitle {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.323);
-    margin: 20px;
-    font-size: 1.2em;
+    margin: 0 auto 10px auto;
+    font-size: 1.5em;
+    width: 90%;
   }
 
   .connect .socialBar {
@@ -1712,31 +1397,10 @@
   }
 
   .connect .socialCircle {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5em;
-    color: var(--hover);
+    width: 70px;
+    height: 70px;
+    font-size: 2em;
   }
-
-  /* .connect .socialCircle.facebook {
-        background: #4867AA;
-    }
-
-    .connect .socialCircle.instagram {
-        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-
-    .connect .socialCircle.youtube {
-        background: #FE0000;
-    }
-
-    .connect .socialCircle.linkedIn {
-        background: #0077B5;
-    }
-
-    .connect .socialCircle.linktree {
-        background: #41DF5D;
-    } */
 
   .connect .socialCircle:hover {
     background: var(--bg);

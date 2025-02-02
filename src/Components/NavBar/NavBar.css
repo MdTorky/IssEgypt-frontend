@@ -8,6 +8,7 @@
   z-index: 1000;
   display: inline-block;
   z-index: 1000000;
+  /* display: flex; */
 }
 
 .navbar.arabic {
@@ -39,9 +40,9 @@
   /* background: blue; */
   width: 40px;
   height: 40px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
   transition: all 0.3s;
   padding: 2px;
 }
@@ -54,6 +55,7 @@ a {
   color: var(--bg);
   font-size: 25px;
   transition: all 0.3s;
+  display: flex;
 }
 
 .navbar ul li a {
@@ -240,16 +242,16 @@ a {
   transform: translateX(-1.4em) translateY(-0.04em);
 }
 
-@media screen and (max-width: 1800px) {
+/* @media screen and (max-width: 1800px) {
   .navbar {
     width: 4%;
   }
-}
+} */
 
 @media screen and (max-width: 1800px) {
   .navbar {
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: 0 auto 0 auto;
     box-sizing: border-box;
     padding: 0;
@@ -260,7 +262,7 @@ a {
   }
 
   .navbar.arabic {
-    width: 80%;
+    width: 90%;
     margin: 0 auto 0 auto;
     box-sizing: border-box;
     padding: 0;
@@ -272,7 +274,7 @@ a {
 
   .navbar ul {
     flex-direction: row;
-    height: 30px;
+    height: 35px;
     border-radius: 0;
     /* padding-top: 5px; */
     border-bottom-left-radius: 20px;
@@ -291,10 +293,16 @@ a {
     display: flex;
     justify-content: center;
     text-align: center;
-    height: 35px;
+    height: 30px;
     background: none;
   }
 
+  .navbar ul li .NavBarIcon {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
   .navbar ul li:hover .NavBarIcon {
     font-size: 23px;
     background: none;
@@ -309,7 +317,7 @@ a {
   .navbar ul li:hover {
     /* font-size: 30px; */
     transform: scale(1);
-    background: none;
+    background: none !important;
     box-shadow: none;
   }
 
@@ -319,11 +327,9 @@ a {
     font-size: 8px;
     text-align: center;
     font-weight: 700;
-    font-family: "Poppins", sans-serif;
     content: attr(data-content);
-    margin-bottom: 7px;
     white-space: nowrap;
-    margin-top: -10px;
+    background: none !important;
   }
 
   .navbar ul li:hover .NavBarIcon::after {
@@ -333,11 +339,7 @@ a {
     left: 0;
     font-size: 8px;
     box-shadow: none;
-    font-family: "Poppins", sans-serif;
     z-index: 1;
-    /* background: var(--hover);
-        border-radius: 30px;
-        padding: 0 7px; */
     background: none;
   }
 
@@ -347,15 +349,14 @@ a {
     box-shadow: none;
   }
 
+  .navbar ul li.active .NavBarIcon {
+    background: none;
+  }
+
   .navbar ul li.active .NavBarIcon::after {
     color: var(--hover);
     background: none;
   }
-
-  /* .navbar ul li.language:hover .NavBarIcon {
-        font-weight: none;
-        background: none;
-    } */
 
   .navbar ul li:hover.active .NavBarIcon::after {
     background: none;
@@ -366,21 +367,6 @@ a {
     font-family: "Noto Kufi Arabic", sans-serif;
     font-weight: 500;
   }
-
-  /* .navbar ul li.language icon::after {
-        white-space: nowrap;
-        margin-bottom: 15px;
-        background: none;
-    }
-
-    .navbar.arabic ul li.language icon::after {
-        font-family: 'Noto Kufi Arabic', sans-serif;
-        font-size: 8px;
-        font-weight: 500;
-        white-space: nowrap;
-        margin-bottom: 15px;
-        background: none;
-    } */
 
   .navbar.arabic ul li:hover .NavBarIcon::after {
     width: max-content;

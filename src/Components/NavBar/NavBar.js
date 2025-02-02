@@ -32,29 +32,29 @@ const NavBar = () => {
                 <li className={location.pathname === '/' ? 'active' : ''}>
                     <Link to="/">
                         {/* <icon data-content={languageText.home}><FontAwesomeIcon icon={faHouse} /></icon> */}
-                        <div className="NavBarIcon" data-content={languageText.home}><Icon icon="gravity-ui:house" width="2rem" height="2rem" /></div>
+                        <div className="NavBarIcon" data-content={languageText.home}><Icon icon={location.pathname === '/' ? 'si:home-fill' : 'lucide:home'} width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
                 <li className={location.pathname === '/services' ? 'active' : ''}>
                     <Link to="/services">
                         {/* <icon data-content={languageText.services}><FontAwesomeIcon icon={faBook} /></icon> */}
-                        <div className="NavBarIcon" data-content={languageText.services}><Icon icon="fa-solid:hands-helping" width="2rem" height="2rem" /></div>
+                        <div className="NavBarIcon" data-content={languageText.services}><Icon icon={location.pathname === '/services' ? 'ri:service-fill' : 'ri:service-line'} width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
                 <li className={location.pathname === '/gallery' ? 'active' : ''}>
                     <Link to="/gallery">
-                        <div className="NavBarIcon" data-content={languageText.gallery}><Icon icon="solar:gallery-wide-bold" width="2rem" height="2rem" /></div>
+                        <div className="NavBarIcon" data-content={languageText.gallery}><Icon icon={location.pathname === '/gallery' ? "solar:gallery-wide-bold" : 'solar:gallery-wide-outline'} width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
                 <li className={location.pathname === '/members' ? 'active' : ''}>
                     <Link to="/members">
                         {/* <icon data-content={languageText.members}><FontAwesomeIcon icon={faUsers} /></icon> */}
-                        <div className="NavBarIcon" data-content={languageText.members}><Icon icon="heroicons:users-solid" width="2rem" height="2rem" /></div>
+                        <div className="NavBarIcon" data-content={languageText.members}><Icon icon={location.pathname === '/members' ? "fluent:people-16-filled" : 'fluent:people-16-regular'} width="2.4rem" height="2.4rem" /></div>
                     </Link>
                 </li>
                 {user && <li className={location.pathname === '/adminDashboard' ? 'active' : ''}>
                     <Link to="/adminDashboard">
-                        <div className="NavBarIcon" data-content={languageText.admin}><Icon icon="eos-icons:admin" width="2rem" height="2rem" /></div>
+                        <div className="NavBarIcon" data-content={languageText.admin}><Icon icon={location.pathname === '/adminDashboard' ? "eos-icons:admin" : "eos-icons:admin-outlined"} width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
                 }

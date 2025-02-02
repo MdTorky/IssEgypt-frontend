@@ -58,7 +58,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  /* background: var(--bg); */
+  background: linear-gradient(to left, var(--bg), var(--bg2));
+
   /* background-size: 50%; */
   font-family: "Poppins", sans-serif;
   /* font-family: "Rubik", sans-serif; */
