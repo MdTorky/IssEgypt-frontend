@@ -242,13 +242,13 @@ a {
   transform: translateX(-1.4em) translateY(-0.04em);
 }
 
-/* @media screen and (max-width: 1800px) {
+@media screen and (max-width: 1800px) {
   .navbar {
     width: 4%;
   }
-} */
+}
 
-@media screen and (max-width: 1800px) {
+@media screen and (max-width: 1000px) {
   .navbar {
     display: flex;
     width: 90%;
@@ -294,7 +294,6 @@ a {
     justify-content: center;
     text-align: center;
     height: 30px;
-    background: none;
   }
 
   .navbar ul li .NavBarIcon {

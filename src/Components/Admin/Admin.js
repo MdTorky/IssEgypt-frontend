@@ -523,16 +523,16 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                         </div>
                         <div className="Statistics">
 
-                            {membersCount > 0 &&
-                                <div className="StatisticsBox">
-                                    <div className="MembersBox">
-                                        <div className="MembersBoxLeft">
-                                            <p>{languageText.NoMembers}</p>
-                                            <p>{membersCount}</p>
-                                        </div>
-                                        <FontAwesomeIcon icon={faUser} className='StatisticsIcon' />
+
+                            <div className="StatisticsBox">
+                                <div className="MembersBox">
+                                    <div className="MembersBoxLeft">
+                                        <p>{languageText.NoMembers}</p>
+                                        <p>{membersCount}</p>
                                     </div>
-                                </div>}
+                                    <FontAwesomeIcon icon={faUser} className='StatisticsIcon' />
+                                </div>
+                            </div>
                             <div className="StatisticsBox">
                                 <div className="MembersBox">
                                     <div className="MembersBoxLeft">
@@ -544,16 +544,18 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                             </div>
 
                         </div>
-                        {(user.committee === "Academic" || user.committee === "Admin" || user.committee === "Culture") &&
-                            <div className="BankLinks">
-                                {(user.committee === "Academic" || user.committee === "Admin") && (<>
-                                    <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
-                                    <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
-                                </>)}
-                                {(user.committee === "Culture" || user.committee === "Admin") && <Link to='/quizDashboard' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.QuizDashboard}</Link>}
-                            </div>
-                        }
-                        {/* {(user.committee === "Culture" || user.committee === "Admin") &&
+
+                        <div className="BankLinksContainer">
+                            {(user.committee === "Academic" || user.committee === "Admin" || user.committee === "Culture") &&
+                                <div className="BankLinks">
+                                    {(user.committee === "Academic" || user.committee === "Admin") && (<>
+                                        <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
+                                        <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
+                                    </>)}
+                                    {(user.committee === "Culture" || user.committee === "Admin") && <Link to='/quizDashboard' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.QuizDashboard}</Link>}
+                                </div>
+                            }
+                            {/* {(user.committee === "Culture" || user.committee === "Admin") &&
                             <div className="BankLinks">
                                 <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
                                 <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
@@ -562,55 +564,37 @@ const Admin = ({ language, languageText, api, darkMode }) => {
 
 
 
-                        {(user.committee === "Secretary" || user.committee === "Admin") &&
-                            <div className="BankLinks">
-                                <p>{languageText.formCommittee}</p>
-                                <select className={`input ${(formCommittee) ? 'valid' : ''}`} onChange={e => (setFormCommittee(e.target.value))}>
-                                    <option value={user?.committee}>{user?.committee}</option>
-                                    {user?.committee === "Admin" && <option value="ISS Egypt">President</option>}
-                                    {user?.committee === "Admin" && <option value="Vice">Vice-President</option>}
-                                    {user?.committee === "Admin" && <option value="Secretary">Secretary</option>}
-                                    {user?.committee === "Admin" && <option value="Treasurer">Treasurer</option>}
-                                    <option value="Social">Social</option>
-                                    <option value="Academic">Academic</option>
-                                    <option value="Culture">Culture</option>
-                                    <option value="Sports">Sports</option>
-                                    <option value="WomenAffairs">Women Affairs</option>
-                                    <option value="Media">Media</option>
-                                    <option value="HR">HR</option>
-                                    <option value="PR">PR</option>
-                                    <option value="Reading">Reading</option>
-                                </select>
-                                <Link to="/productData" className='ProductsDataButton'>Products Data</Link>
-                            </div>
-                        }
+                            {(user.committee === "Secretary" || user.committee === "Admin") &&
+                                <div className="BankLinks">
+                                    <p>{languageText.formCommittee}</p>
+                                    <select className={`input ${(formCommittee) ? 'valid' : ''}`} onChange={e => (setFormCommittee(e.target.value))}>
+                                        <option value={user?.committee}>{user?.committee}</option>
+                                        {user?.committee === "Admin" && <option value="ISS Egypt">President</option>}
+                                        {user?.committee === "Admin" && <option value="Vice">Vice-President</option>}
+                                        {user?.committee === "Admin" && <option value="Secretary">Secretary</option>}
+                                        {user?.committee === "Admin" && <option value="Treasurer">Treasurer</option>}
+                                        <option value="Social">Social</option>
+                                        <option value="Academic">Academic</option>
+                                        <option value="Culture">Culture</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="WomenAffairs">Women Affairs</option>
+                                        <option value="Media">Media</option>
+                                        <option value="HR">HR</option>
+                                        <option value="PR">PR</option>
+                                        <option value="Reading">Reading</option>
+                                    </select>
+                                    <Link to="/productData" className='ProductsDataButton'>Products Data</Link>
+                                </div>
+                            }
+                        </div>
                     </div>
 
                     <div className="DashboardBottom">
 
-                        {membersCount > 0 &&
-                            <div className="Members">
-                                <h2>{languageText.members}</h2>
-                                <table>
-                                    <tr className="TableHeading">
-                                        <th></th>
-                                        <th>{languageText.FullName}</th>
-                                        <th>{languageText.Contact}</th>
-                                        <th>{languageText.Faculty}</th>
-                                        <th>{languageText.Action}</th>
-                                    </tr>
-                                </table>
-
-                                {normalMember.map((member) => (
-                                    <div>
-                                        {Members(member)}
-                                    </div>
-                                ))}
-                            </div>}
                         <div className="Members">
 
-                            <Link to="/formCreator/admin" className='AddFormButton'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
-                            <Link to="/formCreator/admin" className='AddFormButtonPhone'><FontAwesomeIcon icon={faPlus} /> {languageText.createForm}</Link>
+                            <Link to="/formCreator/admin" className='AddFormButton'><Icon icon="fluent:form-new-20-filled" /> {languageText.createForm}</Link>
+                            <Link to="/formCreator/admin" className='AddFormButtonPhone'><Icon icon="fluent:form-new-20-filled" /> {languageText.createForm}</Link>
 
                             <h2>{languageText.forms}</h2>
                             {/* <h2>{user?.type}</h2> */}
@@ -624,9 +608,39 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                                 </tr>
                             </table>
 
+
+                            {formsFilter.length === 0 && (
+                                <tr className="TableHeading TableItems">
+                                    <td className="NoItem"><Icon icon="pepicons-print:no-entry" /> {languageText.noForm}</td>
+                                </tr>
+                            )}
                             {formsFilter.map((form) => (
                                 <div>
                                     {Forms(form)}
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="Members">
+                            <h2>{languageText.members}</h2>
+                            <table>
+                                <tr className="TableHeading">
+                                    <th></th>
+                                    <th>{languageText.FullName}</th>
+                                    <th>{languageText.Contact}</th>
+                                    <th>{languageText.Faculty}</th>
+                                    <th>{languageText.Action}</th>
+                                </tr>
+                            </table>
+
+                            {normalMember.length === 0 && (
+                                <tr className="TableHeading TableItems">
+                                    <td className="NoItem"><Icon icon="fluent:people-team-delete-16-filled" /> {languageText.noMember}</td>
+                                </tr>
+                            )}
+                            {normalMember.map((member) => (
+                                <div>
+                                    {Members(member)}
                                 </div>
                             ))}
                         </div>

@@ -991,6 +991,28 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
 
 @media screen and (max-width: 1800px) {
   .Form {
+    margin-bottom: 40% !important;
+    margin-right: 150px;
+  }
+
+  .arabic .Form {
+    margin: 0% 0 40% 150px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Form {
+    margin-bottom: 40% !important;
+    margin-right: 0;
+  }
+
+  .arabic .Form {
+    margin: 10% 0 40% 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .Form {
     margin-bottom: 50% !important;
     margin-right: 0;
   }

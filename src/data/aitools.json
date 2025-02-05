@@ -20,15 +20,6 @@
     },
     {
       "id": 3,
-      "name": "Microsoft Copilot",
-      "arabicName": "مايكروسوفت كوبايلوت",
-      "description": "AI-powered assistant for coding, writing, and productivity",
-      "arabicDescription": "مساعد الذكاء الاصطناعي للبرمجة واكتشاف الأخطاء والإنتاجية",
-      "website": "https://copilot.microsoft.com/",
-      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/copilot-color.png"
-    },
-    {
-      "id": 4,
       "name": "Claude AI",
       "arabicName": "كلود أي",
       "description": "AI-powered assistant for writing, research, coding, and math",
@@ -37,7 +28,25 @@
       "img": "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png"
     },
     {
+      "id": 4,
+      "name": "Microsoft Copilot",
+      "arabicName": "مايكروسوفت كوبايلوت",
+      "description": "AI-powered assistant for coding, writing, and productivity",
+      "arabicDescription": "مساعد الذكاء الاصطناعي للبرمجة واكتشاف الأخطاء والإنتاجية",
+      "website": "https://copilot.microsoft.com/",
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/copilot-color.png"
+    },
+    {
       "id": 5,
+      "name": "Perplexity",
+      "arabicName": "بيربليكستي",
+      "description": "AI Research Assistant",
+      "arabicDescription": "مساعد باحث في مجال الذكاء الاصطناعي",
+      "website": "https://www.perplexity.ai/",
+      "img": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/perplexity-color.png"
+    },
+    {
+      "id": 6,
       "name": "Poe",
       "arabicName": "بو",
       "description": "Free AI chatbot for instant answers and conversations",
@@ -404,6 +413,15 @@
     },
     {
       "id": 4,
+      "name": "Hissab",
+      "arabicName": "حساب",
+      "description": "Text-based calculator app that does way more than calculations",
+      "arabicDescription": "تطبيق حاسبة نصية يفعل أكثر من مجرد إجراء العمليات الحسابية",
+      "website": "https://app.hissab.io/",
+      "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738699899/icons/Hassib_sd50hg.png"
+    },
+    {
+      "id": 5,
       "name": "Durable",
       "arabicName": "دورابل",
       "description": "AI-powered website builder for creating websites in minutes",
@@ -412,7 +430,7 @@
       "img": "https://res.cloudinary.com/dmv4mxgn5/image/upload/v1738216978/icons/Durable_drfqzc.png"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Remove.bg",
       "arabicName": "ريموف.بي جي",
       "description": "Free AI tool for removing image backgrounds",

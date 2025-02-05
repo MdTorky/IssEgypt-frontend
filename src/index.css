@@ -220,7 +220,20 @@ body.english {
     transform: translateY(0);
   }
 }
-@media screen and (max-width: 1800px) {
+
+/* @media screen and (max-width: 1800px) {
+  .appContainer .routes {
+    width: 100%;
+    margin: 190px 0 0 0;
+  }
+
+  .appContainer .routes.arabic {
+    width: 100%;
+    margin: 130px 0 0 0;
+  }
+} */
+
+@media screen and (max-width: 1000px) {
   .appContainer .routes {
     width: 100%;
     margin: 190px 0 0 0;

@@ -214,14 +214,23 @@
   white-space: nowrap;
 }
 
+@media screen and (max-width: 1000px) {
+  .AiTools {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 0 auto 50% auto;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .AiTools {
     font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    /* width: 90%; */
-    /* justify-content: center; */
     align-items: center;
     margin: 0 auto 50% auto;
   }

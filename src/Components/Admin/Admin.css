@@ -25,7 +25,6 @@
 
 .PresidentBox {
   display: flex;
-  /* justify-content: space-evenly; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background: linear-gradient(to left, var(--theme), var(--theme2));
   padding: 10px 10px 0 10px;
@@ -38,17 +37,13 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
 }
 
 .PresidentBox h2 {
   margin: 0;
   color: var(--bg);
-  /* font-size: 1.4em; */
-  /* white-space: nowrap; */
   font-weight: 800;
   text-transform: uppercase;
-  /* z-index: 1; */
 }
 
 .PresidentBox p {
@@ -101,10 +96,9 @@
 }
 
 .PresidentBox img {
-  width: 30%;
-  top: 5%;
-  bottom: 0;
-  right: 0;
+  width: 130px;
+  bottom: -10px;
+  right: -5px;
   padding: 10px;
   position: absolute;
   transition: 0.5s ease all;
@@ -112,17 +106,20 @@
 
 .arabic .PresidentBox img {
   right: inherit;
-  left: 0;
+  left: -30px;
 }
 
 .PresidentBox:hover img {
   transform: scale(1.5);
-  top: -20%;
+  bottom: 15px;
+  right: 10px;
 }
 
 .arabic .PresidentBox:hover img {
   transform: scale(1.5);
-  top: -20%;
+  left: -30px;
+  right: inherit;
+  bottom: 15px;
 }
 
 .PresidentBox:hover h2 {
@@ -185,6 +182,11 @@
   /* transform: scale(1.4); */
 }
 
+.BankLinksContainer {
+  display: flex;
+  gap: 15px;
+}
+
 .BankLinks {
   background: linear-gradient(to right, var(--bg), var(--bg2));
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -203,7 +205,7 @@
 .BankLinks select {
   width: 100%;
   padding: 12px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 3px solid lightgrey;
   outline: none;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -248,6 +250,9 @@
   position: relative;
   text-decoration: none;
   color: var(--hover) !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .BankLink img {
@@ -290,9 +295,12 @@
   text-align: center;
   border: 2px var(--hover2) solid;
   box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 15px;
   transition: 0.5s all ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 2px lightgrey solid;
 }
 
 .ProductsDataButton:hover {
@@ -314,6 +322,7 @@
 
 .Members {
   position: relative;
+  margin: 10px auto;
 }
 
 .Members .AddFormButton {
@@ -325,6 +334,9 @@
   border-radius: 10px 0 10px 0;
   font-weight: 600;
   transition: 0.5s all ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .Members .AddFormButton:hover {
@@ -375,7 +387,6 @@
   justify-content: center;
   margin: auto;
   text-align: center;
-  /* font-weight: 800; */
 }
 
 .FacultyStyle {
@@ -396,6 +407,13 @@
   font-weight: 900;
   position: relative;
   transition: all 0.5s;
+}
+
+.TableHeading .NoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .TableItems {
@@ -493,7 +511,115 @@
   margin: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1800px) {
+  .DashboardTop {
+    gap: 20px;
+    width: 95%;
+    flex-wrap: wrap;
+  }
+
+  .BankLinksContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .Statistics {
+    flex-wrap: wrap;
+  }
+
+  .StatisticsBox {
+    width: 250px;
+  }
+
+  /* .StatisticsIcon {
+    font-size: 150px;
+  } */
+
+  .StatisticsIcon {
+    font-size: 100px;
+  }
+
+  .DashboardBottom {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Admin {
+    margin-right: 0;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 40%;
+  }
+
+  .arabic .Admin {
+    margin-left: 0;
+    margin: auto;
+
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  .DashboardTop {
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .PresidentBox {
+    width: 90%;
+  }
+
+  .PresidentBox img {
+    width: 100px;
+  }
+
+  .Statistics {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    flex-wrap: nowrap;
+  }
+
+  .StatisticsBox {
+    background: linear-gradient(to right, var(--bg), var(--bg2));
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .BankLinksContainer {
+    width: 90%;
+  }
+
+  .BankLinks {
+    width: 100%;
+  }
+
+  .MembersBox {
+    align-items: center;
+  }
+
+  .MembersBoxLeft p:first-child {
+    font-size: 0.7em;
+    white-space: nowrap;
+  }
+
+  .MembersBoxLeft p:last-child {
+    font-size: 2em;
+  }
+
+  .StatisticsIcon {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .Admin {
     margin-right: 0;
     padding: 10px;
@@ -523,24 +649,7 @@
   }
 
   .PresidentBox img {
-    top: -35%;
-  }
-
-  .arabic .PresidentBox img {
-    right: inherit;
-    left: 0;
-    top: -16%;
-  }
-
-  .PresidentBox:hover img {
-    top: -60%;
-    right: 20px;
-  }
-
-  .arabic .PresidentBox:hover img {
-    top: -38%;
-    right: inherit;
-    left: 20px;
+    width: 100px;
   }
 
   .PresidentBox:hover h2 {
@@ -550,7 +659,7 @@
   .Statistics {
     display: flex;
     gap: 10px;
-    width: 100%;
+    width: 95%;
     box-sizing: border-box;
   }
 
@@ -563,8 +672,14 @@
     height: fit-content;
   }
 
+  .BankLinksContainer {
+    width: 95%;
+    gap: 5px;
+  }
+
   .BankLinks {
-    width: 90%;
+    /* width: 95%; */
+    font-size: 0.7em;
   }
 
   .MembersBox {
@@ -603,30 +718,16 @@
     width: 100%;
   }
 
-  /* .Members .AddFormButton {
-        font-size: 0.8em;
-        bottom: 280px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        width: 40%;
-        margin: auto;
-        z-index: 1;
-
-        position: relative;
-    } */
-
   .Members .AddFormButton {
     display: none;
   }
 
   .Members .AddFormButtonPhone {
-    display: block;
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-
-  /* .arabic .Members .AddFormButton {
-        bottom: 300px;
-    } */
 
   .TableHeading {
     width: 100%;
