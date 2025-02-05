@@ -201,7 +201,7 @@
 }
 
 .AiTools .icon:hover .tooltip,
-.icon:hover .tooltip::before {
+.AiTools .icon:hover .tooltip::before {
   background: linear-gradient(
     to bottom right,
     #7e7e7e,

@@ -460,24 +460,21 @@
 }
 
 .LoaderDiv {
-  /* height: 400px; */
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  /* margin: 0 auto 0 480px; */
-  margin: auto auto auto 700px;
-  width: fit-content;
-  flex-direction: column;
+  margin: 0 150px 0 0;
 }
 
 .arabic .LoaderDiv {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 0 0 0 150px;
-  width: fit-content;
+  margin: 0 0 0 150px;
 }
 
+@media screen and (max-width: 1000px) {
+  .LoaderDiv {
+    margin: 0 auto;
+  }
+  .arabic .LoaderDiv {
+    margin: 70px auto 0 auto;
+  }
+}
 @media screen and (max-width: 768px) {
   .HorusLoader img {
     width: 100%;
@@ -492,6 +489,6 @@
   }
 
   .arabic .LoaderDiv {
-    margin-right: 20%;
+    margin-top: 0;
   }
 }

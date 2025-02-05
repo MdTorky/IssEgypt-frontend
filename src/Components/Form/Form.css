@@ -998,6 +998,22 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
   .arabic .Form {
     margin: 0% 0 40% 150px;
   }
+
+  .FormAll {
+    flex-direction: column;
+  }
+
+  .CreatedForm .FormLeft {
+    width: fit-content;
+    margin: auto;
+  }
+
+  .CreatedForm .FormLeft img {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border-radius: 15px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -1073,29 +1089,28 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
     color: white;
   }
 
-  .FormAll {
-    flex-direction: column;
-    gap: -10px;
-  }
-
   .CreatedForm {
     display: flex;
     width: 100%;
     margin-bottom: 90%;
   }
 
+  .FormAll {
+    flex-direction: column;
+    gap: -10px;
+  }
   .arabic .CreatedForm {
     margin-top: 17%;
   }
 
   .CreatedForm .FormLeft {
-    width: fit-content;
+    width: 90%;
     margin: auto;
   }
 
   .CreatedForm .FormLeft img {
-    width: 300px;
-    height: 300px;
+    width: 360px;
+    height: 360px;
     margin: auto;
   }
 
