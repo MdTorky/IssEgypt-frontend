@@ -1003,6 +1003,10 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
     flex-direction: column;
   }
 
+  .CreatedForm {
+    justify-content: center;
+  }
+
   .CreatedForm .FormLeft {
     width: fit-content;
     margin: auto;
@@ -1014,6 +1018,17 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
     margin: auto;
     border-radius: 15px;
   }
+
+  .NothingHere {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .arabic .NothingHere {
+    margin: 0;
+    margin-top: 60px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -1024,6 +1039,13 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
 
   .arabic .Form {
     margin: 10% 0 40% 0;
+  }
+  .NothingHere {
+    margin: 0;
+  }
+
+  .arabic .CreatedForm .FormLeft {
+    margin-top: 50px;
   }
 }
 
@@ -1041,6 +1063,7 @@ input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
     margin: auto;
     margin-top: 20px !important;
     margin-bottom: -20px !important;
+    font-size: 1.2em;
   }
 
   .arabic .NothingHere {

@@ -318,6 +318,89 @@
   color: var(--bg);
 }
 
+@media screen and (max-width: 1800px) {
+  .FormData {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 50%;
+  }
+
+  .arabic .FormData {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .EventName {
+    font-size: 2.6em;
+  }
+
+  .ButtonsContainer {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .DownloadButton {
+    font-size: 0.9em;
+  }
+
+  .HeaderCopy {
+    font-size: 0.7em;
+  }
+
+  .ResponseBack {
+    width: 85%;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .OverFlow {
+    display: inherit;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .arabic .FormData {
+    margin-top: 8%;
+  }
+  .FormResponses {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .arabic .FormResponses {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    width: 80%;
+    margin: 10px auto;
+  }
+  .EventName {
+    width: 80%;
+    font-size: 2.3em;
+  }
+
+  .SearchForms {
+    width: 80%;
+  }
+
+  .SearchForms input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .SearchForms input:placeholder-shown {
+    font-size: 0.9em;
+  }
+
+  .ResponseBack {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 786px) {
   .FormData {
     margin-right: 0;
@@ -386,7 +469,7 @@
   }
 
   .HeaderCopy {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 
   .ResponseBack {

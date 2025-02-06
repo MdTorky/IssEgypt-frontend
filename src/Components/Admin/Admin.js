@@ -583,7 +583,7 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                                         <option value="PR">PR</option>
                                         <option value="Reading">Reading</option>
                                     </select>
-                                    <Link to="/productData" className='ProductsDataButton'>Products Data</Link>
+                                    <Link to="/productData" className='ProductsDataButton'>{languageText.ProductData}</Link>
                                 </div>
                             }
                         </div>

@@ -1202,7 +1202,7 @@ a:visited {
   }
 
   .services .annContainer {
-    width: 95%;
+    width: 90%;
   }
 
   .newStudents .newStudentsRow,
@@ -1212,7 +1212,7 @@ a:visited {
   }
 
   .services .rightContainer {
-    width: 95%;
+    width: 90%;
     order: 1;
   }
 
@@ -1232,7 +1232,7 @@ a:visited {
 
   /* Left Container */
   .services .leftContainer {
-    width: 95%;
+    width: 90%;
   }
 
   .services .leftContainer .collegesBoxTitle .collegesBox {

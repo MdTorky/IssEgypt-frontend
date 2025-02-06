@@ -325,6 +325,11 @@
   margin: 10px auto;
 }
 
+.arabic .Members {
+  position: relative;
+  margin: 10px auto;
+}
+
 .Members .AddFormButton {
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -531,11 +536,6 @@
   .StatisticsBox {
     width: 250px;
   }
-
-  /* .StatisticsIcon {
-    font-size: 150px;
-  } */
-
   .StatisticsIcon {
     font-size: 100px;
   }
@@ -554,11 +554,11 @@
   }
 
   .arabic .Admin {
-    margin-left: 0;
     margin: auto;
 
     margin-top: 50px;
     padding: 10px;
+    margin-bottom: 40%;
   }
 
   .DashboardTop {
@@ -683,6 +683,9 @@
   }
 
   .MembersBox {
+    align-items: center;
+  }
+  .arabic .MembersBox {
     align-items: center;
   }
 
