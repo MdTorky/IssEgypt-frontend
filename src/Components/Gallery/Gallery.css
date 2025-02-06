@@ -85,7 +85,8 @@
 
 .GalleryCard {
   background: var(--bg);
-  width: calc(33.333% - 20px);
+  /* width: calc(33.333% - 20px); */
+  width: 420px;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 10px;
@@ -206,7 +207,7 @@
 
 .SearchBarContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .SearchBar {
@@ -295,9 +296,48 @@
 }
 
 /* Media queries for responsiveness */
-@media (max-width: 1200px) {
+@media (max-width: 1800px) {
+  .Gallery {
+    margin: 0;
+    margin: 0 auto 40% auto;
+  }
+
+  .arabic .Gallery {
+    margin: 0;
+    margin: 0px auto 40% auto;
+  }
+
   .GalleryCard {
-    width: calc(50% - 20px);
+    width: 400px;
+  }
+
+  .SearchBarContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 1000px) {
+  .arabic .Gallery {
+    margin-top: 60px;
+  }
+  .GalleryContainer {
+    width: min-content;
+  }
+  .GalleryCard {
+    width: 420px;
+  }
+
+  .SearchBarContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .GalleryContainer h3 {
+    white-space: nowrap;
   }
 }
 
