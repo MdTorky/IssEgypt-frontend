@@ -376,7 +376,7 @@ button.deleteButton:hover {
 }
 
 .adminCard .editButton {
-  background: var(--theme2);
+  background: mediumturquoise;
   color: var(--bg2);
   position: absolute;
   border: none;
@@ -391,6 +391,12 @@ button.deleteButton:hover {
   padding: 10px;
   cursor: pointer;
   transition: 0.5s all ease;
+}
+
+.arabic .adminCard .editButton {
+  top: -10px;
+  left: 0;
+  right: inherit;
 }
 
 .adminCard .editButton:hover {
@@ -453,17 +459,91 @@ button.deleteButton:hover {
   display: flex;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1800px) {
   .Members {
-    margin: 0 auto 40% auto;
+    margin: 0 auto 40% auto !important;
   }
 
   .arabic .Members {
-    margin: 60px auto 40% auto;
+    margin: 0px auto 40% auto !important;
+  }
+
+  .memberBox {
+    width: 95%;
+    margin: auto;
   }
 
   .memberBack .people {
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .Members h2 {
+    border-radius: 10px;
+    font-size: 1.2em;
+    width: 50%;
+  }
+
+  .memberBack {
+    width: 100%;
+  }
+
+  .searchContainer {
+    display: flex;
+    position: relative;
+    z-index: 9000;
+    width: 30%;
+    left: 0%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .arabic .searchContainer {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 9000;
+    width: 30%;
+    left: 0%;
+    right: 0%;
+  }
+
+  .bestMembersButton {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 9000;
+    width: 20%;
+    left: 0%;
+    margin: auto;
+  }
+
+  .arabic .bestMembersButton {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 9000;
+    width: 20%;
+    left: 0%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Members {
+    margin: 0 auto 40% auto !important;
+  }
+
+  .arabic .Members {
+    margin: 60px auto 40% auto !important;
+  }
+
+  .memberBox {
+    width: 90%;
+    margin: auto;
+  }
+
+  .memberBack .people {
+    flex-wrap: wrap;
   }
 
   .Members h2 {
@@ -491,7 +571,7 @@ button.deleteButton:hover {
     margin-bottom: 20px;
     position: relative;
     z-index: 9000;
-    width: 100%;
+    width: 80%;
     left: 0%;
     right: 0%;
   }

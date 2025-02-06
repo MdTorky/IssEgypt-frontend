@@ -581,7 +581,6 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                                         <option value="Media">Media</option>
                                         <option value="HR">HR</option>
                                         <option value="PR">PR</option>
-                                        <option value="Reading">Reading</option>
                                     </select>
                                     <Link to="/productData" className='ProductsDataButton'>{languageText.ProductData}</Link>
                                 </div>
@@ -591,7 +590,7 @@ const Admin = ({ language, languageText, api, darkMode }) => {
 
                     <div className="DashboardBottom">
 
-                        <div className="Members">
+                        <div className="MembersContainer">
 
                             <Link to="/formCreator/admin" className='AddFormButton'><Icon icon="fluent:form-new-20-filled" /> {languageText.createForm}</Link>
                             <Link to="/formCreator/admin" className='AddFormButtonPhone'><Icon icon="fluent:form-new-20-filled" /> {languageText.createForm}</Link>
@@ -621,7 +620,7 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                             ))}
                         </div>
 
-                        <div className="Members">
+                        <div className="MembersContainer">
                             <h2>{languageText.members}</h2>
                             <table>
                                 <tr className="TableHeading">
