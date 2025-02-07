@@ -109,7 +109,10 @@ const Product = ({ api, language, languageText }) => {
                     </div>
                     <div className="ShopCardPriceDetails">
                         <p>{product.pPrice} {languageText.RM}</p>
-                        <button> <Icon icon="fluent:share-16-filled" className="ShopCardIcon" onClick={(e) => handleShare(e)} /></button>
+                        <div className="ShopCardButtons">
+                            <button> <Icon icon="material-symbols:3d-rotation" className="ShopCardIcon" onClick={(e) => { e.stopPropagation(); e.preventDefault(); window.open(product.pModel, "_blank") }} /></button>
+                            <button> <Icon icon="fluent:share-16-filled" className="ShopCardIcon" onClick={(e) => handleShare(e)} /></button>
+                        </div>
                     </div>
                 </div>
             </Link>
@@ -179,6 +182,7 @@ const Product = ({ api, language, languageText }) => {
                     <div>
                         <div className="ProductImg">
                             <img src={product.pImage} alt="" />
+                            <button className='ProductImageButton' onClick={(e) => { e.stopPropagation(); e.preventDefault(); window.open(product.pModel, "_blank") }}> <Icon icon="material-symbols:3d-rotation" />{languageText.pModel}</button>
                         </div>
 
                     </div>

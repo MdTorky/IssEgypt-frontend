@@ -690,6 +690,7 @@
     "EmailConfirm": "Are you sure you want to send emails to all recipients?",
     "SendEmailltoAll": "Send Email to all Recipients",
     "ProductData": "Products Data",
+    "pModel": "3D Model",
 
     "RamadanQuizDashboard": "Ramadan Quiz Dashboard",
     "QuizDashboard": "Quiz Dashboard",
@@ -1405,6 +1406,7 @@
     "EmailConfirm": "هل أنت متأكد أنك تريد إرسال رسائل البريد الإلكتروني إلى جميع المستلمين؟",
     "SendEmailltoAll": "إرسال بريد إلكتروني إلى جميع المستلمين",
     "ProductData": "بيانات المنتجات",
+    "pModel": "نموذج ثلاثي الأبعاد",
 
     "RamadanQuizDashboard": "لوحة تحكم مسابقة رمضان",
     "QuizDashboard": "لوحة تحكم المسابقة",

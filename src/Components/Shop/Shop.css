@@ -152,6 +152,11 @@
   padding: 10px;
   border-radius: 100%;
 }
+
+.ShopCardButtons {
+  display: flex;
+  gap: 10px;
+}
 .Product {
   margin-top: 10px;
   padding: 0 240px;
@@ -168,6 +173,65 @@
   display: flex;
   justify-content: center;
   width: fit-content;
+  position: relative;
+}
+
+.ProductImageButton {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: var(--bg2);
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  background: linear-gradient(to right, var(--theme), var(--hover2));
+  border: 3px solid lightgrey;
+  border-radius: 5px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 10px;
+
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+.arabic .ProductImageButton {
+  font-family: "Noto Kufi Arabic", sans-serif;
+}
+
+.ProductImageButton::before {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  content: "";
+  /* background-color: var(--hover2); */
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: 0.3s;
+  mix-blend-mode: color;
+  color: var(--bg2);
+  background: linear-gradient(to left, var(--hover), var(--theme));
+}
+
+.ProductImageButton:hover::before {
+  transition-duration: 0.3s;
+  transform: translate(100%, -50%);
+  border-radius: 0;
+  color: var(--bg2);
+}
+
+.ProductImageButton:active {
+  transform: translate(5px, 5px);
+  transition-duration: 0.3s;
+  color: var(--bg2);
 }
 
 .ProductImg img {
