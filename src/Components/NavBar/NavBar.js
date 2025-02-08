@@ -32,7 +32,7 @@ const NavBar = () => {
                 <li className={location.pathname === '/' ? 'active' : ''}>
                     <Link to="/">
                         {/* <icon data-content={languageText.home}><FontAwesomeIcon icon={faHouse} /></icon> */}
-                        <div className="NavBarIcon" data-content={languageText.home}><Icon icon={location.pathname === '/' ? 'si:home-fill' : 'lucide:home'} width="2rem" height="2rem" /></div>
+                        <div className="NavBarIcon" data-content={languageText.home}><Icon icon={location.pathname === '/' ? 'bi:houses-fill' : 'bi:houses'} width="2rem" height="2rem" /></div>
                     </Link>
                 </li>
                 <li className={location.pathname === '/services' ? 'active' : ''}>

@@ -323,14 +323,21 @@
     margin-right: 0;
     width: 100%;
     margin-bottom: 50%;
+    width: 90%;
   }
 
   .arabic .FormData {
     margin-left: 0;
     margin-top: 0;
+    width: 90%;
   }
   .EventName {
     font-size: 2.6em;
+  }
+
+  .FormResponses {
+    top: 60px;
+    width: 15%;
   }
 
   .ButtonsContainer {
@@ -349,7 +356,7 @@
   }
 
   .ResponseBack {
-    width: 85%;
+    width: 100%;
     box-sizing: border-box;
     overflow: auto;
   }
@@ -360,8 +367,12 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .FormData {
+    width: 100%;
+  }
   .arabic .FormData {
     margin-top: 8%;
+    width: 100%;
   }
   .FormResponses {
     position: relative;
@@ -398,7 +409,8 @@
   }
 
   .ResponseBack {
-    width: 100%;
+    width: 95%;
+    margin: auto;
   }
 }
 @media screen and (max-width: 786px) {
