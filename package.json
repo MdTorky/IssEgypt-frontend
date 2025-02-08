@@ -28,6 +28,7 @@
     "firebase": "^10.8.0",
     "flag-icons": "^6.11.1",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^12.4.1",
     "gsap": "^3.12.5",
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",

@@ -5,13 +5,13 @@ import 'font-awesome/css/font-awesome.min.css';
 import { faCloudArrowUp, faImage, faQrcode, faStar, faFile, faXmark, faMoneyBill, faPlus, faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import { Icon } from '@iconify/react';
 import { useRegister } from '../../hooks/useRegister';
-import Swal from 'sweetalert2'
-
-const Register = ({ language, languageData, api, darkMode }) => {
+import { motion } from "framer-motion";
+const Register = ({ language, languageData, api }) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [committee, setCommittee] = useState('')
+    const [position, setPosition] = useState({ x: 0, y: 0 });
     const type = "admin"
     // const [error, setError] = useState('')
     const [showPassword, setShowPassword] = useState(false);
@@ -36,6 +36,15 @@ const Register = ({ language, languageData, api, darkMode }) => {
     const digitRegex = /.*\d.*/;
     const specialRegex = /[!@#$%&*_+\-=[\];':"\\|,./?]/;
 
+    const moveButton = () => {
+        if (!email || !charRegex.test(password) || !letterRegex.test(password) || !digitRegex.test(password) || !specialRegex.test(password)) {
+            const randomX = Math.floor(Math.random() * 400) - 100; // Random -100 to +100px
+            const randomY = Math.floor(Math.random() * 200) - 50;  // Random -50 to +50px
+            setPosition({ x: randomX, y: randomY });
+        }
+    };
+
+
     return (
         <div className="Form" style={{ marginBottom: '20%' }}>
 
@@ -50,7 +59,7 @@ const Register = ({ language, languageData, api, darkMode }) => {
                                 className={`input ${(email) ? 'valid' : ''}`}
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
-                                // required
+                                required
                                 autocomplete="off"
                                 id="email"
                             />
@@ -65,7 +74,8 @@ const Register = ({ language, languageData, api, darkMode }) => {
                                 `}
                                 // ${showPassword ? "inputPass" : ''}
                                 onChange={(e) => { setPassword(e.target.value) }}
-                                // required
+                                required
+                                autocomplete="off"
                                 id="password"
                             />
                             {!password && <label for="password" className={`LabelInput ${(password) ? 'valid' : ''}`}><Icon icon="mdi:password" /> {languageText.Password}</label>}
@@ -116,7 +126,14 @@ const Register = ({ language, languageData, api, darkMode }) => {
                         </select>
                     </div>
 
-                    <button disabled={isLoading}>{languageText.Register}</button>
+                    <motion.button disabled={isLoading}
+                        onMouseEnter={moveButton}
+                        animate={{
+                            x: position.x,
+                            y: position.y,
+                        }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >{languageText.Register}</motion.button>
                 </form>
             </div>
             {error && <div className="formError"><Icon icon="ooui:error" />{error}</div>}
