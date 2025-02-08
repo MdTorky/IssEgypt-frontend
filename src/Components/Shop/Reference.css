@@ -89,7 +89,7 @@
   align-items: center;
 }
 
-.ReferenceProductDetails>p {
+.ReferenceProductDetails > p {
   /* background: var(--theme); */
   color: var(--bg);
   width: fit-content;
@@ -120,7 +120,6 @@
   /* font-size: 2em; */
   border: 2px solid #b5bfd9;
   background: #5cb338;
-
 }
 
 .ReferenceDetails .OutOfOrder {
@@ -131,6 +130,21 @@
   background: goldenrod;
 
   /* color: var(--hover); */
+}
+
+.ReferenceForm img {
+  width: 600px !important;
+  height: 450px !important;
+}
+
+@media screen and (max-width: 1800px) {
+  .Reference {
+    margin: auto;
+  }
+
+  .arabic .Reference {
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -149,6 +163,11 @@
     /* width: 100%; */
     margin: 10px auto;
     justify-content: space-between;
+  }
+
+  .ReferenceForm img {
+    width: 90% !important;
+    height: 250px !important;
   }
 
   .ReferenceDetails {
@@ -225,7 +244,7 @@
     align-items: center;
   }
 
-  .ReferenceProductDetails>p {
+  .ReferenceProductDetails > p {
     /* background: var(--theme); */
     color: var(--bg);
     width: fit-content;
@@ -238,5 +257,4 @@
 
     border: 2px solid #b5bfd9;
   }
-
 }

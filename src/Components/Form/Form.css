@@ -3,6 +3,7 @@
   margin-bottom: 20%;
   font-family: "Poppins", sans-serif;
   margin-right: 130px;
+  justify-content: center;
 }
 
 .arabic .Form,
@@ -10,6 +11,7 @@
   font-family: "Noto Kufi Arabic", sans-serif;
   margin-left: 130px;
   margin-right: 0px;
+  justify-content: center;
 }
 
 .JoinGroup {

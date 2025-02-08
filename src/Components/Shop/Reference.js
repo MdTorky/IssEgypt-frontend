@@ -67,7 +67,7 @@ const Reference = ({ api, language, languageText }) => {
                 <div className="LoaderDiv"><Loader /></div>
             ) : transaction && product ? (
                 <div className="Reference">
-                    <div className="FormLeft ProductForm">
+                    <div className="FormLeft ProductForm ReferenceForm">
                         <img src={product.pImage} alt={language === "en" ? product.pTitle : product.pArabicTitle} />
                         <h3>{transaction.productSize}</h3>
                         <div className="ReferenceForm">

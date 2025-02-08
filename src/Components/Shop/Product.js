@@ -246,6 +246,7 @@ const Product = ({ api, language, languageText }) => {
                             <button className="ProductShareButton" onClick={handleShare}>
                                 <Icon icon="fluent:share-16-filled" />
                             </button>
+
                         </div>
 
 
