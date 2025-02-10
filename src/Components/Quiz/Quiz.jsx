@@ -105,10 +105,19 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
             return { ...prevData, answers: updatedAnswers };
         });
     };
-    const today = new Date();
+    // const today = new Date();
+
+    // const locale = language === "ar" ? "ar-SA" : "en-SA"; // Arabic for Saudi Arabia, English for Saudi Arabia
+    // const options = { day: "numeric", month: "long", calendar: "islamic-umalqura" };
+    // const formattedDate = today.toLocaleDateString(locale, options);
+
+
+    const malaysiaTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" });
+    const today = new Date(malaysiaTime);
 
     const locale = language === "ar" ? "ar-SA" : "en-SA"; // Arabic for Saudi Arabia, English for Saudi Arabia
     const options = { day: "numeric", month: "long", calendar: "islamic-umalqura" };
+
     const formattedDate = today.toLocaleDateString(locale, options);
 
     // Basic
