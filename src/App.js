@@ -63,8 +63,8 @@ import ModifyPoints from './Components/Quiz/EditQuiz';
 import AddQuestion from './Components/Quiz/AddQuestion';
 import AiTools from './Components/AiTools/AiTools';
 function App() {
-  const api = process.env.REACT_APP_API_KEY;
-  // const api = "http://localhost:4000";
+  // const api = process.env.REACT_APP_API_KEY;
+  const api = "http://localhost:4000";
   const { darkMode, setDarkMode } = useDarkMode(); // Initialize to false
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

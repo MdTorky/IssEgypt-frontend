@@ -1404,6 +1404,10 @@ body.dark-mode {
   box-shadow: rgba(240, 240, 240, 0.3) 0px 0px 0px 3px;
 }
 
+.dark-mode .QuizPoints {
+  border: 5px solid var(--bg2);
+}
+
 .dark-mode .EditPointsContainer {
   background: linear-gradient(to left, var(--hover), var(--hover2));
   border: 2px var(--hover2) solid;

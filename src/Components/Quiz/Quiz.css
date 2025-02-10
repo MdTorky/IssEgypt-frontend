@@ -397,21 +397,23 @@
 .QuizPoints {
   background: var(--theme);
   padding: 5px 10px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  /* border-top-right-radius: 3px; */
+  /* border-bottom-right-radius: 3px; */
 
-  /* border-right: 2px lightgrey solid;
-  border-top: 2px lightgrey solid;
-  border-bottom: 2px lightgrey solid; */
+  /* border-right: 5px black solid;
+  border-top: 5px black solid;
+  border-bottom: 5px black solid; */
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   display: flex;
   align-items: center;
-  border-radius: none;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-radius: 8px;
+  border: 5px solid var(--hover);
+  /* border-top-left-radius: 3px; */
+  /* border-bottom-left-radius: 3px; */
+  color: white;
 }
 
 .arabic .QuizPoints {
