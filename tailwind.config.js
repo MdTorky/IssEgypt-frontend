@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/Components/Shop/*.{html,js}"], // Only scan new pages
+  content: ["./index.html", "./src/**/*.{ts,jsx,tsx}"],
   theme: {
     extend: {},
   },

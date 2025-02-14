@@ -48,7 +48,12 @@ const QuizDashboard = ({ api, languageText }) => {
 
                 return res.json();
             })
-            .then((data) => setAggregatedUsers(data))
+            .then((data) => {
+                const sortedUsers = data.sort((a, b) => new Date(a.points) - new Date(b.points));
+                setAggregatedUsers(sortedUsers);
+                setUserLoading(false);
+            })
+            // .then((data) => setAggregatedUsers(data))
             .catch((err) => {
                 console.error("Error fetching aggregated users:", err);
                 setUserLoading(false)
@@ -85,7 +90,9 @@ const QuizDashboard = ({ api, languageText }) => {
             }),
         ])
             .then(([users, questions]) => {
-                setFilteredUsers(users);
+                // Sort users by submission time (earliest first)
+                const sortedUsers = users.sort((a, b) => new Date(a.submittedOn) - new Date(b.submittedOn));
+                setFilteredUsers(sortedUsers);
                 setQuestions(questions); // Update questions for the selected range
             })
             .catch((err) => console.error('Error fetching filtered data:', err));

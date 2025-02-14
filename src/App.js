@@ -107,9 +107,6 @@ function App() {
           <div className={`routes ${language === 'ar' ? 'arabic' : ''}`}>
             <Routes>
 
-              {/* <Route path="/MediaCommittee" element={<DeansForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} /> */}
-              {/* <Route path="/WebApplicationsSecurity101" element={<WebApplicationsSecurity darkMode={darkMode} language={language} languageText={languageText} api={api} />} /> */}
-
               {/* All Pages */}
               <Route exact path="/" element={<Home language={language} languageText={languageText} api={api} />} />
               <Route path="/gallery" element={<Gallery language={language} languageText={languageText} api={api} />} />
@@ -176,9 +173,7 @@ function App() {
               {/* Auth */}
               <Route path="/register/admin" element={<Register darkMode={darkMode}
                 language={language} languageData={languageData} api={api} />} />
-              {/* <Route path="/register/admin" element={!user ? <Register darkMode={darkMode}
-                language={language} languageData={languageData} api={api} /> :
-                <Navigate to='/adminDashboard' />} /> */}
+
               <Route path="/login" element={!user ? <Login darkMode={darkMode} language={language}
                 languageData={languageData} api={api} /> :
                 <Navigate to='/adminDashboard' />} />
@@ -187,10 +182,6 @@ function App() {
                 languageData={languageData} />} />
               <Route path="/underConstruction" element={<UnderCons darkMode={darkMode} language={language}
                 languageData={languageData} />} />
-              {/*
-                            <Route path="/groups" element={<Groups language={language} languageData={languageData} />}
-                            /> */}
-
             </Routes>
           </div>
           <Menu language={language} languageData={languageData} api={api} />
