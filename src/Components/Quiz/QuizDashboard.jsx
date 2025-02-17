@@ -49,8 +49,8 @@ const QuizDashboard = ({ api, languageText }) => {
                 return res.json();
             })
             .then((data) => {
-                const sortedUsers = data.sort((a, b) => new Date(a.points) - new Date(b.points));
-                setAggregatedUsers(sortedUsers);
+                // const sortedUsers = data.sort((a, b) => new Date(a.points) - new Date(b.points));
+                setAggregatedUsers(data);
                 setUserLoading(false);
             })
             // .then((data) => setAggregatedUsers(data))
@@ -153,6 +153,25 @@ const QuizDashboard = ({ api, languageText }) => {
         }
     }
 
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
+    const [sortedUsers, setSortedUsers] = useState(aggregatedUsers);
+
+    const handleSort = (key) => {
+        let direction = "asc";
+        if (sortConfig.key === key && sortConfig.direction === "asc") {
+            direction = "desc";
+        }
+
+        const sortedData = [...aggregatedUsers].sort((a, b) => {
+            if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
+            if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
+            return 0;
+        });
+
+        setSortConfig({ key, direction });
+        setAggregatedUsers(sortedData);
+
+    };
 
 
 
@@ -185,9 +204,15 @@ const QuizDashboard = ({ api, languageText }) => {
                                 <table >
                                     <thead>
                                         <tr className="TableHeading">
-                                            <th>{languageText.Matric}</th>
-                                            <th>{languageText.FullName}</th>
-                                            <th>{languageText.TotalPoints}</th>
+                                            <th onClick={() => handleSort("matricNumber")} style={{ cursor: "pointer" }}>
+                                                {languageText.Matric} {sortConfig.key === "matricNumber" ? (sortConfig.direction === "asc" ? <Icon icon="tabler:arrow-big-up-line" /> : <Icon icon="tabler:arrow-big-down-line" />) : ""}
+                                            </th>
+                                            <th onClick={() => handleSort("fullName")} style={{ cursor: "pointer" }}>
+                                                {languageText.FullName} {sortConfig.key === "fullName" ? (sortConfig.direction === "asc" ? <Icon icon="tabler:arrow-big-up-line" /> : <Icon icon="tabler:arrow-big-down-line" />) : ""}
+                                            </th>
+                                            <th onClick={() => handleSort("totalPoints")} style={{ cursor: "pointer" }}>
+                                                {languageText.TotalPoints} {sortConfig.key === "totalPoints" ? (sortConfig.direction === "asc" ? <Icon icon="tabler:arrow-big-up-line" /> : <Icon icon="tabler:arrow-big-down-line" />) : ""}
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
