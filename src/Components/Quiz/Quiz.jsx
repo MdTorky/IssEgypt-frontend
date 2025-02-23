@@ -130,7 +130,7 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
                 <div><Loader /></div>
             ) : (
                 questions.length > 0 ? (
-                    currentHour >= 22 || currentHour < 3 ? ( // Only show between 10PM - 12AM
+                    currentHour >= 22 || currentHour === 0 ? ( // Only show between 10PM - 12AM
 
                         <div className="formBox">
                             <form
