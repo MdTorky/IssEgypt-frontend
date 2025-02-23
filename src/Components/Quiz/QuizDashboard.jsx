@@ -5,7 +5,8 @@ import { Icon } from '@iconify/react';
 import dPlus from '../../images/3d/Plus.png';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
-
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
 
 const QuizDashboard = ({ api, languageText }) => {
     const [questions, setQuestions] = useState([]);
@@ -174,6 +175,30 @@ const QuizDashboard = ({ api, languageText }) => {
     };
 
 
+    const handleExportToExcel = () => {
+        if (aggregatedUsers.length === 0) {
+            alert(languageText.NoUserAnswer);
+            return;
+        }
+
+        // Prepare data for Excel
+        const data = aggregatedUsers.map(user => ({
+            MatricNumber: user.matricNumber.toUpperCase(),
+            FullName: user.fullName,
+            TotalPoints: user.totalPoints
+        }));
+
+        // Create worksheet and workbook
+        const worksheet = XLSX.utils.json_to_sheet(data);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Leaderboard");
+
+        // Convert to Excel file and trigger download
+        const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+        const blob = new Blob([excelBuffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+        saveAs(blob, "Overall Leaderboard.xlsx");
+    };
+
 
     return (
         <div className="Quiz">
@@ -190,7 +215,7 @@ const QuizDashboard = ({ api, languageText }) => {
             <div className="OverallLeaderboard" style={{ margin: "10px auto 20px auto" }}>
                 <Link className="QuizButton" to="/editquiz">
                     <Icon icon="hugeicons:file-edit" className='QuizButtonIcon' />{languageText.EditPoints}</Link>
-                <Link className="QuizButton" to="/quiz">
+                <Link className="QuizButton" to="/fawazirRamadan">
                     <Icon icon="material-symbols:quiz" className='QuizButtonIcon QuizButtonIcon2' />{languageText.QuizLink}</Link>
             </div>
             <div className="QuizTables">
@@ -235,6 +260,9 @@ const QuizDashboard = ({ api, languageText }) => {
 
                     <button className=" ScreenShot" onClick={handleScreenshot}>
                         <Icon icon="fluent:screenshot-16-filled" className="svgIcon" />
+                    </button>
+                    <button className="DownloadExcel" onClick={handleExportToExcel}>
+                        <Icon icon="vscode-icons:file-type-excel" className="svgIcon" /> {languageText.DownloadExcel}
                     </button>
                 </div>
 

@@ -114,6 +114,7 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
 
     const malaysiaTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" });
     const today = new Date(malaysiaTime);
+    const currentHour = new Date(malaysiaTime).getHours();
 
     const locale = language === "ar" ? "ar-SA" : "en-SA"; // Arabic for Saudi Arabia, English for Saudi Arabia
     const options = { day: "numeric", month: "long", calendar: "islamic-umalqura" };
@@ -123,125 +124,134 @@ const QuizPage = ({ api, languageText, language, darkMode }) => {
     // Basic
     const strictFullNameRegex = /^\b[A-Za-z]{2,}\b \b[A-Za-z]{2,}\b \b[A-Za-z]{2,}\b$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@graduate\.utm\.my$/;
-
     return (
         <div className="Quiz">
-            {loading ? (<div><Loader /></div>) : (
+            {loading ? (
+                <div><Loader /></div>
+            ) : (
                 questions.length > 0 ? (
-                    <div className="formBox">
-                        <form
-                            onSubmit={(e) => {
-                                e.preventDefault();
-                                submitAnswers();
-                            }}
-                        >
-                            <h2 className="QuizMainTitle">{formattedDate} <span style={{ color: !darkMode ? "var(--hover)" : "var(--bg)" }}>{languageText.Riddle}</span></h2>
-                            <div className="QuizContainer">
-                                <div className="OverallLeaderboardContainer" style={{ justifyContent: "center" }}>
-                                    <h3 className="SubFormTitle">{languageText.PersonalDetails}</h3>
+                    currentHour >= 22 || currentHour < 3 ? ( // Only show between 10PM - 12AM
 
-                                    <div className="InputField">
-                                        <div className="InputLabelField">
-                                            <input
-                                                type="text"
-                                                className={`input ${strictFullNameRegex.test(formData.fullName) ? 'valid' : 'invalid'}`}
-                                                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                                                required
-                                                id="fullname"
-                                                name="fullname"
-                                            />{!formData.fullName && <label for="fullname" className={`LabelInput ${(formData.fullName) ? 'valid' : ''}`}><Icon icon="bx:rename" /> {languageText.FullName}</label>}
+                        <div className="formBox">
+                            <form
+                                onSubmit={(e) => {
+                                    e.preventDefault();
+                                    submitAnswers();
+                                }}
+                            >
+                                <h2 className="QuizMainTitle">{formattedDate} <span style={{ color: !darkMode ? "var(--hover)" : "var(--bg)" }}>{languageText.Riddle}</span></h2>
+                                <div className="QuizContainer">
+                                    <div className="OverallLeaderboardContainer" style={{ justifyContent: "center" }}>
+                                        <h3 className="SubFormTitle">{languageText.PersonalDetails}</h3>
 
-                                        </div>
-                                    </div>
-                                    <div className="PasswordCheckBack" style={{ marginBottom: "15px" }}>
-                                        <p className={`PasswordCheck ${strictFullNameRegex.test(formData.fullName) ? "PasswordCheckerValid" : ''}`}>
-                                            {strictFullNameRegex.test(formData.fullName) ? <Icon icon="mingcute:check-2-fill" className="PasswordIcon" /> : <Icon icon="icon-park-twotone:error" className="PasswordIcon" />} {languageText.FullNameRegex}
-                                        </p>
-                                    </div>
-                                    <div className="InputField" style={{ marginBottom: "15px" }}>
-                                        <div className="InputLabelField">
-                                            <input
-                                                type="text"
-                                                className={`input ${formData.matricNumber ? 'valid' : 'invalid'}`}
-                                                onChange={(e) => setFormData({ ...formData, matricNumber: e.target.value })}
-                                                required
-                                                id="matricNumber"
-                                                name="matricNumber"
-                                            />{!formData.matricNumber && <label for="matricNumber" className={`LabelInput ${(formData.matricNumber) ? 'valid' : ''}`}><Icon icon="famicons:id-card" /> {languageText.Matric}</label>}
+                                        <div className="InputField">
+                                            <div className="InputLabelField">
+                                                <input
+                                                    type="text"
+                                                    className={`input ${strictFullNameRegex.test(formData.fullName) ? 'valid' : 'invalid'}`}
+                                                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                                                    required
+                                                    id="fullname"
+                                                    name="fullname"
+                                                />{!formData.fullName && <label for="fullname" className={`LabelInput ${(formData.fullName) ? 'valid' : ''}`}><Icon icon="bx:rename" /> {languageText.FullName}</label>}
 
-                                        </div>
-                                    </div>
-                                    <div className="InputField">
-                                        <div className="InputLabelField">
-                                            <input
-                                                type="text"
-                                                className={`input ${emailRegex.test(formData.email) ? 'valid' : 'invalid'}`}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                required
-                                                id="email"
-                                                name="email"
-                                            />{!formData.email && <label for="email" className={`LabelInput ${(formData.email) ? 'valid' : ''}`}><Icon icon="entypo:email" /> {languageText.GraduateEmail}</label>}
-
-                                        </div>
-                                    </div>
-                                    <div className="PasswordCheckBack" >
-                                        <p className={`PasswordCheck ${emailRegex.test(formData.email) ? "PasswordCheckerValid" : ''}`}>
-                                            {emailRegex.test(formData.email) ? <Icon icon="mingcute:check-2-fill" className="PasswordIcon" /> : <Icon icon="icon-park-twotone:error" className="PasswordIcon" />} {languageText.UTMEmailRegex}
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                                <div className="OverallLeaderboardContainer">
-                                    <h3 className="SubFormTitle">{languageText.TodaysRiddles}</h3>
-
-                                    <div className="QuizQuestions">
-                                        <p>Question <span className="QuizPoints">Points</span></p>
-                                    </div>
-
-                                    {questions.map((question, index) => (
-                                        <div key={question._id} className="QuizQuestions">
-                                            <p><p className="QuizQuestion">{languageText.QuestionAbb}{index + 1}: {question.questionText} </p><span className="QuizPoints">{question.points}</span></p>
-                                            <div className="InputField" style={{ width: '100%' }}>
-                                                <div className="InputLabelField">
-                                                    <input
-                                                        type="text"
-                                                        className={`input ${formData.answers[index] ? 'valid' : 'invalid'}`}
-                                                        onChange={(e) => handleAnswerChange(index, e.target.value)}
-                                                        required
-                                                        id={index}
-                                                        name={index}
-                                                    />
-                                                    {!formData.answers[index] && (
-                                                        <label htmlFor={index} className={`LabelInput ${formData.answers[index] ? 'valid' : ''}`}>
-                                                            <Icon icon="ic:round-question-answer" /> {languageText.Answer + " " + (index + 1)}
-                                                        </label>
-                                                    )}
-                                                </div>
                                             </div>
                                         </div>
-                                    ))}
+                                        <div className="PasswordCheckBack" style={{ marginBottom: "15px" }}>
+                                            <p className={`PasswordCheck ${strictFullNameRegex.test(formData.fullName) ? "PasswordCheckerValid" : ''}`}>
+                                                {strictFullNameRegex.test(formData.fullName) ? <Icon icon="mingcute:check-2-fill" className="PasswordIcon" /> : <Icon icon="icon-park-twotone:error" className="PasswordIcon" />} {languageText.FullNameRegex}
+                                            </p>
+                                        </div>
+                                        <div className="InputField" style={{ marginBottom: "15px" }}>
+                                            <div className="InputLabelField">
+                                                <input
+                                                    type="text"
+                                                    className={`input ${formData.matricNumber ? 'valid' : 'invalid'}`}
+                                                    onChange={(e) => setFormData({ ...formData, matricNumber: e.target.value })}
+                                                    required
+                                                    id="matricNumber"
+                                                    name="matricNumber"
+                                                />{!formData.matricNumber && <label for="matricNumber" className={`LabelInput ${(formData.matricNumber) ? 'valid' : ''}`}><Icon icon="famicons:id-card" /> {languageText.Matric}</label>}
 
+                                            </div>
+                                        </div>
+                                        <div className="InputField">
+                                            <div className="InputLabelField">
+                                                <input
+                                                    type="text"
+                                                    className={`input ${emailRegex.test(formData.email) ? 'valid' : 'invalid'}`}
+                                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                    required
+                                                    id="email"
+                                                    name="email"
+                                                />{!formData.email && <label for="email" className={`LabelInput ${(formData.email) ? 'valid' : ''}`}><Icon icon="entypo:email" /> {languageText.GraduateEmail}</label>}
+
+                                            </div>
+                                        </div>
+                                        <div className="PasswordCheckBack" >
+                                            <p className={`PasswordCheck ${emailRegex.test(formData.email) ? "PasswordCheckerValid" : ''}`}>
+                                                {emailRegex.test(formData.email) ? <Icon icon="mingcute:check-2-fill" className="PasswordIcon" /> : <Icon icon="icon-park-twotone:error" className="PasswordIcon" />} {languageText.UTMEmailRegex}
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="OverallLeaderboardContainer">
+                                        <h3 className="SubFormTitle">{languageText.TodaysRiddles}</h3>
+
+                                        <div className="QuizQuestions">
+                                            <p>Question <span className="QuizPoints">Points</span></p>
+                                        </div>
+
+                                        {questions.map((question, index) => (
+                                            <div key={question._id} className="QuizQuestions">
+                                                <p><p className="QuizQuestion">{languageText.QuestionAbb}{index + 1}: {question.questionText} </p><span className="QuizPoints">{question.points}</span></p>
+                                                <div className="InputField" style={{ width: '100%' }}>
+                                                    <div className="InputLabelField">
+                                                        <input
+                                                            type="text"
+                                                            className={`input ${formData.answers[index] ? 'valid' : 'invalid'}`}
+                                                            onChange={(e) => handleAnswerChange(index, e.target.value)}
+                                                            required
+                                                            id={index}
+                                                            name={index}
+                                                        />
+                                                        {!formData.answers[index] && (
+                                                            <label htmlFor={index} className={`LabelInput ${formData.answers[index] ? 'valid' : ''}`}>
+                                                                <Icon icon="ic:round-question-answer" /> {languageText.Answer + " " + (index + 1)}
+                                                            </label>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+
+                                    </div>
                                 </div>
-                            </div>
-                            {!submitting && <button type="submit">
-                                {languageText.SubmitAnswers}
-                            </button>}
-                            {submitting && (
-                                <button type="button" disabled="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 101" role="status" aria-hidden="true">
-                                        <circle fill="var(--bg)" r="45" cy="50" cx="50"></circle>
-                                    </svg>
-                                    {languageText.Submitting}
-                                </button>
+                                {!submitting && <button type="submit">
+                                    {languageText.SubmitAnswers}
+                                </button>}
+                                {submitting && (
+                                    <button type="button" disabled="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 101" role="status" aria-hidden="true">
+                                            <circle fill="var(--bg)" r="45" cy="50" cx="50"></circle>
+                                        </svg>
+                                        {languageText.Submitting}
+                                    </button>
 
-                            )}
-                            {submitError && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{submitError}</p>}
-                            {error && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{error}</p>}
-                        </form>
-                    </div>
+                                )}
+                                {submitError && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{submitError}</p>}
+                                {error && <p className="formError" style={{ background: "var(--theme)" }}><Icon icon="ooui:error" />{error}</p>}
+                            </form>
+                        </div>
+                    ) : (
+                        <p className="QuizNoData">
+                            {languageText.FawazirAvailable} 10PM {languageText.to} 12AM {languageText.MYT}
+                        </p>
+                    )
                 ) : (
                     <p className="QuizNoData" >{languageText.NoRiddle}</p>
+
                 )
             )}
         </div>

@@ -140,7 +140,7 @@ function App() {
               <Route path="/purchase/:productId" element={<PurchaseForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/reference/:referenceNumber" element={<Reference language={language} languageText={languageText} api={api} />} />
               <Route path="/quizDashboard" element={<QuizDashboard language={language} languageText={languageText} api={api} />} />
-              <Route path="/quiz" element={<QuizPage language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
+              <Route path="/fawazirRamadan" element={<QuizPage language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
               <Route path="/editquiz" element={<ModifyPoints language={language} languageText={languageText} api={api} />} />
               <Route path="/addQuestion" element={<AddQuestion language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
               <Route path="/productData" element={<ProductsData darkMode={darkMode} language={language} languageText={languageText} api={api} />} />

@@ -19,29 +19,17 @@
     "Egypt": "ISS EGYPT 2025",
 
     "President": "ISS Egypt President",
-
     "VicePresident": "Vice President",
-
     "Secretary": "Secretary",
-
     "Treasurer": "Treasurer",
-
     "Academic": "Academic President",
-
     "Social": "Social President",
-
     "Culture": "Cultural President",
-
     "Media": "Media President",
-
     "Sport": "Sports President",
-
     "HR": "Human Resources President",
-
     "Logistics": "Logistics President",
-
     "Women": "Women Affairs",
-
     "PublicRelation": "Public Relations President",
 
     "MemberDetails": "Member Details",
@@ -719,6 +707,9 @@
     "Riddle": "Riddle",
     "SubmitAnswers": "Submit Answers",
     "NoRiddle": "No Riddle for Today",
+    "FawazirAvailable": "Fawazir are Available From",
+    "to": "to",
+    "MYT": "(MYT)",
 
     "PointsManagement": "Points Management",
     "ChooseDate": "Choose Date",
@@ -749,43 +740,18 @@
     "Egypt": "الاتحاد المصري 2025",
 
     "President": "رئيس الاتحاد",
-    "PresidentName": "أحمد خلف",
-
     "VicePresident": "نائب الرئيس",
-    "VicePresidentName": "عبدالله طارق",
-
     "Secretary": "السكرتيرة",
-    "SecretaryName": "أنس فهمي",
-
     "Treasurer": "أمين صندوق",
-    "TreasurerName": "محمد احمد",
-
     "Academic": "رئيس اللجنة الأكاديمية",
-    "AcademicName": "مازن محمد",
-
     "Social": "رئيس اللجنة الاجتماعية",
-    "SocialName": "محمد عمر",
-
     "Culture": "رئيس اللجنة الثقافية",
-    "CultureName": "خالد عطية",
-
     "Media": "رئيس اللجنة الاعلامية",
-    "MediaName": "محمد معوض",
-
     "Sport": "رئيس اللجنة الرياضية",
-    "SportName": "مصطفى محسن",
-
     "HR": "رئيس الموارد البشرية",
-    "HRName": "أدهم أحمد",
-
     "Logistics": "رئيس الخدمات اللوجستية",
-    "LogisticsName": "حسين السيد",
-
     "Women": "رئيسة شؤون الطالبات",
-    "WomenName": "سندس مصطفى",
-
     "PublicRelation": "رئيس العلاقات العامة",
-    "PublicRelationName": "يوسف شاهين",
 
     "MemberDetails": "تفاصيل العضو",
 
@@ -1435,6 +1401,9 @@
     "Riddle": "فزورة",
     "SubmitAnswers": "إرسال الإجابات",
     "NoRiddle": "لا يوجد فزورة اليوم",
+    "FawazirAvailable": "الفوازير متوفرة من",
+    "to": "حتى",
+    "MYT": "(بتوقيت ماليزيا)",
 
     "PointsManagement": "إدارة النقاط",
     "ChooseDate": "اختر التاريخ",
