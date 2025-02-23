@@ -139,11 +139,11 @@ function App() {
               <Route path="/product/:productId" element={<Product language={language} languageText={languageText} api={api} />} />
               <Route path="/purchase/:productId" element={<PurchaseForm darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
               <Route path="/reference/:referenceNumber" element={<Reference language={language} languageText={languageText} api={api} />} />
-              <Route path="/quizDashboard" element={<QuizDashboard language={language} languageText={languageText} api={api} />} />
               <Route path="/fawazirRamadan" element={<QuizPage language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
-              <Route path="/editquiz" element={<ModifyPoints language={language} languageText={languageText} api={api} />} />
-              <Route path="/addQuestion" element={<AddQuestion language={language} languageText={languageText} api={api} darkMode={darkMode} />} />
               <Route path="/productData" element={<ProductsData darkMode={darkMode} language={language} languageText={languageText} api={api} />} />
+              <Route path="/quizDashboard" element={user ? <QuizDashboard language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/editquiz" element={user ? <ModifyPoints language={language} languageText={languageText} api={api} /> : <Navigate to='/login' />} />
+              <Route path="/addQuestion" element={user ? <AddQuestion language={language} languageText={languageText} api={api} darkMode={darkMode} /> : <Navigate to='/login' />} />
 
               {/* Admin */}
               {/* <Route path="/allMembers/admin" element={<AllMembers darkMode={darkMode} language={language} languageText={languageText} api={api} />} /> */}
