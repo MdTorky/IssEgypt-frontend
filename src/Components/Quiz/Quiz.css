@@ -670,6 +670,11 @@
     left: 0%;
   }
 
+  .DownloadExcel2 {
+    top: -250px;
+    left: -10%;
+  }
+
   .WeeklyLeaderboardContainer {
     border: none;
     padding: 0;

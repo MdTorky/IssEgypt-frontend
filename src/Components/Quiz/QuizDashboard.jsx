@@ -458,7 +458,7 @@ const QuizDashboard = ({ api, languageText }) => {
                             <button className="ScreenShot ScreenShot2" onClick={handleWeeklyScreenshot}>
                                 <Icon icon="fluent:screenshot-16-filled" className="svgIcon" />
                             </button>
-                            <button className="DownloadExcel" onClick={handleDownloadExcel}>
+                            <button className="DownloadExcel DownloadExcel2" onClick={handleDownloadExcel}>
                                 <Icon icon="vscode-icons:file-type-excel" className="svgIcon" /> {languageText.DownloadExcel}
                             </button>
                             <button className={`ShowQuestions ${showQuestions ? "HideQuestions" : ""}`} onClick={handleShowQuestion}>
