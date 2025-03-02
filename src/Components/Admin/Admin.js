@@ -435,7 +435,6 @@ const Admin = ({ language, languageText, api, darkMode }) => {
         return (
             // <tr className={`TableHeading TableItems`}>
             <tr className={`TableHeading TableItems`} onClick={(e) => {
-                // copyLink(`issegypt.vercel.app/${encodeURIComponent(form.eventName)}`)
                 copyLink(`issegypt.vercel.app/form/${form._id}`)
             }}>
                 <td>
@@ -552,7 +551,7 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                                         <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
                                         <Link to='/tokensShowcase' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.ManageTokens}</Link>
                                     </>)}
-                                    {(user.committee === "Culture" || user.committee === "Admin") && <Link to='/quizDashboard' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.QuizDashboard}</Link>}
+                                    {(user.committee === "Culture" || user.committee === "Admin" || user.committee === "ISS Egypt") && <Link to='/quizDashboard' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.QuizDashboard}</Link>}
                                 </div>
                             }
                             {/* {(user.committee === "Culture" || user.committee === "Admin") &&
