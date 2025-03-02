@@ -543,9 +543,9 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                             </div>
 
                         </div>
-
+                        {console.log(user.committee)}
                         <div className="BankLinksContainer">
-                            {(user.committee === "Academic" || user.committee === "Admin" || user.committee === "Culture") &&
+                            {(user.committee === "Academic" || user.committee === "Admin" || user.committee === "Culture" || user.committee === "ISS Egypt") &&
                                 <div className="BankLinks">
                                     {(user.committee === "Academic" || user.committee === "Admin") && (<>
                                         <Link to='/tokensForm' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.AddToken}</Link>
@@ -553,6 +553,7 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                                     </>)}
                                     {(user.committee === "Culture" || user.committee === "Admin" || user.committee === "ISS Egypt") && <Link to='/quizDashboard' className='BankLink'><img src={!darkMode ? HorusTokenDay : HorusTokenDark} />{languageText.QuizDashboard}</Link>}
                                 </div>
+
                             }
                             {/* {(user.committee === "Culture" || user.committee === "Admin") &&
                             <div className="BankLinks">
