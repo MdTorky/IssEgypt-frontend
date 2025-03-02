@@ -175,6 +175,52 @@ const QuizDashboard = ({ api, languageText }) => {
     };
 
 
+
+    const [sortConfig2, setSortConfig2] = useState({ key: null, direction: "asc" });
+
+    const handleSort2 = (key) => {
+        let direction = "asc";
+        if (sortConfig2.key === key && sortConfig2.direction === "asc") {
+            direction = "desc";
+        }
+        setSortConfig2({ key, direction });
+    };
+
+    const sortedUsers2 = [...filteredUsers].sort((a, b) => {
+        if (!sortConfig2.key) return 0;
+
+        let aValue = a[sortConfig2.key];
+        let bValue = b[sortConfig2.key];
+
+        if (sortConfig2.key === "submittedOn") {
+            aValue = new Date(aValue);
+            bValue = new Date(bValue);
+        }
+
+        if (aValue < bValue) return sortConfig2.direction === "asc" ? -1 : 1;
+        if (aValue > bValue) return sortConfig2.direction === "asc" ? 1 : -1;
+        return 0;
+    });
+
+    const handleDownloadExcel = () => {
+        const wsData = sortedUsers2.map(user => ({
+            Matric: user._id,
+            FullName: user.fullName,
+            TotalPoints: user.totalPoints,
+            "Submission Time": user.submittedOn
+                ? new Date(user.submittedOn).toLocaleTimeString("en-GB", { hour12: false })
+                : "N/A",
+            ...Object.fromEntries(questions.map(q => [q.questionText, user.answers?.find(a => a.questionId === q._id)?.answer || "N/A"]))
+        }));
+
+        const ws = XLSX.utils.json_to_sheet(wsData);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "QuizResults");
+        XLSX.writeFile(wb, "Quiz_Leaderboard.xlsx");
+    };
+
+
+
     const handleExportToExcel = () => {
         if (aggregatedUsers.length === 0) {
             alert(languageText.NoUserAnswer);
@@ -313,26 +359,81 @@ const QuizDashboard = ({ api, languageText }) => {
                                     <table >
                                         <thead>
                                             <tr className="TableHeading">
-                                                <th>{languageText.Matric}</th>
-                                                <th>{languageText.FullName}</th>
-                                                <th>{languageText.TotalPoints}</th>
-                                                {showQuestions && filteredUsers.length > 0 ? (questions.map((q, idx) => (<th className='TableAnswers' key={idx}>{q.questionText} <span className="TableAnswer">{q.answer} </span><span className="TableAnswer TablePoint">{q.points} {q.points === 1 ? languageText.Point : languageText.Points} </span></th>
+                                                <th onClick={() => handleSort2("_id")} style={{ cursor: "pointer" }}>
+                                                    {languageText.Matric} {sortConfig2.key === "_id" ? (sortConfig2.direction === "asc" ? "▲" : "▼") : ""}
+                                                </th>
+                                                <th onClick={() => handleSort2("fullName")} style={{ cursor: "pointer" }}>
+                                                    {languageText.FullName} {sortConfig2.key === "fullName" ? (sortConfig2.direction === "asc" ? "▲" : "▼") : ""}
+                                                </th>
+                                                <th onClick={() => handleSort2("totalPoints")} style={{ cursor: "pointer" }}>
+                                                    {languageText.TotalPoints} {sortConfig2.key === "totalPoints" ? (sortConfig2.direction === "asc" ? "▲" : "▼") : ""}
+                                                </th>
+                                                <th onClick={() => handleSort2("submittedOn")} style={{ cursor: "pointer" }}>
+                                                    Submission Date {sortConfig2.key === "submittedOn" ? (sortConfig2.direction === "asc" ? "▲" : "▼") : ""}
+                                                </th>
+                                                {showQuestions && filteredUsers.length > 0 ? (questions.map((q, idx) => (
+                                                    <th className='TableAnswers' key={idx}>{q.questionText} <span className="TableAnswer">{q.answer} </span><span className="TableAnswer TablePoint">{q.points} {q.points === 1 ? languageText.Point : languageText.Points} </span></th>
                                                 ))) : (<></>)}
 
                                             </tr>
                                         </thead>
 
-                                        <tbody>
+                                        {/* <tbody>
                                             {filteredUsers.length > 0 ? (
                                                 filteredUsers.map((user) => (
                                                     <tr key={user._id} className="TableHeading TableItems">
                                                         <td>{user._id}</td>
                                                         <td className='QuizTableName'>{user.fullName}</td>
                                                         <td><span className='QuizTablePoints'>{user.totalPoints}</span></td>
+                                                        <td>
+                                                            <span className='QuizTablePoints'>
+                                                                {user.submittedOn
+                                                                    ? new Date(user.submittedOn).toLocaleDateString("en-GB", { day: "2-digit", month: "short" }) +
+                                                                    " / " +
+                                                                    new Date(user.submittedOn).toLocaleTimeString("en-GB", { hour12: false })
+                                                                    : "N/A"}
+                                                            </span>
+                                                        </td>
 
                                                         {showQuestions && questions.map((q, idx) => {
                                                             const userAnswers = Array.isArray(user.answers) ? user.answers : [];
                                                             const userAnswer = userAnswers.find((a) => a.questionId.toString() === q._id.toString()); // Ensure to compare ObjectIds correctly
+
+                                                            return (
+                                                                <td key={idx}>
+                                                                    {userAnswer ? userAnswer.answer : languageText.NoAnswerProvided}
+                                                                </td>
+                                                            );
+                                                        })}
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <tr>
+                                                    <td colSpan="3" className='QuizNoData'>
+                                                        <Icon icon="icon-park-solid:database-fail" /> {languageText.NoDataforDate}
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody> */}
+
+                                        <tbody>
+                                            {sortedUsers2.length > 0 ? (
+                                                sortedUsers2.map((user) => (
+                                                    <tr key={user._id} className="TableHeading TableItems">
+                                                        <td>{user._id}</td>
+                                                        <td className='QuizTableName'>{user.fullName}</td>
+                                                        <td><span className='QuizTablePoints'>{user.totalPoints}</span></td>
+                                                        <td>
+                                                            <span className='QuizTablePoints'>
+                                                                {user.submittedOn
+                                                                    ? new Date(user.submittedOn).toLocaleTimeString("en-GB", { hour12: false })
+                                                                    : "N/A"}
+                                                            </span>
+                                                        </td>
+
+                                                        {showQuestions && questions.map((q, idx) => {
+                                                            const userAnswers = Array.isArray(user.answers) ? user.answers : [];
+                                                            const userAnswer = userAnswers.find((a) => a.questionId.toString() === q._id.toString());
 
                                                             return (
                                                                 <td key={idx}>
@@ -356,6 +457,9 @@ const QuizDashboard = ({ api, languageText }) => {
                             </div>
                             <button className="ScreenShot ScreenShot2" onClick={handleWeeklyScreenshot}>
                                 <Icon icon="fluent:screenshot-16-filled" className="svgIcon" />
+                            </button>
+                            <button className="DownloadExcel" onClick={handleDownloadExcel}>
+                                <Icon icon="vscode-icons:file-type-excel" className="svgIcon" /> {languageText.DownloadExcel}
                             </button>
                             <button className={`ShowQuestions ${showQuestions ? "HideQuestions" : ""}`} onClick={handleShowQuestion}>
                                 {!showQuestions ? (<><Icon icon="bx:show-alt" /> {languageText.ShowQuestionsAnswers}</>) : (<><Icon icon="bx:hide" /> {languageText.HideQuestionsAnswers}</>)}
