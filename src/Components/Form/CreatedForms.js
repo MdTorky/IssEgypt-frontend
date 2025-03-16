@@ -475,7 +475,8 @@ const CreateForm = ({ language, languageText, api, darkMode }) => {
                                                     {form.inputs.includes("Picture") && (
                                                         <div className="InputField">
                                                             <label for="picture" className={`LabelInputImg ${(picture) ? 'valid' : 'invalid'}`}>
-                                                                <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="wpf:stack-of-photos" />{selectedPictureText || languageText.picture}</div>
+                                                                {/* <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="wpf:stack-of-photos" />{selectedPictureText || languageText.picture}</div> */}
+                                                                <div style={{ gap: "8px", display: "flex", alignItems: "center" }}><Icon icon="bxs:report" />{selectedPictureText || languageText.picture}</div>
                                                                 {(picture) ? <button className="XImgButton" onClick={(e) => handleRemovePictureImage(e)}>
                                                                     <Icon icon="icon-park-outline:close-one" />
                                                                 </button>
