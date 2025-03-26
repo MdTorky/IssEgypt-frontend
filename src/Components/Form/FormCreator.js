@@ -37,7 +37,6 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
     const [paymentAmount, setPaymentAmount] = useState('');
     const [formLimit, setFormLimit] = useState('');
     const [img, setImg] = useState(null);
-    const [sendEmail, setSendEmail] = useState('')
     const [paymentQR, setPaymentQR] = useState(null);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -140,13 +139,14 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
             paymentQRUrl = await uploadFile('image', paymentQR);
         }
 
-        if (inputs.includes("Send Email")) {
-            setSendEmail(true)
-        }
-        else {
-            setSendEmail(false)
+        // let sendEmailSchdule
+        // if (inputs.includes("Send Email")) {
+        //     sendEmailSchdule = true
+        // }
+        // else {
+        //     sendEmailSchdule = false
 
-        }
+        // }
         const form = {
             eventName,
             arabicEventName,
@@ -155,7 +155,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
             type: user?.committee,
             inputs,
             groupLink,
-            sendEmail,
+            sendEmail: inputs.includes("Send Email"),
             paymentQR: paymentQRUrl,
             paymentAmount,
             customInputs,
