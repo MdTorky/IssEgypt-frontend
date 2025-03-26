@@ -140,6 +140,13 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
             paymentQRUrl = await uploadFile('image', paymentQR);
         }
 
+        if (inputs.includes("Send Email")) {
+            setSendEmail(true)
+        }
+        else {
+            setSendEmail(false)
+
+        }
         const form = {
             eventName,
             arabicEventName,
@@ -148,7 +155,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
             type: user?.committee,
             inputs,
             groupLink,
-            sendEmail: inputs.includes("Send Email"),
+            sendEmail,
             paymentQR: paymentQRUrl,
             paymentAmount,
             customInputs,
