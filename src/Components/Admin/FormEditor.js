@@ -20,6 +20,7 @@ const FormEditor = ({ language, languageText, api, darkMode }) => {
     const [selectedImageText, setSelectedImageText] = useState(null);
     const [selectedQRImageText, setSelectedQRImageText] = useState(null);
     const [selectInputs, setSelectInputs] = useState([]);
+    // const [sendEmail, setSendEmail] = useState(false)
 
     const [img, setImg] = useState(null);
     const [paymentQR, setPaymentQR] = useState(null);
@@ -59,7 +60,6 @@ const FormEditor = ({ language, languageText, api, darkMode }) => {
 
         fetchData();
     }, [api, formId, dispatch]);
-
 
 
 
@@ -110,8 +110,6 @@ const FormEditor = ({ language, languageText, api, darkMode }) => {
             }
         }
 
-
-
         try {
             const formToUpdate = forms.find((form) => form._id === formId);
 
@@ -134,6 +132,7 @@ const FormEditor = ({ language, languageText, api, darkMode }) => {
                     arabicEventName: form.arabicEventName,
                     eventImg: imgUrl,
                     type: form.type,
+                    sendEmail: inputs.includes("Send Email"),
                     eventDescription: form.eventDescription,
                     inputs: inputs,
                     groupLink: form.groupLink,
@@ -439,6 +438,7 @@ const FormEditor = ({ language, languageText, api, darkMode }) => {
                                         <div id="locationsCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none' }} className="CustomInputsContaner">
                                             {generateCheckbox([
                                                 { type: "Form Limit" },
+                                                { type: "Send Email" },
                                                 { type: "Full Name" },
                                                 { type: "Matric" },
                                                 { type: "Email" },

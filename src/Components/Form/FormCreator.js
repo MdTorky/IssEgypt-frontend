@@ -37,6 +37,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
     const [paymentAmount, setPaymentAmount] = useState('');
     const [formLimit, setFormLimit] = useState('');
     const [img, setImg] = useState(null);
+    const [sendEmail, setSendEmail] = useState('')
     const [paymentQR, setPaymentQR] = useState(null);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -138,6 +139,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
         if (paymentQR) {
             paymentQRUrl = await uploadFile('image', paymentQR);
         }
+
         const form = {
             eventName,
             arabicEventName,
@@ -146,6 +148,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
             type: user?.committee,
             inputs,
             groupLink,
+            sendEmail: inputs.includes("Send Email"),
             paymentQR: paymentQRUrl,
             paymentAmount,
             customInputs,
@@ -407,6 +410,7 @@ const FormCreator = ({ language, languageText, api, darkMode }) => {
                                             <div id="locationsCheckboxes" style={{ display: expandedCategories ? 'flex' : 'none' }} className="CustomInputsContaner">
                                                 {generateCheckbox([
                                                     { type: "Form Limit" },
+                                                    { type: "Send Email" },
                                                     { type: "Full Name" },
                                                     { type: "Matric" },
                                                     { type: "Email" },

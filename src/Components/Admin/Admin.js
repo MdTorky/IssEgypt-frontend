@@ -41,7 +41,6 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                 }
 
                 const data = await response.json();
-                console.log(data);
                 dispatch({
                     type: 'SET_ITEM',
                     collection: 'members',
@@ -255,7 +254,6 @@ const Admin = ({ language, languageText, api, darkMode }) => {
             });
 
 
-            console.log('API Response:', response);
 
             if (!response.ok) {
                 console.error(`Error updating form status. Status: ${response.status}, ${response.statusText}`);
@@ -543,7 +541,6 @@ const Admin = ({ language, languageText, api, darkMode }) => {
                             </div>
 
                         </div>
-                        {console.log(user.committee)}
                         <div className="BankLinksContainer">
                             {(user.committee === "Academic" || user.committee === "Admin" || user.committee === "Culture" || user.committee === "ISS Egypt") &&
                                 <div className="BankLinks">

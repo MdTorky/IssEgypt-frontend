@@ -369,6 +369,29 @@ const FormData = ({ language, languageText, api, darkMode }) => {
                                                     cursor: "pointer"
                                                 }}
                                                 onClick={() => { window.open(formData.picture, "_blank") }}><img src={formData.picture} alt="" /></td>)}
+
+                                            {/* {form.inputs.includes("Picture") && (
+                                                <td style={{ cursor: "pointer" }}>
+                                                    {formData.picture &&
+                                                        (formData.picture.endsWith(".jpg") ||
+                                                            formData.picture.endsWith(".jpeg") ||
+                                                            formData.picture.endsWith(".png") ||
+                                                            formData.picture.endsWith(".gif") ? (
+                                                            <img
+                                                                src={formData.picture}
+                                                                alt="Uploaded Image"
+                                                                style={{ width: "100px", height: "100px" }} // Adjust size if needed
+                                                                onClick={() => window.open(formData.picture, "_blank")}
+                                                            />
+                                                        ) : formData.picture.endsWith(".pdf") ? (
+                                                            <a href={formData.picture} target="_blank" rel="noopener noreferrer">
+                                                                View PDF
+                                                            </a>
+                                                        ) : (
+                                                            <span>Unsupported File Format</span>
+                                                        ))}
+                                                </td>
+                                            )} */}
                                             {form.inputs.includes("Full Name") && (<td>{formData.fullName}</td>)}
                                             {form.inputs.includes("Matric") && (<td style={{ textTransform: "uppercase" }}>{formData.matric}</td>)}
                                             {form.inputs.includes("Email") && (<td style={{ fontSize: "0.5em" }}>{formData.email}</td>)}
