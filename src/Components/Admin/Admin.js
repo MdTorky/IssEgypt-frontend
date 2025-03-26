@@ -561,15 +561,15 @@ const Admin = ({ language, languageText, api, darkMode }) => {
 
 
 
-                            {(user.committee === "Secretary" || user.committee === "Admin") &&
+                            {(user.committee === "Secretary" || user.committee === "Admin" || user.committee === "ISS Egypt" || user.committee === "Vice") &&
                                 <div className="BankLinks">
                                     <p>{languageText.formCommittee}</p>
                                     <select className={`input ${(formCommittee) ? 'valid' : ''}`} onChange={e => (setFormCommittee(e.target.value))}>
                                         <option value={user?.committee}>{user?.committee}</option>
                                         {user?.committee === "Admin" && <option value="ISS Egypt">President</option>}
-                                        {user?.committee === "Admin" && <option value="Vice">Vice-President</option>}
-                                        {user?.committee === "Admin" && <option value="Secretary">Secretary</option>}
-                                        {user?.committee === "Admin" && <option value="Treasurer">Treasurer</option>}
+                                        {(user?.committee === "Admin" || user.committee === "ISS Egypt") && <option value="Vice">Vice-President</option>}
+                                        {(user?.committee === "Admin" || user.committee === "ISS Egypt") && <option value="Secretary">Secretary</option>}
+                                        {(user?.committee === "Admin" || user.committee === "ISS Egypt") && <option value="Treasurer">Treasurer</option>}
                                         <option value="Social">Social</option>
                                         <option value="Academic">Academic</option>
                                         <option value="Culture">Culture</option>
